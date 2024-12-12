@@ -2,11 +2,11 @@
 
 //~ Smooth scrolling from intro to project sections
 
-//* First select the elements and store them :
-//* The button :
+//* Select the elements and store them :
+//* Select the button :
 const btnScrollTo = document.querySelector("#btn-learn-more");
 
-//* The section where the viewport will scroll to :
+//* Select the section where the viewport will scroll to :
 const section1 = document.querySelector(".section-project-container");
 
 //* Then add the event onClick
