@@ -55,6 +55,21 @@ img {
   width: 80%;
 } */
 
+/* Button generic */
+.btn {
+  background-color: var(--gold);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: var(--mono);
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: var(--dark);
+  background-color: var(--white);
+}
+
 /* navbar */
 .dark-container {
   background-color: var(--dark);
@@ -111,20 +126,6 @@ nav [class*="fa-solid"] {
 
 nav [class*="fa-"]:hover {
   color: var(--white);
-}
-
-.nav-button {
-  background-color: var(--gold);
-  color: white;
-  padding: 0.5rem;
-  border-radius: 5px;
-  font-family: var(--mono);
-  text-decoration: none;
-}
-
-.nav-button:hover {
-  color: var(--dark);
-  background-color: var(--white);
 }
 
 /* All sections */
@@ -192,12 +193,63 @@ nav [class*="fa-"]:hover {
 }
 
 /* Offer */
-/* 
-#offer {
-  padding: 4rem 1rem 4rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+
+.offers {
+  max-width: 100%;
+  margin: 6rem auto 0 auto;
+  background-color: var(--darkTrans);
+  border-radius: 10px;
+  padding-bottom: 2rem;
+}
+
+.section__title h2 {
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+
+.section_title p {
+  font-size: 3rem;
+}
+
+.offers__tab-container {
+  display: flex;
+  justify-content: center;
+}
+
+.offers__tab {
+  margin: 0 2% 0 2%;
+  transform: translateY(-50%);
+}
+
+.offers__tab span {
+  margin-right: 4%;
+  display: inline-block;
+}
+
+/* .offers___tab--1 {
+  background-color: red;
+}
+
+.offers___tab--1:hover {
+  background-color: blue;
 } */
+
+.offers__tab--active {
+  transform: translateY(-66%);
+}
+
+.offers__content {
+  display: none;
+}
+
+.offers__content--active {
+  display: block;
+  text-align: center;
+}
+
+.offers__content p {
+  margin: 1rem 4rem 1rem 4rem;
+}
 
 /* Projects */
 
