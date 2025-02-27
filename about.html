@@ -10,6 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Billy Nightingale Portfolio Website</title>
+    <script src="script.js" defer></script>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -24,40 +25,39 @@
 
 <body>
     <div class="dark-container">
-    <nav>
-        <ul>
-            <li>
-                <h1>
+        <nav class="nav" id="navbar">
+            <ul>
+                <li>
                     <a href="index.html">
-                    <span class="fa-solid fa-terminal"></span>Billy Nightingale</a>
-                </h1>
-            </li>
-            <li>
-                <a href="index.html">Projects</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-            <li>
-                <a href="index.html#contact">Contact</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/billynightingale/" target="_blank">
-                <span class="fa-brands fa-linkedin" aria-hidden="true"></span>
-                <span class="sr-only">LinkedIn</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/Billy-Night" target="_blank">
-                <span class="fa-brands fa-square-github" aria-hidden="true"></span>
-                <span class="sr-only">GitHub</span></a>
-            </li>
-            <li>
-                <a class="button" href="" target="_blank">Resume</a>
-            </li>
-        </ul>
-    </nav>
-</div>
+                    <span class="fa-solid fa-terminal nav__link"></span></a>
+                    
+                </li>
+                <li>
+                    <a class="nav__link" href="index.html#projects">Projects</a>
+                </li>
+                <li>
+                    <a class="nav__link" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a class="nav__link" href="index.html#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/billynightingale/" target="_blank">
+                    <span class="fa-brands nav__link fa-linkedin" aria-hidden="true"></span>
+                    <span class="sr-only">LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Billy-Night" target="_blank">
+                    <span class="fa-brands nav__link fa-square-github" aria-hidden="true"></span>
+                    <span class="sr-only">GitHub</span></a>
+                </li>
+                <li >
+                    <a class="btn nav__link" href="mailto:billy.m.nightingale@gmail.com">Resume</a>
+                </li>
+            </ul>
+        </nav>
+        </div>
     <div class="gradient"></div>
     <div class="section-project-container">
         <section id="projects">

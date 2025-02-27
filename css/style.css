@@ -50,10 +50,10 @@ img {
   width: 100%;
 }
 
-/* .portrait {
-  height: 80%;
-  width: 80%;
-} */
+.portrait {
+  max-width: 50%;
+  height: auto;
+}
 
 /* Button generic */
 .btn {
