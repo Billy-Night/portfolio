@@ -1,242 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <!-- HTML Meta Tags -->
+    <title>Billy Nightingales Portfolio Website</title>
+    <meta
+      name="description"
+      content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section"
+    />
+    <meta property="date" content="2022-12-19" />
 
-  <!-- HTML Meta Tags -->
-  <title>Billy Nightingales Portfolio Website</title>
-  <meta name="description" content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section">
-  <meta property="date" content="2022-12-19">
+    <!-- Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https://billy-nightingale-web-dev.netlify.app/index.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Billy Nightingales Portfolio Website" />
+    <meta
+      property="og:description"
+      content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section"
+    />
+    <meta
+      property="og:url"
+      content="https://www.billy-nightingale-web-dev.netlify.app/"
+    />
+    <meta property="og:image" content="/assets/metaPreview1200x627.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:date" content="2022-12-19" />
 
-  <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://billy-nightingale-web-dev.netlify.app/index.html">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Billy Nightingales Portfolio Website">
-    <meta property="og:description" content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section">
-    <meta property="og:url" content="https://www.billy-nightingale-web-dev.netlify.app/" />
-    <meta property="og:image" content="/assets/metaPreview1200x627.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="627">
-    <meta property="og:date" content="2022-12-19">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:domain"
+      content="billy-nightingale-web-dev.netlify.app"
+    />
+    <meta
+      property="twitter:url"
+      content="https://billy-nightingale-web-dev.netlify.app/index.html"
+    />
+    <meta name="twitter:title" content="Billy Nightingales Portfolio Website" />
+    <meta
+      name="twitter:description"
+      content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section"
+    />
+    <meta name="twitter:image" content="/assets/metaPreview1200x627.png" />
+    <meta property="twitter:date" content="2022-12-19" />
 
-  <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="billy-nightingale-web-dev.netlify.app">
-    <meta property="twitter:url" content="https://billy-nightingale-web-dev.netlify.app/index.html">
-    <meta name="twitter:title" content="Billy Nightingales Portfolio Website">
-    <meta name="twitter:description" content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section">
-    <meta name="twitter:image" content="/assets/metaPreview1200x627.png">
-    <meta property="twitter:date" content="2022-12-19">
+    <meta
+      name="keywords"
+      content="web developer, portfolio, projects, HTML, CSS, JavaScript, React"
+    />
+    <meta name="author" content="Billy Nightingale" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
 
-    <meta name="keywords" content="web developer, portfolio, projects, HTML, CSS, JavaScript, React">
-    <meta name="author" content="Billy Nightingale">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    
-</head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    gtag('config', 'G-LVZ55QWZGE')
+  </script>
 
-  gtag('config', 'G-LVZ55QWZGE');
-</script>
-
-<body>
-    <header> 
-    <div class="dark-container">
-    <nav class="nav" id="navbar">
+  <body>
+    <header class="header">
+      <nav class="nav__container">
         <ul>
-            <li>
-                <a href="index.html">
-                <span class="fa-solid fa-terminal nav__link"></span></a>
-                
-            </li>
-            <li>
-                <a class="nav__link" href="#projects">Projects</a>
-            </li>
-            <li>
-                <a class="nav__link" href="about.html">About</a>
-            </li>
-            <li>
-                <a class="nav__link" href="#contact">Contact</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/billynightingale/" target="_blank">
-                <span class="fa-brands nav__link fa-linkedin" aria-hidden="true"></span>
-                <span class="sr-only">LinkedIn</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/Billy-Night" target="_blank">
-                <span class="fa-brands nav__link fa-square-github" aria-hidden="true"></span>
-                <span class="sr-only">GitHub</span></a>
-            </li>
-            <li >
-                <a class="btn nav__link" href="mailto:billy.m.nightingale@gmail.com">Resume</a>
-            </li>
+          <li>
+            <a href="index.html"
+              ><span class="fa-solid fa-terminal nav__link"></span
+            ></a>
+          </li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/billynightingale/"
+              target="_blank"
+            >
+              <span
+                class="fa-brands nav__link fa-linkedin"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Billy-Night" target="_blank">
+              <span
+                class="fa-brands nav__link fa-square-github"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">GitHub</span></a
+            >
+          </li>
+          <li>
+            <a class="btn nav__link" href="mailto:billy.m.nightingale@gmail.com"
+              >Resume</a
+            >
+          </li>
         </ul>
-    </nav>
-    </div>
-    <div class="gradient"></div>
+      </nav>
     </header>
-    <section class="sections" id="intro">
+    <main>
+      <section class="sections" id="intro">
         <p class="name">Hi, my name is <span>Billy Nightingale.</span></p>
         <h2>I create web applications.</h2>
-        <p>I'm a web developer specializing in Frontend, using JavaScript, React and CSS.</p>
-        <p>Currently, I'm working on freelance projects and searching for clients and/or permanent employment.
-        <button class="btn" id="btn-learn-more">Learn More</button>
-    </section>
-    <div class="gradient"></div>
-
-
-
-    <section class="sections" id="offer">
+        <p>
+          I'm a web developer specializing in Frontend, using JavaScript, React
+          and CSS.
+        </p>
+        <p>
+          Currently, I'm working on freelance projects and searching for clients
+          and/or permanent employment.
+          <button class="btn" id="btn-learn-more">Learn More</button>
+        </p>
+      </section>
+      <div class="gradient"></div>
+      <section class="sections" id="offer">
         <div class="section__title">
-            <h2>End-to-End Web Solution</h2>
-            <h3>Transform your business with seamless digital experience</h3>
+          <h2>End-to-End Web Solution</h2>
+          <h3>Transform your business with seamless digital experience</h3>
         </div>
         <div class="offers">
-            <div class="offers__tab-container">
-                <button class="btn offers__tab offers__tab--1 offers__tab--active" data-tab="1">
-                <span>01</span>Discovery & Strategy
-                </button>
-                
-                <button class="btn offers__tab offers__tab--2 offers__tab--active" data-tab="2">
-                    <span>02</span>Design & Prototyping
-                    </button>
-                    <button class="btn offers__tab offers__tab--3 offers__tab--active" data-tab="3">
-                        <span>03</span>Development & Launch
-                        </button>
-            </div>
-            <div class="offers__content offers__content--1">
-                <h5 class="offers__header">Strategise for success</h5>
-                <p>I'll define your goals, target audience, and technical requirements to create a clear roadmap for your website or application.</p>
-            </div>
-            <div class="offers__content offers__content--2">
-                <h5 class="offers__header">Visualise before we build
-                </h5>
-                <p>Through wireframes and iteractive prototypes, we refine your vision, ensuring a user-friendly and conversion-driven design</p>
-            </div>
-            <div class="offers__content offers__content--3">
-                <h5 class="offers__header">Launch with confidence
-                </h5>
-                <p>From development to deployment, I deliver a high-performing product with ongoing support to keep your digital presence thriving</p>
-            </div>
+          <div class="offers__tab-container">
+            <button
+              class="btn offers__tab offers__tab--1 offers__tab--active"
+              data-tab="1"
+            >
+              <span>01</span>Discovery & Strategy
+            </button>
+
+            <button
+              class="btn offers__tab offers__tab--2 offers__tab--active"
+              data-tab="2"
+            >
+              <span>02</span>Design & Prototyping
+            </button>
+            <button
+              class="btn offers__tab offers__tab--3 offers__tab--active"
+              data-tab="3"
+            >
+              <span>03</span>Development & Launch
+            </button>
+          </div>
+          <div class="offers__content offers__content--1">
+            <h5 class="offers__header">Strategise for success</h5>
+            <p>
+              I'll define your goals, target audience, and technical
+              requirements to create a clear roadmap for your website or
+              application.
+            </p>
+          </div>
+          <div class="offers__content offers__content--2">
+            <h5 class="offers__header">Visualise before we build</h5>
+            <p>
+              Through wireframes and iteractive prototypes, we refine your
+              vision, ensuring a user-friendly and conversion-driven design
+            </p>
+          </div>
+          <div class="offers__content offers__content--3">
+            <h5 class="offers__header">Launch with confidence</h5>
+            <p>
+              From development to deployment, I deliver a high-performing
+              product with ongoing support to keep your digital presence
+              thriving
+            </p>
+          </div>
         </div>
-    </section>
-
-
-
-    <div class="gradient"></div>
-    <div class="section-project-container">
+      </section>
+      <div class="gradient"></div>
+      <div class="section-project-container">
         <section id="projects">
-            <h2>Projects I'm proud of<h2>
-            <article>
-                <div class="text">
-                    <h4>Latest Project</h4>
-                    <h3>World Surf Journal</h3>
-                    <p class="black-box">The World Surf Journal is a web application that allows the user to register an account and save their surf trips with various details. It's a CRUD application and the user can create, replace, update and delete their surf trips. It's a fullstack application and consists of a frontend, backend and database. The FrontEnd GitHub can be found<a href="https://github.com/Billy-Night/world_surf_journal" target="_blank"> here</a> and the backend<a href="https://github.com/Billy-Night/world_surf_journal_backend" target="_blank"> here</a>.
-                    </p>
-                    <h4>Technologies used include</h4>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>Express</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-        <img src="assets/worldSurfJournalScreenShot.png" alt="Screenshot of the Wall of Wonder." />
-            </article>
-            <article class="reverse">
-                <div class="text">
-                    <h4>Frontend Project</h4>
-                    <h3>Weather Wise</h3>
-                    <p class="black-box">Weather Wise is a weather & sport application, that will provide the user with a rating on how good the conditions are for that day in their selected sport, which is calculated using an algorithm, which depends on certain weather condition in their current selected location. The application uses API's to get current weather and location information. Demo
-                    <a href="https://weatherwise.netlify.app/" target="_blank">here</a>, the FrontEnd GitHub repository can be found <a href="https://github.com/Billy-Night/weather_wise_app" target="_blank">here</a>.
-                    </p>
-                    <h4>Technologies used include</h4>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>OpenWeather API</li>
-                    </ul>
-                </div>
-    <img src="assets/weatherWisePreview.png" alt="Screenshot of Weather Wise" />
-            </article>
-            <article>
-                <div class="text">
-                    <h4>Client Project</h4>
-                    <h3>TROWIT</h3>
-                    <p class="black-box">The TROWIT project has been created to improve the transfer of business and personal details between people. It fills this need by passing user information digitally in the form of Business Cards. The user can set-up an account and create their digital business cards, they can then order these cards as physical cards, which is a service TROWIT will provide. The user can connect with other users via their cards with a URL link. Apologies but the repository is private, I would be happy to discuss the project on request.
-                    </p>
-                    <h4>Technologies used include</h4>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>Express</li>
-                        <li>MySQL</li>
-                        <li>Figma</li>
-                        <li>Jira</li>
-                    </ul>
-                </div>
-    <img src="assets/TROWITScreenShot.png" alt="Screenshot of the TROWIT." />
-            </article>
+          <h2>Projects I'm proud of</h2>
+          <article>
+            <div class="text">
+              <h4>Latest Project</h4>
+              <h3>World Surf Journal</h3>
+              <p class="black-box">
+                The World Surf Journal is a web application that allows the user
+                to register an account and save their surf trips with various
+                details. It's a CRUD application and the user can create,
+                replace, update and delete their surf trips. It's a fullstack
+                application and consists of a frontend, backend and database.
+                The FrontEnd GitHub can be found<a
+                  href="https://github.com/Billy-Night/world_surf_journal"
+                  target="_blank"
+                >
+                  here</a
+                >
+                and the backend<a
+                  href="https://github.com/Billy-Night/world_surf_journal_backend"
+                  target="_blank"
+                >
+                  here</a
+                >.
+              </p>
+              <h4>Technologies used include</h4>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MySQL</li>
+              </ul>
+            </div>
+            <img
+              src="assets/worldSurfJournalScreenShot.png"
+              alt="Screenshot of the Wall of Wonder."
+            />
+          </article>
+          <article class="reverse">
+            <div class="text">
+              <h4>Frontend Project</h4>
+              <h3>Weather Wise</h3>
+              <p class="black-box">
+                Weather Wise is a weather & sport application, that will provide
+                the user with a rating on how good the conditions are for that
+                day in their selected sport, which is calculated using an
+                algorithm, which depends on certain weather condition in their
+                current selected location. The application uses API's to get
+                current weather and location information. Demo
+                <a href="https://weatherwise.netlify.app/" target="_blank"
+                  >here</a
+                >, the FrontEnd GitHub repository can be found
+                <a
+                  href="https://github.com/Billy-Night/weather_wise_app"
+                  target="_blank"
+                  >here</a
+                >.
+              </p>
+              <h4>Technologies used include</h4>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>OpenWeather API</li>
+              </ul>
+            </div>
+            <img
+              src="assets/weatherWisePreview.png"
+              alt="Screenshot of Weather Wise"
+            />
+          </article>
+          <article>
+            <div class="text">
+              <h4>Client Project</h4>
+              <h3>TROWIT</h3>
+              <p class="black-box">
+                The TROWIT project has been created to improve the transfer of
+                business and personal details between people. It fills this need
+                by passing user information digitally in the form of Business
+                Cards. The user can set-up an account and create their digital
+                business cards, they can then order these cards as physical
+                cards, which is a service TROWIT will provide. The user can
+                connect with other users via their cards with a URL link.
+                Apologies but the repository is private, I would be happy to
+                discuss the project on request.
+              </p>
+              <h4>Technologies used include</h4>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MySQL</li>
+                <li>Figma</li>
+                <li>Jira</li>
+              </ul>
+            </div>
+            <img
+              src="assets/TROWITScreenShot.png"
+              alt="Screenshot of the TROWIT."
+            />
+          </article>
         </section>
         <div class="gradient"></div>
-    <div class="section-contact-container">
-        <section id="contact">
+        <div class="section-contact-container">
+          <section id="contact">
             <h2>Contact me</h2>
-            <p>I'm always interested in hearing about new exciting projects in the tech space.</p>
             <p>
-                <a  href="mailto:billy.m.nightingale@gmail.com" class="button">Email me</a>
+              I'm always interested in hearing about new exciting projects in
+              the tech space.
             </p>
-        </section>
-    </div>
-    <div class="gradient"></div>
-    <div class="dark-container">
-    <footer>
-        <h2>
-            <span>Billy Nightingale</span> &middot; <span>Web Developer</span>
-        <h2>
-        <ul>
-            <li>
-            <a href="https://www.linkedin.com/in/billynightingale/" target="_blank">
-                <span class="fa-brands fa-linkedin" aria-hidden="true"></span>
-                <span class="sr-only">LinkedIn</span>
-            </a>
-            </li>
-            <li>
-            <a href="https://github.com/Billy-Night" target="_blank">
-                <span class="fa-brands fa-square-github" aria-hidden="true"></span>
-                <span class="sr-only">GitHub</span>
-            </a>
-            </li>
-            <li>
-            <a href="mailto:billy.m.nightingale@gmail.com">
-                <span class="fa-solid fa-envelope" aria-hidden="true"></span>
-                <span><span class="sr-only">Email me</span></span>
-            </a>
-            </li>
-        </ul>
-        <p>&copy; 2021 Billy Nightingale. All rights reserved.</p>
-    </footer>
-    </div>
-    </div>
+            <p>
+              <a href="mailto:billy.m.nightingale@gmail.com" class="button"
+                >Email me</a
+              >
+            </p>
+          </section>
+        </div>
+        <div class="gradient"></div>
+        <div class="dark-container">
+          <footer>
+            <h2>
+              <span>Billy Nightingale</span> &middot; <span>Web Developer</span>
+            </h2>
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/billynightingale/"
+                  target="_blank"
+                >
+                  <span class="fa-brands fa-linkedin" aria-hidden="true"></span>
+                  <span class="sr-only">LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Billy-Night" target="_blank">
+                  <span
+                    class="fa-brands fa-square-github"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only">GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:billy.m.nightingale@gmail.com">
+                  <span class="fa-solid fa-envelope" aria-hidden="true"></span>
+                  <span><span class="sr-only">Email me</span></span>
+                </a>
+              </li>
+            </ul>
+            <p>&copy; 2021 Billy Nightingale. All rights reserved.</p>
+          </footer>
+        </div>
+      </div>
+    </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
