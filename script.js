@@ -47,24 +47,25 @@ if (tabsContainer) {
 }
 
 // Menu fade animation
-// const handlerHover = function (e) {
-//   //console.log(this);
-//   if (e.target.classList.contains('nav__link')) {
-//     const link = e.target
-//     //console.log(link);
-//     const siblings = link.closest('.nav').querySelectorAll('.nav__link')
-//     const logo = link.closest('.nav').querySelector('img')
+const handlerHover = function (e) {
+  //console.log(this);
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target
+    //console.log(link);
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link')
+    // const logo = link.closest('.nav').querySelector('img')
+    // console.log(logo)
 
-//     siblings.forEach((el) => {
-//       if (el !== link) el.style.opacity = this
-//     })
-//     logo.style.opacity = this
-//   }
-// }
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = this
+    })
+    // logo.style.opacity = this
+  }
+}
 
-// nav.addEventListener('mouseover', handlerHover.bind(0.5))
+nav.addEventListener('mouseover', handlerHover.bind(0.5))
 
-// nav.addEventListener('mouseout', handlerHover.bind(1))
+nav.addEventListener('mouseout', handlerHover.bind(1))
 
 //~ Header
 
