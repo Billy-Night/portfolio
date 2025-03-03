@@ -162,6 +162,12 @@ nav [class*='fa-']:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 5% 2% 5% 2%;
+  transition: transform 1s, opacity 1s;
+}
+
+.sections--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
 }
 
 /* intro */

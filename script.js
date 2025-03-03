@@ -70,6 +70,44 @@ nav.addEventListener('mouseover', handlerHover.bind(0.5))
 
 nav.addEventListener('mouseout', handlerHover.bind(1))
 
+//~ Reveal sections
+
+// The benefit of using this logic over scroll events is that it is more efficient.
+
+//* First we select all the elements in the document with a class name of section
+// const allSelections = document.querySelectorAll('.sections')
+
+// //* Logic to reveal the sections, the function takes in the entries array and the observer object (define by use below)
+// const revealSection = function (entries, observer) {
+//   console.log(entries)
+//   entries.forEach((entry) => {
+//     if (entry.target.id === 'intro') {
+//       entry.target.classList.remove('sections--hidden')
+//       console.log('removed')
+//     }
+//     // This is a guard to stop the function if the entry is not intersecting
+//     if (!entry.isIntersecting) {
+//       return
+//     }
+//     // Now we alter the section and remove the class of section hidden, which will show the section
+//     entry.target.classList.remove('sections--hidden')
+//     // Then we unobserve each section to insure that the function stops running.
+//     observer.unobserve(entry.target)
+//   })
+// }
+
+// // We create a new intersectionObserver object which takes in a function which we created and an object which defines it's functionality
+// // The revealSection is the callback function that executes when the observed element meets the threshold defined in the object.
+// const sectionObserver = new IntersectionObserver(revealSection, {
+//   root: null, // Observe intersection with the view port,
+//   threshold: 0.15, // Trigger when 15% of the element is visible
+// })
+
+// allSelections.forEach(function (section) {
+//   sectionObserver.observe(section)
+//   section.classList.add('sections--hidden')
+// })
+
 //~ Header
 
 // const navContainer = document.querySelector(".nav__container");
