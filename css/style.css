@@ -87,7 +87,7 @@ img {
 }
 
 /* navbar */
-.nav__container {
+.nav {
   max-width: 100%;
   overflow: hidden;
   background-color: var(--dark);
