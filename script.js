@@ -25,6 +25,8 @@ if (btnScrollTo) {
   })
 }
 
+//~ service section tabs
+
 //* Event delegations
 if (tabsContainer) {
   tabsContainer.addEventListener('click', function (e) {
@@ -46,7 +48,8 @@ if (tabsContainer) {
   })
 }
 
-// Menu fade animation
+//~ Navbar fade animation
+
 const handlerHover = function (e) {
   //console.log(this);
   if (e.target.classList.contains('nav__link')) {
