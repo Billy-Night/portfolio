@@ -75,6 +75,8 @@ img {
   background-color: var(--white);
 }
 
+/* Header */
+
 .header {
   height: auto;
   overflow: visible;
@@ -145,9 +147,9 @@ nav [class*='fa-']:hover {
 
 /* All sections generic */
 .sections {
-  padding: 4rem 1rem 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 5% 2% 5% 2%;
 }
 
 /* intro styles */
@@ -173,6 +175,16 @@ nav [class*='fa-']:hover {
   font-weight: normal;
 }
 
+@media screen and (max-width: 350px) {
+  .name span {
+    font-size: 1.5rem;
+  }
+
+  #intro h2 {
+    font-size: 2rem;
+  }
+}
+
 .gradient {
   background: rgb(191, 137, 117);
   background: linear-gradient(
@@ -196,22 +208,11 @@ nav [class*='fa-']:hover {
   background-color: var(--dkblue);
 }
 
-#contact {
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  padding: 3rem 0;
-}
-
-#contact p:last-child {
-  margin-top: 3rem;
-}
-
 /* Offer */
 
 .offers {
   max-width: 100%;
-  margin: 6rem auto 0 auto;
+  margin: 12% auto 0 auto;
   background-color: var(--darkTrans);
   border-radius: 10px;
   padding-bottom: 2rem;
@@ -241,14 +242,6 @@ nav [class*='fa-']:hover {
   display: inline-block;
 }
 
-/* .offers___tab--1 {
-  background-color: red;
-}
-
-.offers___tab--1:hover {
-  background-color: blue;
-} */
-
 .offers__tab--active {
   transform: translateY(-66%);
 }
@@ -266,11 +259,26 @@ nav [class*='fa-']:hover {
   margin: 1rem 4rem 1rem 4rem;
 }
 
-/* Projects */
+@media screen and (max-width: 350px) {
+  .offers__tab {
+    font-size: 0.5rem;
+  }
 
-#projects {
-  padding: 4rem 1rem;
+  .offers__content p {
+    font-size: 0.5rem;
+    margin: 0.5rem 2rem 0.5rem 2rem;
+  }
+
+  .offers__header {
+    margin: 0 auto 0.5rem auto;
+  }
+
+  .offers__tab-container {
+    height: 45px;
+  }
 }
+
+/* Projects */
 
 #projects h2 {
   font-size: 2.5rem;
@@ -315,11 +323,6 @@ nav [class*='fa-']:hover {
     gap: 1rem;
   }
 
-  #projects {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
   #projects img {
     grid-column: 1/6;
     grid-row: 1/2;
@@ -352,7 +355,7 @@ nav [class*='fa-']:hover {
 }
 
 #projects img {
-  margin: 2rem 0 4rem 0;
+  margin: 8% 0 8% 0;
   border-left: 1px solid var(--gold);
   border-top: 1px solid var(--gold);
   border-radius: 25px;
@@ -379,11 +382,18 @@ nav [class*='fa-']:hover {
   margin: 0;
 }
 
-/* Footer */
+/* Contact */
 
-.footer-container {
-  background-color: black;
+#contact {
+  text-align: center;
+  padding: 3rem 0;
 }
+
+#contact p:last-child {
+  margin-top: 3rem;
+}
+
+/* Footer */
 
 footer {
   text-align: center;
