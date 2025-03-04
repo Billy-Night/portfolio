@@ -11,7 +11,7 @@ const tabsContent = document.querySelectorAll('.offers__content')
 //* Select the button :
 const btnScrollTo = document.querySelector('#btn-learn-more')
 //* Select the section where the viewport will scroll to :
-const section1 = document.querySelector('.section-project-container')
+const sectionProject = document.querySelector('.section-project-container')
 
 const nav = document.querySelector('.nav')
 
@@ -21,7 +21,7 @@ const nav = document.querySelector('.nav')
 if (btnScrollTo) {
   btnScrollTo.addEventListener('click', function (e) {
     //* The more modern way, only supported in modern browsers
-    section1.scrollIntoView({ behavior: 'smooth' })
+    sectionProject.scrollIntoView({ behavior: 'smooth' })
   })
 }
 
@@ -75,59 +75,68 @@ nav.addEventListener('mouseout', handlerHover.bind(1))
 // The benefit of using this logic over scroll events is that it is more efficient.
 
 //* First we select all the elements in the document with a class name of section
-// const allSelections = document.querySelectorAll('.sections')
+const allSelections = document.querySelectorAll('.sections')
 
-// //* Logic to reveal the sections, the function takes in the entries array and the observer object (define by use below)
-// const revealSection = function (entries, observer) {
-//   console.log(entries)
-//   entries.forEach((entry) => {
-//     if (entry.target.id === 'intro') {
-//       entry.target.classList.remove('sections--hidden')
-//       console.log('removed')
-//     }
-//     // This is a guard to stop the function if the entry is not intersecting
-//     if (!entry.isIntersecting) {
-//       return
-//     }
-//     // Now we alter the section and remove the class of section hidden, which will show the section
-//     entry.target.classList.remove('sections--hidden')
-//     // Then we unobserve each section to insure that the function stops running.
-//     observer.unobserve(entry.target)
-//   })
-// }
+//* Logic to reveal the sections, the function takes in the entries array and the observer object (define by use below)
+const revealSection = function (entries, observer) {
+  //console.log(entries)
+  entries.forEach((entry) => {
+    // This is a guard to stop the function if the entry is not intersecting
+    if (!entry.isIntersecting) {
+      return
+    }
+    // Now we alter the section and remove the class of section hidden, which will show the section
+    entry.target.classList.remove('sections--hidden')
+    // Then we unobserve each section to insure that the function stops running.
+    observer.unobserve(entry.target)
+  })
+}
 
-// // We create a new intersectionObserver object which takes in a function which we created and an object which defines it's functionality
-// // The revealSection is the callback function that executes when the observed element meets the threshold defined in the object.
-// const sectionObserver = new IntersectionObserver(revealSection, {
-//   root: null, // Observe intersection with the view port,
-//   threshold: 0.15, // Trigger when 15% of the element is visible
-// })
+// We create a new intersectionObserver object which takes in a function which we created and an object which defines it's functionality
+// The revealSection is the callback function that executes when the observed element meets the threshold defined in the object.
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null, // Observe intersection with the view port,
+  threshold: 0.1, // Trigger when 15% of the element is visible
+})
 
-// allSelections.forEach(function (section) {
-//   sectionObserver.observe(section)
-//   section.classList.add('sections--hidden')
-// })
+allSelections.forEach(function (section) {
+  //console.log(section.id)
+
+  if (!(section.id === 'intro' || section.id === 'about-bio')) {
+    section.classList.add('sections--hidden')
+    //console.log(`added class to section ${section.id}`)
+  }
+  //console.log(section)
+  sectionObserver.observe(section)
+})
 
 //~ Header
 
-// const navContainer = document.querySelector(".nav__container");
+//const sectionIntro = document.querySelector('#intro')
+const header = document.querySelector('.header')
+const navHeight = header.getBoundingClientRect().height
 
-// const header = document.querySelector(".header");
-// const navHeight = navContainer.getBoundingClientRect().height;
-// console.log(navHeight);
+window.addEventListener('scroll', () => {
+  if (window.scrollY > navHeight) {
+    header.classList.add('small-nav')
+  } else {
+    header.classList.remove('small-nav')
+  }
+})
+// console.log(navHeight)
 
-// const stickyNav = function (entries) {
-//   const [entry] = entries;
-//   console.log(entry);
+// const smallNav = function (entries) {
+//   const [entry] = entries
+//   console.log(entry)
 
-//   if (!entry.isIntersecting) navContainer.classList.add("sticky");
-//   else navContainer.classList.remove("sticky");
-// };
+//   if (entry.isIntersecting) header.classList.add('small-nav')
+//   else header.classList.remove('small-nav')
+// }
 
 // //When 0 percent of the header is visible we want something to happen
-// const headerObserver = new IntersectionObserver(stickyNav, {
+// const headerObserver = new IntersectionObserver(smallNav, {
 //   root: null,
-//   threshold: 0,
-//   // rootMargin: `-${navHeight}px`,
-// });
-// headerObserver.observe(header);
+//   threshold: 0.1,
+//   rootMargin: `-${navHeight}px`,
+// })
+// headerObserver.observe(header)
