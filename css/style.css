@@ -53,11 +53,18 @@ a:hover {
 
 img {
   width: 100%;
+  transition: filter 0.2s;
 }
+
+/* Images */
 
 .portrait {
   max-width: 50%;
   height: auto;
+}
+
+.lazy-img {
+  filter: blur(2px);
 }
 
 /* Button generic */

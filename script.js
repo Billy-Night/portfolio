@@ -8,12 +8,16 @@
 const tabs = document.querySelectorAll('.offers__tab')
 const tabsContainer = document.querySelector('.offers__tab-container')
 const tabsContent = document.querySelectorAll('.offers__content')
-//* Select the button :
+//* Learn more button :
 const btnScrollTo = document.querySelector('#btn-learn-more')
 //* Select the section where the viewport will scroll to :
 const sectionProject = document.querySelector('.section-project-container')
-
+//* Navbar
+const header = document.querySelector('.header')
+const navHeight = header.getBoundingClientRect().height
 const nav = document.querySelector('.nav')
+//* All sections
+const allSelections = document.querySelectorAll('.sections')
 
 //~ Smooth scrolling from intro to project sections
 
@@ -65,17 +69,12 @@ const handlerHover = function (e) {
     // logo.style.opacity = this
   }
 }
-
 nav.addEventListener('mouseover', handlerHover.bind(0.5))
-
 nav.addEventListener('mouseout', handlerHover.bind(1))
 
 //~ Reveal sections
 
 // The benefit of using this logic over scroll events is that it is more efficient.
-
-//* First we select all the elements in the document with a class name of section
-const allSelections = document.querySelectorAll('.sections')
 
 //* Logic to reveal the sections, the function takes in the entries array and the observer object (define by use below)
 const revealSection = function (entries, observer) {
@@ -110,11 +109,7 @@ allSelections.forEach(function (section) {
   sectionObserver.observe(section)
 })
 
-//~ Header
-
-//const sectionIntro = document.querySelector('#intro')
-const header = document.querySelector('.header')
-const navHeight = header.getBoundingClientRect().height
+//~ Header transform when scroll
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > navHeight) {
@@ -123,20 +118,31 @@ window.addEventListener('scroll', () => {
     header.classList.remove('small-nav')
   }
 })
-// console.log(navHeight)
 
-// const smallNav = function (entries) {
-//   const [entry] = entries
-//   console.log(entry)
+//~ Lazy images
 
-//   if (entry.isIntersecting) header.classList.add('small-nav')
-//   else header.classList.remove('small-nav')
-// }
+const imgTargets = document.querySelectorAll('img[data-src]')
 
-// //When 0 percent of the header is visible we want something to happen
-// const headerObserver = new IntersectionObserver(smallNav, {
-//   root: null,
-//   threshold: 0.1,
-//   rootMargin: `-${navHeight}px`,
-// })
-// headerObserver.observe(header)
+const loadImg = function (entries, observer) {
+  const [entry] = entries
+  console.log(entry)
+
+  if (!entry.isIntersecting) return
+
+  //replace src with data-src
+  entry.target.src = entry.target.dataset.src
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img')
+  })
+
+  observer.unobserve(entry.target)
+}
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: '200px',
+})
+
+imgTargets.forEach((img) => imgObserver.observe(img))
