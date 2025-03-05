@@ -110,7 +110,7 @@ img {
 .small-nav {
   top: 10px;
   width: 80%;
-  margin: 0 80% 0 10%;
+  margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -145,7 +145,7 @@ nav h1 a {
 }
 
 nav ul {
-  margin: 1rem auto 0 auto;
+  /* margin: 1rem auto 0 auto; */
   list-style-type: none;
   padding: 0;
   margin: 0;
