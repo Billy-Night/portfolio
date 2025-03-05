@@ -110,8 +110,20 @@ allSelections.forEach(function (section) {
 })
 
 //~ Header transform when scroll
+const hamburgerMenu = document.querySelector('.hamburger-menu')
+const navLinks = document.querySelectorAll('.nav__link')
+//console.log(navLinks)
+//console.log(header)
 
 window.addEventListener('scroll', () => {
+  //ToDo add hamburger menu
+  // if (window.scrollY > navHeight) {
+  //   hamburgerMenu.classList.remove('hide-element')
+  //   header.classList.add('small-nav')
+  //   navLinks.forEach((e) => {
+  //     e.classList.add('hide-element')
+  //   })
+  // }
   if (window.scrollY > navHeight) {
     header.classList.add('small-nav')
   } else {
@@ -125,7 +137,7 @@ const imgTargets = document.querySelectorAll('img[data-src]')
 
 const loadImg = function (entries, observer) {
   const [entry] = entries
-  console.log(entry)
+  //console.log(entry)
 
   if (!entry.isIntersecting) return
 

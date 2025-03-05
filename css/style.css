@@ -51,9 +51,8 @@ a:hover {
   text-decoration: none;
 }
 
-img {
-  width: 100%;
-  transition: filter 0.2s;
+.hide-element {
+  display: none;
 }
 
 /* Images */
@@ -65,6 +64,11 @@ img {
 
 .lazy-img {
   filter: blur(2px);
+}
+
+img {
+  width: 100%;
+  transition: filter 0.2s;
 }
 
 /* Button generic */
@@ -94,10 +98,19 @@ img {
   transition: top 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
+/*! Started adding hamburger menu */
+/* 
+.hamburger-menu {
+  background-color: var(--dark);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+} */
+
 .small-nav {
   top: 10px;
   width: 80%;
-  margin: 0 auto;
+  margin: 0 80% 0 10%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -140,7 +153,7 @@ nav ul {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 nav li:first-child {
@@ -163,14 +176,26 @@ nav [class*='fa-'] {
   color: var(--gold);
 }
 
-nav [class*='fa-solid'] {
+/* nav [class*='fa-solid'] {
   font-size: 100%;
   margin-right: 0.5%;
   color: var(--gold);
-}
+} */
 
 nav [class*='fa-']:hover {
   color: var(--white);
+}
+
+@media (min-width: 600px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
 }
 
 /* All sections generic */
@@ -285,7 +310,7 @@ nav [class*='fa-']:hover {
   }
 
   .offers__content p {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     margin: 0.5rem 2rem 0.5rem 2rem;
   }
 
@@ -390,17 +415,7 @@ nav [class*='fa-']:hover {
   padding: 1rem;
 }
 
-@media (min-width: 850px) {
-  nav {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  nav li:first-child {
-    flex-basis: auto;
-    text-align: left;
-    margin-right: auto;
-  }
-}
+/* About Page */
 
 .bio-text {
   margin-bottom: 1%;
