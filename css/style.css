@@ -234,6 +234,10 @@ nav [class*='fa-']:hover {
   padding-bottom: 2rem;
 }
 
+.section__title {
+  margin-bottom: 2%;
+}
+
 .section__title h2 {
   font-size: 1rem;
   margin-bottom: 2%;
@@ -275,7 +279,7 @@ nav [class*='fa-']:hover {
   margin: 1rem 4rem 1rem 4rem;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
   .offers__tab {
     font-size: 0.5rem;
   }
@@ -291,6 +295,14 @@ nav [class*='fa-']:hover {
 
   .offers__tab-container {
     height: 45px;
+  }
+
+  .section__title {
+    margin-bottom: 4%;
+  }
+
+  .section__title h3 {
+    font-size: 1.2rem;
   }
 }
 
