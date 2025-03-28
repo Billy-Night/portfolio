@@ -73,6 +73,7 @@ img {
 
 /* Button generic */
 .btn {
+  cursor: pointer;
   background-color: var(--gold);
   color: white;
   padding: 0.5rem;
