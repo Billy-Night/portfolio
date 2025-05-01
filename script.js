@@ -22,8 +22,8 @@ const allSelections = document.querySelectorAll('.sections')
 //~ Automatically detect language and redirect
 const userLang = navigator.language || navigator.userLanguage
 if (userLang.startsWith('fr')) {
-  console.log('Redirected FR')
-  window.location.href = '/fr/index.html'
+  // console.log('Redirected FR')
+  return (window.location.href = '/fr/index.html')
 }
 
 //~ Smooth scrolling from intro to project sections
