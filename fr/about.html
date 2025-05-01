@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,9 +14,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="css/style.css" rel="stylesheet" />
-    <title>Billy Nightingale Portfolio Website</title>
-    <script src="script.js" defer></script>
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Site Portfolio de Billy Nightingale</title>
+    <script src="/script.js" defer></script>
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -39,13 +39,18 @@
       <nav class="nav">
         <ul>
           <li>
-            <a href="index.html"
+            <a href="/fr/index.html"
               ><span class="fa-solid fa-terminal nav__link"></span
             ></a>
           </li>
-          <li><a class="nav__link" href="index.html#projects">Projects</a></li>
-          <li><a class="nav__link" href="about.html">About</a></li>
-          <li><a class="nav__link" href="index.html#contact">Contact</a></li>
+          <li><a class="nav__link mini" href="/about.html">EN</a></li>
+          <li>
+            <a class="nav__link" href="/fr/index.html#projects">Projets</a>
+          </li>
+          <li><a class="nav__link" href="/fr/about.html">À propos</a></li>
+          <li>
+            <a class="nav__link" href="/fr/index.html#contact">Contact</a>
+          </li>
           <li>
             <a
               href="https://www.linkedin.com/in/billynightingale/"
@@ -69,7 +74,7 @@
           </li>
           <li>
             <a class="btn nav__link" href="mailto:billy.m.nightingale@gmail.com"
-              >Resume</a
+              >CV</a
             >
           </li>
         </ul>
@@ -78,26 +83,32 @@
     <main>
       <section class="sections projects" id="about-bio">
         <div class="section-project-container">
-          <h2>About Billy Nightingale</h2>
+          <h2>À propos de Billy Nightingale</h2>
           <article>
             <div class="text">
-              <h4>A brief intro</h4>
-              <div class="black-box">
-                <p class="bio-text">
-                  I enjoy building web applications! Graduating from an
-                  engineering background, I have a creative mindset for problem
-                  solving. With a strong focus on self-growth, I’m always
-                  curious to learn new skills and be involved in exciting
-                  projects. My goal is to combine my passion for technology with
-                  my desire to create.
+              <h4>Une brève introduction</h4>
+              <div class="black-box bio-text">
+                <p>
+                  J'adore créer des applications web ! Diplômé d'un parcours en
+                  ingénierie, j'ai un esprit créatif pour résoudre les
+                  problèmes. Avec un fort accent sur l'auto-amélioration, je
+                  suis toujours curieux d'apprendre de nouvelles compétences et
+                  de participer à des projets passionnants. Mon objectif est
+                  d'allier ma passion pour la technologie à mon désir de créer.
                 </p>
-                <ul class="about-list">
-                  <li>📚 Completed many hours of study on FrontEnd Masters.</li>
-                  <li>🌱 Currently taking a deeper dive into JavaScript</li>
-                  <li>🗂 Finished a course in TypeScript on Udemy</li>
-                </ul>
+                <div class="about-list">
+                  <p>
+                    📚 J'ai effectué de nombreuses heures d'étude sur FrontEnd
+                    Masters.
+                  </p>
+                  <p>
+                    🌱 Je me plonge actuellement plus profondément dans
+                    JavaScript
+                  </p>
+                  <p>🗂 J'ai terminé un cours sur TypeScript sur Udemy</p>
+                </div>
               </div>
-              <h4>My favorite Technologies</h4>
+              <h4>Mes technologies préférées</h4>
               <ul>
                 <li>HTML</li>
                 <li>CSS</li>
@@ -110,9 +121,9 @@
             </div>
             <img
               class="portrait lazy-img"
-              src="assets/lazyBillyPortrait.jpeg"
-              data-src="assets/Billy.jpeg"
-              alt="Portrait of Billy"
+              src="/assets/lazyBillyPortrait.jpeg"
+              data-src="/assets/Billy.jpeg"
+              alt="Portrait de Billy"
             />
           </article>
         </div>
@@ -121,7 +132,7 @@
       <section class="sections">
         <footer>
           <h2>
-            <span>Billy Nightingale</span> &middot; <span>Web Developer</span>
+            <span>Billy Nightingale</span> &middot; <span>Développeur Web</span>
           </h2>
           <ul>
             <li>
@@ -145,11 +156,11 @@
             <li>
               <a href="mailto:billy.m.nightingale@gmail.com">
                 <span class="fa-solid fa-envelope" aria-hidden="true"></span>
-                <span><span class="sr-only">Email me</span></span>
+                <span><span class="sr-only">Envoyer un email</span></span>
               </a>
             </li>
           </ul>
-          <p>&copy; 2021 Billy Nightingale. All rights reserved.</p>
+          <p>&copy; 2021 Billy Nightingale. Tous droits réservés.</p>
         </footer>
       </section>
     </main>
