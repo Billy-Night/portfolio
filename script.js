@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
     sessionStorage.setItem('redirected', 'true')
     window.location.href = '/fr/index.html'
+    console.log('redirected')
   }
 })
 
