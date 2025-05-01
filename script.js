@@ -22,13 +22,15 @@ const allSelections = document.querySelectorAll('.sections')
 //~ Automatically detect language and redirect
 
 document.addEventListener('DOMContentLoaded', function () {
-  const userLang = navigator.language || navigator.userLanguage
-  // console.log('User language detected:', userLang) // Debugging line
+  try {
+    const userLang = navigator.language || navigator.userLanguage
 
-  if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
-    sessionStorage.setItem('redirected', 'true')
-    window.location.href = '/fr/index.html'
-    console.log('redirected')
+    if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
+      sessionStorage.setItem('redirected', 'true')
+      window.location.href = '/fr/index.html'
+    }
+  } catch (error) {
+    console.error('Language detection failed:', error)
   }
 })
 
