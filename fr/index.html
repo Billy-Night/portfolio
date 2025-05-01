@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- HTML Meta Tags -->
-    <title>Billy Nightingales Portfolio Website</title>
+    <title>Site web portfolio de Billy Nightingale</title>
     <meta
       name="description"
-      content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section"
+      content="Découvrez mes projets et contactez-moi via mon portfolio personnel de développeur web. Vous trouverez mes projets et liens de contact sur la page d'accueil. Une courte biographie est disponible dans la section À propos."
     />
     <meta property="date" content="2022-12-19" />
 
@@ -14,11 +14,14 @@
       property="og:url"
       content="https://billy-nightingale-web-dev.netlify.app/index.html"
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Billy Nightingales Portfolio Website" />
+    <meta property="og:type" content="site web" />
+    <meta
+      property="og:title"
+      content="Site web portfolio de Billy Nightingale"
+    />
     <meta
       property="og:description"
-      content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section"
+      content="Découvrez mes projets et contactez-moi via mon portfolio personnel de développeur web. Vous trouverez mes projets et liens de contact sur la page d'accueil. Une courte biographie est disponible dans la section À propos."
     />
     <meta
       property="og:url"
@@ -39,17 +42,20 @@
       property="twitter:url"
       content="https://billy-nightingale-web-dev.netlify.app/index.html"
     />
-    <meta name="twitter:title" content="Billy Nightingales Portfolio Website" />
+    <meta
+      name="twitter:title"
+      content="Site web portfolio de Billy Nightingale"
+    />
     <meta
       name="twitter:description"
-      content="Find my projects and connect with me via my personal web developer portfolio. My projects and contact links can be found on the home page. A short bio can be found in the about section"
+      content="Découvrez mes projets et contactez-moi via mon portfolio personnel de développeur web. Vous trouverez mes projets et liens de contact sur la page d'accueil. Une courte biographie est disponible dans la section À propos."
     />
     <meta name="twitter:image" content="/assets/metaPreview1200x627.png" />
     <meta property="twitter:date" content="2022-12-19" />
 
     <meta
       name="keywords"
-      content="web developer, portfolio, projects, HTML, CSS, JavaScript, React"
+      content="développeur web, portfolio, projets, HTML, CSS, JavaScript, React, Nodejs, SQL, MySQL"
     />
     <meta name="author" content="Billy Nightingale" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,9 +69,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
-    <script defer src="script.js"></script>
+    <script defer src="/script.js"></script>
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -88,13 +94,13 @@
       <nav class="nav">
         <ul>
           <li>
-            <a href="index.html"
+            <a href="/fr/index.html"
               ><span class="fa-solid fa-terminal nav__link"></span
             ></a>
           </li>
-          <li><a class="nav__link mini" href="/fr/index.html">French</a></li>
-          <li><a class="nav__link mini" href="#projects">Projects</a></li>
-          <li><a class="nav__link mini" href="about.html">About</a></li>
+          <li><a class="nav__link mini" href="/index.html">EN</a></li>
+          <li><a class="nav__link mini" href="#projects">Projets</a></li>
+          <li><a class="nav__link mini" href="/fr/about.html">À Propos</a></li>
           <li><a class="nav__link mini" href="#contact">Contact</a></li>
           <li>
             <a
@@ -119,7 +125,7 @@
           </li>
           <li>
             <a class="btn nav__link" href="mailto:billy.m.nightingale@gmail.com"
-              >Resume</a
+              >CV</a
             >
           </li>
         </ul>
@@ -128,23 +134,26 @@
     <!-- <button class="fa-solid fa-bars hamburger-menu"></button> -->
     <main>
       <section class="sections" id="intro">
-        <p class="name">Hi, my name is <span>Billy Nightingale.</span></p>
-        <h2>I create web applications.</h2>
+        <p class="name">Salut, je m'appelle <span>Billy Nightingale.</span></p>
+        <h2>Je crée les applications de web</h2>
         <p>
-          I'm a web developer specialising in Frontend, using JavaScript, React
-          and CSS.
+          Je suis développeur web spécialisé en développement Full-Stack,
+          utilisant HTML, CSS, JavaScript, React, Node.js, Express, SQL et
+          MySQL.
         </p>
         <p>
-          Currently, I'm working on freelance projects and searching for clients
-          and/or permanent employment.
-          <button class="btn" id="btn-learn-more">Learn More</button>
+          Actuellement, je travaille sur des projets en freelance et je suis à
+          la recherche de clients et/ou d'un emploi permanent.
+          <button class="btn" id="btn-learn-more">En Savoir Plus</button>
         </p>
       </section>
       <div class="gradient"></div>
       <section class="sections" id="offer">
         <div class="section__title">
-          <h2>End-to-End Web Solution</h2>
-          <h3>Transform your business with seamless digital experience</h3>
+          <h2>Solution web de A-Z</h2>
+          <h3>
+            Transformez votre entreprise avec une expérience numérique fluide.
+          </h3>
         </div>
         <div class="offers">
           <div class="offers__tab-container">
@@ -152,39 +161,40 @@
               class="btn offers__tab offers__tab--1 offers__tab--active"
               data-tab="1"
             >
-              <span>01</span>Discovery & Strategy
+              <span>01</span>Découvrir et Stratégie
             </button>
 
             <button class="btn offers__tab offers__tab--2" data-tab="2">
-              <span>02</span>Design & Prototyping
+              <span>02</span>Conception et Prototypage
             </button>
             <button class="btn offers__tab offers__tab--3" data-tab="3">
-              <span>03</span>Development & Launch
+              <span>03</span>Développement et Lancé
             </button>
           </div>
           <div
             class="offers__content offers__content--1 offers__content--active"
           >
-            <h5 class="offers__header">Strategise for success</h5>
+            <h5 class="offers__header">Stratégie pour réussir</h5>
             <p>
-              I'll define your goals, target audience, and technical
-              requirements to create a clear roadmap for your website or
-              application.
+              Je définirai vos objectifs, votre public cible et vos exigences
+              techniques afin de créer une feuille de route claire pour votre
+              site web ou application.
             </p>
           </div>
           <div class="offers__content offers__content--2">
-            <h5 class="offers__header">Visualise before we build</h5>
+            <h5 class="offers__header">Visualisez avant de construire</h5>
             <p>
-              Through wireframes and iteractive prototypes, we refine your
-              vision, ensuring a user-friendly and conversion-driven design
+              Grâce aux maquettes et prototypes interactifs, nous affinons votre
+              vision, en garantissant un design convivial et axé sur la
+              conversion.
             </p>
           </div>
           <div class="offers__content offers__content--3">
-            <h5 class="offers__header">Launch with confidence</h5>
+            <h5 class="offers__header">Lancez avec confiance</h5>
             <p>
-              From development to deployment, I deliver a high-performing
-              product with ongoing support to keep your digital presence
-              thriving
+              De la conception au déploiement, je livre un produit performant
+              avec un support continu pour maintenir votre présence numérique
+              dynamique.
             </p>
           </div>
         </div>
@@ -192,33 +202,34 @@
       <div class="gradient"></div>
       <section class="sections projects" id="projects">
         <div class="section-project-container">
-          <h2>Projects</h2>
+          <h2>Projets</h2>
           <article>
             <div class="text">
-              <h4>Latest Project</h4>
+              <h4>Dernier Projets</h4>
               <h3>World Surf Journal</h3>
               <p class="black-box">
-                The World Surf Journal is a web application that allows the user
-                to register an account and save their surf trips with various
-                details. It's a CRUD application and the user can create,
-                replace, update and delete their surf trips. It's a fullstack
-                application and consists of a frontend, backend and database.
-                Take a look at the deployed version
+                Le World Surf Journal est une application web qui permet à
+                l'utilisateur de créer un compte et d'enregistrer ses voyages de
+                surf avec divers détails. C'est une application CRUD, et
+                l'utilisateur peut créer, remplacer, mettre à jour et supprimer
+                ses voyages de surf. Il s'agit d'une application fullstack
+                composée d'un frontend, d'un backend et d'une base de données.
+                Découvrez la version déployée:
                 <a
                   href="https://worldsurfjournal-production-91bf.up.railway.app/"
                   target="_blank"
-                  >here</a
-                >. The Frontend repository can be found<a
+                  >ici</a
+                >. Le dépôt du frontend est disponible ici<a
                   href="https://github.com/Billy-Night/world_surf_journal"
                   target="_blank"
                 >
-                  here</a
+                  ici</a
                 >
-                and the backend<a
+                et le backend<a
                   href="https://github.com/Billy-Night/world_surf_journal_backend"
                   target="_blank"
                 >
-                  here</a
+                  ici</a
                 >.
               </p>
               <h4>Technologies</h4>
@@ -233,29 +244,29 @@
               </ul>
             </div>
             <img
-              src="assets/lazyWorldSurfJournalScreenShot-min.png"
-              alt="Screenshot of the world surf journal."
-              data-src="assets/worldSurfJournalScreenShot.png"
+              src="/assets/lazyWorldSurfJournalScreenShot-min.png"
+              alt="Capture d'écran du World Surf Journal"
+              data-src="/assets/worldSurfJournalScreenShot.png"
             />
           </article>
           <article class="reverse">
             <div class="text">
-              <h4>Frontend Project</h4>
+              <h4>Projet frontend</h4>
               <h3>Weather Wise</h3>
               <p class="black-box">
-                Weather Wise is a weather & sport application, that will provide
-                the user with a rating on how good the conditions are for that
-                day in their selected sport, which is calculated using an
-                algorithm, which depends on certain weather condition in their
-                current selected location. The application uses API's to get
-                current weather and location information. Demo
+                Weather Wise est une application météo et sport qui fournit à
+                l'utilisateur une évaluation de la qualité des conditions pour
+                sa pratique sportive choisie, calculée à l'aide d'un algorithme
+                basé sur certaines conditions météorologiques de sa localisation
+                actuelle. L'application utilise des API pour obtenir les
+                informations météo et de localisation actuelles. Live:
                 <a href="https://weatherwise.netlify.app/" target="_blank"
-                  >here</a
-                >, the FrontEnd GitHub repository can be found
+                  >ici</a
+                >, Le dépôt GitHub du frontend est disponible ici:
                 <a
                   href="https://github.com/Billy-Night/weather_wise_app"
                   target="_blank"
-                  >here</a
+                  >ici</a
                 >.
               </p>
               <h4>Technologies</h4>
@@ -268,25 +279,26 @@
               </ul>
             </div>
             <img
-              src="assets/lazyWeatherWisePreview-min.png"
-              alt="Screenshot of Weather Wise"
-              data-src="assets/weatherWisePreview.png"
+              src="/assets/lazyWeatherWisePreview-min.png"
+              alt="Capture d'écran de Weather Wise"
+              data-src="/assets/weatherWisePreview.png"
             />
           </article>
           <article>
             <div class="text">
-              <h4>Client Project</h4>
+              <h4>Projet de client</h4>
               <h3>TROWIT</h3>
               <p class="black-box">
-                The TROWIT project has been created to improve the transfer of
-                business and personal details between people. It fills this need
-                by passing user information digitally in the form of Business
-                Cards. The user can set-up an account and create their digital
-                business cards, they can then order these cards as physical
-                cards, which is a service TROWIT will provide. The user can
-                connect with other users via their cards with a URL link.
-                Apologies but the repository is private, I would be happy to
-                discuss the project on request.
+                Le projet TROWIT a été créé pour améliorer le transfert
+                d'informations professionnelles et personnelles entre les
+                personnes. Il répond à ce besoin en transmettant les
+                informations des utilisateurs sous forme de cartes de visite
+                numériques. L'utilisateur peut créer un compte et concevoir ses
+                cartes de visite numériques, puis les commander sous forme de
+                cartes physiques, un service que TROWIT proposera. L'utilisateur
+                peut se connecter avec d'autres utilisateurs via leurs cartes
+                grâce à un lien URL. Désolé, mais le dépôt est privé. Je serai
+                heureux de discuter du projet sur demande.
               </p>
               <h4>Technologies</h4>
               <ul>
@@ -302,9 +314,9 @@
               </ul>
             </div>
             <img
-              src="assets/lazyTROWIT.png"
-              alt="Screenshot of the TROWIT."
-              data-src="assets/TROWITScreenShot.png"
+              src="/assets/lazyTROWIT.png"
+              alt="Capture d'écran de TROWIT"
+              data-src="/assets/TROWITScreenShot.png"
             />
           </article>
         </div>
@@ -312,14 +324,14 @@
       <div class="gradient"></div>
       <section class="sections" id="contact">
         <div class="section-contact-container">
-          <h2>Contact me</h2>
+          <h2>Contactez-moi</h2>
           <p>
-            I'm always interested in hearing about new exciting projects in the
-            tech space.
+            Je suis toujours intéressé par les nouveaux projets passionnants
+            dans le domaine de la technologie.
           </p>
           <p>
             <a href="mailto:billy.m.nightingale@gmail.com" class="button"
-              >Email me</a
+              >Email moi</a
             >
           </p>
         </div>
@@ -328,7 +340,7 @@
       <section class="sections" id="footer">
         <footer>
           <h2>
-            <span>Billy Nightingale</span> &middot; <span>Web Developer</span>
+            <span>Billy Nightingale</span> &middot; <span>Développer web</span>
           </h2>
           <ul>
             <li>
@@ -352,7 +364,7 @@
             <li>
               <a href="mailto:billy.m.nightingale@gmail.com">
                 <span class="fa-solid fa-envelope" aria-hidden="true"></span>
-                <span><span class="sr-only">Email me</span></span>
+                <span><span class="sr-only">Email moi</span></span>
               </a>
             </li>
           </ul>

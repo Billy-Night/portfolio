@@ -428,13 +428,12 @@ nav [class*='fa-']:hover {
 
 /* Contact */
 
-#contact {
+.section-contact-container {
   text-align: center;
-  padding: 3rem 0;
 }
 
-#contact p:last-child {
-  margin-top: 3rem;
+.section-contact-container p {
+  margin: 50px;
 }
 
 /* Footer */
