@@ -20,11 +20,16 @@ const nav = document.querySelector('.nav')
 const allSelections = document.querySelectorAll('.sections')
 
 //~ Automatically detect language and redirect
-const userLang = navigator.language || navigator.userLanguage
-if (userLang.startsWith('fr')) {
-  // console.log('Redirected FR')
-  return (window.location.href = '/fr/index.html')
-}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const userLang = navigator.language || navigator.userLanguage
+  // console.log('User language detected:', userLang) // Debugging line
+
+  if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
+    sessionStorage.setItem('redirected', 'true')
+    window.location.href = '/fr/index.html'
+  }
+})
 
 //~ Smooth scrolling from intro to project sections
 
