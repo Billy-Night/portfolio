@@ -420,10 +420,11 @@ nav [class*='fa-']:hover {
 
 .bio-text {
   margin-bottom: 1%;
+  text-align: left;
+  justify-content: left;
 }
 
-.about-list li {
-  margin: 0;
+.section-about-container {
 }
 
 /* Contact */
