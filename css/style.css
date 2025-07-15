@@ -352,10 +352,6 @@ nav [class*='fa-']:hover {
   font-size: 2rem;
 }
 
-/* .projects h3 {
-  color: var(--gold);
-} */
-
 .black-box {
   /* opacity: 0.5; */
   background-color: var(--darkTrans);
@@ -416,6 +412,8 @@ nav [class*='fa-']:hover {
 }
 
 .projects img {
+  width: 100%;
+  height: auto;
   margin: 8% 0 8% 0;
   border-left: 1px solid var(--gold);
   border-top: 1px solid var(--gold);
@@ -429,9 +427,6 @@ nav [class*='fa-']:hover {
   margin-bottom: 1%;
   text-align: left;
   justify-content: left;
-}
-
-.section-about-container {
 }
 
 /* Contact */
