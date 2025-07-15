@@ -339,15 +339,22 @@ nav [class*='fa-']:hover {
   margin-bottom: cal(2.5rem * 1.5);
 }
 
-.projects h3 {
-  color: var(--gold);
-}
-
-.projects h4 {
+.projects-heading {
+  color: white;
   font-size: 1rem;
   font-family: var(--mono);
   margin: 0;
 }
+
+.projects-heading-name {
+  color: var(--gold);
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* .projects h3 {
+  color: var(--gold);
+} */
 
 .black-box {
   /* opacity: 0.5; */
