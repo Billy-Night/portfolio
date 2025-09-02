@@ -1,0 +1,28 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://billynightingale.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/"/>
+  </url>
+
+  <!-- About page -->
+  <url>
+    <loc>https://billynightingale.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/"/>
+  </url>
+
+  <!-- About page (French) -->
+  <url>
+    <loc>https://billynightingale.com/fr/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/"/>
+  </url>
+
+</urlset>
