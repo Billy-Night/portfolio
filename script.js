@@ -24,10 +24,13 @@ const allSelections = document.querySelectorAll('.sections')
 document.addEventListener('DOMContentLoaded', function () {
   try {
     const userLang = navigator.language || navigator.userLanguage
-    if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
-      sessionStorage.setItem('redirected', 'true')
-      window.location.href = '/fr/index.html'
+    if (userLang.startsWith('fr')) {
+      console.log('French language detected')
     }
+    // if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
+    //   sessionStorage.setItem('redirected', 'true')
+    //   window.location.href = '/fr/index.html'
+    // }
   } catch (error) {
     console.error('Language detection failed:', error)
   }
