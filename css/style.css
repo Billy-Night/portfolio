@@ -208,6 +208,7 @@ a:hover .social__icons {
 
 #intro .name {
   font-family: var(--mono);
+  font-size: 20px;
 }
 
 .name span {
