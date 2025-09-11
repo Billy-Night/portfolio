@@ -72,7 +72,6 @@ if (tabsContainer) {
 //~ Navbar fade animation
 
 const handlerHover = function (e) {
-  console.log(this)
   if (e.target.classList.contains('nav__link')) {
     const link = e.target
     //console.log(link);
