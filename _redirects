@@ -1,0 +1,8 @@
+# English pages
+/about          /about.html          200
+/               /index.html          200
+
+# French pages
+/fr             /fr/index.html       200
+/fr/            /fr/index.html       200
+/fr/a-propos    /fr/a-propos.html    200
