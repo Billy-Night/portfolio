@@ -427,6 +427,11 @@ a:hover .social__icons {
   margin: 50px;
 }
 
+.section-contact-container .btn {
+  margin: 10px;
+  font-size: 1rem;
+}
+
 /* Footer */
 
 footer {
