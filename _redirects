@@ -1,8 +1,10 @@
 # English pages
-/about          /about.html          200
-/               /index.html          200
+
+/index.html / 301!
+/about.html /about 301!
 
 # French pages
-/fr             /fr/index.html       200
-/fr/            /fr/index.html       200
-/fr/a-propos    /fr/a-propos.html    200
+
+/fr/index.html /fr/ 301!
+/fr/a-propos.html /fr/a-propos 301!
+/fr /fr/ 301!
