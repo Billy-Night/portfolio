@@ -22,19 +22,19 @@
   <!-- About page -->
   <url>
     <loc>https://billynightingale.com/about</loc>
-    <lastmod>2025-09-29</lastmod>
+    <lastmod>2025-10-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/about"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/"/>
   </url>
 
   <!-- About page (French) -->
   <url>
     <loc>https://billynightingale.com/fr/a-propos</loc>
-    <lastmod>2025-09-29</lastmod>
+    <lastmod>2025-10-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/about"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/"/>
   </url>
 
 </urlset>
