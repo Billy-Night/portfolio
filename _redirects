@@ -1,8 +1,6 @@
 # Domain redirects
 
-http://billynightingale.com/* https://www.billynightingale.com/:splat 301!
-
-https://billynightingale.com/* https://www.billynightingale.com/:splat 301
+billynightingale.com/* https://www.billynightingale.com/:splat 301!
 
 # English
 
