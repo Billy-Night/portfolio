@@ -3,38 +3,38 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://billynightingale.com/</loc>
+    <loc>https://www.billynightingale.com/</loc>
     <lastmod>2025-10-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/"/>
   </url>
 
   <!-- Homepage (French) -->
   <url>
-    <loc>https://billynightingale.com/fr/</loc>
+    <loc>https://www.billynightingale.com/fr/</loc>
     <lastmod>2025-10-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/"/>
   </url>
 
   <!-- About page -->
   <url>
-    <loc>https://billynightingale.com/about</loc>
+    <loc>https://www.billynightingale.com/about</loc>
     <lastmod>2025-10-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/about"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/about"/>
   </url>
 
   <!-- About page (French) -->
   <url>
-    <loc>https://billynightingale.com/fr/a-propos</loc>
+    <loc>https://www.billynightingale.com/fr/a-propos</loc>
     <lastmod>2025-10-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://billynightingale.com/about"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://billynightingale.com/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/about"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/about"/>
   </url>
 
 </urlset>

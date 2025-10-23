@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://billynightingale.com/sitemap.xml
+Sitemap: https://www.billynightingale.com/sitemap.xml
