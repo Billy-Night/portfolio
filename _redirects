@@ -5,10 +5,10 @@ https://billynightingale.com/*  https://www.billynightingale.com/:splat 301!
 
 # English
 
-/index.html / 301!
-/about.html /about 301!
+/index.html     /           301!
+/about.html     /about      301!
 
 # French
 
-/fr/index.html /fr/ 301!
-/fr/a-propos.html /fr/a-propos 301!
+/fr/index.html          /fr/            301!
+/fr/a-propos.html       /fr/a-propos    301!
