@@ -1,3 +1,2 @@
 /*
-  X-Forwarded-Proto: http
   Cache-Control: public, max-age=600, must-revalidate
