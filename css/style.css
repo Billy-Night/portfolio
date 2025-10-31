@@ -470,3 +470,14 @@ footer ul {
 footer p {
   font-size: 60%;
 }
+
+/* Legal Page */
+#legal_main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5% 2% 5% 2%;
+}
+
+#legal_main p {
+  font-size: 1.3rem;
+}
