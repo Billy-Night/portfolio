@@ -214,22 +214,24 @@ a:hover .social__icons {
 .name span {
   display: block;
   font-family: var(--sans);
-  font-size: 4rem;
+  font-size: 3.2rem;
   color: var(--gold);
 }
 
 #intro h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   .name span {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
+    line-height: 1.5;
   }
 
   #intro h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
   }
 }
 
