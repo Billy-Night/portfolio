@@ -232,7 +232,9 @@ a:hover .social__icons {
 
 @media screen and (max-width: 400px) {
   #intro {
-    height: 75vh;
+    height: 65vh;
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
   .name span {
     font-size: 2.2rem;
