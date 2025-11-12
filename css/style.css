@@ -201,6 +201,13 @@ a:hover .social__icons {
 
 /* intro */
 
+#intro {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #intro p {
   font-size: 1rem;
   line-height: 1.5;
