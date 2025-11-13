@@ -307,7 +307,15 @@ a:hover .social__icons {
   margin: 1rem 4rem 1rem 4rem;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
+  #offer {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .offers {
+    margin-top: 10%;
+  }
+
   .offers__tab {
     font-size: 0.5rem;
   }
@@ -326,7 +334,7 @@ a:hover .social__icons {
   }
 
   .section__title {
-    margin-bottom: 4%;
+    margin-bottom: 10%;
   }
 
   .section__title h3 {
