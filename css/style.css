@@ -252,11 +252,17 @@ a:hover .social__icons {
   margin-top: 5%;
 }
 
-/* Offer */
+/* Offer Section */
+
+/* #offer {
+  height: 70vh;
+} */
 
 .offers {
   max-width: 100%;
-  margin: 12% auto 0 auto;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  /*margin: 12% auto 0 auto; */
   background-color: var(--darkTrans);
   border-radius: 10px;
   padding-bottom: 2rem;
@@ -309,11 +315,11 @@ a:hover .social__icons {
 
 @media screen and (max-width: 400px) {
   #offer {
-    padding-top: 10%;
-    padding-bottom: 10%;
+    margin: 5% auto 5%;
   }
-  .offers {
-    margin-top: 10%;
+
+  #offer h3 {
+    margin-bottom: 30%;
   }
 
   .offers__tab {
