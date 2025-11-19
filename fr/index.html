@@ -16,7 +16,7 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://www.billynightingale.com/fr/" />
 
-    <!-- Language Hreflang -->
+    <!-- Language hreflang -->
     <link
       rel="alternate"
       hreflang="en"
@@ -34,7 +34,6 @@
     />
 
     <!-- Favicon -->
-
     <link
       rel="icon"
       type="image/png"
@@ -48,10 +47,10 @@
       sizes="180x180"
       href="/assets/favicon/apple-touch-icon.png"
     />
-    <meta name="apple-mobile-web-app-title" content="B.N" />
+    <meta name="apple-mobile-web-app-title" content="Billy" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-    <!-- Facebook Meta Tags -->
+    <!-- Facebook / Open Graph -->
     <meta property="og:url" content="https://www.billynightingale.com/fr/" />
     <meta property="og:type" content="site web" />
     <meta
@@ -67,7 +66,7 @@
     <meta property="og:image" content="/assets/metaPreview1200x627.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="627" />
-    <meta property="og:date" content="2022-12-19" />
+    <meta property="og:date" content="2022-11-19" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,8 +83,11 @@
       name="twitter:description"
       content="Découvrez mes projets et contactez-moi via mon portfolio personnel de développeur web. Vous trouverez mes projets et liens de contact sur la page d'accueil. Une courte biographie est disponible dans la section À propos."
     />
-    <meta name="twitter:image" content="/assets/metaPreview1200x627.png" />
-    <meta name="twitter:date" content="2022-12-19" />
+    <meta
+      name="twitter:image"
+      content="https://www.billynightingale.com/assets/metaPreview1200x627.png"
+    />
+    <meta name="twitter:date" content="2025-11-19" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -127,15 +129,7 @@
         <ul>
           <li>
             <a class="nav__link" href="/fr/" aria-label="Home">
-              <svg
-                class="social__icons"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-              >
-                <path
-                  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
-                />
-              </svg>
+              <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" />
             </a>
           </li>
           <li><a class="nav__link mini" href="/">EN</a></li>
@@ -153,6 +147,7 @@
             >
               <svg
                 class="social__icons"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 width="30"
@@ -172,6 +167,7 @@
               aria-label="GitHub"
               ><svg
                 class="social__icons"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -182,26 +178,38 @@
             </a>
           </li>
           <li>
-            <a class="btn nav__link" href="mailto:contact@billynightingale.com"
+            <a
+              class="btn nav__link"
+              href="mailto:contact@billynightingale.com"
+              aria-label="Email"
               >CV</a
             >
           </li>
+          <!-- <li>
+            <button class="hamburger-btn">
+              <img src="/assets/icons/ham_menu.svg" />
+            </button>
+          </li> -->
         </ul>
       </nav>
     </header>
     <!-- <button class="fa-solid fa-bars hamburger-menu"></button> -->
     <main>
       <section class="sections" id="intro">
-        <h1 class="name">
-          Bienvenue, je m'appelle <span>Billy Nightingale.</span>
+        <h1>
+          Des sites web modernes, rapides et optimisés SEO pour les entreprises
+          de Capbreton.
         </h1>
-        <h2>Je crée des applications et sites web à Capbreton</h2>
-        <p>Je conçois des sites modernes et optimisés pour le référencement.</p>
+        <h2>
+          Je suis <span class="name">Billy Nightingale</span>, développeur web
+          freelance, et j’accompagne les entreprises locales du sud-ouest de la
+          France pour construire une présence en ligne forte et professionnelle.
+        </h2>
         <p>
-          Actuellement, je travaille sur des projets en freelance et je suis
-          toujour à la recherche de clients'.
-          <button class="btn" id="btn-learn-more">En Savoir Plus</button>
+          Disponible pour de nouveaux projets en freelance, sur place ou à
+          distance.
         </p>
+        <button class="btn" id="btn-learn-more">Voir les projets</button>
       </section>
       <div class="gradient"></div>
       <section class="sections" id="offer">
@@ -238,7 +246,7 @@
             </p>
           </div>
           <div class="offers__content offers__content--2">
-            <h5 class="offers__header">Visualisez avant de construire</h5>
+            <h4 class="offers__header">Visualisez avant de construire</h4>
             <p>
               Grâce aux maquettes et prototypes interactifs, nous affinons votre
               vision, en garantissant un design convivial et axé sur la
@@ -246,7 +254,7 @@
             </p>
           </div>
           <div class="offers__content offers__content--3">
-            <h5 class="offers__header">Lancez avec confiance</h5>
+            <h4 class="offers__header">Lancez avec confiance</h4>
             <p>
               De la conception au déploiement, je livre un produit performant
               avec un support continu pour maintenir votre présence numérique
@@ -259,10 +267,135 @@
       <section class="sections projects" id="projects">
         <div class="section-project-container">
           <h2>Projets</h2>
-          <article>
+          <article class="project-info-container">
             <div class="text">
-              <h3 class="projects-heading">Dernier Projets</h3>
-              <h4 class="projects-heading-name">World Surf Journal</h4>
+              <h3 class="projects-heading heading-reverse">Client bien-être</h3>
+              <h4 class="projects-heading-name heading-reverse">
+                Sophro by Eve - sophrologue
+              </h4>
+              <div class="black-box">
+                <p>
+                  Eve-Marie avait besoin d’un site web pour lancer son activité
+                  de sophrologie et présenter ses services de manière claire et
+                  rassurante. J’ai créé un site personnalisé sous WordPress avec
+                  Elementor Pro, en mettant l’accent sur des couleurs douces,
+                  des mises en page simples et une expérience utilisateur
+                  fluide.
+                </p>
+                <p>Le projet comprend :</p>
+                <div class="project-task-list">
+                  <ul>
+                    <li>
+                      Un sitemap structuré et un design d’interface clair et
+                      épuré
+                    </li>
+                    <li>Une section blog pour le SEO à long terme</li>
+                    <li>
+                      Un système de réservation Calendly avec paiements en ligne
+                    </li>
+                    <li>
+                      Optimisation de la vitesse et bonnes pratiques pour le SEO
+                      technique
+                    </li>
+                    <li>
+                      Configuration complète de l’hébergement, de la sécurité,
+                      des sauvegardes et des outils d’analyse
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  Ce projet a permis de renforcer sa présence en ligne et
+                  d’offrir un moyen simple pour ses clients de réserver des
+                  séances.
+                </p>
+                <p>
+                  Cliquez ici pour voir le
+                  <a href="https://sophrobyeve.com/" target="_blank"
+                    >site web</a
+                  >
+                </p>
+              </div>
+              <h4 class="heading-reverse">Technologies</h4>
+              <ul class="project-tech-list">
+                <li>Wordpress</li>
+                <li>Elementor Pro</li>
+                <li>RankMath SEO</li>
+                <li>Hostinger</li>
+                <li>Calendly</li>
+              </ul>
+            </div>
+            <img
+              src="/assets/Eve-Marie_client_website.webp"
+              alt="Capture ecran eve-marie site web"
+              data-src="/assets/Eve-Marie_client_website.webp"
+              width="600"
+              height="300"
+            />
+          </article>
+          <article class="reverse project-info-container">
+            <div class="text">
+              <h3 class="projects-heading">E-Commerce</h3>
+              <h4 class="projects-heading-name">Turbulente - kombucha</h4>
+              <div class="black-box">
+                <p>
+                  J’ai créé le premier site e-commerce de Turbulentes pour
+                  vendre leur large gamme de kombuchas. C’était une belle
+                  opportunité de travailler avec une marque locale et innovante,
+                  étroitement liée à la culture surf du Pays Basque.
+                </p>
+                <p>Le projet comprend :</p>
+                <div class="project-task-list">
+                  <ul>
+                    <li>Un sitemap structuré et un design d’interface épuré</li>
+                    <li>
+                      Une boutique en ligne complète avec différents produits
+                    </li>
+                    <li>Système de paiement intégré</li>
+                    <li>
+                      Un design minimaliste avec de magnifiques visuels et
+                      animations.
+                    </li>
+                    <li>
+                      Configuration complète de l’URL et de l’hébergement,
+                      incluant le DNS et le SSL.
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  Ce projet a permis à Turbulente de passer en ligne et
+                  d’améliorer sa présence digitale.
+                </p>
+                <p>
+                  Cliquez ici pour voir le
+                  <a href="https://www.turbulente.fr/" target="_blank"
+                    >site web</a
+                  >
+                </p>
+              </div>
+              <h4>Technologies</h4>
+              <ul class="project-tech-list">
+                <li>Wix</li>
+                <li>Wix studio</li>
+                <li>Google console</li>
+                <li>Google analytics</li>
+                <li>Figma</li>
+              </ul>
+            </div>
+            <img
+              src="/assets/turbulente_client_website.webp"
+              alt="Capture ecran turbulente"
+              data-src="/assets/turbulente_client_website.webp"
+              width="600"
+              height="300"
+            />
+          </article>
+          <h2>Web Applications</h2>
+          <article class="project-info-container">
+            <div class="text">
+              <h3 class="projects-heading heading-reverse">Full-Stack</h3>
+              <h4 class="projects-heading-name heading-reverse">
+                World Surf Journal
+              </h4>
               <p class="black-box">
                 Le World Surf Journal est une application web qui permet à
                 l'utilisateur de créer un compte et d'enregistrer ses voyages de
@@ -271,9 +404,7 @@
                 ses voyages de surf. Il s'agit d'une application fullstack
                 composée d'un frontend, d'un backend et d'une base de données.
                 Découvrez la déployée
-                <a
-                  href="https://worldsurfjournal-production-91bf.up.railway.app/"
-                  target="_blank"
+                <a href="https://worldsurfjournal.netlify.app" target="_blank"
                   >web app</a
                 >. Le dépôt du frontend est disponible sur
                 <a
@@ -290,7 +421,7 @@
                 >.
               </p>
               <h4>Technologies</h4>
-              <ul>
+              <ul class="project-tech-list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
@@ -308,7 +439,7 @@
               height="300"
             />
           </article>
-          <article class="reverse">
+          <article class="reverse project-info-container">
             <div class="text">
               <h3 class="projects-heading">Projet frontend</h3>
               <h4 class="projects-heading-name">Weather Wise</h4>
@@ -330,7 +461,7 @@
                 >.
               </p>
               <h4>Technologies</h4>
-              <ul>
+              <ul class="project-tech-list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
@@ -346,10 +477,10 @@
               height="300"
             />
           </article>
-          <article>
+          <article class="project-info-container">
             <div class="text">
-              <h3 class="projects-heading">Projet de client</h3>
-              <h4 class="projects-heading-name">TROWIT</h4>
+              <h3 class="projects-heading heading-reverse">Projet de client</h3>
+              <h4 class="projects-heading-name heading-reverse">TROWIT</h4>
               <p class="black-box">
                 Le projet TROWIT a été créé pour améliorer le transfert
                 d'informations professionnelles et personnelles entre les
@@ -362,8 +493,8 @@
                 grâce à un lien URL. Désolé, mais le dépôt est privé. Je serai
                 heureux de discuter du projet sur demande.
               </p>
-              <h4>Technologies</h4>
-              <ul>
+              <h4 class="heading-reverse">Technologies</h4>
+              <ul class="project-tech-list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
@@ -371,8 +502,6 @@
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>MySQL</li>
-                <li>Figma</li>
-                <li>Jira</li>
               </ul>
             </div>
             <img

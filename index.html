@@ -7,6 +7,7 @@
     <title>Billy Nightingale | Web Developer Portfolio</title>
     <meta name="author" content="Billy Nightingale" />
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Portfolio of Billy Nightingale, freelance web developer and designer based in Landes & Pays Basque, France. Explore modern projects, bio, and contact details."
@@ -31,6 +32,7 @@
       hreflang="x-default"
       href="https://www.billynightingale.com/"
     />
+
     <!-- Favicon -->
     <link
       rel="icon"
@@ -45,7 +47,7 @@
       sizes="180x180"
       href="/assets/favicon/apple-touch-icon.png"
     />
-    <meta name="apple-mobile-web-app-title" content="B.N" />
+    <meta name="apple-mobile-web-app-title" content="Billy" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
     <!-- Facebook / Open Graph -->
@@ -67,6 +69,7 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="627" />
+    <meta property="og:date" content="2025-11-19" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,6 +87,7 @@
       name="twitter:image"
       content="https://www.billynightingale.com/assets/metaPreview1200x627.png"
     />
+    <meta name="twitter:date" content="2025-11-19" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -93,13 +97,13 @@
       media="print"
       onload="this.media='all'"
     />
-
     <noscript>
       <link
         href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap"
         rel="stylesheet"
       />
     </noscript>
+
     <link href="/css/style.css" rel="stylesheet" />
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
     <script defer src="/script.js"></script>
@@ -125,15 +129,7 @@
         <ul>
           <li>
             <a class="nav__link" href="/" aria-label="Home">
-              <svg
-                class="social__icons"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-              >
-                <path
-                  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
-                />
-              </svg>
+              <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" />
             </a>
           </li>
           <li><a class="nav__link mini" href="/fr/">FR</a></li>
@@ -187,22 +183,26 @@
               >Resume</a
             >
           </li>
+          <!-- <li>
+            <button class="hamburger-btn">
+              <img src="/assets/icons/ham_menu.svg" />
+            </button>
+          </li> -->
         </ul>
       </nav>
     </header>
     <main>
       <section class="sections" id="intro">
-        <h1 class="name">Welcome! I'm <span>Billy Nightingale.</span></h1>
-        <h2>A web developer based in Capbreton.</h2>
-        <p>
-          I design modern, SEO-optimised websites for small businesses in
-          southwest France.
-        </p>
-        <p>
-          Currently, I'm working as a freelance developer and also interested to
-          hear about projects.
-          <button class="btn" id="btn-learn-more">Learn More</button>
-        </p>
+        <h1>
+          Modern, fast, SEO-optimised websites for businesses in Capbreton
+        </h1>
+        <h2>
+          I'm <span class="name">Billy Nightingale,</span> a freelance web
+          developer helping local businesses in southwest France build a strong
+          and professional online presence.
+        </h2>
+        <p>Available for new freelance projects, locally or remote.</p>
+        <button class="btn" id="btn-learn-more">View Projects</button>
       </section>
       <div class="gradient"></div>
       <section class="sections" id="offer">
@@ -256,11 +256,120 @@
       <div class="gradient"></div>
       <section class="sections projects" id="projects">
         <div class="section-project-container">
-          <h2>Projects</h2>
-          <article>
+          <h2>Client Projects</h2>
+          <article class="project-info-container">
             <div class="text">
-              <h3 class="projects-heading">Latest Project</h3>
-              <h4 class="projects-heading-name">World Surf Journal</h4>
+              <h3 class="projects-heading heading-reverse">Wellness Client</h3>
+              <h4 class="projects-heading-name heading-reverse">
+                Sophro by Eve - sophrologue
+              </h4>
+              <div class="black-box">
+                <p>
+                  Eve-Marie needed a website to launch her sophrology practice
+                  and present her services in a clear, reassuring way. I created
+                  a custom WordPress website with Elementor Pro, focusing on
+                  soft colours, simple layouts, and a smooth user experience.
+                </p>
+                <p>The project includes:</p>
+                <div class="project-task-list">
+                  <ul>
+                    <li>A structured sitemap and clean UI design</li>
+                    <li>Blog section for long-term SEO</li>
+                    <li>Calendly booking system with online payments</li>
+                    <li>
+                      Speed optimisation and best practices for technical SEO
+                    </li>
+                    <li>
+                      Full setup of hosting, security, backups, and analytics
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  This project helped strengthen her brand online and provide an
+                  easy way for clients to book sessions.
+                </p>
+                <p>
+                  Click here to see the
+                  <a href="https://sophrobyeve.com/" target="_blank">website</a>
+                </p>
+              </div>
+              <h4 class="heading-reverse">Technologies</h4>
+              <ul class="project-tech-list">
+                <li>Wordpress</li>
+                <li>Elementor Pro</li>
+                <li>Rank Math SEO</li>
+                <li>Hostinger</li>
+                <li>Calendly</li>
+              </ul>
+            </div>
+            <img
+              src="/assets/Eve-Marie_client_website.webp"
+              alt="Screenshot of Weather Wise"
+              data-src="/assets/Eve-Marie_client_website.webp"
+              width="600"
+              height="300"
+            />
+          </article>
+          <article class="reverse project-info-container">
+            <div class="text">
+              <h3 class="projects-heading">E-Commerce</h3>
+              <h4 class="projects-heading-name">Turbulente - kombucha</h4>
+              <div class="black-box">
+                <p>
+                  I created Turbulentes first E-Commerce website to sell their
+                  wide range of kombucha's, it was an exciting opportunity to
+                  work with a local innovative brand, entwined in the surf
+                  culture of the Pays Basque region.
+                </p>
+                <p>The project includes:</p>
+                <div class="project-task-list">
+                  <ul>
+                    <li>A structured sitemap and clean UI design</li>
+                    <li>Full online shop with different products</li>
+                    <li>Integrated Payment system</li>
+                    <li>
+                      Minimalist design with beautiful graphics and animation.
+                    </li>
+                    <li>
+                      Full setup of URL and hosting, including DNS and SSL.
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  This project brought Turbulente online and improved their
+                  digital presence.
+                </p>
+                <p>
+                  Click here to see the
+                  <a href="https://www.turbulente.fr/" target="_blank"
+                    >website</a
+                  >
+                </p>
+              </div>
+              <h4>Technologies</h4>
+              <ul class="project-tech-list">
+                <li>Wix</li>
+                <li>Wix studio</li>
+                <li>Google console</li>
+                <li>Google analytics</li>
+                <li>Figma</li>
+              </ul>
+            </div>
+            <img
+              src="/assets/turbulente_client_website.webp"
+              alt="Screenshot of Weather Wise"
+              data-src="assets/turbulente_client_website.webp"
+              width="600"
+              height="300"
+            />
+          </article>
+          <h2>Web Applications</h2>
+          <article class="project-info-container">
+            <div class="text">
+              <h3 class="projects-heading heading-reverse">Full-Stack</h3>
+              <h4 class="projects-heading-name heading-reverse">
+                World Surf Journal
+              </h4>
               <p class="black-box">
                 The World Surf Journal is a web application that allows the user
                 to register an account and save their surf trips with various
@@ -284,7 +393,7 @@
                 >.
               </p>
               <h4>Technologies</h4>
-              <ul>
+              <ul class="project-tech-list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
@@ -295,14 +404,14 @@
               </ul>
             </div>
             <img
-              src="assets/lazyWorldSurfJournalScreenShot-min.png"
+              src="/assets/lazyWorldSurfJournalScreenShot-min.png"
               alt="Screenshot of the world surf journal."
-              data-src="assets/worldSurfJournalScreenShot.png"
+              data-src="/assets/worldSurfJournalScreenShot.png"
               width="600"
               height="300"
             />
           </article>
-          <article class="reverse">
+          <article class="reverse project-info-container">
             <div class="text">
               <h3 class="projects-heading">Frontend Project</h3>
               <h4 class="projects-heading-name">Weather Wise</h4>
@@ -324,7 +433,7 @@
                 >.
               </p>
               <h4>Technologies</h4>
-              <ul>
+              <ul class="project-tech-list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
@@ -333,17 +442,17 @@
               </ul>
             </div>
             <img
-              src="assets/lazyWeatherWisePreview-min.png"
+              src="/assets/lazyWeatherWisePreview-min.png"
               alt="Screenshot of Weather Wise"
-              data-src="assets/weatherWisePreview.png"
+              data-src="/assets/weatherWisePreview.png"
               width="600"
               height="300"
             />
           </article>
-          <article>
+          <article class="project-info-container">
             <div class="text">
-              <h3 class="projects-heading">Client Project</h3>
-              <h4 class="projects-heading-name">TROWIT</h4>
+              <h3 class="projects-heading heading-reverse">Client Project</h3>
+              <h4 class="projects-heading-name heading-reverse">TROWIT</h4>
               <p class="black-box">
                 The TROWIT project has been created to improve the transfer of
                 business and personal details between people. It fills this need
@@ -355,8 +464,8 @@
                 Apologies but the repository is private, I would be happy to
                 discuss the project on request.
               </p>
-              <h4>Technologies</h4>
-              <ul>
+              <h4 class="heading-reverse">Technologies</h4>
+              <ul class="project-tech-list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
@@ -364,14 +473,12 @@
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>MySQL</li>
-                <li>Figma</li>
-                <li>Jira</li>
               </ul>
             </div>
             <img
-              src="assets/lazyTROWIT.png"
+              src="/assets/lazyTROWIT.png"
               alt="Screenshot of the TROWIT."
-              data-src="assets/TROWITScreenShot.png"
+              data-src="/assets/TROWITScreenShot.png"
               width="600"
               height="300"
             />
@@ -447,8 +554,8 @@
               </a>
             </li>
           </ul>
-          <p>&copy; 2021 Billy Nightingale. All rights reserved.</p>
           <a href="terms-and-conditions">Terms and Conditions</a>
+          <p>&copy; 2021 Billy Nightingale. All rights reserved.</p>
         </footer>
       </section>
     </main>
