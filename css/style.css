@@ -223,6 +223,12 @@ a:hover .social__icons {
   overflow: hidden;
 }
 
+@media screen and (max-width: 800px) {
+  .mob__hide {
+    display: none;
+  }
+}
+
 /* All sections generic */
 .sections {
   max-width: 1200px;
