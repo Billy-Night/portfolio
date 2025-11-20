@@ -246,7 +246,7 @@ a:hover .social__icons {
 /* intro */
 
 #intro {
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -277,7 +277,7 @@ a:hover .social__icons {
 #intro button {
   display: block;
   margin-top: 5%;
-  max-width: 130px;
+  max-width: 150px;
 }
 
 /* Small Laptop  */
@@ -319,12 +319,11 @@ a:hover .social__icons {
   #intro {
     padding-top: 0px;
     padding-bottom: 0px;
-    height: 70vh;
   }
 
   #intro h1 {
     font-size: var(--fs-5);
-    max-width: 80%;
+    max-width: 90%;
   }
 
   #intro h2 {
