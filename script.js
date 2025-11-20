@@ -112,7 +112,7 @@ const revealSection = function (entries, observer) {
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null, // Observe intersection with the view port,
   threshold: 0, // Trigger when 15% of the element is visible
-  rootMargin: '-100px 0px 0px 0px',
+  rootMargin: '-150px 0px 0px 0px',
 })
 
 allSelections.forEach(function (section) {

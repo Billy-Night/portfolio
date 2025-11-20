@@ -246,7 +246,7 @@ a:hover .social__icons {
 /* intro */
 
 #intro {
-  height: 85vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
