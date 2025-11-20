@@ -235,12 +235,12 @@ a:hover .social__icons {
   margin: 0 auto var(--space-6) auto;
   padding-top: var(--space-8);
   padding-bottom: var(--space-8);
-  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 2s;
 }
 
 .sections--hidden {
   opacity: 0;
-  transform: translateY(8rem);
+  transform: translateY(6rem);
 }
 
 /* intro */

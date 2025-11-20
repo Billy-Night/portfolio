@@ -94,7 +94,7 @@ nav.addEventListener('mouseout', handlerHover.bind(1))
 
 //* Logic to reveal the sections, the function takes in the entries array and the observer object (define by use below)
 const revealSection = function (entries, observer) {
-  //console.log(entries)
+  // console.log(entries)
   entries.forEach((entry) => {
     // This is a guard to stop the function if the entry is not intersecting
     if (!entry.isIntersecting) {
@@ -111,7 +111,8 @@ const revealSection = function (entries, observer) {
 // The revealSection is the callback function that executes when the observed element meets the threshold defined in the object.
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null, // Observe intersection with the view port,
-  threshold: 0.1, // Trigger when 15% of the element is visible
+  threshold: 0, // Trigger when 15% of the element is visible
+  rootMargin: '-100px 0px 0px 0px',
 })
 
 allSelections.forEach(function (section) {
