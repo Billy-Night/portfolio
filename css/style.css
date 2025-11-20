@@ -246,7 +246,7 @@ a:hover .social__icons {
 /* intro */
 
 #intro {
-  min-height: 90vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -281,14 +281,14 @@ a:hover .social__icons {
 }
 
 /* Small Laptop  */
-@media screen and (max-width: 1300px) {
+@media screen and (min-width: 800px) and (max-width: 1250px) {
   .sections {
     margin-left: var(--space-5);
     margin-right: var(--space-5);
   }
 
   #intro {
-    height: 80vh;
+    min-height: 80vh;
   }
 
   #intro h1 {
@@ -307,18 +307,42 @@ a:hover .social__icons {
 }
 
 /* Tablet  */
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 440px) and (max-width: 800px) {
+  #intro {
+    min-height: 80vh;
+  }
+
+  .sections {
+    margin-left: var(--space-5);
+    margin-right: var(--space-5);
+  }
+
   #intro h1 {
-    font-size: var(--fs-7);
+    font-size: var(--fs-6);
     max-width: 80%;
+  }
+
+  #intro h2 {
+    font-size: var(--fs-3);
+    max-width: 90%;
+  }
+
+  #intro .name {
+    font-size: var(--fs-6);
   }
 }
 
 /* Mobile */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   #intro {
+    min-height: 75vh;
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+
+  .sections {
+    margin-left: var(--space-4);
+    margin-right: var(--space-4);
   }
 
   #intro h1 {
