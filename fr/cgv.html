@@ -87,31 +87,17 @@
       <nav class="nav">
         <ul>
           <li>
-            <a class="nav__link" href="/" aria-label="Home">
-              <svg
-                class="social__icons"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-              >
-                <path
-                  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
-                />
-              </svg>
+            <a class="nav__link" href="/fr/" aria-label="Home">
+              <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" />
             </a>
           </li>
-          <li>
-            <a class="nav__link mini" href="/terms-and-conditions">EN</a>
-          </li>
-          <li>
-            <a class="nav__link mini" href="/fr/#projects">Projets</a>
-          </li>
+          <li><a class="nav__link mini" href="/">EN</a></li>
+          <li><a class="nav__link mini" href="/fr/#projects">Projets</a></li>
           <li>
             <a class="nav__link mini" href="/fr/a-propos">À Propos</a>
           </li>
-          <li>
-            <a class="nav__link mini" href="/fr/#contact">Contact</a>
-          </li>
-          <li>
+          <li><a class="nav__link mini" href="/fr/#contact">Contact</a></li>
+          <li class="mob__hide">
             <a
               class="nav__link"
               href="https://www.linkedin.com/in/billynightingale/"
@@ -120,6 +106,7 @@
             >
               <svg
                 class="social__icons"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 width="30"
@@ -131,7 +118,7 @@
               </svg>
             </a>
           </li>
-          <li>
+          <li class="mob__hide">
             <a
               class="nav__link"
               href="https://github.com/Billy-Night"
@@ -139,6 +126,7 @@
               aria-label="GitHub"
               ><svg
                 class="social__icons"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -148,11 +136,19 @@
               </svg>
             </a>
           </li>
-          <li>
-            <a class="btn nav__link" href="mailto:contact@billynightingale.com"
+          <li class="mob__hide">
+            <a
+              class="btn nav__link"
+              href="mailto:contact@billynightingale.com"
+              aria-label="Email"
               >CV</a
             >
           </li>
+          <!-- <li>
+            <button class="hamburger-btn">
+              <img src="/assets/icons/ham_menu.svg" />
+            </button>
+          </li> -->
         </ul>
       </nav>
     </header>
