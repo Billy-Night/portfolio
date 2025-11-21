@@ -69,15 +69,6 @@ h3 {
 
 /* Images */
 
-.portrait {
-  max-width: 50%;
-  height: auto;
-}
-
-.lazy-img {
-  filter: blur(2px);
-}
-
 img {
   width: 100%;
   transition: filter 0.2s;
@@ -566,6 +557,22 @@ a:hover .social__icons {
 }
 
 /* About Page */
+
+.portrait {
+  max-width: 60%;
+  height: auto;
+}
+
+.lazy-img {
+  filter: blur(2px);
+}
+
+@media screen and (max-width: 800px) {
+  .portrait {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 .bio-text {
   margin-bottom: 1%;
