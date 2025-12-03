@@ -18,6 +18,105 @@ const navHeight = header.getBoundingClientRect().height
 const nav = document.querySelector('.nav')
 //* All sections
 const allSelections = document.querySelectorAll('.sections')
+const clientFormReason = document.querySelector('#reason')
+const clientFormProjectFields = document.querySelector('#form-project-fields')
+const clientContactForm = document.querySelector('#contact-form')
+const clientContactFormSeo = document.querySelector('#seo-objective-form')
+const clientContactFormSeoBudget = document.querySelector('#SEO-budget-form')
+const cFPrefTimWeb = document.querySelector('#pref-time-website')
+const clientContFormWebBud = document.querySelector('#website-budget-form')
+const cFPrefTimSeo = document.querySelector('#pref-time-seo')
+
+//* Contact page
+const contactScrollIcon = document.querySelector('#contact-icon-scroll')
+const statusElPass = document.querySelector('.form-status-pass')
+const statusElError = document.querySelector('.form-status-error')
+
+if (clientFormReason) {
+  clientFormReason.addEventListener('change', function () {
+    const useChoice = clientFormReason.value
+    if (useChoice !== 'general-question') {
+      clientFormProjectFields.classList.remove('hide-element')
+    } else {
+      clientFormProjectFields.classList.add('hide-element')
+    }
+    if (useChoice !== 'seo') {
+      // Show website options
+      clientContFormWebBud.classList.replace('hide-element', 'form-group')
+      cFPrefTimWeb.classList.replace('hide-element', 'form-group')
+      // Hide SEO options
+      clientContactFormSeo.classList.replace('form-group', 'hide-element')
+      clientContactFormSeoBudget.classList.replace('form-group', 'hide-element')
+      cFPrefTimSeo.classList.replace('form-group', 'hide-element')
+    } else {
+      // Hide website options
+      clientContFormWebBud.classList.replace('form-group', 'hide-element')
+      cFPrefTimWeb.classList.replace('form-group', 'hide-element')
+      // Show SEO options
+      clientContactFormSeo.classList.replace('hide-element', 'form-group')
+      clientContactFormSeoBudget.classList.replace('hide-element', 'form-group')
+      cFPrefTimSeo.classList.replace('hide-element', 'form-group')
+    }
+  })
+}
+
+const MAKE_WEBHOOK_URL =
+  'https://hook.eu1.make.com/1sbn8f4mnouwqh6ea5afdbu3lqtn3iy5'
+
+if (clientContactForm) {
+  clientContactForm.addEventListener('submit', async (e) => {
+    e.preventDefault() // Stop the normal POST + redirects
+    const form = e.target
+    const formData = new FormData(form) // grabs all inputs
+
+    // console.log([...formData.entries()])
+
+    // get all selected SEO features
+    const seoFeatures = formData.getAll('seo-features[]')
+
+    // join them into a single string for Make
+    const seoFeaturesJoined = seoFeatures.join(', ')
+
+    // add extra field just for Make
+    formData.set('seo-features-joined', seoFeaturesJoined)
+
+    // console.log([...formData.entries()])
+
+    //Optional: small UX touch
+    // statusEl.textContent = 'Sending....'
+
+    // console.log('Form Submitted')
+
+    try {
+      if (formData.get('web-check') != '') {
+        throw new Error('Bot detected with web check')
+      }
+      const response = await fetch(MAKE_WEBHOOK_URL, {
+        method: 'POST',
+        body: formData, // Make webhooks accept form-data just fine
+      })
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+
+      // Success: stay on the same page
+      statusElError.classList.add('hide-element')
+      statusElPass.classList.remove('hide-element')
+      form.reset()
+    } catch (error) {
+      console.error(error)
+      statusElPass.classList.add('hide-element')
+      statusElError.classList.remove('hide-element')
+    }
+  })
+}
+
+if (contactScrollIcon) {
+  contactScrollIcon.addEventListener('click', () => {
+    clientContactForm.scrollIntoView({ behavior: 'smooth' })
+  })
+}
 
 //~ Automatically detect language and redirect
 
@@ -154,7 +253,7 @@ const imgTargets = document.querySelectorAll('img[data-src]')
 
 const loadImg = function (entries, observer) {
   const [entry] = entries
-  //console.log(entry)
+  // console.log(entry)
 
   if (!entry.isIntersecting) return
 

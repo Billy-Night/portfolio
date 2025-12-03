@@ -33,13 +33,7 @@
     />
 
     <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="icon" href="/assets/favicon/favicon.svg" sizes="32x32" />
     <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -120,6 +114,38 @@
 
       gtag('config', 'G-LVZ55QWZGE')
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Billy Nightingale",
+        "jobTitle": "Web Design & SEO",
+        "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
+        "url": "https://www.billynightingale.com/",
+        "sameAs": [
+          "https://www.linkedin.com/in/billynightingale/",
+          "https://github.com/Billy-Night"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Capbreton",
+          "addressRegion": "Landes",
+          "addressCountry": "FR"
+        },
+        "areaServed": ["Capbreton", "Hossegor", "Landes", "Pays Basque"],
+        "knowsAbout": [
+          "web design",
+          "website creation",
+          "WordPress",
+          "SEO",
+          "search engine optimization",
+          "local SEO",
+          "business websites",
+          "e-commerce websites",
+          "web development"
+        ]
+      }
+    </script>
   </head>
 
   <body>
@@ -134,7 +160,7 @@
           <li><a class="nav__link mini" href="/fr/">FR</a></li>
           <li><a class="nav__link mini" href="#projects">Projects</a></li>
           <li><a class="nav__link mini" href="about">About</a></li>
-          <li><a class="nav__link mini" href="#contact">Contact</a></li>
+          <li><a class="nav__link mini" href="contact">Contact</a></li>
           <li class="mob__hide">
             <a
               class="nav__link"
@@ -174,14 +200,14 @@
               </svg>
             </a>
           </li>
-          <li class="mob__hide">
+          <!-- <li class="mob__hide">
             <a
               class="btn nav__link"
               href="mailto:contact@billynightingale.com"
               aria-label="Email"
               >CV</a
             >
-          </li>
+          </li> -->
           <!-- <li>
             <button class="hamburger-btn">
               <img src="/assets/icons/ham_menu.svg" />
@@ -191,10 +217,22 @@
       </nav>
     </header>
     <main>
-      <section class="sections" id="intro">
-        <h1>
-          Modern, fast, SEO-optimised websites for businesses in Capbreton
-        </h1>
+      <section class="sections home-hero" id="intro">
+        <div class="home-hero-text-container">
+          <h1>
+            Creating modern, fast, SEO-optimised websites for businesses in
+            Capbreton
+          </h1>
+        </div>
+        <img
+          class="contact-icon-down-scroll"
+          id="home-icon-scroll-down"
+          src="assets/icons/down_scroll_arrow.svg"
+          alt="icon down scroll"
+        />
+      </section>
+      <div class="gradient"></div>
+      <section class="sections sec-home-intro">
         <h2>
           I'm <span class="name">Billy Nightingale,</span> a freelance web
           developer helping local businesses in southwest France build a strong
@@ -302,9 +340,9 @@
               </ul>
             </div>
             <img
-              src="/assets/Eve-Marie_client_website.webp"
+              src="assets/Eve-Marie_client_website.webp"
               alt="Screenshot of Weather Wise"
-              data-src="/assets/Eve-Marie_client_website.webp"
+              data-src="assets/Eve-Marie_client_website.webp"
               width="600"
               height="300"
             />

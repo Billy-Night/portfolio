@@ -5,7 +5,8 @@
   --darkGreen: #28403d;
   --lightGray: #455559;
   --darkGray: #2f3d40;
-  --lightBlue: #3d5a73;
+  --lightBlue: linear-gradient(135deg, #3d5a73 0%, #2a3f52 50%, #162630 100%);
+  /* --lightBlue: #3d5a73; */
   --gold: #d9b282;
   --white: #f7f8fa;
   --mono: 'Oxygen mono', monospace;
@@ -32,6 +33,9 @@
   --fs-7: 3.05rem; /* hero subheading */
   --fs-8: 3.81rem; /* hero heading */
   --fs-9: 4.77rem; /* big hero heading */
+  --fs-10: 5.96rem;
+  --fs-11: 7.45rem;
+  --fs-12: 9.31rem;
 }
 /* border box model: https://css-tricks.com/box-sizing/ */
 html,
@@ -52,7 +56,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--sans);
-  background-color: var(--lightBlue);
+  background: var(--lightBlue);
   color: var(--white);
   font-size: var(--font-size);
 }
@@ -234,42 +238,42 @@ a:hover .social__icons {
   transform: translateY(6rem);
 }
 
-/* intro */
+/* Home Hero */
 
-#intro {
-  min-height: 75vh;
+.home-hero {
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
-#intro h1 {
+.home-hero-text-container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.home-hero h1 {
+  text-align: center;
   font-family: var(--sans);
-  font-size: var(--fs-8);
-  max-width: 50%;
-  margin-bottom: var(--space-7);
+  font-size: clamp(var(--fs-7), 5vw, var(--fs-12));
+  line-height: 1.1;
+  color: white;
+  font-weight: 300;
 }
 
-#intro h2 {
-  font-size: var(--fs-4);
-  font-weight: normal;
+#hero-heading-fr {
+  font-size: clamp(var(--fs-6), 4.5vw, var(--fs-11));
 }
 
-#intro .name {
-  font-family: var(--sans);
-  font-size: var(--fs-8);
-  color: var(--gold);
+.home-hero h2 {
+  text-align: center;
+  margin-top: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(var(--fs-3), 2.2vw, var(--fs-5));
+  line-height: 1.3;
+  color: white;
 }
 
-#intro p {
-  line-height: 1.5;
-}
-
-#intro button {
-  display: block;
-  margin-top: 5%;
-  max-width: 150px;
-}
+/* Responsive sections */
 
 /* Small Laptop  */
 @media screen and (min-width: 800px) and (max-width: 1250px) {
@@ -277,77 +281,54 @@ a:hover .social__icons {
     margin-left: var(--space-5);
     margin-right: var(--space-5);
   }
-
-  #intro {
-    min-height: 80vh;
-  }
-
-  #intro h1 {
-    font-size: var(--fs-6);
-    max-width: 70%;
-  }
-
-  #intro h2 {
-    font-size: var(--fs-3);
-    max-width: 90%;
-  }
-
-  #intro .name {
-    font-size: var(--fs-6);
-  }
 }
 
 /* Tablet  */
 @media screen and (min-width: 440px) and (max-width: 800px) {
-  #intro {
-    min-height: 80vh;
-  }
-
   .sections {
     margin-left: var(--space-5);
     margin-right: var(--space-5);
-  }
-
-  #intro h1 {
-    font-size: var(--fs-6);
-    max-width: 80%;
-  }
-
-  #intro h2 {
-    font-size: var(--fs-3);
-    max-width: 90%;
-  }
-
-  #intro .name {
-    font-size: var(--fs-6);
   }
 }
 
 /* Mobile */
 @media screen and (max-width: 440px) {
-  #intro {
-    min-height: 75vh;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
   .sections {
     margin-left: var(--space-4);
     margin-right: var(--space-4);
   }
+}
 
-  #intro h1 {
-    font-size: var(--fs-5);
-    max-width: 90%;
-  }
+/* Home intro section  */
 
-  #intro h2 {
-    font-size: var(--fs-2);
-  }
+.sec-home-intro {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  #intro .name {
-    font-size: var(--fs-5);
-  }
+.name {
+  font-family: var(--sans);
+  font-size: clamp(var(--fs-5), 3.5vw, var(--fs-8));
+  color: var(--gold);
+}
+
+.sec-home-intro h2 {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.sec-home-intro p {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: var(--fs-3);
+}
+
+.sec-home-intro button {
+  display: block;
+  margin: 5% auto 5% auto;
+  max-width: 150px;
 }
 
 /* Services Section */
@@ -469,8 +450,8 @@ a:hover .social__icons {
 }
 
 .project-info-container {
-  margin-top: var(--space-5);
-  margin-bottom: var(--space-5);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-12);
 }
 
 .black-box {
@@ -661,4 +642,139 @@ footer p {
 
 #legal_main p {
   font-size: 1.3rem;
+}
+
+/* contact page */
+
+.contact-hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-hero-text-container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.contact-hero h1 {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: clamp(var(--fs-7), 4vw, var(--fs-9));
+  line-height: 1.1;
+  color: white;
+}
+
+.contact-hero h2 {
+  text-align: center;
+  margin-top: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(var(--fs-3), 2.2vw, var(--fs-5));
+  line-height: 1.3;
+  color: white;
+}
+
+.contact-icon-down-scroll {
+  width: 50px;
+  height: 50px;
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.sec-contact-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact-form-container {
+  /* background-color: var(--dark); */
+  /* background-color: #e0cca1; */
+  /* background: linear-gradient(135deg, #f7f3ee 0%, #e6dccf 50%, #e0cca1 100%); */
+  background: linear-gradient(135deg, #f7f3ee 0%, #eae2d5 50%, #e5d7bd 100%);
+  color: black;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 50px 30px 50px;
+  position: relative;
+  width: 80%;
+  height: auto;
+  border: 1px solid rgb(191, 137, 117);
+  box-sizing: border-box;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 1), 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.3); */
+}
+
+@media screen and (max-width: 600px) {
+  .contact-form-container {
+    width: 100%;
+    padding: 20px 30px 20px 30px;
+  }
+}
+
+.contact-form-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-family: var(--sans);
+  font-size: 1.8rem;
+}
+
+#contact-form {
+  /* background-color: red; */
+  width: 100%;
+}
+
+.form-group {
+  margin: 20px auto 20px auto;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--sans);
+}
+
+.form-group label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.form-group select {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 1rem;
+}
+
+.form-group select:active {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.form-group textarea {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 1rem;
 }
