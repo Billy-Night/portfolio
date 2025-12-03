@@ -34,13 +34,7 @@
     />
 
     <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="icon" href="/assets/favicon/favicon.svg" sizes="32x32" />
     <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -121,6 +115,37 @@
 
       gtag('config', 'G-LVZ55QWZGE')
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Billy Nightingale",
+        "jobTitle": "Création de site web & SEO",
+        "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
+        "url": "https://www.billynightingale.com/fr/",
+        "sameAs": [
+          "https://www.linkedin.com/in/billynightingale/",
+          "https://github.com/Billy-Night"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Capbreton",
+          "addressRegion": "Landes",
+          "addressCountry": "FR"
+        },
+        "areaServed": ["Capbreton", "Hossegor", "Landes", "Pays Basque"],
+        "knowsAbout": [
+          "création de site web",
+          "web design",
+          "WordPress",
+          "SEO",
+          "référencement naturel",
+          "SEO local",
+          "sites vitrine",
+          "sites e-commerce"
+        ]
+      }
+    </script>
   </head>
 
   <body>
@@ -137,7 +162,7 @@
           <li>
             <a class="nav__link mini" href="/fr/a-propos">À Propos</a>
           </li>
-          <li><a class="nav__link mini" href="#contact">Contact</a></li>
+          <li><a class="nav__link mini" href="/fr/contact">Contact</a></li>
           <li class="mob__hide">
             <a
               class="nav__link"
@@ -177,14 +202,14 @@
               </svg>
             </a>
           </li>
-          <li class="mob__hide">
+          <!-- <li class="mob__hide">
             <a
               class="btn nav__link"
               href="mailto:contact@billynightingale.com"
               aria-label="Email"
               >CV</a
             >
-          </li>
+          </li> -->
           <!-- <li>
             <button class="hamburger-btn">
               <img src="/assets/icons/ham_menu.svg" />
@@ -195,18 +220,29 @@
     </header>
     <!-- <button class="fa-solid fa-bars hamburger-menu"></button> -->
     <main>
-      <section class="sections" id="intro">
-        <h1>
-          Des sites web modernes, rapides et optimisés SEO pour les entreprises
-          de Capbreton.
-        </h1>
+      <section class="sections home-hero">
+        <div class="home-hero-text-container">
+          <h1 id="hero-heading-fr">
+            Création de sites web modernes, rapides et optimisés pour le SEO
+            pour les entreprises de Capbreton
+          </h1>
+        </div>
+        <img
+          class="contact-icon-down-scroll"
+          id="home-icon-scroll-down"
+          src="/assets/icons/down_scroll_arrow.svg"
+          alt="icône flèche vers le bas"
+        />
+      </section>
+      <div class="gradient"></div>
+      <section class="sections sec-home-intro">
         <h2>
-          Je suis <span class="name">Billy Nightingale</span>, développeur web,
-          et j’accompagne les entreprises locales du sud-ouest de la France dans
-          le création de leur site web.
+          Je suis <span class="name">Billy Nightingale,</span> développeur web
+          freelance, j’aide les entreprises du sud-ouest de la France à créer
+          une présence en ligne forte et professionnelle.
         </h2>
         <p>
-          Disponible pour de nouveaux projets en freelance, sur place ou à
+          Disponible pour de nouveaux projets freelance, sur place ou à
           distance.
         </p>
         <button class="btn" id="btn-learn-more">Voir les projets</button>
