@@ -27,10 +27,20 @@ const cFPrefTimWeb = document.querySelector('#pref-time-website')
 const clientContFormWebBud = document.querySelector('#website-budget-form')
 const cFPrefTimSeo = document.querySelector('#pref-time-seo')
 
+//* Home Intro
+const btnHomeIntro = document.querySelector('#btn-contact')
+
 //* Contact page
 const contactScrollIcon = document.querySelector('#contact-icon-scroll')
 const statusElPass = document.querySelector('.form-status-pass')
 const statusElError = document.querySelector('.form-status-error')
+
+if (btnHomeIntro) {
+  btnHomeIntro.addEventListener('click', () => {
+    const isFrench = window.location.pathname.includes('fr')
+    window.location.href = isFrench ? '/fr/contact' : '/contact'
+  })
+}
 
 if (clientFormReason) {
   clientFormReason.addEventListener('change', function () {
@@ -120,20 +130,20 @@ if (contactScrollIcon) {
 
 //~ Automatically detect language and redirect
 
-document.addEventListener('DOMContentLoaded', function () {
-  try {
-    const userLang = navigator.language || navigator.userLanguage
-    if (userLang.startsWith('fr')) {
-      console.log('French language detected')
-    }
-    // if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
-    //   sessionStorage.setItem('redirected', 'true')
-    //   window.location.href = '/fr/index.html'
-    // }
-  } catch (error) {
-    console.error('Language detection failed:', error)
-  }
-})
+// document.addEventListener('DOMContentLoaded', function () {
+//   try {
+//     const userLang = navigator.language || navigator.userLanguage
+//     if (userLang.startsWith('fr')) {
+//       console.log('French language detected')
+//     }
+//     // if (userLang.startsWith('fr') && !sessionStorage.getItem('redirected')) {
+//     //   sessionStorage.setItem('redirected', 'true')
+//     //   window.location.href = '/fr/index.html'
+//     // }
+//   } catch (error) {
+//     console.error('Language detection failed:', error)
+//   }
+// })
 
 //~ Smooth scrolling from intro to project sections
 

@@ -335,10 +335,18 @@ a:hover .social__icons {
   font-size: var(--fs-3);
 }
 
-.sec-home-intro button {
+/* .sec-home-intro button {
   display: block;
   margin: 5% auto 5% auto;
   max-width: 150px;
+} */
+
+.home-intro-cta {
+  margin: auto auto 0px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-4);
 }
 
 /* Services Section */
