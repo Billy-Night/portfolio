@@ -24,6 +24,12 @@
   --space-11: 4.7rem;
   --space-12: 5.9rem;
   --space-13: 7.4rem;
+  --space-14: 9.25rem;
+  --space-15: 11.56rem;
+  --space-16: 14.45rem;
+  --space-17: 18.06rem;
+  --space-18: 22.58rem;
+  --space-project-gap: clamp(var(--space-10), 6vw, var(--space-14));
   --fs-1: 0.8rem; /* small */
   --fs-2: 1rem; /* body */
   --fs-3: 1.25rem; /* large body */
@@ -36,6 +42,10 @@
   --fs-10: 5.96rem;
   --fs-11: 7.45rem;
   --fs-12: 9.31rem;
+  --fs-13: 11.64rem;
+  --fs-14: 14.55rem;
+  --fs-15: 18.19rem;
+  --fs-16: 22.74rem;
 }
 /* border box model: https://css-tricks.com/box-sizing/ */
 html,
@@ -451,7 +461,7 @@ a:hover .social__icons {
 
 .project-info-container {
   margin-top: var(--space-6);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-project-gap);
 }
 
 .black-box {
@@ -467,7 +477,7 @@ a:hover .social__icons {
 .project-tech-list {
   list-style-type: none;
   padding: 0;
-  margin: 0 auto 5% 0;
+  margin: 0 auto 4% 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -491,6 +501,12 @@ a:hover .social__icons {
   border-top: 1px solid var(--gold);
   border-radius: 25px;
   padding: 1rem;
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.18);
+}
+
+.reverse img {
+  border-left: 0px;
+  border-right: 1px solid var(--gold);
 }
 
 @media (min-width: 800px) {
@@ -554,6 +570,8 @@ a:hover .social__icons {
     height: auto;
   }
 }
+
+/* About page */
 
 .bio-text {
   margin-bottom: 1%;
