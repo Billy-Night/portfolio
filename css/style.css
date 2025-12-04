@@ -257,6 +257,12 @@ a:hover .social__icons {
   align-items: center;
 }
 
+@media screen and (max-width: 800px) {
+  .home-hero {
+    min-height: 80vh;
+  }
+}
+
 .home-hero-text-container {
   margin-top: auto;
   margin-bottom: auto;
@@ -677,6 +683,12 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-hero {
+    min-height: 80vh;
+  }
 }
 
 .contact-hero-text-container {
