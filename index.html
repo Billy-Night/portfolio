@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Freelance web designer and developer in Capbreton. Billy Nightingale creates modern, fast, SEO-optimised websites for businesses across Landes and the Pays Basque."
+      content="Freelance web designer in Capbreton creating modern, fast, SEO-optimised websites for businesses in Landes and the Pays Basque."
     />
 
     <!-- Canonical -->
@@ -118,31 +118,61 @@
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://www.billynightingale.com/fr/#person",
         "name": "Billy Nightingale",
-        "jobTitle": "Web Design & SEO",
+        "jobTitle": "Web designer et développeur web",
+        "url": "https://www.billynightingale.com/fr/",
         "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-        "url": "https://www.billynightingale.com/",
-        "sameAs": [
-          "https://www.linkedin.com/in/billynightingale/",
-          "https://github.com/Billy-Night"
-        ],
+        "description": "Web designer et développeur web freelance à Capbreton, créant des sites modernes, rapides et optimisés pour le SEO pour les entreprises locales.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Capbreton",
           "addressRegion": "Landes",
           "addressCountry": "FR"
         },
-        "areaServed": ["Capbreton", "Hossegor", "Landes", "Pays Basque"],
+        "sameAs": [
+          "https://www.linkedin.com/in/billynightingale/",
+          "https://github.com/Billy-Night"
+        ],
         "knowsAbout": [
           "web design",
-          "website creation",
+          "création de site internet",
+          "développement frontend",
           "WordPress",
           "SEO",
-          "search engine optimization",
-          "local SEO",
-          "business websites",
-          "e-commerce websites",
-          "web development"
+          "référencement local",
+          "optimisation des performances"
+        ],
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://www.billynightingale.com/fr/"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://www.billynightingale.com/fr/#service",
+        "name": "Création de sites web et services SEO à Capbreton",
+        "url": "https://www.billynightingale.com/fr/",
+        "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
+        "description": "Création de sites vitrines modernes, développement web et services de référencement SEO pour les entreprises à Capbreton, Hossegor, dans les Landes et au Pays Basque.",
+        "provider": {
+          "@id": "https://www.billynightingale.com/fr/#person"
+        },
+        "areaServed": ["Capbreton", "Hossegor", "Landes", "Pays Basque"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Capbreton",
+          "addressRegion": "Landes",
+          "addressCountry": "FR"
+        },
+        "serviceType": [
+          "Web design",
+          "Création de site internet",
+          "Référencement naturel (SEO)"
         ]
       }
     </script>
@@ -154,7 +184,11 @@
         <ul>
           <li>
             <a class="nav__link" href="/" aria-label="Home">
-              <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" />
+              <img
+                class="nav__logo"
+                src="/assets/nightingale_logo_gold.svg"
+                alt="Billy Nightingales logo"
+              />
             </a>
           </li>
           <li><a class="nav__link mini" href="/fr/">FR</a></li>
