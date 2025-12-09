@@ -47,6 +47,7 @@
   --fs-15: 18.19rem;
   --fs-16: 22.74rem;
 }
+
 /* border box model: https://css-tricks.com/box-sizing/ */
 html,
 body {
@@ -54,6 +55,7 @@ body {
 }
 
 html {
+  cursor: url('/assets/icons/single_gold_ring.png') 16 16, auto;
   box-sizing: border-box;
 }
 *,
