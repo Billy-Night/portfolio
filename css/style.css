@@ -53,7 +53,7 @@ body {
 }
 
 html {
-  cursor: url('/assets/icons/pologon_cursor_v1.png') 22 22, auto;
+  cursor: url('/assets/icons/cursor_polgon.png') 22 22, auto;
   box-sizing: border-box;
 }
 *,
