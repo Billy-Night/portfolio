@@ -11,41 +11,39 @@
   --white: #f7f8fa;
   --mono: 'Oxygen mono', monospace;
   --sans: Oxygen, sans-serif;
-  --space-1: 0.25rem;
-  --space-2: 0.625rem;
-  --space-3: 0.8rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.6rem;
-  --space-7: 2rem;
-  --space-8: 2.5rem;
-  --space-9: 3rem;
-  --space-10: 3.75rem;
-  --space-11: 4.7rem;
-  --space-12: 5.9rem;
-  --space-13: 7.4rem;
-  --space-14: 9.25rem;
-  --space-15: 11.56rem;
-  --space-16: 14.45rem;
-  --space-17: 18.06rem;
-  --space-18: 22.58rem;
-  --space-project-gap: clamp(var(--space-10), 6vw, var(--space-14));
-  --fs-1: 0.8rem; /* small */
+  /* Micro spacing (typography & UI) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+
+  /* Component spacing */
+  --space-5: 1.5rem; /* 24px */
+  --space-6: 2rem; /* 32px */
+  --space-7: 3rem; /* 48px */
+
+  /* Section spacing */
+  --space-8: 4rem; /* 64px padding top and bottom of sections */
+  --space-9: 5rem; /* 80px */
+  --space-10: 6rem; /* 96px */
+
+  /* Hero / major blocks */
+  --space-11: 8rem; /* 128px */
+  --space-12: 10rem; /* 160px */
+
+  --space-project-gap: clamp(var(--space-10), 6vw, var(--space-12));
+  --fs-1: 0.875rem; /* small */
   --fs-2: 1rem; /* body */
   --fs-3: 1.25rem; /* large body */
-  --fs-4: 1.56rem; /* small heading */
-  --fs-5: 1.95rem; /* h3 */
-  --fs-6: 2.44rem; /* h2 */
-  --fs-7: 3.05rem; /* hero subheading */
-  --fs-8: 3.81rem; /* hero heading */
-  --fs-9: 4.77rem; /* big hero heading */
-  --fs-10: 5.96rem;
-  --fs-11: 7.45rem;
-  --fs-12: 9.31rem;
-  --fs-13: 11.64rem;
-  --fs-14: 14.55rem;
-  --fs-15: 18.19rem;
-  --fs-16: 22.74rem;
+  --fs-4: 1.563rem; /* small heading */
+  --fs-5: 1.953rem; /* h3 */
+  --fs-6: 2.441rem; /* h2 */
+  --fs-7: 3.052rem; /* hero subheading */
+  --fs-8: 3.815rem; /* hero heading */
+  --fs-hero: clamp(2.5rem, 5vw, 3.8rem);
+  --fs-hero-xl: clamp(3rem, 6vw, 4.8rem);
+
+  --sec-width: 1280px;
 }
 
 /* border box model: https://css-tricks.com/box-sizing/ */
@@ -104,6 +102,38 @@ img {
 .btn:hover {
   color: var(--dark);
   background-color: var(--white);
+}
+
+.btn-primary {
+  cursor: pointer;
+  background-color: var(--gold);
+  color: var(--dark);
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-family: var(--mono);
+  text-decoration: none;
+  border: solid 2px white;
+  min-width: 120px;
+}
+
+.btn-primary:hover {
+  background-color: var(--white);
+}
+
+.btn-secondary {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-family: var(--mono);
+  text-decoration: none;
+  border: solid 2px white;
+  min-width: 120px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--darkTrans);
 }
 
 /* Header */
@@ -212,7 +242,7 @@ a:hover .social__icons {
 
 @media (min-width: 600px) {
   nav {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   nav li:first-child {
@@ -224,7 +254,7 @@ a:hover .social__icons {
 
 .small-nav {
   top: 10px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
@@ -234,11 +264,14 @@ a:hover .social__icons {
   .mob__hide {
     display: none;
   }
+  .small-nav {
+    width: 96%;
+  }
 }
 
 /* All sections generic */
 .sections {
-  max-width: 1200px;
+  max-width: var(--sec-width);
   margin: 0 auto var(--space-6) auto;
   padding-top: var(--space-8);
   padding-bottom: var(--space-8);
@@ -273,14 +306,14 @@ a:hover .social__icons {
 .home-hero h1 {
   text-align: center;
   font-family: var(--sans);
-  font-size: clamp(var(--fs-7), 5vw, var(--fs-12));
+  font-size: var(--fs-hero-xl);
   line-height: 1.1;
   color: white;
   font-weight: 300;
 }
 
 #hero-heading-fr {
-  font-size: clamp(var(--fs-6), 4.5vw, var(--fs-11));
+  font-size: var(--fs-hero);
 }
 
 .home-hero h2 {
@@ -294,7 +327,7 @@ a:hover .social__icons {
 /* Responsive sections */
 
 /* Small Laptop  */
-@media screen and (min-width: 800px) and (max-width: 1250px) {
+@media screen and (min-width: 800px) and (max-width: 1300px) {
   .sections {
     margin-left: var(--space-5);
     margin-right: var(--space-5);
@@ -320,10 +353,9 @@ a:hover .social__icons {
 /* Home intro section  */
 
 .sec-home-intro {
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: auto;
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
 }
 
 .name {
@@ -332,35 +364,144 @@ a:hover .social__icons {
   color: var(--gold);
 }
 
-.sec-home-intro h2 {
-  text-align: center;
+.home-intro-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-intro-img-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.home-intro-frame {
+  min-height: 350px;
+  width: 85%;
+  background-color: #857d71;
+  border-radius: 40px;
+  position: relative;
+  margin-top: 10%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.home-intro-frame img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateX(-40px);
+  overflow: visible;
+  z-index: 1;
+}
+
+.home-intro-text-container {
+  width: 120%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.home-intro-text {
+  width: 100%;
+  height: 100%;
+  margin-top: 8%;
+}
+
+.home-intro-text h2 {
+  max-width: 100%;
+  min-width: 300px;
+  font-weight: 200;
+  font-size: clamp(var(--fs-3), 3.5vw, var(--fs-4));
   line-height: 1.5;
 }
 
-.sec-home-intro p {
-  text-align: center;
-  font-family: var(--sans);
-  font-size: var(--fs-3);
-}
-
-/* .sec-home-intro button {
-  display: block;
-  margin: 5% auto 5% auto;
-  max-width: 150px;
-} */
-
 .home-intro-cta {
-  margin: auto auto 0px auto;
+  margin: var(--space-8) auto 0px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: var(--space-4);
 }
 
+#btn-intro-projects {
+  background-color: transparent;
+  /* border-color: white; */
+  color: white;
+}
+
+@media screen and (max-width: 1347px) {
+  .home-intro-img-container {
+    margin-left: 1%;
+  }
+  .home-intro-frame {
+    min-height: 290px;
+    height: 300px;
+  }
+  .home-intro-frame img {
+    width: clamp(60%, 70vw, 90%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sec-home-intro {
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-10);
+  }
+  .home-intro-container {
+    flex-direction: column;
+    margin-top: 14%;
+  }
+
+  .home-intro-text-container {
+    width: 100%;
+    margin-top: 0%;
+  }
+
+  .home-intro-text-container h2 {
+    min-width: 100%;
+  }
+
+  .home-intro-text {
+    margin-top: var(--space-5);
+  }
+
+  .home-intro-img-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-intro-frame {
+    width: 100%;
+    min-height: 240px;
+    height: 250px;
+  }
+
+  .home-intro-frame img {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-intro-frame img {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .home-intro-frame img {
+    width: 80%;
+  }
+}
+
 /* Services Section */
 
 .section__title {
-  margin-bottom: var(--space-13);
+  margin-bottom: var(--space-11);
 }
 
 .section__title h2 {
@@ -619,13 +760,17 @@ a:hover .social__icons {
   text-align: center;
 }
 
+.section-contact-container h2 {
+  font-size: var(--fs-6);
+}
+
 .section-contact-container p {
   margin: 50px;
 }
 
 .section-contact-container .btn {
   margin: 10px;
-  font-size: 1rem;
+  font-size: var(--fs-2);
 }
 
 /* Footer */
@@ -701,7 +846,7 @@ footer p {
 .contact-hero h1 {
   text-align: center;
   font-family: var(--sans);
-  font-size: clamp(var(--fs-7), 4vw, var(--fs-9));
+  font-size: var(--fs-hero-xl);
   line-height: 1.1;
   color: white;
 }
