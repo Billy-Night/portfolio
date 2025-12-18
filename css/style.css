@@ -560,6 +560,10 @@ a:hover .social__icons {
 }
 
 @media screen and (max-width: 400px) {
+  .offers {
+    margin-bottom: 0px;
+  }
+
   #offer h3 {
     margin-bottom: 30%;
   }
