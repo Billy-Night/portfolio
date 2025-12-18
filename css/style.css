@@ -10,7 +10,7 @@
   --gold: #d9b282;
   --white: #f7f8fa;
   --mono: 'Oxygen mono', monospace;
-  --sans: Oxygen, sans-serif;
+  --sans: 'Oxygen', sans-serif;
   /* Micro spacing (typography & UI) */
   --space-1: 0.25rem; /* 4px */
   --space-2: 0.5rem; /* 8px */
@@ -118,6 +118,8 @@ img {
 
 .btn-primary:hover {
   background-color: var(--white);
+  color: black;
+  font-family: var(--mono);
 }
 
 .btn-secondary {
@@ -773,7 +775,7 @@ a:hover .social__icons {
   margin: 50px;
 }
 
-.section-contact-container .btn {
+.section-contact-container a {
   margin: 10px;
   font-size: var(--fs-2);
 }
