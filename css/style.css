@@ -381,11 +381,12 @@ a:hover .social__icons {
 .home-intro-frame {
   min-height: 350px;
   width: 85%;
-  background-color: #857d71;
+  background-color: #e6edf2;
   border-radius: 40px;
   position: relative;
-  margin-top: 10%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  margin-top: 15%;
+  /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.15); */
 }
 
 .home-intro-frame img {
