@@ -1,5 +1,6 @@
 /* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
 :root {
+  /* Colour Palette */
   --dark: #182625;
   --darkTrans: rgb(24, 38, 37, 0.9);
   --darkGreen: #28403d;
@@ -9,6 +10,13 @@
   /* --lightBlue: #3d5a73; */
   --gold: #d9b282;
   --white: #f7f8fa;
+  --off-white: #e6edf2;
+  --dividerBackground: linear-gradient(
+    90deg,
+    rgba(191, 137, 117, 1) 0%,
+    rgba(64, 47, 41, 1) 100%
+  );
+
   --mono: 'Oxygen mono', monospace;
   --sans: 'Oxygen', sans-serif;
   /* Micro spacing (typography & UI) */
@@ -173,12 +181,7 @@ img {
 /* Section Separator */
 
 .gradient {
-  background: rgb(191, 137, 117);
-  background: linear-gradient(
-    90deg,
-    rgba(191, 137, 117, 1) 0%,
-    rgba(64, 47, 41, 1) 100%
-  );
+  background: var(--dividerBackground);
   height: 2px;
 }
 
@@ -229,7 +232,7 @@ a {
 
 .social__icons {
   width: 20px;
-  height: 25px;
+  height: 20px;
   fill: var(--gold);
   vertical-align: -0.125em;
 }
@@ -383,7 +386,7 @@ a:hover .social__icons {
 .home-intro-frame {
   min-height: 350px;
   width: 85%;
-  background-color: #e6edf2;
+  background-color: var(--off-white);
   border-radius: 40px;
   position: relative;
   margin-top: 15%;
@@ -969,4 +972,34 @@ footer p {
   border-radius: 10px;
   font-family: var(--sans);
   font-size: 1rem;
+}
+
+/* Services Page */
+
+.services-intro-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.services-intro-img-frame {
+  /* min-height: 400px; */
+  height: 400px;
+  width: 100%;
+  background-color: var(--off-white);
+  border-radius: 30px;
+  position: relative;
+}
+
+.services-intro-img-frame img {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) translateY(62px);
+  overflow: visible;
+  z-index: 1;
 }
