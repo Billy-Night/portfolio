@@ -334,6 +334,7 @@ a:hover .social__icons {
   font-size: clamp(var(--fs-3), 2.2vw, var(--fs-5));
   line-height: 1.3;
   color: white;
+  font-weight: 200;
 }
 
 /* Responsive sections */
@@ -1054,11 +1055,6 @@ footer p {
   margin-bottom: var(--space-6);
 }
 
-.services-main-title h2 {
-  margin-bottom: var(--fs-2);
-  font-size: var(--fs-6);
-}
-
 .services-main-title h3 {
   font-size: var(--fs-3);
 }
@@ -1164,15 +1160,6 @@ footer p {
 
 /* Services extra important information section */
 
-/* .sec-service-addons-content-container {
-  display: flex;
-  flex-direction: column;
-} */
-
-.sec-service-addons h2 {
-  font-size: var(--fs-5);
-}
-
 .addons-content-container {
   display: flex;
   flex-direction: row;
@@ -1188,6 +1175,8 @@ footer p {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
   /* margin: var(--space-6) var(--space-6) var(--space-6) 0; */
 }
 
@@ -1273,11 +1262,6 @@ footer p {
 }
 
 /* Project management section on services page */
-
-.sec-project-management h2 {
-  font-size: var(--fs-5);
-  margin-bottom: var(--space-6);
-}
 
 .project-management-container {
   display: grid;
@@ -1380,6 +1364,8 @@ footer p {
   grid-template-columns: repeat(2, 1fr);
   border: 2px solid white;
   border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .pricing-card {

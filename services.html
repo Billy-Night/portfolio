@@ -132,7 +132,7 @@
         "jobTitle": "Web designer & web developer",
         "url": "https://www.billynightingale.com/",
         "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-        "description": "Freelance web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
+        "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Capbreton",
@@ -146,7 +146,7 @@
         "knowsAbout": [
           "web design",
           "website creation",
-          "frontend development",
+          "front-end development",
           "WordPress",
           "SEO",
           "local SEO",
@@ -154,6 +154,7 @@
         ]
       }
     </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -162,12 +163,14 @@
         "name": "Web design, web development and SEO services",
         "serviceType": ["Web design", "Web development", "SEO"],
         "provider": {
+          "@type": "Person",
           "@id": "https://www.billynightingale.com/#person"
         },
         "areaServed": ["Capbreton", "Hossegor", "Landes", "Pays Basque"],
         "url": "https://www.billynightingale.com/services/"
       }
     </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -176,13 +179,15 @@
         "url": "https://www.billynightingale.com/services/",
         "name": "Services | Billy Nightingale",
         "inLanguage": "en-GB",
-        "description": "Web design, development and SEO services in Capbreton, Hossegor, Landes and Pays Basque",
+        "description": "Web design, web development and SEO services in Capbreton, Hossegor, Landes and the Pays Basque.",
         "about": {
           "@id": "https://www.billynightingale.com/services/#service"
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+          "url": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+          "width": 1200,
+          "height": 600
         }
       }
     </script>
@@ -207,6 +212,7 @@
           </li>
           <li><a class="nav__link mini" href="about">About</a></li>
           <li><a class="nav__link mini" href="contact">Contact</a></li>
+          <li><a class="nav__link mini" href="services">Services</a></li>
           <li class="mob__hide">
             <a
               class="nav__link"
@@ -265,7 +271,7 @@
     <main>
       <section class="sections home-hero" id="intro">
         <div class="home-hero-text-container">
-          <h1>Web design, development & SEO for small businesses</h1>
+          <h1>Web design, development & SEO for growing businesses</h1>
           <h2>
             I help small businesses build fast, modern websites that attract
             clients and support long-term growth.
@@ -289,8 +295,8 @@
       <div class="gradient"></div>
       <section class="sections sec-services-main">
         <div class="services-main-title">
-          <h2>Main Services</h2>
-          <h3>Are you ready to build your dream digital experience</h3>
+          <h2 class="section-sub-headings">Main Services</h2>
+          <h3>Are you ready to build your dream digital experience ?</h3>
         </div>
         <div class="services-main-blocks">
           <div class="service-card">
@@ -318,7 +324,7 @@
       </section>
       <div class="gradient"></div>
       <section class="sections sec-service-addons">
-        <h2>Built for performance & Longevity</h2>
+        <h2 class="section-sub-headings">Built for performance & Longevity</h2>
         <div class="sec-service-addons-content-container">
           <div class="addons-content-container">
             <div class="addons-performance-img-frame">
@@ -327,8 +333,8 @@
             <div class="addons-performance-text-container">
               <h2>Performance & Accessibility</h2>
               <p>
-                I insure all my clients sites are performance tested before and
-                after deployment, to insure the best service.
+                I ensure all my clients sites are performance tested before and
+                after deployment, to ensure the best service.
               </p>
               <p>
                 All my sites are built to industry standard and meet all
@@ -356,7 +362,7 @@
       </section>
       <div class="gradient"></div>
       <section class="sections sec-project-management">
-        <h2>Project Management</h2>
+        <h2 class="section-sub-headings">Project Management</h2>
         <div class="project-management-container">
           <div class="task-card"><h3>Discovery & Goals</h3></div>
           <div class="task-card"><h3>Design & Structure</h3></div>
@@ -372,8 +378,8 @@
         <div class="section-contact-container">
           <h2>Ready to discuss your project?</h2>
           <p>Book a call or request a quote now</p>
-          <a class="btn-primary" href="/contact/">Quote</a>
-          <a class="btn-secondary" href="tel:+33766095864">Call</a>
+          <a class="btn-primary" href="/contact/">Request a quote</a>
+          <a class="btn-secondary" href="tel:+33766095864">Book a call</a>
         </div>
       </section>
       <div class="gradient"></div>
@@ -397,7 +403,8 @@
       <section class="sections" id="footer">
         <footer>
           <h2>
-            <span>Billy Nightingale</span> &middot; <span>Web Developer</span>
+            <span>Billy Nightingale</span> &middot;
+            <span>Web Designer and Developer</span>
           </h2>
           <ul>
             <li>
