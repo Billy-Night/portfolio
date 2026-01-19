@@ -4,7 +4,9 @@ function validate(data) {
   if (!data.email.includes('@')) return 'Invalid email'
 
   // server-side honeypot: match your payload key
-  if (data.honeypot) return 'Bot detected'
+  if (String(data.honeypot || '').trim()) return 'Bot detected'
+  if (String(data.message || '').length > 5000) return 'Message too long'
+  if (String(data.email || '').length > 254) return 'Email too long'
 
   return null
 }
@@ -13,6 +15,17 @@ export async function handler(event) {
   //   console.log(event)
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' }
+  }
+
+  const allowedOrigins = new Set([
+    'https://billynightingale.com',
+    'https://www.billynightingale.com',
+    'http://localhost:8888', // netlify dev
+  ])
+
+  const origin = event.headers.origin || event.headers.Origin
+  if (origin && !allowedOrigins.has(origin)) {
+    return { statusCode: 403, body: 'Forbidden' }
   }
 
   const makeWebhookUrl = process.env.MAKE_FORM_API
