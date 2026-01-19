@@ -70,56 +70,85 @@ if (clientFormReason) {
   })
 }
 
-const MAKE_WEBHOOK_URL =
-  'https://hook.eu1.make.com/1sbn8f4mnouwqh6ea5afdbu3lqtn3iy5'
-
 if (clientContactForm) {
+  //* NEW code test to hide MAKE API in Netlify functions
   clientContactForm.addEventListener('submit', async (e) => {
-    e.preventDefault() // Stop the normal POST + redirects
+    e.preventDefault()
+
     const form = e.target
-    const formData = new FormData(form) // grabs all inputs
+    const formData = new FormData(form)
 
-    // console.log([...formData.entries()])
-
-    // get all selected SEO features
     const seoFeatures = formData.getAll('seo-features[]')
-
-    // join them into a single string for Make
-    const seoFeaturesJoined = seoFeatures.join(', ')
-
-    // add extra field just for Make
-    formData.set('seo-features-joined', seoFeaturesJoined)
-
-    // console.log([...formData.entries()])
-
-    //Optional: small UX touch
-    // statusEl.textContent = 'Sending....'
-
-    // console.log('Form Submitted')
+    formData.set('seo-features-joined', seoFeatures.join(', '))
 
     try {
-      if (formData.get('web-check') != '') {
-        throw new Error('Bot detected with web check')
-      }
-      const response = await fetch(MAKE_WEBHOOK_URL, {
+      if (formData.get('web-check') !== '') throw new Error('Bot detected')
+
+      const response = await fetch('/.netlify/functions/contact', {
         method: 'POST',
-        body: formData, // Make webhooks accept form-data just fine
+        body: formData,
       })
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
+      if (!response.ok) throw new Error('Network response was not ok')
 
-      // Success: stay on the same page
       statusElError.classList.add('hide-element')
       statusElPass.classList.remove('hide-element')
       form.reset()
-    } catch (error) {
-      console.error(error)
+    } catch (err) {
+      console.error(err)
       statusElPass.classList.add('hide-element')
       statusElError.classList.remove('hide-element')
     }
   })
+
+  //! Old code to be replaced
+
+  // clientContactForm.addEventListener('submit', async (e) => {
+  //   e.preventDefault() // Stop the normal POST + redirects
+  //   const form = e.target
+  //   const formData = new FormData(form) // grabs all inputs
+
+  //   // console.log([...formData.entries()])
+
+  //   // get all selected SEO features
+  //   const seoFeatures = formData.getAll('seo-features[]')
+
+  //   // join them into a single string for Make
+  //   const seoFeaturesJoined = seoFeatures.join(', ')
+
+  //   // add extra field just for Make
+  //   formData.set('seo-features-joined', seoFeaturesJoined)
+
+  //   // console.log([...formData.entries()])
+
+  //   //Optional: small UX touch
+  //   // statusEl.textContent = 'Sending....'
+
+  //   // console.log('Form Submitted')
+
+  //   try {
+  //     if (formData.get('web-check') != '') {
+  //       throw new Error('Bot detected with web check')
+  //     }
+  //     const response = await fetch(MAKE_WEBHOOK_URL, {
+  //       method: 'POST',
+  //       body: formData, // Make webhooks accept form-data just fine
+  //     })
+
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not ok')
+  //     }
+
+  //     // Success: stay on the same page
+  //     statusElError.classList.add('hide-element')
+  //     statusElPass.classList.remove('hide-element')
+  //     form.reset()
+  //   } catch (error) {
+  //     console.error(error)
+  //     statusElPass.classList.add('hide-element')
+  //     statusElError.classList.remove('hide-element')
+  //   }
+  // })
 }
 
 if (contactScrollIcon) {
