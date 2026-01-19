@@ -1,26 +1,50 @@
-import { Buffer } from 'node:buffer'
+function validate(data) {
+  if (!data.email) return 'Email is required'
+  if (!data.message) return 'Message is required'
+  if (!data.email.includes('@')) return 'Invalid email'
+
+  // server-side honeypot: match your payload key
+  if (data.honeypot) return 'Bot detected'
+
+  return null
+}
 
 export async function handler(event) {
+  //   console.log(event)
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' }
   }
 
-  const makeWebhookUrl = process.env.MAKE_FORM_API // your Make webhook URL
+  const makeWebhookUrl = process.env.MAKE_FORM_API
+  if (!makeWebhookUrl) {
+    return { statusCode: 500, body: 'Missing MAKE_FORM_API env var' }
+  }
+
+  let data
+  try {
+    data = JSON.parse(event.body || '{}')
+  } catch {
+    return {
+      statusCode: 400,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ok: false, error: 'Invalid JSON' }),
+    }
+  }
+
+  const error = validate(data)
+  if (error) {
+    return {
+      statusCode: 400,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ok: false, error }),
+    }
+  }
 
   try {
-    // event.body is base64 when using multipart/form-data
-    const isBase64 = event.isBase64Encoded
-
     const res = await fetch(makeWebhookUrl, {
       method: 'POST',
-      headers: {
-        // Forward the same content-type so Make can parse it
-        'Content-Type':
-          event.headers['content-type'] ||
-          event.headers['Content-Type'] ||
-          'application/octet-stream',
-      },
-      body: isBase64 ? Buffer.from(event.body, 'base64') : event.body,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     })
 
     if (!res.ok) {
@@ -39,6 +63,7 @@ export async function handler(event) {
   } catch (err) {
     return {
       statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ok: false, error: String(err) }),
     }
   }

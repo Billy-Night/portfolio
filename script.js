@@ -78,18 +78,56 @@ if (clientContactForm) {
     const form = e.target
     const formData = new FormData(form)
 
-    const seoFeatures = formData.getAll('seo-features[]')
-    formData.set('seo-features-joined', seoFeatures.join(', '))
-
+    // Honeypot (client-side)
     try {
       if (formData.get('web-check') !== '') throw new Error('Bot detected')
+    } catch (err) {
+      console.error(err)
+      return
+    }
 
+    // const seoFeatures = formData.getAll('seo-features[]')
+    // formData.set('seo-features-joined', seoFeatures.join(', '))
+    // console.log(formData)
+
+    const payload = {
+      formName: formData.get('form-name'),
+      honeypot: formData.get('web-check'),
+
+      name: formData.get('name'),
+      email: formData.get('email'),
+      reason: formData.get('reason'),
+      message: formData.get('message'),
+
+      business: formData.get('business') || null,
+      url: formData.get('url') || null,
+
+      seoFeatures: formData.getAll('seo-features[]'),
+      seoBudget: formData.get('seo-budget') || null,
+      seoTimeline: formData.get('seo-timeline') || null,
+
+      webBudget: formData.get('web-budget') || null,
+      webTimeline: formData.get('web-timeline') || null,
+    }
+
+    console.log(payload)
+
+    try {
       const response = await fetch('/.netlify/functions/contact', {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       })
 
-      if (!response.ok) throw new Error('Network response was not ok')
+      if (!response.ok) {
+        const err = await response
+          .json()
+          .catch(async () => await response.text())
+        console.log('Function error:', response.status, err)
+        throw new Error(
+          typeof err === 'string' ? err : err.error || 'Unknown error',
+        )
+      }
 
       statusElError.classList.add('hide-element')
       statusElPass.classList.remove('hide-element')
@@ -100,55 +138,6 @@ if (clientContactForm) {
       statusElError.classList.remove('hide-element')
     }
   })
-
-  //! Old code to be replaced
-
-  // clientContactForm.addEventListener('submit', async (e) => {
-  //   e.preventDefault() // Stop the normal POST + redirects
-  //   const form = e.target
-  //   const formData = new FormData(form) // grabs all inputs
-
-  //   // console.log([...formData.entries()])
-
-  //   // get all selected SEO features
-  //   const seoFeatures = formData.getAll('seo-features[]')
-
-  //   // join them into a single string for Make
-  //   const seoFeaturesJoined = seoFeatures.join(', ')
-
-  //   // add extra field just for Make
-  //   formData.set('seo-features-joined', seoFeaturesJoined)
-
-  //   // console.log([...formData.entries()])
-
-  //   //Optional: small UX touch
-  //   // statusEl.textContent = 'Sending....'
-
-  //   // console.log('Form Submitted')
-
-  //   try {
-  //     if (formData.get('web-check') != '') {
-  //       throw new Error('Bot detected with web check')
-  //     }
-  //     const response = await fetch(MAKE_WEBHOOK_URL, {
-  //       method: 'POST',
-  //       body: formData, // Make webhooks accept form-data just fine
-  //     })
-
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not ok')
-  //     }
-
-  //     // Success: stay on the same page
-  //     statusElError.classList.add('hide-element')
-  //     statusElPass.classList.remove('hide-element')
-  //     form.reset()
-  //   } catch (error) {
-  //     console.error(error)
-  //     statusElPass.classList.add('hide-element')
-  //     statusElError.classList.remove('hide-element')
-  //   }
-  // })
 }
 
 if (contactScrollIcon) {
