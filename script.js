@@ -14,6 +14,7 @@ const btnScrollTo = document.querySelector('#btn-learn-more')
 const sectionProject = document.querySelector('.section-project-container')
 //* Navbar
 const header = document.querySelector('.header')
+//! Need to check if getBoundingClientRect is a good solutions
 const navHeight = header.getBoundingClientRect().height
 const nav = document.querySelector('.nav')
 //* All sections
