@@ -887,6 +887,7 @@ a:hover .social__icons {
   display: flex;
   flex-direction: column;
   justify-content: end;
+  width: 20%;
 }
 
 .footer__nav {
@@ -901,12 +902,13 @@ a:hover .social__icons {
   margin-top: var(--space-5);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: center; */
   align-items: center;
 }
 
 .footer__legal a {
   margin: 0;
+  margin-left: var(--space-3);
 }
 
 .footer__legal p {
