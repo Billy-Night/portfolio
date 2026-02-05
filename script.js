@@ -271,8 +271,10 @@ window.addEventListener('scroll', () => {
   // }
   if (window.scrollY > navHeight) {
     header.classList.add('small-nav')
+    nav.classList.add('nav_radius')
   } else {
     header.classList.remove('small-nav')
+    nav.classList.remove('nav_radius')
   }
 })
 
