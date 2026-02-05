@@ -865,6 +865,15 @@ a:hover .social__icons {
 
 .footer__address {
   font-size: var(--fs-2);
+  font-style: normal;
+}
+
+.footer__address a {
+  color: white;
+}
+
+.footer__address a:hover {
+  color: var(--gold);
 }
 
 .contact-icons-footer-cont ul {
