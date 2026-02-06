@@ -16,7 +16,14 @@ const sectionProject = document.querySelector('.section-project-container')
 const header = document.querySelector('.header')
 //! Need to check if getBoundingClientRect is a good solutions
 const navHeight = header.getBoundingClientRect().height
-const nav = document.querySelector('.nav')
+const nav = document.querySelector('.nav__list-full')
+const navHamBtn = document.querySelector('.menu-btn--hamburger')
+const navHamImg = navHamBtn.querySelector('img')
+const navLinksMini = document.querySelectorAll('.mini')
+const navList = document.querySelector('.nav__list')
+//~ Header transform when scroll
+//! const hamburgerMenu = document.querySelector('.hamburger-menu')
+const navLinks = document.querySelectorAll('.nav__link')
 //* All sections
 const allSelections = document.querySelectorAll('.sections')
 const clientFormReason = document.querySelector('#reason')
@@ -203,7 +210,9 @@ const handlerHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target
     //console.log(link);
-    const siblings = link.closest('.nav').querySelectorAll('.nav__link')
+    const siblings = link
+      .closest('.nav__list-full')
+      .querySelectorAll('.nav__link')
     // const logo = link.closest('.nav').querySelector('img')
     // console.log(logo)
 
@@ -213,8 +222,50 @@ const handlerHover = function (e) {
     // logo.style.opacity = this
   }
 }
-nav.addEventListener('mouseover', handlerHover.bind(0.5))
-nav.addEventListener('mouseout', handlerHover.bind(1))
+
+if (nav) {
+  nav.addEventListener('mouseover', handlerHover.bind(0.5))
+  nav.addEventListener('mouseout', handlerHover.bind(1))
+}
+
+let hamToggle = true
+
+// assets/icons/close.svg
+const handleNavHamBtn = () => {
+  // console.log(navHamBtn)
+  // console.log('nav ham click')
+  // console.log(navLinksMini)
+  console.log('called from media')
+  if (hamToggle) {
+    navLinksMini.forEach((e) => e.classList.add('nav__links-mob'))
+    navHamImg.src = '/assets/icons/close.svg'
+    navList.classList.add('nav__dropdown')
+    hamToggle = false
+  } else {
+    navLinksMini.forEach((e) => e.classList.remove('nav__links-mob'))
+    navList.classList.remove('nav__dropdown')
+    navHamImg.src = '/assets/icons/ham_menu.svg'
+    hamToggle = true
+  }
+}
+
+if (navHamBtn) {
+  navHamBtn.addEventListener('click', handleNavHamBtn)
+}
+
+const isMobile = window.matchMedia('(max-width: 800px)')
+
+const handleViewportChange = () => {
+  if (isMobile) {
+    hamToggle = false
+    handleNavHamBtn()
+    hamToggle = true
+  }
+}
+
+isMobile.addEventListener('change', handleViewportChange)
+
+// isMobile.addEventListener('change', handleViewportChange)
 
 //~ Reveal sections
 
@@ -253,12 +304,6 @@ allSelections.forEach(function (section) {
   //console.log(section)
   sectionObserver.observe(section)
 })
-
-//~ Header transform when scroll
-const hamburgerMenu = document.querySelector('.hamburger-menu')
-const navLinks = document.querySelectorAll('.nav__link')
-//console.log(navLinks)
-//console.log(header)
 
 window.addEventListener('scroll', () => {
   //ToDo add hamburger menu

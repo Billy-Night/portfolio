@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- HTML Meta Tags -->
@@ -41,7 +41,7 @@
       href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
 
     <!-- Favicon -->
@@ -87,9 +87,16 @@
   </head>
   <body>
     <header class="header">
-      <nav class="nav">
-        <ul>
-          <li>
+      <nav class="nav__list-full">
+        <a class="nav__link" href="/" aria-label="Home">
+          <img
+            class="nav__logo"
+            src="/assets/nightingale_logo_gold.svg"
+            alt="Billy Nightingales logo"
+          />
+        </a>
+        <ul class="nav__list">
+          <!-- <li>
             <a class="nav__link" href="/" aria-label="Home">
               <img
                 class="nav__logo"
@@ -97,11 +104,12 @@
                 alt="Billy Nightingales logo"
               />
             </a>
-          </li>
+          </li> -->
           <li><a class="nav__link mini" href="/fr/">FR</a></li>
-          <li><a class="nav__link mini" href="/#projects">Projects</a></li>
+          <li><a class="nav__link mini" href="#projects">Projects</a></li>
           <li><a class="nav__link mini" href="about">About</a></li>
           <li><a class="nav__link mini" href="contact">Contact</a></li>
+          <li><a class="nav__link mini" href="services">Services</a></li>
           <li class="mob__hide">
             <a
               class="nav__link"
@@ -141,20 +149,14 @@
               </svg>
             </a>
           </li>
-          <li class="mob__hide">
-            <a
-              class="btn nav__link"
-              href="mailto:contact@billynightingale.com"
-              aria-label="Email"
-              >Resume</a
-            >
-          </li>
-          <!-- <li>
-            <button class="hamburger-btn">
-              <img src="/assets/icons/ham_menu.svg" />
-            </button>
-          </li> -->
         </ul>
+        <button
+          class="menu-btn--hamburger"
+          type="button"
+          aria-label="Open menu"
+        >
+          <img src="/assets/icons/ham_menu.svg" alt="" class="ham-btn-icon" />
+        </button>
       </nav>
     </header>
     <main id="legal_main">

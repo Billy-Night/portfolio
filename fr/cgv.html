@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <!-- HTML Meta Tags -->
@@ -38,7 +38,7 @@
       href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
 
     <!-- Favicon -->
@@ -78,28 +78,28 @@
   </head>
   <body>
     <header class="header">
-      <nav class="nav">
-        <ul>
-          <li>
-            <a class="nav__link" href="/fr/" aria-label="Home">
-              <img
-                class="nav__logo"
-                src="/assets/nightingale_logo_gold.svg"
-                alt="Billy Nightingales logo"
-              />
-            </a>
-          </li>
+      <nav class="nav__list-full">
+        <a class="nav__link" href="/fr/" aria-label="Home">
+          <img
+            class="nav__logo"
+            src="/assets/nightingale_logo_gold.svg"
+            alt="Billy Nightingales logo"
+          />
+        </a>
+        <ul class="nav__list">
           <li><a class="nav__link mini" href="/">EN</a></li>
           <li><a class="nav__link mini" href="/fr/#projects">Projets</a></li>
           <li>
-            <a class="nav__link mini" href="/fr/a-propos">À Propos</a>
+            <a class="nav__link mini" href="/fr/a-propos.html">À propos</a>
           </li>
-          <li><a class="nav__link mini" href="/fr/contact">Contact</a></li>
-          <li><a class="nav__link mini" href="/fr/services">Services</a></li>
+          <li><a class="nav__link mini" href="/fr/contact.html">Contact</a></li>
+          <li>
+            <a class="nav__link mini" href="/fr/services.html">Services</a>
+          </li>
           <li class="mob__hide">
             <a
               class="nav__link"
-              href="https://www.linkedin.com/in/billynightingale/"
+              href="https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
               target="_blank"
               aria-label="LinkedIn"
             >
@@ -135,20 +135,14 @@
               </svg>
             </a>
           </li>
-          <!-- <li class="mob__hide">
-            <a
-              class="btn nav__link"
-              href="mailto:contact@billynightingale.com"
-              aria-label="Email"
-              >CV</a
-            >
-          </li> -->
-          <!-- <li>
-            <button class="hamburger-btn">
-              <img src="/assets/icons/ham_menu.svg" />
-            </button>
-          </li> -->
         </ul>
+        <button
+          class="menu-btn--hamburger"
+          type="button"
+          aria-label="Open menu"
+        >
+          <img src="/assets/icons/ham_menu.svg" alt="" class="ham-btn-icon" />
+        </button>
       </nav>
     </header>
     <main id="legal_main">
