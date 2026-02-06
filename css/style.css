@@ -883,7 +883,8 @@ a:hover .social__icons {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  width: fit-content;
+  width: 100%;
+  align-items: end;
 }
 
 .footer__nav {
@@ -1277,7 +1278,7 @@ footer p {
 }
 
 .addons-performance-img-frame {
-  height: 200px;
+  /* height: 200px; */
   min-width: 200px;
   background-color: var(--secondary-sand);
   display: flex;
@@ -1297,7 +1298,7 @@ footer p {
 
 .addons-performance-text-container {
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
   background-color: var(--off-white);
   color: black;
   border-radius: 10px;
@@ -1309,6 +1310,7 @@ footer p {
 
 .addons-performance-text-container h2 {
   font-size: var(--fs-4);
+  margin-bottom: var(--fs-3);
   margin-bottom: var(--fs-3);
 }
 
@@ -1335,15 +1337,16 @@ footer p {
   }
 
   .addons-performance-img-frame {
-    height: 200px;
-    min-width: 150px;
+    /* height: 200px; */
+    /* min-width: 150px; */
   }
 }
 
 @media screen and (max-width: 520px) {
   .addons-performance-img-frame {
-    min-height: auto;
     min-width: 80px;
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
   }
 
   .addons-performance-img-frame img {
@@ -1356,12 +1359,9 @@ footer p {
   .addons-content-container {
     display: flex;
     flex-direction: column;
-    /* gap: var(--space-6);
-  margin-top: var(--space-6); */
   }
 
   .addons-performance-img-frame {
-    max-height: 180px;
     width: auto;
   }
 
@@ -1493,15 +1493,12 @@ footer p {
 
 .pricing-card h3 {
   font-size: var(--fs-4);
+  text-align: center;
 }
 
 @media screen and (max-width: 560px) {
   .pricing-container {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .pricing-card {
-    height: 180px;
   }
 }
 
