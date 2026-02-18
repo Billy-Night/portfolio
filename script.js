@@ -36,19 +36,20 @@ const clientContFormWebBud = document.querySelector('#website-budget-form')
 const cFPrefTimSeo = document.querySelector('#pref-time-seo')
 
 //* Home Intro
-const btnHomeIntro = document.querySelector('#btn-contact')
+// const btnHomeIntro = document.querySelector('.btn-contact')
 
 //* Contact page
 const contactScrollIcon = document.querySelector('#contact-icon-scroll')
 const statusElPass = document.querySelector('.form-status-pass')
 const statusElError = document.querySelector('.form-status-error')
 
-if (btnHomeIntro) {
-  btnHomeIntro.addEventListener('click', () => {
-    const isFrench = window.location.pathname.includes('fr')
-    window.location.href = isFrench ? '/fr/contact' : '/contact'
-  })
-}
+//* Unused for now, but good French/English logic for later use
+// if (btnHomeIntro) {
+//   btnHomeIntro.addEventListener('click', () => {
+//     const isFrench = window.location.pathname.includes('fr')
+//     window.location.href = isFrench ? '/fr/contact' : '/contact'
+//   })
+// }
 
 if (clientFormReason) {
   clientFormReason.addEventListener('change', function () {
