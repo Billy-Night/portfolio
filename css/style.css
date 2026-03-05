@@ -52,6 +52,7 @@
   --fs-8: 3.815rem; /* hero heading 61.04px */
   --fs-hero: clamp(2.5rem, 5vw, 3.8rem);
   --fs-hero-xl: clamp(3rem, 6vw, 4.8rem);
+  /* Responsive font design system */
 
   --sec-width: 1280px;
   --page-gutter: clamp(16px, 5vw, 24px);
@@ -543,6 +544,9 @@ a:hover .social__icons {
   left: -20px;
   top: clamp(-15px, 1vw, 20px);
   animation: floatImproveGraph 9s ease-in-out infinite;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .cont__arrow-improve {
@@ -553,6 +557,9 @@ a:hover .social__icons {
   right: 20px;
   top: clamp(5px, 1vw, -10px);
   animation: floatImprove 6s ease-in-out infinite;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .arrow-improve {
