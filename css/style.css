@@ -163,6 +163,11 @@ h5 {
   font-weight: 400;
 }
 
+/* The flow class is used to set a global margin automatically on a container with child elements, if the variable --flow-space is not defined locally then the fallback variable is used which is var(--space-4) */
+.flow > * + * {
+  margin-top: var(--flow-space, var(--space-4));
+}
+
 .hide-element {
   display: none;
 }
@@ -803,7 +808,7 @@ a:hover .social__icons {
 
 .offers__tab span {
   margin-right: 4%;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .offers__tab--active {
@@ -846,6 +851,10 @@ a:hover .social__icons {
 
   .section__title {
     margin-bottom: var(--space-9);
+  }
+
+  .offers__tab-num {
+    display: none;
   }
 }
 
@@ -972,11 +981,16 @@ a:hover .social__icons {
   }
 }
 
-/* About Page */
+/*~ About Page */
 
-.portrait {
+.about-intro__container h1 {
+  margin-bottom: var(--space-6);
+}
+
+.about-intro__img-portrait {
   max-width: 60%;
   height: auto;
+  margin: 0 !important;
 }
 
 .lazy-img {
@@ -984,18 +998,22 @@ a:hover .social__icons {
 }
 
 @media screen and (max-width: 800px) {
-  .portrait {
+  .about-intro__img-portrait {
     max-width: 100%;
     height: auto;
   }
 }
 
-/* About page */
-
-.bio-text {
-  margin-bottom: 1%;
+.about-intro__bio-text-container {
   text-align: left;
   justify-content: left;
+  margin-bottom: var(--space-4);
+}
+
+.about-intro__bio-text-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-tech-list {

@@ -87,13 +87,6 @@
       name="twitter:image"
       content="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
     />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap"
-      rel="stylesheet"
-    />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       rel="stylesheet"
@@ -192,36 +185,38 @@
     </header>
     <main>
       <section class="sections projects" id="about-bio">
-        <div class="section-project-container">
+        <div class="about-intro__container flow">
           <h1>À propos de Billy Nightingale</h1>
           <article>
-            <div class="text">
+            <div class="about-intro__container-content-text text flow">
               <h4>Une brève introduction</h4>
-              <div class="black-box bio-text">
+              <div class="black-box about-intro__bio-text-container">
+                <h2>
+                  Web designer et développeur à Capbreton, dans les Landes
+                </h2>
                 <p>
-                  Passionné par la création d’applications web, je suis diplômé
-                  en ingénierie et possède une approche créative de la
-                  résolution de problèmes. Toujours en quête
-                  d'auto-amélioration, je cherche constamment à enrichir mes
-                  compétences et à m'investir dans des projets stimulants. Mon
-                  objectif est de combiner ma passion pour la technologie avec
-                  mon désir profond de concevoir et d’innover.
+                  Je suis Billy Nightingale, web designer et développeur basé à
+                  Capbreton, dans la région des Landes, en France. J’aide les
+                  petites entreprises à créer des sites web modernes et
+                  performants : rapides, optimisés pour les moteurs de recherche
+                  et conçus pour soutenir la croissance réelle de leur activité.
                 </p>
-                <div class="about-list">
-                  <p>
-                    📚 J'ai suivi de nombreuses heures de formation sur FrontEnd
-                    Masters.
-                  </p>
-                  <p>
-                    🌱 Je me plonge actuellement plus profondément dans
-                    JavaScript
-                  </p>
-                  <p>🗂 J'ai terminé un cours sur TypeScript sur Udemy</p>
-                </div>
-                <p>Reviens voir mes projets</p>
+
+                <p>
+                  Grâce à ma formation en ingénierie mécanique et à une forte
+                  approche orientée résolution de problèmes, je combine
+                  développement technique et design réfléchi pour créer des
+                  sites web à la fois fonctionnels et visuellement attractifs.
+                  Mon travail va de la création de sites WordPress pour des
+                  entreprises locales au développement d’applications web et
+                  d’outils digitaux sur mesure, conçus pour simplifier les
+                  opérations et améliorer la présence en ligne.
+                </p>
+
+                <p>Découvrez également mes projets.</p>
                 <a class="btn" href="/fr/#projects">Projets</a>
               </div>
-              <h4>Mes technologies préférées</h4>
+              <h4 class="heading__project-tech">Mes technologies préférées</h4>
               <ul class="about-tech-list">
                 <li>HTML</li>
                 <li>CSS</li>
@@ -230,10 +225,13 @@
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>MySQL</li>
+                <li>WordPress</li>
+                <li>Elementor</li>
+                <li>Figma</li>
               </ul>
             </div>
             <img
-              class="portrait lazy-img"
+              class="about-intro__img-portrait lazy-img"
               src="/assets/lazyBillyPortrait.jpeg"
               data-src="/assets/billy_portrait.webp"
               alt="Portrait de Billy, web designer et développeur travaillant à Capbreton et dans les Landes"
