@@ -4,93 +4,83 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.billynightingale.com/</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/"/>
   </url>
 
   <!-- Homepage (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/"/>
   </url>
 
   <!-- About page -->
   <url>
     <loc>https://www.billynightingale.com/about</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/about"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/about"/>
   </url>
 
   <!-- About page (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/a-propos</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/about"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/about"/>
   </url>
 
   <!-- Contact (English) -->
   <url>
     <loc>https://www.billynightingale.com/contact</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/contact"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/contact"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/contact"/>
   </url>
 
 
     <!-- Contact (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/contact</loc>
-    <lastmod>2025-12-04</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/contact"/>
   </url>
 
   <!-- Terms and Conditions (English) -->
   <url>
     <loc>https://www.billynightingale.com/terms-and-conditions</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/terms-and-conditions"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/cgv"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/terms-and-conditions"/>
   </url>
 
 
     <!-- Terms and Conditions (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/cgv</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/cgv"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/terms-and-conditions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/terms-and-conditions"/>
   </url>
 
   <!-- Services page (English) -->
   <url>
     <loc>https://www.billynightingale.com/services</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/services"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/services"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/services"/>
   </url>
 
   <!-- Services (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/services</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.billynightingale.com/services"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.billynightingale.com/fr/services"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.billynightingale.com/services"/>
   </url>
 
 </urlset>
