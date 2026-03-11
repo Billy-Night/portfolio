@@ -7,7 +7,8 @@
   --lightGray: #455559;
   --darkGray: #2f3d40;
   --lightBlue: linear-gradient(135deg, #3d5a73 0%, #2a3f52 50%, #162630 100%);
-  /* --lightBlue: #3d5a73; */
+  --lin-grad-dark-black: linear-gradient(145deg, #000000 0%, #999999 100%);
+  /* --linGradDarkBlack: red; */
   --gold: #d9b282;
   --secondary-sand: #e0cca1;
   --white: #f7f8fa;
@@ -233,6 +234,84 @@ a {
 
 .btn-secondary:hover {
   background-color: var(--darkTrans);
+}
+
+/* Global Styles */
+
+.bg_lin-black {
+  background: var(--lin-grad-dark-black);
+}
+
+.radius-lg {
+  border-radius: 20px;
+}
+
+.pd-s {
+  padding: var(--space-3);
+}
+
+.floating-icon {
+  width: clamp(70px, 8vw, 110px);
+  position: absolute;
+  z-index: 5;
+  padding: var(--space-1);
+  display: flex;
+  justify-content: center;
+}
+
+.floating-icon--left {
+  left: -20px;
+  top: clamp(-15px, 1vw, 20px);
+  animation: floating-icon-float 9s ease-in-out infinite;
+}
+
+.floating-icon--right {
+  right: 20px;
+  top: -10px;
+  animation: floating-icon-float 6s ease-in-out infinite;
+}
+
+@keyframes floating-icon-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .floating-icon {
+    width: clamp(90px, 12vw, 130px);
+  }
+
+  .floating-icon--left {
+    top: 10px;
+    left: -10px;
+  }
+
+  .floating-icon--right {
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .floating-icon--right {
+    right: -10px;
+  }
+
+  .floating-icon--left {
+    left: -10px;
+  }
+}
+
+.svg-default {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Header */
@@ -583,61 +662,7 @@ a:hover .social__icons {
   align-items: center;
 }
 
-.cont__graph-improve {
-  width: clamp(60px, 25%, 120px);
-  position: absolute;
-  z-index: 5;
-  padding: var(--space-1);
-  left: -20px;
-  top: clamp(-15px, 1vw, 20px);
-  animation: floatImproveGraph 9s ease-in-out infinite;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-}
-
-.cont__arrow-improve {
-  width: clamp(60px, 25%, 120px);
-  position: absolute;
-  z-index: 5;
-  padding: var(--space-1);
-  right: 20px;
-  top: clamp(5px, 1vw, -10px);
-  animation: floatImprove 6s ease-in-out infinite;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-}
-
-.arrow-improve {
-  width: 100%;
-}
-
-@keyframes floatImproveGraph {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatImprove {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.home-intro-frame {
+.intro-image__frame {
   min-height: 350px;
   width: 85%;
   background-color: var(--off-white);
@@ -646,14 +671,13 @@ a:hover .social__icons {
   margin-top: 15%;
 }
 
-.home-intro-frame img {
+.home-intro__img {
   width: clamp(315px, 30vw, 375px);
   height: auto;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%) translateX(-40px);
-  /* overflow: visible; */
   z-index: 1;
 }
 
@@ -687,14 +711,12 @@ a:hover .social__icons {
 
 #btn-intro-projects {
   background-color: transparent;
-  /* border-color: white; */
   color: white;
 }
 
 @media screen and (max-width: 800px) {
   .home-intro-container {
     flex-direction: column;
-    /* margin-top: 14%; */
   }
 
   .home-intro-text-container {
@@ -715,18 +737,14 @@ a:hover .social__icons {
     justify-content: center;
   }
 
-  .home-intro-frame {
+  .intro-image__frame {
     width: 100%;
     min-height: 240px;
     height: 250px;
   }
 
-  .home-intro-frame img {
+  .home-intro__img {
     width: clamp(260px, 42vw, 310px);
-  }
-
-  .cont__graph-improve {
-    left: -10px;
   }
 }
 
@@ -985,6 +1003,22 @@ a:hover .social__icons {
 
 .about-intro__container h1 {
   margin-bottom: var(--space-6);
+}
+
+.about-intro__image {
+  width: clamp(200px, 25vw, 315px);
+  height: auto;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .about-intro__image {
+    width: clamp(210px, 35vw, 325px);
+  }
 }
 
 .about-intro__img-portrait {
