@@ -42,6 +42,124 @@ const cFPrefTimSeo = document.querySelector('#pref-time-seo')
 const contactScrollIcon = document.querySelector('#contact-icon-scroll')
 const statusElPass = document.querySelector('.form-status-pass')
 const statusElError = document.querySelector('.form-status-error')
+const circle = document.querySelector('.tl_dot')
+
+//* About Page
+// const timelineSection = document.querySelector('.tl__line-container')
+const timelineSection = document.querySelector('.tl__container')
+console.log(timelineSection)
+const path = document.querySelector('.tl_line')
+const pathLength = path.getTotalLength()
+const timeSteps = document.querySelectorAll('.time-step')
+
+path.style.strokeDasharray = pathLength
+path.style.strokeDashoffset = pathLength
+
+const stepData = [...document.querySelectorAll('.time-step')].map((step) => ({
+  step,
+  heading: step.querySelector('.ts-heading'),
+  triggerY: 0,
+  isActive: false,
+}))
+console.log(stepData)
+
+const calculateTimelineSecRect = () => {
+  return timelineSection.getBoundingClientRect()
+}
+
+const calculateStepPositions = () => {
+  // const timelineRect = timelineSection.getBoundingClientRect()
+  // console.log(`step postion sec rect:`, timelineRect)
+  const timelineRect = calculateTimelineSecRect()
+  // console.log(`step postion sec rect:`, timelineRect)
+  stepData.forEach((item) => {
+    const stepRect = item.step.getBoundingClientRect()
+    item.triggerY = stepRect.top - timelineRect.top + stepRect.height / 2
+  })
+}
+
+function updateTimelinePath() {
+  // calculate the timeline containers location:
+  const rect = calculateTimelineSecRect()
+  // console.log(`timelinepath sec rect:`, rect)
+
+  //* now draw the line
+  // get the height of the window
+  const windowHeight = window.innerHeight
+
+  // calculate the start location with offset
+  const offsetStart = windowHeight * 0.9
+  // get the end of the timeline container, with a small margin so it ends sooner
+  const sectionEnd = -rect.height * 0.8
+
+  const progress = (offsetStart - rect.top) / (offsetStart - sectionEnd)
+  const clampedProgress = Math.max(0, Math.min(1, progress))
+  // Control the speed in which the line is drawn
+  const easedProgress = Math.pow(clampedProgress, 1.1)
+
+  path.style.strokeDashoffset = pathLength * (1 - easedProgress)
+  const drawLength = pathLength * easedProgress
+  const point = path.getPointAtLength(drawLength)
+
+  // Now that we now the location of the end of the line we can use the SVG coordinates to add a circle.
+  circle.setAttribute('cx', point.x)
+  circle.setAttribute('cy', point.y)
+
+  // Get the location of the circle in regards to the viewport
+  const dotRect = circle.getBoundingClientRect()
+  // Now convert it to local coordinates system, by subtracting the dots top from the containers top value
+  const dotCenterY = dotRect.top - rect.top + dotRect.height / 2
+  // console.log(dotCenterY)
+
+  //* now we check each item to see if the dot has passed the trigger point.
+  stepData.forEach((item) => {
+    // Compare the location of the circle to the trigger point of each item
+    // There are both on the local coordinate system of the container.
+    const shouldBeActive = dotCenterY >= item.triggerY
+
+    if (shouldBeActive && !item.isActive) {
+      item.isActive = true
+
+      item.heading.classList.remove('hide-ts-h')
+      item.heading.classList.remove('reveal-text')
+
+      void item.heading.offsetWidth
+
+      item.heading.classList.add('reveal-text')
+    }
+
+    if (!shouldBeActive && item.isActive) {
+      item.isActive = false
+
+      item.heading.classList.add('hide-ts-h')
+      item.heading.classList.remove('reveal-text')
+    }
+  })
+}
+
+let ticking = false
+
+function onScroll() {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      updateTimelinePath()
+      ticking = false
+    })
+    ticking = true
+  }
+}
+
+function onResize() {
+  // calTimeContainerRect()
+  calculateStepPositions()
+  updateTimelinePath()
+}
+
+// calTimeContainerRect()
+calculateStepPositions()
+updateTimelinePath()
+window.addEventListener('scroll', onScroll)
+window.addEventListener('resize', onResize)
 
 //* Unused for now, but good French/English logic for later use
 // if (btnHomeIntro) {
