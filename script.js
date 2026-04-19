@@ -52,8 +52,10 @@ const path = document.querySelector('.tl_line')
 const pathLength = path.getTotalLength()
 const timeSteps = document.querySelectorAll('.time-step')
 
-path.style.strokeDasharray = pathLength
-path.style.strokeDashoffset = pathLength
+if (path) {
+  path.style.strokeDasharray = pathLength
+  path.style.strokeDashoffset = pathLength
+}
 
 const stepData = [...document.querySelectorAll('.time-step')].map((step) => ({
   step,
@@ -61,7 +63,6 @@ const stepData = [...document.querySelectorAll('.time-step')].map((step) => ({
   triggerY: 0,
   isActive: false,
 }))
-console.log(stepData)
 
 const calculateTimelineSecRect = () => {
   return timelineSection.getBoundingClientRect()
@@ -160,6 +161,48 @@ calculateStepPositions()
 updateTimelinePath()
 window.addEventListener('scroll', onScroll)
 window.addEventListener('resize', onResize)
+
+const processWrapper = document.querySelector('.about__process-cont')
+const phases = document.querySelectorAll('.phase-cont')
+
+let openPhase = null
+
+function updatePhases(activePhase) {
+  phases.forEach((phase) => {
+    const button = phase.querySelector('.btn-expand-process')
+    const phaseContent = phase.querySelector('.phase__content')
+    const isActive = phase === activePhase
+
+    phase.classList.toggle('phase--active', !!activePhase && isActive)
+    phase.classList.toggle('phase__cont--align')
+    phase.classList.toggle('phase--inactive', !!activePhase && !isActive)
+
+    if (phaseContent) {
+      phaseContent.classList.toggle('phase__content--hidden')
+      phaseContent.classList.toggle('phase__content--expanded')
+    }
+
+    if (button) {
+      button.classList.toggle('btn--open', !!activePhase && isActive)
+      button.textContent = !!activePhase && isActive ? 'Collapse' : 'Expand'
+    }
+  })
+}
+
+processWrapper?.addEventListener('click', (e) => {
+  const button = e.target.closest('.btn-expand-process')
+  if (!button) return
+
+  const clickedPhase = button.closest('.phase-cont')
+  if (!clickedPhase) return
+
+  openPhase = openPhase === clickedPhase ? null : clickedPhase
+  updatePhases(openPhase)
+})
+
+// const handleInactivePhase = (e) => {
+//   console.log('hello')
+// }
 
 //* Unused for now, but good French/English logic for later use
 // if (btnHomeIntro) {
