@@ -329,6 +329,10 @@ a {
   height: auto;
 }
 
+.max-txt-width {
+  max-width: 65ch;
+}
+
 /* Global text animations:  */
 
 /* Header */
@@ -1028,6 +1032,14 @@ a:hover .social__icons {
   margin-bottom: var(--space-6);
 }
 
+.abt__heading-conts {
+  padding: clamp(var(--space-4), 4vw, var(--space-7));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(var(--space-3), 4vw, var(--space-5));
+}
+
 .about-intro__image {
   width: clamp(200px, 25vw, 315px);
   height: auto;
@@ -1359,7 +1371,12 @@ a:hover .social__icons {
 }
 
 .wid__content_cta {
-  margin-top: var(--space-6);
+  margin-top: clamp(var(--space-3), 4vw, var(--space-6));
+  /* margin: var(--space-8) auto 0px auto; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-4);
 }
 
 @media screen and (max-width: 900px) {
@@ -1486,6 +1503,190 @@ a:hover .social__icons {
   }
   .phase__cont__svg {
     width: 30%;
+  }
+}
+
+.tech__title-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+.tech__list-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+@media screen and (max-width: 848px) {
+  .tech__list-cont {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tech__containers {
+  padding: clamp(var(--space-3), 4vw, var(--space-7));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(var(--space-3), 4vw, var(--space-5));
+}
+
+.tech__items-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.tech__items-cont > span {
+  background-color: var(--gold);
+  padding: var(--space-3);
+  border-radius: 10px;
+  color: var(--dark);
+  font-family: var(--mono);
+  /* animation: fadeIn 2s ease-in; */
+}
+
+/*ToDo Need to add fade in to spans
+
+/* 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+/** End of about technologies */
+
+.abt__locPer__section-pad {
+  padding: var(--padding-hor-section) var(--page-gutter);
+}
+
+.per__title-marg {
+  margin-top: clamp(var(--space-4), 4vw, var(--space-9));
+}
+
+.locPer__content-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.loc__img-corner {
+  border-radius: 10px;
+}
+
+.LocPer__txt-cont {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(var(--space-4), 4vw, var(--space-10));
+}
+
+.txt-normal-flow {
+  transform: translateX(-20%) translateY(10%);
+}
+
+.locPer__img-cont img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+}
+
+.loc__img-left img {
+  -webkit-mask-image: linear-gradient(
+    to left,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.per__img-right img {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.perso__content-reversed {
+  grid-template-areas: 'text image';
+}
+
+.txt-reversed {
+  grid-area: text;
+  transform: translateX(20%) translateY(10%);
+}
+
+.img-reversed {
+  grid-area: image;
+}
+
+@media screen and (max-width: 767px) {
+  .perso__content-reversed {
+    grid-template-areas: 'image' 'text';
+  }
+  .locPer__content-cont {
+    grid-template-columns: 1fr;
+  }
+  .content-cont-marg-right {
+    margin-right: var(--page-gutter);
+  }
+  .content-cont-marg-left {
+    margin-left: var(--page-gutter);
+  }
+  .LocPer__txt-cont {
+    margin-top: 0%;
+  }
+  .loc-mob-margin-left {
+    margin-left: var(--page-gutter);
+  }
+
+  .per-mob-margin-right {
+    margin-right: var(--page-gutter);
+  }
+
+  .txt-normal-flow {
+    transform: translateX(0%) translateY(-10%);
+  }
+
+  .txt-reversed {
+    transform: translateX(0%) translateY(-10%);
+  }
+
+  .loc__img-left {
+    padding-right: 5%;
+  }
+
+  .per__img-right {
+    padding-left: 5%;
   }
 }
 
