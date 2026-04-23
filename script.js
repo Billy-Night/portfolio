@@ -189,16 +189,18 @@ function updatePhases(activePhase) {
   })
 }
 
-processWrapper?.addEventListener('click', (e) => {
-  const button = e.target.closest('.btn-expand-process')
-  if (!button) return
+if (processWrapper) {
+  processWrapper?.addEventListener('click', (e) => {
+    const button = e.target.closest('.btn-expand-process')
+    if (!button) return
 
-  const clickedPhase = button.closest('.phase-cont')
-  if (!clickedPhase) return
+    const clickedPhase = button.closest('.phase-cont')
+    if (!clickedPhase) return
 
-  openPhase = openPhase === clickedPhase ? null : clickedPhase
-  updatePhases(openPhase)
-})
+    openPhase = openPhase === clickedPhase ? null : clickedPhase
+    updatePhases(openPhase)
+  })
+}
 
 // const handleInactivePhase = (e) => {
 //   console.log('hello')
