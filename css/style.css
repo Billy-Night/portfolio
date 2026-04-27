@@ -956,16 +956,58 @@ a:hover .social__icons {
 }
 
 .hero__title-container {
+  position: relative;
   z-index: 2;
   grid-area: title;
+  display: inline-flex;
+  align-items: flex-end;
 }
 
 .hero__title {
+  position: relative;
+  display: inline-block;
   font-family: var(--display-bold);
   font-size: clamp(5rem, 15vw, 19rem);
   color: var(--brightGold);
   line-height: 0.7;
   letter-spacing: 3%;
+}
+
+.hero__title-text {
+  display: inline-block;
+  line-height: 0.7;
+  letter-spacing: 3%;
+}
+
+.type-measure {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1.5rem);
+  transform: translateY(-60%);
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.type-measure svg {
+  width: 14px;
+  height: var(--measure-height);
+  overflow: visible;
+}
+
+.type-measure line {
+  stroke: currentColor;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.type-measure__label {
+  font-size: 0.65rem;
+  line-height: 1;
+  color: white;
+  font-family: var(--mono);
 }
 
 @media screen and (max-width: 400px) {
@@ -1000,39 +1042,28 @@ a:hover .social__icons {
   /* filter: drop-shadow(0px 4px 60px rgba(0, 0, 0, 0.2)); */
 }
 
-.orbit-path-motion {
-  fill: none;
+#orbit-path-draw-1 {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+#orbitPath1 {
+  fill: transparent;
   stroke: none;
 }
 
-.orbit-path-draw {
-  fill: none;
+#orbit-path-draw-2 {
+  fill: transparent;
   stroke: white;
   stroke-width: 2;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 101.2;
-  animation: drawOrbit 18s linear infinite;
+  stroke-linecap: round;
 }
 
-@keyframes drawOrbit {
-  to {
-    stroke-dashoffset: 1.2;
-  }
-}
-
-.orbit-path-draw-reverse {
-  fill: none;
-  stroke: white;
-  stroke-width: 2;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 101.2;
-  animation: drawOrbitReverse 15s linear infinite;
-}
-
-@keyframes drawOrbitReverse {
-  to {
-    stroke-dashoffset: 1.2;
-  }
+#orbitPath2 {
+  fill: transparent;
+  stroke: none;
 }
 
 .hero-small-circle {

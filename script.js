@@ -45,44 +45,123 @@ const statusElError = document.querySelector('.form-status-error')
 const circle = document.querySelector('.tl_dot')
 
 //* About Page
-// const timelineSection = document.querySelector('.tl__line-container')
+
 const timelineSection = document.querySelector('.tl__container')
-console.log(timelineSection)
 const path = document.querySelector('.tl_line')
-const pathLength = path.getTotalLength()
 const timeSteps = document.querySelectorAll('.time-step')
 
+const titleText = document.querySelector('.hero__title-text')
+const measure = document.querySelector('.type-measure')
+const label = document.querySelector('.type-measure__label')
+
+function updateMeasure() {
+  const height = Math.round(titleText.getBoundingClientRect().height)
+
+  measure.style.setProperty('--measure-height', `${height}px`)
+  label.textContent = `${height}px`
+}
+
+function initMeasure() {
+  updateMeasure()
+
+  window.addEventListener('resize', updateMeasure)
+  window.addEventListener('load', updateMeasure)
+}
+
+document.fonts.ready.then(initMeasure)
+
+animateOrbit({
+  path: document.querySelector('#orbitPath1'),
+  drawPath: document.querySelector('#orbit-path-draw-1'),
+  dot: document.querySelector('#orbitDot1'),
+  duration: 18000,
+})
+
+animateOrbit({
+  path: document.querySelector('#orbitPath2'),
+  drawPath: document.querySelector('#orbit-path-draw-2'),
+  dot: document.querySelector('#orbitDot2'),
+  duration: 24000,
+  reverse: true,
+})
+
+function animateOrbit({
+  path,
+  drawPath,
+  dot,
+  duration = 18000,
+  reverse = false,
+}) {
+  if (!path) return
+  const length = path.getTotalLength()
+
+  drawPath.style.strokeDasharray = `${length}px`
+  drawPath.style.strokeDashoffset = `${length}px`
+
+  function loop(timeStamp) {
+    // const rawProgress = (timeStamp % duration) / duration
+    // const progress = reverse ? 1 - rawProgress : rawProgress
+    const progress = (timeStamp % duration) / duration
+
+    const distance = length * progress
+    const point = path.getPointAtLength(distance)
+
+    dot.setAttribute('cx', point.x)
+    dot.setAttribute('cy', point.y)
+
+    drawPath.style.strokeDashoffset = `${length - distance}px`
+
+    requestAnimationFrame(loop)
+  }
+
+  requestAnimationFrame(loop)
+}
+
+//* code for timeline:::
+
+let pathLength = 0
+
 if (path) {
+  pathLength = path.getTotalLength()
   path.style.strokeDasharray = pathLength
   path.style.strokeDashoffset = pathLength
 }
 
-const stepData = [...document.querySelectorAll('.time-step')].map((step) => ({
-  step,
-  heading: step.querySelector('.ts-heading'),
-  triggerY: 0,
-  isActive: false,
-}))
+let stepData = []
+
+if (timeSteps) {
+  stepData = [...document.querySelectorAll('.time-step')].map((step) => ({
+    step,
+    heading: step.querySelector('.ts-heading'),
+    triggerY: 0,
+    isActive: false,
+  }))
+}
 
 const calculateTimelineSecRect = () => {
-  return timelineSection.getBoundingClientRect()
+  if (timelineSection) {
+    return timelineSection.getBoundingClientRect()
+  } else {
+    return
+  }
 }
 
 const calculateStepPositions = () => {
-  // const timelineRect = timelineSection.getBoundingClientRect()
-  // console.log(`step postion sec rect:`, timelineRect)
   const timelineRect = calculateTimelineSecRect()
-  // console.log(`step postion sec rect:`, timelineRect)
-  stepData.forEach((item) => {
-    const stepRect = item.step.getBoundingClientRect()
-    item.triggerY = stepRect.top - timelineRect.top + stepRect.height / 2
-  })
+  if (stepData.length > 0) {
+    stepData.forEach((item) => {
+      const stepRect = item.step.getBoundingClientRect()
+      item.triggerY = stepRect.top - timelineRect.top + stepRect.height / 2
+    })
+  } else {
+    return
+  }
 }
 
 function updateTimelinePath() {
   // calculate the timeline containers location:
   const rect = calculateTimelineSecRect()
-  // console.log(`timelinepath sec rect:`, rect)
+  if (!rect) return
 
   //* now draw the line
   // get the height of the window
@@ -157,10 +236,12 @@ function onResize() {
 }
 
 // calTimeContainerRect()
-calculateStepPositions()
-updateTimelinePath()
-window.addEventListener('scroll', onScroll)
-window.addEventListener('resize', onResize)
+if (timelineSection) {
+  calculateStepPositions()
+  updateTimelinePath()
+  window.addEventListener('scroll', onScroll)
+  window.addEventListener('resize', onResize)
+}
 
 const processWrapper = document.querySelector('.about__process-cont')
 const phases = document.querySelectorAll('.phase-cont')
@@ -213,6 +294,8 @@ if (processWrapper) {
 //     window.location.href = isFrench ? '/fr/contact' : '/contact'
 //   })
 // }
+
+//* END of about page code :::
 
 if (clientFormReason) {
   clientFormReason.addEventListener('change', function () {

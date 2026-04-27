@@ -247,36 +247,57 @@
         </svg> -->
         <div class="hero__full-container">
           <div class="hero__title-container">
-            <span class="hero__title-word">ABOUT</span>
-            <h1 class="hero__title">BILLY NIGHTINGALE</h1>
+            <div>
+              <span class="hero__title-word">ABOUT</span>
+              <h1 class="hero__title">
+                <span class="hero__title-text">BILLY NIGHTINGALE</span>
+                <span class="type-measure">
+                  <svg
+                    class="measure"
+                    width="14"
+                    viewBox="0 0 14 302"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      y1="-0.5"
+                      x2="300.002"
+                      y2="-0.5"
+                      transform="matrix(-0.00333331 0.999994 -0.999879 -0.0155253 7 1)"
+                      stroke="white"
+                    />
+                    <line x1="1" y1="0.5" x2="14" y2="0.5" stroke="white" />
+                    <line y1="300.5" x2="13" y2="300.5" stroke="white" />
+                  </svg>
+                  <span class="type-measure__label"></span>
+                </span>
+              </h1>
+            </div>
+            <!-- <div class="title__SVG-cont">
+              <div>
+                <span class="mesureDisplay"></span>
+              </div>
+            </div> -->
           </div>
           <div class="intro__img-container">
             <svg
               class="hero-small-circle"
               width="900"
               height="900"
-              viewBox="0 0 900 900"
+              viewBox="-20 -20 940 940"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="450" cy="450" r="449" />
+              <!-- <circle cx="450" cy="450" r="449" /> -->
               <path
-                id="orbitPath"
-                class="orbit-path-motion"
-                pathLength="100"
-                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+                id="orbit-path-draw-1"
+                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
               />
-
               <path
-                class="orbit-path-draw"
-                pathLength="100"
-                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+                id="orbitPath1"
+                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
               />
-              <circle r="10" fill="white">
-                <animateMotion dur="18s" repeatCount="indefinite">
-                  <mpath href="#orbitPath" />
-                </animateMotion>
-              </circle>
+              <circle id="orbitDot1" r="10" fill="white"></circle>
             </svg>
             <div class="intro__image--frame">
               <img
@@ -291,28 +312,20 @@
               class="hero-big-circle"
               width="900"
               height="900"
-              viewBox="0 0 900 900"
+              viewBox="-20 -20 940 940"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="450" cy="450" r="449" />
+              <!-- <circle cx="450" cy="450" r="449" /> -->
               <path
-                id="orbitPathReverse"
-                class="orbit-path-motion"
-                pathLength="100"
-                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+                id="orbit-path-draw-2"
+                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
               />
-
               <path
-                class="orbit-path-draw-reverse"
-                pathLength="100"
-                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+                id="orbitPath2"
+                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
               />
-              <circle r="10" fill="white">
-                <animateMotion dur="15s" repeatCount="indefinite">
-                  <mpath href="#orbitPathReverse" />
-                </animateMotion>
-              </circle>
+              <circle id="orbitDot2" r="10" fill="white"></circle>
             </svg>
             <!-- <div class="hero__sub-heading-cont">
               <h2>
