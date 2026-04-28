@@ -265,7 +265,11 @@ function updatePhases(activePhase) {
 
     if (button) {
       button.classList.toggle('btn--open', !!activePhase && isActive)
-      button.textContent = !!activePhase && isActive ? 'Collapse' : 'Expand'
+      if (window.location.pathname.includes('/fr/')) {
+        button.textContent = !!activePhase && isActive ? 'Fermer' : 'Ouvrir'
+      } else {
+        button.textContent = !!activePhase && isActive ? 'Collapse' : 'Expand'
+      }
     }
   })
 }
