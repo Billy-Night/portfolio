@@ -254,7 +254,7 @@ a {
   background-color: var(--gold);
   color: var(--dark);
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: var(--corner-rad);
   font-family: var(--mono);
   text-decoration: none;
 }
@@ -269,7 +269,7 @@ a {
   background-color: var(--gold);
   color: var(--dark);
   padding: 0.5rem;
-  /* border-radius: 10px; */
+  border-radius: var(--corner-rad);
   font-family: var(--mono);
   text-decoration: none;
   border: solid 2px white;
@@ -287,7 +287,7 @@ a {
   background-color: transparent;
   color: white;
   padding: 0.5rem;
-  /* border-radius: 10px; */
+  border-radius: var(--corner-rad);
   font-family: var(--mono);
   text-decoration: none;
   border: solid 2px white;
@@ -419,7 +419,7 @@ a {
     box-shadow 180ms ease;
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
+  border-radius: var(--corner-rad);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
@@ -1033,9 +1033,20 @@ a:hover .social__icons {
   font-family: var(--mono);
 }
 
+@media screen and (max-width: 480px) {
+  .type-measure {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .hero__title {
+    display: block;
     line-height: 0.8;
+  }
+
+  .hero__title-text {
+    display: inline;
   }
 }
 
@@ -1345,6 +1356,7 @@ a:hover .social__icons {
   display: inline-block;
   opacity: 0;
   transform: translateY(20px);
+  color: var(--subHeading-colour);
   animation: reveal 0.6s forwards;
 }
 
@@ -1817,21 +1829,9 @@ a:hover .social__icons {
   .locPer__content-cont {
     grid-template-columns: 1fr;
   }
-  .content-cont-marg-right {
-    margin-right: var(--page-gutter);
-  }
-  .content-cont-marg-left {
-    margin-left: var(--page-gutter);
-  }
+
   .LocPer__txt-cont {
     margin-top: 0%;
-  }
-  .loc-mob-margin-left {
-    margin-left: var(--page-gutter);
-  }
-
-  .per-mob-margin-right {
-    margin-right: var(--page-gutter);
   }
 
   .txt-normal-flow {
