@@ -1,13 +1,21 @@
 /* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
 :root {
   /* Colour Palette */
+  --white: #f7f8fa;
+  --off-white: #e6edf2;
   --dark: #182625;
   --darkTrans: rgb(24, 38, 37, 0.9);
   --darkGreen: #28403d;
   --lightGray: #455559;
   --darkGray: #2f3d40;
   --darkBlue: #2a3f52;
+  --secondary-sand: #e0cca1;
+  --light-gold: #e6c79a;
+  --gold: #d9b282;
   --brightGold: #dca868;
+  --deep-green: #45543a;
+
+  /* Gradients */
   --lightBlue: linear-gradient(135deg, #3d5a73 0%, #2a3f52 50%, #162630 100%);
   --lin-grad-dark-black: linear-gradient(145deg, #000000 0%, #999999 100%);
   --lin-grad-sand: linear-gradient(
@@ -16,22 +24,31 @@
     #eae2d5 50%,
     #e5d7bd 100%
   );
-  /* --linGradDarkBlack: red; */
-  --gold: #d9b282;
-  --secondary-sand: #e0cca1;
-  --white: #f7f8fa;
-  --off-white: #e6edf2;
   --dividerBackground: linear-gradient(
     90deg,
     rgba(191, 137, 117, 1) 0%,
     rgba(64, 47, 41, 1) 100%
   );
 
+  /* element colours */
+  --page-background: #11293f;
+  --title-colour: #dca868;
+  --subHeading-colour: #ebc79a;
+  --body-colour: #e6edf2;
+  --btn-primary: var(--gold);
+
+  /* container colours */
+  --green-container: #45543a;
+
+  /* fonts */
   --mono: 'GeistMono', monospace;
   --sans: 'Switzer', sans-serif;
   --display: 'MgDisplay-black', sans-serif;
   --display-bold: 'MgDisplay-SemiBold', sans-serif;
   --subHeading: 'MgDisplay-SemiBold', sans-serif;
+
+  --corner-rad: 5px;
+
   /* Micro spacing (typography & UI) */
   --space-1: 0.25rem; /* 4px */
   --space-2: 0.5rem; /* 8px */
@@ -149,8 +166,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--sans);
-  background: var(--darkBlue);
-  color: var(--white);
+  background: var(--page-background);
+  color: var(--body-colour);
 }
 
 h1 {
@@ -158,31 +175,37 @@ h1 {
   line-height: var(--leading-title);
   letter-spacing: 6%;
   font-family: var(--display-bold);
+  color: var(--title-colour);
 }
 
 h2 {
   font-size: var(--title-3);
   line-height: var(--leading-title);
   font-family: var(--subHeading);
-  letter-spacing: 3%;
+  letter-spacing: 4%;
+  color: var(--subHeading-colour);
 }
 
 h3 {
   font-size: var(--title-4);
   line-height: var(--leading-title);
   font-family: var(--subHeading);
-  letter-spacing: 3%;
+  letter-spacing: 4%;
+  color: var(--subHeading-colour);
 }
 
 h4 {
   font-size: var(--title-5);
   line-height: var(--leading-title);
+  font-family: var(--sans);
   letter-spacing: 3%;
+  color: var(--body-colour);
 }
 
 h5 {
   font-size: var(--title-6);
   line-height: var(--leading-title);
+  color: var(--subHeading-colour);
 }
 
 h6 {
@@ -243,7 +266,7 @@ a {
 
 .btn-primary {
   cursor: pointer;
-  background-color: var(--brightGold);
+  background-color: var(--gold);
   color: var(--dark);
   padding: 0.5rem;
   /* border-radius: 10px; */
@@ -1166,10 +1189,6 @@ a:hover .social__icons {
   max-width: 60ch;
 }
 
-.about__intro__txt-cont h2 {
-  color: var(--brightGold);
-}
-
 .about-intro__image {
   width: clamp(200px, 40vw, 315px);
   height: auto;
@@ -1327,13 +1346,6 @@ a:hover .social__icons {
   opacity: 0;
   transform: translateY(20px);
   animation: reveal 0.6s forwards;
-
-  background: var(--lin-grad-sand);
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-  -webkit-text-fill-color: transparent;
 }
 
 .reveal-text span:nth-child(1) {
@@ -1481,17 +1493,15 @@ a:hover .social__icons {
 
 .wid__text-cont {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top: auto;
-  padding-bottom: auto;
 }
 
 .wid__text {
-  background-color: var(--dark);
+  background-color: var(--green-container);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   text-align: center;
   padding: clamp(var(--space-4), 4vw, var(--space-10));
 }
@@ -1653,7 +1663,7 @@ a:hover .social__icons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
@@ -1684,7 +1694,7 @@ a:hover .social__icons {
 .tech__items-cont > span {
   background-color: var(--gold);
   padding: var(--space-3);
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   color: var(--dark);
   font-family: var(--mono);
   /* animation: fadeIn 2s ease-in; */
@@ -1706,6 +1716,15 @@ a:hover .social__icons {
 
 .abt__locPer__section-pad {
   padding: var(--padding-hor-section) var(--page-gutter);
+}
+
+.abt-loc__heading-cont {
+  padding-bottom: var(--space-6);
+}
+
+.abt-per__heading-cont {
+  padding-bottom: var(--space-6);
+  text-align: right;
 }
 
 .per__title-marg {
