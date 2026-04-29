@@ -27,6 +27,14 @@
       href="https://www.billynightingale.com/fr/a-propos"
     />
 
+    <link
+      rel="preload"
+      href="/assets/fonts/MangoGrotesque-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Favicons -->
     <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
     <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
@@ -176,78 +184,96 @@
       </nav>
     </header>
     <main>
-      <section class="home-hero" id="intro">
+      <section class="hero__section" id="intro">
         <svg
-          class="hero-big-circle"
-          viewBox="0 0 1000 1000"
+          class="hero__horLine-top"
+          width="3000"
+          height="1"
+          viewBox="0 0 3000 1"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle
-            cx="500"
-            cy="500"
-            r="499"
-            fill="#2A3F52"
-            stroke="white"
-            stroke-width="2"
-          />
-          <circle cx="659" cy="27" r="6" fill="white" />
-          <circle cx="29" cy="337" r="6" fill="white" />
+          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
         </svg>
         <svg
-          class="hero-small-circle"
-          viewBox="0 0 800 800"
+          class="hero__verLine-left"
+          width="1"
+          height="3000"
+          viewBox="0 0 1 3000"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle class="ring" cx="400" cy="400" r="399" fill="#2F4659" />
-          <circle class="node" cx="260" cy="26" r="6" />
-          <circle class="node" cx="719" cy="160" r="6" />
+          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
         </svg>
-        <div class="hero__text-container">
-          <h1>About Billy Nightingale</h1>
-          <div class="hero__sub-heading">
-            <h2>Web designer and developer in Capbreton, Landes</h2>
+        <svg
+          class="hero__verLine-right"
+          width="1"
+          height="3000"
+          viewBox="0 0 1 3000"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
+        </svg>
+        <svg
+          class="hero__horLine-bottom"
+          width="3000"
+          height="1"
+          viewBox="0 0 3000 1"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
+        </svg>
+        <div class="hero__full-container">
+          <div class="hero__title-container">
+            <div>
+              <span class="hero__title-word">ABOUT</span>
+              <h1 class="hero__title">
+                <span class="hero__title-text">BILLY NIGHTINGALE</span>
+                <span class="type-measure">
+                  <svg
+                    class="measure"
+                    width="14"
+                    viewBox="0 0 14 302"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      y1="-0.5"
+                      x2="300.002"
+                      y2="-0.5"
+                      transform="matrix(-0.00333331 0.999994 -0.999879 -0.0155253 7 1)"
+                      stroke="white"
+                    />
+                    <line x1="1" y1="0.5" x2="14" y2="0.5" stroke="white" />
+                    <line y1="300.5" x2="13" y2="300.5" stroke="white" />
+                  </svg>
+                  <span class="type-measure__label"></span>
+                </span>
+              </h1>
+            </div>
           </div>
-        </div>
-        <a class="hero__contact-link" href="/contact"
-          >[ DISCOVER MY JOURNEY ]</a
-        >
-      </section>
-      <section class="sec-home-intro">
-        <div class="home-intro-container glass__back">
-          <div class="home-intro-img-container">
-            <div class="floating-icon floating-icon--left glass__back">
-              <div class="bg_lin-black radius-lg pd-s">
-                <svg
-                  class="svg-default"
-                  viewBox="0 0 512 512"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M409.6 204.8C466.067 204.8 512 158.867 512 102.4C512 45.9333 466.067 0 409.6 0C368.596 0 333.242 24.2792 316.904 59.1708L289.483 49.05C289.808 46.95 290.133 44.85 290.133 42.6667C290.133 19.1417 270.992 0 247.467 0C223.942 0 204.8 19.1417 204.8 42.6667C204.8 66.1917 223.942 85.3333 247.467 85.3333C262.75 85.3333 276.079 77.1833 283.613 65.075L310.988 75.1792C308.583 83.8667 307.2 92.9625 307.2 102.4C307.2 113.579 309.058 124.313 312.388 134.392L218.538 174.167C201.354 141.679 167.246 119.467 128 119.467C115.283 119.467 103.15 121.908 91.9042 126.158L68.3 76.5542C78.5833 68.7542 85.3333 56.5333 85.3333 42.6667C85.3333 19.1417 66.1917 0 42.6667 0C19.1417 0 0 19.1417 0 42.6667C0 66.1917 19.1417 85.3333 42.6667 85.3333C46.2167 85.3333 49.6208 84.7708 52.925 83.9417L76.5 133.496C46.1125 151.279 25.6 184.183 25.6 221.867C25.6 257.263 43.6583 288.504 71.0333 306.9L55.425 334.958C51.3625 333.679 47.1375 332.8 42.6667 332.8C19.1417 332.8 0 351.942 0 375.467C0 398.992 19.1417 418.133 42.6667 418.133C66.1917 418.133 85.3333 398.992 85.3333 375.467C85.3333 362.546 79.4375 351.088 70.3417 343.263L85.9833 315.146C98.8167 320.954 113.017 324.267 128 324.267C151.417 324.267 172.954 316.279 190.225 303L223.813 339.95C206.779 358.246 196.267 382.688 196.267 409.6C196.267 414.821 196.788 419.908 197.538 424.917L158.021 434.296C151.221 419.754 136.55 409.6 119.467 409.6C95.9417 409.6 76.8 428.742 76.8 452.267C76.8 475.792 95.9417 494.933 119.467 494.933C142.992 494.933 162.133 475.792 162.133 452.267C162.133 451.796 162.004 451.354 161.996 450.883L201.438 441.533C214.888 482.396 253.354 512 298.667 512C355.133 512 401.067 466.067 401.067 409.6C401.067 392.092 396.638 375.604 388.854 361.183L438.979 328.592C446.729 336.442 457.463 341.333 469.333 341.333C492.858 341.333 512 322.192 512 298.667C512 275.142 492.858 256 469.333 256C445.808 256 426.667 275.142 426.667 298.667C426.667 304.179 427.8 309.417 429.713 314.258L379.471 346.921C369.417 333.996 356.363 323.558 341.333 316.629L382.983 201.167C391.483 203.458 400.383 204.8 409.6 204.8ZM247.467 68.2667C233.354 68.2667 221.867 56.7792 221.867 42.6667C221.867 28.5542 233.354 17.0667 247.467 17.0667C261.579 17.0667 273.067 28.5542 273.067 42.6667C273.067 56.7792 261.579 68.2667 247.467 68.2667ZM17.0667 42.6667C17.0667 28.5542 28.5542 17.0667 42.6667 17.0667C56.7792 17.0667 68.2667 28.5542 68.2667 42.6667C68.2667 56.7792 56.7792 68.2667 42.6667 68.2667C28.5542 68.2667 17.0667 56.7792 17.0667 42.6667ZM42.6667 401.067C28.5542 401.067 17.0667 389.579 17.0667 375.467C17.0667 361.354 28.5542 349.867 42.6667 349.867C56.7792 349.867 68.2667 361.354 68.2667 375.467C68.2667 389.579 56.7792 401.067 42.6667 401.067ZM119.467 477.867C105.354 477.867 93.8667 466.379 93.8667 452.267C93.8667 438.154 105.354 426.667 119.467 426.667C133.579 426.667 145.067 438.154 145.067 452.267C145.067 466.379 133.579 477.867 119.467 477.867ZM469.333 273.067C483.446 273.067 494.933 284.554 494.933 298.667C494.933 312.779 483.446 324.267 469.333 324.267C455.221 324.267 443.733 312.779 443.733 298.667C443.733 284.554 455.221 273.067 469.333 273.067ZM359.346 171.213C363.154 151.475 380.554 136.533 401.067 136.533H418.133C438.646 136.533 456.046 151.475 459.854 171.213C445.738 181.546 428.4 187.733 409.6 187.733C390.8 187.733 373.463 181.546 359.346 171.213ZM409.6 119.467C395.488 119.467 384 107.979 384 93.8667C384 79.7542 395.488 68.2667 409.6 68.2667C423.713 68.2667 435.2 79.7542 435.2 93.8667C435.2 107.979 423.713 119.467 409.6 119.467ZM409.6 17.0667C456.654 17.0667 494.933 55.3458 494.933 102.4C494.933 123.733 487.004 143.225 474.008 158.2C468.029 142.454 455.563 129.888 440.029 123.683C447.583 115.983 452.267 105.471 452.267 93.8667C452.267 70.3417 433.125 51.2 409.6 51.2C386.075 51.2 366.933 70.3417 366.933 93.8667C366.933 105.471 371.617 115.983 379.171 123.683C363.638 129.888 351.171 142.454 345.192 158.2C332.196 143.225 324.267 123.733 324.267 102.4C324.267 55.3458 362.546 17.0667 409.6 17.0667ZM42.6667 221.867C42.6667 174.813 80.9458 136.533 128 136.533C175.054 136.533 213.333 174.813 213.333 221.867C213.333 243.267 205.354 262.808 192.292 277.804C186.333 262 173.842 249.371 158.267 243.15C165.813 235.45 170.496 224.938 170.496 213.333C170.496 189.808 151.354 170.667 127.829 170.667C104.304 170.667 85.1625 189.808 85.1625 213.333C85.1625 224.938 89.8458 235.45 97.4 243.15C81.9125 249.325 69.4625 261.846 63.4625 277.529C50.5417 262.571 42.6667 243.142 42.6667 221.867ZM102.229 213.333C102.229 199.221 113.717 187.733 127.829 187.733C141.942 187.733 153.429 199.221 153.429 213.333C153.429 227.446 141.942 238.933 127.829 238.933C113.717 238.933 102.229 227.446 102.229 213.333ZM77.6042 290.567C81.45 270.883 98.825 256 119.296 256H136.363C156.913 256 174.346 270.992 178.1 290.792C164.013 301.063 146.729 307.2 128 307.2C109.133 307.2 91.7417 300.971 77.6042 290.567ZM248.271 478.3C252.117 458.617 269.492 443.733 289.963 443.733H307.029C327.579 443.733 345.013 458.725 348.767 478.525C334.679 488.796 317.396 494.933 298.667 494.933C279.8 494.933 262.408 488.704 248.271 478.3ZM298.496 426.667C284.383 426.667 272.896 415.179 272.896 401.067C272.896 386.954 284.383 375.467 298.496 375.467C312.608 375.467 324.096 386.954 324.096 401.067C324.096 415.179 312.608 426.667 298.496 426.667ZM384 409.6C384 431 376.021 450.542 362.958 465.538C357 449.733 344.508 437.104 328.933 430.883C336.479 423.183 341.163 412.671 341.163 401.067C341.163 377.542 322.021 358.4 298.496 358.4C274.971 358.4 255.829 377.542 255.829 401.067C255.829 412.671 260.513 423.183 268.067 430.883C252.579 437.058 240.129 449.579 234.129 465.263C221.208 450.304 213.333 430.875 213.333 409.6C213.333 362.546 251.613 324.267 298.667 324.267C345.721 324.267 384 362.546 384 409.6ZM325.283 310.833C316.783 308.542 307.883 307.2 298.667 307.2C275.25 307.2 253.713 315.188 236.442 328.467L202.854 291.517C219.888 273.221 230.4 248.779 230.4 221.867C230.4 210.688 228.542 199.954 225.213 189.875L319.063 150.1C329.575 169.975 346.446 185.925 366.942 195.371L325.283 310.833Z"
-                    fill="#D9B282"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="floating-icon floating-icon--right glass__back">
-              <div class="bg_lin-black radius-lg pd-s">
-                <svg
-                  class="svg-default"
-                  viewBox="0 0 400 400"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M23.9168 224.41C34.8806 224.41 44.1398 216.854 46.9662 206.585L142.838 206.585C143.735 214.421 146.211 221.779 149.94 228.342H90.1265C87.7743 228.342 85.5998 229.598 84.4237 231.636L64.0031 267.022C62.0706 266.508 60.0435 266.232 57.9554 266.232C44.767 266.232 34.0369 277.172 34.0369 290.618C34.0369 304.065 44.767 315.028 57.9554 315.028C71.1439 315.028 81.8969 304.078 81.8969 290.618C81.8969 284.111 79.3767 278.196 75.2854 273.819L93.929 241.512H160.196C169.05 250.009 180.6 255.708 193.426 257.176V263.689H135.713C132.077 263.689 129.129 266.638 129.129 270.274C129.129 273.91 132.077 276.859 135.713 276.859H193.426V299.012H126.568C124.216 299.012 122.042 300.268 120.866 302.305L99.864 338.691C97.938 338.179 95.9183 337.906 93.8368 337.906C80.6484 337.906 69.9183 348.846 69.9183 362.292C69.9183 375.739 80.6484 386.702 93.8368 386.702C107.025 386.702 117.755 375.753 117.755 362.292C117.755 355.783 115.236 349.867 111.146 345.489L130.371 312.182H193.427L193.427 356.29H176.098C173.271 346.021 164.012 338.466 153.048 338.466C139.86 338.466 129.13 349.416 129.13 362.875C129.13 376.334 139.86 387.262 153.048 387.262C164.01 387.262 173.267 379.717 176.096 369.46H193.427V393.415C193.427 397.052 196.375 400 200.011 400H224.881C227.45 400 229.783 398.507 230.86 396.174L247.674 359.737L279.24 346.659L316.903 360.538C319.315 361.426 322.021 360.831 323.837 359.013L358.995 323.83C360.809 322.014 361.403 319.311 360.518 316.902L346.662 279.235L359.739 247.666L396.174 230.85C398.506 229.775 400 227.44 400 224.871V175.129C400 172.561 398.507 170.227 396.174 169.15L359.739 152.335L346.662 120.766L360.518 83.0986C361.403 80.6902 360.809 77.9864 358.995 76.1706L323.837 40.9876C322.022 39.1702 319.314 38.5751 316.903 39.4632L279.24 53.3413L247.674 40.264L230.86 3.82574C229.783 1.49393 227.45 3.05176e-05 224.881 3.05176e-05H200.011C196.375 3.05176e-05 193.427 2.94833 193.427 6.58475V30.5639H176.098C173.271 20.2942 164.012 12.739 153.048 12.739C139.86 12.739 129.13 23.6886 129.13 37.1486C129.13 50.6086 139.86 61.5352 153.048 61.5352C164.01 61.5352 173.267 53.99 176.096 43.7334H193.427L193.427 87.8191H130.371L111.146 54.5126C115.236 50.1354 117.755 44.2182 117.755 37.7092C117.755 24.2491 107.025 13.2995 93.8368 13.2995C80.6484 13.2995 69.9183 24.25 69.9183 37.7092C69.9183 51.1684 80.6484 62.0958 93.8368 62.0958C95.9183 62.0958 97.938 61.8217 99.864 61.3105L120.866 97.6962C122.042 99.7342 124.215 100.989 126.568 100.989H193.426V123.143H135.713C132.077 123.143 129.129 126.091 129.129 129.728C129.129 133.364 132.077 136.312 135.713 136.312H193.426V142.849C180.609 144.314 169.065 150.005 160.214 158.489H93.9298L75.2863 126.182C79.3784 121.805 81.8977 115.889 81.8977 109.382C81.8977 95.9224 71.1579 84.9728 57.9562 84.9728C44.7546 84.9728 34.0378 95.9232 34.0378 109.382C34.0378 122.842 44.7678 133.769 57.9562 133.769C60.0451 133.769 62.0715 133.493 64.0048 132.979L84.4253 168.365C85.6014 170.403 87.7751 171.658 90.1282 171.658H149.949C146.216 178.22 143.737 185.579 142.84 193.415L46.9662 193.415C44.1374 183.159 34.8797 175.613 23.9184 175.613C10.73 175.613 0 186.553 0 200C0 213.447 10.73 224.41 23.9184 224.41H23.9168ZM57.9546 301.859C52.027 301.859 47.2048 296.816 47.2048 290.618C47.2048 284.421 52.027 279.401 57.9546 279.401C63.8821 279.401 68.7274 284.433 68.7274 290.618C68.7274 296.804 63.8945 301.859 57.9546 301.859ZM93.836 373.532C87.9084 373.532 83.0862 368.49 83.0862 362.292C83.0862 356.094 87.9084 351.075 93.836 351.075C99.7635 351.075 104.586 356.107 104.586 362.292C104.586 368.476 99.7635 373.532 93.836 373.532ZM153.047 374.092C147.119 374.092 142.297 369.061 142.297 362.875C142.297 356.69 147.119 351.635 153.047 351.635C158.974 351.635 163.819 356.677 163.819 362.875C163.819 369.073 158.986 374.092 153.047 374.092ZM153.047 48.3665C147.119 48.3665 142.297 43.3342 142.297 37.1495C142.297 30.9648 147.119 25.9093 153.047 25.9093C158.974 25.9093 163.819 30.9516 163.819 37.1495C163.819 43.3474 158.986 48.3665 153.047 48.3665ZM83.0862 37.71C83.0862 31.5121 87.9084 26.4698 93.836 26.4698C99.7635 26.4698 104.586 31.5121 104.586 37.71C104.586 43.9079 99.7635 48.9271 93.836 48.9271C87.9084 48.9271 83.0862 43.8947 83.0862 37.71ZM47.2048 109.383C47.2048 103.185 52.027 98.1431 57.9546 98.1431C63.8821 98.1431 68.7274 103.185 68.7274 109.383C68.7274 115.581 63.8945 120.6 57.9546 120.6C52.0146 120.6 47.2048 115.569 47.2048 109.383ZM206.594 101.214C258.127 104.615 299.016 147.619 299.016 200.002C299.016 252.384 258.127 295.388 206.594 298.789V257.177C235.228 253.896 257.546 229.514 257.546 200.002C257.546 170.49 235.228 146.129 206.594 142.849V101.214ZM220.666 13.1711L236.795 48.1221C237.488 49.6259 238.723 50.8128 240.253 51.4466L276.577 66.4952C278.107 67.129 279.82 67.1627 281.374 66.5907L317.5 53.2796L346.703 82.5044L333.412 118.636C332.84 120.19 332.875 121.901 333.508 123.43L348.556 159.757C349.19 161.287 350.377 162.521 351.881 163.215L386.829 179.344V220.66L351.881 236.789C350.377 237.483 349.19 238.718 348.556 240.248L333.509 276.575C332.875 278.104 332.841 279.815 333.412 281.368L346.704 317.501L317.501 346.725L281.375 333.413C279.821 332.841 278.109 332.874 276.578 333.509L240.254 348.558C238.724 349.191 237.489 350.378 236.795 351.882L220.667 386.833H206.595L206.595 311.985C265.395 308.564 312.185 259.648 312.185 200.002C312.185 140.355 265.395 91.4398 206.595 88.019L206.595 13.1711H220.666ZM200.009 155.631C224.474 155.631 244.377 175.536 244.377 200.002C244.377 224.467 224.474 244.396 200.009 244.396C175.545 244.396 155.619 224.481 155.619 200.002C155.619 175.522 175.532 155.631 200.009 155.631ZM23.9168 188.785C29.8567 188.785 34.6896 193.816 34.6896 200.002C34.6896 206.187 29.8567 211.242 23.9168 211.242C17.9769 211.242 13.167 206.2 13.167 200.002C13.167 193.804 17.9892 188.785 23.9168 188.785Z"
-                    fill="#D9B282"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="intro-image__frame">
+          <div class="intro__img-container">
+            <svg
+              class="hero-small-circle"
+              width="900"
+              height="900"
+              viewBox="-20 -20 940 940"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="orbit-path-draw-1"
+                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+              />
+              <path
+                id="orbitPath1"
+                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+              />
+              <circle id="orbitDot1" r="10" fill="white"></circle>
+            </svg>
+            <div class="intro__image--frame">
               <img
                 class="about-intro__image"
                 src="/assets/portraits/billy_nightingale_web_designer_capbreton.webp"
@@ -255,154 +281,1013 @@
               />
             </div>
           </div>
-          <div class="home-intro-text-container">
-            <div class="home-intro-text">
-              <h2>A brief intro</h2>
-              <p>
-                I’m Billy Nightingale, a web designer and developer based in
-                Capbreton, which is part of the Landes region in France. I help
-                small local businesses create modern, high-performing websites
-                that are fast, search-engine friendly, and designed to support
-                real business growth.
-              </p>
-              <p>
-                With a background in mechanical engineering and a strong focus
-                on problem solving, I combine technical development with
-                thoughtful design to build websites that are both functional and
-                visually engaging. My work ranges from WordPress websites for
-                local businesses to custom web applications and digital tools
-                designed to simplify operations and improve online presence.
-              </p>
-              <p>Jump back and check out my projects or learn more</p>
-              <div class="home-intro-cta">
-                <a class="btn-primary" href="/">Learn More</a>
-                <a class="btn-secondary" href="/#projects">Projects</a>
+          <div class="hero__text-container">
+            <svg
+              class="hero-big-circle"
+              width="900"
+              height="900"
+              viewBox="-20 -20 940 940"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="orbit-path-draw-2"
+                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+              />
+              <path
+                id="orbitPath2"
+                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+              />
+              <circle id="orbitDot2" r="10" fill="white"></circle>
+            </svg>
+            <div class="intro__text-cont">
+              <div class="about__intro__txt-cont">
+                <h2>A BRIEF INTRO</h2>
+                <p>
+                  I’m Billy Nightingale, a web designer and developer based in
+                  Capbreton, which is part of the Landes region in France. I
+                  help small local businesses create modern, high-performing
+                  websites that are fast, search-engine friendly, and designed
+                  to support real business growth.
+                </p>
+                <p>
+                  With a background in mechanical engineering and a strong focus
+                  on problem solving, I combine technical development with
+                  thoughtful design to build websites that are both functional
+                  and visually engaging. My work ranges from WordPress websites
+                  for local businesses to custom web applications and digital
+                  tools designed to simplify operations and improve online
+                  presence.
+                </p>
+                <p>Jump back and check out my projects or learn more</p>
+                <div class="hero__cta-cont">
+                  <a
+                    class="btn__primary btn__prim--light"
+                    href="#about__timeline-section"
+                    >LEARN MORE</a
+                  >
+                  <a class="btn__second btn__second--light" href="/#projects"
+                    >PROJECTS</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="sections">
-        <footer>
-          <div class="footer__container">
-            <div class="footer__info_container">
-              <h3>Create your digital system</h3>
-              <h4>Billy Nightingale - Web Design & Development in Capbreton</h4>
-              <h5>Contact Information:</h5>
-              <address class="footer__address">
-                Capbreton, Landes, 40130, France<br />
-                <a href="tel:+33766095864">+33 7 66 09 58 64</a><br />
-                <a href="mailto:contact@billynightingale.com"
-                  >contact@billynightingale.com</a
-                >
-              </address>
-              <div class="contact-icons-footer-cont">
-                <ul>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/billynightingale/"
-                      target="_blank"
-                      aria-label="LinkedIn"
+      <section class="timeline__section" id="about__timeline-section">
+        <div class="tl__heading-container">
+          <h2>THE JOURNEY</h2>
+          <p>My engineering and web development journey</p>
+        </div>
+        <div class="tl__container">
+          <div class="tl__line-container">
+            <svg
+              class="tl_svg"
+              viewBox="0 0 603 2137"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle class="tl_dot" r="12"></circle>
+              <path
+                class="tl_line"
+                d="M308 0C308 39.7738 275.757 72.0169 235.983 72.0169L141.5 72.0169C64.1801 72.0169 1.5 134.697 1.5 212.017V422.143C1.5 499.463 64.1801 562.143 141.5 562.143H461.5C538.82 562.143 601.5 624.823 601.5 702.143V959.778C601.5 1037.1 538.82 1099.78 461.5 1099.78H141.5C64.1801 1099.78 1.5 1162.46 1.5 1239.78V1459.91C1.5 1537.23 64.1801 1599.91 141.5 1599.91H461.5C538.82 1599.91 601.5 1662.59 601.5 1739.91V1925.52C601.5 2002.84 538.82 2065.52 461.5 2065.52H381.52C342.573 2065.52 311 2097.1 311 2136.04"
+                stroke-width="3"
+              />
+            </svg>
+          </div>
+          <div class="tl__content-container">
+            <div class="time-step time__step-1 glass__back">
+              <h4 class="ts-heading hide-ts-h">
+                <span>BEng</span> <span>Motorsport</span>
+                <span>Engineering</span>
+              </h4>
+            </div>
+            <div class="time-step time__step-2 glass__back">
+              <h4 class="ts-heading hide-ts-h">
+                <span>Mechatronics</span> <span>Engineer</span>
+              </h4>
+            </div>
+            <div class="time-step time__step-3 glass__back">
+              <h4 class="ts-heading hide-ts-h">
+                <span>Bac</span> <span>+2</span> <span>Web</span>
+                <span>Development</span>
+              </h4>
+            </div>
+            <div class="time-step time__step-4 glass__back">
+              <h4 class="ts-heading hide-ts-h">
+                <span>Billy</span> <span>Nightingale</span> <span>Web</span>
+                <span>Studio</span>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wid__sec">
+        <div class="wid__heading-container">
+          <h2>WHAT I DO</h2>
+          <p>I build websites, systems and applications</p>
+        </div>
+        <div class="wid__content-container">
+          <div class="row">
+            <div class="wid__img-cont">
+              <img
+                src="/assets/about_wid/billy_nightingale_web_design_figma.webp"
+                alt="Billy Nightingale using Figma for web design"
+              />
+            </div>
+            <div class="wid__text-cont txt-r">
+              <div class="wid__text box__shadow">
+                <div class="max-txt-width">
+                  <h3>WEBSITE DESIGN</h3>
+                  <p>
+                    Designing websites for small to medium size businesses, with
+                    the use of cutting edge technology like Figma and relume AI
+                    to provide the highest quality design
+                  </p>
+                  <p>
+                    Creating assets like SVGs, icons and editing images with
+                    Affinity and Adobe to enhance the visual experience
+                  </p>
+                  <div class="wid__content_cta">
+                    <a class="btn__primary btn__prim--dark" href="/services"
+                      >SERVICES</a
                     >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        width="30"
-                        height="30"
-                      >
-                        <path
-                          d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/billy.nightingale.studio/"
-                      target="_blank"
-                      aria-label="instagram"
+                    <a class="btn__second btn__second--dark" href="/#projects"
+                      >PROJECTS</a
                     >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        version="1.1"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="512"
-                        height="512"
-                        x="0"
-                        y="0"
-                        viewBox="0 0 511 511.9"
-                        style="enable-background: new 0 0 512 512"
-                        xml:space="preserve"
-                      >
-                        <g>
-                          <path
-                            d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
-                          ></path>
-                          <path
-                            d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
-                          ></path>
-                        </g>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.github.com/Billy-Night"
-                      target="_blank"
-                      aria-label="GitHub"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:contact@billynightingale.com"
-                      aria-label="Mail"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="footer__nav_container">
-              <ul class="footer__nav">
-                <li><a class="footer__nav__link" href="/">Home</a></li>
-                <li>
-                  <a class="footer__nav__link" href="/#projects">Projects</a>
-                </li>
-                <li><a class="footer__nav__link" href="about">About</a></li>
-                <li><a class="footer__nav__link" href="contact">Contact</a></li>
-                <li>
-                  <a class="footer__nav__link" href="services">Services</a>
-                </li>
-              </ul>
+          </div>
+
+          <div class="row">
+            <div class="wid__img-cont-right right">
+              <img
+                src="/assets/about_wid/billy_nightingale_web_optimistation_lighthouse.webp"
+                alt="Billy Nightingale using Google Lighthouse to optimise websites"
+              />
+            </div>
+            <div class="wid__text-cont txt-l">
+              <div class="wid__text box__shadow">
+                <div class="max-txt-width">
+                  <h3>SEO & PERFROMANCE OPTIMISATION</h3>
+                  <p>
+                    Optimise performance and SEO to drive traffic and increase
+                    revenue, I strive to provide the fastest most accessible
+                    sites with great user experience.
+                  </p>
+                  <div class="wid__content_cta">
+                    <a class="btn__primary btn__prim--dark" href="/services"
+                      >SERVICES</a
+                    >
+                    <a class="btn__second btn__second--dark" href="/#projects"
+                      >PROJECTS</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="footer__legal">
-            <p>&copy; 2026 Billy Nightingale. All rights reserved.</p>
-            <a href="terms-and-conditions">Terms and Conditions</a>
+
+          <div class="row">
+            <div class="wid__img-cont">
+              <img
+                src="/assets/about_wid/billy_nightingale_web_development.webp"
+                alt="Billy Nightingale using VSCode for web development"
+              />
+            </div>
+            <div class="wid__text-cont txt-r">
+              <div class="wid__text box__shadow">
+                <div class="max-txt-width">
+                  <h3>WEBSITE DEVELOPMENT</h3>
+                  <p>
+                    Full-stack web development, developing products and tools. I
+                    develop website using tool such as Wordpress and Elementor
+                    but also full-stack application through programming with
+                    languages such as JavaScript, frameworks like React and
+                    Node.JS
+                  </p>
+                  <div class="wid__content_cta">
+                    <a class="btn__primary btn__prim--dark" href="/services"
+                      >SERVICES</a
+                    >
+                    <a class="btn__second btn__second--dark" href="/#projects"
+                      >PROJECTS</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </footer>
+        </div>
       </section>
+      <section class="sections about__process-sec">
+        <div class="process__title-cont">
+          <h2>THE PROCESS</h2>
+          <p class="max-txt-width">
+            Depending on the project I have a four phase approach, discovery,
+            design and develop
+          </p>
+        </div>
+        <div class="about__process-cont">
+          <div class="phase-cont phase__cont--align glass__back">
+            <h3>PHASE 1</h3>
+            <div class="phase__content phase__content--hidden">
+              <div class="phase__cont__text">
+                <h4>Discovery</h4>
+                <p>
+                  In the discovery phase I have a discussion with my client and
+                  study their requirements and issues, I create mood boards and
+                  we discuss design options and available solutions to their
+                  issues. This includes research into competitors and design
+                  direction.
+                </p>
+              </div>
+              <div class="phase__cont__svg">
+                <svg
+                  class="phase__svg-size svg--pulse"
+                  viewBox="0 0 193 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M134.83 59.0994C124.746 49.2686 111.01 43.8545 96.1535 43.8545C81.297 43.8545 67.5611 49.2686 57.477 59.0994C47.3949 68.928 41.8428 82.2917 41.8428 96.7289C41.8428 112.137 48.6936 126.84 60.6389 137.067C66.8983 142.426 70.8492 149.837 72.1684 158.603C68.9577 160.487 66.7988 163.954 66.7988 167.914V171.155C66.7988 176.079 70.1372 180.243 74.6868 181.545C74.0795 182.89 73.7389 184.379 73.7389 185.946V189.187C73.7389 195.149 78.6317 200.001 84.6453 200.001H107.662C113.676 200.001 118.568 195.149 118.568 189.187V185.946C118.568 184.379 118.228 182.89 117.621 181.545C122.17 180.243 125.509 176.08 125.509 171.155V167.914C125.509 163.954 123.35 160.487 120.139 158.603C121.459 149.837 125.409 142.426 131.668 137.067C143.614 126.84 150.465 112.138 150.465 96.7289C150.465 82.2917 144.912 68.928 134.83 59.0994ZM111.731 189.186C111.731 191.379 109.906 193.163 107.662 193.163H84.6449C82.4013 193.163 80.5761 191.379 80.5761 189.186V185.946C80.5761 183.753 82.4013 181.969 84.6449 181.969H107.662C109.905 181.969 111.73 183.752 111.73 185.946L111.731 189.186ZM118.671 171.155C118.671 173.347 116.845 175.131 114.602 175.131H107.662H84.6449H77.7047C75.4612 175.131 73.6359 173.347 73.6359 171.155V167.914C73.6359 165.721 75.4612 163.937 77.7047 163.937H114.602C116.845 163.937 118.671 165.721 118.671 167.914V171.155ZM85.5505 114.208H78.7693C76.027 114.208 73.7962 112.023 73.7962 109.338C73.7962 106.652 76.027 104.467 78.7693 104.467H80.5774C83.3197 104.467 85.5505 106.652 85.5505 109.338V114.208ZM100.164 157.1H92.3881V121.046H100.164V157.1ZM127.221 131.873C119.802 138.225 115.09 146.899 113.454 157.1H107.001V121.046H113.894C120.406 121.046 125.704 115.793 125.704 109.338C125.704 102.882 120.406 97.6293 113.894 97.6293H111.974C105.462 97.6293 100.163 102.882 100.163 109.338V114.208H92.3876V109.338C92.3876 102.882 87.0894 97.6293 80.577 97.6293H78.7688C72.2565 97.6293 66.9582 102.882 66.9582 109.338C66.9582 115.794 72.2565 121.046 78.7688 121.046H85.55V157.1H78.8518C77.2159 146.899 72.5039 138.225 65.0847 131.873C54.659 122.947 48.6791 110.137 48.6791 96.7289C48.6791 70.4836 69.0881 50.6921 96.1526 50.6921C123.217 50.6921 143.626 70.4836 143.626 96.7289C143.627 110.137 137.647 122.946 127.221 131.873ZM107.001 114.208V109.338C107.001 106.652 109.232 104.467 111.974 104.467H113.894C116.636 104.467 118.867 106.652 118.867 109.338C118.867 112.024 116.636 114.208 113.894 114.208H107.001Z"
+                    fill="url(#gradMain)"
+                  />
+                  <path
+                    d="M150.906 172.878C148.37 172.878 145.909 171.919 144.013 170.028L134.399 160.44L139.227 155.599L148.841 165.186C150.147 166.488 151.894 166.106 153.075 165.345L164.86 153.985C166.129 152.701 165.762 150.993 165.016 149.827L155.63 140.466C154.463 139.302 154.293 137.471 155.225 136.112C160.341 128.655 164.037 119.965 165.914 110.981C166.245 109.396 167.642 108.261 169.261 108.261H182.633C183.764 108.065 185.471 107.254 185.471 105.288V88.7581C185.323 87.9103 184.697 85.9363 182.08 85.9363H168.459C166.789 85.9363 165.363 84.7291 165.087 83.0812C163.669 74.5936 160.104 65.7889 154.779 57.6188C153.896 56.2633 154.084 54.4739 155.229 53.3312L164.844 43.7436C166.14 42.4509 165.761 40.7192 165.003 39.5479L153.611 27.7957C152.316 26.5222 150.591 26.891 149.415 27.6402L140.029 37.0004C138.867 38.1598 137.044 38.3286 135.688 37.4038C128.209 32.3009 119.493 28.6137 110.481 26.7415C108.895 26.412 107.758 25.0141 107.758 23.394V9.81068C107.758 8.03248 106.418 6.83761 105.168 6.83761H88.5898C87.4594 7.03376 85.7526 7.84445 85.7526 9.81068V23.7927C85.7526 25.4645 84.5436 26.891 82.8945 27.1654C74.3804 28.5808 65.5487 32.1363 57.3543 37.4479C56.0021 38.3244 54.2214 38.1376 53.0808 37L43.4667 27.4124C42.1615 26.1115 40.4145 26.4927 39.2329 27.2534L27.4474 38.6145C26.1791 39.8974 26.5466 41.606 27.2923 42.7718L36.6782 52.1321C37.8457 53.2962 38.0158 55.1278 37.0833 56.4868C31.9675 63.9432 28.2714 72.6333 26.3944 81.618C26.0633 83.2026 24.6667 84.3376 23.0479 84.3376H9.67521C8.54487 84.5338 6.83761 85.3445 6.83761 87.3107V103.84C7.03504 104.965 7.84957 106.662 9.82821 106.662H23.4479C25.1184 106.662 26.5444 107.87 26.8201 109.518C28.2385 118.006 31.803 126.81 37.1282 134.98C38.0115 136.335 37.8239 138.125 36.6782 139.268L27.0641 148.855C25.768 150.148 26.147 151.88 26.9056 153.051L38.2974 164.803C39.5927 166.077 41.3167 165.708 42.4927 164.959L51.8791 155.598L56.7073 160.44L47.0932 170.027C46.9598 170.16 46.8162 170.282 46.6628 170.391C42.3885 173.436 36.956 173.122 33.4521 169.628C33.4385 169.614 33.4252 169.6 33.4115 169.586L21.7944 157.603C21.6769 157.481 21.5684 157.351 21.4697 157.214C18.4103 152.943 18.7252 147.515 22.2355 144.014L29.9167 136.354C25.4534 128.985 22.2799 121.18 20.6231 113.5H9.82821C4.80128 113.5 0.67906 109.721 0.0264958 104.514C0.00897448 104.373 0 104.231 0 104.089V87.3107C0 82.2919 3.78675 78.1769 9.0047 77.5261C9.14487 77.5086 9.28633 77.4996 9.42778 77.4996H20.3218C22.2919 69.5449 25.5547 61.8624 29.8756 55.0043L22.2359 47.3855C22.1021 47.2526 21.9803 47.1086 21.8705 46.9556C18.8111 42.6842 19.1261 37.256 22.6363 33.7556C22.65 33.7419 22.6637 33.7286 22.6778 33.715L34.6953 22.1299C34.8171 22.0128 34.947 21.9047 35.0846 21.8068C39.3586 18.762 44.7915 19.0756 48.2953 22.5705L55.9863 30.2402C63.3799 25.7846 71.2107 22.6175 78.9158 20.9645V9.81068C78.9158 4.79145 82.7026 0.676496 87.9205 0.0264957C88.0598 0.00897436 88.2013 0 88.3423 0H105.167C110.365 0 114.595 4.40086 114.595 9.81068V20.6641C122.577 22.6295 130.284 25.8859 137.164 30.1996L144.815 22.5705C144.948 22.4376 145.091 22.3158 145.245 22.2068C149.519 19.162 154.951 19.4756 158.456 22.9701C158.469 22.9838 158.483 22.9974 158.496 23.0115L170.113 34.9962C170.231 35.1175 170.339 35.2474 170.438 35.385C173.497 39.6564 173.182 45.0846 169.672 48.585L161.991 56.2449C166.454 63.6141 169.628 71.4192 171.285 79.0987H182.08C187.424 79.0987 191.619 82.7936 192.282 88.0846C192.3 88.2256 192.309 88.368 192.309 88.5098V105.288C192.309 110.307 188.522 114.422 183.304 115.073C183.164 115.09 183.022 115.099 182.881 115.099H171.987C170.017 123.054 166.754 130.736 162.433 137.594L170.073 145.213C170.206 145.346 170.328 145.49 170.438 145.643C173.497 149.915 173.182 155.343 169.672 158.844C169.659 158.857 169.645 158.871 169.631 158.884L157.613 170.469C157.491 170.586 157.362 170.694 157.224 170.792C155.262 172.188 153.057 172.878 150.906 172.878Z"
+                    fill="url(#gradMain)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="gradMain"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop offset="0" stop-color="#f7f3ee">
+                        <animate
+                          attributeName="stop-color"
+                          values="#f7f3ee;#e6d3af;#d9b282;#e6d3af;#f7f3ee"
+                          dur="10s"
+                          repeatCount="indefinite"
+                        />
+                      </stop>
+                      <stop offset="0.5" stop-color="#d9b282">
+                        <animate
+                          attributeName="offset"
+                          values="-0.3;1.3;-0.3"
+                          keyTimes="0;0.5;1"
+                          dur="10s"
+                          repeatCount="indefinite"
+                          calcMode="spline"
+                          keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
+                        />
+                        <animate
+                          attributeName="stop-color"
+                          values="#f7f3ee;#e6d3af;#d9b282;#e6d3af;#f7f3ee"
+                          dur="10s"
+                          repeatCount="indefinite"
+                        />
+                      </stop>
+                      <stop offset="1" stop-color="#f7f3ee" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <button class="btn-expand-process btn__second btn__second--light">
+              Expand
+            </button>
+          </div>
+          <div class="phase-cont phase__cont--align glass__back">
+            <h3>PHASE 2</h3>
+            <div class="phase__content phase__content--hidden">
+              <div class="phase__cont__text">
+                <h4>Design</h4>
+                <p>
+                  In the design phase, I present a style guide with a selection
+                  of fonts pairs and a colour palette with low-fidelity
+                  wireframes, once approved we move to high-fidelity wireframes.
+                </p>
+              </div>
+              <div class="phase__cont__svg">
+                <svg
+                  class="phase__svg-size"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M32.9375 180.062V175.937C38.6531 175.294 42.9375 173.144 45.7938 169.491C48.6531 165.837 53.55 155.834 60.4875 139.488L106.781 30.4375H111.203L166.566 156.412C170.259 164.756 173.203 169.916 175.409 171.894C177.619 173.872 181.325 175.219 186.531 175.937V180.062H130.025V175.937C136.516 175.362 140.703 174.662 142.584 173.834C144.463 173.006 145.403 170.972 145.403 167.734C145.403 166.65 145.041 164.75 144.316 162.012C143.591 159.275 142.578 156.397 141.278 153.369L132.378 131.994H73.825C68.0531 146.534 64.6063 155.406 63.4844 158.606C62.3625 161.812 61.8 164.35 61.8 166.222C61.8 169.966 63.3188 172.556 66.3563 173.997C68.2313 174.859 71.7687 175.509 76.9688 175.937V180.062H32.9375ZM128.634 122.987L102.791 63.6469L77.5844 122.987H128.634Z"
+                    fill="url(#gradA)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    d="M102.825 6.95898L184.231 192.45L182.719 193.115L101.312 7.62148L102.825 6.95898ZM76.9969 6.94336L158.403 192.437L156.891 193.1L75.4844 7.60898L76.9969 6.94336Z"
+                    fill="#182625"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    d="M115.384 6.58398L116.897 7.23086L37.3154 193.531L35.7998 192.884L115.384 6.58398ZM126.381 6.58711L127.897 7.23398L48.3123 193.531L46.7967 192.884L126.381 6.58711Z"
+                    fill="#182625"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    d="M26.4781 177.709C11.8781 177.709 0 165.828 0 151.234C0 136.634 11.8781 124.753 26.4781 124.753C41.0781 124.753 52.9562 136.634 52.9562 151.234C52.9562 165.828 41.0812 177.709 26.4781 177.709ZM26.4781 126.403C12.7875 126.403 1.65 137.537 1.65 151.231C1.65 164.922 12.7875 176.056 26.4781 176.056C40.1687 176.056 51.3062 164.922 51.3062 151.231C51.3062 137.54 40.1687 126.403 26.4781 126.403ZM185.066 174.959C181.107 174.954 177.312 173.38 174.513 170.58C171.714 167.781 170.139 163.986 170.134 160.028C170.139 156.069 171.713 152.273 174.512 149.473C177.311 146.674 181.107 145.099 185.066 145.094C193.303 145.094 200 151.794 200 160.028C200 168.262 193.3 174.959 185.066 174.959ZM185.066 146.74C177.741 146.74 171.781 152.703 171.781 160.028C171.781 167.353 177.741 173.312 185.066 173.312C192.394 173.312 198.353 167.353 198.353 160.028C198.353 152.703 192.391 146.74 185.066 146.74ZM139.716 174.275C138.309 174.216 136.979 173.617 136.004 172.601C135.03 171.585 134.485 170.231 134.485 168.823C134.485 167.415 135.03 166.062 136.004 165.046C136.979 164.03 138.309 163.43 139.716 163.372C142.722 163.372 145.169 165.815 145.169 168.825C145.169 171.828 142.722 174.275 139.716 174.275ZM139.716 165.019C138.739 165.067 137.819 165.489 137.145 166.197C136.471 166.905 136.095 167.846 136.095 168.823C136.095 169.801 136.471 170.741 137.145 171.449C137.819 172.157 138.739 172.579 139.716 172.628C140.706 172.6 141.646 172.186 142.336 171.476C143.027 170.765 143.413 169.814 143.413 168.823C143.413 167.833 143.027 166.881 142.336 166.171C141.646 165.46 140.706 165.047 139.716 165.019ZM71.6906 175.372C69.1879 175.369 66.7884 174.374 65.0189 172.604C63.2495 170.834 62.2548 168.434 62.2531 165.931C62.2531 160.728 66.4844 156.494 71.6906 156.494C76.8969 156.494 81.1281 160.725 81.1281 165.931C81.1265 168.434 80.1317 170.834 78.3623 172.604C76.5929 174.374 74.1934 175.369 71.6906 175.372ZM71.6906 158.147C69.6263 158.148 67.647 158.969 66.187 160.428C64.727 161.888 63.9056 163.867 63.9031 165.931C63.9048 167.996 64.7257 169.976 66.1857 171.437C67.6457 172.897 69.6255 173.719 71.6906 173.722C73.7558 173.719 75.7356 172.897 77.1956 171.437C78.6556 169.976 79.4765 167.996 79.4781 165.931C79.4748 163.867 78.6532 161.888 77.1934 160.429C75.7336 158.97 73.7547 158.149 71.6906 158.147ZM6.32188 180.456H196.244V182.106H6.32188V180.456Z"
+                    fill="#182625"
+                  />
+                  <path
+                    d="M6.32227 131.534H196.244V133.184H6.32227V131.534ZM6.32227 121.915H196.244V123.562H6.32227V121.915Z"
+                    fill="#182625"
+                    class="phase__fade-line"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="gradA"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop offset="0" stop-color="#f7f3ee">
+                        <animate
+                          attributeName="stop-color"
+                          values="#f7f3ee;#e6d3af;#d9b282;#e6d3af;#f7f3ee"
+                          dur="10s"
+                          repeatCount="indefinite"
+                        />
+                      </stop>
+                      <stop offset="0.5" stop-color="#d9b282">
+                        <animate
+                          attributeName="offset"
+                          values="-0.3;1.3;-0.3"
+                          keyTimes="0;0.5;1"
+                          dur="10s"
+                          repeatCount="indefinite"
+                          calcMode="spline"
+                          keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
+                        />
+                        <animate
+                          attributeName="stop-color"
+                          values="#f7f3ee;#e6d3af;#d9b282;#e6d3af;#f7f3ee"
+                          dur="10s"
+                          repeatCount="indefinite"
+                        />
+                      </stop>
+                      <stop offset="1" stop-color="#f7f3ee" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <button class="btn-expand-process btn__second btn__second--light">
+              Expand
+            </button>
+          </div>
+          <div class="phase-cont phase__cont--align glass__back">
+            <h3>PHASE 3</h3>
+            <div class="phase__content phase__content--hidden">
+              <div class="phase__cont__text">
+                <h4>Development</h4>
+                <p>
+                  In the development phase, I begin developing the project and
+                  optimising it for production, this includes building out a
+                  fully customised system using reusable components and
+                  optimising images and fonts for web performance, creating a
+                  custom layout system with equal and fluid spacing. All of my
+                  designs are crafted to be fully responsive and fluid, they're
+                  optimised for all major devices.
+                </p>
+              </div>
+              <div class="phase__cont__svg">
+                <svg
+                  class="phase__svg-size svg--pulse"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M132.866 92.5871L128.847 91.0402C128.218 88.9062 127.364 86.8484 126.298 84.8922L128.048 80.9539C128.572 79.7727 128.316 78.3898 127.402 77.4758L121.042 71.1168C120.129 70.2031 118.746 69.9453 117.564 70.4703L113.625 72.2199C111.668 71.1539 109.612 70.3008 107.479 69.6719L105.931 65.6516C105.467 64.4453 104.308 63.6492 103.015 63.6492H94.0223C92.7293 63.6492 91.5703 64.4453 91.1059 65.6516L89.5582 69.6719C87.4254 70.3012 85.3684 71.1539 83.4125 72.2199L79.4727 70.4703C78.2906 69.9457 76.9086 70.2027 75.9945 71.1168L69.6356 77.4758C68.7215 78.3898 68.4648 79.7723 68.9895 80.9539L70.7391 84.893C69.673 86.8488 68.8203 88.9062 68.191 91.0395L64.1715 92.5867C62.9652 93.0512 62.1691 94.2105 62.1691 95.5031V104.496C62.1691 105.789 62.9652 106.948 64.1715 107.413L68.1902 108.959C68.8199 111.094 69.673 113.152 70.7387 115.107L68.9895 119.046C68.4648 120.227 68.7215 121.61 69.6356 122.524L75.9949 128.883C76.9086 129.797 78.291 130.054 79.4727 129.529L83.4129 127.78C85.3684 128.846 87.4254 129.699 89.5582 130.328L91.1059 134.348C91.5699 135.554 92.7293 136.35 94.0223 136.35H103.015C104.308 136.35 105.467 135.554 105.932 134.348L107.479 130.329C109.613 129.7 111.67 128.846 113.627 127.78L117.564 129.529C118.745 130.054 120.128 129.797 121.043 128.883L127.402 122.524C128.316 121.61 128.572 120.228 128.048 119.046L126.298 115.106C127.364 113.15 128.217 111.093 128.846 108.961L132.866 107.413C134.072 106.949 134.868 105.79 134.868 104.497V95.5039C134.868 94.2105 134.072 93.0512 132.866 92.5871ZM128.618 102.351L125.114 103.699C124.153 104.069 123.436 104.889 123.197 105.892C122.576 108.502 121.545 110.988 120.134 113.28C119.593 114.158 119.521 115.246 119.939 116.187L121.464 119.621L118.139 122.946L114.707 121.421C113.765 121.003 112.678 121.076 111.8 121.616C109.508 123.028 107.022 124.059 104.41 124.68C103.407 124.918 102.587 125.636 102.217 126.598L100.869 130.1H96.1668L94.8184 126.596C94.4484 125.635 93.6277 124.917 92.6254 124.679C90.0152 124.057 87.5297 123.027 85.2383 121.616C84.3602 121.075 83.2723 121.003 82.3313 121.42L78.8961 122.946L75.5715 119.621L77.0961 116.188C77.5141 115.246 77.4414 114.159 76.9008 113.281C75.4902 110.991 74.4594 108.504 73.8371 105.891C73.5988 104.889 72.8812 104.068 71.9199 103.698L68.4176 102.35V97.6488L71.9207 96.3004C72.8824 95.9301 73.5996 95.1098 73.8379 94.1074C74.4594 91.4965 75.4898 89.0109 76.9012 86.7188C77.4418 85.841 77.5145 84.7535 77.0965 83.8117L75.5715 80.3777L78.8961 77.0527L82.3309 78.5781C83.2719 78.9961 84.3602 78.9234 85.2375 78.3828C87.5297 76.9715 90.0152 75.941 92.6254 75.3199C93.6277 75.0813 94.4484 74.3641 94.8184 73.4023L96.1672 69.8988H100.868L102.217 73.4023C102.587 74.3637 103.408 75.0813 104.41 75.3199C107.02 75.941 109.506 76.9719 111.798 78.3828C112.676 78.9234 113.764 78.9961 114.705 78.5781L118.139 77.0527L121.464 80.3773L119.939 83.8102C119.521 84.752 119.594 85.8398 120.135 86.7172C121.546 89.009 122.577 91.4953 123.198 94.107C123.437 95.1094 124.154 95.9301 125.116 96.3L128.618 97.648V102.351ZM98.518 81.1914C88.1469 81.1914 79.7094 89.6293 79.7094 100C79.7094 110.371 88.1473 118.809 98.518 118.809C108.889 118.809 117.327 110.371 117.327 100C117.327 89.6289 108.889 81.1914 98.518 81.1914ZM98.518 112.559C91.593 112.559 85.9594 106.925 85.9594 100C85.9594 93.0754 91.5934 87.4414 98.518 87.4414C105.443 87.4414 111.077 93.0754 111.077 100C111.077 106.925 105.443 112.559 98.518 112.559ZM193.61 131.47C193.61 125.662 189.058 120.898 183.334 120.555C180.969 113.844 177.084 106.9 171.932 99.9926C182.045 86.4219 186.898 73.1598 185.79 62.2102C188.716 60.2449 190.645 56.9062 190.645 53.1246C190.645 47.0937 185.739 42.1871 179.708 42.1871C177.975 42.1871 176.337 42.5938 174.88 43.3137C165.949 36.8785 152.033 34.4512 135.22 36.4258C134.622 35.0375 134.005 33.6758 133.364 32.3492C124.257 13.5035 111.882 3.125 98.518 3.125C85.1539 3.125 72.7785 13.5035 63.6723 32.3492C63.0313 33.6758 62.4141 35.0379 61.8152 36.4262C45.0012 34.4516 31.0863 36.8789 22.1559 43.3141C20.6988 42.5941 19.0602 42.1875 17.3277 42.1875C11.2973 42.1875 6.39062 47.0941 6.39062 53.125C6.39062 56.9062 8.31992 60.2453 11.2453 62.2102C10.1371 73.1617 14.9926 86.427 25.1086 100C14.993 113.573 10.1371 126.838 11.2453 137.789C8.31992 139.755 6.39062 143.093 6.39062 146.875C6.39062 152.905 11.2973 157.812 17.3277 157.812C19.0641 157.812 20.7063 157.404 22.166 156.68C29.0727 161.656 38.9516 164.243 50.8555 164.243C54.3434 164.243 58.0059 164.02 61.8152 163.573C62.4137 164.962 63.0313 166.324 63.6723 167.651C72.7785 186.496 85.1535 196.875 98.518 196.875C111.882 196.875 124.257 186.496 133.363 167.651C134.005 166.323 134.622 164.961 135.221 163.572C136.723 163.748 138.212 163.894 139.682 164.002C141.972 164.171 144.189 164.254 146.338 164.254C163.78 164.254 176.465 158.742 182.414 148.438C183.541 146.484 184.406 144.379 184.998 142.157C189.916 141.087 193.61 136.704 193.61 131.47ZM184.395 53.1246C184.395 55.7094 182.292 57.8121 179.707 57.8121C177.123 57.8121 175.02 55.7094 175.02 53.1246C175.02 50.5398 177.123 48.4371 179.707 48.4371C182.292 48.4371 184.395 50.5398 184.395 53.1246ZM170.22 47.6934C169.3 49.2949 168.77 51.1484 168.77 53.1246C168.77 59.1422 173.655 64.0395 179.667 64.0613C180.131 72.8672 176.041 83.6148 167.908 94.9102C161.624 87.409 153.907 80.0309 145.089 73.1242C143.53 62.0965 141.01 51.7273 137.616 42.4523C151.469 41.0547 162.825 42.8867 170.22 47.6934ZM119.605 136.524C112.677 140.524 105.578 144.04 98.4922 147.009C91.4617 144.053 84.3934 140.545 77.4301 136.524C70.5016 132.524 63.9078 128.134 57.7938 123.483C56.8387 115.916 56.3434 108.041 56.3434 100C56.3434 91.9594 56.8391 84.0832 57.7938 76.5168C63.9078 71.8652 70.5016 67.4758 77.4305 63.4754C84.3508 59.4797 91.4406 55.968 98.5176 53.0012C105.595 55.9684 112.684 59.4801 119.605 63.4754C126.595 67.5113 133.177 71.8855 139.237 76.4809C140.195 84.0586 140.692 91.9469 140.692 100C140.692 108.041 140.196 115.916 139.242 123.483C133.128 128.134 126.534 132.524 119.605 136.524ZM137.911 132.209C136.33 140.999 134.097 149.254 131.261 156.712C123.383 155.439 115.117 153.246 106.715 150.22C112.104 147.743 117.467 144.975 122.73 141.937C127.993 138.898 133.072 135.637 137.911 132.209ZM59.125 132.209C63.9633 135.637 69.0422 138.898 74.3051 141.937C79.5813 144.984 84.9223 147.746 90.2699 150.211C81.8828 153.227 73.6148 155.429 65.7723 156.706C62.9367 149.249 60.7047 140.996 59.125 132.209ZM50.9102 117.963C44.1066 112.209 38.0668 106.152 33.0402 100C38.0672 93.8484 44.107 87.791 50.9102 82.0367C50.3719 87.9004 50.0934 93.9074 50.0934 100C50.0934 106.093 50.3715 112.099 50.9102 117.963ZM65.7723 43.2938C73.6207 44.5719 81.8945 46.7762 90.2879 49.7949C84.9102 52.2672 79.5578 55.0301 74.3055 58.0625C69.0422 61.1012 63.9633 64.3621 59.125 67.7906C60.7047 59.0035 62.9367 50.7512 65.7723 43.2938ZM137.908 67.7773C133.1 64.375 128.027 61.1207 122.73 58.0629C117.477 55.0305 112.125 52.2676 106.747 49.7953C115.14 46.7766 123.414 44.5719 131.263 43.2938C134.097 50.7469 136.329 58.9949 137.908 67.7773ZM146.121 81.9832C153 87.7836 159.038 93.8445 164.032 99.9551C158.998 106.122 152.945 112.195 146.126 117.963C146.664 112.099 146.943 106.093 146.943 100C146.942 93.8887 146.662 87.8641 146.121 81.9832ZM98.518 9.375C109.354 9.375 119.73 18.4996 127.736 35.0684C128.101 35.8242 128.456 36.5945 128.807 37.3719C119.104 39.0762 108.835 42.0957 98.5176 46.2465C88.2008 42.0961 77.9313 39.077 68.2285 37.3723C68.5793 36.5949 68.9348 35.8242 69.3 35.0684C77.3059 18.4996 87.682 9.375 98.518 9.375ZM17.3277 48.4375C19.9125 48.4375 22.0152 50.5402 22.0152 53.125C22.0152 55.7098 19.9125 57.8125 17.3277 57.8125C14.7434 57.8125 12.6406 55.7098 12.6406 53.125C12.6406 50.5402 14.7434 48.4375 17.3277 48.4375ZM17.3676 64.0613C23.3801 64.0395 28.2648 59.1422 28.2648 53.125C28.2648 51.1488 27.7355 49.2953 26.8152 47.6937C34.2105 42.8871 45.5676 41.0551 59.4195 42.452C56.0234 51.7316 53.5023 62.1059 51.9438 73.1398C43.1988 79.9953 35.4563 87.3742 29.1336 94.9191C20.9965 83.6207 16.9039 72.8699 17.3676 64.0613ZM12.6406 146.875C12.6406 144.29 14.7434 142.187 17.3277 142.187C19.9125 142.187 22.0152 144.29 22.0152 146.875C22.0152 149.459 19.9125 151.562 17.3277 151.562C14.7434 151.562 12.6406 149.459 12.6406 146.875ZM26.8152 152.306C27.7355 150.704 28.2652 148.851 28.2652 146.875C28.2652 140.857 23.3805 135.96 17.368 135.938C16.9043 127.13 20.9969 116.379 29.1344 105.08C35.457 112.626 43.1996 120.005 51.9445 126.86C53.5031 137.894 56.0238 148.268 59.4203 157.548C45.5656 158.945 34.2102 157.113 26.8152 152.306ZM127.736 164.932C119.73 181.5 109.354 190.625 98.518 190.625C87.6824 190.625 77.3059 181.5 69.3 164.932C68.9348 164.176 68.5793 163.405 68.2285 162.628C77.923 160.925 88.1836 157.909 98.4918 153.764C108.826 157.931 119.07 160.935 128.804 162.634C128.455 163.409 128.1 164.178 127.736 164.932ZM177.002 145.312C171.584 154.696 158.492 159.121 140.141 157.769C139.306 157.708 138.464 157.63 137.617 157.546C141.013 148.266 143.533 137.893 145.092 126.86C153.852 119.992 161.607 112.599 167.936 105.04C172.045 110.759 175.193 116.47 177.214 121.998C173.943 123.891 171.735 127.427 171.735 131.471C171.735 136.075 174.597 140.022 178.634 141.632C178.212 142.924 177.669 144.157 177.002 145.312ZM182.673 136.158C180.088 136.158 177.985 134.055 177.985 131.47C177.985 128.886 180.088 126.783 182.673 126.783C185.257 126.783 187.36 128.886 187.36 131.47C187.36 134.055 185.257 136.158 182.673 136.158Z"
+                    fill="url(#grad3)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="grad3"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop offset="0" stop-color="#f7f3ee">
+                        <animate
+                          attributeName="stop-color"
+                          values="#f7f3ee;#e6d3af;#d9b282;#e6d3af;#f7f3ee"
+                          dur="10s"
+                          repeatCount="indefinite"
+                        />
+                      </stop>
+                      <stop offset="0.5" stop-color="#d9b282">
+                        <animate
+                          attributeName="offset"
+                          values="-0.3;1.3;-0.3"
+                          keyTimes="0;0.5;1"
+                          dur="10s"
+                          repeatCount="indefinite"
+                          calcMode="spline"
+                          keySplines="0.42 0 0.58 1;0.42 0 0.58 1"
+                        />
+                        <animate
+                          attributeName="stop-color"
+                          values="#f7f3ee;#e6d3af;#d9b282;#e6d3af;#f7f3ee"
+                          dur="10s"
+                          repeatCount="indefinite"
+                        />
+                      </stop>
+                      <stop offset="1" stop-color="#f7f3ee" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <button class="btn-expand-process btn__second btn__second--light">
+              Expand
+            </button>
+          </div>
+          <div class="phase-cont phase__cont--align glass__back">
+            <h3>PHASE 4</h3>
+            <div class="phase__content phase__content--hidden">
+              <div class="phase__cont__text">
+                <h4>Deployement</h4>
+                <p>
+                  The deployment phase is the stage I connect the domain and
+                  insure the site is secure with SSL, then launch the site and
+                  begin to optimise the SEO and insure stability via test using
+                  various tools like Google Search Console and Ahrefs auditing,
+                  I run Lighthouse performance tests to ensure page speed and
+                  accessibility are optimum.
+                </p>
+              </div>
+              <div class="phase__cont__svg">
+                <svg
+                  class="phase__svg-size"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M156.401 106.943H43.5984C30.1266 106.943 19.1924 95.9631 19.1924 82.4914C19.1924 75.0634 22.468 68.143 28.1428 63.5294C27.0817 60.7151 26.4819 57.7163 26.4819 54.6713C26.4819 44.4291 32.8025 35.4325 42.122 31.8339C42.0759 31.1419 42.0298 30.4498 42.0298 29.7578C42.0298 13.3795 55.4092 0 71.7875 0C85.9975 0 97.9928 9.87313 100.899 23.4371C107.128 23.6217 112.803 26.7589 116.309 31.7416C120.369 29.4348 124.89 28.1892 129.642 28.1892C144.452 28.1892 156.493 40.2307 156.493 55.0404C156.493 56.0554 156.401 57.0242 156.309 58.0392H156.401C169.873 58.0392 180.807 69.0196 180.807 82.4914C180.807 95.9631 169.873 106.943 156.401 106.943Z"
+                    fill="url(#paint0_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M70.5885 134.117H41.4766C39.585 134.117 38.0625 132.595 38.0625 130.703C38.0625 128.858 39.585 127.335 41.4766 127.335H67.1744V103.529C67.1744 101.684 68.6969 100.161 70.5885 100.161C72.48 100.161 74.0025 101.684 74.0025 103.529V130.703C74.0025 132.595 72.48 134.117 70.5885 134.117Z"
+                    fill="url(#paint1_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M32.3876 143.207C25.5134 143.207 19.8848 137.624 19.8848 130.704C19.8848 123.83 25.5134 118.247 32.3876 118.247C39.2619 118.247 44.8905 123.83 44.8905 130.704C44.8905 137.624 39.2619 143.207 32.3876 143.207Z"
+                    fill="url(#paint2_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M158.523 134.117H129.411C127.52 134.117 125.997 132.595 125.997 130.703V103.529C125.997 101.684 127.52 100.161 129.411 100.161C131.303 100.161 132.825 101.684 132.825 103.529V127.335H158.523C160.368 127.335 161.891 128.858 161.891 130.703C161.891 132.595 160.368 134.117 158.523 134.117Z"
+                    fill="url(#paint3_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M167.612 143.207C160.738 143.207 155.109 137.624 155.109 130.704C155.109 123.83 160.738 118.247 167.612 118.247C174.487 118.247 180.069 123.83 180.069 130.704C180.069 137.624 174.487 143.207 167.612 143.207Z"
+                    fill="url(#paint4_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M85.3052 166.782H56.1934C54.3018 166.782 52.7793 165.259 52.7793 163.414C52.7793 161.522 54.3018 160 56.1934 160H81.8912V103.529C81.8912 101.684 83.4137 100.161 85.3052 100.161C87.1507 100.161 88.6732 101.684 88.6732 103.529V163.414C88.6732 165.259 87.1507 166.782 85.3052 166.782Z"
+                    fill="url(#paint5_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M47.1044 175.871C40.2302 175.871 34.6016 170.288 34.6016 163.414C34.6016 156.54 40.2302 150.911 47.1044 150.911C53.9787 150.911 59.5612 156.54 59.5612 163.414C59.5612 170.288 53.9787 175.871 47.1044 175.871Z"
+                    fill="url(#paint6_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M143.806 166.782H114.694C112.849 166.782 111.326 165.259 111.326 163.414V103.529C111.326 101.684 112.849 100.161 114.694 100.161C116.586 100.161 118.108 101.684 118.108 103.529V160H143.806C145.698 160 147.22 161.522 147.22 163.414C147.22 165.259 145.698 166.782 143.806 166.782Z"
+                    fill="url(#paint7_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M152.894 175.871C146.02 175.871 140.392 170.288 140.392 163.414C140.392 156.54 146.02 150.911 152.894 150.911C159.769 150.911 165.397 156.54 165.397 163.414C165.397 170.288 159.769 175.871 152.894 175.871Z"
+                    fill="url(#paint8_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M99.9763 181.822C98.1309 181.822 96.6084 180.3 96.6084 178.408V103.529C96.6084 101.684 98.1309 100.161 99.9763 100.161C101.868 100.161 103.39 101.684 103.39 103.529V178.408C103.39 180.3 101.868 181.822 99.9763 181.822Z"
+                    fill="url(#paint9_linear_215_269)"
+                  />
+                  <path
+                    class="phase__fade-line"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M99.9763 200C93.102 200 87.5195 194.371 87.5195 187.497C87.5195 180.623 93.102 174.994 99.9763 174.994C106.897 174.994 112.479 180.623 112.479 187.497C112.479 194.371 106.897 200 99.9763 200Z"
+                    fill="url(#paint10_linear_215_269)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_215_269"
+                      x1="180.807"
+                      y1="53.4718"
+                      x2="19.1924"
+                      y2="53.4718"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint1_linear_215_269"
+                      x1="74.0025"
+                      y1="117.139"
+                      x2="38.0625"
+                      y2="117.139"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint2_linear_215_269"
+                      x1="44.8905"
+                      y1="130.727"
+                      x2="19.8848"
+                      y2="130.727"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint3_linear_215_269"
+                      x1="161.891"
+                      y1="117.139"
+                      x2="125.997"
+                      y2="117.139"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint4_linear_215_269"
+                      x1="180.069"
+                      y1="130.727"
+                      x2="155.109"
+                      y2="130.727"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint5_linear_215_269"
+                      x1="88.6732"
+                      y1="133.471"
+                      x2="52.7793"
+                      y2="133.471"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint6_linear_215_269"
+                      x1="59.5612"
+                      y1="163.391"
+                      x2="34.6016"
+                      y2="163.391"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint7_linear_215_269"
+                      x1="147.22"
+                      y1="133.471"
+                      x2="111.326"
+                      y2="133.471"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint8_linear_215_269"
+                      x1="165.397"
+                      y1="163.391"
+                      x2="140.392"
+                      y2="163.391"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint9_linear_215_269"
+                      x1="103.39"
+                      y1="140.992"
+                      x2="96.6084"
+                      y2="140.992"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint10_linear_215_269"
+                      x1="112.479"
+                      y1="187.497"
+                      x2="87.5195"
+                      y2="187.497"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F7F3EE" />
+                      <stop offset="0.5" stop-color="#EAE2D5" />
+                      <stop offset="1" stop-color="#E5D7BD" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <button class="btn-expand-process btn__second btn__second--light">
+              Expand
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="sections">
+        <div class="tech__title-cont">
+          <h2>THE TECHNOLOGIES AND TOOLS</h2>
+          <p class="max-txt-width">
+            The technologies I choose for a project depend on the scope and
+            requirements of the website or application, I work with the latest
+            cutting edge technology, but I always choose what is practical for
+            the size and budget of the project, some of the main technologies I
+            work with are
+          </p>
+        </div>
+        <div class="tech__list-cont">
+          <div class="tech__containers">
+            <h4>Project Management</h4>
+            <div class="tech__items-cont">
+              <span>Google Drive</span>
+              <span>Notion</span>
+              <span>Trello</span>
+              <span>ClickUp</span>
+            </div>
+          </div>
+          <div class="tech__containers">
+            <h4>Design</h4>
+            <div class="tech__items-cont">
+              <span>Relume</span>
+              <span>Figma</span>
+              <span>Affinity</span>
+              <span>Unicorn studio</span>
+            </div>
+          </div>
+          <div class="tech__containers">
+            <h4>Development</h4>
+            <div class="tech__items-cont">
+              <span>Wordpress</span>
+              <span>Elementor Pro</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>NodeJS</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+          <div class="tech__containers">
+            <h4>Deployment</h4>
+            <div class="tech__items-cont">
+              <span>Hostinger</span>
+              <span>Netlify Pro</span>
+              <span>Railway</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="abt__locPer__section-pad">
+        <div class="abt-loc__heading-cont">
+          <h2>LOCATION</h2>
+        </div>
+        <div class="locPer__content-cont content-cont-marg-right">
+          <div class="locPer__img-cont loc__img-left">
+            <img
+              class="loc__img-corner"
+              src="/assets/about_wid/web_design_capbreton_hossegor.webp"
+              alt="Capbreton - location of Billy Nightingale, web designer and developer"
+            />
+          </div>
+          <div
+            class="LocPer__txt-cont txt-normal-flow glass__back loc-mob-margin-left"
+          >
+            <h3>CAPBRETON & HOSSEGOR</h3>
+            <p class="max-txt-width">
+              I’m located in the beautiful town of Capbreton, which is part of
+              the Landes region in France. Primarily, I work with local clients
+              like restaurants, healthcare providers, beverage produces and
+              local businesses. But I am of course available for remote work.
+            </p>
+            <p class="max-txt-width">
+              I take a lot of caring in producing high quality work, which
+              includes SEO optimised website's, focused on location, checkout
+              some of my top ranking projects
+            </p>
+          </div>
+        </div>
+        <div class="abt-per__heading-cont per__title-marg">
+          <h2>PERSONAL</h2>
+        </div>
+        <div
+          class="locPer__content-cont perso__content-reversed content-cont-marg-left"
+        >
+          <div class="locPer__img-cont per__img-right">
+            <img
+              class="loc__img-corner img-reversed"
+              src="/assets/about_wid/billy_nightingale_snowboard_la_mongie.webp"
+              alt="Billy Nightingale web designer and developer snowboarding in the La Mongie"
+            />
+          </div>
+          <div
+            class="LocPer__txt-cont glass__back loc-mob-margin-right txt-reversed per-mob-margin-right"
+          >
+            <h3>MY INTERESTS</h3>
+            <p class="max-txt-width per__txt-mar">
+              When I’m not working on client projects, I’m usually programming
+              and building tools or applications.
+            </p>
+            <p class="max-txt-width per__txt-mar">
+              In my leisure time I’m very social and active, my favourite sports
+              are snowboarding and surfing, I’ve travelled all over the world
+              practicing these sports.
+            </p>
+            <p class="max-txt-width per__txt-mar">
+              I'm also a qualified personal trainer and a snowboard instructor.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="sections" id="contact">
+        <div class="section-contact-container">
+          <h2>CONTACT ME</h2>
+          <p class="max-txt-width">
+            I’m always available to discuss new projects, feel free to contact
+            me through my social networks or fill in the form on my about page,
+            lets get your project going!
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/billynightingale/"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  width="30"
+                  height="30"
+                >
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/billy.nightingale.studio/"
+                target="_blank"
+                aria-label="instagram"
+              >
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="512"
+                  height="512"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 511 511.9"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <path
+                      d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
+                    ></path>
+                    <path
+                      d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.github.com/Billy-Night"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contact@billynightingale.com" aria-label="Mail">
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <div class="home-contact-btn__container">
+            <a
+              class="btn__primary btn__prim--light"
+              href="mailto:contact@billynightingale.com"
+              >Email Me</a
+            >
+            <a class="btn__second btn__second--light" href="/services"
+              >Services</a
+            >
+          </div>
+        </div>
+      </section>
+      <div class="gradient"></div>
     </main>
+    <footer class="sections">
+      <div class="footer__container">
+        <div class="footer__info_container">
+          <h3>CREATING YOUR DIGITAL SYSTEM</h3>
+          <h4>Billy Nightingale - Web Design & Development in Capbreton</h4>
+          <h5>Contact Information:</h5>
+          <address class="footer__address">
+            Capbreton, Landes, 40130, France<br />
+            <a href="tel:+33766095864">+33 7 66 09 58 64</a><br />
+            <a href="mailto:contact@billynightingale.com"
+              >contact@billynightingale.com</a
+            >
+          </address>
+          <div class="contact-icons-footer-cont">
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/billynightingale/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    class="social__icons__footer"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    width="30"
+                    height="30"
+                  >
+                    <path
+                      d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/billy.nightingale.studio/"
+                  target="_blank"
+                  aria-label="instagram"
+                >
+                  <svg
+                    class="social__icons__footer"
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="512"
+                    height="512"
+                    x="0"
+                    y="0"
+                    viewBox="0 0 511 511.9"
+                    style="enable-background: new 0 0 512 512"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <path
+                        d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
+                      ></path>
+                      <path
+                        d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.github.com/Billy-Night"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    class="social__icons__footer"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:contact@billynightingale.com" aria-label="Mail">
+                  <svg
+                    class="social__icons__footer"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__nav_container">
+          <ul class="footer__nav">
+            <li><a class="footer__nav__link" href="/">Home</a></li>
+            <li>
+              <a class="footer__nav__link" href="/#projects">Projects</a>
+            </li>
+            <li><a class="footer__nav__link" href="about">About</a></li>
+            <li><a class="footer__nav__link" href="contact">Contact</a></li>
+            <li>
+              <a class="footer__nav__link" href="services">Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>&copy; 2026 Billy Nightingale. All rights reserved.</p>
+        <a href="terms-and-conditions">Terms and Conditions</a>
+      </div>
+    </footer>
   </body>
 </html>

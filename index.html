@@ -27,6 +27,14 @@
       href="https://www.billynightingale.com/fr/"
     />
 
+    <link
+      rel="preload"
+      href="/assets/fonts/MangoGrotesque-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Favicons -->
     <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
     <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
@@ -218,48 +226,697 @@
       </nav>
     </header>
     <main>
-      <section class="home-hero" id="intro">
+      <section class="hero__section" id="intro">
         <svg
-          class="hero-big-circle"
-          viewBox="0 0 1000 1000"
+          class="hero__horLine-top"
+          width="3000"
+          height="1"
+          viewBox="0 0 3000 1"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle
-            cx="500"
-            cy="500"
-            r="499"
-            fill="#2A3F52"
-            stroke="white"
-            stroke-width="2"
-          />
-          <circle cx="659" cy="27" r="6" fill="white" />
-          <circle cx="29" cy="337" r="6" fill="white" />
+          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
         </svg>
         <svg
-          class="hero-small-circle"
-          viewBox="0 0 800 800"
+          class="hero__verLine-left"
+          width="1"
+          height="3000"
+          viewBox="0 0 1 3000"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle class="ring" cx="400" cy="400" r="399" fill="#2F4659" />
-          <circle class="node" cx="260" cy="26" r="6" />
-          <circle class="node" cx="719" cy="160" r="6" />
+          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
         </svg>
-        <div class="hero__text-container">
-          <h1>Web Design Capbreton Hossegor</h1>
-          <div class="hero__sub-heading">
-            <h2>
-              Modern, fast and SEO-optimised websites for local businesses
-            </h2>
+        <svg
+          class="hero__verLine-right"
+          width="1"
+          height="3000"
+          viewBox="0 0 1 3000"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
+        </svg>
+        <svg
+          class="hero__horLine-bottom"
+          width="3000"
+          height="1"
+          viewBox="0 0 3000 1"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
+        </svg>
+        <div class="hero__full-container">
+          <div class="hero__title-container">
+            <div>
+              <span class="hero__title-word"
+                >WEB DESIGNER CAPBRETON HOSSEGOR</span
+              >
+              <h1 class="hero__title">
+                <span class="hero__title-text">GROW YOUR BUSINESS</span>
+                <span class="type-measure">
+                  <svg
+                    class="measure"
+                    width="14"
+                    viewBox="0 0 14 302"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      y1="-0.5"
+                      x2="300.002"
+                      y2="-0.5"
+                      transform="matrix(-0.00333331 0.999994 -0.999879 -0.0155253 7 1)"
+                      stroke="white"
+                    />
+                    <line x1="1" y1="0.5" x2="14" y2="0.5" stroke="white" />
+                    <line y1="300.5" x2="13" y2="300.5" stroke="white" />
+                  </svg>
+                  <span class="type-measure__label"></span>
+                </span>
+              </h1>
+            </div>
+          </div>
+          <div class="intro__img-container">
+            <svg
+              class="hero-small-circle"
+              width="900"
+              height="900"
+              viewBox="-20 -20 940 940"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="orbit-path-draw-1"
+                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+              />
+              <path
+                id="orbitPath1"
+                d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+              />
+              <circle id="orbitDot1" r="10" fill="white"></circle>
+            </svg>
+            <div class="intro__image--frame">
+              <img
+                class="home-intro__img"
+                src="/assets/portrait_standing_laptop_v4.webp"
+                alt="Portrait of Billy Nightingale looking at web design on laptop"
+              />
+            </div>
+          </div>
+          <div class="hero__text-container">
+            <svg
+              class="hero-big-circle"
+              width="900"
+              height="900"
+              viewBox="-20 -20 940 940"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="orbit-path-draw-2"
+                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+              />
+              <path
+                id="orbitPath2"
+                d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+              />
+              <circle id="orbitDot2" r="10" fill="white"></circle>
+            </svg>
+            <div class="intro__text-cont">
+              <div class="about__intro__txt-cont">
+                <h2>CREATING WEBSITES & SYSTEMS</h2>
+                <p>
+                  I'm <span class="name">Billy Nightingale,</span> a web
+                  designer helping local businesses in Capbreton and southwest
+                  France build a strong, professional online presence.
+                </p>
+                <p>Your technical partner — from design to launch and SEO.</p>
+                <p>Available for new freelance projects, locally or remote.</p>
+                <p>Learn more about me and my recent projects</p>
+                <div class="hero__cta-cont">
+                  <a class="btn__primary btn__prim--light" href="#offer"
+                    >Learn more</a
+                  >
+                  <a class="btn__second btn__second--light" href="/#projects"
+                    >Projets</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <a class="hero__contact-link" href="/contact">[ START A PROJECT ]</a>
       </section>
-      <section class="sec-home-intro">
-        <div class="home-intro-container glass__back">
-          <div class="home-intro-img-container">
-            <div class="floating-icon floating-icon--left glass__back">
+      <section class="sections" id="offer">
+        <div class="section__title">
+          <h2>END-TO-END WEB SOLUTIONS</h2>
+          <h3>Transform your business with seamless digital experience</h3>
+        </div>
+        <div class="offers">
+          <div class="offers__tab-container">
+            <button
+              class="btn offers__tab offers__tab--1 offers__tab--active"
+              data-tab="1"
+            >
+              <span class="offers__tab-num">01</span>Discovery & Strategy
+            </button>
+
+            <button class="btn offers__tab offers__tab--2" data-tab="2">
+              <span class="offers__tab-num">02</span>Design & Prototyping
+            </button>
+            <button class="btn offers__tab offers__tab--3" data-tab="3">
+              <span class="offers__tab-num">03</span>Development & Launch
+            </button>
+          </div>
+          <div
+            class="offers__content offers__content--1 offers__content--active"
+          >
+            <h4 class="offers__header">Strategise for success</h4>
+            <p>
+              I'll define your goals, target audience, and technical
+              requirements to create a clear roadmap for your website or
+              application.
+            </p>
+          </div>
+          <div class="offers__content offers__content--2">
+            <h4 class="offers__header">Visualise before we build</h4>
+            <p>
+              Through wireframes and interactive prototypes, we refine your
+              vision, ensuring a user-friendly and conversion-driven design
+            </p>
+          </div>
+          <div class="offers__content offers__content--3">
+            <h4 class="offers__header">Launch with confidence</h4>
+            <p>
+              From development to deployment, I deliver a high-performing
+              product with ongoing support to keep your digital presence
+              thriving
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="gradient"></div>
+      <section class="sections projects" id="projects">
+        <div class="section-project-container">
+          <h2>CLIENT PROJECTS</h2>
+          <article class="project-info-container">
+            <div class="text">
+              <h3 class="projects-heading heading-reverse">Wellness Client</h3>
+              <h4 class="projects-heading-name heading-reverse">
+                Sophro by Eve - sophrologue
+              </h4>
+              <div class="project__glass-back">
+                <p class="max-txt-width">
+                  Eve-Marie needed a website to launch her sophrology practice
+                  and present her services in a clear, reassuring way. I created
+                  a custom WordPress website with Elementor Pro, focusing on
+                  soft colours, simple layouts, and a smooth user experience.
+                </p>
+                <p>The project includes:</p>
+                <div class="project-task-list">
+                  <ul>
+                    <li>A structured sitemap and clean UI design</li>
+                    <li>Blog section for long-term SEO</li>
+                    <li>Calendly booking system with online payments</li>
+                    <li>
+                      Speed optimisation and best practices for technical SEO
+                    </li>
+                    <li>
+                      Full setup of hosting, security, backups, and analytics
+                    </li>
+                  </ul>
+                </div>
+                <p class="max-txt-width">
+                  This project helped strengthen her brand online and provide an
+                  easy way for clients to book sessions.
+                </p>
+                <p>
+                  Click here to see the
+                  <a href="https://sophrobyeve.com/" target="_blank">website</a>
+                </p>
+              </div>
+              <h4 class="heading__project-tech heading-reverse">
+                Technologies
+              </h4>
+              <ul class="project-tech-list">
+                <li>Wordpress</li>
+                <li>Elementor Pro</li>
+                <li>Rank Math SEO</li>
+                <li>Hostinger</li>
+                <li>Calendly</li>
+              </ul>
+            </div>
+            <img
+              src="/assets/client_sites/client_eve-marie_website.webp"
+              alt="Eve-Marie web site created by Billy"
+              data-src="/assets/client_sites/client_eve-marie_website.webp"
+              width="600"
+              height="600"
+            />
+          </article>
+          <article class="reverse project-info-container">
+            <div class="text">
+              <h3 class="projects-heading">E-Commerce</h3>
+              <h4 class="projects-heading-name">Turbulente - kombucha</h4>
+              <div class="project__glass-back">
+                <p class="max-txt-width">
+                  I created Turbulentes first E-Commerce website to sell their
+                  wide range of kombucha's, it was an exciting opportunity to
+                  work with a local innovative brand, entwined in the surf
+                  culture of the Pays Basque region.
+                </p>
+                <p>The project includes:</p>
+                <div class="project-task-list">
+                  <ul>
+                    <li>A structured sitemap and clean UI design</li>
+                    <li>Full online shop with different products</li>
+                    <li>Integrated Payment system</li>
+                    <li>
+                      Minimalist design with beautiful graphics and animation.
+                    </li>
+                    <li>
+                      Full setup of URL and hosting, including DNS and SSL.
+                    </li>
+                  </ul>
+                </div>
+                <p class="max-txt-width">
+                  This project brought Turbulente online and improved their
+                  digital presence.
+                </p>
+                <p>
+                  Click here to see the
+                  <a href="https://www.turbulente.fr/" target="_blank"
+                    >website</a
+                  >
+                </p>
+              </div>
+              <h4 class="heading__project-tech">Technologies</h4>
+              <ul class="project-tech-list">
+                <li>Wix</li>
+                <li>Wix studio</li>
+                <li>Google console</li>
+                <li>Google analytics</li>
+                <li>Figma</li>
+              </ul>
+            </div>
+            <img
+              src="/assets/client_sites/client_turbulente_website.webp"
+              alt="Weather Wise a frontend React web application, created by Billy"
+              data-src="/assets/client_sites/client_turbulente_website.webp"
+              width="600"
+            />
+          </article>
+          <h2>WEB APPLICATION</h2>
+          <article class="project-info-container">
+            <div class="text">
+              <h3 class="projects-heading heading-reverse">Full-Stack</h3>
+              <h4 class="projects-heading-name heading-reverse">
+                World Surf Journal
+              </h4>
+              <div class="project__glass-back">
+                <p class="max-txt-width">
+                  The World Surf Journal is a web application that allows the
+                  user to register an account and save their surf trips with
+                  various details. It's a CRUD application and the user can
+                  create, replace, update and delete their surf trips. It's a
+                  fullstack application and consists of a frontend, backend and
+                  database. Take a look at the deployed
+                  <a href="https://worldsurfjournal.netlify.app" target="_blank"
+                    >web app</a
+                  >. Click here to see the frontend<a
+                    href="https://github.com/Billy-Night/world_surf_journal"
+                    target="_blank"
+                  >
+                    GitHub repository</a
+                  >
+                  and the backend<a
+                    href="https://github.com/Billy-Night/world_surf_journal_backend"
+                    target="_blank"
+                  >
+                    GitHub repository</a
+                  >.
+                </p>
+              </div>
+              <h4 class="heading__project-tech heading-reverse">
+                Technologies
+              </h4>
+              <ul class="project-tech-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MySQL</li>
+              </ul>
+            </div>
+            <img
+              src="assets/personal_projects/app_world_surf_journal.webp"
+              alt="The world surf jounrnal a full-stack application created by Billy"
+              data-src="assets/personal_projects/app_world_surf_journal.webp"
+              width="600"
+            />
+          </article>
+          <article class="reverse project-info-container">
+            <div class="text">
+              <h3 class="projects-heading">Frontend Project</h3>
+              <h4 class="projects-heading-name">Weather Wise</h4>
+              <div class="project__glass-back">
+                <p class="max-txt-width">
+                  Weather Wise is a weather & sport application, that will
+                  provide the user with a rating on how good the conditions are
+                  for that day in their selected sport, which is calculated
+                  using an algorithm, which depends on certain weather condition
+                  in their current selected location. The application uses API's
+                  to get current weather and location information. Click to see
+                  a demo of the
+                  <a href="https://weatherwise.netlify.app/" target="_blank"
+                    >Web App</a
+                  >, click here to see the
+                  <a
+                    href="https://github.com/Billy-Night/weather_wise_app"
+                    target="_blank"
+                    >GitHub repository</a
+                  >.
+                </p>
+              </div>
+              <h4 class="heading__project-tech">Technologies</h4>
+              <ul class="project-tech-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>OpenWeather API</li>
+              </ul>
+            </div>
+            <img
+              src="assets/personal_projects/app_weather_wise.webp"
+              alt="Screenshot of Weather Wise a React web application created by Billy"
+              data-src="assets/personal_projects/app_weather_wise.webp"
+              width="600"
+            />
+          </article>
+          <article class="project-info-container">
+            <div class="text">
+              <h3 class="projects-heading heading-reverse">Client Project</h3>
+              <h4 class="projects-heading-name heading-reverse">TROWIT</h4>
+              <div class="project__glass-back">
+                <p class="max-txt-width">
+                  The TROWIT project has been created to improve the transfer of
+                  business and personal details between people. It fills this
+                  need by passing user information digitally in the form of
+                  Business Cards. The user can set-up an account and create
+                  their digital business cards, they can then order these cards
+                  as physical cards, which is a service TROWIT will provide. The
+                  user can connect with other users via their cards with a URL
+                  link. Apologies but the repository is private, I would be
+                  happy to discuss the project on request.
+                </p>
+              </div>
+              <h4 class="heading__project-tech heading-reverse">
+                Technologies
+              </h4>
+              <ul class="project-tech-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MySQL</li>
+              </ul>
+            </div>
+            <img
+              src="assets/personal_projects/app_trowit.webp"
+              alt="Screenshot of the TROWIT full-stack application created by Billy"
+              data-src="assets/personal_projects/app_trowit.webp"
+              width="600"
+            />
+          </article>
+        </div>
+      </section>
+      <div class="gradient"></div>
+      <section class="sections" id="reviews">
+        <div class="cont__review">
+          <h2>TRUSTED BY MY CLIENTS</h2>
+          <p>Feedback from a recent project</p>
+          <div class="cont__review-content">
+            <div class="review-avatar">
+              <img
+                class="client__portrait"
+                src="/assets/client_reviews/eve-marie-billy-web-design-client.webp"
+                alt="portrait of Eve-Marie, a client of Billy Nightingale"
+              />
+            </div>
+            <div class="cont__review-text">
+              <p class="max-txt-width">
+                Trust Billy! He created my website from start to finish, as well
+                as my blog, in September 2025. He is extremely professional,
+                detail-oriented, and very pleasant to work with. By choosing
+                him, you’re choosing excellent value for money. He speaks French
+                very fluently, makes strong and relevant suggestions throughout
+                the entire project process — and even afterwards. He always
+                takes every request into account. I truly recommend him without
+                hesitation.
+              </p>
+              <p>Eve-Marie, Sophrologue, Montauban</p>
+              <div class="cont__review-stars">
+                <img
+                  class="review__stars"
+                  src="/assets/icons/stars.svg"
+                  alt="icon star"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="gradient"></div>
+      <section class="sections" id="contact">
+        <div class="section-contact-container">
+          <h2>CONTACT ME</h2>
+          <p>
+            I'm always interested in hearing about new exciting projects in the
+            tech space.
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/billynightingale/"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  width="30"
+                  height="30"
+                >
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/billy.nightingale.studio/"
+                target="_blank"
+                aria-label="instagram"
+              >
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="512"
+                  height="512"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 511 511.9"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <path
+                      d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
+                    ></path>
+                    <path
+                      d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.github.com/Billy-Night"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contact@billynightingale.com" aria-label="Mail">
+                <svg
+                  class="social__icons__contact"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <div class="home-contact-btn__container">
+            <a
+              class="btn__primary btn__prim--light"
+              href="mailto:contact@billynightingale.com"
+              >EMAIL ME</a
+            >
+            <a class="btn__second btn__second--light" href="/about">ABOUT ME</a>
+          </div>
+        </div>
+      </section>
+      <div class="gradient"></div>
+      <section class="sections" id="footer">
+        <footer>
+          <div class="footer__container">
+            <div class="footer__info_container">
+              <h3>Create your digital system</h3>
+              <h4>Billy Nightingale - Web Design & Development in Capbreton</h4>
+              <h5>Contact Information:</h5>
+              <address class="footer__address">
+                Capbreton, Landes, 40130, France<br />
+                <a href="tel:+33766095864">+33 7 66 09 58 64</a><br />
+                <a href="mailto:contact@billynightingale.com"
+                  >contact@billynightingale.com</a
+                >
+              </address>
+              <div class="contact-icons-footer-cont">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/billynightingale/"
+                      target="_blank"
+                      aria-label="LinkedIn"
+                    >
+                      <svg
+                        class="social__icons__footer"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        width="30"
+                        height="30"
+                      >
+                        <path
+                          d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/billy.nightingale.studio/"
+                      target="_blank"
+                      aria-label="instagram"
+                    >
+                      <svg
+                        class="social__icons__footer"
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="512"
+                        height="512"
+                        x="0"
+                        y="0"
+                        viewBox="0 0 511 511.9"
+                        style="enable-background: new 0 0 512 512"
+                        xml:space="preserve"
+                      >
+                        <g>
+                          <path
+                            d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
+                          ></path>
+                          <path
+                            d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.github.com/Billy-Night"
+                      target="_blank"
+                      aria-label="GitHub"
+                    >
+                      <svg
+                        class="social__icons__footer"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:contact@billynightingale.com"
+                      aria-label="Mail"
+                    >
+                      <svg
+                        class="social__icons__footer"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__nav_container">
+              <ul class="footer__nav">
+                <li><a class="footer__nav__link" href="/">Home</a></li>
+                <li>
+                  <a class="footer__nav__link" href="#projects">Projects</a>
+                </li>
+                <li><a class="footer__nav__link" href="about">About</a></li>
+                <li><a class="footer__nav__link" href="contact">Contact</a></li>
+                <li>
+                  <a class="footer__nav__link" href="services">Services</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__legal">
+            <p>&copy; 2026 Billy Nightingale. All rights reserved.</p>
+            <a href="terms-and-conditions">Terms and Conditions</a>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
+<!-- <div class="floating-icon floating-icon--left glass__back">
               <div class="bg_lin-black radius-lg">
                 <svg
                   class="svg-default"
@@ -504,571 +1161,4 @@
                   />
                 </svg>
               </div>
-            </div>
-            <div class="intro-image__frame">
-              <img
-                class="home-intro__img"
-                src="/assets/portrait_standing_laptop_v4.webp"
-                alt="Portrait of Billy Nightingale looking at web design on laptop"
-              />
-            </div>
-          </div>
-          <div class="home-intro-text-container">
-            <div class="home-intro-text">
-              <h2>Creating Website & Systems</h2>
-              <p>
-                I'm <span class="name">Billy Nightingale,</span> a web designer
-                helping local businesses in Capbreton and southwest France build
-                a strong, professional online presence.
-              </p>
-              <p>Your technical partner — from design to launch and SEO.</p>
-              <p>Available for new freelance projects, locally or remote.</p>
-              <div class="home-intro-cta">
-                <a class="btn-primary" href="/contact">Contact</a>
-                <a class="btn-secondary" href="#projects">Projects</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections" id="offer">
-        <div class="section__title">
-          <h2>End-to-End Web Solution</h2>
-          <h3>Transform your business with seamless digital experience</h3>
-        </div>
-        <div class="offers">
-          <div class="offers__tab-container">
-            <button
-              class="btn offers__tab offers__tab--1 offers__tab--active"
-              data-tab="1"
-            >
-              <span class="offers__tab-num">01</span>Discovery & Strategy
-            </button>
-
-            <button class="btn offers__tab offers__tab--2" data-tab="2">
-              <span class="offers__tab-num">02</span>Design & Prototyping
-            </button>
-            <button class="btn offers__tab offers__tab--3" data-tab="3">
-              <span class="offers__tab-num">03</span>Development & Launch
-            </button>
-          </div>
-          <div
-            class="offers__content offers__content--1 offers__content--active"
-          >
-            <h4 class="offers__header">Strategise for success</h4>
-            <p>
-              I'll define your goals, target audience, and technical
-              requirements to create a clear roadmap for your website or
-              application.
-            </p>
-          </div>
-          <div class="offers__content offers__content--2">
-            <h4 class="offers__header">Visualise before we build</h4>
-            <p>
-              Through wireframes and interactive prototypes, we refine your
-              vision, ensuring a user-friendly and conversion-driven design
-            </p>
-          </div>
-          <div class="offers__content offers__content--3">
-            <h4 class="offers__header">Launch with confidence</h4>
-            <p>
-              From development to deployment, I deliver a high-performing
-              product with ongoing support to keep your digital presence
-              thriving
-            </p>
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections projects" id="projects">
-        <div class="section-project-container">
-          <h2>Client Projects</h2>
-          <article class="project-info-container">
-            <div class="text">
-              <h3 class="projects-heading heading-reverse">Wellness Client</h3>
-              <h4 class="projects-heading-name heading-reverse">
-                Sophro by Eve - sophrologue
-              </h4>
-              <div class="black-box">
-                <p>
-                  Eve-Marie needed a website to launch her sophrology practice
-                  and present her services in a clear, reassuring way. I created
-                  a custom WordPress website with Elementor Pro, focusing on
-                  soft colours, simple layouts, and a smooth user experience.
-                </p>
-                <p>The project includes:</p>
-                <div class="project-task-list">
-                  <ul>
-                    <li>A structured sitemap and clean UI design</li>
-                    <li>Blog section for long-term SEO</li>
-                    <li>Calendly booking system with online payments</li>
-                    <li>
-                      Speed optimisation and best practices for technical SEO
-                    </li>
-                    <li>
-                      Full setup of hosting, security, backups, and analytics
-                    </li>
-                  </ul>
-                </div>
-                <p>
-                  This project helped strengthen her brand online and provide an
-                  easy way for clients to book sessions.
-                </p>
-                <p>
-                  Click here to see the
-                  <a href="https://sophrobyeve.com/" target="_blank">website</a>
-                </p>
-              </div>
-              <h4 class="heading__project-tech heading-reverse">
-                Technologies
-              </h4>
-              <ul class="project-tech-list">
-                <li>Wordpress</li>
-                <li>Elementor Pro</li>
-                <li>Rank Math SEO</li>
-                <li>Hostinger</li>
-                <li>Calendly</li>
-              </ul>
-            </div>
-            <img
-              src="/assets/client_sites/client_eve-marie_website.webp"
-              alt="Eve-Marie web site created by Billy"
-              data-src="/assets/client_sites/client_eve-marie_website.webp"
-              width="600"
-              height="600"
-            />
-          </article>
-          <article class="reverse project-info-container">
-            <div class="text">
-              <h3 class="projects-heading">E-Commerce</h3>
-              <h4 class="projects-heading-name">Turbulente - kombucha</h4>
-              <div class="black-box">
-                <p>
-                  I created Turbulentes first E-Commerce website to sell their
-                  wide range of kombucha's, it was an exciting opportunity to
-                  work with a local innovative brand, entwined in the surf
-                  culture of the Pays Basque region.
-                </p>
-                <p>The project includes:</p>
-                <div class="project-task-list">
-                  <ul>
-                    <li>A structured sitemap and clean UI design</li>
-                    <li>Full online shop with different products</li>
-                    <li>Integrated Payment system</li>
-                    <li>
-                      Minimalist design with beautiful graphics and animation.
-                    </li>
-                    <li>
-                      Full setup of URL and hosting, including DNS and SSL.
-                    </li>
-                  </ul>
-                </div>
-                <p>
-                  This project brought Turbulente online and improved their
-                  digital presence.
-                </p>
-                <p>
-                  Click here to see the
-                  <a href="https://www.turbulente.fr/" target="_blank"
-                    >website</a
-                  >
-                </p>
-              </div>
-              <h4 class="heading__project-tech">Technologies</h4>
-              <ul class="project-tech-list">
-                <li>Wix</li>
-                <li>Wix studio</li>
-                <li>Google console</li>
-                <li>Google analytics</li>
-                <li>Figma</li>
-              </ul>
-            </div>
-            <img
-              src="/assets/client_sites/client_turbulente_website.webp"
-              alt="Weather Wise a frontend React web application, created by Billy"
-              data-src="/assets/client_sites/client_turbulente_website.webp"
-              width="600"
-            />
-          </article>
-          <h2>Web Applications</h2>
-          <article class="project-info-container">
-            <div class="text">
-              <h3 class="projects-heading heading-reverse">Full-Stack</h3>
-              <h4 class="projects-heading-name heading-reverse">
-                World Surf Journal
-              </h4>
-              <p class="black-box">
-                The World Surf Journal is a web application that allows the user
-                to register an account and save their surf trips with various
-                details. It's a CRUD application and the user can create,
-                replace, update and delete their surf trips. It's a fullstack
-                application and consists of a frontend, backend and database.
-                Take a look at the deployed
-                <a href="https://worldsurfjournal.netlify.app" target="_blank"
-                  >web app</a
-                >. Click here to see the frontend<a
-                  href="https://github.com/Billy-Night/world_surf_journal"
-                  target="_blank"
-                >
-                  GitHub repository</a
-                >
-                and the backend<a
-                  href="https://github.com/Billy-Night/world_surf_journal_backend"
-                  target="_blank"
-                >
-                  GitHub repository</a
-                >.
-              </p>
-              <h4 class="heading__project-tech heading-reverse">
-                Technologies
-              </h4>
-              <ul class="project-tech-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>MySQL</li>
-              </ul>
-            </div>
-            <img
-              src="assets/personal_projects/app_world_surf_journal.webp"
-              alt="The world surf jounrnal a full-stack application created by Billy"
-              data-src="assets/personal_projects/app_world_surf_journal.webp"
-              width="600"
-            />
-          </article>
-          <article class="reverse project-info-container">
-            <div class="text">
-              <h3 class="projects-heading">Frontend Project</h3>
-              <h4 class="projects-heading-name">Weather Wise</h4>
-              <p class="black-box">
-                Weather Wise is a weather & sport application, that will provide
-                the user with a rating on how good the conditions are for that
-                day in their selected sport, which is calculated using an
-                algorithm, which depends on certain weather condition in their
-                current selected location. The application uses API's to get
-                current weather and location information. Click to see a demo of
-                the
-                <a href="https://weatherwise.netlify.app/" target="_blank"
-                  >Web App</a
-                >, click here to see the
-                <a
-                  href="https://github.com/Billy-Night/weather_wise_app"
-                  target="_blank"
-                  >GitHub repository</a
-                >.
-              </p>
-              <h4 class="heading__project-tech">Technologies</h4>
-              <ul class="project-tech-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>OpenWeather API</li>
-              </ul>
-            </div>
-            <img
-              src="assets/personal_projects/app_weather_wise.webp"
-              alt="Screenshot of Weather Wise a React web application created by Billy"
-              data-src="assets/personal_projects/app_weather_wise.webp"
-              width="600"
-            />
-          </article>
-          <article class="project-info-container">
-            <div class="text">
-              <h3 class="projects-heading heading-reverse">Client Project</h3>
-              <h4 class="projects-heading-name heading-reverse">TROWIT</h4>
-              <p class="black-box">
-                The TROWIT project has been created to improve the transfer of
-                business and personal details between people. It fills this need
-                by passing user information digitally in the form of Business
-                Cards. The user can set-up an account and create their digital
-                business cards, they can then order these cards as physical
-                cards, which is a service TROWIT will provide. The user can
-                connect with other users via their cards with a URL link.
-                Apologies but the repository is private, I would be happy to
-                discuss the project on request.
-              </p>
-              <h4 class="heading__project-tech heading-reverse">
-                Technologies
-              </h4>
-              <ul class="project-tech-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>MySQL</li>
-              </ul>
-            </div>
-            <img
-              src="assets/personal_projects/app_trowit.webp"
-              alt="Screenshot of the TROWIT full-stack application created by Billy"
-              data-src="assets/personal_projects/app_trowit.webp"
-              width="600"
-            />
-          </article>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections" id="reviews">
-        <div class="cont__review">
-          <h2>Trusted by my clients</h2>
-          <p>Feedback from a recent project</p>
-          <div class="cont__review-content">
-            <div class="review-avatar">
-              <img
-                class="client__portrait"
-                src="/assets/client_reviews/eve-marie-billy-web-design-client.webp"
-                alt="portrait of Eve-Marie, a client of Billy Nightingale"
-              />
-            </div>
-            <div class="cont__review-text">
-              <p>
-                Trust Billy! He created my website from start to finish, as well
-                as my blog, in September 2025. He is extremely professional,
-                detail-oriented, and very pleasant to work with. By choosing
-                him, you’re choosing excellent value for money. He speaks French
-                very fluently, makes strong and relevant suggestions throughout
-                the entire project process — and even afterwards. He always
-                takes every request into account. I truly recommend him without
-                hesitation.
-              </p>
-              <p>Eve-Marie, Sophrologue, Montauban</p>
-              <div class="cont__review-stars">
-                <img
-                  class="review__stars"
-                  src="/assets/icons/stars.svg"
-                  alt="icon star"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections" id="contact">
-        <div class="section-contact-container">
-          <h2>Contact me</h2>
-          <p>
-            I'm always interested in hearing about new exciting projects in the
-            tech space.
-          </p>
-          <ul>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/billynightingale/"
-                target="_blank"
-                aria-label="LinkedIn"
-              >
-                <svg
-                  class="social__icons__contact"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                  width="30"
-                  height="30"
-                >
-                  <path
-                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/billy.nightingale.studio/"
-                target="_blank"
-                aria-label="instagram"
-              >
-                <svg
-                  class="social__icons__contact"
-                  xmlns="http://www.w3.org/2000/svg"
-                  version="1.1"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  width="512"
-                  height="512"
-                  x="0"
-                  y="0"
-                  viewBox="0 0 511 511.9"
-                  style="enable-background: new 0 0 512 512"
-                  xml:space="preserve"
-                >
-                  <g>
-                    <path
-                      d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
-                    ></path>
-                    <path
-                      d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
-                    ></path>
-                  </g>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.github.com/Billy-Night"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <svg
-                  class="social__icons__contact"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:contact@billynightingale.com" aria-label="Mail">
-                <svg
-                  class="social__icons__contact"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                  />
-                </svg>
-              </a>
-            </li>
-          </ul>
-          <div class="home-contact-btn__container">
-            <a class="btn-primary" href="mailto:contact@billynightingale.com"
-              >Email Me</a
-            >
-            <a class="btn-secondary" href="/about">About Me</a>
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections" id="footer">
-        <footer>
-          <div class="footer__container">
-            <div class="footer__info_container">
-              <h3>Create your digital system</h3>
-              <h4>Billy Nightingale - Web Design & Development in Capbreton</h4>
-              <h5>Contact Information:</h5>
-              <address class="footer__address">
-                Capbreton, Landes, 40130, France<br />
-                <a href="tel:+33766095864">+33 7 66 09 58 64</a><br />
-                <a href="mailto:contact@billynightingale.com"
-                  >contact@billynightingale.com</a
-                >
-              </address>
-              <div class="contact-icons-footer-cont">
-                <ul>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/billynightingale/"
-                      target="_blank"
-                      aria-label="LinkedIn"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        width="30"
-                        height="30"
-                      >
-                        <path
-                          d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/billy.nightingale.studio/"
-                      target="_blank"
-                      aria-label="instagram"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        version="1.1"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="512"
-                        height="512"
-                        x="0"
-                        y="0"
-                        viewBox="0 0 511 511.9"
-                        style="enable-background: new 0 0 512 512"
-                        xml:space="preserve"
-                      >
-                        <g>
-                          <path
-                            d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
-                          ></path>
-                          <path
-                            d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
-                          ></path>
-                        </g>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.github.com/Billy-Night"
-                      target="_blank"
-                      aria-label="GitHub"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:contact@billynightingale.com"
-                      aria-label="Mail"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__nav_container">
-              <ul class="footer__nav">
-                <li><a class="footer__nav__link" href="/">Home</a></li>
-                <li>
-                  <a class="footer__nav__link" href="#projects">Projects</a>
-                </li>
-                <li><a class="footer__nav__link" href="about">About</a></li>
-                <li><a class="footer__nav__link" href="contact">Contact</a></li>
-                <li>
-                  <a class="footer__nav__link" href="services">Services</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer__legal">
-            <p>&copy; 2026 Billy Nightingale. All rights reserved.</p>
-            <a href="terms-and-conditions">Terms and Conditions</a>
-          </div>
-        </footer>
-      </section>
-    </main>
-  </body>
-</html>
+            </div> -->

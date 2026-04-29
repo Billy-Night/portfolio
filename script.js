@@ -42,6 +42,254 @@ const cFPrefTimSeo = document.querySelector('#pref-time-seo')
 const contactScrollIcon = document.querySelector('#contact-icon-scroll')
 const statusElPass = document.querySelector('.form-status-pass')
 const statusElError = document.querySelector('.form-status-error')
+const circle = document.querySelector('.tl_dot')
+
+//* About Page
+
+const timelineSection = document.querySelector('.tl__container')
+const path = document.querySelector('.tl_line')
+const timeSteps = document.querySelectorAll('.time-step')
+
+const titleText = document.querySelector('.hero__title-text')
+const measure = document.querySelector('.type-measure')
+const label = document.querySelector('.type-measure__label')
+
+function updateMeasure() {
+  const height = Math.round(titleText.getBoundingClientRect().height)
+
+  measure.style.setProperty('--measure-height', `${height}px`)
+  label.textContent = `${height}px`
+}
+
+function initMeasure() {
+  updateMeasure()
+
+  window.addEventListener('resize', updateMeasure)
+  window.addEventListener('load', updateMeasure)
+}
+
+document.fonts.ready.then(initMeasure)
+
+animateOrbit({
+  path: document.querySelector('#orbitPath1'),
+  drawPath: document.querySelector('#orbit-path-draw-1'),
+  dot: document.querySelector('#orbitDot1'),
+  duration: 18000,
+})
+
+animateOrbit({
+  path: document.querySelector('#orbitPath2'),
+  drawPath: document.querySelector('#orbit-path-draw-2'),
+  dot: document.querySelector('#orbitDot2'),
+  duration: 24000,
+  reverse: true,
+})
+
+function animateOrbit({
+  path,
+  drawPath,
+  dot,
+  duration = 18000,
+  reverse = false,
+}) {
+  if (!path) return
+  const length = path.getTotalLength()
+
+  drawPath.style.strokeDasharray = `${length}px`
+  drawPath.style.strokeDashoffset = `${length}px`
+
+  function loop(timeStamp) {
+    // const rawProgress = (timeStamp % duration) / duration
+    // const progress = reverse ? 1 - rawProgress : rawProgress
+    const progress = (timeStamp % duration) / duration
+
+    const distance = length * progress
+    const point = path.getPointAtLength(distance)
+
+    dot.setAttribute('cx', point.x)
+    dot.setAttribute('cy', point.y)
+
+    drawPath.style.strokeDashoffset = `${length - distance}px`
+
+    requestAnimationFrame(loop)
+  }
+
+  requestAnimationFrame(loop)
+}
+
+//* code for timeline:::
+
+let pathLength = 0
+
+if (path) {
+  pathLength = path.getTotalLength()
+  path.style.strokeDasharray = pathLength
+  path.style.strokeDashoffset = pathLength
+}
+
+let stepData = []
+
+if (timeSteps) {
+  stepData = [...document.querySelectorAll('.time-step')].map((step) => ({
+    step,
+    heading: step.querySelector('.ts-heading'),
+    triggerY: 0,
+    isActive: false,
+  }))
+}
+
+const calculateTimelineSecRect = () => {
+  if (timelineSection) {
+    return timelineSection.getBoundingClientRect()
+  } else {
+    return
+  }
+}
+
+const calculateStepPositions = () => {
+  const timelineRect = calculateTimelineSecRect()
+  if (stepData.length > 0) {
+    stepData.forEach((item) => {
+      const stepRect = item.step.getBoundingClientRect()
+      item.triggerY = stepRect.top - timelineRect.top + stepRect.height / 2
+    })
+  } else {
+    return
+  }
+}
+
+function updateTimelinePath() {
+  // calculate the timeline containers location:
+  const rect = calculateTimelineSecRect()
+  if (!rect) return
+
+  //* now draw the line
+  // get the height of the window
+  const windowHeight = window.innerHeight
+
+  // calculate the start location with offset
+  const offsetStart = windowHeight * 0.9
+  // get the end of the timeline container, with a small margin so it ends sooner
+  const sectionEnd = -rect.height * 0.8
+
+  const progress = (offsetStart - rect.top) / (offsetStart - sectionEnd)
+  const clampedProgress = Math.max(0, Math.min(1, progress))
+  // Control the speed in which the line is drawn
+  const easedProgress = Math.pow(clampedProgress, 1.1)
+
+  path.style.strokeDashoffset = pathLength * (1 - easedProgress)
+  const drawLength = pathLength * easedProgress
+  const point = path.getPointAtLength(drawLength)
+
+  // Now that we now the location of the end of the line we can use the SVG coordinates to add a circle.
+  circle.setAttribute('cx', point.x)
+  circle.setAttribute('cy', point.y)
+
+  // Get the location of the circle in regards to the viewport
+  const dotRect = circle.getBoundingClientRect()
+  // Now convert it to local coordinates system, by subtracting the dots top from the containers top value
+  const dotCenterY = dotRect.top - rect.top + dotRect.height / 2
+  // console.log(dotCenterY)
+
+  //* now we check each item to see if the dot has passed the trigger point.
+  stepData.forEach((item) => {
+    // Compare the location of the circle to the trigger point of each item
+    // There are both on the local coordinate system of the container.
+    const shouldBeActive = dotCenterY >= item.triggerY
+
+    if (shouldBeActive && !item.isActive) {
+      item.isActive = true
+
+      item.heading.classList.remove('hide-ts-h')
+      item.heading.classList.remove('reveal-text')
+
+      void item.heading.offsetWidth
+
+      item.heading.classList.add('reveal-text')
+    }
+
+    if (!shouldBeActive && item.isActive) {
+      item.isActive = false
+
+      item.heading.classList.add('hide-ts-h')
+      item.heading.classList.remove('reveal-text')
+    }
+  })
+}
+
+let ticking = false
+
+function onScroll() {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      updateTimelinePath()
+      ticking = false
+    })
+    ticking = true
+  }
+}
+
+function onResize() {
+  // calTimeContainerRect()
+  calculateStepPositions()
+  updateTimelinePath()
+}
+
+// calTimeContainerRect()
+if (timelineSection) {
+  calculateStepPositions()
+  updateTimelinePath()
+  window.addEventListener('scroll', onScroll)
+  window.addEventListener('resize', onResize)
+}
+
+const processWrapper = document.querySelector('.about__process-cont')
+const phases = document.querySelectorAll('.phase-cont')
+
+let openPhase = null
+
+function updatePhases(activePhase) {
+  phases.forEach((phase) => {
+    const button = phase.querySelector('.btn-expand-process')
+    const phaseContent = phase.querySelector('.phase__content')
+    const isActive = phase === activePhase
+
+    phase.classList.toggle('phase--active', !!activePhase && isActive)
+    phase.classList.toggle('phase__cont--align')
+    phase.classList.toggle('phase--inactive', !!activePhase && !isActive)
+
+    if (phaseContent) {
+      phaseContent.classList.toggle('phase__content--hidden')
+      phaseContent.classList.toggle('phase__content--expanded')
+    }
+
+    if (button) {
+      button.classList.toggle('btn--open', !!activePhase && isActive)
+      if (window.location.pathname.includes('/fr/')) {
+        button.textContent = !!activePhase && isActive ? 'Fermer' : 'Ouvrir'
+      } else {
+        button.textContent = !!activePhase && isActive ? 'Collapse' : 'Expand'
+      }
+    }
+  })
+}
+
+if (processWrapper) {
+  processWrapper?.addEventListener('click', (e) => {
+    const button = e.target.closest('.btn-expand-process')
+    if (!button) return
+
+    const clickedPhase = button.closest('.phase-cont')
+    if (!clickedPhase) return
+
+    openPhase = openPhase === clickedPhase ? null : clickedPhase
+    updatePhases(openPhase)
+  })
+}
+
+// const handleInactivePhase = (e) => {
+//   console.log('hello')
+// }
 
 //* Unused for now, but good French/English logic for later use
 // if (btnHomeIntro) {
@@ -50,6 +298,8 @@ const statusElError = document.querySelector('.form-status-error')
 //     window.location.href = isFrench ? '/fr/contact' : '/contact'
 //   })
 // }
+
+//* END of about page code :::
 
 if (clientFormReason) {
   clientFormReason.addEventListener('change', function () {
