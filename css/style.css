@@ -264,7 +264,7 @@ a {
   cursor: pointer;
   background-color: var(--gold);
   color: var(--dark);
-  padding: 0.4rem;
+  padding: 0.5rem;
   border-radius: var(--corner-rad);
   font-family: var(--mono);
   text-decoration: none;
