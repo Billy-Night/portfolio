@@ -51,8 +51,9 @@
   /* fonts */
   --mono: 'GeistMono', monospace;
   --sans: 'Switzer', sans-serif;
-  --display: 'MgDisplay-black', sans-serif;
-  --display-bold: 'MgDisplay-SemiBold', sans-serif;
+  /* --display: 'MgDisplay-black', sans-serif; */
+  --display-bold:
+    'MgDisplay-SemiBold', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
   --subHeading: 'MgDisplay-SemiBold', sans-serif;
 
   --corner-rad: 5px;
@@ -122,12 +123,12 @@
   font-display: swap;
 } */
 
-@font-face {
+/* @font-face {
   font-family: 'MgDisplay-black';
   src: url('/assets/fonts/MangoGrotesque-Black.woff2') format('woff2');
   font-style: normal;
   font-display: swap;
-}
+} */
 
 @font-face {
   font-family: 'MgDisplay-SemiBold';
@@ -192,6 +193,7 @@ h2 {
   font-family: var(--subHeading);
   letter-spacing: 4%;
   color: var(--subHeading-colour);
+  text-transform: uppercase;
 }
 
 h3 {
@@ -200,6 +202,7 @@ h3 {
   font-family: var(--subHeading);
   letter-spacing: 4%;
   color: var(--subHeading-colour);
+  text-transform: uppercase;
 }
 
 h4 {
@@ -278,6 +281,7 @@ a {
   border-radius: var(--corner-rad);
   font-family: var(--mono);
   text-decoration: none;
+  text-transform: uppercase;
   min-width: 120px;
   text-align: center;
 }
@@ -309,6 +313,7 @@ a {
   padding: var(--space-2);
   border-radius: var(--corner-rad);
   font-family: var(--mono);
+  text-transform: uppercase;
   text-decoration: none;
   min-width: 120px;
   max-width: 140px;
@@ -702,32 +707,36 @@ a:hover .social__icons {
   height: calc(100vh - 77px);
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
+  align-items: center;
   /* gap: var(--space-7); */
 }
 
 .services__hero-text {
-  margin: auto 0;
+  margin: auto var(--page-gutter);
   text-align: center;
 }
 
 .services__hero-text h1 {
   font-size: var(--title-hero-xl);
-  font-family: var(--display);
-  color: var(--gold);
+  font-family: var(--display-bold);
+  color: var(--brightGold);
   margin-bottom: var(--space-5);
+  text-transform: uppercase;
 }
 
 .services__hero-sub-heading {
-  width: 95%;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .services__hero-sub-heading h2 {
   font-family: var(--sans);
   font-size: var(--title-5);
+  color: var(--body-colour);
+  text-transform: none;
 }
 
 .services__hero-link {
@@ -752,6 +761,7 @@ a:hover .social__icons {
   font-size: var(--title-4);
   font-family: var(--sans);
   color: var(--body-colour);
+  text-transform: none;
 }
 
 .offers {
@@ -1048,6 +1058,7 @@ a:hover .social__icons {
 }
 
 .hero__title-text {
+  min-height: 5rem;
   display: inline-block;
   line-height: 0.7;
   letter-spacing: 3%;
@@ -1917,6 +1928,13 @@ a:hover .social__icons {
   gap: var(--gap-md);
 }
 
+.services__contact--cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
 .section-contact-container a {
   margin: 10px;
 }
@@ -2182,8 +2200,11 @@ a:hover .social__icons {
   flex-direction: row;
   justify-content: center;
   margin-bottom: 20px;
-  font-family: var(--sans);
-  font-size: 1.8rem;
+}
+
+.contact-form-title h3 {
+  color: var(--font-colour-dark);
+  text-transform: uppercase;
 }
 
 #contact-form {
@@ -2261,7 +2282,10 @@ a:hover .social__icons {
 }
 
 .services-main-title h3 {
+  font-family: var(--sans);
   font-size: var(--title-6);
+  color: var(--body-colour);
+  text-transform: none;
 }
 
 .services-main-blocks {
@@ -2333,7 +2357,7 @@ a:hover .social__icons {
   height: 350px;
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
+  border-radius: var(--corner-rad);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
@@ -2383,7 +2407,7 @@ a:hover .social__icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
@@ -2397,15 +2421,16 @@ a:hover .social__icons {
 
 .addons-performance-text-container {
   width: 100%;
-  background-color: var(--off-white);
+  background-color: var(--cream-container);
   color: black;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   padding: var(--space-4);
 }
 
 .addons-performance-text-container h2 {
   font-size: var(--title-5);
   margin-bottom: var(--space-4);
+  color: var(--font-colour-dark);
 }
 
 @media screen and (max-width: 680px) {
@@ -2464,7 +2489,7 @@ a:hover .social__icons {
   height: 200px;
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
+  border-radius: var(--corner-rad);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
@@ -2548,18 +2573,18 @@ a:hover .social__icons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .pricing-card {
+  padding: var(--gap-lx) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
 }
 
 .pricing-card h3 {
