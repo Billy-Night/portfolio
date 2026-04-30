@@ -2714,6 +2714,23 @@ a:hover .social__icons {
   display: block;
 }
 
+.review__svg--pause {
+  opacity: 0;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: var(--text-l);
+  fill: var(--body-colour);
+}
+
+.review__svg--pause.pause-icon-is-active {
+  opacity: 1;
+  /* position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: var(--text-l);
+  fill: var(--body-colour); */
+}
+
 .client__portrait_1 {
   width: 100%;
   height: 100%;

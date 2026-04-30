@@ -38,6 +38,7 @@ const cFPrefTimSeo = document.querySelector('#pref-time-seo')
 //* Home Intro
 // const btnHomeIntro = document.querySelector('.btn-contact')
 const clientReviews = document.querySelectorAll('.cont__review-content')
+const reviewPauseIcon = document.querySelector('.review__svg--pause')
 
 //* Contact page
 const contactScrollIcon = document.querySelector('#contact-icon-scroll')
@@ -55,6 +56,8 @@ const titleText = document.querySelector('.hero__title-text')
 const measure = document.querySelector('.type-measure')
 const label = document.querySelector('.type-measure__label')
 
+/** Homepage logic */
+
 let currentReview = 0
 let interval
 
@@ -64,24 +67,39 @@ if (clientReviews.length > 0) {
   const start = () => {
     interval = setInterval(() => {
       clientReviews[currentReview].classList.remove('review-is-active')
+      reviewPauseIcon.classList.remove('pause-icon-is-active')
       currentReview = (currentReview + 1) % clientReviews.length
       clientReviews[currentReview].classList.add('review-is-active')
     }, 5000)
   }
 
   const stop = () => {
-    console.log('Mouseenter')
     clearInterval(interval)
+    reviewPauseIcon.classList.add('pause-icon-is-active')
   }
 
   const container = document.querySelector('.review-hover-wrap')
   if (container) {
     container.addEventListener('mouseenter', stop)
     container.addEventListener('mouseleave', start)
+
+    let isPaused = false
+
+    container.addEventListener('click', () => {
+      if (isPaused) {
+        // reviewPauseIcon.classList.remove('pause-icon-is-active')
+        start()
+      } else {
+        stop()
+      }
+      isPaused = !isPaused
+    })
   }
 
   start()
 }
+
+/** About page logic */
 
 function updateMeasure() {
   const height = Math.round(titleText.getBoundingClientRect().height)
