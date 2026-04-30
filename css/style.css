@@ -861,7 +861,7 @@ a:hover .social__icons {
 .heading__project-tech {
   font-size: var(--title-6);
   margin-bottom: var(--space-2);
-  margin-top: var(--space-2);
+  margin-top: var(--space-4);
 }
 
 .projects-heading-name {
