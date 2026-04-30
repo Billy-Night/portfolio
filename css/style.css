@@ -2606,19 +2606,50 @@ a:hover .social__icons {
 /* Review section on homepage */
 
 .cont__review {
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 800px;
+}
+
+@media screen and (max-width: 700px) {
+  .cont__review {
+    min-height: 900px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cont__review {
+    min-height: 1150px;
+  }
+}
+
+.review-hover-wrap:hover {
+  cursor: pointer;
 }
 
 .cont__review-content {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  inset: 0;
+}
+
+.cont__review-content.review-is-active {
   position: relative;
+  opacity: 1;
   padding-top: var(--space-11);
   padding-left: var(--space-11);
 }
+/* 
+.cont__review-content.review-is-active:hover {
+  cursor: pointer;
+} */
 
 .cont__review-text {
-  /* position: relative; */
+  position: relative;
+  z-index: 2;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease;
@@ -2639,6 +2670,7 @@ a:hover .social__icons {
 }
 
 .review-avatar {
+  z-index: 1;
   width: 180px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -2661,7 +2693,7 @@ a:hover .social__icons {
     transform: translate(-50%);
   }
 
-  .cont__review-content {
+  .cont__review-content.review-is-active {
     padding-top: var(--space-11);
     padding-left: 0;
   }
@@ -2679,6 +2711,13 @@ a:hover .social__icons {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
+}
+
+.client__portrait_1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 

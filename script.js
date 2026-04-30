@@ -37,6 +37,7 @@ const cFPrefTimSeo = document.querySelector('#pref-time-seo')
 
 //* Home Intro
 // const btnHomeIntro = document.querySelector('.btn-contact')
+const clientReviews = document.querySelectorAll('.cont__review-content')
 
 //* Contact page
 const contactScrollIcon = document.querySelector('#contact-icon-scroll')
@@ -53,6 +54,34 @@ const timeSteps = document.querySelectorAll('.time-step')
 const titleText = document.querySelector('.hero__title-text')
 const measure = document.querySelector('.type-measure')
 const label = document.querySelector('.type-measure__label')
+
+let currentReview = 0
+let interval
+
+if (clientReviews.length > 0) {
+  clientReviews[0].classList.add('review-is-active')
+
+  const start = () => {
+    interval = setInterval(() => {
+      clientReviews[currentReview].classList.remove('review-is-active')
+      currentReview = (currentReview + 1) % clientReviews.length
+      clientReviews[currentReview].classList.add('review-is-active')
+    }, 5000)
+  }
+
+  const stop = () => {
+    console.log('Mouseenter')
+    clearInterval(interval)
+  }
+
+  const container = document.querySelector('.review-hover-wrap')
+  if (container) {
+    container.addEventListener('mouseenter', stop)
+    container.addEventListener('mouseleave', start)
+  }
+
+  start()
+}
 
 function updateMeasure() {
   const height = Math.round(titleText.getBoundingClientRect().height)
