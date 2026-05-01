@@ -38,7 +38,8 @@ const cFPrefTimSeo = document.querySelector('#pref-time-seo')
 //* Home Intro
 // const btnHomeIntro = document.querySelector('.btn-contact')
 const clientReviews = document.querySelectorAll('.cont__review-content')
-const reviewPauseIcon = document.querySelector('.review__svg--pause')
+const reviewPauseIcon = document.querySelectorAll('.review__svg--pause')
+const reviewPlayIcon = document.querySelectorAll('.review__svg--play')
 
 //* Contact page
 const contactScrollIcon = document.querySelector('#contact-icon-scroll')
@@ -65,9 +66,12 @@ if (clientReviews.length > 0) {
   clientReviews[0].classList.add('review-is-active')
 
   const start = () => {
+    clearInterval(interval)
+    reviewPauseIcon[currentReview].classList.remove('pause-icon-is-active')
+    reviewPlayIcon[currentReview].classList.remove('play-icon-is-hidden')
     interval = setInterval(() => {
       clientReviews[currentReview].classList.remove('review-is-active')
-      reviewPauseIcon.classList.remove('pause-icon-is-active')
+      // reviewPauseIcon.classList.remove('pause-icon-is-active')
       currentReview = (currentReview + 1) % clientReviews.length
       clientReviews[currentReview].classList.add('review-is-active')
     }, 5000)
@@ -75,24 +79,27 @@ if (clientReviews.length > 0) {
 
   const stop = () => {
     clearInterval(interval)
-    reviewPauseIcon.classList.add('pause-icon-is-active')
+    reviewPlayIcon[currentReview].classList.add('play-icon-is-hidden')
+    reviewPauseIcon[currentReview].classList.add('pause-icon-is-active')
   }
 
   const container = document.querySelector('.review-hover-wrap')
   if (container) {
     container.addEventListener('mouseenter', stop)
-    container.addEventListener('mouseleave', start)
+    container.addEventListener('mouseleave', () => {
+      if (!isPaused) start()
+    })
 
     let isPaused = false
 
     container.addEventListener('click', () => {
-      if (isPaused) {
-        // reviewPauseIcon.classList.remove('pause-icon-is-active')
-        start()
-      } else {
-        stop()
-      }
       isPaused = !isPaused
+
+      if (isPaused) {
+        stop()
+      } else {
+        start()
+      }
     })
   }
 

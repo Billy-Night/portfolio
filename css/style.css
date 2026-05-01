@@ -2717,6 +2717,7 @@ a:hover .social__icons {
 }
 
 .review__svg--pause {
+  position: absolute;
   opacity: 0;
   top: var(--space-3);
   right: var(--space-3);
@@ -2726,11 +2727,19 @@ a:hover .social__icons {
 
 .review__svg--pause.pause-icon-is-active {
   opacity: 1;
-  /* position: absolute;
+}
+
+.review__svg--play {
+  position: absolute;
+  opacity: 1;
   top: var(--space-3);
   right: var(--space-3);
   width: var(--text-l);
-  fill: var(--body-colour); */
+  fill: var(--body-colour);
+}
+
+.review__svg--play.play-icon-is-hidden {
+  opacity: 0;
 }
 
 .client__portrait_1 {
