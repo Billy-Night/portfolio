@@ -487,6 +487,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  text-transform: uppercase;
 }
 
 .nav__logo {
@@ -2063,6 +2064,7 @@ a:hover .social__icons {
 
 .footer__nav li {
   margin-bottom: var(--space-2);
+  text-transform: uppercase;
 }
 
 .footer__legal {
