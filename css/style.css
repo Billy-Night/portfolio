@@ -2618,7 +2618,7 @@ a:hover .social__icons {
   position: relative;
   width: 100%;
   max-width: 900px;
-  overflow: hidden;
+  /* overflow: hidden; */
   min-height: 800px;
 }
 
@@ -2704,10 +2704,15 @@ a:hover .social__icons {
     transform: translate(-50%);
   }
 
-  .cont__review-content.review-is-active {
+  .cont__review-content {
     padding-top: var(--space-11);
     padding-left: 0;
   }
+
+  /* .cont__review-content.review-is-active {
+    padding-top: var(--space-11);
+    padding-left: 0;
+  } */
 
   .cont__review-text {
     padding: var(--space-5);
