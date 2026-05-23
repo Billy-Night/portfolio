@@ -3,6 +3,7 @@
   /* Colour Palette */
   --white: #f7f8fa;
   --off-white: #e6edf2;
+  --news-paper-gray: #e5e7df;
   --dark: #182625;
   --darkTrans: rgb(24, 38, 37, 0.9);
   --darkGreen: #28403d;
@@ -46,15 +47,15 @@
 
   /* container colours */
   --green-container: #45543a;
-  --cream-container: var(--cream);
+  --light-container: var(--news-paper-gray);
 
   /* fonts */
   --mono: 'GeistMono', monospace;
   --sans: 'Switzer', sans-serif;
   /* --display: 'MgDisplay-black', sans-serif; */
-  --display-bold:
-    'MgDisplay-SemiBold', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
-  --subHeading: 'MgDisplay-SemiBold', sans-serif;
+  --display:
+    'MgDisplay-Regular', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+  --subHeading: 'MgDisplay-Regular', sans-serif;
 
   --corner-rad: 5px;
 
@@ -130,9 +131,16 @@
   font-display: swap;
 } */
 
-@font-face {
+/* @font-face {
   font-family: 'MgDisplay-SemiBold';
   src: url('/assets/fonts/MangoGrotesque-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'MgDisplay-Regular';
+  src: url('/assets/fonts/MangoGrotesque-Regular.woff2') format('woff2');
   font-style: normal;
   font-display: swap;
 }
@@ -183,7 +191,7 @@ h1 {
   font-size: var(--title-1);
   line-height: var(--leading-title);
   letter-spacing: 6%;
-  font-family: var(--display-bold);
+  font-family: var(--display);
   color: var(--title-colour);
 }
 
@@ -733,7 +741,7 @@ a:hover .social__icons {
 
 .services__hero-text h1 {
   font-size: var(--title-hero-xl);
-  font-family: var(--display-bold);
+  font-family: var(--display);
   color: var(--brightGold);
   margin-bottom: var(--space-5);
   text-transform: uppercase;
@@ -782,7 +790,7 @@ a:hover .social__icons {
 .offers {
   max-width: 100%;
   margin-bottom: var(--space-9);
-  background-color: var(--cream-container);
+  background-color: var(--light-container);
   border-radius: var(--corner-rad);
   padding-bottom: var(--space-6);
   color: var(--dark);
@@ -1045,7 +1053,7 @@ a:hover .social__icons {
 }
 
 .hero__title-word {
-  font-family: var(--display-bold);
+  font-family: var(--display);
   font-size: clamp(2.75rem, 2.379rem + 1.854vw, 4.5rem);
   color: var(--brightGold);
   line-height: 1;
@@ -1060,7 +1068,7 @@ a:hover .social__icons {
 .hero__title {
   position: relative;
   display: inline-block;
-  font-family: var(--display-bold);
+  font-family: var(--display);
   font-size: clamp(5rem, 15vw, 19rem);
   color: var(--brightGold);
   line-height: 0.9;
@@ -2229,14 +2237,28 @@ a:hover .social__icons {
 
 /* Services Page */
 
+.sec-services-intro {
+  margin-top: var(--space-2);
+  padding-top: var(--padding-hor-section);
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
 .services-intro-img-frame {
+  padding: var(--space-4);
   max-height: 330px;
   min-height: 320px;
   width: 100%;
-  background-color: var(--off-white);
+  background-color: var(--light-container);
   border-radius: var(--corner-rad);
   position: relative;
   margin-top: clamp(3rem, 9.6vw, 16rem);
+}
+
+.services-intro-img-frame h2 {
+  width: fit-content;
+  color: var(--dark);
+  border-bottom: solid 1px;
 }
 
 .services-intro-img-frame img {
@@ -2322,6 +2344,10 @@ a:hover .social__icons {
     grid-column: span 12;
     height: 300px;
   }
+
+  .services-intro-img-frame h2 {
+    display: none;
+  }
 }
 
 .service-card {
@@ -2396,7 +2422,7 @@ a:hover .social__icons {
 
 .addons-performance-text-container {
   width: 100%;
-  background-color: var(--cream-container);
+  background-color: var(--light-container);
   color: black;
   border-radius: var(--corner-rad);
   padding: var(--space-4);
