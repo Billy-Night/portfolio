@@ -440,6 +440,10 @@ a {
   -webkit-backdrop-filter: blur(10px);
 }
 
+.trans-caps {
+  text-transform: uppercase;
+}
+
 /* Global text animations:  */
 
 /* Header */
@@ -1931,6 +1935,16 @@ a:hover .social__icons {
 
 /* Contact */
 
+.contact__txt-normal-flow {
+  transform: translateX(-20%) translateY(2%);
+}
+
+@media screen and (max-width: 767px) {
+  .contact__txt-normal-flow {
+    transform: translateX(0%) translateY(-10%);
+  }
+}
+
 .section-contact-container {
   display: flex;
   flex-direction: column;
@@ -2121,57 +2135,6 @@ a:hover .social__icons {
 
 /* contact page */
 
-.contact-hero {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media screen and (max-width: 800px) {
-  .contact-hero {
-    min-height: 80vh;
-  }
-}
-
-.contact-hero-text-container {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.contact-hero h1 {
-  text-align: center;
-  font-family: var(--sans);
-  font-size: var(--fs-hero-xl);
-  color: white;
-}
-
-.contact-hero h2 {
-  text-align: center;
-  margin-top: clamp(1rem, 5vw, 3rem);
-  font-size: var(--title-5);
-  color: white;
-}
-
-.contact-icon-down-scroll {
-  z-index: 2;
-  width: 50px;
-  height: 50px;
-  animation: gentleFloat 4s ease-in-out infinite;
-}
-
-@keyframes gentleFloat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 .sec-contact-form {
   display: flex;
   flex-direction: row;
@@ -2184,7 +2147,7 @@ a:hover .social__icons {
   /* background: linear-gradient(135deg, #f7f3ee 0%, #e6dccf 50%, #e0cca1 100%); */
   background: linear-gradient(135deg, #f7f3ee 0%, #eae2d5 50%, #e5d7bd 100%);
   color: black;
-  border-radius: 16px;
+  border-radius: var(--corner-rad);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2239,13 +2202,13 @@ a:hover .social__icons {
 .form-group input {
   padding: 10px;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
 }
 
 .form-group select {
   padding: 10px;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   font-family: var(--sans);
   font-size: var(--text-base);
 }
@@ -2253,13 +2216,13 @@ a:hover .social__icons {
 .form-group select:active {
   padding: 10px;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
 }
 
 .form-group textarea {
   padding: 10px;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: var(--corner-rad);
   font-family: var(--sans);
   font-size: var(--text-base);
 }
@@ -2271,7 +2234,7 @@ a:hover .social__icons {
   min-height: 320px;
   width: 100%;
   background-color: var(--off-white);
-  border-radius: 30px;
+  border-radius: var(--corner-rad);
   position: relative;
   margin-top: clamp(3rem, 9.6vw, 16rem);
 }
