@@ -1818,7 +1818,7 @@ a:hover .social__icons {
 }
 
 .per__title-marg {
-  margin-top: clamp(var(--space-4), 4vw, var(--space-9));
+  margin-top: var(--gap-xxl);
 }
 
 .locPer__content-cont {
