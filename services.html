@@ -98,7 +98,7 @@
       content="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
     />
 
-    <link rel="stylesheet" href="/css/style.css?v=1" />
+    <link rel="stylesheet" href="/css/style.css?v=2" />
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
     <script defer src="/script.js"></script>
     <!-- Google tag (gtag.js) -->
@@ -269,22 +269,52 @@
       </nav>
     </header>
     <main>
-      <section class="sec-services-intro">
+      <section class="services-hero-section">
         <div class="services-intro-container">
           <div class="services-intro-img-frame">
-            <h2>Web design</h2>
-            <h2>Web Development</h2>
-            <h2>SEO</h2>
-            <h2>Performance</h2>
-            <h2>Project Management</h2>
+            <h2>
+              <a
+                href="#services-page__main-services"
+                class="paint-text flip-text"
+                >Web design</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services-page__main-services"
+                class="paint-text flip-text"
+                >Web Development</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services-page__main-services"
+                class="paint-text flip-text"
+                >SEO</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services-page__sec-service-addons"
+                class="paint-text flip-text"
+                >Performance</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services__page-sec-project-management"
+                class="paint-text flip-text"
+                >Project Management</a
+              >
+            </h2>
             <img
-              src="assets/portraits/portrait_sitting_working_v2.webp"
+              src="/assets/portraits/portrait_sitting_working_v2.webp"
               alt="Billy Nightingale sitting at his MacBook working on web design"
             />
           </div>
         </div>
       </section>
-      <section class="sec__service-hero">
+      <section class="services-intro-section">
         <div class="services__hero-text">
           <h1>Web design, development & SEO for growing businesses</h1>
           <div class="services__hero-sub-heading">
@@ -299,18 +329,10 @@
         </div>
       </section>
       <div class="gradient"></div>
-      <!-- <section class="sections sec-services-intro">
-        <div class="services-intro-container">
-          <div class="services-intro-img-frame">
-            <img
-              src="assets/portraits/portrait_sitting_working_v2.webp"
-              alt="Billy Nightingale sitting at his MacBook working on web design"
-            />
-          </div>
-        </div>
-      </section> -->
-      <div class="gradient"></div>
-      <section class="sections sec-services-main">
+      <section
+        class="sections sec-services-main"
+        id="services-page__main-services"
+      >
         <div class="services-main-title">
           <h2 class="section-sub-headings">Main Services</h2>
           <h3>Are you ready to build your dream digital experience ?</h3>
@@ -340,7 +362,10 @@
         </div>
       </section>
       <div class="gradient"></div>
-      <section class="sections sec-service-addons">
+      <section
+        class="sections sec-service-addons"
+        id="services-page__sec-service-addons"
+      >
         <h2 class="section-sub-headings">Built for performance & Longevity</h2>
         <div class="sec-service-addons-content-container">
           <div class="addons-content-container">
@@ -384,7 +409,10 @@
         </div>
       </section>
       <div class="gradient"></div>
-      <section class="sections sec-project-management">
+      <section
+        class="sections sec-project-management"
+        id="services__page-sec-project-management"
+      >
         <h2 class="section-sub-headings">Project Management</h2>
         <div class="project-management-container">
           <div class="task-card"><h3>Discovery & Goals</h3></div>

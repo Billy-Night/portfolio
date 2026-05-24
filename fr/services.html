@@ -98,7 +98,7 @@
       content="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
     />
 
-    <link rel="stylesheet" href="/css/style.css?v=1" />
+    <link rel="stylesheet" href="/css/style.css?v=2" />
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
     <script defer src="/script.js"></script>
     <!-- Google tag (gtag.js) -->
@@ -273,7 +273,52 @@
       </nav>
     </header>
     <main>
-      <section class="sec__service-hero">
+      <section class="services-hero-section">
+        <div class="services-intro-container">
+          <div class="services-intro-img-frame">
+            <h2>
+              <a
+                href="#services-page__main-services"
+                class="paint-text flip-text"
+                >Web Design</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services-page__main-services"
+                class="paint-text flip-text"
+                >Web Développement</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services-page__main-services"
+                class="paint-text flip-text"
+                >SEO</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services-page__sec-service-addons"
+                class="paint-text flip-text"
+                >Performance</a
+              >
+            </h2>
+            <h2>
+              <a
+                href="#services__page-sec-project-management"
+                class="paint-text flip-text"
+                >Gestion projet</a
+              >
+            </h2>
+            <img
+              src="/assets/portraits/portrait_sitting_working_v2.webp"
+              alt="Billy Nightingale travaille sur le web design et développement à Capbreton"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="services-intro-section">
         <div class="services__hero-text">
           <h1>Web Design, Developpement et SEO pour les entreprises</h1>
           <div class="services__hero-sub-heading">
@@ -286,23 +331,15 @@
         </div>
         <div class="services__hero-link">
           <a class="hero__contact-link" href="/fr/contact"
-            >[ START A PROJECT ]</a
+            >[ COMMENCER UN PROJECT ]</a
           >
         </div>
       </section>
       <div class="gradient"></div>
-      <section class="sections sec-services-intro">
-        <div class="services-intro-container">
-          <div class="services-intro-img-frame">
-            <img
-              src="/assets/portraits/portrait_sitting_working_v2.webp"
-              alt="Billy travaille sur un projet de web design et de création de site web"
-            />
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections sec-services-main">
+      <section
+        class="sections sec-services-main"
+        id="services-page__main-services"
+      >
         <div class="services-main-title">
           <h2 class="section-sub-headings">Services principaux</h2>
           <h3>
@@ -334,7 +371,10 @@
         </div>
       </section>
       <div class="gradient"></div>
-      <section class="sections sec-service-addons">
+      <section
+        class="sections sec-service-addons"
+        id="services-page__sec-service-addons"
+      >
         <h2 class="section-sub-headings">
           Conçu pour la performance et la durabilité
         </h2>
@@ -382,7 +422,10 @@
         </div>
       </section>
       <div class="gradient"></div>
-      <section class="sections sec-project-management">
+      <section
+        class="sections sec-project-management"
+        id="services__page-sec-project-management"
+      >
         <h2 class="section-sub-headings">Gestion de projet</h2>
         <div class="project-management-container">
           <div class="task-card"><h3>Découverte et objectifs</h3></div>
