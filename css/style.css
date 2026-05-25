@@ -2284,6 +2284,7 @@ a:hover .social__icons {
 .services__hero-text {
   margin: auto var(--page-gutter);
   text-align: center;
+  /* text-wrap: balance; */
 }
 
 .services__hero-text h1 {
