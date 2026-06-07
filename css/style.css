@@ -2815,3 +2815,30 @@ a:hover .social__icons {
 .review__stars {
   width: 60px;
 }
+
+/* Creation de site web landes page */
+
+.hero-phone {
+  width: 100%;
+  padding-right: var(--page-gutter);
+  padding-left: var(--page-gutter);
+}
+
+.phone-channel {
+  height: 1200px;
+  position: relative;
+}
+
+.phone-container {
+  position: sticky;
+  top: 100px;
+  width: 600px;
+  height: 700px;
+}
+
+spline-viewer {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
