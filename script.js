@@ -57,6 +57,19 @@ const titleText = document.querySelector('.hero__title-text')
 const measure = document.querySelector('.type-measure')
 const label = document.querySelector('.type-measure__label')
 
+//* Landes page
+
+const staticPhone = document.querySelector('.static-phone-img')
+
+if (staticPhone) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 800) {
+      staticPhone.src =
+        '/assets/landes_phone/phone_screen_webesite_seo_results.webp'
+    }
+  })
+}
+
 /** Homepage logic */
 
 let currentReview = 0
