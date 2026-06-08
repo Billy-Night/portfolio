@@ -2842,3 +2842,15 @@ spline-viewer {
   height: 100%;
   border: none;
 }
+
+.static-phone-container {
+  width: 100%;
+}
+
+.static-phone-channel {
+  width: 900px;
+}
+
+.statice-phone-img {
+  width: 500px;
+}
