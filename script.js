@@ -108,21 +108,23 @@ if (clientReviews.length > 0) {
 
 /** About page logic */
 
-function updateMeasure() {
-  const height = Math.round(titleText.getBoundingClientRect().height)
+if (titleText) {
+  function updateMeasure() {
+    const height = Math.round(titleText.getBoundingClientRect().height)
 
-  measure.style.setProperty('--measure-height', `${height}px`)
-  label.textContent = `${height}px`
+    measure.style.setProperty('--measure-height', `${height}px`)
+    label.textContent = `${height}px`
+  }
+
+  function initMeasure() {
+    updateMeasure()
+
+    window.addEventListener('resize', updateMeasure)
+    window.addEventListener('load', updateMeasure)
+  }
+
+  document.fonts.ready.then(initMeasure)
 }
-
-function initMeasure() {
-  updateMeasure()
-
-  window.addEventListener('resize', updateMeasure)
-  window.addEventListener('load', updateMeasure)
-}
-
-document.fonts.ready.then(initMeasure)
 
 animateOrbit({
   path: document.querySelector('#orbitPath1'),
