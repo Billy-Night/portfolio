@@ -193,6 +193,7 @@ h1 {
   letter-spacing: 6%;
   font-family: var(--display);
   color: var(--title-colour);
+  text-transform: uppercase;
 }
 
 h2 {
@@ -2818,7 +2819,42 @@ a:hover .social__icons {
 
 /* Creation de site web landes page */
 
-.hero-phone {
+.landes-hero-text-container {
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
+.landes-hero-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.landes-hero-img-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.landes-hero-img {
+  position: relative;
+  width: 500px;
+  z-index: 2;
+}
+
+.landes-hero-svg1 {
+  position: absolute;
+  width: clamp(260px, 45vw, 682px);
+  z-index: 0;
+}
+
+.landes-hero-svg2 {
+  position: absolute;
+  width: clamp(260px, 45vw, 682px);
+  z-index: 3;
+}
+
+/* .hero-phone {
   width: 100%;
   padding-right: var(--page-gutter);
   padding-left: var(--page-gutter);
@@ -2841,30 +2877,46 @@ spline-viewer {
   width: 100%;
   height: 100%;
   border: none;
-}
+} */
 
 .static-phone-channel {
-  width: 100%;
   height: 1200px;
 }
 
 .phone-iteractive-content-container {
-  width: 100%;
   display: flex;
   flex-direction: row;
   top: 20%;
   position: sticky;
 }
 
+.static-phone-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
 .static-phone-img {
-  width: 500px;
+  width: clamp(350px, 40vw, 500px);
   height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .phone-iteractive-content-container {
+    flex-direction: column;
+  }
+
+  .phone-text-container {
+    padding-right: var(--page-gutter);
+    padding-left: var(--page-gutter);
+    padding-bottom: var(--padding-hor-section);
+  }
 }
 
 .phone-text-container {
   position: relative;
   width: 100%;
-  /* padding-right: var(--page-gutter); */
+  height: 200px;
 }
 
 .phone-text-content-cont {
@@ -2878,4 +2930,20 @@ spline-viewer {
   opacity: 1;
   visibility: visible;
   padding-right: var(--page-gutter);
+}
+
+.landes-mission-section {
+  padding-top: var(--padding-hor-section);
+  padding-bottom: var(--padding-hor-section);
+}
+
+.landes-mission-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-text-container {
+  text-align: center;
 }
