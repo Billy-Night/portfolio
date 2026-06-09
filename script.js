@@ -60,14 +60,54 @@ const label = document.querySelector('.type-measure__label')
 //* Landes page
 
 const staticPhone = document.querySelector('.static-phone-img')
+const phoneChannel = document.querySelector('.static-phone-channel')
+const textCont = document.querySelectorAll('.phone-text-content-cont')
 
-if (staticPhone) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 800) {
-      staticPhone.src =
-        '/assets/landes_phone/phone_screen_webesite_seo_results.webp'
-    }
+const screens = [
+  '/assets/landes_phone/phone_screen_webesite_perfomance.webp',
+  '/assets/landes_phone/phone_screen_webesite_seo_results.webp',
+  '/assets/landes_phone/phone_screen_webesite_business_solutions.webp',
+]
+
+let currentIndex = 0
+
+function showContent(index) {
+  textCont.forEach((block) => {
+    block.classList.remove('is-active')
   })
+
+  textCont[index].classList.add('is-active')
+}
+
+function updatePhoneScreen() {
+  const rect = phoneChannel.getBoundingClientRect()
+
+  const progress =
+    (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+  // console.log('Progress:', progress)
+
+  let newIndex = 0
+
+  showContent(newIndex)
+  console.log(progress)
+
+  if (progress > 0.6) {
+    newIndex = 2
+    showContent(newIndex)
+  } else if (progress > 0.4) {
+    newIndex = 1
+    showContent(newIndex)
+  }
+
+  if (newIndex !== currentIndex) {
+    staticPhone.src = screens[newIndex]
+    currentIndex = newIndex
+  }
+}
+
+if (staticPhone && phoneChannel) {
+  window.addEventListener('scroll', updatePhoneScreen)
+  updatePhoneScreen()
 }
 
 /** Homepage logic */
