@@ -63,51 +63,84 @@ const staticPhone = document.querySelector('.static-phone-img')
 const phoneChannel = document.querySelector('.static-phone-channel')
 const textCont = document.querySelectorAll('.phone-text-content-cont')
 
-const screens = [
-  '/assets/landes_phone/phone_screen_webesite_perfomance.webp',
-  '/assets/landes_phone/phone_screen_webesite_seo_results.webp',
-  '/assets/landes_phone/phone_screen_webesite_business_solutions.webp',
-]
+const challengeBtns = document.querySelectorAll('.lan-chall-btn')
+const challengeContents = document.querySelectorAll('.lan-chall-content-txt')
 
-let currentIndex = 0
+if (challengeBtns.length && challengeContents.length) {
+  let currentIndex = 0
+  function activeContent(index) {
+    challengeContents.forEach((block) => {
+      block.classList.remove('is-active')
+    })
+    console.log(index)
+    currentIndex = Number(index)
 
-function showContent(index) {
-  textCont.forEach((block) => {
-    block.classList.remove('is-active')
+    challengeContents[currentIndex].classList.add('is-active')
+  }
+
+  function activeBtn(btn) {
+    challengeBtns.forEach((block) => {
+      block.classList.remove('is-active')
+    })
+
+    btn.classList.add('is-active')
+    activeContent(btn.dataset.index)
+  }
+
+  challengeBtns.forEach((btn) => {
+    btn.addEventListener('mouseenter', () => {
+      activeBtn(btn)
+    })
   })
-
-  textCont[index].classList.add('is-active')
 }
 
-function updatePhoneScreen() {
-  const rect = phoneChannel.getBoundingClientRect()
+if (staticPhone) {
+  const screens = [
+    '/assets/landes_phone/phone_screen_webesite_perfomance.webp',
+    '/assets/landes_phone/phone_screen_webesite_seo_results.webp',
+    '/assets/landes_phone/phone_screen_webesite_business_solutions.webp',
+  ]
 
-  const progress =
-    (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
-  // console.log('Progress:', progress)
+  let currentIndex = 0
 
-  let newIndex = 0
+  function showContent(index) {
+    textCont.forEach((block) => {
+      block.classList.remove('is-active')
+    })
 
-  showContent(newIndex)
-  console.log(progress)
-
-  if (progress > 0.6) {
-    newIndex = 2
-    showContent(newIndex)
-  } else if (progress > 0.4) {
-    newIndex = 1
-    showContent(newIndex)
+    textCont[index].classList.add('is-active')
   }
 
-  if (newIndex !== currentIndex) {
-    staticPhone.src = screens[newIndex]
-    currentIndex = newIndex
-  }
-}
+  function updatePhoneScreen() {
+    const rect = phoneChannel.getBoundingClientRect()
 
-if (staticPhone && phoneChannel) {
-  window.addEventListener('scroll', updatePhoneScreen)
-  updatePhoneScreen()
+    const progress =
+      (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+    // console.log('Progress:', progress)
+
+    let newIndex = 0
+
+    showContent(newIndex)
+    console.log(progress)
+
+    if (progress > 0.6) {
+      newIndex = 2
+      showContent(newIndex)
+    } else if (progress > 0.4) {
+      newIndex = 1
+      showContent(newIndex)
+    }
+
+    if (newIndex !== currentIndex) {
+      staticPhone.src = screens[newIndex]
+      currentIndex = newIndex
+    }
+  }
+
+  if (staticPhone && phoneChannel) {
+    window.addEventListener('scroll', updatePhoneScreen)
+    updatePhoneScreen()
+  }
 }
 
 /** Homepage logic */
