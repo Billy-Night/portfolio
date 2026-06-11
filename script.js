@@ -63,8 +63,8 @@ const staticPhone = document.querySelector('.static-phone-img')
 const phoneChannel = document.querySelector('.static-phone-channel')
 const textCont = document.querySelectorAll('.phone-text-content-cont')
 
-const challengeBtns = document.querySelectorAll('.lan-chall-btn')
-const challengeContents = document.querySelectorAll('.lan-chall-content-txt')
+const challengeBtns = document.querySelectorAll('.ver-switcher-btn')
+const challengeContents = document.querySelectorAll('.ver-switcher-content-txt')
 
 if (challengeBtns.length && challengeContents.length) {
   let currentIndex = 0
