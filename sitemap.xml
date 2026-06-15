@@ -3,63 +3,75 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.billynightingale.com/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
   <!-- Homepage (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
   <!-- About page -->
   <url>
     <loc>https://www.billynightingale.com/about</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
   <!-- About page (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/a-propos</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
   <!-- Contact (English) -->
   <url>
     <loc>https://www.billynightingale.com/contact</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
 
     <!-- Contact (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/contact</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
   <!-- Terms and Conditions (English) -->
   <url>
     <loc>https://www.billynightingale.com/terms-and-conditions</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
 
     <!-- Terms and Conditions (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/cgv</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
   <!-- Services page (English) -->
   <url>
     <loc>https://www.billynightingale.com/services</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
   <!-- Services (French) -->
   <url>
     <loc>https://www.billynightingale.com/fr/services</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+
+   <!-- Services page (English) -->
+  <url>
+    <loc>https://www.billynightingale.com/website-development-landes</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+
+  <!-- Services (French) -->
+  <url>
+    <loc>https://www.billynightingale.com/fr/creation-site-web-landes</loc>
+    <lastmod>2026-06-15</lastmod>
   </url>
 
 </urlset>
