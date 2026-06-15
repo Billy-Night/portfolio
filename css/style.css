@@ -3021,13 +3021,17 @@ spline-viewer {
 }
 
 .static-phone-img {
-  width: clamp(350px, 40vw, 500px);
+  width: clamp(300px, 40vw, 500px);
   height: auto;
 }
 
 @media screen and (max-width: 600px) {
   .phone-iteractive-content-container {
     flex-direction: column;
+  }
+
+  .static-phone-container {
+    top: 0%;
   }
 
   .phone-text-container {
