@@ -3021,7 +3021,7 @@ spline-viewer {
 }
 
 .static-phone-img {
-  width: clamp(300px, 40vw, 500px);
+  width: clamp(260px, 40vw, 500px);
   height: auto;
 }
 
@@ -3030,8 +3030,8 @@ spline-viewer {
     flex-direction: column;
   }
 
-  .static-phone-container {
-    top: 0%;
+  .phone-iteractive-content-container {
+    top: 90px;
   }
 
   .phone-text-container {
