@@ -96,9 +96,15 @@ if (challengeBtns.length && challengeContents.length) {
 
 if (staticPhone) {
   const screens = [
-    '/assets/landes_phone/phone_screen_webesite_perfomance.webp',
-    '/assets/landes_phone/phone_screen_webesite_seo_results.webp',
-    '/assets/landes_phone/phone_screen_webesite_business_solutions.webp',
+    '/assets/landes_phone/phone_web_performance.webp',
+    '/assets/landes_phone/phone_web_seo_fr.webp',
+    '/assets/landes_phone/phone_web_solutions.webp',
+  ]
+
+  const screensFr = [
+    '/assets/landes_phone/phone_web_performance_fr.webp',
+    '/assets/landes_phone/phone_web_seo_fr.webp',
+    '/assets/landes_phone/phone_web_solutions_fr.webp',
   ]
 
   let currentIndex = 0
@@ -121,7 +127,6 @@ if (staticPhone) {
     let newIndex = 0
 
     showContent(newIndex)
-    console.log(progress)
 
     if (progress > 0.6) {
       newIndex = 2
@@ -132,7 +137,12 @@ if (staticPhone) {
     }
 
     if (newIndex !== currentIndex) {
-      staticPhone.src = screens[newIndex]
+      if (window.location.pathname.includes('/fr')) {
+        staticPhone.src = screensFr[newIndex]
+      } else {
+        staticPhone.src = screens[newIndex]
+      }
+
       currentIndex = newIndex
     }
   }
