@@ -202,12 +202,43 @@ if (clientReviews.length > 0) {
   start()
 }
 
+animateReviewIconPath({
+  drawPath: document.querySelector('.review-icon-loading-circle-drawPath'),
+  duration: 18000,
+})
+
+function animateReviewIconPath({ drawPath, duration = 18000 }) {
+  if (!drawPath) return
+  const length = drawPath.getTotalLength()
+
+  drawPath.style.strokeDasharray = `${length} ${length}`
+  drawPath.style.strokeDashoffset = length
+
+  console.log('Length of path:', length)
+  console.log(drawPath.style.strokeDasharray)
+  console.log(drawPath.style.strokeDashoffset)
+
+  let startTime = null
+
+  function loop(timeStamp) {
+    if (!startTime) startTime = timeStamp
+    const elapsed = timeStamp - startTime
+    const progress = (elapsed % duration) / duration
+    drawPath.style.strokeDashoffset = length * (1 - progress)
+    console.log(drawPath.getTotalLength())
+
+    requestAnimationFrame(loop)
+  }
+
+  requestAnimationFrame(loop)
+}
+
 /** About page logic */
 
 if (titleText) {
   function updateMeasure() {
     const height = Math.round(titleText.getBoundingClientRect().height)
-
+    if (measure === null) return
     measure.style.setProperty('--measure-height', `${height}px`)
     label.textContent = `${height}px`
   }

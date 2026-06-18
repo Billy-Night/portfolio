@@ -1333,7 +1333,7 @@ a:hover .social__icons {
   fill: var(--gold);
 }
 
-@keyframes spinClockwise {
+/* @keyframes spinClockwise {
   to {
     transform: rotate(360deg);
   }
@@ -1343,7 +1343,7 @@ a:hover .social__icons {
   to {
     transform: rotate(-360deg);
   }
-}
+} */
 
 .home-intro-img-container {
   grid-area: image;
@@ -1463,6 +1463,19 @@ a:hover .social__icons {
 
 .lazy-img {
   filter: blur(2px);
+}
+
+.review-icon-loading-circle-path {
+  fill: rgba(255, 255, 255, 0.2);
+}
+
+.review-icon-loading-circle-drawPath {
+  fill: none;
+  stroke: red;
+  stroke-width: 30;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 242.5px 242.5px;
 }
 
 /*! Start of timeline */
