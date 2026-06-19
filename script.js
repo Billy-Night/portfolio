@@ -155,102 +155,132 @@ if (staticPhone) {
 
 /** Homepage logic */
 
-let currentReview = 0
-let timeout
-
-const runReviewIconAnimation = (parentReview, duration = 5000) => {
-  const drawPath = parentReview.querySelector(
-    '.review-icon-loading-circle-drawPath',
-  )
-
-  if (!drawPath) return null
-
-  const length = drawPath.getTotalLength()
-
-  drawPath.style.strokeDasharray = `${length} ${length}`
-  drawPath.style.strokeDashoffset = length
-
-  let startTime = null
-  let pausedAt = null
-  let totalPausedTime = 0
-  let frameId = null
-  let paused = false
-
-  function loop(timeStamp) {
-    if (paused) return
-
-    if (!startTime) startTime = timeStamp
-
-    const elapsed = timeStamp - startTime - totalPausedTime
-    const progress = (elapsed % duration) / duration
-
-    drawPath.style.strokeDashoffset = length * (1 - progress)
-
-    frameId = requestAnimationFrame(loop)
-  }
-
-  function pause() {
-    if (paused) return
-
-    paused = true
-    pausedAt = performance.now()
-    cancelAnimationFrame(frameId)
-  }
-
-  function resume() {
-    if (!paused) return
-
-    paused = false
-    totalPausedTime += performance.now() - pausedAt
-    frameId = requestAnimationFrame(loop)
-  }
-
-  frameId = requestAnimationFrame(loop)
-
-  return {
-    pause,
-    resume,
-  }
-}
-
 if (clientReviews.length > 0) {
+  let currentReview = 0
+  let isRunning = false
+
+  const runReviewIconAnimation = (parentReview, duration = 5000) => {
+    const drawPath = parentReview.querySelector(
+      '.review-icon-loading-circle-drawPath',
+    )
+
+    if (!drawPath) return null
+
+    const length = drawPath.getTotalLength()
+
+    drawPath.style.strokeDasharray = `${length} ${length}`
+    drawPath.style.strokeDashoffset = length
+
+    let startTime = null
+    let pausedAt = null
+    let totalPausedTime = 0
+    let frameId = null
+    let paused = false
+
+    function loop(timeStamp) {
+      if (paused) return
+
+      if (!startTime) startTime = timeStamp
+
+      const elapsed = timeStamp - startTime - totalPausedTime
+      const progress = (elapsed % duration) / duration
+
+      drawPath.style.strokeDashoffset = length * (1 - progress)
+
+      frameId = requestAnimationFrame(loop)
+    }
+
+    function pause() {
+      if (paused) return
+
+      paused = true
+      pausedAt = performance.now()
+      cancelAnimationFrame(frameId)
+    }
+
+    function resume() {
+      if (!paused) return
+
+      paused = false
+      totalPausedTime += performance.now() - pausedAt
+      frameId = requestAnimationFrame(loop)
+    }
+
+    frameId = requestAnimationFrame(loop)
+
+    return {
+      pause,
+      resume,
+      destroy() {
+        paused = true
+        cancelAnimationFrame(frameId)
+      },
+    }
+  }
+
   clientReviews[0].classList.add('review-is-active')
-  let duration = 5000
+  const duration = 5000
 
   let reviewIconAnimation = runReviewIconAnimation(
     reviewPlayIcon[currentReview],
     duration,
   )
 
-  const start = () => {
-    reviewIconAnimation?.resume()
+  let timeout
+  let remaining = duration
+  let timerStartedAt = null
 
-    clearTimeout(timeout)
+  function startTimer() {
+    if (isRunning) return
+    isRunning = true
+    clearTimeout(timeout) // Clear any existing timeout to avoid multiple timers running
+    timerStartedAt = performance.now()
 
     reviewPauseIcon[currentReview].classList.remove('pause-icon-is-active')
     reviewPlayIcon[currentReview].classList.remove('play-icon-is-hidden')
 
     timeout = setTimeout(() => {
-      reviewIconAnimation?.pause()
+      isRunning = false
+      nextReview()
+      startTimer()
+    }, remaining)
+  }
 
-      clientReviews[currentReview].classList.remove('review-is-active')
+  function stopTimer() {
+    if (!isRunning) return
+    isRunning = false
 
-      currentReview = (currentReview + 1) % clientReviews.length
+    clearTimeout(timeout)
 
-      clientReviews[currentReview].classList.add('review-is-active')
+    const elapsed = performance.now() - timerStartedAt
+    remaining = Math.max(0, remaining - elapsed)
+  }
 
-      reviewIconAnimation = runReviewIconAnimation(
-        reviewPlayIcon[currentReview],
-        duration,
-      )
-    }, duration)
+  function nextReview() {
+    reviewIconAnimation?.destroy()
+    remaining = duration
+    clientReviews[currentReview].classList.remove('review-is-active')
+
+    currentReview = (currentReview + 1) % clientReviews.length
+
+    clientReviews[currentReview].classList.add('review-is-active')
+
+    reviewIconAnimation = runReviewIconAnimation(
+      reviewPlayIcon[currentReview],
+      duration,
+    )
   }
 
   const stop = () => {
-    clearTimeout(timeout)
     reviewPlayIcon[currentReview].classList.add('play-icon-is-hidden')
     reviewPauseIcon[currentReview].classList.add('pause-icon-is-active')
+    stopTimer()
     reviewIconAnimation?.pause()
+  }
+
+  const start = () => {
+    startTimer()
+    reviewIconAnimation?.resume()
   }
 
   const container = document.querySelector('.review-hover-wrap')
