@@ -273,6 +273,17 @@ a {
   text-decoration: none;
 }
 
+/* Large headings */
+
+.xl-heading {
+  font-family: var(--display);
+  font-size: clamp(2.75rem, 2.379rem + 1.854vw, 4.5rem);
+  color: var(--brightGold);
+  line-height: 1;
+  letter-spacing: 3%;
+  margin-left: 0.3%;
+}
+
 /* Button generic */
 
 .btn {
@@ -606,9 +617,11 @@ a {
 }
 .home-services-seo {
   grid-area: seo;
+  min-width: 72px;
 }
 .home-services-design {
   grid-area: design;
+  min-width: 72px;
 }
 .home-services-automation {
   grid-area: automation;
@@ -1011,6 +1024,10 @@ a:hover .social__icons {
   .home-intro__img {
     width: clamp(260px, 42vw, 310px);
     margin-left: var(--space-4);
+  }
+
+  .home-hero-title-mob {
+    display: none;
   }
 }
 
