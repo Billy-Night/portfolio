@@ -89,7 +89,7 @@
     />
     <meta name="twitter:date" content="2025-11-19" />
 
-    <link rel="stylesheet" href="/css/style.css?v=8" />
+    <link rel="stylesheet" href="/css/style.css?v=9" />
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
     <script defer src="/script.js"></script>
 
@@ -401,9 +401,19 @@
             </svg>
             <div class="intro__image--frame">
               <img
+                fetchpriority="high"
+                decoding="async"
                 class="home-intro__img"
-                src="/assets/portrait_standing_laptop_v4.webp"
+                src="/assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp"
+                srcset="
+                  /assets/portraits/billy_nightingale_portrait_standing_laptop_v4-400.webp  400w,
+                  /assets/portraits/billy_nightingale_portrait_standing_laptop_v4-800.webp  800w,
+                  /assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp     1200w
+                "
+                sizes="(max-width: 768px) 90vw, 400px"
                 alt="Portrait of Billy Nightingale looking at web design on laptop"
+                width="1400"
+                height="1730"
               />
             </div>
           </div>
@@ -624,6 +634,8 @@
               </ul>
             </div>
             <img
+              loading="lazy"
+              decoding="async"
               src="/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp"
               alt="Eve-Marie web site created by Billy"
               data-src="/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp"
@@ -671,6 +683,8 @@
               </ul>
             </div>
             <img
+              loading="lazy"
+              decoding="async"
               src="/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp"
               alt="Weather Wise a frontend React web application, created by Billy"
               data-src="/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp"
@@ -725,6 +739,8 @@
               </ul>
             </div>
             <img
+              loading="lazy"
+              decoding="async"
               src="/assets/client_sites/client_eve-marie_website.webp"
               alt="Eve-Marie, a sophrologue website created by Billy Nightingale"
               data-src="/assets/client_sites/client_eve-marie_website.webp"
@@ -778,6 +794,8 @@
               </ul>
             </div>
             <img
+              loading="lazy"
+              decoding="async"
               src="/assets/client_sites/client_turbulente_website.webp"
               alt="Weather Wise a frontend React web application, created by Billy"
               data-src="/assets/client_sites/client_turbulente_website.webp"
@@ -829,6 +847,8 @@
               </ul>
             </div>
             <img
+              loading="lazy"
+              decoding="async"
               src="assets/personal_projects/app_world_surf_journal.webp"
               alt="The world surf jounrnal a full-stack application created by Billy"
               data-src="assets/personal_projects/app_world_surf_journal.webp"
@@ -868,6 +888,8 @@
               </ul>
             </div>
             <img
+              loading="lazy"
+              decoding="async"
               src="assets/personal_projects/app_weather_wise.webp"
               alt="Screenshot of Weather Wise a React web application created by Billy"
               data-src="assets/personal_projects/app_weather_wise.webp"
@@ -905,6 +927,8 @@
               </ul>
             </div>
             <img
+              loading="lazy"
+              decoding="async"
               src="assets/personal_projects/app_trowit.webp"
               alt="Screenshot of the TROWIT full-stack application created by Billy"
               data-src="assets/personal_projects/app_trowit.webp"
@@ -922,6 +946,8 @@
             <div class="cont__review-content">
               <div class="review-avatar">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   class="client__portrait"
                   src="/assets/client_reviews/eve-marie-billy-web-design-client.webp"
                   alt="portrait of Eve-Marie, a client of Billy Nightingale"
