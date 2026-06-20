@@ -200,7 +200,7 @@
       function loadGoogleAnalytics() {
         if (scriptLoaded.googleAnalytics || !isProduction) {
           console.log(
-            `Google Analytics script already loaded:, ${scriptLoaded.googleAnalytics}, Production: ${isProduction}`,
+            `Google Analytics script already loaded:, ${scriptLoaded.googleAnalytics}, Production: ${isProduction},  Cookies accepted: ${cookiesAccepted}`,
           )
           return
         }
