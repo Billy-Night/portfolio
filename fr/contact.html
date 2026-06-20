@@ -95,33 +95,83 @@
     <link rel="stylesheet" href="/css/style.css?v=7" />
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
     <script defer src="/script.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      defer
-      src="https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-
-      gtag('config', 'G-LVZ55QWZGE')
-    </script>
     <script type="text/javascript">
-      ;(function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            ;(c[a].q = c[a].q || []).push(arguments)
-          }
-        t = l.createElement(r)
-        t.async = 1
-        t.src = 'https://www.clarity.ms/tag/' + i
-        y = l.getElementsByTagName(r)[0]
-        y.parentNode.insertBefore(t, y)
-      })(window, document, 'clarity', 'script', 'wpv1qvf7nc')
+      const isProduction = [
+        'billynightingale.com',
+        'www.billynightingale.com',
+      ].includes(window.location.hostname)
+
+      const scriptLoaded = {
+        clarity: false,
+        googleAnalytics: false,
+      }
+
+      let cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
+
+      if (isProduction && cookiesAccepted) {
+        loadClarity()
+        loadGoogleAnalytics()
+      } else {
+        console.log(
+          `Tracking scripts not loaded., Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}`,
+        )
+      }
+
+      function updateCookiesAccepted() {
+        cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
+      }
+
+      function loadClarity() {
+        cookiesAccepted = localStorage.getItem('cookiesAccepted')
+        if (scriptLoaded.clarity || !isProduction || !cookiesAccepted) {
+          console.log(
+            `Clarity script already loaded:, ${scriptLoaded.clarity}, Production: ${isProduction}, Cookie: ${cookiesAccepted}`,
+          )
+          return
+        }
+        ;(function (c, l, a, r, i, t, y) {
+          c[a] =
+            c[a] ||
+            function () {
+              ;(c[a].q = c[a].q || []).push(arguments)
+            }
+          t = l.createElement(r)
+          t.async = 1
+          t.src = 'https://www.clarity.ms/tag/' + i
+          y = l.getElementsByTagName(r)[0]
+          y.parentNode.insertBefore(t, y)
+        })(window, document, 'clarity', 'script', 'wpv1qvf7nc')
+        scriptLoaded.clarity = true
+        console.log(
+          `Clarity script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.clarity}`,
+        )
+      }
+
+      function loadGoogleAnalytics() {
+        if (scriptLoaded.googleAnalytics || !isProduction) {
+          console.log(
+            `Google Analytics script already loaded:, ${scriptLoaded.googleAnalytics}, Production: ${isProduction},  Cookies accepted: ${cookiesAccepted}`,
+          )
+          return
+        }
+        const googleScript = document.createElement('script')
+        googleScript.src =
+          'https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE'
+        googleScript.async = true
+        document.head.appendChild(googleScript)
+
+        window.dataLayer = window.dataLayer || []
+        function gtag() {
+          dataLayer.push(arguments)
+        }
+        gtag('js', new Date())
+
+        gtag('config', 'G-LVZ55QWZGE')
+        scriptLoaded.googleAnalytics = true
+        console.log(
+          `Google Analytics script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.googleAnalytics}, Cookie: ${cookiesAccepted}`,
+        )
+      }
     </script>
   </head>
 
@@ -204,6 +254,19 @@
       </nav>
     </header>
     <main>
+      <div class="cookie-banner dark__glass-back">
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience sur notre
+          site web. En continuant à naviguer sur ce site, vous acceptez
+          l’utilisation de cookies.
+        </p>
+        <div class="cta-container">
+          <a class="btn__primary btn__prim--light" id="cookie-accept"
+            >Accepter</a
+          >
+          <a class="btn__second btn__second--light" id="cookie-deny">Refuser</a>
+        </div>
+      </div>
       <section class="section-pad">
         <div class="layout-two-column content-cont-marg-right">
           <div class="layout-two-column-img img-overlay-blur-left">

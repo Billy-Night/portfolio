@@ -119,33 +119,84 @@
     </script>
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
     <script defer src="/script.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      defer
-      src="https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
 
-      gtag('config', 'G-LVZ55QWZGE')
-    </script>
     <script type="text/javascript">
-      ;(function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            ;(c[a].q = c[a].q || []).push(arguments)
-          }
-        t = l.createElement(r)
-        t.async = 1
-        t.src = 'https://www.clarity.ms/tag/' + i
-        y = l.getElementsByTagName(r)[0]
-        y.parentNode.insertBefore(t, y)
-      })(window, document, 'clarity', 'script', 'wpv1qvf7nc')
+      const isProduction = [
+        'billynightingale.com',
+        'www.billynightingale.com',
+      ].includes(window.location.hostname)
+
+      const scriptLoaded = {
+        clarity: false,
+        googleAnalytics: false,
+      }
+
+      let cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
+
+      if (isProduction && cookiesAccepted) {
+        loadClarity()
+        loadGoogleAnalytics()
+      } else {
+        console.log(
+          `Tracking scripts not loaded., Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}`,
+        )
+      }
+
+      function updateCookiesAccepted() {
+        cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
+      }
+
+      function loadClarity() {
+        cookiesAccepted = localStorage.getItem('cookiesAccepted')
+        if (scriptLoaded.clarity || !isProduction || !cookiesAccepted) {
+          console.log(
+            `Clarity script already loaded:, ${scriptLoaded.clarity}, Production: ${isProduction}, Cookie: ${cookiesAccepted}`,
+          )
+          return
+        }
+        ;(function (c, l, a, r, i, t, y) {
+          c[a] =
+            c[a] ||
+            function () {
+              ;(c[a].q = c[a].q || []).push(arguments)
+            }
+          t = l.createElement(r)
+          t.async = 1
+          t.src = 'https://www.clarity.ms/tag/' + i
+          y = l.getElementsByTagName(r)[0]
+          y.parentNode.insertBefore(t, y)
+        })(window, document, 'clarity', 'script', 'wpv1qvf7nc')
+        scriptLoaded.clarity = true
+        console.log(
+          `Clarity script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.clarity}`,
+        )
+      }
+
+      function loadGoogleAnalytics() {
+        if (scriptLoaded.googleAnalytics || !isProduction) {
+          console.log(
+            `Google Analytics script already loaded:, ${scriptLoaded.googleAnalytics}, Production: ${isProduction},  Cookies accepted: ${cookiesAccepted}`,
+          )
+          return
+        }
+        const googleScript = document.createElement('script')
+        googleScript.src =
+          'https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE'
+        googleScript.async = true
+        document.head.appendChild(googleScript)
+
+        window.dataLayer = window.dataLayer || []
+        function gtag() {
+          dataLayer.push(arguments)
+        }
+        gtag('js', new Date())
+
+        gtag('config', 'G-LVZ55QWZGE')
+        scriptLoaded.googleAnalytics = true
+        console.log(
+          `Google Analytics script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.googleAnalytics}, Cookie: ${cookiesAccepted}`,
+        )
+      }
     </script>
   </head>
 
@@ -228,13 +279,22 @@
       </nav>
     </header>
     <main>
+      <div class="cookie-banner dark__glass-back">
+        <p>
+          Cookies are used to improve your experience on our website. By
+          continuing to use our site, you agree to our use of cookies.
+        </p>
+        <div class="cta-container">
+          <a class="btn__primary btn__prim--light" id="cookie-accept">Accept</a>
+          <a class="btn__second btn__second--light" id="cookie-deny">Deny</a>
+        </div>
+      </div>
       <section>
         <div class="landes-hero-container">
           <div class="landes-hero-text-container">
             <h1 class="landes-hero__title">Creating Website's in Landes</h1>
             <!-- <p>Built for growth, built to last, built for performance.</p> -->
           </div>
-
           <div class="landes-hero-img-container">
             <svg
               class="landes-hero-svg1"
