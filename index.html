@@ -89,7 +89,7 @@
     />
     <meta name="twitter:date" content="2025-11-19" />
 
-    <link rel="stylesheet" href="/css/style.css?v=6" />
+    <link rel="stylesheet" href="/css/style.css?v=7" />
     <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
     <script defer src="/script.js"></script>
 
@@ -155,7 +155,7 @@
         googleAnalytics: false,
       }
 
-      const cookiesAccepted = localStorage.getItem('cookiesAccepted')
+      let cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
 
       if (isProduction && cookiesAccepted) {
         loadClarity()
@@ -166,10 +166,15 @@
         )
       }
 
+      function updateCookiesAccepted() {
+        cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
+      }
+
       function loadClarity() {
-        if (scriptLoaded.clarity || !isProduction) {
+        cookiesAccepted = localStorage.getItem('cookiesAccepted')
+        if (scriptLoaded.clarity || !isProduction || !cookiesAccepted) {
           console.log(
-            `Clarity script already loaded:, ${scriptLoaded.clarity}, Production: ${isProduction}`,
+            `Clarity script already loaded:, ${scriptLoaded.clarity}, Production: ${isProduction}, Cookie: ${cookiesAccepted}`,
           )
           return
         }
@@ -214,7 +219,7 @@
         gtag('config', 'G-LVZ55QWZGE')
         scriptLoaded.googleAnalytics = true
         console.log(
-          `Google Analytics script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.googleAnalytics}`,
+          `Google Analytics script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.googleAnalytics}, Cookie: ${cookiesAccepted}`,
         )
       }
     </script>

@@ -722,6 +722,7 @@ a {
 /* Cookie banner */
 
 .cookie-banner {
+  display: none;
   max-width: 300px;
   z-index: 1000;
   position: fixed;

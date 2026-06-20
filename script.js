@@ -77,8 +77,15 @@ if (cookieBannerAcceptBtn && cookieBannerDenyBtn && cookieBanner) {
     cookieBanner.style.display = 'none'
   }
 
+  if (localStorage.getItem('cookiesAccepted') === null) {
+    cookieBanner.style.display = 'block'
+  } else {
+    hideCookieBanner()
+  }
+
   const handleCookieAccept = () => {
     localStorage.setItem('cookiesAccepted', 'true')
+    updateCookiesAccepted()
     hideCookieBanner()
     loadClarity()
     loadGoogleAnalytics()
