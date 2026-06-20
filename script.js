@@ -79,10 +79,8 @@ if (cookieBannerAcceptBtn && cookieBannerDenyBtn && cookieBanner) {
 
   if (localStorage.getItem('cookiesAccepted') !== 'true') {
     cookieBanner.style.display = 'block'
-    console.log('The cookie banner is showing')
   } else {
     hideCookieBanner()
-    console.log('The Cookie banner is hidden')
   }
 
   const handleCookieAccept = () => {
