@@ -66,6 +66,39 @@ const textCont = document.querySelectorAll('.phone-text-content-cont')
 const challengeBtns = document.querySelectorAll('.ver-switcher-btn')
 const challengeContents = document.querySelectorAll('.ver-switcher-content-txt')
 
+//* Cookie banner elements
+const cookieBannerAcceptBtn = document.querySelector('#cookie-accept')
+const cookieBannerDenyBtn = document.querySelector('#cookie-deny')
+const cookieBanner = document.querySelector('.cookie-banner')
+
+//* Cookie banner logic
+if (cookieBannerAcceptBtn && cookieBannerDenyBtn && cookieBanner) {
+  const hideCookieBanner = () => {
+    cookieBanner.style.display = 'none'
+  }
+
+  const handleCookieAccept = () => {
+    localStorage.setItem('cookiesAccepted', 'true')
+    hideCookieBanner()
+    loadClarity()
+    loadGoogleAnalytics()
+  }
+
+  const handleCookieDeny = () => {
+    localStorage.setItem('cookiesAccepted', 'false')
+    hideCookieBanner()
+  }
+
+  cookieBannerAcceptBtn.addEventListener('click', handleCookieAccept)
+  cookieBannerDenyBtn.addEventListener('click', handleCookieDeny)
+
+  // Check if the user has already made a choice regarding cookies
+  const cookiesAccepted = localStorage.getItem('cookiesAccepted')
+  if (cookiesAccepted === 'true' || cookiesAccepted === 'false') {
+    hideCookieBanner()
+  }
+}
+
 if (challengeBtns.length && challengeContents.length) {
   let currentIndex = 0
   function activeContent(index) {
