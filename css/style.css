@@ -32,6 +32,17 @@
     rgba(64, 47, 41, 1) 100%
   );
 
+  --metal-light: #75685b;
+  --metal-base: #353e43;
+  --metal-dark: #1b2024;
+
+  --gradient-rustic-metal: linear-gradient(
+    135deg,
+    var(--metal-light) 0%,
+    var(--metal-base) 45%,
+    var(--metal-dark) 100%
+  );
+
   /* element colours */
   --page-background: #11293f;
 
@@ -569,15 +580,13 @@ a {
 
 /* Global Flex Layouts */
 
-/* .flex-two-col {
+.flex-two-col {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-sm);
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .flex-two-col {
     flex-direction: column;
     text-align: center;
@@ -638,6 +647,12 @@ a {
 
   animation: gentle-rotate 20s infinite ease-in-out;
   transform-origin: center;
+}
+
+.home-process-svg {
+  width: var(--text-l);
+  height: auto;
+  fill: var(--metal-light);
 }
 
 /* .home-services__circle-lines {
@@ -1681,11 +1696,28 @@ a:hover .social__icons {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ts-padding-l {
   padding: clamp(var(--space-6), 4vw, var(--space-8));
   margin: clamp(var(--space-4), 3vw, var(--space-6));
 }
 
-.ts-heading {
+.ts-padding-m {
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+  margin: clamp(var(--space-2), 3vw, var(--space-4));
+}
+
+.ts-p-marg p {
+  margin: 3px;
+}
+
+/* .ts-heading {
+  width: 80%;
+  text-align: center;
+} */
+
+.ts-about-heading {
   width: 80%;
   text-align: center;
 }
