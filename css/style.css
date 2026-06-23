@@ -640,6 +640,10 @@ a {
   transform-origin: center;
 }
 
+/* .home-services__circle-lines {
+  stroke: #353e43;
+} */
+
 @keyframes gentle-rotate {
   0%,
   40% {
