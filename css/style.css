@@ -690,6 +690,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 .ver-switcher-btn-cont h3 {
@@ -730,6 +731,33 @@ a {
 .ver-switcher-content {
   position: relative;
   display: grid;
+  height: 100%;
+}
+
+.home-faq-cont {
+  position: relative;
+}
+
+@media screen and (max-width: 752px) {
+  .faq-height {
+    min-height: 1400px;
+  }
+  .absolute-wrapper-switcher {
+    position: absolute;
+    height: 1200px;
+    padding-top: 20%;
+  }
+
+  .ver-switcher-content {
+    position: sticky;
+    height: auto;
+    top: 50%;
+    z-index: 2;
+  }
+
+  .ver-switcher-content-txt.is-active {
+    background: var(--page-background);
+  }
 }
 
 .ver-switcher-content-txt {
@@ -741,6 +769,11 @@ a {
   visibility: hidden;
   transition: opacity 0.4s ease visibility 0.4s ease;
   pointer-events: none;
+}
+
+.position-sticky {
+  position: sticky;
+  top: 50%;
 }
 
 .ver-switcher-content-txt.is-active {
