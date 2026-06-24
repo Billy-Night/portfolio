@@ -651,6 +651,7 @@ a {
 
 .home-process-svg {
   width: var(--text-l);
+  min-width: 19px;
   height: auto;
   fill: var(--metal-light);
 }
