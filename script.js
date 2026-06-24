@@ -346,6 +346,54 @@ if (clientReviews.length > 0) {
   start()
 }
 
+/* vertical switcher logic, used on homepage FAQ */
+
+const verticalSwitcher = document.querySelector('.vertical-switcher')
+const verticalSwitcherContent = document.querySelectorAll(
+  '.vertical-switcher-content',
+)
+
+console.log(verticalSwitcherContent)
+
+if (verticalSwitcher && verticalSwitcherContent.length > 0) {
+  function activateVerticalSwitcherContent(content) {
+    if (!content) return
+    const button = content.querySelector('.vertical-switcher-btn')
+    const text = content.querySelector('.vertical-switcher-txt')
+
+    if (!button || !text) return
+
+    verticalSwitcher
+      .querySelectorAll('.vertical-switcher-btn')
+      .forEach((btn) => {
+        btn.classList.remove('is-active')
+      })
+
+    verticalSwitcher
+      .querySelectorAll('.vertical-switcher-txt')
+      .forEach((txt) => {
+        txt.classList.remove('is-active')
+      })
+
+    button.classList.add('is-active')
+    text.classList.add('is-active')
+  }
+
+  verticalSwitcher.addEventListener('click', (event) => {
+    const button = event.target.closest('.vertical-switcher-btn')
+    if (!button) return
+
+    const content = button.closest('.vertical-switcher-content')
+    activateVerticalSwitcherContent(content)
+  })
+
+  verticalSwitcherContent.forEach((content) => {
+    content.addEventListener('mouseenter', () => {
+      activateVerticalSwitcherContent(content)
+    })
+  })
+}
+
 /** About page logic */
 
 if (titleText) {
