@@ -684,12 +684,13 @@ a {
   align-items: center;
 }
 
-/* Switcher */
+/* Switchers */
 
 .ver-switcher-btn-cont {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 .ver-switcher-btn-cont h3 {
@@ -730,6 +731,29 @@ a {
 .ver-switcher-content {
   position: relative;
   display: grid;
+  height: 100%;
+}
+
+@media screen and (max-width: 752px) {
+  .faq-height {
+    min-height: 1400px;
+  }
+  .absolute-wrapper-switcher {
+    position: absolute;
+    height: 1200px;
+    padding-top: 20%;
+  }
+
+  .ver-switcher-content {
+    position: sticky;
+    height: auto;
+    top: 50%;
+    z-index: 2;
+  }
+
+  .ver-switcher-content-txt.is-active {
+    background: var(--page-background);
+  }
 }
 
 .ver-switcher-content-txt {
@@ -743,7 +767,57 @@ a {
   pointer-events: none;
 }
 
+.position-sticky {
+  position: sticky;
+  top: 50%;
+}
+
 .ver-switcher-content-txt.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* vertical switcher, used on homepage FAQ */
+
+.vertical-switcher-btn {
+  border: none;
+  padding-top: var(--gap-sm);
+  padding-bottom: var(--gap-sm);
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  opacity: 45%;
+}
+
+.vertical-switcher-btn h3 {
+  font-size: var(--title-2);
+  line-height: var(--leading-title);
+  font-family: var(--subHeading);
+  letter-spacing: 4%;
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
+}
+
+.vertical-switcher-btn.is-active {
+  opacity: 100%;
+}
+
+.vertical-switcher-txt {
+  display: none;
+  padding: var(--space-6);
+  border: 2px dashed rgba(220, 168, 104, 0.3);
+  border-radius: var(--corner-rad);
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease visibility 0.4s ease;
+  pointer-events: none;
+}
+
+.vertical-switcher-txt.is-active {
+  display: block;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
