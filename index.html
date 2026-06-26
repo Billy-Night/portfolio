@@ -321,7 +321,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
+          <line x1="3000" y1="0.5" y2="0.5" />
         </svg>
         <svg
           class="hero__verLine-left"
@@ -331,7 +331,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
+          <line x1="0.5" y1="3000" x2="0.5" />
         </svg>
         <svg
           class="hero__verLine-right"
@@ -341,7 +341,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
+          <line x1="0.5" y1="3000" x2="0.5" />
         </svg>
         <svg
           class="hero__horLine-bottom"
@@ -351,7 +351,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
+          <line x1="3000" y1="0.5" y2="0.5" />
         </svg>
         <div class="hero__full-container">
           <div class="hero__title-container">
@@ -369,15 +369,47 @@
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <defs>
+                      <linearGradient
+                        id="rustic-metal-measure"
+                        x1="7"
+                        y1="0"
+                        x2="7"
+                        y2="302"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0%" stop-color="#75685b" />
+                        <stop offset="45%" stop-color="#353e43" />
+                        <stop offset="100%" stop-color="#1b2024" />
+                      </linearGradient>
+                    </defs>
+
                     <line
-                      y1="-0.5"
-                      x2="300.002"
-                      y2="-0.5"
-                      transform="matrix(-0.00333331 0.999994 -0.999879 -0.0155253 7 1)"
-                      stroke="white"
+                      x1="7"
+                      y1="1"
+                      x2="7"
+                      y2="301"
+                      stroke="url(#rustic-metal-measure)"
+                      stroke-width="1"
                     />
-                    <line x1="1" y1="0.5" x2="14" y2="0.5" stroke="white" />
-                    <line y1="300.5" x2="13" y2="300.5" stroke="white" />
+
+                    <line
+                      x1="1"
+                      y1="0.5"
+                      x2="14"
+                      y2="0.5"
+                      stroke="#75685b"
+                      stroke-width="1"
+                    />
+
+                    <line
+                      x1="0"
+                      y1="300.5"
+                      x2="13"
+                      y2="300.5"
+                      stroke="#1b2024"
+                      stroke-width="1"
+                    />
                   </svg>
                   <span class="type-measure__label"></span>
                 </span>
@@ -395,7 +427,7 @@
             >
               <defs>
                 <linearGradient
-                  id="rustic-metal"
+                  id="rustic-metal-hero-small"
                   x1="0"
                   y1="0"
                   x2="900"
@@ -411,7 +443,7 @@
                 id="orbit-path-draw-1"
                 d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
                 fill="none"
-                stroke="url(#rustic-metal)"
+                stroke="url(#rustic-metal-hero-small)"
                 stroke-width="2"
                 stroke-dasharray="4 4"
               />
@@ -419,7 +451,7 @@
                 id="orbitPath1"
                 d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
               />
-              <circle id="orbitDot1" r="10" fill="white"></circle>
+              <circle id="orbitDot1" r="10"></circle>
             </svg>
             <div class="intro__image--frame">
               <img
@@ -450,7 +482,7 @@
             >
               <defs>
                 <linearGradient
-                  id="rustic-metal"
+                  id="rustic-metal-hero-bg-circle"
                   x1="0"
                   y1="0"
                   x2="900"
@@ -466,7 +498,7 @@
                 id="orbit-path-draw-2"
                 d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
                 fill="none"
-                stroke="url(#rustic-metal)"
+                stroke="url(#rustic-metal-hero-bg-circle)"
                 stroke-width="2"
                 stroke-dasharray="4 4"
               />
@@ -479,17 +511,23 @@
             <div class="intro__text-cont">
               <div class="about__intro__txt-cont">
                 <h2>CREATING WEBSITES & SYSTEMS</h2>
-                <p>
+                <p class="max-hero-txt-width">
                   I'm <span class="name">Billy Nightingale,</span> a web
                   designer helping local businesses in Capbreton and southwest
                   France build a strong, professional online presence.
                 </p>
-                <p>Your technical partner — from design to launch and SEO.</p>
-                <p>Available for new projects, locally or remote.</p>
-                <p>Learn more about me and my recent projects</p>
+                <p class="max-hero-txt-width">
+                  Your technical partner — from design to launch and SEO.
+                </p>
+                <p class="max-hero-txt-width">
+                  Available for new projects, locally or remote.
+                </p>
+                <p class="max-hero-txt-width">
+                  Learn more about me and my recent projects
+                </p>
                 <div class="cta-container">
-                  <a class="btn__primary btn__prim--light" href="#offer"
-                    >Learn more</a
+                  <a class="btn__primary btn__prim--light" href="/contact"
+                    >Contact</a
                   >
                   <a class="btn__second btn__second--light" href="/#projects"
                     >Projets</a
