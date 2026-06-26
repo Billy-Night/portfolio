@@ -95,7 +95,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/style.css?v=16" />
+    <link rel="stylesheet" href="/css/style.css?v=17" />
 
     <script defer src="/script.js"></script>
     <script type="application/ld+json">
@@ -314,7 +314,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
+          <line x1="3000" y1="0.5" y2="0.5" />
         </svg>
         <svg
           class="hero__verLine-left"
@@ -324,7 +324,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
+          <line x1="0.5" y1="3000" x2="0.5" />
         </svg>
         <svg
           class="hero__verLine-right"
@@ -334,7 +334,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="0.5" y1="3000" x2="0.5" stroke="white" />
+          <line x1="0.5" y1="3000" x2="0.5" />
         </svg>
         <svg
           class="hero__horLine-bottom"
@@ -344,7 +344,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line x1="3000" y1="0.5" y2="0.5" stroke="white" />
+          <line x1="3000" y1="0.5" y2="0.5" />
         </svg>
         <div class="hero__full-container">
           <div class="hero__title-container">
@@ -360,15 +360,46 @@
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <defs>
+                      <linearGradient
+                        id="rustic-metal-measure"
+                        x1="7"
+                        y1="0"
+                        x2="7"
+                        y2="302"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0%" stop-color="#75685b" />
+                        <stop offset="45%" stop-color="#353e43" />
+                        <stop offset="100%" stop-color="#1b2024" />
+                      </linearGradient>
+                    </defs>
                     <line
-                      y1="-0.5"
-                      x2="300.002"
-                      y2="-0.5"
-                      transform="matrix(-0.00333331 0.999994 -0.999879 -0.0155253 7 1)"
-                      stroke="white"
+                      x1="7"
+                      y1="1"
+                      x2="7"
+                      y2="301"
+                      stroke="url(#rustic-metal-measure)"
+                      stroke-width="1"
                     />
-                    <line x1="1" y1="0.5" x2="14" y2="0.5" stroke="white" />
-                    <line y1="300.5" x2="13" y2="300.5" stroke="white" />
+
+                    <line
+                      x1="1"
+                      y1="0.5"
+                      x2="14"
+                      y2="0.5"
+                      stroke="#75685b"
+                      stroke-width="1"
+                    />
+
+                    <line
+                      x1="0"
+                      y1="300.5"
+                      x2="13"
+                      y2="300.5"
+                      stroke="#1b2024"
+                      stroke-width="1"
+                    />
                   </svg>
                   <span class="type-measure__label"></span>
                 </span>
@@ -384,18 +415,38 @@
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <defs>
+                <linearGradient
+                  id="rustic-metal-hero-small"
+                  x1="0"
+                  y1="0"
+                  x2="900"
+                  y2="900"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="45%" stop-color="#75685b" />
+                  <stop offset="75%" stop-color="#353e43" />
+                  <stop offset="100%" stop-color="#1b2024" />
+                </linearGradient>
+              </defs>
               <path
                 id="orbit-path-draw-1"
                 d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+                fill="none"
+                stroke="url(#rustic-metal-hero-small)"
+                stroke-width="2"
+                stroke-dasharray="4 4"
               />
               <path
                 id="orbitPath1"
                 d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
               />
-              <circle id="orbitDot1" r="10" fill="white"></circle>
+              <circle id="orbitDot1" r="10"></circle>
             </svg>
             <div class="intro__image--frame">
               <img
+                fetchpriority="high"
+                decoding="async"
                 class="about-intro__image"
                 src="/assets/portraits/billy_nightingale_web_designer_capbreton.webp"
                 alt="Portrait of Billy Nightingale looking at web design on laptop"
@@ -411,15 +462,33 @@
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <defs>
+                <linearGradient
+                  id="rustic-metal-hero-bg-circle"
+                  x1="0"
+                  y1="0"
+                  x2="900"
+                  y2="900"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="45%" stop-color="#75685b" />
+                  <stop offset="75%" stop-color="#353e43" />
+                  <stop offset="100%" stop-color="#1b2024" />
+                </linearGradient>
+              </defs>
               <path
                 id="orbit-path-draw-2"
                 d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+                fill="none"
+                stroke="url(#rustic-metal-hero-bg-circle)"
+                stroke-width="2"
+                stroke-dasharray="4 4"
               />
               <path
                 id="orbitPath2"
                 d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
               />
-              <circle id="orbitDot2" r="10" fill="white"></circle>
+              <circle id="orbitDot2" r="10"></circle>
             </svg>
             <div class="intro__text-cont">
               <div class="about__intro__txt-cont">
