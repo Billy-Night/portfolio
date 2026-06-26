@@ -1939,7 +1939,7 @@ a:hover .social__icons {
   display: grid;
   max-width: 2000px;
   grid-template-columns: 1fr 1fr;
-  row-gap: clamp(var(--space-10), 12vw, 16rem);
+  row-gap: var(--gap-md);
   column-gap: clamp(var(--space-6), 6vw, var(--space-9));
   padding-top: clamp(var(--space-7), 8vw, var(--space-9));
   padding-bottom: clamp(var(--space-7), 8vw, var(--space-9));
@@ -3205,6 +3205,10 @@ a:hover .social__icons {
 
 /* Creation de site web landes page */
 
+.land-hero-section {
+  height: 100vh;
+}
+
 .landes-hero-container {
   display: flex;
   flex-direction: row;
@@ -3279,12 +3283,15 @@ a:hover .social__icons {
 
   .landes-hero-text-container {
     padding-top: 0px;
-    order: 2;
   }
+}
 
-  .landes-hero-img-container {
-    order: 1;
-  }
+.landes-cta-container {
+  padding: var(--space-3);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* .hero-phone {
@@ -3319,8 +3326,8 @@ spline-viewer {
 .phone-iteractive-content-container {
   display: flex;
   flex-direction: row;
-  top: 20%;
   position: sticky;
+  top: 20%;
 }
 
 .static-phone-container {
@@ -3330,25 +3337,8 @@ spline-viewer {
 }
 
 .static-phone-img {
-  width: clamp(260px, 40vw, 500px);
+  width: clamp(200px, 40vw, 500px);
   height: auto;
-}
-
-@media screen and (max-width: 600px) {
-  .phone-iteractive-content-container {
-    flex-direction: column;
-    gap: var(--gap-sm);
-  }
-
-  .phone-iteractive-content-container {
-    top: 90px;
-  }
-
-  .phone-text-container {
-    padding-right: var(--page-gutter);
-    padding-left: var(--page-gutter);
-    padding-bottom: var(--padding-hor-section);
-  }
 }
 
 .phone-text-container {
@@ -3361,13 +3351,26 @@ spline-viewer {
   grid-area: 1/1;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease;
-  padding-right: var(--page-gutter);
+  transition: opacity 5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .phone-text-content-cont.is-active {
   opacity: 1;
   visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+  .phone-iteractive-content-container {
+    flex-direction: column;
+    gap: var(--gap-sm);
+  }
+
+  .phone-iteractive-content-container {
+    top: 90px;
+  }
 }
 
 .landes-mission-section {
