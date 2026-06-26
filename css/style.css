@@ -3212,7 +3212,7 @@ a:hover .social__icons {
 .landes-hero-container {
   display: flex;
   flex-direction: row;
-  padding-right: var(--space-12);
+  padding-right: var(--page-gutter);
 }
 
 .landes-hero-text-container {
@@ -3282,7 +3282,7 @@ a:hover .social__icons {
   }
 
   .landes-hero-text-container {
-    padding-top: 0px;
+    padding-top: var(--space-3);
   }
 }
 
@@ -3337,7 +3337,7 @@ spline-viewer {
 }
 
 .static-phone-img {
-  width: clamp(200px, 40vw, 500px);
+  width: clamp(180px, 40vw, 500px);
   height: auto;
 }
 
@@ -3355,6 +3355,7 @@ spline-viewer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 0px;
 }
 
 .phone-text-content-cont.is-active {
@@ -3363,6 +3364,10 @@ spline-viewer {
 }
 
 @media screen and (max-width: 600px) {
+  .static-phone-title {
+    font-size: var(--title-3);
+  }
+
   .phone-iteractive-content-container {
     flex-direction: column;
     gap: var(--gap-sm);
@@ -3370,6 +3375,10 @@ spline-viewer {
 
   .phone-iteractive-content-container {
     top: 90px;
+  }
+
+  .phone-text-content-cont {
+    display: block;
   }
 }
 
