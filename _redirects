@@ -2,20 +2,25 @@
 
 http://billynightingale.com/* https://www.billynightingale.com/:splat 301!
 
-
 # English
 
-/index.html     /          301!
-/about.html     /about     301!
+/index.html / 301!
+/about.html /about 301!
+/contact.html /contact 301!
+/services.html /services 301!
+/website-development-landes.html /website-development-landes 301!
+/terms-and-conditions.html /terms-and-conditions 301!
 
 # French
 
-/fr/index.html      /fr/            301!
-/fr/a-propos.html   /fr/a-propos    301!
+/fr/index.html /fr/ 301!
+/fr/a-propos.html /fr/a-propos 301!
+/fr/contact.html /fr/contact 301!
+/fr/services.html /fr/services 301!
+/fr/creation-site-web-landes.html /fr/creation-site-web-landes 301!
+/fr/cgv.html /fr/cgv 301!
 
 # Extra:
 
-/index          /           301!
-/fr/index       /fr/        301!
-
-
+/index / 301!
+/fr/index /fr/ 301!
