@@ -3195,10 +3195,6 @@ a:hover .social__icons {
   display: block;
 }
 
-.reiview__text {
-  /* margin-top: 64px; */
-}
-
 .cont__review-stars {
   padding: 0px;
 }
@@ -3210,7 +3206,7 @@ a:hover .social__icons {
 /* Creation de site web landes page */
 
 .land-hero-section {
-  height: 100dvh;
+  min-height: 100dvh;
 }
 
 .landes-hero-container {
@@ -3233,7 +3229,7 @@ a:hover .social__icons {
   font-size: clamp(3.9rem, 1.558rem + 11.71vw, 14rem);
   color: var(--brightGold);
   line-height: 0.9;
-  letter-spacing: 3%;
+  letter-spacing: 0.03em;
 }
 
 .landes-hero-img-container {
