@@ -123,6 +123,7 @@
   --leading-body: 1.55;
 
   --sec-width: 1280px;
+  --sec-width-max: 3000px;
   --page-gutter: clamp(16px, 5vw, 24px);
   --hero-gutter: clamp(0.5rem, 2vw, 1rem);
   --padding-hor-section: clamp(2rem, 5vw, 4rem);
@@ -409,8 +410,11 @@ a {
 }
 
 .section-center-max-width {
-  max-width: var(--sec-width);
-  margin: 0 auto;
+  width: min(100%, var(--sec-width-max, 1200px));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bg_lin-black {
@@ -1358,7 +1362,7 @@ a:hover .social__icons {
 
 .hero__section {
   position: relative;
-  min-height: calc(100vh - 72px);
+  /* min-height: calc(100dvh - 72px); */
   max-width: 100%;
   margin: 0 auto;
   overflow-x: clip;
@@ -3206,13 +3210,14 @@ a:hover .social__icons {
 /* Creation de site web landes page */
 
 .land-hero-section {
-  height: 100vh;
+  height: 100dvh;
 }
 
 .landes-hero-container {
   display: flex;
   flex-direction: row;
   padding-right: var(--page-gutter);
+  max-width: 2000px;
 }
 
 .landes-hero-text-container {
@@ -3327,11 +3332,12 @@ spline-viewer {
   display: flex;
   flex-direction: row;
   position: sticky;
-  top: 20%;
+  top: 120px;
 }
 
 .static-phone-container {
   width: 80%;
+  align-items: center;
   display: flex;
   justify-content: center;
 }
@@ -3339,6 +3345,8 @@ spline-viewer {
 .static-phone-img {
   width: clamp(180px, 40vw, 500px);
   height: auto;
+  align-self: center;
+  /* flex-grow: 0; */
 }
 
 .phone-text-container {
