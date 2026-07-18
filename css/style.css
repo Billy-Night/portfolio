@@ -2981,7 +2981,7 @@ a:hover .social__icons {
   z-index: 1;
   width: 100%;
   height: 1px;
-  margin: 2rem 0;
+  margin: var(--gap-sm) 0;
   background: var(--dividerBackground);
 }
 
@@ -2989,7 +2989,7 @@ a:hover .social__icons {
   position: relative;
   z-index: 1;
   max-width: 39rem;
-  margin: 1rem 0 1.25rem;
+  margin: 0 0 var(--gap-sm);
   color: var(--body-colour);
 }
 .package-card__description--large {
