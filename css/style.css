@@ -240,9 +240,10 @@ h3 {
 h4 {
   font-size: var(--title-5);
   line-height: var(--leading-title);
-  font-family: var(--sans);
+  font-family: var(--subHeading);
   letter-spacing: 3%;
-  color: var(--body-colour);
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
 }
 
 h5 {
@@ -393,7 +394,7 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   min-width: 120px;
-  max-width: 180px;
+  /* max-width: 180px; */
   text-align: center;
   color: var(--txt-body);
 }
@@ -862,6 +863,16 @@ a {
   display: flex;
   align-items: center;
   gap: var(--gap-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
+}
+
+.bullet-point-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bullet-point-svg {
@@ -2619,6 +2630,8 @@ a:hover .social__icons {
 /* Services Page */
 
 .services-hero-section {
+  max-width: var(--sec-width-lg);
+  margin: 0 auto;
   margin-top: var(--space-2);
   padding-top: var(--padding-hor-section);
   padding-left: var(--page-gutter);
@@ -2706,6 +2719,7 @@ a:hover .social__icons {
 }
 
 .services__hero-text {
+  max-width: var(--sec-width-lg);
   margin: auto var(--page-gutter);
   text-align: center;
   /* text-wrap: balance; */
@@ -2872,7 +2886,7 @@ a:hover .social__icons {
 }
 .packages__header {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.7fr);
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: end;
   gap: var(--gap-lg);
   margin-bottom: var(--gap-lg);
@@ -2880,9 +2894,6 @@ a:hover .social__icons {
 .packages__eyebrow {
   margin: 0 0 1.25rem;
   color: var(--body-colour);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
   text-transform: uppercase;
 }
 .packages__title,
@@ -2894,12 +2905,18 @@ a:hover .social__icons {
   max-width: 15ch;
   font-size: var(--fs-hero-xl);
 }
+.packages__title_fr {
+  max-width: 30ch;
+  font-size: var(--fs-hero-xl);
+}
+
 .packages__intro {
-  max-width: 33rem;
+  max-width: var(--max-txt-width);
   margin: 0 0 0.5rem;
   color: var(--body-colour);
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   line-height: 1.7;
+  grid-column: 3 / 4;
 }
 .packages__grid {
   display: grid;
@@ -2992,6 +3009,12 @@ a:hover .social__icons {
   background: var(--dividerBackground);
 }
 
+.package-card__price {
+  font-size: var(--title-3);
+  font-family: var(--display);
+  color: var(--gold);
+}
+
 .package-card__description {
   position: relative;
   z-index: 1;
@@ -3032,6 +3055,11 @@ a:hover .social__icons {
   gap: var(--gap-sm);
   margin-top: auto;
   padding-top: var(--gap-sm);
+}
+
+.price-btn-arrow {
+  display: flex;
+  align-items: center;
 }
 
 .package-card__pattern {
@@ -3092,6 +3120,7 @@ a:hover .social__icons {
   }
   .packages__intro {
     max-width: 42rem;
+    grid-column: 1 / 2;
   }
   .packages__side {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3119,9 +3148,9 @@ a:hover .social__icons {
   .package-card__icon--large {
     width: 4rem;
   }
-  .package-card__title--large {
+  /* .package-card__title--large {
     font-size: clamp(2.8rem, 15vw, 4.5rem);
-  }
+  } */
   .package-card__actions {
     align-items: stretch;
     flex-direction: column;
@@ -3148,6 +3177,117 @@ a:hover .social__icons {
   .button--primary:hover,
   .button-link:hover {
     transform: none;
+  }
+}
+
+.package-card__icon svg {
+  overflow: visible;
+}
+
+.package-card__icon rect {
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+/* Inner rectangle — clockwise */
+.package-card__icon rect:nth-child(1) {
+  animation: rotate-clockwise 14s linear infinite;
+}
+
+/* Middle rectangle — anti-clockwise */
+.package-card__icon rect:nth-child(2) {
+  animation: rotate-anticlockwise 20s linear infinite;
+}
+
+/* Outer rectangle — clockwise */
+.package-card__icon rect:nth-child(3) {
+  animation: rotate-clockwise 28s linear infinite;
+}
+
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes rotate-anticlockwise {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(-315deg);
+  }
+}
+
+.package-card__icon circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Small inner lens */
+.package-card__icon circle:nth-child(1) {
+  animation: telescope-inner 6s ease-in-out infinite;
+}
+
+/* Middle lens */
+.package-card__icon circle:nth-child(2) {
+  animation: telescope-middle 6s ease-in-out infinite;
+}
+
+/* Outer lens */
+.package-card__icon circle:nth-child(3) {
+  animation: telescope-outer 6s ease-in-out infinite;
+}
+
+@keyframes telescope-inner {
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(-2px) scale(0.94);
+  }
+}
+
+@keyframes telescope-middle {
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(2px) scale(1.02);
+  }
+}
+
+@keyframes telescope-outer {
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(7px) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .package-card__icon circle {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .package-card__icon rect {
+    animation: none;
+    transform: rotate(45deg);
   }
 }
 
