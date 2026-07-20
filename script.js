@@ -71,6 +71,29 @@ const cookieBannerAcceptBtn = document.querySelector('#cookie-accept')
 const cookieBannerDenyBtn = document.querySelector('#cookie-deny')
 const cookieBanner = document.querySelector('.cookie-banner')
 
+//* Intersection Observer for bullet points */
+const bulletPackage = document.querySelectorAll('.bullet-point-container')
+
+if (bulletPackage.length > 0) {
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+
+          // Stop observing after the first animation
+          observerInstance.unobserve(entry.target)
+        }
+      })
+    },
+    {
+      threshold: 0.3,
+    },
+  )
+
+  bulletPackage.forEach((element) => observer.observe(element))
+}
+
 //* Cookie banner logic
 if (cookieBannerAcceptBtn && cookieBannerDenyBtn && cookieBanner) {
   const hideCookieBanner = () => {
