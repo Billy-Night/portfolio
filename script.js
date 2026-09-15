@@ -74,6 +74,12 @@ const cookieBanner = document.querySelector('.cookie-banner')
 //* Intersection Observer for bullet points */
 const bulletPackage = document.querySelectorAll('.bullet-point-container')
 
+//* Vertical switcher elements
+const verticalSwitcher = document.querySelector('.vertical-switcher')
+const verticalSwitcherContent = document.querySelectorAll(
+  '.vertical-switcher-content',
+)
+
 if (bulletPackage.length > 0) {
   const observer = new IntersectionObserver(
     (entries, observerInstance) => {
@@ -370,13 +376,6 @@ if (clientReviews.length > 0) {
 }
 
 /* vertical switcher logic, used on homepage FAQ */
-
-const verticalSwitcher = document.querySelector('.vertical-switcher')
-const verticalSwitcherContent = document.querySelectorAll(
-  '.vertical-switcher-content',
-)
-
-console.log(verticalSwitcherContent)
 
 if (verticalSwitcher && verticalSwitcherContent.length > 0) {
   function activateVerticalSwitcherContent(content) {
