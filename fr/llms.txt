@@ -1,0 +1,24 @@
+# Billy Nightingale - Création de sites web, développement et SEO à Capbreton
+
+> Billy Nightingale est web designer et développeur web indépendant basé à Capbreton, dans les Landes. Il accompagne les entreprises dans la conception de sites internet, le développement web, le référencement naturel (SEO), l'optimisation des performances et la création de solutions numériques adaptées à leurs besoins.
+
+Site en français : https://www.billynightingale.com/fr/
+Site en anglais : https://www.billynightingale.com/
+
+Ces fichiers Markdown présentent une version lisible des contenus du site. Les pages HTML et les formulaires restent disponibles sur le site web.
+
+## Pages principales
+
+- [Accueil et portfolio](https://www.billynightingale.com/fr/home.md): Présentation des services, projets clients, applications web, méthode de travail, témoignages et questions fréquentes.
+- [Services de création de sites web](https://www.billynightingale.com/fr/services.md): Design, développement web, SEO, performance, hébergement, maintenance, offres de création de sites et tarifs indicatifs.
+- [Création de sites web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes.md): Accompagnement des entreprises à Capbreton, Hossegor et dans les Landes, référencement local et exemples de projets.
+- [À propos de Billy Nightingale](https://www.billynightingale.com/fr/a-propos.md): Parcours en ingénierie et développement web, compétences, outils et processus de création.
+- [Contact et demandes de devis](https://www.billynightingale.com/fr/contact.md): Coordonnées, types de demandes, budgets et délais proposés dans le formulaire de contact.
+
+## Contact direct
+
+- [Formulaire de contact en français](https://www.billynightingale.com/fr/contact): Formulaire interactif pour discuter d'un projet ou demander un devis.
+
+## English
+
+- [Main llms.txt index](https://www.billynightingale.com/llms.txt): English-language website content and links to all available Markdown resources.

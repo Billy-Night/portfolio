@@ -1,0 +1,28 @@
+# Billy Nightingale - Web Design & Development Studio
+
+> Billy Nightingale is an independent web designer and developer based in Capbreton, Landes, France. He works with businesses on web design, web development, search engine optimisation (SEO), website performance, and practical digital solutions. The website is available in English and French.
+
+Main website: https://www.billynightingale.com/
+French website: https://www.billynightingale.com/fr/
+
+The Markdown resources below provide readable versions of the website content. The HTML website remains available for visitors and enquiries.
+
+## English - Main pages
+
+- [Homepage and portfolio](https://www.billynightingale.com/home.md): Business introduction, services, client projects, web applications, development process, testimonials, and FAQs.
+- [Web design, development and SEO services](https://www.billynightingale.com/services.md): Service descriptions, website packages, indicative prices, inclusions, performance, maintenance, and project management.
+- [Website development in Landes](https://www.billynightingale.com/website-development-landes.md): Web design and local SEO for businesses in Capbreton, Hossegor, and the Landes region, with project examples.
+- [About Billy Nightingale](https://www.billynightingale.com/about.md): Engineering background, qualifications, technical skills, approach, and working process.
+- [Contact Billy Nightingale](https://www.billynightingale.com/contact.md): English contact page and project enquiry form.
+
+## Français - Pages principales
+
+- [Accueil et portfolio](https://www.billynightingale.com/fr/home.md): Présentation, services, réalisations, applications web, processus, témoignages et FAQ.
+- [Services de création de sites web](https://www.billynightingale.com/fr/services.md): Web design, développement web, SEO, offres et tarifs indicatifs, maintenance et hébergement.
+- [Création de sites web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes.md): Création de sites web, SEO local, performances et projets réalisés pour des entreprises de la région.
+- [À propos de Billy Nightingale](https://www.billynightingale.com/fr/a-propos.md): Parcours, formation, compétences techniques et méthode de travail.
+- [Contact](https://www.billynightingale.com/fr/contact.md): Coordonnées, demandes de devis et informations concernant les projets web et SEO.
+
+## French-language index
+
+- [Index français llms.txt](https://www.billynightingale.com/fr/llms.txt): Guide en français vers les principales pages et ressources Markdown du site.
