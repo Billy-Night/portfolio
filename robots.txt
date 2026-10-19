@@ -3,3 +3,11 @@ Allow: /
 Disallow: /cdn-cgi/
 
 Sitemap: https://www.billynightingale.com/sitemap.xml
+
+# Block DeepSeek AI crawler
+User-agent: DeepSeekBot
+Disallow: /
+
+# Block xAI (Grok) crawler
+User-agent: xAI-Bot
+Disallow: /
