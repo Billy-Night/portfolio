@@ -9,7 +9,7 @@ Ces fichiers Markdown présentent une version lisible des contenus du site. Les 
 
 ## Pages principales
 
-- [Accueil et portfolio](https://www.billynightingale.com/fr/home.md): Présentation des services, projets clients, applications web, méthode de travail, témoignages et questions fréquentes.
+- [Accueil et portfolio](https://www.billynightingale.com/fr/accueil.md): Présentation des services, projets clients, applications web, méthode de travail, témoignages et questions fréquentes.
 - [Services de création de sites web](https://www.billynightingale.com/fr/services.md): Design, développement web, SEO, performance, hébergement, maintenance, offres de création de sites et tarifs indicatifs.
 - [Création de sites web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes.md): Accompagnement des entreprises à Capbreton, Hossegor et dans les Landes, référencement local et exemples de projets.
 - [À propos de Billy Nightingale](https://www.billynightingale.com/fr/a-propos.md): Parcours en ingénierie et développement web, compétences, outils et processus de création.

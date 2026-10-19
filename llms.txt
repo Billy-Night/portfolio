@@ -17,7 +17,7 @@ The Markdown resources below provide readable versions of the website content. T
 
 ## Français - Pages principales
 
-- [Accueil et portfolio](https://www.billynightingale.com/fr/home.md): Présentation, services, réalisations, applications web, processus, témoignages et FAQ.
+- [Accueil et portfolio](https://www.billynightingale.com/fr/accueil.md): Présentation, services, réalisations, applications web, processus, témoignages et FAQ.
 - [Services de création de sites web](https://www.billynightingale.com/fr/services.md): Web design, développement web, SEO, offres et tarifs indicatifs, maintenance et hébergement.
 - [Création de sites web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes.md): Création de sites web, SEO local, performances et projets réalisés pour des entreprises de la région.
 - [À propos de Billy Nightingale](https://www.billynightingale.com/fr/a-propos.md): Parcours, formation, compétences techniques et méthode de travail.
