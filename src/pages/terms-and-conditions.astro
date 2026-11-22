@@ -26,7 +26,6 @@ const jsonLd = [
   }
 ]
 
-// TODO(MIGRATION_ISSUES #14): Google Fonts is loaded from Google's servers on this page only.
 ---
 
 <BaseLayout
@@ -37,11 +36,6 @@ const jsonLd = [
   robots="noindex, follow"
   jsonLd={jsonLd}
 >
-  <Fragment slot="head">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap" rel="stylesheet" media="print" onload="this.media = 'all'" />
-  </Fragment>
   <Header lang="en" route="terms" />
   <main id="legal_main">
     <CookieBanner lang="en" />
