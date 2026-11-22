@@ -1,5 +1,7 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import { Image } from 'astro:assets'
+import imgBillyNightingalePortraitStandingLaptopV4 from '../../assets/images/portraits/billy_nightingale_portrait_standing_laptop_v4.webp'
 import { routes, type Lang, type RouteKey } from '../../i18n/routes'
 
 interface Props {
@@ -175,20 +177,15 @@ const t = {
         <circle id="orbitDot1" r="10"></circle>
       </svg>
       <div class="intro__image--frame">
-        <img
-          fetchpriority="high"
-          decoding="async"
-          class="home-intro__img"
-          src="/assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp"
-          srcset="
-            /assets/portraits/billy_nightingale_portrait_standing_laptop_v4-400.webp  400w,
-            /assets/portraits/billy_nightingale_portrait_standing_laptop_v4-800.webp  800w,
-            /assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp     1200w
-          "
-          sizes="(max-width: 768px) 90vw, 400px"
+        <Image
+          src={imgBillyNightingalePortraitStandingLaptopV4}
           alt="Portrait of Billy Nightingale looking at web design on laptop"
-          width="1400"
-          height="1730"
+          class="home-intro__img"
+          width={750}
+          widths={[380, 750]}
+          sizes="(max-width: 800px) 67vw, 375px"
+          loading="eager"
+          fetchpriority="high"
         />
       </div>
     </div>

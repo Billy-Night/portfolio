@@ -1,5 +1,7 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import { Image } from 'astro:assets'
+import imgPortraitSittingWorkingV2 from '../../assets/images/portraits/portrait_sitting_working_v2.webp'
 import type { Lang } from '../../i18n/routes'
 
 interface Props {
@@ -67,9 +69,13 @@ const t = {
           ><span>{t.projectManagement}</span></a
         >
       </h2>
-      <img
-        src="/assets/portraits/portrait_sitting_working_v2.webp"
+      <Image
+        src={imgPortraitSittingWorkingV2}
         alt={t.altBillyNightingaleSittingAt}
+        width={900}
+        widths={[450, 680, 900]}
+        sizes="(max-width: 800px) 77vw, 450px"
+        loading="eager"
       />
     </div>
   </div>

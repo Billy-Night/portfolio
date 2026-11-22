@@ -6,17 +6,8 @@ const phoneChannel = document.querySelector('.static-phone-channel')
 const textCont = document.querySelectorAll('.phone-text-content-cont')
 
 if (staticPhone) {
-  const screens = [
-    '/assets/landes_phone/phone_web_performance.webp',
-    '/assets/landes_phone/phone_web_seo.webp',
-    '/assets/landes_phone/phone_web_solutions.webp',
-  ]
-
-  const screensFr = [
-    '/assets/landes_phone/phone_web_performance_fr.webp',
-    '/assets/landes_phone/phone_web_seo_fr.webp',
-    '/assets/landes_phone/phone_web_solutions_fr.webp',
-  ]
+  // The image URLs for the three screens, provided by LandesPhone.astro in the page's language
+  const screens = JSON.parse(staticPhone.dataset.screens || '[]')
 
   let currentIndex = 0
 
@@ -48,11 +39,7 @@ if (staticPhone) {
     }
 
     if (newIndex !== currentIndex) {
-      if (window.location.pathname.includes('/fr')) {
-        staticPhone.src = screensFr[newIndex]
-      } else {
-        staticPhone.src = screens[newIndex]
-      }
+      if (screens[newIndex]) staticPhone.src = screens[newIndex]
 
       currentIndex = newIndex
     }

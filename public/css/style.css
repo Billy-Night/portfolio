@@ -284,6 +284,10 @@ h5 {
 
 img {
   width: 100%;
+  /* Images carry width and height attributes (added by Astro so the browser
+     can reserve their space before they load). Without height: auto they
+     would keep the attribute's height at this width and look stretched. */
+  height: auto;
   transition: filter 0.2s;
 }
 

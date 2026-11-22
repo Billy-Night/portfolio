@@ -1,5 +1,13 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import { Image } from 'astro:assets'
+import imgBillyNightingaleClientMonkeyMoodCreationDeSiteWeb from '../../assets/images/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp'
+import imgBillyNightingaleClientPacificCoastCafeHossegor from '../../assets/images/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp'
+import imgClientEveMarieWebsite from '../../assets/images/client_sites/client_eve-marie_website.webp'
+import imgClientTurbulenteWebsite from '../../assets/images/client_sites/client_turbulente_website.webp'
+import imgAppWorldSurfJournal from '../../assets/images/personal_projects/app_world_surf_journal.webp'
+import imgAppWeatherWise from '../../assets/images/personal_projects/app_weather_wise.webp'
+import imgAppTrowit from '../../assets/images/personal_projects/app_trowit.webp'
 import type { Lang } from '../../i18n/routes'
 
 interface Props {
@@ -179,14 +187,13 @@ const t = {
           <li>ZenChef</li>
         </ul>
       </div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp"
+      <Image
+        src={imgBillyNightingaleClientMonkeyMoodCreationDeSiteWeb}
         alt="Eve-Marie web site created by Billy"
-        data-src="/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp"
-        width="600"
-        height="600"
+        width={1200}
+        widths={[600, 900, 1200]}
+        sizes="(max-width: 800px) 100vw, 608px"
+        loading="lazy"
       />
     </article>
     <article class="reverse project-info-container">
@@ -221,13 +228,13 @@ const t = {
           <li>Drive</li>
         </ul>
       </div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp"
+      <Image
+        src={imgBillyNightingaleClientPacificCoastCafeHossegor}
         alt={t.altWeatherWiseAFrontend}
-        data-src="/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp"
-        width="600"
+        width={1200}
+        widths={[600, 900, 1200]}
+        sizes="(max-width: 800px) 100vw, 608px"
+        loading="lazy"
       />
     </article>
     <article class="project-info-container">
@@ -269,14 +276,13 @@ const t = {
           <li>Calendly</li>
         </ul>
       </div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/client_sites/client_eve-marie_website.webp"
+      <Image
+        src={imgClientEveMarieWebsite}
         alt={t.altEveMarieASophrologue}
-        data-src="/assets/client_sites/client_eve-marie_website.webp"
-        width="600"
-        height="600"
+        width={1216}
+        widths={[610, 910, 1216]}
+        sizes="(max-width: 800px) 100vw, 608px"
+        loading="lazy"
       />
     </article>
     <article class="reverse project-info-container">
@@ -320,13 +326,13 @@ const t = {
           <li>Figma</li>
         </ul>
       </div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/client_sites/client_turbulente_website.webp"
+      <Image
+        src={imgClientTurbulenteWebsite}
         alt={t.altWeatherWiseAFrontend2}
-        data-src="/assets/client_sites/client_turbulente_website.webp"
-        width="600"
+        width={1216}
+        widths={[610, 910, 1216]}
+        sizes="(max-width: 800px) 100vw, 608px"
+        loading="lazy"
       />
     </article>
     <h2>{t.webApplication}</h2>
@@ -368,13 +374,13 @@ const t = {
           <li>MySQL</li>
         </ul>
       </div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/personal_projects/app_world_surf_journal.webp"
+      <Image
+        src={imgAppWorldSurfJournal}
         alt={t.altTheWorldSurfJournal}
-        data-src="/assets/personal_projects/app_world_surf_journal.webp"
-        width="600"
+        width={1216}
+        widths={[610, 910, 1216]}
+        sizes="(max-width: 800px) 100vw, 608px"
+        loading="lazy"
       />
     </article>
     <article class="reverse project-info-container">
@@ -403,13 +409,13 @@ const t = {
           <li>OpenWeather API</li>
         </ul>
       </div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/personal_projects/app_weather_wise.webp"
+      <Image
+        src={imgAppWeatherWise}
         alt={t.altScreenshotOfWeatherWise}
-        data-src="/assets/personal_projects/app_weather_wise.webp"
-        width="600"
+        width={1216}
+        widths={[610, 910, 1216]}
+        sizes="(max-width: 800px) 100vw, 608px"
+        loading="lazy"
       />
     </article>
     <article class="project-info-container">
@@ -434,13 +440,13 @@ const t = {
           <li>MySQL</li>
         </ul>
       </div>
-      <img
-        loading="lazy"
-        decoding="async"
-        src="/assets/personal_projects/app_trowit.webp"
+      <Image
+        src={imgAppTrowit}
         alt={t.altScreenshotOfTheTrowit}
-        data-src="/assets/personal_projects/app_trowit.webp"
-        width="600"
+        width={1216}
+        widths={[610, 910, 1216]}
+        sizes="(max-width: 800px) 100vw, 608px"
+        loading="lazy"
       />
     </article>
   </div>

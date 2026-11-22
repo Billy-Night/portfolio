@@ -1,5 +1,9 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import { Image } from 'astro:assets'
+import imgBillyNightingaleWebDesignFigma from '../../assets/images/about_wid/billy_nightingale_web_design_figma.webp'
+import imgBillyNightingaleWebOptimistationLighthouse from '../../assets/images/about_wid/billy_nightingale_web_optimistation_lighthouse.webp'
+import imgBillyNightingaleWebDevelopment from '../../assets/images/about_wid/billy_nightingale_web_development.webp'
 import { routes, type Lang, type RouteKey } from '../../i18n/routes'
 
 interface Props {
@@ -49,9 +53,13 @@ const t = {
   <div class="wid__content-container">
     <div class="row">
       <div class="wid__img-cont">
-        <img
-          src="/assets/about_wid/billy_nightingale_web_design_figma.webp"
+        <Image
+          src={imgBillyNightingaleWebDesignFigma}
           alt={t.altBillyNightingaleUsingFigma}
+          width={1200}
+          widths={[600, 900, 1200]}
+          sizes="(max-width: 800px) 100vw, 602px"
+          loading="lazy"
         />
       </div>
       <div class="wid__text-cont txt-r">
@@ -79,9 +87,13 @@ const t = {
 
     <div class="row">
       <div class="wid__img-cont-right right">
-        <img
-          src="/assets/about_wid/billy_nightingale_web_optimistation_lighthouse.webp"
+        <Image
+          src={imgBillyNightingaleWebOptimistationLighthouse}
           alt="Billy Nightingale using Google Lighthouse to optimise websites"
+          width={1200}
+          widths={[600, 900, 1200]}
+          sizes="(max-width: 800px) 100vw, 602px"
+          loading="lazy"
         />
       </div>
       <div class="wid__text-cont txt-l">
@@ -106,9 +118,13 @@ const t = {
 
     <div class="row">
       <div class="wid__img-cont">
-        <img
-          src="/assets/about_wid/billy_nightingale_web_development.webp"
+        <Image
+          src={imgBillyNightingaleWebDevelopment}
           alt="Billy Nightingale using VSCode for web development"
+          width={1200}
+          widths={[600, 900, 1200]}
+          sizes="(max-width: 800px) 100vw, 602px"
+          loading="lazy"
         />
       </div>
       <div class="wid__text-cont txt-r">

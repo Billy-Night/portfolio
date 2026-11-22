@@ -41,15 +41,22 @@ Every page's sections are now components shared by the English and French pages,
 - **Not covered by those tests:** real touch input, and browsers other than Chrome. Worth a manual pass on a phone and in Safari and Firefox.
 - The original issue #15 ("crashes on pages without certain elements") was wrong: every optional element was already guarded with an `if`.
 
-### C. Process the CSS and images through Astro
+### C. Images through Astro: done. CSS: tried and reverted
+- **Images: done.** The 28 displayed photos are in [src/assets/images/](src/assets/images/) and go through Astro's `<Image>`. Each is resized to about twice its displayed size, recompressed, and offered in two or three widths so phones download a smaller file. All have `width` and `height` attributes, and everything below the first screen loads lazily.
+  - **Result:** the homepage's photos went from 2,054 KB to between 155 KB (small screens) and 345 KB (large or high-density screens). About: 868 KB to 118–288 KB. Services: 290 KB to 25–79 KB.
+  - **Image URLs changed** to `/_astro/<name>.<hash>.webp`. The file names are kept, and every `alt` text is unchanged. Google Images will re-index them over the following weeks.
+  - **Old URLs still work.** `legacyImageUrls` in [astro.config.mjs](astro.config.mjs) copies the originals to `dist/assets/` on every build. The structured data on the about pages points at one of them.
+  - **Not moved:** the social preview image, `billy_portrait.webp` (structured data), favicons, logos, icons, CSS backgrounds and the unused files. They stay in `public/`.
+  - **One CSS rule was needed:** `height: auto` on `img` in [style.css](public/css/style.css). Without it, ten images kept the height from their new `height` attribute and looked stretched.
+  - **The Landes phone animation** gets its image URLs from the component (a `data-screens` attribute), not from paths written in the script. The old `data-src` lazy-loading script is removed: browsers do it natively now.
+  - **How it was checked:** the position and size of all 82 image boxes on 12 pages was measured before and after, at desktop and mobile width. All match within 2 pixels. The interaction and animation tests from B also pass.
 - **CSS:** bundling [style.css](public/css/style.css) through Astro was tried for #19 and reverted, because it changed how pages render:
   - The minifier keeps only the last of `backdrop-filter: blur(10px) saturate(120%)` and `-webkit-backdrop-filter: blur(10px)`, which is the `-webkit-` line. Chrome ignores that line, so the blur disappears. Putting the `-webkit-` line first in each of the 10 places would avoid this.
   - Astro put the stylesheet link at the end of `<head>`, after the old `script.js` tag, so the script ran before the styles applied and its reveal-on-scroll logic left sections hidden. The scripts now load from the page body (see B), so this would need retesting, not assuming.
-- **Images:** `astro:assets` could generate responsive sizes and modern formats for the images in `public/assets/` (7.3 MB in total).
-- **Caching:** done and verified for `style.css` (one year). The bundled scripts in `/_astro/` have the same one-year rule; check it with `curl -I` on the next branch deploy. Images are still cached for 10 minutes, because their URLs have no version. Processing them through Astro would give them hashed URLs too.
+- **Caching:** `style.css` and everything in `/_astro/` (scripts and now photos) are cached for a year, because their URLs change when their content does. Files still in `public/assets/` are cached for 10 minutes.
 
 ### D. Unused files in `public/`
-- 23 files in `public/assets/` (2.5 MB) aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
+- 23 files in `public/assets/` (2.5 MB), plus the two hand-made smaller copies of the homepage portrait (`…_v4-400.webp`, `…_v4-800.webp`), which Astro's generated sizes replace, aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
 - Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
 - Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
 
@@ -105,6 +112,7 @@ Every page's sections are now components shared by the English and French pages,
   - The French package offers match the English ones, which are the reference. The French bullets, the pricing note and the ongoing visibility price ("250 € – 1 000 €+ / mois TTC") are translations of the English. [public/fr/services.md](public/fr/services.md) is updated to match.
   - Left as they were, because they say the same thing in natural French or are French conventions: the package names ("Site vitrine Essentiel"), the keyword-rich headings ("Tarifs de création de site internet"), the "Idéal pour" lines, the package descriptions, and "TTC" on prices.
 - **Scripts:** `script.js` split into one script per feature (see B).
+- **Images:** the displayed photos are optimised by Astro (see C).
 - **Landes phone animation:** on the English page, the second screen showed the French image. It now shows `phone_web_seo.webp`. That file is no longer one of the unused assets in D.
 - **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.

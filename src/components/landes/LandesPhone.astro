@@ -1,6 +1,13 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import { getImage } from 'astro:assets'
 import type { Lang } from '../../i18n/routes'
+import performance from '../../assets/images/landes_phone/phone_web_performance.webp'
+import seo from '../../assets/images/landes_phone/phone_web_seo.webp'
+import solutions from '../../assets/images/landes_phone/phone_web_solutions.webp'
+import performanceFr from '../../assets/images/landes_phone/phone_web_performance_fr.webp'
+import seoFr from '../../assets/images/landes_phone/phone_web_seo_fr.webp'
+import solutionsFr from '../../assets/images/landes_phone/phone_web_solutions_fr.webp'
 
 interface Props {
   lang: Lang
@@ -8,10 +15,15 @@ interface Props {
 
 const { lang } = Astro.props
 
+// The three phone screens, in the order the section scrolls through them.
+// src/scripts/landesPhone.js swaps the image, reading the URLs from data-screens.
+const screens = await Promise.all(
+  { en: [performance, seo, solutions], fr: [performanceFr, seoFr, solutionsFr] }[lang].map((src) => getImage({ src, width: 800 })),
+)
+
 const t = {
   en: {
     altPhoneContainingScreensThat: "Phone containing screens that illustrate website performance, SEO optimisation and solving business issues with technology",
-    srcPhoneWebPerformance: "/assets/landes_phone/phone_web_performance.webp",
     fastWebsitesCreateBetter: "Fast websites create better first impressions",
     visitorsExpectWebsitesTo: "Visitors expect websites to load quickly, especially on mobile devices.",
     everyWebsiteIBuild: "Every website I build is optimised for performance, helping local businesses provide a smoother experience, improve search visibility and convert more visitors into customers.",
@@ -24,7 +36,6 @@ const t = {
   },
   fr: {
     altPhoneContainingScreensThat: "Smartphone affichant les performances d’un site web optimisé avec d’excellents scores de vitesse et de référencement.",
-    srcPhoneWebPerformance: "/assets/landes_phone/phone_web_performance_fr.webp",
     fastWebsitesCreateBetter: "Des sites rapides pour une meilleure première impression",
     visitorsExpectWebsitesTo: "Les visiteurs s’attendent à ce qu’un site web charge rapidement, particulièrement sur mobile.",
     everyWebsiteIBuild: "Chaque site que je crée est optimisé pour la performance afin d’offrir une expérience fluide, d’améliorer votre visibilité sur Google et de transformer davantage de visiteurs en clients.",
@@ -44,8 +55,11 @@ const t = {
       <div class="static-phone-container">
         <img
           class="static-phone-img"
-          src={t.srcPhoneWebPerformance}
+          src={screens[0].src}
+          width={screens[0].attributes.width}
+          height={screens[0].attributes.height}
           alt={t.altPhoneContainingScreensThat}
+          data-screens={JSON.stringify(screens.map((screen) => screen.src))}
         />
       </div>
       <div class="phone-text-container">

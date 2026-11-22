@@ -114,10 +114,9 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
   </head>
   <body>
     <slot />
-    {/* Site-wide scripts. Each component loads its own script; these two apply to every page. */}
+    {/* Site-wide script. Each component loads its own script; this one applies to every page. */}
     <script>
       import '../scripts/revealSections.js'
-      import '../scripts/lazyImages.js'
     </script>
   </body>
 </html>

@@ -19,12 +19,13 @@ src/
   pages/            One file per URL. French pages are in pages/fr/.
   layouts/          BaseLayout.astro: the whole <head> (meta tags, canonical, hreflang, social tags, structured data)
   components/       Header, Footer, CookieBanner, Analytics, NotFound
+  assets/images/    Photos. Astro resizes and compresses them at build time and serves them from /_astro/.
   i18n/routes.ts    Every page URL in both languages. Canonicals, hreflang and the language switch come from here.
   data/schema.ts    Shared structured data (the "Person" used on every page)
   scripts/          One script per feature (header menu, cookie banner, reviews, timeline, contact form...).
                     Each component imports the one it needs, so a page only loads the scripts it uses.
   utils/            assetUrl(): adds a content hash to /css/style.css
-public/             Served as-is: CSS, images, fonts, robots.txt, sitemap.xml, llms.txt,
+public/             Served as-is: CSS, the social preview image, logos, icons, fonts, robots.txt, sitemap.xml, llms.txt,
                     the Markdown copies of each page, and Netlify's _redirects and _headers
 netlify/functions/  contact.js: the contact form backend (forwards to a Make.com webhook)
 scripts/            seo_snapshot.py: the SEO snapshot and compare tool
@@ -34,6 +35,22 @@ seo-baseline/       The SEO baseline the build is compared against
 ## URLs must not change
 
 The live URLs have no trailing slash (`/about`, `/fr/a-propos`), except the two homepages (`/` and `/fr/`). `astro.config.mjs` keeps it that way with `build.format: 'preserve'` and `trailingSlash: 'never'`. To add a page, add it to `src/i18n/routes.ts`, create the page file in both languages, and add it to `public/sitemap.xml`.
+
+## Adding a photo
+
+Put the file in `src/assets/images/`, import it in the component and use Astro's `<Image>`:
+
+```astro
+---
+import { Image } from 'astro:assets'
+import photo from '../../assets/images/portraits/my_photo.webp'
+---
+<Image src={photo} alt="…" width={900} widths={[450, 680, 900]} sizes="(max-width: 800px) 100vw, 450px" loading="lazy" />
+```
+
+`width` is the largest version to generate (about twice the size the image is displayed at). Use `loading="eager"` only for an image visible when the page first opens.
+
+The originals are also copied to `dist/assets/` on every build (see `legacyImageUrls` in `astro.config.mjs`), so the image addresses the site used before Astro keep working.
 
 ## Checking SEO before a deploy
 

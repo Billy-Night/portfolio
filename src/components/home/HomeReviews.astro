@@ -1,5 +1,9 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import { Image } from 'astro:assets'
+import imgEveMarieBillyWebDesignClient from '../../assets/images/client_reviews/eve-marie-billy-web-design-client.webp'
+import imgBillyNightingaleClientPacificCoastCafeWebDesign from '../../assets/images/client_reviews/billy_nightingale_client_pacific_coast_cafe_web_design.webp'
+import imgMonkeyMoodOwnersJennyMattBillyNightingalesClient from '../../assets/images/client_reviews/monkey_mood_owners_jenny_matt_billy_nightingales_client.webp'
 import type { Lang } from '../../i18n/routes'
 
 interface Props {
@@ -45,12 +49,12 @@ const t = {
     <div class="review-hover-wrap">
       <div class="cont__review-content">
         <div class="review-avatar">
-          <img
-            loading="lazy"
-            decoding="async"
-            class="client__portrait"
-            src="/assets/client_reviews/eve-marie-billy-web-design-client.webp"
+          <Image
+            src={imgEveMarieBillyWebDesignClient}
             alt="portrait of Eve-Marie, a client of Billy Nightingale"
+            class="client__portrait"
+            width={360}
+            loading="lazy"
           />
         </div>
         <div class="cont__review-text">
@@ -121,10 +125,12 @@ const t = {
       </div>
       <div class="cont__review-content">
         <div class="review-avatar">
-          <img
-            class="client__portrait_1"
-            src="/assets/client_reviews/billy_nightingale_client_pacific_coast_cafe_web_design.webp"
+          <Image
+            src={imgBillyNightingaleClientPacificCoastCafeWebDesign}
             alt={t.altPortraitOfAaronAnd}
+            class="client__portrait_1"
+            width={360}
+            loading="lazy"
           />
         </div>
         <div class="cont__review-text">
@@ -201,10 +207,12 @@ const t = {
       </div>
       <div class="cont__review-content">
         <div class="review-avatar">
-          <img
-            class="client__portrait_1"
-            src="/assets/client_reviews/monkey_mood_owners_jenny_matt_billy_nightingales_client.webp"
+          <Image
+            src={imgMonkeyMoodOwnersJennyMattBillyNightingalesClient}
             alt={t.altPortraitOfMattAnd}
+            class="client__portrait_1"
+            width={360}
+            loading="lazy"
           />
         </div>
         <div class="cont__review-text">

@@ -82,58 +82,66 @@
         },
         {
           "alt": "Portrait of Billy Nightingale looking at web design on laptop",
-          "height": "1730",
-          "src": "/assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp",
-          "width": "1400"
+          "height": "927",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_portrait_standing_laptop_v4.Cye2v4n-_2shiuI.webp",
+          "width": "750"
         },
         {
           "alt": "Eve-Marie web site created by Billy",
-          "height": "600",
+          "height": "900",
           "loading": "lazy",
-          "src": "/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp",
-          "width": "600"
+          "src": "/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI_Z1XOKRI.webp",
+          "width": "1200"
         },
         {
           "alt": "Weather Wise a frontend React web application, created by Billy",
+          "height": "900",
           "loading": "lazy",
-          "src": "/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp",
-          "width": "600"
+          "src": "/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4_Z1B510U.webp",
+          "width": "1200"
         },
         {
           "alt": "Eve-Marie, a sophrologue website created by Billy Nightingale",
-          "height": "600",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/client_sites/client_eve-marie_website.webp",
-          "width": "600"
+          "src": "/_astro/client_eve-marie_website.vv20zxUB_Z1dLkWP.webp",
+          "width": "1216"
         },
         {
           "alt": "Weather Wise a frontend React web application, created by Billy",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/client_sites/client_turbulente_website.webp",
-          "width": "600"
+          "src": "/_astro/client_turbulente_website.eIi4JWYx_Z17MEhY.webp",
+          "width": "1216"
         },
         {
           "alt": "The World Surf Journal, a full-stack application created by Billy",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/personal_projects/app_world_surf_journal.webp",
-          "width": "600"
+          "src": "/_astro/app_world_surf_journal.BZDN3Zp8_Z1JhU4d.webp",
+          "width": "1216"
         },
         {
           "alt": "Screenshot of Weather Wise a React web application created by Billy",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/personal_projects/app_weather_wise.webp",
-          "width": "600"
+          "src": "/_astro/app_weather_wise.BuaKiFbZ_1IrRrF.webp",
+          "width": "1216"
         },
         {
           "alt": "Screenshot of the TROWIT full-stack application created by Billy",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/personal_projects/app_trowit.webp",
-          "width": "600"
+          "src": "/_astro/app_trowit.D8K4iCl-_9kjBw.webp",
+          "width": "1216"
         },
         {
           "alt": "portrait of Eve-Marie, a client of Billy Nightingale",
+          "height": "360",
           "loading": "lazy",
-          "src": "/assets/client_reviews/eve-marie-billy-web-design-client.webp"
+          "src": "/_astro/eve-marie-billy-web-design-client.nEmDNwHz_ZOulBC.webp",
+          "width": "360"
         },
         {
           "alt": "icon star",
@@ -141,7 +149,10 @@
         },
         {
           "alt": "Portrait of Aaron and Izia the owners of Pacific Coast Cafe",
-          "src": "/assets/client_reviews/billy_nightingale_client_pacific_coast_cafe_web_design.webp"
+          "height": "240",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_client_pacific_coast_cafe_web_design.DcIHUYZG_ZsqBg9.webp",
+          "width": "360"
         },
         {
           "alt": "icon star",
@@ -149,7 +160,10 @@
         },
         {
           "alt": "Portrait of Matt and Jenny the owners of Monkey Mood restaurant, billy nightingale web design client",
-          "src": "/assets/client_reviews/monkey_mood_owners_jenny_matt_billy_nightingales_client.webp"
+          "height": "258",
+          "loading": "lazy",
+          "src": "/_astro/monkey_mood_owners_jenny_matt_billy_nightingales_client._HoGqV-C_bWhp5.webp",
+          "width": "360"
         },
         {
           "alt": "icon star",
@@ -725,27 +739,45 @@
         },
         {
           "alt": "Portrait of Billy Nightingale looking at web design on laptop",
-          "src": "/assets/portraits/billy_nightingale_web_designer_capbreton.webp"
+          "height": "470",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_web_designer_capbreton.B6CmHEaG_Z11FOua.webp",
+          "width": "376"
         },
         {
           "alt": "Billy Nightingale using Figma for web design",
-          "src": "/assets/about_wid/billy_nightingale_web_design_figma.webp"
+          "height": "902",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_design_figma.DURxJ0fN_2jfFtG.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale using Google Lighthouse to optimise websites",
-          "src": "/assets/about_wid/billy_nightingale_web_optimistation_lighthouse.webp"
+          "height": "905",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_optimistation_lighthouse.DVTPRooh_pTxDb.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale using VSCode for web development",
-          "src": "/assets/about_wid/billy_nightingale_web_development.webp"
+          "height": "905",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_development.DCB2TjaL_Z1EYbB8.webp",
+          "width": "1200"
         },
         {
           "alt": "Capbreton - location of Billy Nightingale, web designer and developer",
-          "src": "/assets/about_wid/web_design_capbreton_hossegor.webp"
+          "height": "506",
+          "loading": "lazy",
+          "src": "/_astro/web_design_capbreton_hossegor.D7q8a2g3_1USTox.webp",
+          "width": "900"
         },
         {
           "alt": "Billy Nightingale web designer and developer snowboarding in the La Mongie",
-          "src": "/assets/about_wid/billy_nightingale_snowboard_la_mongie.webp"
+          "height": "677",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_snowboard_la_mongie.DMm6642O_1CbQvo.webp",
+          "width": "900"
         }
       ],
       "jsonld": [
@@ -1053,7 +1085,10 @@
         },
         {
           "alt": "Billy Nightingale web designer having a meeting with clients in Hossegor",
-          "src": "/assets/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp"
+          "height": "812",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.Da0R2oBc_nKUpP.webp",
+          "width": "1080"
         }
       ],
       "jsonld": [
@@ -1381,58 +1416,66 @@
         },
         {
           "alt": "Portrait of Billy Nightingale looking at web design on laptop",
-          "height": "1730",
-          "src": "/assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp",
-          "width": "1400"
+          "height": "927",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_portrait_standing_laptop_v4.Cye2v4n-_2shiuI.webp",
+          "width": "750"
         },
         {
           "alt": "Eve-Marie web site created by Billy",
-          "height": "600",
+          "height": "900",
           "loading": "lazy",
-          "src": "/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp",
-          "width": "600"
+          "src": "/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI_Z1XOKRI.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale client Pacific Coast Cafe Hossegor, capture ecran de site web",
+          "height": "900",
           "loading": "lazy",
-          "src": "/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp",
-          "width": "600"
+          "src": "/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4_Z1B510U.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale client Eve-Marie, capture ecran de site web",
-          "height": "600",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/client_sites/client_eve-marie_website.webp",
-          "width": "600"
+          "src": "/_astro/client_eve-marie_website.vv20zxUB_Z1dLkWP.webp",
+          "width": "1216"
         },
         {
           "alt": "Billy Nightingale client Turbulente, capture ecran de site web",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/client_sites/client_turbulente_website.webp",
-          "width": "600"
+          "src": "/_astro/client_turbulente_website.eIi4JWYx_Z17MEhY.webp",
+          "width": "1216"
         },
         {
           "alt": "Capture d'écran de World Surf Journal, une application fullstack, créé par Billy Nightingale",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/personal_projects/app_world_surf_journal.webp",
-          "width": "600"
+          "src": "/_astro/app_world_surf_journal.BZDN3Zp8_Z1JhU4d.webp",
+          "width": "1216"
         },
         {
           "alt": "Capture d'écran de Weather Wise, une application frontend, créé par Billy Nightingale",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/personal_projects/app_weather_wise.webp",
-          "width": "600"
+          "src": "/_astro/app_weather_wise.BuaKiFbZ_1IrRrF.webp",
+          "width": "1216"
         },
         {
           "alt": "Capture d'écran de TROWIT, une application fullstack, créée par Billy Nightingale",
+          "height": "912",
           "loading": "lazy",
-          "src": "/assets/personal_projects/app_trowit.webp",
-          "width": "600"
+          "src": "/_astro/app_trowit.D8K4iCl-_9kjBw.webp",
+          "width": "1216"
         },
         {
           "alt": "portrait of Eve-Marie, a client of Billy Nightingale",
+          "height": "360",
           "loading": "lazy",
-          "src": "/assets/client_reviews/eve-marie-billy-web-design-client.webp"
+          "src": "/_astro/eve-marie-billy-web-design-client.nEmDNwHz_ZOulBC.webp",
+          "width": "360"
         },
         {
           "alt": "icon star",
@@ -1440,7 +1483,10 @@
         },
         {
           "alt": "Portrait of Aaron and Izia the owners of Pacific Coast Cafe, a client of Billy Nightingale",
-          "src": "/assets/client_reviews/billy_nightingale_client_pacific_coast_cafe_web_design.webp"
+          "height": "240",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_client_pacific_coast_cafe_web_design.DcIHUYZG_ZsqBg9.webp",
+          "width": "360"
         },
         {
           "alt": "icon star",
@@ -1448,7 +1494,10 @@
         },
         {
           "alt": "Matt et Jenny, propriétaires du restaurant Monkey Mood à Capbreton et clients de Billy Nightingale Création de Sites Web",
-          "src": "/assets/client_reviews/monkey_mood_owners_jenny_matt_billy_nightingales_client.webp"
+          "height": "258",
+          "loading": "lazy",
+          "src": "/_astro/monkey_mood_owners_jenny_matt_billy_nightingales_client._HoGqV-C_bWhp5.webp",
+          "width": "360"
         },
         {
           "alt": "icon star",
@@ -2024,27 +2073,45 @@
         },
         {
           "alt": "Portrait of Billy Nightingale looking at web design on laptop",
-          "src": "/assets/portraits/billy_nightingale_web_designer_capbreton.webp"
+          "height": "470",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_web_designer_capbreton.B6CmHEaG_Z11FOua.webp",
+          "width": "376"
         },
         {
           "alt": "Billy Nightingale utilisant Figma pour le design web",
-          "src": "/assets/about_wid/billy_nightingale_web_design_figma.webp"
+          "height": "902",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_design_figma.DURxJ0fN_2jfFtG.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale using Google Lighthouse to optimise websites",
-          "src": "/assets/about_wid/billy_nightingale_web_optimistation_lighthouse.webp"
+          "height": "905",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_optimistation_lighthouse.DVTPRooh_pTxDb.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale using VSCode for web development",
-          "src": "/assets/about_wid/billy_nightingale_web_development.webp"
+          "height": "905",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_development.DCB2TjaL_Z1EYbB8.webp",
+          "width": "1200"
         },
         {
           "alt": "Capbreton - location of Billy Nightingale, web designer and developer",
-          "src": "/assets/about_wid/web_design_capbreton_hossegor.webp"
+          "height": "506",
+          "loading": "lazy",
+          "src": "/_astro/web_design_capbreton_hossegor.D7q8a2g3_1USTox.webp",
+          "width": "900"
         },
         {
           "alt": "Billy Nightingale web designer and developer snowboarding in the La Mongie",
-          "src": "/assets/about_wid/billy_nightingale_snowboard_la_mongie.webp"
+          "height": "677",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_snowboard_la_mongie.DMm6642O_1CbQvo.webp",
+          "width": "900"
         }
       ],
       "jsonld": [
@@ -2532,7 +2599,10 @@
         },
         {
           "alt": "Billy Nightingale, web designer, en rendez-vous avec des clients à Hossegor",
-          "src": "/assets/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp"
+          "height": "812",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.Da0R2oBc_nKUpP.webp",
+          "width": "1080"
         }
       ],
       "jsonld": [
@@ -2811,23 +2881,37 @@
         },
         {
           "alt": "Billy Nightingale web designer et développeur parler avec des clients",
-          "src": "/assets/portraits/billy_nightingale_web_designer_v2.webp"
+          "height": "763",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_web_designer_v2.Hu-GkIEC_Z1veKub.webp",
+          "width": "900"
         },
         {
           "alt": "Smartphone affichant les performances d’un site web optimisé avec d’excellents scores de vitesse et de référencement.",
-          "src": "/assets/landes_phone/phone_web_performance_fr.webp"
+          "height": "903",
+          "src": "/_astro/phone_web_performance_fr.Ci95uthD_2vMUcG.webp",
+          "width": "800"
         },
         {
           "alt": "Monkey Mood, l’un des clients de Billy Nightingale, bien positionné dans les résultats de recherche Google grâce à un excellent référencement naturel (SEO).",
-          "src": "/assets/landes_seo_mockups/monkey_mood_seo_mockup.webp"
+          "height": "722",
+          "loading": "lazy",
+          "src": "/_astro/monkey_mood_seo_mockup.DmOuIej3_2ce8bz.webp",
+          "width": "1200"
         },
         {
           "alt": "Pacific Coast Café, client de Billy Nightingale, affichant un excellent positionnement dans les résultats de recherche Google.",
-          "src": "/assets/landes_seo_mockups/Pacific_Coast_cafe_seo_mockup.webp"
+          "height": "722",
+          "loading": "lazy",
+          "src": "/_astro/Pacific_Coast_cafe_seo_mockup.2dkmZvGx_Zx1TGr.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale, concepteur et développeur web, en rendez-vous avec des clients à Hossegor",
-          "src": "/assets/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp"
+          "height": "812",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.Da0R2oBc_nKUpP.webp",
+          "width": "1080"
         }
       ],
       "jsonld": [
@@ -3137,7 +3221,10 @@
         },
         {
           "alt": "Billy Nightingale travaille sur le web design et développement à Capbreton",
-          "src": "/assets/portraits/portrait_sitting_working_v2.webp"
+          "height": "1125",
+          "loading": "eager",
+          "src": "/_astro/portrait_sitting_working_v2.B9PYt5pj_Z9nKmT.webp",
+          "width": "900"
         },
         {
           "alt": "qui indique une amélioration des performances du site web",
@@ -3532,7 +3619,10 @@
         },
         {
           "alt": "Billy Nightingale sitting at his MacBook working on web design",
-          "src": "/assets/portraits/portrait_sitting_working_v2.webp"
+          "height": "1125",
+          "loading": "eager",
+          "src": "/_astro/portrait_sitting_working_v2.B9PYt5pj_Z9nKmT.webp",
+          "width": "900"
         },
         {
           "alt": "icon indicating improving web performance",
@@ -4143,23 +4233,37 @@
         },
         {
           "alt": "Billy Nightingale - web designer and developer discussing website creation with clients",
-          "src": "/assets/portraits/billy_nightingale_web_designer_v2.webp"
+          "height": "763",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_web_designer_v2.Hu-GkIEC_Z1veKub.webp",
+          "width": "900"
         },
         {
           "alt": "Phone containing screens that illustrate website performance, SEO optimisation and solving business issues with technology",
-          "src": "/assets/landes_phone/phone_web_performance.webp"
+          "height": "903",
+          "src": "/_astro/phone_web_performance.Dc7UtFaV_2p4tpO.webp",
+          "width": "800"
         },
         {
           "alt": "Monkey Mood, one of Billy Nightingales clients ranking high in Google Search results, with excellent SEO",
-          "src": "/assets/landes_seo_mockups/monkey_mood_seo_mockup.webp"
+          "height": "722",
+          "loading": "lazy",
+          "src": "/_astro/monkey_mood_seo_mockup.DmOuIej3_2ce8bz.webp",
+          "width": "1200"
         },
         {
           "alt": "Pacific Coast Cafe one of Billy Nightingales clients ranking high in Google search results",
-          "src": "/assets/landes_seo_mockups/Pacific_Coast_cafe_seo_mockup.webp"
+          "height": "722",
+          "loading": "lazy",
+          "src": "/_astro/Pacific_Coast_cafe_seo_mockup.2dkmZvGx_Zx1TGr.webp",
+          "width": "1200"
         },
         {
           "alt": "Billy Nightingale web designer having a meeting with clients in Hossegor",
-          "src": "/assets/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp"
+          "height": "812",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.Da0R2oBc_nKUpP.webp",
+          "width": "1080"
         }
       ],
       "jsonld": [

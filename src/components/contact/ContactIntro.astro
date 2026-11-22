@@ -1,6 +1,8 @@
 ---
 // Contact page: photo and introduction text.
 // Shared by src/pages/contact.astro and src/pages/fr/contact.astro.
+import { Image } from 'astro:assets'
+import imgBillyNightingaleWebDesignerRendezVousAvecPacificCoastCafeHossegor from '../../assets/images/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp'
 import type { Lang } from '../../i18n/routes'
 
 interface Props {
@@ -28,10 +30,14 @@ const t = {
 <section class="section-pad">
   <div class="layout-two-column content-cont-marg-right">
     <div class="layout-two-column-img img-overlay-blur-left">
-      <img
-        class="img-rad"
-        src="/assets/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp"
+      <Image
+        src={imgBillyNightingaleWebDesignerRendezVousAvecPacificCoastCafeHossegor}
         alt={t.imageAlt}
+        class="img-rad"
+        width={1080}
+        widths={[540, 810, 1080]}
+        sizes="(max-width: 800px) 100vw, 616px"
+        loading="eager"
       />
     </div>
     <div class="layout-two-column-txt contact__txt-normal-flow glass__back loc-mob-margin-left">
