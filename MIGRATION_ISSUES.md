@@ -17,8 +17,9 @@ Each fix below was made this way, one commit per fix.
 - **Done for the Landes pages.** Eight components in [src/components/landes/](src/components/landes/). The two page files went from about 480 lines to 66, and the built HTML is identical to before in both languages.
 - **Done for the about pages.** Seven components in [src/components/about/](src/components/about/). The two page files went from about 1,100 lines to 55, and the built HTML is identical to before in both languages.
 - **Legal pages: left as they are, on purpose.** Each is about 230 lines, almost all of it the legal text, and the header, cookie banner and `<head>` are already shared. Splitting a contract into a table of 62 keyed strings would make it harder to read and update. Both documents have the same 12 sections in the same order. Their three intro lines differ slightly: the English page bolds the business name, and the French page links the email address and has no dash before it.
-- **Still to do:** the homepages (about 1,500 lines each) and services (900). The page content is written out in full in both languages, so every layout change has to be made twice.
-- The English and French versions line up well enough to share components: their markup differs by 0–4% per page pair, apart from the text. The differences that do exist are worth a look, because they're places where one language has drifted from the other: 34 on services (the French page has one more section) and 12 on the homepage.
+- **Done for the homepages.** Seven components in [src/components/home/](src/components/home/). The two page files went from about 1,500 lines to 70, and the built HTML is identical to before in both languages.
+- **Still to do:** the services pages (about 900 lines each). The page content is written out in full in both languages, so every layout change has to be made twice.
+- The English and French versions line up well enough to share components: their markup differs by 0–4% per page pair, apart from the text. The differences that do exist are worth a look, because they're places where one language has drifted from the other. On services there are 34, and the French page has one more section.
 - **How to check each page:** the SEO compare must show no change, and the built HTML must be identical to the previous build apart from intended fixes.
 
 ### B. Split `script.js` per component
@@ -37,8 +38,15 @@ Each fix below was made this way, one commit per fix.
 - Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
 - Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
 
-### F. English copy to proofread
-These are your words, so they were left as written. Each is in the `en` table of the named component.
+### F. Copy to proofread
+These are your words, so they were left as written. Each is in the `en` or `fr` table of the named component.
+
+**Homepage** ([src/components/home/](src/components/home/)):
+- Two lines exist in English only. If the French page should have them too, add a French value and remove the `lang === 'en'` condition:
+  - `HomeHero`: "Learn more about me and my recent projects".
+  - `HomeReviews`: "Thank you again!" at the end of one review.
+- `HomeProjects` (French): the link text "Github repository" is English inside French sentences, twice, and a third link says "GitHub repository" in both languages.
+- `HomeProjects` (English): image alt "The world surf **jounrnal**" (journal).
 
 **About page** ([src/components/about/](src/components/about/)):
 - `AboutProcess`: "PHASE 4 **Deployement**" (Deployment).
@@ -94,7 +102,8 @@ These are your words, so they were left as written. Each is in the `en` table of
 - **French contact form:** the leftover `action`, `method` and `data-netlify` attributes are removed, so it matches the English form.
 - **Landes pages:** eight shared section components (see A). The email button on the English page said "PAR MAIL"; it now says "EMAIL ME", as on the homepage.
 - **About pages:** seven shared section components (see A). On the English page, the photo wrapper in the personal section now uses the same class as the French page (`layout-two-column-img`), which moves the text panel about 26px on desktop to where the French page has it.
-- **Wrong-language text:** the English about page said "Développement" in three places (now "Development"), and the French about and Landes pages had four "PROJECTS" buttons (now "PROJETS").
+- **Homepages:** seven shared section components (see A). Before that, two small alignments on the pages themselves: a project image on the French page gained the `height="600"` the English one has, and three project images on the English page now use absolute paths (`/assets/…`) like everywhere else.
+- **Wrong-language text:** the English about page said "Développement" in three places (now "Development"), the French about and Landes pages had four "PROJECTS" buttons (now "PROJETS"), and a service card on the French homepage said "Automation" (now "Automatisation").
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
 ## ✅ Code quality fixes (one commit each)
