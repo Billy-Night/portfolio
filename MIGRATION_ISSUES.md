@@ -15,7 +15,8 @@ Each fix below was made this way, one commit per fix.
 ### A. Split the pages into section components
 - **Done for the contact pages.** [ContactIntro.astro](src/components/contact/ContactIntro.astro) and [ContactForm.astro](src/components/contact/ContactForm.astro) are shared by both languages, each with its own translation table. The two page files are now 56 and 38 lines.
 - **Done for the Landes pages.** Eight components in [src/components/landes/](src/components/landes/). The two page files went from about 480 lines to 66, and the built HTML is identical to before in both languages.
-- **Still to do:** the homepages (about 1,500 lines each), about (1,100), services (900) and the legal pages (240). The page content is written out in full in both languages, so every layout change has to be made twice.
+- **Done for the about pages.** Seven components in [src/components/about/](src/components/about/). The two page files went from about 1,100 lines to 55, and the built HTML is identical to before in both languages.
+- **Still to do:** the homepages (about 1,500 lines each), services (900) and the legal pages (240). The page content is written out in full in both languages, so every layout change has to be made twice.
 - The English and French versions line up well enough to share components: their markup differs by 0–4% per page pair, apart from the text. The differences that do exist are worth a look, because they're places where one language has drifted from the other: 34 on services (the French page has one more section), 12 on the homepage, 6 on the legal pages.
 - **How to check each page:** the SEO compare must show no change, and the built HTML must be identical to the previous build apart from intended fixes.
 
@@ -35,8 +36,14 @@ Each fix below was made this way, one commit per fix.
 - Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
 - Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
 
-### F. English copy to proofread on the Landes page
-These are your words, so they were left as written. Each is in the `en` table of the named component in [src/components/landes/](src/components/landes/).
+### F. English copy to proofread
+These are your words, so they were left as written. Each is in the `en` table of the named component.
+
+**About page** ([src/components/about/](src/components/about/)):
+- `AboutProcess`: "PHASE 4 **Deployement**" (Deployment).
+- `AboutWhatIDo`: "SEO & **PERFROMANCE** OPTIMISATION" (PERFORMANCE).
+
+**Landes page** ([src/components/landes/](src/components/landes/)):
 - `LandesSeoResults`: "My proven local SEO **strategeis**" (strategies); "While integrating **a** online shop" (an); "The **result are** easy to see" (results are); "Pacific **coast cafe**" (capitals).
 - `LandesMission`: "high performance **website’s**" (websites); "premium **web sites**" (websites); "support local **business**" (businesses).
 - `LandesApproach`: "designed to be **affective**" (effective); "the **companies** visual identity" (company's); "to **insure** your website stays" (ensure).
@@ -85,6 +92,8 @@ These are your words, so they were left as written. Each is in the `en` table of
 - **Contact pages:** shared `ContactIntro` and `ContactForm` components (see A). Three strings on the French form that were still English are translated: the "Project details" heading and two placeholders.
 - **French contact form:** the leftover `action`, `method` and `data-netlify` attributes are removed, so it matches the English form.
 - **Landes pages:** eight shared section components (see A). The email button on the English page said "PAR MAIL"; it now says "EMAIL ME", as on the homepage.
+- **About pages:** seven shared section components (see A). On the English page, the photo wrapper in the personal section now uses the same class as the French page (`layout-two-column-img`), which moves the text panel about 26px on desktop to where the French page has it.
+- **Wrong-language text:** the English about page said "Développement" in three places (now "Development"), and the French about and Landes pages had four "PROJECTS" buttons (now "PROJETS").
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
 ## ✅ Code quality fixes (one commit each)
