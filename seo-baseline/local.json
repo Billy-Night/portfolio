@@ -2069,11 +2069,59 @@
         "description": [
           "Conditions générales de vente de Billy Nightingale, web designer et développeur web basé dans les Landes et au Pays basque."
         ],
+        "og:description": [
+          "Conditions générales de vente de Billy Nightingale, web designer et développeur web basé dans les Landes et au Pays basque."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "fr_FR"
+        ],
+        "og:locale:alternate": [
+          "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Conditions Générales de Vente | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/fr/cgv"
+        ],
         "robots": [
           "noindex, follow"
         ],
         "theme-color": [
           "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "Conditions générales de vente de Billy Nightingale, web designer et développeur web basé dans les Landes et au Pays basque."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Conditions Générales de Vente | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/fr/cgv"
         ],
         "viewport": [
           "width=device-width, initial-scale=1.0"
@@ -3580,11 +3628,59 @@
         "description": [
           "Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Terms and conditions page."
         ],
+        "og:description": [
+          "Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Terms and conditions page."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "en_GB"
+        ],
+        "og:locale:alternate": [
+          "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Terms and Conditions of Service | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/terms-and-conditions"
+        ],
         "robots": [
           "noindex, follow"
         ],
         "theme-color": [
           "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Terms and conditions page."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Terms and Conditions of Service | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/terms-and-conditions"
         ],
         "viewport": [
           "width=device-width, initial-scale=1.0"
