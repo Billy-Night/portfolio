@@ -6,23 +6,25 @@ interface Props {
   lang: Lang
   /** Current page — the language switch links to its translation */
   route: RouteKey
-  logoAlt?: string
-  menuIconAlt?: string
 }
 
 const {
   lang,
   route,
-  logoAlt = 'Billy Nightingales logo',
-  menuIconAlt = 'navigation menu icon',
 } = Astro.props
 
 const alt = otherLang(lang)
 const r = (key: RouteKey) => routes[key][lang]
 
 const labels = {
-  en: { projects: 'Projects', about: 'About', contact: 'Contact', services: 'Services', landes: 'Landes' },
-  fr: { projects: 'Projets', about: 'À propos', contact: 'Contact', services: 'Services', landes: 'Landes' },
+  en: {
+    projects: 'Projects', about: 'About', contact: 'Contact', services: 'Services', landes: 'Landes',
+    logoAlt: 'Billy Nightingale logo', menuIconAlt: 'Menu icon',
+  },
+  fr: {
+    projects: 'Projets', about: 'À propos', contact: 'Contact', services: 'Services', landes: 'Landes',
+    logoAlt: 'Logo Billy Nightingale', menuIconAlt: 'Icône du menu',
+  },
 }[lang]
 
 const linkedIn =
@@ -34,7 +36,7 @@ const linkedIn =
 <header class="header">
   <nav class="nav__list-full nav__glass-back">
     <a class="nav__link" href={r('home')} aria-label="Home">
-      <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" alt={logoAlt} />
+      <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" alt={labels.logoAlt} />
     </a>
     <ul class="nav__list">
       <li><a class="nav__link mini" href={routes[route][alt]}>{alt.toUpperCase()}</a></li>
@@ -71,7 +73,7 @@ const linkedIn =
       </li>
     </ul>
     <button class="menu-btn--hamburger" type="button" aria-label="Open menu">
-      <img src="/assets/icons/ham_menu.svg" alt={menuIconAlt} class="ham-btn-icon" />
+      <img src="/assets/icons/ham_menu.svg" alt={labels.menuIconAlt} class="ham-btn-icon" />
     </button>
   </nav>
 </header>
