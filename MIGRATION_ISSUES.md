@@ -14,53 +14,6 @@ Locations are given as files plus a search string, because line numbers move dur
 
 ---
 
-## 🟠 Inconsistencies between pages (standardise once all pages use the components)
-
-### 7. Footer structure and wording differ from page to page
-- The English contact page wraps a bare `<footer>` in `<section class="sections" id="footer">` **inside `<main>`**. Every other page uses `<footer class="sections" id="footer">` after `</main>`. Fix: remove `wrapInSection` in [contact.astro](src/pages/contact.astro) and move `<Footer>` below `</main>`. Check the styling afterwards.
-- The footer `<h3>` varies: "Create your digital system" (contact) vs "CREATING YOUR DIGITAL SYSTEM" (about). Pick one per language.
-- The about pages' footers have no `id="footer"`. Check whether `script.js` or any anchor links rely on it.
-
-### 8. Header alt text differs from page to page
-- Logo `alt`: "Billy Nightingales logo" / "…logo for creating websites" / "…logo creation de site web" / "…logo pour créer le site web".
-- Menu icon `alt`: "navigation menu icon" / "menu icon" / "icon de menu".
-- Pick one per language and remove the `logoAlt` / `menuIconAlt` overrides. Also consider "Billy Nightingale logo" (no stray "s"). The French pages should have French alt text.
-
-### 9. Terms page header has no "Landes" link
-- **Where:** [terms-and-conditions.astro](src/pages/terms-and-conditions.astro).
-- Probably an oversight. Fix it by removing `showLandes={false}` once the page is ported.
-
-### 10. `<head>` extras are inconsistent
-- `twitter:domain` has a different value on each page that has it (`https://www.billynightingale.com/`, `.../about`, `.../fr/`, `billynightingale.com`), and most pages don't have it at all. It should be just `billynightingale.com`, or be removed everywhere: X barely uses it.
-- `og:date` and `twitter:date` aren't real Open Graph or X properties, and the homepages disagree (`og:date` is `2025-11-19` on EN and `2022-11-19` on FR). Remove the `ogDate` and `twitterDate` props from both homepages, then from `BaseLayout`.
-- `og:site_name` and `og:image:alt` are only on the services pages. Add them to `BaseLayout` for every page.
-
-### 11. Structured data (JSON-LD) is inconsistent between languages
-- The English `Person` has `@id …/#person` with `addressRegion: "Landes"`. The French one has `@id …/fr/#person` with `addressRegion: "Nouvelle-Aquitaine"`, and fewer fields (no `sameAs`, `knowsAbout` or `description`).
-- [fr/a-propos](src/pages/fr/a-propos.astro) already uses the shared `…/#person` id (with `addressRegion: "Landes"`), so the French pages aren't even consistent with each other.
-- Google may read these as **two different people**. Use one shared `@id` (`https://www.billynightingale.com/#person`) and the same data, translating only the text fields.
-- Fix: move the shared schema into one file, e.g. `src/data/schema.ts`, and import it on each page.
-
-### 12. French contact page has English image alt text
-- **Where:** [fr/contact.astro](src/pages/fr/contact.astro). Search for "having a meeting with clients".
-- Translate it, e.g. "Billy Nightingale, web designer, en rendez-vous avec des clients à Hossegor".
-
-### 13. Legal pages have no Open Graph tags
-- **Where:** [terms-and-conditions.astro](src/pages/terms-and-conditions.astro) and [fr/cgv.astro](src/pages/fr/cgv.astro).
-- They now use the standard icons from `BaseLayout` (fixed with #25), but still pass no `og` / `twitter` props, so a shared link shows no preview. Low priority, because both pages are `noindex`.
-- **Fix:** add `og` and `twitter` props, as on the other pages.
-
-### 28. English homepage has a "Projets" link
-- **Where:** [index.astro](src/pages/index.astro). Search for `>Projets<`.
-- A link on the English homepage uses the French word. Change it to "Projects".
-
-### 26. Legal page copy has mixed languages
-- [terms-and-conditions.astro](src/pages/terms-and-conditions.astro): the English page says "Website **Création** &amp; Web **Développement**" under the `<h1>`.
-- [fr/cgv.astro](src/pages/fr/cgv.astro): the meta description starts in English ("Portfolio of Billy Nightingale, web developer and designer based in…") and ends in French.
-- Low priority, because both pages are `noindex`.
-
----
-
 ## 🟡 Code quality and other issues
 
 ### 14. Terms page loads Google Fonts for nothing
@@ -121,6 +74,17 @@ Locations are given as files plus a search string, because line numbers move dur
 - **#6 "Projects" links:** contact, services and Landes now link to `/#projects`. The `projectsHref` prop is gone.
 - **#25 Broken favicon and manifest links:** the legal pages use the standard `BaseLayout` icons, and the 404 uses the same icon files.
 - **#22 Structured data URLs:** no trailing slashes, on the about, services and Landes pages.
+
+## ✅ Standardised after the port (one commit each, new baseline after each)
+- **#7 Footer:** one markup on every page, `<footer class="sections" id="footer">` after `</main>`, and one heading per language ("Create your digital system" / "Création de site web et système digital"). The CSS shows all `h3` headings in uppercase, so nothing changes visually. The legal pages have never had a footer and still don't.
+- **#8 Header alt text:** logo is "Billy Nightingale logo" / "Logo Billy Nightingale"; menu icon is "Menu icon" / "Icône du menu".
+- **#9 Terms page header:** now has the "Landes" link, like every other page.
+- **#10 Social meta tags:** `twitter:domain`, `og:date` and `twitter:date` are removed. `og:site_name` and `og:image:alt` are on every page.
+- **#11 Structured data:** one shared Person in [src/data/schema.ts](src/data/schema.ts), with the same `@id` (`https://www.billynightingale.com/#person`), region ("Landes") and details on every page, translated per language. Edit that file to change the job title, description or skills everywhere.
+- **#12 French contact page:** the image alt text is in French.
+- **#13 Legal pages:** they now have Open Graph and Twitter tags. `og` and `twitter` default to the page title and description in `BaseLayout`.
+- **#26 Legal page copy:** the English terms page says "Website Creation & Web Development", and the French CGV's meta description is fully in French.
+- **#28 English homepage:** the "Projets" button now says "Projects".
 
 ## ✅ Already fixed as a side effect of the port
 - **fr/a-propos `twitter:url`:** it used `property="twitter:url"`; `BaseLayout` outputs the standard `name="twitter:url"`. X accepts both, so there's no SEO change, and the SEO compare treats them as the same tag.
