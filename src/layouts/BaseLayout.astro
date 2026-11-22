@@ -3,6 +3,7 @@
 // Canonical, hreflang, og:url and twitter:url are all derived from `route`
 // via src/i18n/routes.ts. The page body goes in the default slot.
 import Analytics from '../components/Analytics.astro'
+import { assetUrl } from '../utils/assetVersion'
 import { SITE, routes, url, type Lang, type RouteKey } from '../i18n/routes'
 
 interface Props {
@@ -90,8 +91,8 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
 
     <!-- Page-specific head tags: <Fragment slot="head">...</Fragment> -->
     <slot name="head" />
-    <link rel="stylesheet" href="/css/style.css?v=18" />
-    <script defer src="/script.js" is:inline></script>
+    <link rel="stylesheet" href={assetUrl('/css/style.css')} />
+    <script defer src={assetUrl('/script.js')} is:inline></script>
 
     {
       jsonLd.map((data) => (
