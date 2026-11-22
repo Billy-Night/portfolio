@@ -23,7 +23,6 @@ interface Props {
   jsonLd?: object[]
   ogImage?: string
   ogImageHeight?: string
-  ogType?: string
   robots?: string
   // Optional extras used by some pages
   ogSiteName?: string
@@ -44,7 +43,6 @@ const {
   siteIcons = true,
   ogImage = `${SITE}/assets/meta_preview1200x600.webp`,
   ogImageHeight = '627',
-  ogType = 'website',
   robots = 'index, follow',
   ogSiteName,
   ogImageAlt,
@@ -99,7 +97,7 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
       og && twitter && (
         <Fragment>
           <meta property="og:url" content={canonical} />
-          <meta property="og:type" content={ogType} />
+          <meta property="og:type" content="website" />
           {ogSiteName && <meta property="og:site_name" content={ogSiteName} />}
           <meta property="og:title" content={og.title} />
           <meta property="og:description" content={og.description} />
