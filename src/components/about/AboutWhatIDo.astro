@@ -23,6 +23,7 @@ const t = {
     websiteDevelopment: "WEBSITE DEVELOPMENT",
     fullStackWebDevelopment: "Full-stack web development, developing products and tools. I develop website using tool such as Wordpress and Elementor but also full-stack application through programming with languages such as JavaScript, frameworks like React and Node.JS",
     projects2: "PROJECTS",
+    projects: "PROJECTS",
   },
   fr: {
     whatIDo: "CE QUE JE FAIS",
@@ -37,6 +38,7 @@ const t = {
     websiteDevelopment: "DÉVELOPPEMENT WEB",
     fullStackWebDevelopment: "Développement web full-stack, création de produits et d’outils numériques. Je développe des sites avec des outils comme WordPress et Elementor, mais aussi des applications full-stack avec des langages comme JavaScript et des frameworks comme React et Node.js.",
     projects2: "PROJETS",
+    projects: "PROJETS",
   },
 }[lang]
 ---
@@ -96,7 +98,7 @@ const t = {
                 >SERVICES</a
               >
               <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >PROJECTS</a
+                >{t.projects}</a
               >
             </div>
           </div>

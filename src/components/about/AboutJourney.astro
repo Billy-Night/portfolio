@@ -12,22 +12,17 @@ const t = {
   en: {
     theJourney: "THE JOURNEY",
     myEngineeringAndWeb: "My engineering and web development journey",
-    motorsport: "Motorsport",
-    engineering: "Engineering",
-    mechatronics: "Mechatronics",
-    engineer: "Engineer",
-    web: "Web",
-    developpement: "Développement",
+    // Each timeline step is two words, each in its own <span>
+    degree: ["Motorsport", "Engineering"],
+    firstCareer: ["Mechatronics", "Engineer"],
+    webTraining: ["Web", "Development"],
   },
   fr: {
     theJourney: "LE PARCOURS",
     myEngineeringAndWeb: "Mon parcours en ingénierie et développement web",
-    motorsport: "Ingénierie",
-    engineering: "Motorsport",
-    mechatronics: "Ingénieur",
-    engineer: "Mécatronique",
-    web: "Développement",
-    developpement: "Web",
+    degree: ["Ingénierie", "Motorsport"],
+    firstCareer: ["Ingénieur", "Mécatronique"],
+    webTraining: ["Développement", "Web"],
   },
 }[lang]
 ---
@@ -55,19 +50,19 @@ const t = {
     <div class="tl__content-container">
       <div class="time-step time__step-1 glass__back ts-padding-l">
         <h4 class="ts-about-heading ts-heading hide-ts-h">
-          <span>BEng</span> <span>{t.motorsport}</span>
-          <span>{t.engineering}</span>
+          <span>BEng</span> <span>{t.degree[0]}</span>
+          <span>{t.degree[1]}</span>
         </h4>
       </div>
       <div class="time-step time__step-2 glass__back ts-padding-l">
         <h4 class="ts-about-heading ts-heading hide-ts-h">
-          <span>{t.mechatronics}</span> <span>{t.engineer}</span>
+          <span>{t.firstCareer[0]}</span> <span>{t.firstCareer[1]}</span>
         </h4>
       </div>
       <div class="time-step time__step-3 glass__back ts-padding-l">
         <h4 class="ts-about-heading ts-heading hide-ts-h">
-          <span>Bac</span> <span>+2</span> <span>{t.web}</span>
-          <span>{t.developpement}</span>
+          <span>Bac</span> <span>+2</span> <span>{t.webTraining[0]}</span>
+          <span>{t.webTraining[1]}</span>
         </h4>
       </div>
       <div class="time-step time__step-4 glass__back ts-padding-l">
