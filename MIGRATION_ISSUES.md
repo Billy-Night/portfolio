@@ -12,15 +12,27 @@ Each fix below was made this way, one commit per fix.
 
 ## Optional improvements (nothing here is broken)
 
-### A. Split the pages into section components
-- **Done for the contact pages.** [ContactIntro.astro](src/components/contact/ContactIntro.astro) and [ContactForm.astro](src/components/contact/ContactForm.astro) are shared by both languages, each with its own translation table. The two page files are now 56 and 38 lines.
-- **Done for the Landes pages.** Eight components in [src/components/landes/](src/components/landes/). The two page files went from about 480 lines to 66, and the built HTML is identical to before in both languages.
-- **Done for the about pages.** Seven components in [src/components/about/](src/components/about/). The two page files went from about 1,100 lines to 55, and the built HTML is identical to before in both languages.
+### A. Section components: done
+Every page's sections are now components shared by the English and French pages, each with a translation table. A layout change is made once for both languages.
+
+| Pages | Components | Page file before → after |
+|---|---|---|
+| Contact | 2, in [src/components/contact/](src/components/contact/) | about 300 → 56 and 38 lines |
+| Landes | 8, in [src/components/landes/](src/components/landes/) | about 480 → 66 |
+| About | 7, in [src/components/about/](src/components/about/) | about 1,100 → 55 |
+| Homepages | 7, in [src/components/home/](src/components/home/) | about 1,500 → 70 |
+| Services | 8, in [src/components/services/](src/components/services/) | about 900 → 93 |
+| Legal | none, on purpose | unchanged |
+
+- **Check used for every page:** the built HTML is identical to the build before, tag for tag, apart from the fixes listed further down.
 - **Legal pages: left as they are, on purpose.** Each is about 230 lines, almost all of it the legal text, and the header, cookie banner and `<head>` are already shared. Splitting a contract into a table of 62 keyed strings would make it harder to read and update. Both documents have the same 12 sections in the same order. Their three intro lines differ slightly: the English page bolds the business name, and the French page links the email address and has no dash before it.
-- **Done for the homepages.** Seven components in [src/components/home/](src/components/home/). The two page files went from about 1,500 lines to 70, and the built HTML is identical to before in both languages.
-- **Still to do:** the services pages (about 900 lines each). The page content is written out in full in both languages, so every layout change has to be made twice.
-- The English and French versions line up well enough to share components: their markup differs by 0–4% per page pair, apart from the text. The differences that do exist are worth a look, because they're places where one language has drifted from the other. On services there are 34, and the French page has one more section.
-- **How to check each page:** the SEO compare must show no change, and the built HTML must be identical to the previous build apart from intended fixes.
+- **Translation keys** are generated from the first words of the English text (for example `readyToDiscussYour`). Each sits next to its text, so they're easy to rename.
+- **Where the two languages differ on purpose**, the component says so in a comment:
+  - `HomeHero`: the French title has two extra classes, and one line is English-only.
+  - `HomeReviews`: one line is English-only.
+  - `ServicesMain`: one paragraph has a width limit in French only.
+  - `ServicesPackages`: the title has a different class per language, and the "Best for" and "Delivery time" labels are `<h3>` in English and `<h4>` in French. No package-specific CSS exists for them, so the labels are larger on the English page.
+  - `PackageFeatures`: each language has its own list of bullets. The package cards aren't strict translations: the French Growth card has six bullets and the English one five.
 
 ### B. Split `script.js` per component
 - [script.js](public/script.js) is one 970-line file loaded on every page. It was checked in a real browser on all 14 pages and throws no errors: every optional element is guarded with an `if`. The original issue #15 ("crashes on pages without certain elements") was wrong and is closed.
@@ -40,6 +52,10 @@ Each fix below was made this way, one commit per fix.
 
 ### F. Copy to proofread
 These are your words, so they were left as written. Each is in the `en` or `fr` table of the named component.
+
+**Services page** ([src/components/services/](src/components/services/)):
+- `ServicesPackages`: the package bullets and labels differ between the languages (see A). Decide whether the English and French offers should say the same things, and whether the "Best for" / "Delivery time" labels should be `<h3>` or `<h4>` on both.
+- `ServicesPackages` (English): "a depending on the package selected on-going support" in the pricing note reads as if a word is missing.
 
 **Homepage** ([src/components/home/](src/components/home/)):
 - Two lines exist in English only. If the French page should have them too, add a French value and remove the `lang === 'en'` condition:
@@ -103,7 +119,8 @@ These are your words, so they were left as written. Each is in the `en` or `fr` 
 - **Landes pages:** eight shared section components (see A). The email button on the English page said "PAR MAIL"; it now says "EMAIL ME", as on the homepage.
 - **About pages:** seven shared section components (see A). On the English page, the photo wrapper in the personal section now uses the same class as the French page (`layout-two-column-img`), which moves the text panel about 26px on desktop to where the French page has it.
 - **Homepages:** seven shared section components (see A). Before that, two small alignments on the pages themselves: a project image on the French page gained the `height="600"` the English one has, and three project images on the English page now use absolute paths (`/assets/…`) like everywhere else.
-- **Wrong-language text:** the English about page said "Développement" in three places (now "Development"), the French about and Landes pages had four "PROJECTS" buttons (now "PROJETS"), and a service card on the French homepage said "Automation" (now "Automatisation").
+- **Services pages:** eight shared components (see A). Before that, the pricing block got the same labelled `<section class="pricing-section">` on both pages, with the `id="pricing-title"` its `aria-labelledby` was pointing at. No visual change.
+- **Wrong-language text:** the English about page said "Développement" in three places and the English services page in two (now "Development"), the French about and Landes pages had four "PROJECTS" buttons (now "PROJETS"), and a service card on the French homepage said "Automation" (now "Automatisation").
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
 ## ✅ Code quality fixes (one commit each)
