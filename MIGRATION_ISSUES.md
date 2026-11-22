@@ -42,14 +42,20 @@ Every page's sections are now components shared by the English and French pages,
 - The original issue #15 ("crashes on pages without certain elements") was wrong: every optional element was already guarded with an `if`.
 
 ### C. Images through Astro: done. CSS: tried and reverted
-- **Images: done.** The 28 displayed photos are in [src/assets/images/](src/assets/images/) and go through Astro's `<Image>`. Each is resized to about twice its displayed size, recompressed, and offered in two or three widths so phones download a smaller file. All have `width` and `height` attributes, and everything below the first screen loads lazily.
-  - **Result:** the homepage's photos went from 2,054 KB to between 155 KB (small screens) and 345 KB (large or high-density screens). About: 868 KB to 118–288 KB. Services: 290 KB to 25–79 KB.
+- **Images: done, with one correction.** The 28 displayed photos are in [src/assets/images/](src/assets/images/) and render through [Photo.astro](src/components/Photo.astro).
+  - **Your files are not recompressed.** For 22 photos, the main version is the original file, byte for byte. They were already WebP at roughly quality 95, so recompressing them only saves bytes by lowering quality.
+  - **Six files were much larger than they are ever displayed** and are resized at quality 90: the two 6000px client screenshots (to 1440px), the three review photos (to 360px) and the homepage portrait (1400px to 750px).
+  - **Small screens get smaller versions** (half and three quarters of the main width, quality 90). Downscaling hides the re-encoding.
+  - **Result on desktop:** homepage photos 2,054 KB to 852 KB, all from the six oversized files. The other pages are unchanged. **On small screens:** homepage about 270 KB, about page about 290 KB, services about 47 KB.
+  - **All photos have `width` and `height` attributes**, and everything below the first screen loads lazily.
+  - **The first version (commit `a44b8eb`) had two faults,** found by Billy on a wide screen. It used Astro's `<Image>` with the default quality (about 80), a second lossy pass that visibly softened the photos. And it gave each image a `sizes` value measured at a 1280px window ("602px"). The browser treats that value as the image's own width, and the layout sizes the laptop-image columns from it, so at 1920px they sat 141px in from the screen edge and were 779px wide where they used to be 900px. `Photo.astro` gives the true width above 800px.
   - **Image URLs changed** to `/_astro/<name>.<hash>.webp`. The file names are kept, and every `alt` text is unchanged. Google Images will re-index them over the following weeks.
   - **Old URLs still work.** `legacyImageUrls` in [astro.config.mjs](astro.config.mjs) copies the originals to `dist/assets/` on every build. The structured data on the about pages points at one of them.
-  - **Not moved:** the social preview image, `billy_portrait.webp` (structured data), favicons, logos, icons, CSS backgrounds and the unused files. They stay in `public/`.
-  - **One CSS rule was needed:** `height: auto` on `img` in [style.css](public/css/style.css). Without it, ten images kept the height from their new `height` attribute and looked stretched.
+  - **Not moved:** the social preview image, `billy_portrait.webp` (structured data), favicons, logos, icons and CSS backgrounds. They stay in `public/`.
+  - **One CSS rule was needed:** `height: auto` on `img` in [style.css](public/css/style.css). Without it, images with a CSS width kept the height from their new `height` attribute and looked stretched.
   - **The Landes phone animation** gets its image URLs from the component (a `data-screens` attribute), not from paths written in the script. The old `data-src` lazy-loading script is removed: browsers do it natively now.
-  - **How it was checked:** the position and size of all 82 image boxes on 12 pages was measured before and after, at desktop and mobile width. All match within 2 pixels. The interaction and animation tests from B also pass.
+  - **How it was checked:** the position and size of every image box was compared with the pre-pipeline build at seven window widths (390, 768, 1024, 1280, 1440, 1920 and 2560px), 385 boxes in all. None differs by more than 2px and none is displayed from a smaller file than before. The interaction and animation tests from B also pass.
+  - **If the uncompressed originals exist** (the PNG or JPEG exports), putting those in `src/assets/images/` would let Astro compress each photo once, at a chosen quality, and the large versions could then be optimised too.
 - **CSS:** bundling [style.css](public/css/style.css) through Astro was tried for #19 and reverted, because it changed how pages render:
   - The minifier keeps only the last of `backdrop-filter: blur(10px) saturate(120%)` and `-webkit-backdrop-filter: blur(10px)`, which is the `-webkit-` line. Chrome ignores that line, so the blur disappears. Putting the `-webkit-` line first in each of the 10 places would avoid this.
   - Astro put the stylesheet link at the end of `<head>`, after the old `script.js` tag, so the script ran before the styles applied and its reveal-on-scroll logic left sections hidden. The scripts now load from the page body (see B), so this would need retesting, not assuming.
@@ -115,7 +121,8 @@ Every page's sections are now components shared by the English and French pages,
   - The French package offers match the English ones, which are the reference. The French bullets, the pricing note and the ongoing visibility price ("250 € – 1 000 €+ / mois TTC") are translations of the English. [public/fr/services.md](public/fr/services.md) is updated to match.
   - Left as they were, because they say the same thing in natural French or are French conventions: the package names ("Site vitrine Essentiel"), the keyword-rich headings ("Tarifs de création de site internet"), the "Idéal pour" lines, the package descriptions, and "TTC" on prices.
 - **Scripts:** `script.js` split into one script per feature (see B).
-- **Images:** the displayed photos are optimised by Astro (see C).
+- **Images:** the displayed photos go through `Photo.astro`: originals untouched, six oversized files resized, smaller versions for small screens (see C).
+- **Test tools:** the regression tests built during this work are in [scripts/dev/](scripts/dev/), with a README.
 - **Unused files:** 26 deleted from `public/` (see D).
 - **Landes phone animation:** on the English page, the second screen showed the French image. It now shows `phone_web_seo.webp`. That file is no longer one of the unused assets in D.
 - **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."

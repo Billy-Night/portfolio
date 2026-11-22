@@ -1,6 +1,6 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
-import { Image } from 'astro:assets'
+import Photo from '../Photo.astro'
 import imgMonkeyMoodSeoMockup from '../../assets/images/landes_seo_mockups/monkey_mood_seo_mockup.webp'
 import imgPacificCoastCafeSeoMockup from '../../assets/images/landes_seo_mockups/Pacific_Coast_cafe_seo_mockup.webp'
 import { routes, type Lang, type RouteKey } from '../../i18n/routes'
@@ -50,12 +50,9 @@ const t = {
   <div class="wid__content-container">
     <div class="row">
       <div class="wid__img-cont">
-        <Image
+        <Photo
           src={imgMonkeyMoodSeoMockup}
           alt={t.altMonkeyMoodOneOf}
-          width={1200}
-          widths={[600, 900, 1200]}
-          sizes="(max-width: 800px) 100vw, 602px"
           loading="lazy"
         />
       </div>
@@ -84,12 +81,9 @@ const t = {
 
     <div class="row">
       <div class="wid__img-cont-right right">
-        <Image
+        <Photo
           src={imgPacificCoastCafeSeoMockup}
           alt={t.altPacificCoastCafeOne}
-          width={1200}
-          widths={[600, 900, 1200]}
-          sizes="(max-width: 800px) 100vw, 602px"
           loading="lazy"
         />
       </div>

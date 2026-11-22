@@ -1,6 +1,6 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
-import { Image } from 'astro:assets'
+import Photo from '../Photo.astro'
 import imgBillyNightingaleWebDesignerV2 from '../../assets/images/portraits/billy_nightingale_web_designer_v2.webp'
 import { routes, type Lang, type RouteKey } from '../../i18n/routes'
 
@@ -58,13 +58,10 @@ const t = {
         />
       </svg>
 
-      <Image
+      <Photo
         src={imgBillyNightingaleWebDesignerV2}
         alt={t.altBillyNightingaleWebDesigner}
         class="landes-hero-img"
-        width={900}
-        widths={[450, 680, 900]}
-        sizes="(max-width: 800px) 67vw, 576px"
         loading="eager"
       />
     </div>

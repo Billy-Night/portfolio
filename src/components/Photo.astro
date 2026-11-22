@@ -1,0 +1,62 @@
+---
+// A photo from src/assets/images/, served without losing quality.
+//
+// - The main version is the original file, untouched: same bytes, same
+//   quality as exported. It is only resized when `maxWidth` says the file is
+//   far larger than it is ever displayed (for example a 6000px screenshot
+//   shown at 600px).
+// - Smaller versions are generated for small screens, where downscaling
+//   hides any loss from re-encoding.
+// - width and height attributes let the browser reserve the space before
+//   the image loads.
+//
+// On screens wider than 800px the browser is told the image's true width, so
+// layouts that size a column from the image behave exactly as with a plain
+// <img>. On narrower screens it is told the image can be as wide as the
+// screen, and picks the smallest version that is sharp enough.
+import { getImage } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
+interface Props {
+  src: ImageMetadata
+  alt: string
+  class?: string
+  /** "eager" only for images visible when the page first opens */
+  loading?: 'eager' | 'lazy'
+  fetchpriority?: 'high' | 'low' | 'auto'
+  /** Resize the main version to this width. Only for files much larger than their displayed size. */
+  maxWidth?: number
+}
+
+const { src, alt, class: className, loading = 'lazy', fetchpriority, maxWidth } = Astro.props
+
+/** Quality for the versions Astro generates (the originals are served as they are) */
+const QUALITY = 90
+/** Narrowest version worth generating */
+const MIN_WIDTH = 360
+
+const resized = maxWidth && maxWidth < src.width ? await getImage({ src, width: maxWidth, quality: QUALITY }) : null
+const main = resized
+  ? { url: resized.src, width: maxWidth as number, height: Math.round((src.height * (maxWidth as number)) / src.width) }
+  : { url: src.src, width: src.width, height: src.height }
+
+// Smaller versions at half and three quarters of the main width
+const smallerWidths = [0.5, 0.75].map((f) => Math.round((main.width * f) / 10) * 10).filter((w) => w >= MIN_WIDTH && w < main.width)
+const smaller = await Promise.all(smallerWidths.map(async (width) => ({ width, url: (await getImage({ src, width, quality: QUALITY })).src })))
+
+const srcset = smaller.length ? [...smaller, main].map((v) => `${v.url} ${v.width}w`).join(', ') : undefined
+const sizes = srcset ? `(max-width: 800px) 100vw, ${main.width}px` : undefined
+---
+
+<img
+  src={main.url}
+  srcset={srcset}
+  sizes={sizes}
+  width={main.width}
+  height={main.height}
+  alt={alt}
+  class={className}
+  loading={loading}
+  decoding="async"
+  fetchpriority={fetchpriority}
+/>

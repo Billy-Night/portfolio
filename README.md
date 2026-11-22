@@ -19,7 +19,7 @@ src/
   pages/            One file per URL. French pages are in pages/fr/.
   layouts/          BaseLayout.astro: the whole <head> (meta tags, canonical, hreflang, social tags, structured data)
   components/       Header, Footer, CookieBanner, Analytics, NotFound
-  assets/images/    Photos. Astro resizes and compresses them at build time and serves them from /_astro/.
+  assets/images/    Photos, served from /_astro/ through components/Photo.astro (originals untouched, smaller versions for small screens).
   i18n/routes.ts    Every page URL in both languages. Canonicals, hreflang and the language switch come from here.
   data/schema.ts    Shared structured data (the "Person" used on every page)
   scripts/          One script per feature (header menu, cookie banner, reviews, timeline, contact form...).
@@ -28,7 +28,7 @@ src/
 public/             Served as-is: CSS, the social preview image, logos, icons, fonts, robots.txt, sitemap.xml, llms.txt,
                     the Markdown copies of each page, and Netlify's _redirects and _headers
 netlify/functions/  contact.js: the contact form backend (forwards to a Make.com webhook)
-scripts/            seo_snapshot.py: the SEO snapshot and compare tool
+scripts/            seo_snapshot.py: the SEO snapshot and compare tool. dev/: regression tests for behaviour, layout and images
 seo-baseline/       The SEO baseline the build is compared against
 ```
 
@@ -38,17 +38,17 @@ The live URLs have no trailing slash (`/about`, `/fr/a-propos`), except the two 
 
 ## Adding a photo
 
-Put the file in `src/assets/images/`, import it in the component and use Astro's `<Image>`:
+Export the photo as WebP at the quality you want, at about twice the size it will be displayed. Put it in `src/assets/images/`, import it in the component and use `Photo`:
 
 ```astro
 ---
-import { Image } from 'astro:assets'
+import Photo from '../Photo.astro'
 import photo from '../../assets/images/portraits/my_photo.webp'
 ---
-<Image src={photo} alt="…" width={900} widths={[450, 680, 900]} sizes="(max-width: 800px) 100vw, 450px" loading="lazy" />
+<Photo src={photo} alt="…" class="…" loading="lazy" />
 ```
 
-`width` is the largest version to generate (about twice the size the image is displayed at). Use `loading="eager"` only for an image visible when the page first opens.
+[Photo.astro](src/components/Photo.astro) serves your file as it is, with no recompression, and generates smaller versions for small screens. Add `maxWidth={…}` only when the file is much larger than it is ever displayed. Use `loading="eager"` only for an image visible when the page first opens.
 
 The originals are also copied to `dist/assets/` on every build (see `legacyImageUrls` in `astro.config.mjs`), so the image addresses the site used before Astro keep working.
 

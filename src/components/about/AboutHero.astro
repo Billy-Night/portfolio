@@ -1,6 +1,6 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
-import { Image } from 'astro:assets'
+import Photo from '../Photo.astro'
 import imgBillyNightingaleWebDesignerCapbreton from '../../assets/images/portraits/billy_nightingale_web_designer_capbreton.webp'
 import { routes, type Lang, type RouteKey } from '../../i18n/routes'
 
@@ -172,11 +172,10 @@ const t = {
         <circle id="orbitDot1" r="10"></circle>
       </svg>
       <div class="intro__image--frame">
-        <Image
+        <Photo
           src={imgBillyNightingaleWebDesignerCapbreton}
           alt="Portrait of Billy Nightingale looking at web design on laptop"
           class="about-intro__image"
-          width={376}
           loading="eager"
           fetchpriority="high"
         />

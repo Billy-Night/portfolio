@@ -1,6 +1,6 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
-import { Image } from 'astro:assets'
+import Photo from '../Photo.astro'
 import imgWebDesignCapbretonHossegor from '../../assets/images/about_wid/web_design_capbreton_hossegor.webp'
 import imgBillyNightingaleSnowboardLaMongie from '../../assets/images/about_wid/billy_nightingale_snowboard_la_mongie.webp'
 import type { Lang } from '../../i18n/routes'
@@ -41,13 +41,10 @@ const t = {
   </div>
   <div class="layout-two-column content-cont-marg-right">
     <div class="layout-two-column-img img-overlay-blur-left">
-      <Image
+      <Photo
         src={imgWebDesignCapbretonHossegor}
         alt="Capbreton - location of Billy Nightingale, web designer and developer"
         class="img-rad"
-        width={900}
-        widths={[450, 680, 900]}
-        sizes="(max-width: 800px) 100vw, 616px"
         loading="lazy"
       />
     </div>
@@ -70,13 +67,10 @@ const t = {
     class="layout-two-column perso__content-reversed content-cont-marg-left"
   >
     <div class="layout-two-column-img img-overlay-blur-right">
-      <Image
+      <Photo
         src={imgBillyNightingaleSnowboardLaMongie}
         alt="Billy Nightingale web designer and developer snowboarding in the La Mongie"
         class="img-rad img-reversed"
-        width={900}
-        widths={[450, 680, 900]}
-        sizes="(max-width: 800px) 100vw, 616px"
         loading="lazy"
       />
     </div>

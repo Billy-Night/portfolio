@@ -1,6 +1,5 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
-import { getImage } from 'astro:assets'
 import type { Lang } from '../../i18n/routes'
 import performance from '../../assets/images/landes_phone/phone_web_performance.webp'
 import seo from '../../assets/images/landes_phone/phone_web_seo.webp'
@@ -17,9 +16,8 @@ const { lang } = Astro.props
 
 // The three phone screens, in the order the section scrolls through them.
 // src/scripts/landesPhone.js swaps the image, reading the URLs from data-screens.
-const screens = await Promise.all(
-  { en: [performance, seo, solutions], fr: [performanceFr, seoFr, solutionsFr] }[lang].map((src) => getImage({ src, width: 800 })),
-)
+// The original files are used as they are (800px wide, already the right size).
+const screens = { en: [performance, seo, solutions], fr: [performanceFr, seoFr, solutionsFr] }[lang]
 
 const t = {
   en: {
@@ -56,8 +54,8 @@ const t = {
         <img
           class="static-phone-img"
           src={screens[0].src}
-          width={screens[0].attributes.width}
-          height={screens[0].attributes.height}
+          width={screens[0].width}
+          height={screens[0].height}
           alt={t.altPhoneContainingScreensThat}
           data-screens={JSON.stringify(screens.map((screen) => screen.src))}
         />

@@ -1,6 +1,6 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
-import { Image } from 'astro:assets'
+import Photo from '../Photo.astro'
 import imgBillyNightingaleClientMonkeyMoodCreationDeSiteWeb from '../../assets/images/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp'
 import imgBillyNightingaleClientPacificCoastCafeHossegor from '../../assets/images/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp'
 import imgClientEveMarieWebsite from '../../assets/images/client_sites/client_eve-marie_website.webp'
@@ -187,12 +187,9 @@ const t = {
           <li>ZenChef</li>
         </ul>
       </div>
-      <Image
+      <Photo
         src={imgBillyNightingaleClientMonkeyMoodCreationDeSiteWeb}
         alt="Eve-Marie web site created by Billy"
-        width={1200}
-        widths={[600, 900, 1200]}
-        sizes="(max-width: 800px) 100vw, 608px"
         loading="lazy"
       />
     </article>
@@ -228,12 +225,9 @@ const t = {
           <li>Drive</li>
         </ul>
       </div>
-      <Image
+      <Photo
         src={imgBillyNightingaleClientPacificCoastCafeHossegor}
         alt={t.altWeatherWiseAFrontend}
-        width={1200}
-        widths={[600, 900, 1200]}
-        sizes="(max-width: 800px) 100vw, 608px"
         loading="lazy"
       />
     </article>
@@ -276,12 +270,10 @@ const t = {
           <li>Calendly</li>
         </ul>
       </div>
-      <Image
+      <Photo
         src={imgClientEveMarieWebsite}
+        maxWidth={1440}
         alt={t.altEveMarieASophrologue}
-        width={1216}
-        widths={[610, 910, 1216]}
-        sizes="(max-width: 800px) 100vw, 608px"
         loading="lazy"
       />
     </article>
@@ -326,12 +318,10 @@ const t = {
           <li>Figma</li>
         </ul>
       </div>
-      <Image
+      <Photo
         src={imgClientTurbulenteWebsite}
+        maxWidth={1440}
         alt={t.altWeatherWiseAFrontend2}
-        width={1216}
-        widths={[610, 910, 1216]}
-        sizes="(max-width: 800px) 100vw, 608px"
         loading="lazy"
       />
     </article>
@@ -374,12 +364,9 @@ const t = {
           <li>MySQL</li>
         </ul>
       </div>
-      <Image
+      <Photo
         src={imgAppWorldSurfJournal}
         alt={t.altTheWorldSurfJournal}
-        width={1216}
-        widths={[610, 910, 1216]}
-        sizes="(max-width: 800px) 100vw, 608px"
         loading="lazy"
       />
     </article>
@@ -409,12 +396,9 @@ const t = {
           <li>OpenWeather API</li>
         </ul>
       </div>
-      <Image
+      <Photo
         src={imgAppWeatherWise}
         alt={t.altScreenshotOfWeatherWise}
-        width={1216}
-        widths={[610, 910, 1216]}
-        sizes="(max-width: 800px) 100vw, 608px"
         loading="lazy"
       />
     </article>
@@ -440,12 +424,9 @@ const t = {
           <li>MySQL</li>
         </ul>
       </div>
-      <Image
+      <Photo
         src={imgAppTrowit}
         alt={t.altScreenshotOfTheTrowit}
-        width={1216}
-        widths={[610, 910, 1216]}
-        sizes="(max-width: 800px) 100vw, 608px"
         loading="lazy"
       />
     </article>
