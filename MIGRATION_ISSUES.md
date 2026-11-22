@@ -73,6 +73,41 @@ Every page's sections are now components shared by the English and French pages,
 - The legal pages have no footer. Every other page does.
 - Safari older than version 18 only reads the `-webkit-backdrop-filter` line, so it gets the blur without the `saturate()` part. The difference is barely visible.
 
+
+### G. Code clean-up suggestions
+From a review of the code as it stood before the migration. Nothing here is broken. The list is ordered by how much each item matters, most important first.
+
+**1. Heading structure (affects screen-reader users)**
+Headings are sometimes chosen for their look, not their meaning, which makes the page outline noisy for assistive technology.
+- [LandesChallenges.astro](src/components/landes/LandesChallenges.astro): each of the three switcher buttons contains an `<h3>`. A `<button>` may only contain text-level content, so this isn't valid HTML. Use a `<span>` with the same styling.
+- [HomeServices.astro](src/components/home/HomeServices.astro): four `<h2>`s for the single words "Design", "Development", "SEO" and "Automation". They are labels, not section headings: use `<p>` or `<span>`, or `<h3>` under the section's own heading.
+- [Footer.astro](src/components/Footer.astro): `<h3>`, `<h4>` and `<h5>` stacked for the tagline, the business name and "Contact Information". Only the first is a heading; the others can be paragraphs.
+- These change the heading outline, so the SEO compare will report them. Check each page's outline afterwards: one `<h1>`, then `<h2>` per section, with no skipped levels.
+
+**2. Logic that works by accident** ([src/scripts/](src/scripts/))
+- [header.js](src/scripts/header.js): `handleViewportChange` tests `if (isMobile)`. `isMobile` is the media-query object, which is always truthy. It should be `if (isMobile.matches)`, or take the event: `(e) => { if (e.matches) … }`. Decide what should happen when the window grows past 800px with the menu open, then test both directions.
+- [processPhases.js](src/scripts/processPhases.js): `updatePhases` toggles `phase__cont--align`, `phase__content--hidden` and `phase__content--expanded` on every phase on every click. It stays correct only because the toggles happen in pairs. Set each class from the state instead: `classList.toggle('phase__content--expanded', isActive)`.
+- [processPhases.js](src/scripts/processPhases.js): the button text ("Expand" / "Ouvrir") is chosen by looking for `/fr/` in the address. Pass the labels from [AboutProcess.astro](src/components/about/AboutProcess.astro) in `data-` attributes, as the Landes phone does with `data-screens`.
+- [contactForm.js](src/scripts/contactForm.js): one `console.log` is left (the "Function error" line). `console.error` on the next lines already reports the failure.
+
+**3. Contact function** ([contact.js](netlify/functions/contact.js))
+- A request with no `Origin` header skips the origin check (`if (origin && …)`). Browsers always send it on a cross-site POST, so this only lets through non-browser clients, which the honeypot doesn't stop either. Rejecting requests without an allowed origin closes it.
+- There is no rate limiting. Netlify has rate-limiting rules, or the function could ignore repeat submissions from one address within a short time.
+- The branch-deploy address is still in `allowedOrigins`. Remove it after the merge (already on the merge checklist).
+
+**4. CSS** ([style.css](public/css/style.css), 4,011 lines)
+- **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common. One class name has a typo: `phone-iteractive-content-container` (used in the CSS and in [LandesPhone.astro](src/components/landes/LandesPhone.astro)).
+- **Broad global rules.** `img { width: 100% }` applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer.
+- **Vendor prefix order.** In 10 places `-webkit-backdrop-filter: blur(…)` comes after `backdrop-filter: blur(…) saturate(…)`, with a different value. The convention is prefixed first, standard last, same value. This is also what stopped the stylesheet being minified (see C).
+- **Dead rules.** There are rules for sections that no longer exist (for example the `.offers__*` tabs). Chrome DevTools' Coverage panel shows which rules each page uses.
+- **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the image-box and screenshot tests in [scripts/dev/](scripts/dev/).
+
+**5. Naming in the scripts and components**
+- [contactForm.js](src/scripts/contactForm.js): variable names such as `cFPrefTimWeb` and `clientContFormWebBud` are hard to read. Full words (`websiteTimelineField`, `websiteBudgetField`) cost nothing.
+- **Translation keys.** The keys in the section components were generated from the first words of the English text (`readyToDiscussYour`, `iCraftPremiumWeb`). They work, and each sits next to its text. Renaming them by role (`heading`, `intro`, `ctaQuote`) in the files you edit often would make those files easier to work in.
+
+**Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
+
 ---
 
 ## ✅ Fixed after the port (one commit each, new baseline after each)
