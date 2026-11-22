@@ -4,8 +4,7 @@ import Header from '../../components/Header.astro'
 import CookieBanner from '../../components/CookieBanner.astro'
 import Footer from '../../components/Footer.astro'
 
-// TODO(pre-existing, MIGRATION_ISSUES #3 and #24): the ogImage (relative URL) and
-// ogType ("site web" is not a valid og:type) props below are kept for 1:1 parity.
+// TODO(pre-existing, MIGRATION_ISSUES #24): ogType "site web" is not a valid og:type; kept for 1:1 parity.
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -76,8 +75,6 @@ const jsonLd = [
   ogDate="2022-11-19"
   twitterDomain="https://www.billynightingale.com/fr/"
   twitterDate="2025-11-19"
-  ogImage="/assets/meta_preview1200x600.webp"
-  twitterImage="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
   ogType="site web"
   jsonLd={jsonLd}
 >

@@ -23,8 +23,6 @@ interface Props {
   jsonLd?: object[]
   ogImage?: string
   ogImageHeight?: string
-  /** Defaults to ogImage */
-  twitterImage?: string
   ogType?: string
   robots?: string
   // Optional extras used by some pages
@@ -56,7 +54,6 @@ const {
 } = Astro.props
 
 const canonical = url(route, lang)
-const twitterImage = Astro.props.twitterImage ?? ogImage
 const locale = { en: 'en_GB', fr: 'fr_FR' }
 const altLocale = lang === 'en' ? locale.fr : locale.en
 ---
@@ -118,7 +115,7 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
           <meta name="twitter:url" content={canonical} />
           <meta name="twitter:title" content={twitter.title} />
           <meta name="twitter:description" content={twitter.description} />
-          <meta name="twitter:image" content={twitterImage} />
+          <meta name="twitter:image" content={ogImage} />
           {twitterDate && <meta name="twitter:date" content={twitterDate} />}
         </Fragment>
       )
