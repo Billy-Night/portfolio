@@ -10,8 +10,15 @@ interface Props {
   route: RouteKey
   title: string
   description: string
-  og: { title: string; description: string }
-  twitter: { title: string; description: string }
+  /** Omit og and twitter to output no social tags at all (the legal pages have none) */
+  og?: { title: string; description: string }
+  twitter?: { title: string; description: string }
+  /**
+   * false = skip the font preload, favicons, manifest and theme-color block.
+   * Only the legal pages use this: they carry their own legacy icon tags in
+   * the head slot. See MIGRATION_ISSUES.md #13.
+   */
+  siteIcons?: boolean
   /** JSON-LD objects, each rendered in its own <script type="application/ld+json"> */
   jsonLd?: object[]
   ogImage?: string
@@ -36,6 +43,7 @@ const {
   og,
   twitter,
   jsonLd = [],
+  siteIcons = true,
   ogImage = `${SITE}/assets/meta_preview1200x600.webp`,
   ogImageHeight = '627',
   ogType = 'website',
@@ -70,48 +78,51 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <link rel="alternate" hreflang="en" href={SITE + routes[route].en} />
     <link rel="alternate" hreflang="fr" href={SITE + routes[route].fr} />
 
-    <link
-      rel="preload"
-      href="/assets/fonts/MangoGrotesque-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    {
+      siteIcons && (
+        <Fragment>
+          <link
+            rel="preload"
+            href="/assets/fonts/MangoGrotesque-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+          />
+          <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
+          <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
+          <link rel="icon" href="/favicon-n-v1-16.png" sizes="16x16" />
+          <link rel="icon" href="/favicon-n-v1-ico.ico" sizes="any" />
+          <link rel="manifest" href="/site.webmanifest" />
+          <meta name="theme-color" content="#000000" />
+        </Fragment>
+      )
+    }
 
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
-    <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
-    <link rel="icon" href="/favicon-n-v1-16.png" sizes="16x16" />
-    <link rel="icon" href="/favicon-n-v1-ico.ico" sizes="any" />
-
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Theme color (mobile UI) -->
-    <meta name="theme-color" content="#000000" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:url" content={canonical} />
-    <meta property="og:type" content={ogType} />
-    {ogSiteName && <meta property="og:site_name" content={ogSiteName} />}
-    <meta property="og:title" content={og.title} />
-    <meta property="og:description" content={og.description} />
-    <meta property="og:locale" content={locale[lang]} />
-    <meta property="og:locale:alternate" content={altLocale} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content={ogImageHeight} />
-    {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
-    {ogDate && <meta property="og:date" content={ogDate} />}
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    {twitterDomain && <meta name="twitter:domain" content={twitterDomain} />}
-    <meta name="twitter:url" content={canonical} />
-    <meta name="twitter:title" content={twitter.title} />
-    <meta name="twitter:description" content={twitter.description} />
-    <meta name="twitter:image" content={twitterImage} />
-    {twitterDate && <meta name="twitter:date" content={twitterDate} />}
+    {
+      og && twitter && (
+        <Fragment>
+          <meta property="og:url" content={canonical} />
+          <meta property="og:type" content={ogType} />
+          {ogSiteName && <meta property="og:site_name" content={ogSiteName} />}
+          <meta property="og:title" content={og.title} />
+          <meta property="og:description" content={og.description} />
+          <meta property="og:locale" content={locale[lang]} />
+          <meta property="og:locale:alternate" content={altLocale} />
+          <meta property="og:image" content={ogImage} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content={ogImageHeight} />
+          {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
+          {ogDate && <meta property="og:date" content={ogDate} />}
+          <meta name="twitter:card" content="summary_large_image" />
+          {twitterDomain && <meta name="twitter:domain" content={twitterDomain} />}
+          <meta name="twitter:url" content={canonical} />
+          <meta name="twitter:title" content={twitter.title} />
+          <meta name="twitter:description" content={twitter.description} />
+          <meta name="twitter:image" content={twitterImage} />
+          {twitterDate && <meta name="twitter:date" content={twitterDate} />}
+        </Fragment>
+      )
+    }
 
     <!-- Page-specific head tags: <Fragment slot="head">...</Fragment> -->
     <slot name="head" />

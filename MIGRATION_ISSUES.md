@@ -53,6 +53,11 @@ Locations are given as files plus a search string, because line numbers move dur
 - **Problem:** `#projects` only exists on the homepage, so on these pages the link does nothing.
 - **Fix:** remove the `projectsHref` props. Header and Footer default to `/#projects`.
 
+### 25. Broken favicon and manifest links on the legal pages and the 404
+- **Where:** [terms-and-conditions.astro](src/pages/terms-and-conditions.astro), [fr/cgv.astro](src/pages/fr/cgv.astro) and [404.astro](src/pages/404.astro). Search for `/assets/favicon/`.
+- **Problem:** the folder `/assets/favicon/` doesn't exist. Every icon, apple-touch-icon and manifest link on these three pages returns a 404, so they show no favicon and each make several failed requests.
+- **Fix:** for the legal pages, see #13 (delete the legacy block). For the 404, replace the tags with the standard ones: `/favicon-n-v1-*.png` and `/site.webmanifest`.
+
 ### 22. About pages' structured data uses trailing-slash URLs
 - **Where:** [about.astro](src/pages/about.astro) and [fr/a-propos.astro](src/pages/fr/a-propos.astro), in the `ProfilePage` object in `jsonLd`.
 - **Problem:** `url` and `@id` are `…/about/` and `…/fr/a-propos/`, but the canonicals are `…/about` and `…/fr/a-propos`. Structured data that points at a different URL from the canonical gives Google mixed signals.
@@ -91,9 +96,15 @@ Locations are given as files plus a search string, because line numbers move dur
 - **Where:** [fr/contact.astro](src/pages/fr/contact.astro). Search for "having a meeting with clients".
 - Translate it, e.g. "Billy Nightingale, web designer, en rendez-vous avec des clients à Hossegor".
 
-### 13. Legal pages and 404 have their own `<head>`
-- `terms-and-conditions`, `cgv` and `404` use different favicon tags (`shortcut icon`, `apple-touch-icon`, `apple-mobile-web-app-title`) and have no Open Graph tags.
-- Fix: move them onto `BaseLayout` (keep `robots="noindex, follow"` on the legal pages).
+### 13. Legal pages have their own legacy `<head>`
+- **Where:** [terms-and-conditions.astro](src/pages/terms-and-conditions.astro) and [fr/cgv.astro](src/pages/fr/cgv.astro) (`TODO`). Search for `siteIcons={false}` and `<Fragment slot="head">`.
+- **Problem:** they don't use the standard favicon, font preload or theme-color tags, and they have no Open Graph tags. Their own icon tags are broken (see #25). The two pages also differ from each other (`apple-mobile-web-app-title` is "Billy" on one and "B.N" on the other).
+- **Fix:** delete the `siteIcons={false}` prop and the `<Fragment slot="head">` block on both pages. They then get the same icons as every other page. Keep `robots="noindex, follow"`. On the terms page, sort out the Google Fonts tags first (see #14).
+
+### 26. Legal page copy has mixed languages
+- [terms-and-conditions.astro](src/pages/terms-and-conditions.astro): the English page says "Website **Création** &amp; Web **Développement**" under the `<h1>`.
+- [fr/cgv.astro](src/pages/fr/cgv.astro): the meta description starts in English ("Portfolio of Billy Nightingale, web developer and designer based in…") and ends in French.
+- Low priority, because both pages are `noindex`.
 
 ---
 
@@ -133,6 +144,11 @@ Locations are given as files plus a search string, because line numbers move dur
 - **Where:** [about.astro](src/pages/about.astro) and [fr/a-propos.astro](src/pages/fr/a-propos.astro), in `<Fragment slot="head">`. The original HTML had a `<!--! Need to check this -->` comment next to it.
 - **Problem:** no `fa-` class is used anywhere: pages, CSS or `script.js`. It's a render-blocking request to a third-party CDN, loaded for nothing, so it slows first paint on the about pages.
 - **Fix:** delete the `<Fragment slot="head">` block on both pages. Check the icons visually afterwards.
+
+### 27. The 404 page is standalone and doesn't match the site
+- **Where:** [404.astro](src/pages/404.astro). It was left as a standalone file during the port, on purpose.
+- It has its own inline styles, no header or footer, English text only (French visitors get the same page), a "Go back home" link to the absolute production URL, and no `noindex`. It returns a 404 status, so the missing `noindex` is harmless.
+- **Fix:** rebuild it on `BaseLayout` with `Header` and `Footer`, so it looks like the rest of the site. Netlify serves only one `404.html`, so make it bilingual on one page, or add a `/fr/*` rule in `_redirects` that points to a French 404.
 
 ### 21. README
 - [README.md](README.md) headings are missing the space after `#` (`#Personal Website`), so they don't render as headings.
