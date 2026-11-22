@@ -16,15 +16,9 @@ interface Props {
   wrapInSection?: boolean
   /** Pass null to omit the id (the about pages have no id="footer") */
   id?: string | null
-  /**
-   * Pre-existing bug on fr/contact and fr/a-propos, kept for 1:1 parity:
-   * the href sits on the <li> instead of the <a>, so the link does nothing.
-   * See MIGRATION_ISSUES.md #1.
-   */
-  legacyBrokenLandesLink?: boolean
 }
 
-const { lang, wrapInSection = false, id = 'footer', legacyBrokenLandesLink = false } = Astro.props
+const { lang, wrapInSection = false, id = 'footer' } = Astro.props
 const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
@@ -130,17 +124,9 @@ const Inner = wrapInSection ? 'footer' : Fragment
           <li><a class="footer__nav__link" href={r('about')}>{t.about}</a></li>
           <li><a class="footer__nav__link" href={r('contact')}>Contact</a></li>
           <li><a class="footer__nav__link" href={r('services')}>Services</a></li>
-          {
-            legacyBrokenLandesLink ? (
-              <li class="footer__nav__link" {...({ href: r('landes') } as Record<string, string>)}>
-                <a>Landes</a>
-              </li>
-            ) : (
-              <li>
-                <a class="footer__nav__link" href={r('landes')}>Landes</a>
-              </li>
-            )
-          }
+          <li>
+            <a class="footer__nav__link" href={r('landes')}>Landes</a>
+          </li>
         </ul>
       </div>
     </div>

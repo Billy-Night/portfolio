@@ -289,6 +289,20 @@ def compare(base, new):
                     re.split(r'(?<=[.!?:])\s+', va or ''), re.split(r'(?<=[.!?:])\s+', vb or ''),
                     'before', 'after', lineterm='', n=0)
                 out(f'⚠️  {p} [visible text changed]\n    ' + '\n    '.join(list(diff)[:60]))
+            elif isinstance(va, list) and isinstance(vb, list):
+                # Lists (links, headings, images, json-ld): show only what was removed / added
+                key = lambda x: x if isinstance(x, str) else json.dumps(x, sort_keys=True, ensure_ascii=False)
+                ka, kb = [key(x) for x in va], [key(x) for x in vb]
+                removed = [x for x in ka if ka.count(x) > kb.count(x)]
+                added = [x for x in kb if kb.count(x) > ka.count(x)]
+                lines = [f'    - {x[:400]}' for x in dict.fromkeys(removed)] + [f'    + {x[:400]}' for x in dict.fromkeys(added)]
+                out(f'⚠️  {p} [{field}]' + ('\n' + '\n'.join(lines) if lines else ' (order changed)'))
+            elif isinstance(va, dict) and isinstance(vb, dict):
+                lines = []
+                for k in sorted(set(va) | set(vb)):
+                    if va.get(k) != vb.get(k):
+                        lines.append(f'    {k}: {json.dumps(va.get(k), ensure_ascii=False)} -> {json.dumps(vb.get(k), ensure_ascii=False)}')
+                out(f'⚠️  {p} [{field}]\n' + '\n'.join(lines))
             else:
                 out(f'⚠️  {p} [{field}]\n    before: {json.dumps(va, ensure_ascii=False)[:600]}'
                     f'\n    after:  {json.dumps(vb, ensure_ascii=False)[:600]}')

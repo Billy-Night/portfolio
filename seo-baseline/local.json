@@ -250,23 +250,23 @@
           "text": "FR"
         },
         {
-          "href": "#projects",
+          "href": "/#projects",
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
@@ -360,27 +360,27 @@
           "text": "Home"
         },
         {
-          "href": "#projects",
+          "href": "/#projects",
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
-          "href": "terms-and-conditions",
+          "href": "/terms-and-conditions",
           "text": "Terms and Conditions"
         }
       ],
@@ -669,19 +669,19 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
@@ -771,23 +771,23 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
-          "href": "terms-and-conditions",
+          "href": "/terms-and-conditions",
           "text": "Terms and Conditions"
         }
       ],
@@ -989,19 +989,19 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
@@ -1039,23 +1039,23 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
-          "href": "terms-and-conditions",
+          "href": "/terms-and-conditions",
           "text": "Terms and Conditions"
         }
       ],
@@ -1861,6 +1861,10 @@
           "text": "Services"
         },
         {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
           "href": "/fr/cgv",
           "text": "CGV"
         }
@@ -2201,6 +2205,10 @@
         {
           "href": "/fr/services",
           "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
         },
         {
           "href": "/fr/cgv",
@@ -3168,15 +3176,15 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
@@ -3274,23 +3282,23 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
-          "href": "terms-and-conditions",
+          "href": "/terms-and-conditions",
           "text": "Terms and Conditions"
         }
       ],
@@ -3492,15 +3500,15 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
@@ -3671,19 +3679,19 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
@@ -3757,23 +3765,23 @@
           "text": "Projects"
         },
         {
-          "href": "about",
+          "href": "/about",
           "text": "About"
         },
         {
-          "href": "contact",
+          "href": "/contact",
           "text": "Contact"
         },
         {
-          "href": "services",
+          "href": "/services",
           "text": "Services"
         },
         {
-          "href": "website-development-landes",
+          "href": "/website-development-landes",
           "text": "Landes"
         },
         {
-          "href": "terms-and-conditions",
+          "href": "/terms-and-conditions",
           "text": "Terms and Conditions"
         }
       ],
@@ -3868,5 +3876,5 @@
     "/sitemap.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n\n  <!-- Homepage -->\n  <url>\n    <loc>https://www.billynightingale.com/</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Homepage (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- About page -->\n  <url>\n    <loc>https://www.billynightingale.com/about</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- About page (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/a-propos</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Contact (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/contact</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n\n    <!-- Contact (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/contact</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Services page (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/services</loc>\n    <lastmod>2026-08-06</lastmod>\n  </url>\n\n  <!-- Services (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/services</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n   <!-- Website development landes page (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/website-development-landes</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Creation de site web landes (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/creation-site-web-landes</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n</urlset>",
     "/website-development-landes.md": "# Website Design & Development in Landes | Billy Nightingale\n\n> Billy Nightingale is a web designer and developer based in Capbreton, Landes, France. He creates custom websites and digital solutions for local businesses, with a focus on website performance, search engine optimisation (SEO), customer enquiries and long-term growth.\n\n**Original webpage:** [Website Design & Development in Landes](https://www.billynightingale.com/website-development-landes)  \n**French-language webpage:** [Création de site web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes)\n\n## Website Design, Development & Digital Solutions for Businesses in Landes\n\nBilly Nightingale helps businesses in Landes build modern, fast websites and digital systems tailored to their goals. The approach starts by understanding the business challenge, whether that is generating more reservations, selling products online, improving search visibility or modernising the customer experience.\n\n### Fast Websites Create Better First Impressions\n\nVisitors expect websites to load quickly, especially on mobile devices. Websites are built with performance in mind to provide a smoother user experience, support search visibility and help turn visitors into customers.\n\n### Helping Local Businesses Get Found Online\n\nA well-designed website needs to be discoverable. Services for businesses across Landes include technical SEO, local search optimisation and a strong website foundation designed to improve online visibility.\n\n### Solving Different Business Challenges\n\nEach business has different needs. Billy works to understand the underlying problem before designing and developing a solution that supports the business's goals.\n\n## Helping Businesses Grow in Landes\n\nBilly designs and develops custom websites and digital systems for businesses in Landes, France. The aim is to support local growth through tailored digital solutions, ongoing support and strategies suited to the local market.\n\nThe studio places a strong emphasis on high website performance, with a stated goal of performance scores of 95+ and strong search visibility. Specific performance and ranking results depend on the website and its circumstances.\n\n## Local SEO & Website Projects\n\n### Monkey Mood — Restaurant Websites in Capbreton and Bordeaux\n\nMonkey Mood is a restaurant business focused on Indonesian vegan cuisine, with locations in Capbreton and Bordeaux. The website is described as performing strongly in Google search results for both locations.\n\nThe project also involved redesigning and rebuilding the website to simplify the customer booking journey, improve the mobile experience and make navigation between restaurant locations clearer.\n\n### Pacific Coast Cafe — Website Performance, SEO & E-commerce in Hossegor\n\nPacific Coast Cafe is a local café in central Hossegor. Billy worked on its website performance and SEO and integrated an online shop.\n\nThe original page reports that the website became **20% faster** and performs well in Google search results. The online shop also supports e-commerce, gift cards and future business expansion.\n\n## Approach to Website Design & Development in Landes\n\n### Design\n\nWebsite design reflects the client's visual identity while taking local culture and the Landes market into account. The goal is a professional-looking website that encourages enquiries and helps businesses convert visitors into customers.\n\n### Website Performance & SEO\n\nWebsites are optimised for speed, usability and visibility in local search. Faster websites can improve user experience and support search performance, helping businesses attract visitors and generate enquiries.\n\n### Business-Focused Digital Solutions\n\nThe work is shaped around the client's business requirements: improving reservations, increasing visibility, selling online or solving another digital challenge. The objective is to build a useful solution rather than simply launch a website.\n\n### Ongoing Support\n\nOngoing support packages are available to help maintain website performance and support long-term growth.\n\n## Web Design Studio in Capbreton, Landes\n\nBilly Nightingale's studio is based in **Capbreton, Landes, 40130, France**.\n\nThe studio focuses on custom design and development, attention to detail, clear communication and long-term planning. Being based in Capbreton helps Billy understand the needs of businesses operating in the local market.\n\n## Client Challenges & Tailored Solutions\n\n### 1. Simplifying Reservations Across Multiple Locations — Monkey Mood\n\n**Client:** Monkey Mood  \n**Challenge:** The restaurant operates in Capbreton and Bordeaux. Customers needed a clearer way to choose a location and complete a reservation.  \n**Solution:** A redesigned and rebuilt website with a simplified booking journey, a better mobile experience and a clearer location structure.\n\n### 2. Creating New Revenue Opportunities — Pacific Coast Cafe\n\n**Client:** Pacific Coast Cafe  \n**Challenge:** The café needed a stronger digital platform to support growth and create revenue opportunities beyond its physical location.  \n**Solution:** Website performance improvements and an integrated online shop, providing a foundation for e-commerce, gift cards and future expansion.\n\n### 3. Launching a Brand Online — Turbulente Kombucha\n\n**Client:** Turbulente Kombucha  \n**Challenge:** The brand needed its first online presence to express its identity and reach customers beyond local distribution.  \n**Solution:** Design and development of its first e-commerce website, with a visual identity inspired by surfing, nature and the local coastline.\n\n## Discuss Your Website Project\n\nFor website design, web development, SEO or digital projects in Landes, contact Billy Nightingale to discuss your requirements or request a quote.\n\n- **Location:** Capbreton, Landes, 40130, France\n- **Email:** [contact@billynightingale.com](mailto:contact@billynightingale.com)\n- **Telephone:** [+33 7 66 09 58 64](tel:+33766095864)\n- **Contact page:** [Contact Billy Nightingale](https://www.billynightingale.com/contact)\n\n## Related Pages\n\n- [Web Design, Development & SEO Services](https://www.billynightingale.com/services)\n- [Projects](https://www.billynightingale.com/#projects)\n- [About Billy Nightingale](https://www.billynightingale.com/about)\n- [LinkedIn](https://www.linkedin.com/in/billynightingale/)\n"
   },
-  "source": "/Users/billy/Web_Development/Projects/portfolio_project"
+  "source": "/Users/billy/Web_Development/Projects/portfolio_project/dist"
 }
