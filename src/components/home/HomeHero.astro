@@ -27,7 +27,7 @@ const t = {
     aWebDesignerHelping: "développeur web et designer web, j’aide les entreprises du sud-ouest de la France à créer une présence en ligne forte et professionnelle.",
     yourTechnicalPartnerFrom: "Votre partenaire technique, de la conception au lancement et au SEO.",
     availableForNewProjects: "Disponible pour de nouveaux projets, sur place ou à distance.",
-    learnMoreAboutMe: "",
+    learnMoreAboutMe: "Découvrez-en plus sur moi et mes projets récents",
     projects: "Projets",
   },
 }[lang]
@@ -241,8 +241,9 @@ const t = {
           <p class="max-hero-txt-width">
             {t.availableForNewProjects}
           </p>
-          {/* English only: the French page has no equivalent line */}
-          {lang === 'en' && <p class="max-hero-txt-width"> {t.learnMoreAboutMe} </p>}
+          <p class="max-hero-txt-width">
+            {t.learnMoreAboutMe}
+          </p>
           <div class="cta-container">
             <a class="btn__primary btn__prim--light" href={r('contact')}
               >Contact</a

@@ -32,8 +32,8 @@ const t = {
     hisSupportGoesFar: "Son accompagnement va bien au-delà de la simple prestation technique : c’est un vrai partenaire de confiance. Nous ne pouvons que le recommander les yeux fermés. Un grand merci pour ce travail de qualité Billy !",
     altPortraitOfMattAnd: "Matt et Jenny, propriétaires du restaurant Monkey Mood à Capbreton et clients de Billy Nightingale Création de Sites Web",
     aHugeThankYou: "Un immense merci à Billy pour notre superbe site web, qu'il a conçu et réalisé sur mesure avec WordPress. Si vous avez besoin d'un site web fonctionnel avec un système de réservation et plusieurs pages pour votre entreprise, nous vous recommandons vivement Billy.",
-    hisStrongUnderstandingOf: "Sa connaissance approfondie du marché local de Capbreton et Hossegor nous a également été précieuse pour définir précisément nos besoins. Son souci du détail et sa communication sont les points forts de son travail. Encore merci !",
-    thankYouAgain: "",
+    hisStrongUnderstandingOf: "Sa connaissance approfondie du marché local de Capbreton et Hossegor nous a également été précieuse pour définir précisément nos besoins. Son souci du détail et sa communication sont les points forts de son travail.",
+    thankYouAgain: "Encore merci !",
   },
 }[lang]
 ---
@@ -266,8 +266,7 @@ const t = {
           <p class="max-txt-width">
             {t.hisStrongUnderstandingOf}
           </p>
-          {/* English only: the French page has no equivalent line */}
-          {lang === 'en' && <p class="max-txt-width">{t.thankYouAgain}</p>}
+          <p class="max-txt-width">{t.thankYouAgain}</p>
           <p>Matt Hughes - Monkey Mood</p>
           <div class="cont__review-stars">
             <img
