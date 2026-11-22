@@ -9,8 +9,6 @@ interface Props {
 
 const { lang } = Astro.props
 const r = (key: RouteKey) => routes[key][lang]
-// The "Best for" and "Delivery time" labels are <h3> on the English page and <h4> on the French one
-const LabelHeading = lang === 'en' ? 'h3' : 'h4'
 
 const t = {
   en: {
@@ -201,9 +199,9 @@ const t = {
           {t.aProfessionalOnePage}
         </p>
         <PackageFeatures items={t.starterFeatures} />
-        <LabelHeading>{t.bestFor}</LabelHeading>
+        <h4>{t.bestFor}</h4>
         <p>{t.newBusinessesThatNeed}</p>
-        <LabelHeading>{t.deliveryTime}</LabelHeading>
+        <h4>{t.deliveryTime}</h4>
         <p>{t.n12Weeks}</p>
         <div class="package-card__actions">
           <a class="btn__primary btn__prim--light" href={r('contact')}>
@@ -294,11 +292,11 @@ const t = {
           {t.aCompleteCustomWebsite}
         </p>
         <PackageFeatures items={t.businessFeatures} large />
-        <LabelHeading>{t.bestFor}</LabelHeading>
+        <h4>{t.bestFor}</h4>
         <p>
           {t.establishedBusinessesLookingTo}
         </p>
-        <LabelHeading>{t.deliveryTime}</LabelHeading>
+        <h4>{t.deliveryTime}</h4>
         <p>{t.n23Weeks}</p>
         <div class="package-card__actions">
           <a class="btn__primary btn__prim--light" href={r('contact')}>
@@ -368,9 +366,9 @@ const t = {
           {t.scaleMeasureAndAutomate}
         </p>
         <PackageFeatures items={t.growthFeatures} />
-        <LabelHeading>{t.bestFor}</LabelHeading>
+        <h4>{t.bestFor}</h4>
         <p>{t.growingBusinessesWithMore}</p>
-        <LabelHeading>{t.deliveryTime}</LabelHeading>
+        <h4>{t.deliveryTime}</h4>
         <p>{t.n46Weeks}</p>
         <div class="package-card__actions">
           <a class="btn__primary btn__prim--light" href={r('contact')}>
