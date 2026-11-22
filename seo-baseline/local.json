@@ -394,14 +394,14 @@
         "description": [
           "Web designer and developer in Capbreton creating modern, fast, SEO-optimised websites for businesses in Landes and the Pays Basque."
         ],
-        "og:date": [
-          "2025-11-19"
-        ],
         "og:description": [
           "Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Explore modern projects, bio, and contact details."
         ],
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
         ],
         "og:image:height": [
           "600"
@@ -414,6 +414,9 @@
         ],
         "og:locale:alternate": [
           "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Billy Nightingale | Web Designer and Developer Portfolio"
@@ -433,14 +436,8 @@
         "twitter:card": [
           "summary_large_image"
         ],
-        "twitter:date": [
-          "2025-11-19"
-        ],
         "twitter:description": [
           "Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Explore modern projects, bio, and contact details."
-        ],
-        "twitter:domain": [
-          "https://www.billynightingale.com/"
         ],
         "twitter:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
@@ -814,6 +811,9 @@
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
         ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
         "og:image:height": [
           "600"
         ],
@@ -825,6 +825,9 @@
         ],
         "og:locale:alternate": [
           "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Billy Nightingale | Web Developer Portfolio | About"
@@ -846,9 +849,6 @@
         ],
         "twitter:description": [
           "About Billy Nightingale: web developer and designer on the border of Pays Basque and Landes, creating modern websites, digital solutions."
-        ],
-        "twitter:domain": [
-          "https://www.billynightingale.com/about"
         ],
         "twitter:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
@@ -1082,6 +1082,9 @@
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
         ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
         "og:image:height": [
           "600"
         ],
@@ -1093,6 +1096,9 @@
         ],
         "og:locale:alternate": [
           "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Contact Billy Nightingale | Freelance Web Developer in Capbreton"
@@ -1527,14 +1533,14 @@
         "description": [
           "Création de site web, web design, développement web et SEO à Capbreton dans les Landes. Sites modernes et performants pour les entreprises locales."
         ],
-        "og:date": [
-          "2022-11-19"
-        ],
         "og:description": [
           "Création de site web, web design, développement web et SEO à Capbreton dans les Landes. Sites modernes et performants pour les entreprises locales."
         ],
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
         ],
         "og:image:height": [
           "600"
@@ -1547,6 +1553,9 @@
         ],
         "og:locale:alternate": [
           "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Billy Nightingale | Web Designer & Développeur Web"
@@ -1566,14 +1575,8 @@
         "twitter:card": [
           "summary_large_image"
         ],
-        "twitter:date": [
-          "2025-11-19"
-        ],
         "twitter:description": [
           "Création de site web, web design, développement web et SEO à Capbreton dans les Landes. Sites modernes et performants pour les entreprises locales."
-        ],
-        "twitter:domain": [
-          "https://www.billynightingale.com/fr/"
         ],
         "twitter:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
@@ -1892,6 +1895,9 @@
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
         ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
         "og:image:height": [
           "600"
         ],
@@ -1903,6 +1909,9 @@
         ],
         "og:locale:alternate": [
           "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Billy Nightingale | Portfolio de développeur Web | À propos"
@@ -2254,6 +2263,9 @@
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
         ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
         "og:image:height": [
           "600"
         ],
@@ -2265,6 +2277,9 @@
         ],
         "og:locale:alternate": [
           "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Contactez Billy Nightingale | Développeur Web Freelance à Capbreton"
@@ -2563,6 +2578,9 @@
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
         ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
         "og:image:height": [
           "600"
         ],
@@ -2574,6 +2592,9 @@
         ],
         "og:locale:alternate": [
           "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Création de sites web dans les Landes | Billy Nightingale"
@@ -2987,9 +3008,6 @@
         "twitter:description": [
           "Services de web design, développement web et SEO à Capbreton, Hossegor et Landes. J’aide les entreprises à créer des sites web modernes et performants. Demandez un devis ou prenez contact."
         ],
-        "twitter:domain": [
-          "https://www.billynightingale.com/"
-        ],
         "twitter:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
         ],
@@ -3379,9 +3397,6 @@
         ],
         "twitter:description": [
           "Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch."
-        ],
-        "twitter:domain": [
-          "https://www.billynightingale.com/"
         ],
         "twitter:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
@@ -3838,6 +3853,9 @@
         "og:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
         ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
         "og:image:height": [
           "600"
         ],
@@ -3849,6 +3867,9 @@
         ],
         "og:locale:alternate": [
           "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
         ],
         "og:title": [
           "Website Development in Landes | Billy Nightingale"
@@ -3870,9 +3891,6 @@
         ],
         "twitter:description": [
           "Professional website development in Landes. Fast, modern websites designed to help local businesses improve visibility, attract customers and grow online."
-        ],
-        "twitter:domain": [
-          "billynightingale.com"
         ],
         "twitter:image": [
           "https://www.billynightingale.com/assets/meta_preview1200x600.webp"

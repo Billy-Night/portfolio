@@ -17,12 +17,6 @@ interface Props {
   jsonLd?: object[]
   ogImage?: string
   robots?: string
-  // Optional extras used by some pages
-  ogSiteName?: string
-  ogImageAlt?: string
-  ogDate?: string
-  twitterDomain?: string
-  twitterDate?: string
 }
 
 const {
@@ -35,15 +29,14 @@ const {
   jsonLd = [],
   ogImage = `${SITE}/assets/meta_preview1200x600.webp`,
   robots = 'index, follow',
-  ogSiteName,
-  ogImageAlt,
-  ogDate,
-  twitterDomain,
-  twitterDate,
 } = Astro.props
 
 const canonical = url(route, lang)
 const locale = { en: 'en_GB', fr: 'fr_FR' }
+const ogImageAlt = {
+  en: 'Billy Nightingale – Web design, development & SEO services',
+  fr: 'Billy Nightingale – Service de Web design, développement & SEO',
+}[lang]
 const altLocale = lang === 'en' ? locale.fr : locale.en
 ---
 
@@ -83,7 +76,7 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
         <Fragment>
           <meta property="og:url" content={canonical} />
           <meta property="og:type" content="website" />
-          {ogSiteName && <meta property="og:site_name" content={ogSiteName} />}
+          <meta property="og:site_name" content="Billy Nightingale" />
           <meta property="og:title" content={og.title} />
           <meta property="og:description" content={og.description} />
           <meta property="og:locale" content={locale[lang]} />
@@ -91,15 +84,12 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
           <meta property="og:image" content={ogImage} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="600" />
-          {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
-          {ogDate && <meta property="og:date" content={ogDate} />}
+          <meta property="og:image:alt" content={ogImageAlt} />
           <meta name="twitter:card" content="summary_large_image" />
-          {twitterDomain && <meta name="twitter:domain" content={twitterDomain} />}
           <meta name="twitter:url" content={canonical} />
           <meta name="twitter:title" content={twitter.title} />
           <meta name="twitter:description" content={twitter.description} />
           <meta name="twitter:image" content={ogImage} />
-          {twitterDate && <meta name="twitter:date" content={twitterDate} />}
         </Fragment>
       )
     }
