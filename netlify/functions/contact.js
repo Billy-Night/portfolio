@@ -21,6 +21,7 @@ export async function handler(event) {
     'https://billynightingale.com',
     'https://www.billynightingale.com',
     'http://localhost:8888', // netlify dev
+    'https://astrotrans--billy-nightingale-web-dev.netlify.app', // AstroTrans branch deploy (for testing)
   ])
 
   const origin = event.headers.origin || event.headers.Origin
