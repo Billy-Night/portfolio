@@ -1817,7 +1817,7 @@
           "text": "Mail"
         },
         {
-          "href": "/services",
+          "href": "/fr/services",
           "text": "Services"
         },
         {
@@ -2853,7 +2853,7 @@
           "text": "Comparer les offres"
         },
         {
-          "href": "/contact",
+          "href": "/fr/contact",
           "text": "Devis"
         },
         {
@@ -3733,7 +3733,7 @@
           "text": "PAR MAIL"
         },
         {
-          "href": "/fr/contact",
+          "href": "/contact",
           "text": "Quote"
         },
         {
