@@ -330,7 +330,7 @@ def check(snap):
     sitemap = snap.get('site_files', {}).get('/sitemap.xml', '')
     locs = set(re.findall(r'<loc>\s*(.*?)\s*</loc>', sitemap))
     for p, d in sorted(pages.items()):
-        if p.startswith('/404'):
+        if p.endswith('/404'):  # 404 pages have no canonical, hreflang or sitemap entry
             continue
         expected = SITE + p
         can = d['canonical']

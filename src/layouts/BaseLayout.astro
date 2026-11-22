@@ -8,7 +8,11 @@ import { SITE, routes, url, type Lang, type RouteKey } from '../i18n/routes'
 
 interface Props {
   lang: Lang
-  route: RouteKey
+  /**
+   * The page's entry in src/i18n/routes.ts. Omit it only for pages with no
+   * fixed address (the 404 pages): they get no canonical, hreflang or og:url.
+   */
+  route?: RouteKey
   title: string
   description: string
   /** Social share title/description. og defaults to the page title and description; twitter defaults to og. */
@@ -30,7 +34,7 @@ const {
   robots = 'index, follow',
 } = Astro.props
 
-const canonical = url(route, lang)
+const canonical = route && url(route, lang)
 const og = Astro.props.og ?? { title, description }
 const twitter = Astro.props.twitter ?? og
 const locale = { en: 'en_GB', fr: 'fr_FR' }
@@ -51,12 +55,15 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
 
-    <!-- Canonical -->
-    <link rel="canonical" href={canonical} />
-
-    <!-- Language hreflang -->
-    <link rel="alternate" hreflang="en" href={SITE + routes[route].en} />
-    <link rel="alternate" hreflang="fr" href={SITE + routes[route].fr} />
+    {
+      route && (
+        <Fragment>
+          <link rel="canonical" href={canonical} />
+          <link rel="alternate" hreflang="en" href={SITE + routes[route].en} />
+          <link rel="alternate" hreflang="fr" href={SITE + routes[route].fr} />
+        </Fragment>
+      )
+    }
 
     <link
       rel="preload"
@@ -72,7 +79,7 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#000000" />
 
-    <meta property="og:url" content={canonical} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Billy Nightingale" />
     <meta property="og:title" content={og.title} />
@@ -84,7 +91,7 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <meta property="og:image:height" content="600" />
     <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={canonical} />
+    {canonical && <meta name="twitter:url" content={canonical} />}
     <meta name="twitter:title" content={twitter.title} />
     <meta name="twitter:description" content={twitter.description} />
     <meta name="twitter:image" content={ogImage} />

@@ -1,0 +1,78 @@
+---
+// Shared body of the 404 pages (src/pages/404.astro and src/pages/fr/404.astro).
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from './Header.astro'
+import CookieBanner from './CookieBanner.astro'
+import Footer from './Footer.astro'
+import { routes, type Lang } from '../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    title: '404 - Page Not Found',
+    description: 'This page could not be found.',
+    heading: 'Page not found',
+    text: 'Oops! The page you’re looking for doesn’t exist or has moved.',
+    home: 'Go back home',
+    contact: 'Contact',
+  },
+  fr: {
+    title: '404 - Page introuvable',
+    description: 'Cette page est introuvable.',
+    heading: 'Page introuvable',
+    text: 'Oups ! La page que vous recherchez n’existe pas ou a été déplacée.',
+    home: 'Retour à l’accueil',
+    contact: 'Contact',
+  },
+}[lang]
+---
+
+<BaseLayout lang={lang} title={t.title} description={t.description} robots="noindex, follow">
+  <Header lang={lang} route="home" />
+  <main>
+    <CookieBanner lang={lang} />
+    <section class="section-pad not-found">
+      <div class="glass__back not-found__panel">
+        <p class="not-found__code">404</p>
+        <h1>{t.heading}</h1>
+        <p>{t.text}</p>
+        <div class="cta-container">
+          <a class="btn__primary btn__prim--light" href={routes.home[lang]}>{t.home}</a>
+          <a class="btn__second btn__second--light" href={routes.contact[lang]}>{t.contact}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: flex;
+    justify-content: center;
+    padding-top: calc(var(--padding-hor-section) + 4rem);
+  }
+  .not-found__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+    padding: var(--space-8) var(--space-6);
+    max-width: 65ch;
+  }
+  .not-found__code {
+    font-family: var(--mono);
+    letter-spacing: 0.3em;
+    margin: 0;
+    opacity: 0.7;
+  }
+  .not-found__panel h1 {
+    margin: 0;
+  }
+</style>

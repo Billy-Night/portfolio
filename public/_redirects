@@ -24,3 +24,6 @@ http://billynightingale.com/* https://www.billynightingale.com/:splat 301!
 
 /index / 301!
 /fr/index /fr/ 301!
+
+# French 404 page for unknown /fr/ addresses (Netlify serves /404.html for everything else)
+/fr/* /fr/404.html 404

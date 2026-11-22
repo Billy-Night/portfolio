@@ -462,13 +462,31 @@
     "/404": {
       "canonical": [],
       "headings": [
-        "h1: 404"
+        "h1: Page not found",
+        "h3: Create your digital system",
+        "h4: Billy Nightingale - Web Design & Development in Capbreton",
+        "h5: Contact Information:"
       ],
       "hreflang": {},
-      "images": [],
+      "images": [
+        {
+          "alt": "Billy Nightingale logo",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Menu icon",
+          "src": "/assets/icons/ham_menu.svg"
+        }
+      ],
       "jsonld": [],
       "lang": "en",
       "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
         {
           "href": "/favicon-n-v1-48.png",
           "rel": "icon",
@@ -496,23 +514,162 @@
       ],
       "links": [
         {
-          "href": "https://www.billynightingale.com/",
+          "href": "/"
+        },
+        {
+          "href": "/fr/",
+          "text": "FR"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/"
+        },
+        {
+          "href": "https://github.com/Billy-Night"
+        },
+        {
+          "href": "/",
           "text": "Go back home"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/terms-and-conditions",
+          "text": "Terms and Conditions"
         }
       ],
       "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
         "charset": [
           "UTF-8"
+        ],
+        "description": [
+          "This page could not be found."
+        ],
+        "og:description": [
+          "This page could not be found."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "en_GB"
+        ],
+        "og:locale:alternate": [
+          "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "404 - Page Not Found"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "robots": [
+          "noindex, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "This page could not be found."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "404 - Page Not Found"
         ],
         "viewport": [
           "width=device-width, initial-scale=1.0"
         ]
       },
       "status": 200,
-      "text": "404 Oops! The page you’re looking for doesn’t exist or has moved. Go back home",
-      "text_sha1": "de8c31c2efce3e7391a2335c91d6f1923ad9a16d",
+      "text": "FR Projects About Contact Services Landes Cookies are used to improve your experience on our website. By continuing to use our site, you agree to our use of cookies. Accept Deny 404 Page not found Oops! The page you’re looking for doesn’t exist or has moved. Go back home Contact Create your digital system Billy Nightingale - Web Design & Development in Capbreton Contact Information: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Home Projects About Contact Services Landes © 2026 Billy Nightingale. All rights reserved. Terms and Conditions",
+      "text_sha1": "2b768c14751cc81152538ac79f56a27c9a6ecd9b",
       "title": "404 - Page Not Found",
-      "word_count": 15
+      "word_count": 92
     },
     "/about": {
       "canonical": [
@@ -1599,6 +1756,218 @@
       "text_sha1": "baf4fea533f6c5fe1d4600fc9d20153493075a19",
       "title": "Web Designer & Développeur Web à Capbreton | Billy Nightingale",
       "word_count": 1773
+    },
+    "/fr/404": {
+      "canonical": [],
+      "headings": [
+        "h1: Page introuvable",
+        "h3: Création de site web et système digital",
+        "h4: Billy Nightingale - Web Design & Développement à Capbreton",
+        "h5: Contact:"
+      ],
+      "hreflang": {},
+      "images": [
+        {
+          "alt": "Logo Billy Nightingale",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Icône du menu",
+          "src": "/assets/icons/ham_menu.svg"
+        }
+      ],
+      "jsonld": [],
+      "lang": "fr",
+      "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
+          "rel": "icon",
+          "sizes": "32x32"
+        },
+        {
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
+        },
+        {
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
+          "rel": "manifest"
+        }
+      ],
+      "links": [
+        {
+          "href": "/fr/"
+        },
+        {
+          "href": "/",
+          "text": "EN"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+        },
+        {
+          "href": "https://github.com/Billy-Night"
+        },
+        {
+          "href": "/fr/",
+          "text": "Retour à l’accueil"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/fr/",
+          "text": "Accueil"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À Propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/fr/cgv",
+          "text": "CGV"
+        }
+      ],
+      "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
+        "charset": [
+          "UTF-8"
+        ],
+        "description": [
+          "Cette page est introuvable."
+        ],
+        "og:description": [
+          "Cette page est introuvable."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "fr_FR"
+        ],
+        "og:locale:alternate": [
+          "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "404 - Page introuvable"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "robots": [
+          "noindex, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "Cette page est introuvable."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "404 - Page introuvable"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0"
+        ]
+      },
+      "status": 200,
+      "text": "EN Projets À propos Contact Services Landes Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En continuant à naviguer sur ce site, vous acceptez l’utilisation de cookies. Accepter Refuser 404 Page introuvable Oups ! La page que vous recherchez n’existe pas ou a été déplacée. Retour à l’accueil Contact Création de site web et système digital Billy Nightingale - Web Design & Développement à Capbreton Contact: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Accueil Projets À Propos Contact Services Landes © 2026 Billy Nightingale. Tous droits réservés. CGV",
+      "text_sha1": "99ae0d590e283a1deee457408049577bc81f4a0c",
+      "title": "404 - Page introuvable",
+      "word_count": 96
     },
     "/fr/a-propos": {
       "canonical": [
@@ -4040,7 +4409,7 @@
   },
   "site_files": {
     "/_headers": "/*\n  Cache-Control: public, max-age=600, must-revalidate",
-    "/_redirects": "# Domain redirects\n\nhttp://billynightingale.com/* https://www.billynightingale.com/:splat 301!\n\n# English\n\n/index.html / 301!\n/about.html /about 301!\n/contact.html /contact 301!\n/services.html /services 301!\n/website-development-landes.html /website-development-landes 301!\n/terms-and-conditions.html /terms-and-conditions 301!\n\n# French\n\n/fr/index.html /fr/ 301!\n/fr/a-propos.html /fr/a-propos 301!\n/fr/contact.html /fr/contact 301!\n/fr/services.html /fr/services 301!\n/fr/creation-site-web-landes.html /fr/creation-site-web-landes 301!\n/fr/cgv.html /fr/cgv 301!\n\n# Extra:\n\n/index / 301!\n/fr/index /fr/ 301!\n",
+    "/_redirects": "# Domain redirects\n\nhttp://billynightingale.com/* https://www.billynightingale.com/:splat 301!\n\n# English\n\n/index.html / 301!\n/about.html /about 301!\n/contact.html /contact 301!\n/services.html /services 301!\n/website-development-landes.html /website-development-landes 301!\n/terms-and-conditions.html /terms-and-conditions 301!\n\n# French\n\n/fr/index.html /fr/ 301!\n/fr/a-propos.html /fr/a-propos 301!\n/fr/contact.html /fr/contact 301!\n/fr/services.html /fr/services 301!\n/fr/creation-site-web-landes.html /fr/creation-site-web-landes 301!\n/fr/cgv.html /fr/cgv 301!\n\n# Extra:\n\n/index / 301!\n/fr/index /fr/ 301!\n\n# French 404 page for unknown /fr/ addresses (Netlify serves /404.html for everything else)\n/fr/* /fr/404.html 404\n",
     "/about.md": "# About Billy Nightingale — Web Designer & Developer in Capbreton, Landes\n\n> Billy Nightingale is a web designer and developer based in Capbreton, Landes, France, near Hossegor and the Pays Basque. He helps small and medium-sized businesses create modern, fast, search-engine-friendly websites, web applications and digital tools designed to support business growth.\n\n**Website:** [billynightingale.com](https://www.billynightingale.com/)  \n**About page:** [billynightingale.com/about](https://www.billynightingale.com/about)  \n**French-language page:** [À propos](https://www.billynightingale.com/fr/a-propos)\n\n## Background\n\nBilly has a background in mechanical engineering and approaches web design and development with a focus on practical problem-solving. He combines technical development with thoughtful design to create websites that are functional, visually engaging and tailored to each client's goals.\n\nHis work ranges from WordPress websites for local businesses to custom web applications and digital tools that simplify operations and strengthen a business's online presence.\n\n### Professional journey\n\n- **BEng Motorsport Engineering** — engineering education.\n- **Mechatronics Engineer** — professional engineering background.\n- **Bac +2 Web Development** — web development training.\n- **Billy Nightingale Web Studio** — independent web design and development work.\n\n## What Billy Does\n\n### Website Design\n\nBilly designs websites for small and medium-sized businesses, with an emphasis on visual identity, usability and engaging experiences. His design work uses tools such as Figma and Relume, along with Affinity and Adobe tools for image editing, SVGs, icons and other visual assets.\n\n### SEO and Website Performance Optimisation\n\nBilly works on website performance, search engine optimisation (SEO), accessibility and user experience to help businesses improve online visibility and provide a faster, easier experience for visitors.\n\n### Website and Application Development\n\nBilly builds websites, web applications and digital tools. His work includes WordPress and Elementor websites, as well as full-stack applications using JavaScript, React, Node.js and related technologies.\n\nFor more information about available work, see [Web Design, Development and SEO Services](https://www.billynightingale.com/services).\n\n## Project Process\n\nThe approach varies by project, but typically follows four phases:\n\n### 1. Discovery\n\nBilly discusses the client's goals, requirements and challenges, researches competitors, explores possible solutions and design directions, and creates mood boards to establish the project's direction.\n\n### 2. Design\n\nBilly presents a style guide with typography and colour options, creates low-fidelity wireframes, and develops high-fidelity designs once the initial direction is approved.\n\n### 3. Development\n\nBilly builds the website or application using reusable components and a responsive layout system. This includes optimising images and fonts for web performance and adapting the experience to major device sizes.\n\n### 4. Deployment\n\nBilly connects the domain, configures SSL and launches the website. He then checks stability, SEO, performance and accessibility using tools such as Google Search Console, Ahrefs and Lighthouse.\n\n## Technologies and Tools\n\nThe technology stack depends on the project's scope, requirements and budget. Tools listed on the About page include:\n\n- **Project management:** Google Drive, Notion, Trello, ClickUp.\n- **Design:** Relume, Figma, Affinity, Unicorn Studio.\n- **Development:** WordPress, Sanity, Elementor Pro, HTML, CSS, JavaScript, React, Astro, Node.js, MySQL\n- **Deployment and hosting:** Hostinger, Netlify Pro, Railway.\n\n## Location and Clients\n\nBilly is based in **Capbreton (40130), Landes, France**, close to Hossegor and the Pays Basque. He primarily works with local businesses, including restaurants, healthcare providers, beverage producers and other independent businesses. Remote projects are also possible.\n\nHe focuses on creating websites suited to a client's audience and location, including local SEO and performance optimisation.\n\nRelated pages:\n\n- [Website Design and Development in Landes](https://www.billynightingale.com/website-development-landes)\n- [Selected Projects](https://www.billynightingale.com/#projects)\n\n## Personal Interests\n\nOutside client projects, Billy enjoys programming and building tools and applications. He also enjoys surfing and snowboarding, has travelled to practise these sports, and is a qualified personal trainer and snowboard instructor.\n\n## Contact\n\nBilly is available to discuss new website, development and digital projects.\n\n- **Location:** Capbreton, Landes, 40130, France.\n- **Email:** [contact@billynightingale.com](mailto:contact@billynightingale.com)\n- **Phone:** [+33 7 66 09 58 64](tel:+33766095864)\n- **LinkedIn:** [Billy Nightingale](https://www.linkedin.com/in/billynightingale/)\n- **GitHub:** [Billy-Night](https://github.com/Billy-Night)\n- **Instagram:** [billy.nightingale.studio](https://www.instagram.com/billy.nightingale.studio/)\n- **Contact page:** [Send an enquiry](https://www.billynightingale.com/contact)\n",
     "/contact.md": "# Contact Billy Nightingale — Web Designer & Developer in Capbreton\n\n> Billy Nightingale is an independent web designer and developer based in Capbreton, Landes, France. He helps businesses with website design, development, search engine optimisation (SEO), performance and ongoing support.\n\n- **Official contact page:** [billynightingale.com/contact](https://www.billynightingale.com/contact)\n- **French version:** [Contact — Français](https://www.billynightingale.com/fr/contact)\n\n## Let's Work Together\n\nI enjoy working closely with clients and helping translate technical ideas into clear, practical solutions. My goal is to ensure every client understands the project, feels comfortable with the technical decisions being made, and stays involved throughout the process.\n\nI see myself as a long-term technical partner rather than simply someone who builds websites. From strategy and design to performance, SEO and ongoing support, I work closely with businesses to help them grow online with confidence.\n\n## How to Get in Touch\n\nTo ask a question, discuss a potential project or request a quote, use the [English contact form](https://www.billynightingale.com/contact) or the contact details below.\n\n### Contact Details\n\n- **Name:** Billy Nightingale\n- **Services:** Web design, web development and SEO\n- **Location:** Capbreton, Landes, 40130, France\n- **Phone:** [+33 7 66 09 58 64](tel:+33766095864)\n- **Email:** [contact@billynightingale.com](mailto:contact@billynightingale.com)\n\n## Types of Enquiries\n\nThe contact form offers the following options:\n\n- Create a new website\n- Improve an existing website\n- Discuss a potential project\n- SEO packages\n- General question\n\nThe form requests your **name**, **email address**, **reason for contacting** and **message**. Depending on the enquiry, it may also request optional project information, such as your business name, current website, goals, estimated budget and preferred timeline.\n\n### SEO Enquiries\n\n**SEO goals available in the form:**\n\n- Local SEO\n- Technical optimisation\n- SEO content and blogging\n\n**Budget options in the form:** €250–€400, €400–€700, €700–€1,200, or €150–€300 per month.\n\n**Preferred timeline options:** Start as soon as possible, within one month, within 1–3 months, ongoing monthly support, or no rush / exploring options.\n\n### Website Projects\n\n**Budget options in the form:** €500–€1,000, €1,000–€2,000, €2,000–€4,000, or €4,000+.\n\n**Preferred timeline options:** As soon as possible, within one month, within 1–3 months, or no rush.\n\n*These amounts are budget selection options in the contact form, not fixed service prices or quotations. For published website packages and indicative prices, see the [services page](https://www.billynightingale.com/services).*\n\n## Useful Links\n\n- [Web Design, Development & SEO Services](https://www.billynightingale.com/services)\n- [About Billy Nightingale](https://www.billynightingale.com/about)\n- [Website Design & Development in Landes](https://www.billynightingale.com/website-development-landes)\n- [Homepage and portfolio projects](https://www.billynightingale.com/#projects)\n- [LinkedIn](https://www.linkedin.com/in/billynightingale/)\n- [GitHub](https://github.com/Billy-Night)\n- [Instagram](https://www.instagram.com/billy.nightingale.studio/)\n\n**To submit an enquiry, visit the [contact page](https://www.billynightingale.com/contact).** This Markdown document describes the page but cannot submit the interactive form itself.\n",
     "/fr/a-propos.md": "# À propos de Billy Nightingale — Web designer et développeur web à Capbreton\n\n> Billy Nightingale est web designer et développeur web basé à Capbreton, dans les Landes, en France. Il accompagne les petites entreprises locales dans la création de sites web modernes, rapides, performants et optimisés pour le référencement naturel (SEO), ainsi que dans le développement d'applications et d'outils numériques sur mesure.\n\n**Site officiel :** [billynightingale.com](https://www.billynightingale.com/fr/)  \n**Page d'origine :** [À propos de Billy Nightingale](https://www.billynightingale.com/fr/a-propos)  \n**Zone d'activité :** Capbreton, Hossegor, Landes et Pays Basque ; projets également réalisés à distance.\n\n## Présentation\n\nJe suis Billy Nightingale, web designer et développeur basé à Capbreton, dans les Landes, en France. J'aide les petites entreprises locales à créer des sites web modernes, rapides et optimisés pour les moteurs de recherche, conçus pour soutenir leur croissance.\n\nGrâce à ma formation en ingénierie mécanique et à mon approche axée sur la résolution de problèmes, j'associe développement technique et design réfléchi pour créer des sites web fonctionnels et visuellement engageants. Mes projets vont des sites WordPress pour les entreprises locales aux applications web sur mesure et aux outils numériques qui facilitent les opérations et renforcent la présence en ligne.\n\n[Découvrir mes projets](https://www.billynightingale.com/fr/#projects)\n\n## Mon parcours\n\nMon parcours associe ingénierie et développement web :\n\n1. **BEng en ingénierie Motorsport** — formation en ingénierie liée au sport automobile.\n2. **Ingénieur mécatronique** — expérience en ingénierie et résolution de problèmes techniques.\n3. **Bac +2 en développement web** — formation en conception et développement web.\n4. **Billy Nightingale Web Studio** — activité de design et développement web à Capbreton.\n\n## Ce que je fais\n\nJe crée des sites web, des systèmes numériques et des applications pour les entreprises.\n\n### Design de sites web\n\nJe conçois des sites web pour les petites et moyennes entreprises en utilisant des outils comme **Figma** et **Relume AI**. Je réalise également des éléments visuels, notamment des SVG, des icônes et des images retouchées avec **Affinity** et **Adobe**, afin d'améliorer l'identité visuelle et l'expérience utilisateur.\n\n### Optimisation SEO et performances\n\nJ'optimise les performances des sites web et leur référencement naturel (SEO) pour améliorer leur visibilité, leur trafic et leur expérience utilisateur. Je privilégie des sites rapides, accessibles et faciles à utiliser.\n\n### Développement web\n\nJe développe des sites avec **WordPress** et **Elementor**, ainsi que des applications web full-stack et des outils numériques sur mesure. J'utilise notamment **JavaScript**, **React** et **Node.js** en fonction des besoins du projet.\n\n[Voir l'ensemble des services](https://www.billynightingale.com/fr/services)\n\n## Mon processus de travail\n\nSelon le projet, je travaille en quatre phases : découverte, design, développement et déploiement.\n\n### 1. Découverte\n\nJ'échange avec le client pour comprendre ses besoins, ses objectifs et ses problématiques. Cette étape comprend la recherche de solutions, la création de moodboards, l'étude des concurrents et la définition d'une direction créative.\n\n### 2. Design\n\nJe propose un guide de style avec des associations typographiques et une palette de couleurs, puis des wireframes basse fidélité. Après validation, je réalise des maquettes haute fidélité.\n\n### 3. Développement\n\nJe construis le projet et le prépare pour la mise en production : composants réutilisables, optimisation des images et des polices, mise en page cohérente et fluide, et adaptation aux principaux appareils et formats d'écran.\n\n### 4. Déploiement\n\nJe configure le nom de domaine, sécurise le site avec SSL et réalise sa mise en ligne. Après le lancement, je travaille sur le SEO et je vérifie la stabilité, les performances et l'accessibilité avec des outils comme **Google Search Console**, **Ahrefs** et **Google Lighthouse**.\n\n## Technologies et outils\n\nJe sélectionne les outils en fonction des besoins, de la taille et du budget de chaque projet.\n\n### Gestion de projet\n\n- Google Drive\n- Notion\n- Trello\n- ClickUp\n\n### Design\n\n- Relume\n- Figma\n- Affinity\n- Unicorn Studio\n\n### Développement\n\n- WordPress\n- Elementor Pro\n- HTML\n- CSS\n- JavaScript\n- React\n- Node.js\n- MySQL\n\n### Déploiement\n\n- Hostinger\n- Netlify Pro\n- Railway\n\n## Localisation : Capbreton et Hossegor\n\nJe suis basé à **Capbreton (40130), dans les Landes, en France**, près de Hossegor et du Pays Basque.\n\nJe travaille principalement avec des entreprises locales, notamment des restaurants, des professionnels de santé, des producteurs de boissons et d'autres acteurs économiques de la région. Je suis également disponible pour des collaborations à distance.\n\nJe porte une attention particulière à la qualité des sites et à leur optimisation pour le **référencement local (SEO local)**.\n\n- [Mes projets](https://www.billynightingale.com/fr/#projects)\n- [Création de sites web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes)\n\n## Centres d'intérêt\n\nEn dehors des projets clients, je consacre du temps à la programmation et à la création d'outils ou d'applications personnelles.\n\nJe pratique également le **surf** et le **snowboard**, deux sports que j'ai eu l'occasion de découvrir dans plusieurs pays. Je suis aussi **coach sportif diplômé** et **moniteur de snowboard**.\n\n## Contact\n\nJe suis disponible pour discuter de nouveaux projets de création de sites web, de design et de développement. Vous pouvez me contacter par e-mail, par téléphone ou via le formulaire de contact de mon site.\n\n- **Nom :** Billy Nightingale\n- **Localisation :** Capbreton, Landes, 40130, France\n- **E-mail :** [contact@billynightingale.com](mailto:contact@billynightingale.com)\n- **Téléphone :** [+33 7 66 09 58 64](tel:+33766095864)\n- **Formulaire de contact :** [billynightingale.com/fr/contact](https://www.billynightingale.com/fr/contact)\n- **LinkedIn :** [Profil de Billy Nightingale](https://www.linkedin.com/in/billynightingale/)\n- **GitHub :** [Billy-Night](https://github.com/Billy-Night)\n- **Instagram :** [billy.nightingale.studio](https://www.instagram.com/billy.nightingale.studio/)\n\n## Liens utiles\n\n- [Accueil — version française](https://www.billynightingale.com/fr/)\n- [Services web et SEO](https://www.billynightingale.com/fr/services)\n- [Création de sites web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes)\n- [À propos — version anglaise](https://www.billynightingale.com/about)\n",
