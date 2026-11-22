@@ -472,17 +472,27 @@
       "lang": "en",
       "link_tags": [
         {
-          "href": "/assets/favicon/favicon.svg",
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
           "rel": "icon",
           "sizes": "32x32"
         },
         {
-          "href": "/assets/favicon/apple-touch-icon.png",
-          "rel": "apple-touch-icon",
-          "sizes": "180x180"
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
         },
         {
-          "href": "/assets/favicon/site.webmanifest",
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
           "rel": "manifest"
         }
       ],
@@ -493,9 +503,6 @@
         }
       ],
       "meta": {
-        "apple-mobile-web-app-title": [
-          "B.N"
-        ],
         "charset": [
           "UTF-8"
         ],
@@ -1974,17 +1981,33 @@
       "lang": "fr",
       "link_tags": [
         {
-          "href": "/assets/favicon/favicon.svg",
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
           "rel": "icon",
           "sizes": "32x32"
         },
         {
-          "href": "/assets/favicon/apple-touch-icon.png",
-          "rel": "apple-touch-icon",
-          "sizes": "180x180"
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
         },
         {
-          "href": "/assets/favicon/site.webmanifest",
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
           "rel": "manifest"
         }
       ],
@@ -2028,9 +2051,6 @@
         }
       ],
       "meta": {
-        "apple-mobile-web-app-title": [
-          "B.N"
-        ],
         "author": [
           "Billy Nightingale"
         ],
@@ -2042,6 +2062,9 @@
         ],
         "robots": [
           "noindex, follow"
+        ],
+        "theme-color": [
+          "#000000"
         ],
         "viewport": [
           "width=device-width, initial-scale=1.0"
@@ -3467,23 +3490,33 @@
       "lang": "en",
       "link_tags": [
         {
-          "href": "/assets/favicon/favicon-96x96.png",
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
           "rel": "icon",
-          "sizes": "96x96",
-          "type": "image/png"
+          "sizes": "48x48"
         },
         {
-          "href": "/assets/favicon/favicon.svg",
+          "href": "/favicon-n-v1-32.png",
           "rel": "icon",
-          "type": "image/svg+xml"
+          "sizes": "32x32"
         },
         {
-          "href": "/assets/favicon/apple-touch-icon.png",
-          "rel": "apple-touch-icon",
-          "sizes": "180x180"
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
         },
         {
-          "href": "/assets/favicon/site.webmanifest",
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
           "rel": "manifest"
         }
       ],
@@ -3519,9 +3552,6 @@
         }
       ],
       "meta": {
-        "apple-mobile-web-app-title": [
-          "Billy"
-        ],
         "author": [
           "Billy Nightingale"
         ],
@@ -3533,6 +3563,9 @@
         ],
         "robots": [
           "noindex, follow"
+        ],
+        "theme-color": [
+          "#000000"
         ],
         "viewport": [
           "width=device-width, initial-scale=1.0"

@@ -56,7 +56,7 @@ const jsonLd = [
   }
 ]
 
-// TODO(pre-existing, MIGRATION_ISSUES #13 and #25): legacy head tags kept for 1:1 parity. /assets/favicon/ does not exist, so these icon and manifest links are broken. Fix: delete this Fragment and the siteIcons prop.
+// TODO(MIGRATION_ISSUES #14): Google Fonts is loaded from Google's servers on this page only.
 ---
 
 <BaseLayout
@@ -65,19 +65,12 @@ const jsonLd = [
   title="Terms and Conditions of Service | Billy Nightingale"
   description="Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Terms and conditions page."
   robots="noindex, follow"
-  siteIcons={false}
   jsonLd={jsonLd}
 >
   <Fragment slot="head">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap" rel="stylesheet" media="print" onload="this.media = 'all'" />
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Billy" />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
   </Fragment>
   <Header lang="en" route="terms" showLandes={false} />
   <main id="legal_main">

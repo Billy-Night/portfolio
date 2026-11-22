@@ -5,7 +5,6 @@ import CookieBanner from '../../components/CookieBanner.astro'
 
 const jsonLd = []
 
-// TODO(pre-existing, MIGRATION_ISSUES #13 and #25): legacy head tags kept for 1:1 parity. /assets/favicon/ does not exist, so these icon and manifest links are broken. Fix: delete this Fragment and the siteIcons prop.
 ---
 
 <BaseLayout
@@ -14,16 +13,8 @@ const jsonLd = []
   title="Conditions Générales de Vente | Billy Nightingale"
   description="Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Page de conditions générales de vente."
   robots="noindex, follow"
-  siteIcons={false}
   jsonLd={jsonLd}
 >
-  <Fragment slot="head">
-    <link rel="icon" href="/assets/favicon/favicon.svg" sizes="32x32" />
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="B.N" />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-  </Fragment>
   <Header lang="fr" route="terms" />
   <main id="legal_main">
     <CookieBanner lang="fr" />

@@ -13,12 +13,6 @@ interface Props {
   /** Omit og and twitter to output no social tags at all (the legal pages have none) */
   og?: { title: string; description: string }
   twitter?: { title: string; description: string }
-  /**
-   * false = skip the font preload, favicons, manifest and theme-color block.
-   * Only the legal pages use this: they carry their own legacy icon tags in
-   * the head slot. See MIGRATION_ISSUES.md #13.
-   */
-  siteIcons?: boolean
   /** JSON-LD objects, each rendered in its own <script type="application/ld+json"> */
   jsonLd?: object[]
   ogImage?: string
@@ -39,7 +33,6 @@ const {
   og,
   twitter,
   jsonLd = [],
-  siteIcons = true,
   ogImage = `${SITE}/assets/meta_preview1200x600.webp`,
   robots = 'index, follow',
   ogSiteName,
@@ -71,25 +64,19 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <link rel="alternate" hreflang="en" href={SITE + routes[route].en} />
     <link rel="alternate" hreflang="fr" href={SITE + routes[route].fr} />
 
-    {
-      siteIcons && (
-        <Fragment>
-          <link
-            rel="preload"
-            href="/assets/fonts/MangoGrotesque-Regular.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin
-          />
-          <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
-          <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
-          <link rel="icon" href="/favicon-n-v1-16.png" sizes="16x16" />
-          <link rel="icon" href="/favicon-n-v1-ico.ico" sizes="any" />
-          <link rel="manifest" href="/site.webmanifest" />
-          <meta name="theme-color" content="#000000" />
-        </Fragment>
-      )
-    }
+    <link
+      rel="preload"
+      href="/assets/fonts/MangoGrotesque-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
+    <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
+    <link rel="icon" href="/favicon-n-v1-16.png" sizes="16x16" />
+    <link rel="icon" href="/favicon-n-v1-ico.ico" sizes="any" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
 
     {
       og && twitter && (
