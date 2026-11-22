@@ -8,6 +8,8 @@ interface Props {
 
 const { lang } = Astro.props
 const r = (key: RouteKey) => routes[key][lang]
+// Set when the site is built, so it updates with the first deploy of each year
+const year = new Date().getFullYear()
 
 const t = {
   en: {
@@ -112,7 +114,7 @@ const t = {
     </div>
   </div>
   <div class="footer__legal">
-    <p>&copy; 2026 Billy Nightingale. {t.rights}</p>
+    <p>&copy; {year} Billy Nightingale. {t.rights}</p>
     <a href={r('terms')}>{t.terms}</a>
   </div>
 </footer>
