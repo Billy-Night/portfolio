@@ -1,0 +1,229 @@
+---
+// Contact form. public/script.js handles it: it shows the project fields
+// for the chosen reason and posts the data to /.netlify/functions/contact.
+// The ids, names and option values are what script.js and the Make scenario
+// read, so they are the same in both languages. Only the visible text changes.
+// Shared by src/pages/contact.astro and src/pages/fr/contact.astro.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    formTitle: "Project details",
+    name: "Name",
+    namePlaceholder: "Your name",
+    email: "Email",
+    emailPlaceholder: "you@example.com",
+    reason: "How can I help you?",
+    reasonPlaceholder: "Select an option",
+    reasonNewWebsite: "Create a new website",
+    reasonImprove: "Improve an existing website",
+    reasonDiscuss: "Discuss a potential project",
+    reasonSeo: "SEO packages",
+    reasonGeneral: "General question",
+    business: "Business name (optional)",
+    businessPlaceholder: "Business name",
+    url: "Current website (optional)",
+    urlPlaceholder: "https://yourwebsite.com",
+    seoGoal: "Main goal for SEO",
+    seoLocal: "Local SEO",
+    seoTechnical: "Technical optimisation",
+    seoContent: "SEO content / blogging",
+    seoBudget: "Estimated budget SEO",
+    rangePlaceholder: "Select a range",
+    seoBudgetMonthly: "€150 – €300 / month",
+    webBudget: "Estimated budget website",
+    seoTimeline: "Preferred timeline SEO",
+    timelinePlaceholder: "Select a timeline",
+    seoAsap: "Start as soon as possible",
+    seoOneMonth: "Within 1 month",
+    seoThreeMonths: "Within 1–3 months (recommended)",
+    seoOngoing: "Ongoing monthly support",
+    seoNoRush: "No rush / exploring options",
+    webTimeline: "Preferred timeline website",
+    webAsap: "As soon as possible",
+    webOneMonth: "Within 1 month",
+    webThreeMonths: "Within 1–3 months",
+    webNoRush: "No rush",
+    message: "Message",
+    messagePlaceholder: "Tell me more about your project or question...",
+    submit: "Send Message",
+    success: "The form has been submitted, thanks",
+    error: "There was an issue submitting the form, please try again.",
+  },
+  fr: {
+    formTitle: "Détails du projet",
+    name: "Nom",
+    namePlaceholder: "Votre nom",
+    email: "Email",
+    emailPlaceholder: "vous@example.com",
+    reason: "Comment puis-je vous aider ?",
+    reasonPlaceholder: "Sélectionnez une option",
+    reasonNewWebsite: "Créer un nouveau site",
+    reasonImprove: "Améliorer un site web existant",
+    reasonDiscuss: "Discuter d’un projet potentiel",
+    reasonSeo: "Offres SEO",
+    reasonGeneral: "Question générale",
+    business: "Nom de l’entreprise (optionnel)",
+    businessPlaceholder: "Nom de l’entreprise",
+    url: "Site web actuel (optionnel)",
+    urlPlaceholder: "https://votresite.com",
+    seoGoal: "Objectif principal pour le SEO",
+    seoLocal: "SEO local",
+    seoTechnical: "Optimisation technique",
+    seoContent: "Contenu SEO / blogging",
+    seoBudget: "Budget estimé pour le SEO",
+    rangePlaceholder: "Sélectionnez une plage",
+    seoBudgetMonthly: "€150 – €300 / mois",
+    webBudget: "Budget estimé pour le site web",
+    seoTimeline: "Délai souhaité pour le SEO",
+    timelinePlaceholder: "Sélectionnez un délai",
+    seoAsap: "Commencer dès que possible",
+    seoOneMonth: "Dans un mois",
+    seoThreeMonths: "D’ici 1 à 3 mois (recommandé)",
+    seoOngoing: "Support mensuel continu",
+    seoNoRush: "Pas d’urgence / exploration des options",
+    webTimeline: "Délai souhaité pour le site web",
+    webAsap: "Dès que possible",
+    webOneMonth: "D’ici un mois",
+    webThreeMonths: "D’ici 1 à 3 mois",
+    webNoRush: "Pas d’urgence",
+    message: "Message",
+    messagePlaceholder: "Parlez-moi de votre projet ou de votre question…",
+    submit: "Envoyer le message",
+    success: "Le formulaire a bien été envoyé, merci !",
+    error: "Un problème est survenu lors de l’envoi du formulaire, veuillez réessayer.",
+  },
+}[lang]
+---
+
+<section class="sections sec-contact-form">
+  <div class="contact-form-container">
+    <div class="contact-form-title">
+      <h3>{t.formTitle}</h3>
+    </div>
+    <form id="contact-form">
+      <input type="hidden" name="form-name" value="contact-form" />
+      {/* Honeypot: hidden from people, filled in by bots */}
+      <input
+        type="text"
+        name="web-check"
+        tabindex="-1"
+        autocomplete="off"
+        style="position: absolute; left: -9999px; top: -9999px"
+      />
+
+      <div class="form-group">
+        <label for="name">{t.name}</label>
+        <input type="text" id="name" name="name" required placeholder={t.namePlaceholder} />
+      </div>
+
+      <div class="form-group">
+        <label for="email">{t.email}</label>
+        <input type="email" id="email" name="email" required placeholder={t.emailPlaceholder} />
+      </div>
+
+      <div class="form-group">
+        <label for="reason">{t.reason}</label>
+        <select id="reason" name="reason" required>
+          <option value="" disabled selected>{t.reasonPlaceholder}</option>
+          <option value="new-website">{t.reasonNewWebsite}</option>
+          <option value="improve-website">{t.reasonImprove}</option>
+          <option value="project-discussion">{t.reasonDiscuss}</option>
+          <option value="seo">{t.reasonSeo}</option>
+          <option value="general-question">{t.reasonGeneral}</option>
+        </select>
+      </div>
+
+      {/* Shown by script.js depending on the chosen reason */}
+      <div id="form-project-fields" class="hide-element">
+        <div class="form-group">
+          <label for="business">{t.business}</label>
+          <input type="text" id="business" name="business" placeholder={t.businessPlaceholder} />
+        </div>
+
+        <div class="form-group">
+          <label for="url">{t.url}</label>
+          <input type="url" id="url" name="url" placeholder={t.urlPlaceholder} />
+        </div>
+
+        <div class="form-group" id="seo-objective-form">
+          <label for="seo-objective">{t.seoGoal}</label>
+          <div>
+            <input type="checkbox" id="local" name="seo-features[]" value="local" />
+            <label for="local">{t.seoLocal}</label>
+          </div>
+          <div>
+            <input type="checkbox" id="technical" name="seo-features[]" value="technical" />
+            <label for="technical">{t.seoTechnical}</label>
+          </div>
+          <div>
+            <input type="checkbox" id="content" name="seo-features[]" value="content" />
+            <label for="content">{t.seoContent}</label>
+          </div>
+        </div>
+
+        <div class="form-group" id="SEO-budget-form">
+          <label for="seo-budget">{t.seoBudget}</label>
+          <select id="seo-budget" name="seo-budget">
+            <option value="" disabled selected>{t.rangePlaceholder}</option>
+            <option value="250-400">€250 – €400</option>
+            <option value="400-700">€400 – €700</option>
+            <option value="150-300/m">{t.seoBudgetMonthly}</option>
+            <option value="700-1200">€700 – €1,200</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="website-budget-form">
+          <label for="web-budget">{t.webBudget}</label>
+          <select id="web-budget" name="web-budget">
+            <option value="" disabled selected>{t.rangePlaceholder}</option>
+            <option value="500-1000">€500 – €1,000</option>
+            <option value="1000-2000">€1,000 – €2,000</option>
+            <option value="2000-4000">€2,000 – €4,000</option>
+            <option value="4000-plus">€4,000+</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="pref-time-seo">
+          <label for="seo-timeline">{t.seoTimeline}</label>
+          <select id="seo-timeline" name="seo-timeline">
+            <option value="" disabled selected>{t.timelinePlaceholder}</option>
+            <option value="start-asap">{t.seoAsap}</option>
+            <option value="1-month">{t.seoOneMonth}</option>
+            <option value="1-3-months">{t.seoThreeMonths}</option>
+            <option value="ongoing-monthly">{t.seoOngoing}</option>
+            <option value="no-rush">{t.seoNoRush}</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="pref-time-website">
+          <label for="web-timeline">{t.webTimeline}</label>
+          <select id="web-timeline" name="web-timeline">
+            <option value="" disabled selected>{t.timelinePlaceholder}</option>
+            <option value="asap">{t.webAsap}</option>
+            <option value="1-month">{t.webOneMonth}</option>
+            <option value="1-3-months">{t.webThreeMonths}</option>
+            <option value="no-rush">{t.webNoRush}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">{t.message}</label>
+        <textarea id="message" name="message" rows="5" required placeholder={t.messagePlaceholder}></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-form-submit">{t.submit}</button>
+      <div>
+        <p class="form-status-pass hide-element">{t.success}</p>
+        <p class="form-status-error hide-element">{t.error}</p>
+      </div>
+    </form>
+  </div>
+</section>
