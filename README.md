@@ -21,8 +21,10 @@ src/
   components/       Header, Footer, CookieBanner, Analytics, NotFound
   i18n/routes.ts    Every page URL in both languages. Canonicals, hreflang and the language switch come from here.
   data/schema.ts    Shared structured data (the "Person" used on every page)
-  utils/            assetUrl(): adds a content hash to /css/style.css and /script.js
-public/             Served as-is: CSS, script.js, images, fonts, robots.txt, sitemap.xml, llms.txt,
+  scripts/          One script per feature (header menu, cookie banner, reviews, timeline, contact form...).
+                    Each component imports the one it needs, so a page only loads the scripts it uses.
+  utils/            assetUrl(): adds a content hash to /css/style.css
+public/             Served as-is: CSS, images, fonts, robots.txt, sitemap.xml, llms.txt,
                     the Markdown copies of each page, and Netlify's _redirects and _headers
 netlify/functions/  contact.js: the contact form backend (forwards to a Make.com webhook)
 scripts/            seo_snapshot.py: the SEO snapshot and compare tool

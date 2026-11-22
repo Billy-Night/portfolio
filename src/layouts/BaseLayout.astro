@@ -99,7 +99,6 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <!-- Page-specific head tags: <Fragment slot="head">...</Fragment> -->
     <slot name="head" />
     <link rel="stylesheet" href={assetUrl('/css/style.css')} />
-    <script defer src={assetUrl('/script.js')} is:inline></script>
 
     {
       jsonLd.map((data) => (
@@ -115,5 +114,10 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
   </head>
   <body>
     <slot />
+    {/* Site-wide scripts. Each component loads its own script; these two apply to every page. */}
+    <script>
+      import '../scripts/revealSections.js'
+      import '../scripts/lazyImages.js'
+    </script>
   </body>
 </html>

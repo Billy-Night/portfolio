@@ -1,7 +1,7 @@
 ---
-// Contact form. public/script.js handles it: it shows the project fields
+// Contact form. src/scripts/contactForm.js handles it: it shows the project fields
 // for the chosen reason and posts the data to /.netlify/functions/contact.
-// The ids, names and option values are what script.js and the Make scenario
+// The ids, names and option values are what contactForm.js and the Make scenario
 // read, so they are the same in both languages. Only the visible text changes.
 // Shared by src/pages/contact.astro and src/pages/fr/contact.astro.
 import type { Lang } from '../../i18n/routes'
@@ -140,7 +140,7 @@ const t = {
         </select>
       </div>
 
-      {/* Shown by script.js depending on the chosen reason */}
+      {/* Shown by contactForm.js depending on the chosen reason */}
       <div id="form-project-fields" class="hide-element">
         <div class="form-group">
           <label for="business">{t.business}</label>
@@ -227,3 +227,7 @@ const t = {
     </form>
   </div>
 </section>
+
+<script>
+  import '../../scripts/contactForm.js'
+</script>
