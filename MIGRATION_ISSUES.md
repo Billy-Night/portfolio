@@ -27,12 +27,11 @@ Every page's sections are now components shared by the English and French pages,
 - **Check used for every page:** the built HTML is identical to the build before, tag for tag, apart from the fixes listed further down.
 - **Legal pages: left as they are, on purpose.** Each is about 230 lines, almost all of it the legal text, and the header, cookie banner and `<head>` are already shared. Splitting a contract into a table of 62 keyed strings would make it harder to read and update. Both documents have the same 12 sections in the same order. Their three intro lines differ slightly: the English page bolds the business name, and the French page links the email address and has no dash before it.
 - **Translation keys** are generated from the first words of the English text (for example `readyToDiscussYour`). Each sits next to its text, so they're easy to rename.
-- **Where the two languages differ on purpose**, the component says so in a comment:
-  - `HomeHero`: the French title has two extra classes, and one line is English-only.
-  - `HomeReviews`: one line is English-only.
+- **Where the two languages still differ on purpose:**
+  - `HomeHero`: the French title has two extra classes, to fit the longer text.
   - `ServicesMain`: one paragraph has a width limit in French only.
-  - `ServicesPackages`: the title has a different class per language, and the "Best for" and "Delivery time" labels are `<h3>` in English and `<h4>` in French. No package-specific CSS exists for them, so the labels are larger on the English page.
-  - `PackageFeatures`: each language has its own list of bullets. The package cards aren't strict translations: the French Growth card has six bullets and the English one five.
+  - `ServicesPackages`: the title has a different class per language.
+  - `PackageFeatures`: each language passes its own list of bullets. They now say the same things (see "Content decisions" below).
 
 ### B. Split `script.js` per component
 - [script.js](public/script.js) is one 970-line file loaded on every page. It was checked in a real browser on all 14 pages and throws no errors: every optional element is guarded with an `if`. The original issue #15 ("crashes on pages without certain elements") was wrong and is closed.
@@ -49,15 +48,6 @@ Every page's sections are now components shared by the English and French pages,
 - 24 files in `public/assets/` (2.6 MB) aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
 - Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
 - Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
-
-### F. Content decisions that are yours
-The typos are fixed (see "Optional improvements done so far"). These three are choices about what the site says, so they were left alone:
-
-1. **Two lines exist in English only** on the homepage. If the French page should have them too, add a French value and remove the `lang === 'en'` condition:
-   - `HomeHero`: "Learn more about me and my recent projects".
-   - `HomeReviews`: "Thank you again!" at the end of one review.
-2. **The package offers differ between the languages** on the services page. The bullet lists in `ServicesPackages` aren't translations of each other: for example the English Starter card says "Set up your pages so Google can understand them" where the French one says "Formulaire de contact standard", and the French Growth card has six bullets to the English five. Decide whether both languages should describe the same offer.
-3. **The "Best for" and "Delivery time" labels** are `<h3>` on the English services page and `<h4>` on the French one, so they're larger in English. Pick one for both (`LabelHeading` in `ServicesPackages`). `<h4>` fits the heading outline better, because the package names are `<h3>`.
 
 ### E. Small things noticed along the way
 - The legal pages have no footer. Every other page does.
@@ -105,6 +95,11 @@ The typos are fixed (see "Optional improvements done so far"). These three are c
 - **Homepages:** seven shared section components (see A). Before that, two small alignments on the pages themselves: a project image on the French page gained the `height="600"` the English one has, and three project images on the English page now use absolute paths (`/assets/…`) like everywhere else.
 - **Services pages:** eight shared components (see A). Before that, the pricing block got the same labelled `<section class="pricing-section">` on both pages, with the `id="pricing-title"` its `aria-labelledby` was pointing at. No visual change.
 - **Wrong-language text:** the English about page said "Développement" in three places and the English services page in two (now "Development"), the French about and Landes pages had four "PROJECTS" buttons (now "PROJETS"), and a service card on the French homepage said "Automation" (now "Automatisation").
+- **Content decisions (yours, applied):**
+  - The French homepage has the two lines it was missing: "Découvrez-en plus sur moi et mes projets récents" in the hero, and "Encore merci !" as its own paragraph at the end of the Monkey Mood review (it was already there, inside the previous paragraph).
+  - The "Best for" and "Delivery time" labels are `<h4>` on both services pages. They were `<h3>` in English, so they're now smaller there.
+  - The French package offers match the English ones, which are the reference. The French bullets, the pricing note and the ongoing visibility price ("250 € – 1 000 €+ / mois TTC") are translations of the English. [public/fr/services.md](public/fr/services.md) is updated to match.
+  - Left as they were, because they say the same thing in natural French or are French conventions: the package names ("Site vitrine Essentiel"), the keyword-rich headings ("Tarifs de création de site internet"), the "Idéal pour" lines, the package descriptions, and "TTC" on prices.
 - **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
