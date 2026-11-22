@@ -50,30 +50,14 @@ Every page's sections are now components shared by the English and French pages,
 - Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
 - Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
 
-### F. Copy to proofread
-These are your words, so they were left as written. Each is in the `en` or `fr` table of the named component.
+### F. Content decisions that are yours
+The typos are fixed (see "Optional improvements done so far"). These three are choices about what the site says, so they were left alone:
 
-**Services page** ([src/components/services/](src/components/services/)):
-- `ServicesPackages`: the package bullets and labels differ between the languages (see A). Decide whether the English and French offers should say the same things, and whether the "Best for" / "Delivery time" labels should be `<h3>` or `<h4>` on both.
-- `ServicesPackages` (English): "a depending on the package selected on-going support" in the pricing note reads as if a word is missing.
-
-**Homepage** ([src/components/home/](src/components/home/)):
-- Two lines exist in English only. If the French page should have them too, add a French value and remove the `lang === 'en'` condition:
-  - `HomeHero`: "Learn more about me and my recent projects".
-  - `HomeReviews`: "Thank you again!" at the end of one review.
-- `HomeProjects` (French): the link text "Github repository" is English inside French sentences, twice, and a third link says "GitHub repository" in both languages.
-- `HomeProjects` (English): image alt "The world surf **jounrnal**" (journal).
-
-**About page** ([src/components/about/](src/components/about/)):
-- `AboutProcess`: "PHASE 4 **Deployement**" (Deployment).
-- `AboutWhatIDo`: "SEO & **PERFROMANCE** OPTIMISATION" (PERFORMANCE).
-
-**Landes page** ([src/components/landes/](src/components/landes/)):
-- `LandesSeoResults`: "My proven local SEO **strategeis**" (strategies); "While integrating **a** online shop" (an); "The **result are** easy to see" (results are); "Pacific **coast cafe**" (capitals).
-- `LandesMission`: "high performance **website’s**" (websites); "premium **web sites**" (websites); "support local **business**" (businesses).
-- `LandesApproach`: "designed to be **affective**" (effective); "the **companies** visual identity" (company's); "to **insure** your website stays" (ensure).
-- `LandesStudio`: "Studio in **landes**" and "based in **capbreton**" (capitals).
-- `LandesChallenges`: "I find tailored **solution** to my **clients** requirements" (solutions, clients').
+1. **Two lines exist in English only** on the homepage. If the French page should have them too, add a French value and remove the `lang === 'en'` condition:
+   - `HomeHero`: "Learn more about me and my recent projects".
+   - `HomeReviews`: "Thank you again!" at the end of one review.
+2. **The package offers differ between the languages** on the services page. The bullet lists in `ServicesPackages` aren't translations of each other: for example the English Starter card says "Set up your pages so Google can understand them" where the French one says "Formulaire de contact standard", and the French Growth card has six bullets to the English five. Decide whether both languages should describe the same offer.
+3. **The "Best for" and "Delivery time" labels** are `<h3>` on the English services page and `<h4>` on the French one, so they're larger in English. Pick one for both (`LabelHeading` in `ServicesPackages`). `<h4>` fits the heading outline better, because the package names are `<h3>`.
 
 ### E. Small things noticed along the way
 - The legal pages have no footer. Every other page does.
@@ -121,6 +105,7 @@ These are your words, so they were left as written. Each is in the `en` or `fr` 
 - **Homepages:** seven shared section components (see A). Before that, two small alignments on the pages themselves: a project image on the French page gained the `height="600"` the English one has, and three project images on the English page now use absolute paths (`/assets/…`) like everywhere else.
 - **Services pages:** eight shared components (see A). Before that, the pricing block got the same labelled `<section class="pricing-section">` on both pages, with the `id="pricing-title"` its `aria-labelledby` was pointing at. No visual change.
 - **Wrong-language text:** the English about page said "Développement" in three places and the English services page in two (now "Development"), the French about and Landes pages had four "PROJECTS" buttons (now "PROJETS"), and a service card on the French homepage said "Automation" (now "Automatisation").
+- **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
 ## ✅ Code quality fixes (one commit each)
