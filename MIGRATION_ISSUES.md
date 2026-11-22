@@ -1,65 +1,41 @@
-# Issues to fix after the Astro migration
+# Astro migration: what was fixed and what is left
 
-These issues were found while porting the site to Astro. They have been **kept exactly as they were on purpose**, so the port stays a 1:1 copy and the SEO compare stays clean.
+Every issue found while porting the site to Astro has been dealt with. This file records what changed, the improvements that are still optional, and the checklist for merging.
 
-## How to work through them
-- Fix them **after every page is ported**.
-- Make each fix its own commit, so every SEO-visible change can be reviewed on its own.
-
-After each fix:
-1. `npm run build && npm run seo:compare`. It should report **only** the change you intended.
+## How changes are checked
+1. `npm run build && npm run seo:compare` lists every difference from the SEO baseline. It should show **only** the change you intended.
 2. When you're happy with it, take a new baseline: `python3 scripts/seo_snapshot.py snapshot dist seo-baseline/local.json`.
 
-Locations are given as files plus a search string, because line numbers move during the port. Entries marked `TODO` already have a matching `TODO` comment in the code.
+Each fix below was made this way, one commit per fix.
 
 ---
 
-## 🟡 Code quality and other issues
+## Optional improvements (nothing here is broken)
 
-### 14. Terms page loads Google Fonts for nothing
-- **Where:** [terms-and-conditions.astro](src/pages/terms-and-conditions.astro), the `<Fragment slot="head">` block (`TODO`): two `preconnect` tags and the Oxygen / Oxygen Mono stylesheet.
-- **Problem:** "Oxygen" isn't referenced anywhere in [style.css](public/css/style.css), so the fonts are never used. The page still sends every visitor's IP address to Google, which is a GDPR risk in the EU (German courts have fined sites for this).
-- **Fix:** delete the `<Fragment slot="head">` block. Nothing should change visually.
+### A. Split the pages into section components
+- The page files are still long (the homepage is about 1,500 lines) because the page content itself (hero, projects, reviews, pricing, process timeline, contact form) is written out in full in both languages.
+- Moving each section into a component shared by the English and French pages would mean a layout change is made once, not twice.
 
-### 15. `script.js` crashes on pages without certain elements
-- `header.getBoundingClientRect()`, `navHamBtn.querySelector(...)` and similar run on every page and throw if the element is missing.
-- Fix: split it into per-component `<script>` tags as the pages are componentised, or at least add null checks.
+### B. Split `script.js` per component
+- [script.js](public/script.js) is one 970-line file loaded on every page. It was checked in a real browser on all 14 pages and throws no errors: every optional element is guarded with an `if`. The original issue #15 ("crashes on pages without certain elements") was wrong and is closed.
+- Splitting it into per-component `<script>` tags would only make it easier to maintain. Do it together with A.
 
-### 16. Analytics consent check is unreliable
-- **Where:** [Analytics.astro](src/components/Analytics.astro), `loadClarity()`.
-- `cookiesAccepted = localStorage.getItem('cookiesAccepted')` gives back the **string** `'false'`, and a non-empty string counts as true. The `!cookiesAccepted` guard therefore never blocks. It works today only because `loadClarity()` is called after consent.
-- Fix: `=== 'true'`. Also remove the `console.log` calls before production.
+### C. Process the CSS and images through Astro
+- **CSS:** bundling [style.css](public/css/style.css) through Astro was tried for #19 and reverted, because it changed how pages render:
+  - The minifier keeps only the last of `backdrop-filter: blur(10px) saturate(120%)` and `-webkit-backdrop-filter: blur(10px)`, which is the `-webkit-` line. Chrome ignores that line, so the blur disappears. Putting the `-webkit-` line first in each of the 10 places would avoid this.
+  - Astro puts the stylesheet link after `script.js` in `<head>`. The script then runs before the styles apply, and its reveal-on-scroll logic leaves sections hidden. Moving the `script.js` tag to the end of `<body>` would avoid this.
+- **Images:** `astro:assets` could generate responsive sizes and modern formats for the images in `public/assets/` (7.3 MB in total).
+- **Caching:** [public/_headers](public/_headers) caches everything for 10 minutes. `style.css` and `script.js` now have a content hash in their URL, so they could be cached for a year. Test the header on a branch deploy first: check with `curl -I` that Netlify sends a single `Cache-Control` value when two rules match the same file.
 
-### 17. Typo in the English contact form error
-- **Where:** [contact.astro](src/pages/contact.astro). Search for "There was a issue".
-- Fix: "There was an issue submitting the form, please try again."
+### D. Unused files in `public/`
+- 24 files in `public/assets/` (2.6 MB) aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
+- Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
+- Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
 
-### 18. Hardcoded copyright year
-- **Where:** [Footer.astro](src/components/Footer.astro) (`&copy; 2026`).
-- Could be `{new Date().getFullYear()}`, which updates at build time.
-
-### 19. Manual CSS cache-busting
-- `style.css?v=18` has to be bumped by hand. Once the CSS is imported through Astro (`src/styles/`), filenames are hashed automatically.
-- Then add long caching for `/_astro/*` in [public/_headers](public/_headers).
-
-### 20. Leftover commented-out code
-- The Spline viewer `<section class="hero-phone">` block on both Landes pages.
-- The apple-touch-icon `<link>` comment in the old heads.
-- Remove them or bring them back.
-
-### 23. Unused Font Awesome stylesheet on the about pages
-- **Where:** [about.astro](src/pages/about.astro) and [fr/a-propos.astro](src/pages/fr/a-propos.astro), in `<Fragment slot="head">`. The original HTML had a `<!--! Need to check this -->` comment next to it.
-- **Problem:** no `fa-` class is used anywhere: pages, CSS or `script.js`. It's a render-blocking request to a third-party CDN, loaded for nothing, so it slows first paint on the about pages.
-- **Fix:** delete the `<Fragment slot="head">` block on both pages. Check the icons visually afterwards.
-
-### 27. The 404 page is standalone and doesn't match the site
-- **Where:** [404.astro](src/pages/404.astro). It was left as a standalone file during the port, on purpose.
-- It has its own inline styles, no header or footer, English text only (French visitors get the same page), a "Go back home" link to the absolute production URL, and no `noindex`. It returns a 404 status, so the missing `noindex` is harmless.
-- **Fix:** rebuild it on `BaseLayout` with `Header` and `Footer`, so it looks like the rest of the site. Netlify serves only one `404.html`, so make it bilingual on one page, or add a `/fr/*` rule in `_redirects` that points to a French 404.
-
-### 21. README
-- [README.md](README.md) headings are missing the space after `#` (`#Personal Website`), so they don't render as headings.
-- Worth updating for the Astro setup: `npm run dev` / `build` / `seo:compare`.
+### E. Small things noticed along the way
+- The menu button's `aria-label` is "Open menu" on the French pages too ([Header.astro](src/components/Header.astro)).
+- The legal pages have no footer. Every other page does.
+- Safari older than version 18 only reads the `-webkit-backdrop-filter` line, so it gets the blur without the `saturate()` part. The difference is barely visible.
 
 ---
 
@@ -94,12 +70,25 @@ Locations are given as files plus a search string, because line numbers move dur
 
 ---
 
+## ✅ Code quality fixes (one commit each)
+- **#14 Google Fonts on the terms page:** removed. The Oxygen fonts were never used, and the page screenshot is pixel-identical without them.
+- **#23 Font Awesome on the about pages:** removed. No `fa-*` class is used anywhere.
+- **#17 Contact form error:** "There was an issue submitting the form, please try again."
+- **#18 Copyright year:** set when the site is built.
+- **#20 Commented-out markup:** seven blocks removed from the homepages and Landes pages (an old offer section, the Spline viewer, two project links and a tagline). They are in git history, in the commit "Remove commented-out markup from the homepages and Landes pages".
+- **#16 Analytics consent:** `loadClarity()` and `loadGoogleAnalytics()` now check consent themselves, and the `console.log` calls are gone. Tested for nine combinations of domain and consent.
+- **#19 Cache-busting:** `style.css` and `script.js` get a version from a hash of their contents (`assetUrl()` in [src/utils/assetVersion.ts](src/utils/assetVersion.ts)). No more `?v=18` to bump by hand. The files themselves are served untouched.
+- **#27 404 page:** rebuilt on the site layout with the header, footer and cookie banner, in English and French ([NotFound.astro](src/components/NotFound.astro)). Unknown `/fr/…` addresses get the French version through a rule in [public/_redirects](public/_redirects).
+- **#21 README:** rewritten for the Astro setup.
+- **#15 `script.js` crashes:** not a bug. See B above.
+
 ## Before merging `AstroTrans` → `main`
 - [x] Netlify builds the branch from [netlify.toml](netlify.toml) (Node 24, publish `dist`).
 - [x] Contact form tested on the branch deploy, in both languages.
 - [x] `/about.html` → 301 → `/about`, and an unknown URL returns the 404 page.
-- [x] SEO compare of the branch deploy against `seo-baseline/live.json`: only the Cloudflare differences (email obfuscation and the managed `robots.txt`). This was run before the 🔴 fixes.
-- [ ] Push the 🔴 fixes and look over the branch deploy once more: favicons on the legal pages, the footer "Landes" link on the French pages, the services "Book a call" / "Devis" buttons.
-- [ ] Visual check on desktop and mobile: fonts, images, animations, sliders, mobile menu, cookie banner, language switch.
+- [x] SEO compare of the branch deploy against `seo-baseline/live.json`: only the Cloudflare differences (email obfuscation and the managed `robots.txt`). This was run before the fixes above.
+- [ ] On the branch deploy: an unknown address such as `/nope` shows the new English 404, and `/fr/nope` shows the French one. Both must return status 404.
+- [ ] Visual check on desktop and mobile: fonts, images, animations, sliders, mobile menu, cookie banner, language switch, the contact page footer.
+- [ ] Accept the cookie banner on the live site after merging and confirm in the browser's Network tab that Clarity and Google Analytics load, and that they don't load after "Deny".
 - [ ] Optional: remove the branch-deploy address from `allowedOrigins` in [contact.js](netlify/functions/contact.js) once testing is finished.
-- [ ] After merging: share the homepage and `/fr/` in a social preview tool to confirm the preview image now shows, and check Search Console over the following days.
+- [ ] After merging: share the homepage and `/fr/` in a social preview tool to confirm the preview image shows, and check Search Console over the following days.
