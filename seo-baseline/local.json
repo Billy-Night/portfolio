@@ -596,7 +596,7 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/about/#webpage",
+          "@id": "https://www.billynightingale.com/about#webpage",
           "@type": "ProfilePage",
           "mainEntity": {
             "@id": "https://www.billynightingale.com/#person",
@@ -627,7 +627,7 @@
             "url": "https://www.billynightingale.com/"
           },
           "name": "About Billy Nightingale",
-          "url": "https://www.billynightingale.com/about/"
+          "url": "https://www.billynightingale.com/about"
         }
       ],
       "lang": "en",
@@ -1674,7 +1674,7 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/fr/a-propos/#webpage",
+          "@id": "https://www.billynightingale.com/fr/a-propos#webpage",
           "@type": "ProfilePage",
           "mainEntity": {
             "@id": "https://www.billynightingale.com/#person",
@@ -1705,7 +1705,7 @@
             "url": "https://www.billynightingale.com/fr/"
           },
           "name": "À propos de Billy Nightingale",
-          "url": "https://www.billynightingale.com/fr/a-propos/"
+          "url": "https://www.billynightingale.com/fr/a-propos"
         }
       ],
       "lang": "fr",
@@ -2379,7 +2379,7 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/fr/creation-site-web-landes/#service",
+          "@id": "https://www.billynightingale.com/fr/creation-site-web-landes#service",
           "@type": "Service",
           "areaServed": {
             "@type": "AdministrativeArea",
@@ -2720,7 +2720,7 @@
         },
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/fr/services/#service",
+          "@id": "https://www.billynightingale.com/fr/services#service",
           "@type": "Service",
           "areaServed": [
             "Capbreton",
@@ -2743,10 +2743,10 @@
         },
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/fr/services/#webpage",
+          "@id": "https://www.billynightingale.com/fr/services#webpage",
           "@type": "WebPage",
           "about": {
-            "@id": "https://www.billynightingale.com/fr/services/#service"
+            "@id": "https://www.billynightingale.com/fr/services#service"
           },
           "description": "Services de web design, développement web et SEO à Capbreton, Hossegor, dans les Landes et le Pays Basque.",
           "inLanguage": "fr-FR",
@@ -3114,7 +3114,7 @@
         },
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/services/#service",
+          "@id": "https://www.billynightingale.com/services#service",
           "@type": "Service",
           "areaServed": [
             "Capbreton",
@@ -3136,10 +3136,10 @@
         },
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/services/#webpage",
+          "@id": "https://www.billynightingale.com/services#webpage",
           "@type": "WebPage",
           "about": {
-            "@id": "https://www.billynightingale.com/services/#service"
+            "@id": "https://www.billynightingale.com/services#service"
           },
           "description": "Web design, web development and SEO services in Capbreton, Hossegor, Landes and the Pays Basque.",
           "inLanguage": "en-GB",
@@ -3650,7 +3650,7 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/website-development-landes/#service",
+          "@id": "https://www.billynightingale.com/website-development-landes#service",
           "@type": "Service",
           "areaServed": {
             "@type": "AdministrativeArea",
