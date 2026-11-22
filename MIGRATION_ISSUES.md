@@ -16,10 +16,10 @@ Locations are given as files plus a search string, because line numbers move dur
 
 ## 🔴 Broken or SEO-affecting (fix first)
 
-### 1. French footer "Landes" link does nothing (all French pages)
-- **Where:** [Footer.astro](src/components/Footer.astro) (`TODO`), and inline in every other `src/pages/fr/*.astro` until they're ported. Search for `<li class="footer__nav__link" href=`.
-- **Problem:** the `href` is on the `<li>`, not the `<a>`, so clicking does nothing. French pages also lose an internal link to the Landes page.
-- **Fix:** `<li><a class="footer__nav__link" href="/fr/creation-site-web-landes">Landes</a></li>`
+### 1. French footer "Landes" link does nothing (fr/contact and fr/a-propos)
+- **Where:** [fr/contact.astro](src/pages/fr/contact.astro) and [fr/a-propos.astro](src/pages/fr/a-propos.astro). Search for `legacyBrokenLandesLink`.
+- **Problem:** on these two pages the `href` is on the `<li>`, not the `<a>`, so clicking does nothing, and the pages lose an internal link to the Landes page. The other French pages are correct.
+- **Fix:** remove the `legacyBrokenLandesLink` prop from both pages, then delete the prop and its branch from [Footer.astro](src/components/Footer.astro).
 
 ### 2. Services pages link to the English contact page via a redirect
 - **Where:** [services.astro](src/pages/services.astro) and [fr/services.astro](src/pages/fr/services.astro), 3× each. Search for `href="/contact.html"`.
@@ -31,20 +31,22 @@ Locations are given as files plus a search string, because line numbers move dur
 - **Problem:** the value is `/assets/meta_preview1200x600.webp`. Facebook, LinkedIn, WhatsApp and others need an absolute URL, so shares of `/fr/` probably show no preview image.
 - **Fix:** it is handled automatically once the page uses `BaseLayout`, which always outputs the absolute URL. The SEO compare will then show this as an expected change.
 
-### 4. `og:image:height` is wrong
-- **Where:** every page (in `BaseLayout.astro` once ported).
-- **Problem:** it says `627`, but `meta_preview1200x600.webp` is actually **1200×600**.
-- **Fix:** set it to `600` (or make a 1200×630 image, the recommended size).
+### 4. `og:image:height` is wrong on most pages
+- **Where:** the default in [BaseLayout.astro](src/layouts/BaseLayout.astro) (`ogImageHeight = '627'`).
+- **Problem:** `meta_preview1200x600.webp` is actually **1200×600**. Only the two services pages have the right value (`ogImageHeight="600"`).
+- **Fix:** change the default to `'600'` and remove the `ogImageHeight` prop from the services pages. Or make a 1200×630 image, the recommended size, and use `630` everywhere.
 
 ### 5. English Landes page title has French spelling
 - **Where:** [website-development-landes.astro](src/pages/website-development-landes.astro). Search for `<title>`.
 - **Problem:** "Website Design & **Développement** in Landes".
 - **Fix:** "Website Design & Development in Landes | Billy Nightingale"
 
-### 6. English contact footer "Projects" link points nowhere
-- **Where:** [contact.astro](src/pages/contact.astro) (`TODO`, `projectsHref="#projects"`).
-- **Problem:** `#projects` doesn't exist on the contact page.
-- **Fix:** remove the `projectsHref` prop. The footer defaults to `/#projects`.
+### 6. "Projects" links that point nowhere (English contact, services, Landes)
+- **Where:** search for `projectsHref="#projects"`.
+  - Footer on [contact.astro](src/pages/contact.astro), [services.astro](src/pages/services.astro) and [website-development-landes.astro](src/pages/website-development-landes.astro).
+  - The **header** on the Landes page too.
+- **Problem:** `#projects` only exists on the homepage, so on these pages the link does nothing.
+- **Fix:** remove the `projectsHref` props. Header and Footer default to `/#projects`.
 
 ### 22. About pages' structured data uses trailing-slash URLs
 - **Where:** [about.astro](src/pages/about.astro) and [fr/a-propos.astro](src/pages/fr/a-propos.astro), in the `ProfilePage` object in `jsonLd`.
@@ -135,6 +137,7 @@ Locations are given as files plus a search string, because line numbers move dur
 
 ## ✅ Already fixed as a side effect of the port
 - **fr/a-propos `twitter:url`:** it used `property="twitter:url"`; `BaseLayout` outputs the standard `name="twitter:url"`. X accepts both, so there's no SEO change, and the SEO compare treats them as the same tag.
+- **Landes pages:** the `script.js` tag now comes before the structured data instead of after it. The script is deferred, so behaviour is the same.
 - **Relative nav and footer links** (`href="about"`): they're now absolute (`/about`) everywhere. They resolve to the same URLs.
 
 ---

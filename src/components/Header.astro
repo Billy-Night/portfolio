@@ -9,6 +9,8 @@ interface Props {
   logoAlt?: string
   menuIconAlt?: string
   showLandes?: boolean
+  /** Defaults to the homepage projects section */
+  projectsHref?: string
 }
 
 const {
@@ -21,6 +23,7 @@ const {
 
 const alt = otherLang(lang)
 const r = (key: RouteKey) => routes[key][lang]
+const projectsHref = Astro.props.projectsHref ?? `${r('home')}#projects`
 
 const labels = {
   en: { projects: 'Projects', about: 'About', contact: 'Contact', services: 'Services', landes: 'Landes' },
@@ -40,7 +43,7 @@ const linkedIn =
     </a>
     <ul class="nav__list">
       <li><a class="nav__link mini" href={routes[route][alt]}>{alt.toUpperCase()}</a></li>
-      <li><a class="nav__link mini" href={`${r('home')}#projects`}>{labels.projects}</a></li>
+      <li><a class="nav__link mini" href={projectsHref}>{labels.projects}</a></li>
       <li><a class="nav__link mini" href={r('about')}>{labels.about}</a></li>
       <li><a class="nav__link mini" href={r('contact')}>{labels.contact}</a></li>
       <li><a class="nav__link mini" href={r('services')}>{labels.services}</a></li>

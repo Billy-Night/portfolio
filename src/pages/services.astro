@@ -1,1259 +1,897 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- HTML Meta Tags -->
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Billy Nightingale | Services</title>
-    <meta name="author" content="Billy Nightingale" />
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch."
-    />
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import CookieBanner from '../components/CookieBanner.astro'
+import Footer from '../components/Footer.astro'
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.billynightingale.com/services" />
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.billynightingale.com/#person",
+    "name": "Billy Nightingale",
+    "jobTitle": "Web designer & web developer",
+    "url": "https://www.billynightingale.com/",
+    "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
+    "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Capbreton",
+      "addressRegion": "Landes",
+      "addressCountry": "FR"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/billynightingale/",
+      "https://github.com/Billy-Night"
+    ],
+    "knowsAbout": [
+      "web design",
+      "website creation",
+      "front-end development",
+      "WordPress",
+      "SEO",
+      "local SEO",
+      "performance optimisation"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.billynightingale.com/services/#service",
+    "name": "Web design, web development and SEO services",
+    "serviceType": [
+      "Web design",
+      "Web development",
+      "SEO"
+    ],
+    "provider": {
+      "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person"
+    },
+    "areaServed": [
+      "Capbreton",
+      "Hossegor",
+      "Landes",
+      "Pays Basque"
+    ],
+    "url": "https://www.billynightingale.com/services"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.billynightingale.com/services/#webpage",
+    "url": "https://www.billynightingale.com/services",
+    "name": "Services | Billy Nightingale",
+    "inLanguage": "en-GB",
+    "description": "Web design, web development and SEO services in Capbreton, Hossegor, Landes and the Pays Basque.",
+    "about": {
+      "@id": "https://www.billynightingale.com/services/#service"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+      "width": 1200,
+      "height": 600
+    }
+  }
+]
+---
 
-    <!-- Language hreflang -->
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.billynightingale.com/services"
-    />
-    <link
-      rel="alternate"
-      hreflang="fr"
-      href="https://www.billynightingale.com/fr/services"
-    />
-
-    <link
-      rel="preload"
-      href="/assets/fonts/MangoGrotesque-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
-    <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
-    <link rel="icon" href="/favicon-n-v1-16.png" sizes="16x16" />
-    <link rel="icon" href="/favicon-n-v1-ico.ico" sizes="any" />
-
-    <!-- Apple Touch Icon -->
-    <!-- <link rel="apple-touch-icon" href="/favicon-n-v1-180.png"> -->
-
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Theme color (mobile UI) -->
-    <meta name="theme-color" content="#000000" />
-
-    <!-- Facebook / Open Graph -->
-    <meta
-      property="og:url"
-      content="https://www.billynightingale.com/services"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Billy Nightingale" />
-    <meta
-      property="og:title"
-      content="Billy Nightingale | Web design, web development & SEO services"
-    />
-    <meta
-      property="og:description"
-      content="Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch."
-    />
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta
-      property="og:image"
-      content="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="600" />
-    <meta
-      property="og:image:alt"
-      content="Billy Nightingale – Web design, development & SEO services"
-    />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:domain" content="https://www.billynightingale.com/" />
-    <meta
-      name="twitter:url"
-      content="https://www.billynightingale.com/services"
-    />
-    <meta
-      name="twitter:title"
-      content="Billy Nightingale | Web design, web development & SEO services"
-    />
-    <meta
-      name="twitter:description"
-      content="Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch."
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
-    />
-
-    <link rel="stylesheet" href="/css/style.css?v=18" />
-    <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
-    <script defer src="/script.js" is:inline></script>
-
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://www.billynightingale.com/#person",
-        "name": "Billy Nightingale",
-        "jobTitle": "Web designer & web developer",
-        "url": "https://www.billynightingale.com/",
-        "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-        "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Capbreton",
-          "addressRegion": "Landes",
-          "addressCountry": "FR"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/billynightingale/",
-          "https://github.com/Billy-Night"
-        ],
-        "knowsAbout": [
-          "web design",
-          "website creation",
-          "front-end development",
-          "WordPress",
-          "SEO",
-          "local SEO",
-          "performance optimisation"
-        ]
-      }
-    </script>
-
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://www.billynightingale.com/services/#service",
-        "name": "Web design, web development and SEO services",
-        "serviceType": ["Web design", "Web development", "SEO"],
-        "provider": {
-          "@type": "Person",
-          "@id": "https://www.billynightingale.com/#person"
-        },
-        "areaServed": ["Capbreton", "Hossegor", "Landes", "Pays Basque"],
-        "url": "https://www.billynightingale.com/services"
-      }
-    </script>
-
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": "https://www.billynightingale.com/services/#webpage",
-        "url": "https://www.billynightingale.com/services",
-        "name": "Services | Billy Nightingale",
-        "inLanguage": "en-GB",
-        "description": "Web design, web development and SEO services in Capbreton, Hossegor, Landes and the Pays Basque.",
-        "about": {
-          "@id": "https://www.billynightingale.com/services/#service"
-        },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
-          "width": 1200,
-          "height": 600
-        }
-      }
-    </script>
-
-    <script type="text/javascript" is:inline>
-      const isProduction = [
-        'billynightingale.com',
-        'www.billynightingale.com',
-      ].includes(window.location.hostname)
-
-      const scriptLoaded = {
-        clarity: false,
-        googleAnalytics: false,
-      }
-
-      let cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
-
-      if (isProduction && cookiesAccepted) {
-        loadClarity()
-        loadGoogleAnalytics()
-      } else {
-        console.log(
-          `Tracking scripts not loaded., Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}`,
-        )
-      }
-
-      function updateCookiesAccepted() {
-        cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
-      }
-
-      function loadClarity() {
-        cookiesAccepted = localStorage.getItem('cookiesAccepted')
-        if (scriptLoaded.clarity || !isProduction || !cookiesAccepted) {
-          console.log(
-            `Clarity script already loaded:, ${scriptLoaded.clarity}, Production: ${isProduction}, Cookie: ${cookiesAccepted}`,
-          )
-          return
-        }
-        ;(function (c, l, a, r, i, t, y) {
-          c[a] =
-            c[a] ||
-            function () {
-              ;(c[a].q = c[a].q || []).push(arguments)
-            }
-          t = l.createElement(r)
-          t.async = 1
-          t.src = 'https://www.clarity.ms/tag/' + i
-          y = l.getElementsByTagName(r)[0]
-          y.parentNode.insertBefore(t, y)
-        })(window, document, 'clarity', 'script', 'wpv1qvf7nc')
-        scriptLoaded.clarity = true
-        console.log(
-          `Clarity script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.clarity}`,
-        )
-      }
-
-      function loadGoogleAnalytics() {
-        if (scriptLoaded.googleAnalytics || !isProduction) {
-          console.log(
-            `Google Analytics script already loaded:, ${scriptLoaded.googleAnalytics}, Production: ${isProduction},  Cookies accepted: ${cookiesAccepted}`,
-          )
-          return
-        }
-        const googleScript = document.createElement('script')
-        googleScript.src =
-          'https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE'
-        googleScript.async = true
-        document.head.appendChild(googleScript)
-
-        window.dataLayer = window.dataLayer || []
-        function gtag() {
-          dataLayer.push(arguments)
-        }
-        gtag('js', new Date())
-
-        gtag('config', 'G-LVZ55QWZGE')
-        scriptLoaded.googleAnalytics = true
-        console.log(
-          `Google Analytics script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.googleAnalytics}, Cookie: ${cookiesAccepted}`,
-        )
-      }
-    </script>
-  </head>
-
-  <body>
-    <header class="header">
-      <nav class="nav__list-full nav__glass-back">
-        <a class="nav__link" href="/" aria-label="Home">
-          <img
-            class="nav__logo"
-            src="/assets/nightingale_logo_gold.svg"
-            alt="Billy Nightingales logo for creating websites"
-          />
-        </a>
-        <ul class="nav__list">
-          <li><a class="nav__link mini" href="/fr/services">FR</a></li>
-          <li><a class="nav__link mini" href="/#projects">Projects</a></li>
-          <li><a class="nav__link mini" href="about">About</a></li>
-          <li><a class="nav__link mini" href="contact">Contact</a></li>
-          <li><a class="nav__link mini" href="services">Services</a></li>
-          <li>
-            <a class="nav__link mini" href="/website-development-landes"
-              >Landes</a
-            >
-          </li>
-          <li class="mob__hide">
+<BaseLayout
+  lang="en"
+  route="services"
+  title="Billy Nightingale | Services"
+  description="Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch."
+  og={{
+    title: "Billy Nightingale | Web design, web development & SEO services",
+    description: "Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch.",
+  }}
+  twitter={{
+    title: "Billy Nightingale | Web design, web development & SEO services",
+    description: "Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch.",
+  }}
+  ogSiteName="Billy Nightingale"
+  ogImageAlt="Billy Nightingale – Web design, development & SEO services"
+  twitterDomain="https://www.billynightingale.com/"
+  ogImageHeight="600"
+  jsonLd={jsonLd}
+>
+  <Header lang="en" route="services" logoAlt="Billy Nightingales logo for creating websites" />
+  <main>
+    <CookieBanner lang="en" />
+    <section class="services-hero-section">
+      <div class="services-intro-container">
+        <div class="services-intro-img-frame">
+          <h2>
             <a
-              class="nav__link"
-              href="https://www.linkedin.com/in/billynightingale/"
-              target="_blank"
-              aria-label="LinkedIn"
+              href="#services-page__main-services"
+              class="paint-text flip-text"
+              data-replace="Web design"
+              ><span>Web design</span></a
             >
-              <svg
-                class="social__icons"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                width="30"
-                height="30"
-              >
-                <path
-                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li class="mob__hide">
+          </h2>
+          <h2>
             <a
-              class="nav__link"
-              href="https://github.com/Billy-Night"
-              target="_blank"
-              aria-label="GitHub"
-              ><svg
-                class="social__icons"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-        <button
-          class="menu-btn--hamburger"
-          type="button"
-          aria-label="Open menu"
-        >
+              href="#services-page__main-services"
+              class="paint-text flip-text"
+              data-replace="Web Development"
+              ><span>Web Development</span></a
+            >
+          </h2>
+          <h2>
+            <a
+              href="#services-page__main-services"
+              class="paint-text flip-text"
+              data-replace="SEO"
+              ><span>SEO</span></a
+            >
+          </h2>
+          <h2>
+            <a
+              href="#services-page__sec-service-addons"
+              class="paint-text flip-text"
+              data-replace="Performance"
+              ><span>Performance</span></a
+            >
+          </h2>
+          <h2>
+            <a
+              href="#services__page-sec-project-management"
+              class="paint-text flip-text"
+              data-replace="Project Management"
+              ><span>Project Management</span></a
+            >
+          </h2>
           <img
-            src="/assets/icons/ham_menu.svg"
-            alt="navigation menu icon"
-            class="ham-btn-icon"
+            src="/assets/portraits/portrait_sitting_working_v2.webp"
+            alt="Billy Nightingale sitting at his MacBook working on web design"
           />
-        </button>
-      </nav>
-    </header>
-    <main>
-      <div class="cookie-banner dark__glass-back">
-        <p>
-          Cookies are used to improve your experience on our website. By
-          continuing to use our site, you agree to our use of cookies.
-        </p>
-        <div class="cta-container">
-          <button class="btn__primary btn__prim--light" id="cookie-accept">
-            Accept
-          </button>
-          <button class="btn__second btn__second--light" id="cookie-deny">
-            Deny
-          </button>
         </div>
       </div>
-      <section class="services-hero-section">
-        <div class="services-intro-container">
-          <div class="services-intro-img-frame">
-            <h2>
-              <a
-                href="#services-page__main-services"
-                class="paint-text flip-text"
-                data-replace="Web design"
-                ><span>Web design</span></a
-              >
-            </h2>
-            <h2>
-              <a
-                href="#services-page__main-services"
-                class="paint-text flip-text"
-                data-replace="Web Development"
-                ><span>Web Development</span></a
-              >
-            </h2>
-            <h2>
-              <a
-                href="#services-page__main-services"
-                class="paint-text flip-text"
-                data-replace="SEO"
-                ><span>SEO</span></a
-              >
-            </h2>
-            <h2>
-              <a
-                href="#services-page__sec-service-addons"
-                class="paint-text flip-text"
-                data-replace="Performance"
-                ><span>Performance</span></a
-              >
-            </h2>
-            <h2>
-              <a
-                href="#services__page-sec-project-management"
-                class="paint-text flip-text"
-                data-replace="Project Management"
-                ><span>Project Management</span></a
-              >
-            </h2>
+    </section>
+    <section class="services-intro-section">
+      <div class="services__hero-text">
+        <h1>Web design, development & SEO for growing businesses</h1>
+        <div class="services__hero-sub-heading">
+          <h2 class="max-txt-width">
+            I help businesses build fast, modern websites that attract clients
+            and support long-term growth.
+          </h2>
+        </div>
+      </div>
+      <div class="services__hero-link">
+        <a class="hero__contact-link" href="/contact">[ START A PROJECT ]</a>
+      </div>
+    </section>
+    <div class="gradient"></div>
+    <section
+      class="sections sec-services-main"
+      id="services-page__main-services"
+    >
+      <div class="services-main-title">
+        <h2 class="section-sub-headings">Main Services</h2>
+        <h3>Are you ready to build your dream digital experience ?</h3>
+      </div>
+      <div class="services-main-blocks">
+        <div class="service-card">
+          <h2>Web Design</h2>
+          <p class="max-txt-width">
+            Thoughtful, user-focused design that reflects your brand and makes
+            it easy for visitors to take action.
+          </p>
+        </div>
+        <div class="service-card">
+          <h2>Web Développement</h2>
+          <p class="max-txt-width">
+            Clean, fast, and reliable websites built to scale, maintain, and
+            perform long-term.
+          </p>
+        </div>
+        <div class="service-card">
+          <h2>SEO</h2>
+          <p>
+            Solid technical and on-page foundations so your site can be found
+            by the right people.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="gradient"></div>
+    <section
+      class="sections sec-service-addons"
+      id="services-page__sec-service-addons"
+    >
+      <h2 class="section-sub-headings">Built for performance & Longevity</h2>
+      <div class="sec-service-addons-content-container">
+        <div class="addons-content-container">
+          <div class="addons-performance-img-frame">
             <img
-              src="/assets/portraits/portrait_sitting_working_v2.webp"
-              alt="Billy Nightingale sitting at his MacBook working on web design"
+              src="/assets/icons/performance_arrow.svg"
+              alt="icon indicating improving web performance"
             />
           </div>
+          <div class="addons-performance-text-container">
+            <h2>Performance & Accessibility</h2>
+            <p>
+              I ensure all my clients sites are performance tested before and
+              after deployment, to ensure the best service.
+            </p>
+            <p>
+              All my sites are built to industry standard and meet all
+              accessibility requirements.
+            </p>
+          </div>
         </div>
-      </section>
-      <section class="services-intro-section">
-        <div class="services__hero-text">
-          <h1>Web design, development & SEO for growing businesses</h1>
-          <div class="services__hero-sub-heading">
-            <h2 class="max-txt-width">
-              I help businesses build fast, modern websites that attract clients
-              and support long-term growth.
+        <div class="addons-content-container">
+          <div class="addons-performance-img-frame">
+            <img
+              alt="icon tech stack"
+              src="/assets/icons/tech_stack_icon.svg"
+            />
+          </div>
+          <div class="addons-performance-text-container">
+            <h2>Maintenance & Hosting</h2>
+            <p>
+              I offer care packages for all my sites, keep them updated and my
+              clients stress free.
+            </p>
+            <p>
+              Providing fast and reliable hosting for all my custom built
+              sites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="gradient"></div>
+    <section
+      class="sections sec-project-management"
+      id="services__page-sec-project-management"
+    >
+      <h2 class="section-sub-headings">Project Management</h2>
+      <div class="project-management-container">
+        <div class="task-card"><h3>Discovery & Goals</h3></div>
+        <div class="task-card"><h3>Design & Structure</h3></div>
+        <div class="task-card"><h3>Développement & Testing</h3></div>
+        <div class="task-card"><h3>Launch & Support</h3></div>
+      </div>
+      <p class="project-management-hook">
+        A clear, collaborative process from first call to launch.
+      </p>
+    </section>
+    <div class="gradient"></div>
+    <section class="sections-large packages" aria-labelledby="packages-title">
+      <div class="packages__container">
+        <div class="packages__header">
+          <div class="packages__heading">
+            <p class="packages__eyebrow">Website packages</p>
+            <h2 id="packages-title" class="packages__title">
+              Three paths. One purpose.<br />
+              Your online growth.
             </h2>
           </div>
+          <p class="packages__intro">
+            Choose the website package that meets you where you are and gives
+            you the foundation to grow with confidence.
+          </p>
         </div>
-        <div class="services__hero-link">
-          <a class="hero__contact-link" href="/contact">[ START A PROJECT ]</a>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section
-        class="sections sec-services-main"
-        id="services-page__main-services"
-      >
-        <div class="services-main-title">
-          <h2 class="section-sub-headings">Main Services</h2>
-          <h3>Are you ready to build your dream digital experience ?</h3>
-        </div>
-        <div class="services-main-blocks">
-          <div class="service-card">
-            <h2>Web Design</h2>
-            <p class="max-txt-width">
-              Thoughtful, user-focused design that reflects your brand and makes
-              it easy for visitors to take action.
+        <div class="packages__grid">
+          <!-- Starter package -->
+          <article class="package-card package-card--featured">
+            <div class="package-card__top">
+              <div>
+                <div class="package-card__label">
+                  <span>Start your presence</span>
+                  <span class="package-card__label-line"></span>
+                </div>
+                <h3 class="package-card__title">Starter Website</h3>
+              </div>
+              <div class="package-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64">
+                  <rect x="14" y="20" width="28" height="28" />
+                  <rect x="24" y="10" width="28" height="28" />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="package-card__divider package-card__divider--short"
+            ></div>
+            <div class="package-card__label">
+              <span>From <span class="package-card__price">€700</span></span>
+            </div>
+            <p class="package-card__description">
+              A professional one-page website designed to establish your
+              online presence and create a strong foundation for future
+              growth.
             </p>
-          </div>
-          <div class="service-card">
-            <h2>Web Développement</h2>
-            <p class="max-txt-width">
-              Clean, fast, and reliable websites built to scale, maintain, and
-              perform long-term.
-            </p>
-          </div>
-          <div class="service-card">
-            <h2>SEO</h2>
-            <p>
-              Solid technical and on-page foundations so your site can be found
-              by the right people.
-            </p>
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section
-        class="sections sec-service-addons"
-        id="services-page__sec-service-addons"
-      >
-        <h2 class="section-sub-headings">Built for performance & Longevity</h2>
-        <div class="sec-service-addons-content-container">
-          <div class="addons-content-container">
-            <div class="addons-performance-img-frame">
-              <img
-                src="/assets/icons/performance_arrow.svg"
-                alt="icon indicating improving web performance"
-              />
-            </div>
-            <div class="addons-performance-text-container">
-              <h2>Performance & Accessibility</h2>
-              <p>
-                I ensure all my clients sites are performance tested before and
-                after deployment, to ensure the best service.
-              </p>
-              <p>
-                All my sites are built to industry standard and meet all
-                accessibility requirements.
-              </p>
-            </div>
-          </div>
-          <div class="addons-content-container">
-            <div class="addons-performance-img-frame">
-              <img
-                alt="icon tech stack"
-                src="/assets/icons/tech_stack_icon.svg"
-              />
-            </div>
-            <div class="addons-performance-text-container">
-              <h2>Maintenance & Hosting</h2>
-              <p>
-                I offer care packages for all my sites, keep them updated and my
-                clients stress free.
-              </p>
-              <p>
-                Providing fast and reliable hosting for all my custom built
-                sites.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section
-        class="sections sec-project-management"
-        id="services__page-sec-project-management"
-      >
-        <h2 class="section-sub-headings">Project Management</h2>
-        <div class="project-management-container">
-          <div class="task-card"><h3>Discovery & Goals</h3></div>
-          <div class="task-card"><h3>Design & Structure</h3></div>
-          <div class="task-card"><h3>Développement & Testing</h3></div>
-          <div class="task-card"><h3>Launch & Support</h3></div>
-        </div>
-        <p class="project-management-hook">
-          A clear, collaborative process from first call to launch.
-        </p>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections-large packages" aria-labelledby="packages-title">
-        <div class="packages__container">
-          <div class="packages__header">
-            <div class="packages__heading">
-              <p class="packages__eyebrow">Website packages</p>
-              <h2 id="packages-title" class="packages__title">
-                Three paths. One purpose.<br />
-                Your online growth.
-              </h2>
-            </div>
-            <p class="packages__intro">
-              Choose the website package that meets you where you are and gives
-              you the foundation to grow with confidence.
-            </p>
-          </div>
-          <div class="packages__grid">
-            <!-- Starter package -->
-            <article class="package-card package-card--featured">
-              <div class="package-card__top">
-                <div>
-                  <div class="package-card__label">
-                    <span>Start your presence</span>
-                    <span class="package-card__label-line"></span>
-                  </div>
-                  <h3 class="package-card__title">Starter Website</h3>
-                </div>
-                <div class="package-card__icon" aria-hidden="true">
-                  <svg viewBox="0 0 64 64">
-                    <rect x="14" y="20" width="28" height="28" />
-                    <rect x="24" y="10" width="28" height="28" />
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="package-card__divider package-card__divider--short"
-              ></div>
-              <div class="package-card__label">
-                <span>From <span class="package-card__price">€700</span></span>
-              </div>
-              <p class="package-card__description">
-                A professional one-page website designed to establish your
-                online presence and create a strong foundation for future
-                growth.
-              </p>
-              <ul class="package-card__features">
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>One custom landing page</span>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Mobile and tablet optimisation</span>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span
-                      >Plan clear routes that encourage visitors to contact
-                      you</span
-                    >
-                  </div>
-                </li>
-
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Set up your pages so Google can understand them</span>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Performance and SEO optimisation</span>
-                  </div>
-                </li>
-              </ul>
-              <h3>Best for</h3>
-              <p>New businesses that need to get online professionally</p>
-              <h3>Delivery time</h3>
-              <p>1–2 weeks</p>
-              <div class="package-card__actions">
-                <a class="btn__primary btn__prim--light" href="/contact.html">
-                  Book a call <span aria-hidden="true">→</span>
-                </a>
-                <a class="btn__third" href="#pricing-table">
-                  See Pricing
-                  <span class="price-btn-arrow" aria-hidden="true"
-                    ><svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 21 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </article>
-            <!-- Business package -->
-            <article class="package-card package-card--featured">
-              <div class="package-card__top">
-                <div>
-                  <div class="package-card__label">
-                    <span>Recommended for most established businesses</span>
-                    <span class="package-card__label-line"></span>
-                  </div>
-                  <h3 class="package-card__title package-card__title--large">
-                    Business Website
-                  </h3>
-                </div>
-                <div
-                  class="package-card__icon package-card__icon--large"
-                  aria-hidden="true"
-                >
-                  <svg
-                    viewBox="-10 -10 120 120"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Three concentric diamonds"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      vector-effect="non-scaling-stroke"
-                    >
-                      <rect
-                        x="30"
-                        y="30"
-                        width="40"
-                        height="40"
-                        transform="rotate(45 50 50)"
-                      />
-                      <rect
-                        x="20"
-                        y="20"
-                        width="60"
-                        height="60"
-                        transform="rotate(45 50 50)"
-                      />
-                      <rect
-                        x="10"
-                        y="10"
-                        width="80"
-                        height="80"
-                        transform="rotate(45 50 50)"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="package-card__divider package-card__divider--short"
-              ></div>
-              <div class="package-card__label">
-                <span
-                  >From <span class="package-card__price">€1,500</span></span
-                >
-              </div>
-              <p
-                class="package-card__description package-card__description--large"
-              >
-                A complete custom website designed to improve visibility,
-                present your services professionally and generate customer
-                enquiries.
-              </p>
-              <ul class="package-card__features package-card__features--large">
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Up to four custom pages</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Website planning and content structure</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Custom responsive website design</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>User journey and conversion planning</span>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Connect enquiries to your existing CRM</span>
-                  </div>
-                </li>
-              </ul>
-              <h3>Best for</h3>
-              <p>
-                Established businesses, looking to improve their online presence
-              </p>
-              <h3>Delivery time</h3>
-              <p>2-3 weeks</p>
-              <div class="package-card__actions">
-                <a class="btn__primary btn__prim--light" href="/contact.html">
-                  Book a call <span aria-hidden="true">→</span>
-                </a>
-                <a class="btn__third" href="#pricing-table">
-                  See Pricing
-                  <span class="price-btn-arrow" aria-hidden="true"
-                    ><svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 21 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </div>
-              <div class="package-card__pattern" aria-hidden="true"></div>
-            </article>
-            <!-- Growth package -->
-            <article class="package-card package-card--featured">
-              <div class="package-card__top">
-                <div>
-                  <div class="package-card__label">
-                    <span>Scale and automate</span>
-                    <span class="package-card__label-line"></span>
-                  </div>
-                  <h3 class="package-card__title">Growth Website</h3>
-                </div>
-                <div
-                  class="package-card__icon package-card__icon"
-                  aria-hidden="true"
-                >
-                  <svg
-                    viewBox="-7 -7 114 114"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Three concentric circles"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      vector-effect="non-scaling-stroke"
-                    >
-                      <circle cx="40" cy="50" r="20" />
-                      <circle cx="50" cy="50" r="30" />
-                      <circle cx="60" cy="50" r="40" />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="package-card__divider package-card__divider--short"
-              ></div>
-              <div class="package-card__label">
-                <span
-                  >From <span class="package-card__price">€3,000</span></span
-                >
-              </div>
-              <p class="package-card__description">
-                Scale, measure and automate Growth Website For growing
-                businesses that need advanced enquiry journeys, integrations,
-                location-focused content and measurable lead tracking.
-              </p>
-              <ul class="package-card__features">
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Five or more custom pages</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Advanced enquiry or booking flows</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Analytics and conversion tracking</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Useful, individually written service-area pages</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="bullet-point-container">
-                    <svg
-                      class="default-svg bullet-point-svg"
-                      enable-background="new 0 0 512.087 512.087"
-                      viewBox="0 0 512.087 512.087"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g>
-                        <path
-                          d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
-                        />
-                        <path
-                          d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
-                        />
-                      </g>
-                    </svg>
-                    <span>Blog or resource-centre architecture</span>
-                  </div>
-                </li>
-              </ul>
-              <h3>Best for</h3>
-              <p>Growing businesses with more advanced marketing needs</p>
-              <h3>Delivery time</h3>
-              <p>4–6 weeks</p>
-              <div class="package-card__actions">
-                <a class="btn__primary btn__prim--light" href="/contact.html">
-                  Book a call <span aria-hidden="true">→</span>
-                </a>
-                <a class="btn__third" href="#pricing-table">
-                  See Pricing
-                  <span class="price-btn-arrow" aria-hidden="true"
-                    ><svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 21 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </article>
-          </div>
-          <div class="packages__benefits" aria-label="Package benefits">
-            <div class="benefit">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M24 4 40 10v12c0 10-6 18-16 22C14 40 8 32 8 22V10Z" />
-                <path d="m17 24 5 5 10-11" />
-              </svg>
-              <span>Built for performance</span>
-            </div>
-            <div class="benefit">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <rect x="6" y="8" width="24" height="32" rx="2" />
-                <rect x="34" y="17" width="8" height="15" rx="1" />
-                <path d="M14 34h8" />
-              </svg>
-              <span>Mobile optimised</span>
-            </div>
-            <div class="benefit">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <rect x="7" y="30" width="7" height="11" />
-                <rect x="20" y="22" width="7" height="19" />
-                <rect x="33" y="12" width="7" height="29" />
-              </svg>
-              <span>Ready to grow</span>
-            </div>
-          </div>
-        </div>
-
-        <h2 class="section-sub-headings">Pricing</h2>
-        <div class="pricing-container" id="pricing-table">
-          <div class="pricing-card">
-            <h3>Starter landing page</h3>
-            <p>€700 - €1,200</p>
-          </div>
-          <div class="pricing-card">
-            <h3>Business website</h3>
-            <p>€1,500 - €3,000</p>
-          </div>
-          <div class="pricing-card">
-            <h3>Growth website</h3>
-            <p>€3,000 - €6,000</p>
-          </div>
-          <div class="pricing-card">
-            <h3>E-commerce module / project</h3>
-            <p>€1,500 - €5,000</p>
-          </div>
-          <div class="pricing-card">
-            <h3>Maintenance</h3>
-            <p>€35 - €150 / Month</p>
-          </div>
-          <div class="pricing-card">
-            <h3>OnGoing visibility</h3>
-            <p>€250 - €1000+ / Month</p>
-          </div>
-        </div>
-        <p class="pricing-hook">
-          Every project includes 2 - 3 rounds of revisions and a depending on
-          the package selected on-going support, maintenance and training.
-        </p>
-        <p class="pricing-hook">
-          Projects are custom built and to your requirements, so prices vary
-        </p>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections">
-        <div class="section-contact-container">
-          <h2>Ready to discuss your project?</h2>
-          <p>Book a call or request a quote now</p>
-          <div class="cta-container">
-            <a class="btn__primary btn__prim--light" href="/contact"
-              >Request a quote</a
-            >
-            <a class="btn__second btn__second--light" href="tel:+33766095864"
-              >Book a call</a
-            >
-          </div>
-        </div>
-      </section>
-      <div class="gradient"></div>
-    </main>
-    <footer class="sections" id="footer">
-      <div class="footer__container">
-        <div class="footer__info_container">
-          <h3>Create your digital system</h3>
-          <h4>Billy Nightingale - Web Design & Development in Capbreton</h4>
-          <h5>Contact Information:</h5>
-          <address class="footer__address">
-            Capbreton, Landes, 40130, France<br />
-            <a href="tel:+33766095864">+33 7 66 09 58 64</a><br />
-            <a href="mailto:contact@billynightingale.com"
-              >contact@billynightingale.com</a
-            >
-          </address>
-          <div class="contact-icons-footer-cont">
-            <ul>
+            <ul class="package-card__features">
               <li>
-                <a
-                  href="https://www.linkedin.com/in/billynightingale/"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                >
+                <div class="bullet-point-container">
                   <svg
-                    class="social__icons__footer"
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    width="30"
-                    height="30"
-                  >
-                    <path
-                      d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/billy.nightingale.studio/"
-                  target="_blank"
-                  aria-label="instagram"
-                >
-                  <svg
-                    class="social__icons__footer"
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    width="512"
-                    height="512"
-                    x="0"
-                    y="0"
-                    viewBox="0 0 511 511.9"
-                    style="enable-background: new 0 0 512 512"
-                    xml:space="preserve"
                   >
                     <g>
                       <path
-                        d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
-                      ></path>
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
                       <path
-                        d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
-                      ></path>
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
                     </g>
                   </svg>
-                </a>
+                  <span>One custom landing page</span>
+                </div>
               </li>
+
               <li>
-                <a
-                  href="https://www.github.com/Billy-Night"
-                  target="_blank"
-                  aria-label="GitHub"
-                >
+                <div class="bullet-point-container">
                   <svg
-                    class="social__icons__footer"
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
                   >
-                    <path
-                      d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
-                    />
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
                   </svg>
-                </a>
+                  <span>Mobile and tablet optimisation</span>
+                </div>
               </li>
+
               <li>
-                <a href="mailto:contact@billynightingale.com" aria-label="Mail">
+                <div class="bullet-point-container">
                   <svg
-                    class="social__icons__footer"
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
                   >
-                    <path
-                      d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                    />
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
                   </svg>
-                </a>
+                  <span
+                    >Plan clear routes that encourage visitors to contact
+                    you</span
+                  >
+                </div>
+              </li>
+
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Set up your pages so Google can understand them</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Performance and SEO optimisation</span>
+                </div>
               </li>
             </ul>
+            <h3>Best for</h3>
+            <p>New businesses that need to get online professionally</p>
+            <h3>Delivery time</h3>
+            <p>1–2 weeks</p>
+            <div class="package-card__actions">
+              <a class="btn__primary btn__prim--light" href="/contact.html">
+                Book a call <span aria-hidden="true">→</span>
+              </a>
+              <a class="btn__third" href="#pricing-table">
+                See Pricing
+                <span class="price-btn-arrow" aria-hidden="true"
+                  ><svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 21 15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+          <!-- Business package -->
+          <article class="package-card package-card--featured">
+            <div class="package-card__top">
+              <div>
+                <div class="package-card__label">
+                  <span>Recommended for most established businesses</span>
+                  <span class="package-card__label-line"></span>
+                </div>
+                <h3 class="package-card__title package-card__title--large">
+                  Business Website
+                </h3>
+              </div>
+              <div
+                class="package-card__icon package-card__icon--large"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="-10 -10 120 120"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Three concentric diamonds"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  >
+                    <rect
+                      x="30"
+                      y="30"
+                      width="40"
+                      height="40"
+                      transform="rotate(45 50 50)"
+                    />
+                    <rect
+                      x="20"
+                      y="20"
+                      width="60"
+                      height="60"
+                      transform="rotate(45 50 50)"
+                    />
+                    <rect
+                      x="10"
+                      y="10"
+                      width="80"
+                      height="80"
+                      transform="rotate(45 50 50)"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="package-card__divider package-card__divider--short"
+            ></div>
+            <div class="package-card__label">
+              <span
+                >From <span class="package-card__price">€1,500</span></span
+              >
+            </div>
+            <p
+              class="package-card__description package-card__description--large"
+            >
+              A complete custom website designed to improve visibility,
+              present your services professionally and generate customer
+              enquiries.
+            </p>
+            <ul class="package-card__features package-card__features--large">
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Up to four custom pages</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Website planning and content structure</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Custom responsive website design</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>User journey and conversion planning</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Connect enquiries to your existing CRM</span>
+                </div>
+              </li>
+            </ul>
+            <h3>Best for</h3>
+            <p>
+              Established businesses, looking to improve their online presence
+            </p>
+            <h3>Delivery time</h3>
+            <p>2-3 weeks</p>
+            <div class="package-card__actions">
+              <a class="btn__primary btn__prim--light" href="/contact.html">
+                Book a call <span aria-hidden="true">→</span>
+              </a>
+              <a class="btn__third" href="#pricing-table">
+                See Pricing
+                <span class="price-btn-arrow" aria-hidden="true"
+                  ><svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 21 15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div class="package-card__pattern" aria-hidden="true"></div>
+          </article>
+          <!-- Growth package -->
+          <article class="package-card package-card--featured">
+            <div class="package-card__top">
+              <div>
+                <div class="package-card__label">
+                  <span>Scale and automate</span>
+                  <span class="package-card__label-line"></span>
+                </div>
+                <h3 class="package-card__title">Growth Website</h3>
+              </div>
+              <div
+                class="package-card__icon package-card__icon"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="-7 -7 114 114"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Three concentric circles"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  >
+                    <circle cx="40" cy="50" r="20" />
+                    <circle cx="50" cy="50" r="30" />
+                    <circle cx="60" cy="50" r="40" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="package-card__divider package-card__divider--short"
+            ></div>
+            <div class="package-card__label">
+              <span
+                >From <span class="package-card__price">€3,000</span></span
+              >
+            </div>
+            <p class="package-card__description">
+              Scale, measure and automate Growth Website For growing
+              businesses that need advanced enquiry journeys, integrations,
+              location-focused content and measurable lead tracking.
+            </p>
+            <ul class="package-card__features">
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Five or more custom pages</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Advanced enquiry or booking flows</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Analytics and conversion tracking</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Useful, individually written service-area pages</span>
+                </div>
+              </li>
+              <li>
+                <div class="bullet-point-container">
+                  <svg
+                    class="default-svg bullet-point-svg"
+                    enable-background="new 0 0 512.087 512.087"
+                    viewBox="0 0 512.087 512.087"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path
+                        d="m220.718 143.972c-3.906-3.904-10.236-3.904-14.143 0l-105 105c-3.905 3.905-3.905 10.237 0 14.143l105 105c1.953 1.953 4.512 2.929 7.071 2.929s5.119-.977 7.071-2.929l105.001-105c1.875-1.876 2.929-4.419 2.929-7.071s-1.054-5.195-2.929-7.071zm-7.072 202.929-90.857-90.857 90.857-90.857 90.858 90.857z"
+                      />
+                      <path
+                        d="m500.001 226.606-172.037-172.037c-2.859-2.859-7.16-3.714-10.898-2.168-3.736 1.548-6.173 5.194-6.173 9.239v60.738l-67.81-67.809c-16.23-16.23-42.641-16.229-58.873.001l-172.037 172.037c-16.23 16.231-16.23 42.642 0 58.874l172.038 172.037c8.115 8.115 18.776 12.173 29.437 12.173s21.321-4.058 29.437-12.173l67.809-67.809v60.738c0 4.045 2.437 7.691 6.173 9.239 3.7 1.538 8.03.707 10.898-2.168l172.037-172.037c7.794-7.794 12.086-18.249 12.086-29.438s-4.293-21.643-12.087-29.437zm-271.06 216.769c-8.289 8.292-22.298 8.29-30.589 0l-172.037-172.036c-8.29-8.291-8.29-22.301 0-30.591l172.038-172.036c4.146-4.146 9.72-6.218 15.295-6.218 5.574 0 11.149 2.072 15.294 6.217l172.037 172.036c8.29 8.291 8.29 22.301 0 30.591zm256.917-172.037-154.965 154.966v-56.595l84.229-84.229c16.23-16.231 16.23-42.642 0-58.873 0-.001 0-.001 0-.001l-84.229-84.228v-56.596l154.966 154.966c4.017 4.017 6.229 9.448 6.229 15.295s-2.213 11.279-6.23 15.295z"
+                      />
+                    </g>
+                  </svg>
+                  <span>Blog or resource-centre architecture</span>
+                </div>
+              </li>
+            </ul>
+            <h3>Best for</h3>
+            <p>Growing businesses with more advanced marketing needs</p>
+            <h3>Delivery time</h3>
+            <p>4–6 weeks</p>
+            <div class="package-card__actions">
+              <a class="btn__primary btn__prim--light" href="/contact.html">
+                Book a call <span aria-hidden="true">→</span>
+              </a>
+              <a class="btn__third" href="#pricing-table">
+                See Pricing
+                <span class="price-btn-arrow" aria-hidden="true"
+                  ><svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 21 15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="packages__benefits" aria-label="Package benefits">
+          <div class="benefit">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M24 4 40 10v12c0 10-6 18-16 22C14 40 8 32 8 22V10Z" />
+              <path d="m17 24 5 5 10-11" />
+            </svg>
+            <span>Built for performance</span>
+          </div>
+          <div class="benefit">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="6" y="8" width="24" height="32" rx="2" />
+              <rect x="34" y="17" width="8" height="15" rx="1" />
+              <path d="M14 34h8" />
+            </svg>
+            <span>Mobile optimised</span>
+          </div>
+          <div class="benefit">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="7" y="30" width="7" height="11" />
+              <rect x="20" y="22" width="7" height="19" />
+              <rect x="33" y="12" width="7" height="29" />
+            </svg>
+            <span>Ready to grow</span>
           </div>
         </div>
-        <div class="footer__nav_container">
-          <ul class="footer__nav">
-            <li><a class="footer__nav__link" href="/">Home</a></li>
-            <li>
-              <a class="footer__nav__link" href="#projects">Projects</a>
-            </li>
-            <li><a class="footer__nav__link" href="about">About</a></li>
-            <li><a class="footer__nav__link" href="contact">Contact</a></li>
-            <li>
-              <a class="footer__nav__link" href="services">Services</a>
-            </li>
-            <li>
-              <a class="footer__nav__link" href="website-development-landes"
-                >Landes</a
-              >
-            </li>
-          </ul>
+      </div>
+
+      <h2 class="section-sub-headings">Pricing</h2>
+      <div class="pricing-container" id="pricing-table">
+        <div class="pricing-card">
+          <h3>Starter landing page</h3>
+          <p>€700 - €1,200</p>
+        </div>
+        <div class="pricing-card">
+          <h3>Business website</h3>
+          <p>€1,500 - €3,000</p>
+        </div>
+        <div class="pricing-card">
+          <h3>Growth website</h3>
+          <p>€3,000 - €6,000</p>
+        </div>
+        <div class="pricing-card">
+          <h3>E-commerce module / project</h3>
+          <p>€1,500 - €5,000</p>
+        </div>
+        <div class="pricing-card">
+          <h3>Maintenance</h3>
+          <p>€35 - €150 / Month</p>
+        </div>
+        <div class="pricing-card">
+          <h3>OnGoing visibility</h3>
+          <p>€250 - €1000+ / Month</p>
         </div>
       </div>
-      <div class="footer__legal">
-        <p>&copy; 2026 Billy Nightingale. All rights reserved.</p>
-        <a href="terms-and-conditions">Terms and Conditions</a>
+      <p class="pricing-hook">
+        Every project includes 2 - 3 rounds of revisions and a depending on
+        the package selected on-going support, maintenance and training.
+      </p>
+      <p class="pricing-hook">
+        Projects are custom built and to your requirements, so prices vary
+      </p>
+    </section>
+    <div class="gradient"></div>
+    <section class="sections">
+      <div class="section-contact-container">
+        <h2>Ready to discuss your project?</h2>
+        <p>Book a call or request a quote now</p>
+        <div class="cta-container">
+          <a class="btn__primary btn__prim--light" href="/contact"
+            >Request a quote</a
+          >
+          <a class="btn__second btn__second--light" href="tel:+33766095864"
+            >Book a call</a
+          >
+        </div>
       </div>
-    </footer>
-  </body>
-</html>
+    </section>
+    <div class="gradient"></div>  </main>
+  <!-- TODO(pre-existing, MIGRATION_ISSUES #6): "#projects" does not exist on this page -->
+  <Footer lang="en" projectsHref="#projects" />
+</BaseLayout>
