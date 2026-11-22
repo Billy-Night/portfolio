@@ -140,27 +140,6 @@
   --icon-size-lg: 32px;
 }
 
-/* @font-face {
-  font-family: 'GetaiDisplay';
-  src: url('/assets/fonts/DTGetaiGroteskDisplay-Black.woff2') format('woff2');
-  font-style: normal;
-  font-display: swap;
-} */
-
-/* @font-face {
-  font-family: 'MgDisplay-black';
-  src: url('/assets/fonts/MangoGrotesque-Black.woff2') format('woff2');
-  font-style: normal;
-  font-display: swap;
-} */
-
-/* @font-face {
-  font-family: 'MgDisplay-SemiBold';
-  src: url('/assets/fonts/MangoGrotesque-SemiBold.woff2') format('woff2');
-  font-style: normal;
-  font-display: swap;
-} */
-
 @font-face {
   font-family: 'MgDisplay-Regular';
   src: url('/assets/fonts/MangoGrotesque-Regular.woff2') format('woff2');

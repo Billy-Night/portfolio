@@ -55,10 +55,13 @@ Every page's sections are now components shared by the English and French pages,
   - Astro put the stylesheet link at the end of `<head>`, after the old `script.js` tag, so the script ran before the styles applied and its reveal-on-scroll logic left sections hidden. The scripts now load from the page body (see B), so this would need retesting, not assuming.
 - **Caching:** `style.css` and everything in `/_astro/` (scripts and now photos) are cached for a year, because their URLs change when their content does. Files still in `public/assets/` are cached for 10 minutes.
 
-### D. Unused files in `public/`
-- 23 files in `public/assets/` (2.5 MB), plus the two hand-made smaller copies of the homepage portrait (`…_v4-400.webp`, `…_v4-800.webp`), which Astro's generated sizes replace, aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
-- Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
-- Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
+### D. Unused files: cleaned up
+- **Deleted 26 files (2.6 MB)** that nothing referenced: 23 images and SVGs in `public/assets/` (old screenshots, `lazy*` placeholders, spare portraits and logos, two backgrounds) and three font files that only appeared in commented-out CSS. The three commented-out `@font-face` blocks were removed from [style.css](public/css/style.css) too. Everything is still in git history.
+- **Kept on purpose:**
+  - `portraits/billy_nightingale_portrait_standing_laptop_v4-400.webp` and `-800.webp`. No page uses them now, but the live site's homepage still offers them to small screens, so their addresses stay valid.
+  - `favicon-n-v1-180.png` and `favicon-n-v1-512.png`. Nothing links to them. The 180 one is the standard iPhone home-screen icon size: adding `<link rel="apple-touch-icon" href="/favicon-n-v1-180.png">` to `BaseLayout` would put it to use.
+- **Checked before deleting:** none of the 26 is referenced by the live production pages, stylesheet or script.
+- **Checked after:** every file referenced by the built pages, the stylesheet, the scripts, the structured data and the manifest exists, and the browser reports no failed loads.
 
 ### E. Small things noticed along the way
 - The legal pages have no footer. Every other page does.
@@ -113,6 +116,7 @@ Every page's sections are now components shared by the English and French pages,
   - Left as they were, because they say the same thing in natural French or are French conventions: the package names ("Site vitrine Essentiel"), the keyword-rich headings ("Tarifs de création de site internet"), the "Idéal pour" lines, the package descriptions, and "TTC" on prices.
 - **Scripts:** `script.js` split into one script per feature (see B).
 - **Images:** the displayed photos are optimised by Astro (see C).
+- **Unused files:** 26 deleted from `public/` (see D).
 - **Landes phone animation:** on the English page, the second screen showed the French image. It now shows `phone_web_seo.webp`. That file is no longer one of the unused assets in D.
 - **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
