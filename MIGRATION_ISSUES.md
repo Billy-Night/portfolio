@@ -13,8 +13,10 @@ Each fix below was made this way, one commit per fix.
 ## Optional improvements (nothing here is broken)
 
 ### A. Split the pages into section components
-- The page files are still long (the homepage is about 1,500 lines) because the page content itself (hero, projects, reviews, pricing, process timeline, contact form) is written out in full in both languages.
-- Moving each section into a component shared by the English and French pages would mean a layout change is made once, not twice.
+- **Done for the contact pages.** [ContactIntro.astro](src/components/contact/ContactIntro.astro) and [ContactForm.astro](src/components/contact/ContactForm.astro) are shared by both languages, each with its own translation table. The two page files are now 56 and 38 lines.
+- **Still to do:** the homepages (about 1,500 lines each), about (1,100), services (900), Landes (480) and the legal pages (240). The page content is written out in full in both languages, so every layout change has to be made twice.
+- The English and French versions line up well enough to share components: their markup differs by 0–4% per page pair, apart from the text. The differences that do exist are worth a look, because they're places where one language has drifted from the other: 34 on services (the French page has one more section), 12 on the homepage, 6 on the legal pages.
+- **How to check each page:** the SEO compare must show no change, and the built HTML must be identical to the previous build apart from intended fixes.
 
 ### B. Split `script.js` per component
 - [script.js](public/script.js) is one 970-line file loaded on every page. It was checked in a real browser on all 14 pages and throws no errors: every optional element is guarded with an `if`. The original issue #15 ("crashes on pages without certain elements") was wrong and is closed.
@@ -25,7 +27,7 @@ Each fix below was made this way, one commit per fix.
   - The minifier keeps only the last of `backdrop-filter: blur(10px) saturate(120%)` and `-webkit-backdrop-filter: blur(10px)`, which is the `-webkit-` line. Chrome ignores that line, so the blur disappears. Putting the `-webkit-` line first in each of the 10 places would avoid this.
   - Astro puts the stylesheet link after `script.js` in `<head>`. The script then runs before the styles apply, and its reveal-on-scroll logic leaves sections hidden. Moving the `script.js` tag to the end of `<body>` would avoid this.
 - **Images:** `astro:assets` could generate responsive sizes and modern formats for the images in `public/assets/` (7.3 MB in total).
-- **Caching:** [public/_headers](public/_headers) caches everything for 10 minutes. `style.css` and `script.js` now have a content hash in their URL, so they could be cached for a year. Test the header on a branch deploy first: check with `curl -I` that Netlify sends a single `Cache-Control` value when two rules match the same file.
+- **Caching:** [public/_headers](public/_headers) now caches `style.css` and `script.js` for a year, since their URLs carry a content hash. Everything else stays at 10 minutes. Still to verify on a branch deploy: `curl -I` on both files should show a single `Cache-Control` value, because two rules match them.
 
 ### D. Unused files in `public/`
 - 24 files in `public/assets/` (2.6 MB) aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
@@ -33,7 +35,6 @@ Each fix below was made this way, one commit per fix.
 - Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
 
 ### E. Small things noticed along the way
-- The menu button's `aria-label` is "Open menu" on the French pages too ([Header.astro](src/components/Header.astro)).
 - The legal pages have no footer. Every other page does.
 - Safari older than version 18 only reads the `-webkit-backdrop-filter` line, so it gets the blur without the `saturate()` part. The difference is barely visible.
 
@@ -70,6 +71,11 @@ Each fix below was made this way, one commit per fix.
 
 ---
 
+## ✅ Optional improvements done so far
+- **Header labels:** the logo link and menu button have French `aria-label`s on the French pages ("Accueil", "Ouvrir le menu").
+- **Contact pages:** shared `ContactIntro` and `ContactForm` components (see A). Three strings on the French form that were still English are translated: the "Project details" heading and two placeholders.
+- **French contact form:** the leftover `action`, `method` and `data-netlify` attributes are removed, so it matches the English form.
+
 ## ✅ Code quality fixes (one commit each)
 - **#14 Google Fonts on the terms page:** removed. The Oxygen fonts were never used, and the page screenshot is pixel-identical without them.
 - **#23 Font Awesome on the about pages:** removed. No `fa-*` class is used anywhere.
@@ -83,6 +89,7 @@ Each fix below was made this way, one commit per fix.
 - **#15 `script.js` crashes:** not a bug. See B above.
 
 ## Before merging `AstroTrans` → `main`
+- [ ] **In Make.com: check the old webhook.** The French contact form's HTML contained `action="https://hook.eu1.make.com/1sbn8f4m…"`, so that webhook URL was public on the live site and is still in the git history. It has been removed from the page. It isn't the webhook the Netlify function uses. If it's still active in Make, delete it or replace it with a new one, because anyone can post to it directly.
 - [x] Netlify builds the branch from [netlify.toml](netlify.toml) (Node 24, publish `dist`).
 - [x] Contact form tested on the branch deploy, in both languages.
 - [x] `/about.html` → 301 → `/about`, and an unknown URL returns the 404 page.
