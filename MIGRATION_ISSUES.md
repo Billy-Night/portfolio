@@ -49,7 +49,7 @@ Every page's sections are now components shared by the English and French pages,
 - **Caching:** done and verified for `style.css` (one year). The bundled scripts in `/_astro/` have the same one-year rule; check it with `curl -I` on the next branch deploy. Images are still cached for 10 minutes, because their URLs have no version. Processing them through Astro would give them hashed URLs too.
 
 ### D. Unused files in `public/`
-- 24 files in `public/assets/` (2.6 MB) aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
+- 23 files in `public/assets/` (2.5 MB) aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
 - Three font files are only mentioned in commented-out CSS: `DTGetaiGroteskDisplay-Black.woff2`, `MangoGrotesque-Black.woff2` and `MangoGrotesque-SemiBold.woff2`.
 - Before deleting any image, check Search Console and Google Images: an old image URL may still get visits or be linked from elsewhere.
 
@@ -105,6 +105,7 @@ Every page's sections are now components shared by the English and French pages,
   - The French package offers match the English ones, which are the reference. The French bullets, the pricing note and the ongoing visibility price ("250 € – 1 000 €+ / mois TTC") are translations of the English. [public/fr/services.md](public/fr/services.md) is updated to match.
   - Left as they were, because they say the same thing in natural French or are French conventions: the package names ("Site vitrine Essentiel"), the keyword-rich headings ("Tarifs de création de site internet"), the "Idéal pour" lines, the package descriptions, and "TTC" on prices.
 - **Scripts:** `script.js` split into one script per feature (see B).
+- **Landes phone animation:** on the English page, the second screen showed the French image. It now shows `phone_web_seo.webp`. That file is no longer one of the unused assets in D.
 - **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
