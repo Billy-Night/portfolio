@@ -14,11 +14,13 @@ const t = {
     readyToDiscussYour: "Ready to discuss your project",
     bookACallOr: "Book a call or request a quote now",
     quote: "Quote",
+    emailMe: "EMAIL ME",
   },
   fr: {
     readyToDiscussYour: "Prêt à discuter de votre projet ?",
     bookACallOr: "Réservez un appel ou demandez un devis dès aujourd’hui.",
     quote: "Devis",
+    emailMe: "PAR MAIL",
   },
 }[lang]
 ---
@@ -31,7 +33,7 @@ const t = {
       <a
         class="btn__primary btn__prim--light"
         href="mailto:contact@billynightingale.com"
-        >PAR MAIL</a
+        >{t.emailMe}</a
       >
       <a class="btn__second btn__second--light" href={r('contact')}
         >{t.quote}</a
