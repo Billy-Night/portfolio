@@ -14,7 +14,8 @@ interface Props {
    * uses <footer class="sections" id="footer">.
    */
   wrapInSection?: boolean
-  id?: string
+  /** Pass null to omit the id (the about pages have no id="footer") */
+  id?: string | null
 }
 
 const { lang, wrapInSection = false, id = 'footer' } = Astro.props
@@ -131,7 +132,7 @@ const Inner = wrapInSection ? 'footer' : Fragment
             ) : (
               // TODO(pre-existing bug, kept for 1:1 parity): the href is on the <li>,
               // so this "Landes" link does nothing on every French page.
-              <li class="footer__nav__link" href={r('landes')}>
+              <li class="footer__nav__link" {...({ href: r('landes') } as Record<string, string>)}>
                 <a>Landes</a>
               </li>
             )

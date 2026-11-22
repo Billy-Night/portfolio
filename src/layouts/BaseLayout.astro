@@ -106,6 +106,8 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <meta name="twitter:image" content={ogImage} />
     {twitterDate && <meta name="twitter:date" content={twitterDate} />}
 
+    <!-- Page-specific head tags: <Fragment slot="head">...</Fragment> -->
+    <slot name="head" />
     <link rel="stylesheet" href="/css/style.css?v=18" />
     <script defer src="/script.js" is:inline></script>
 

@@ -46,6 +46,11 @@ Locations are given as files plus a search string, because line numbers move dur
 - **Problem:** `#projects` doesn't exist on the contact page.
 - **Fix:** remove the `projectsHref` prop. The footer defaults to `/#projects`.
 
+### 22. About pages' structured data uses trailing-slash URLs
+- **Where:** [about.astro](src/pages/about.astro) and [fr/a-propos.astro](src/pages/fr/a-propos.astro), in the `ProfilePage` object in `jsonLd`.
+- **Problem:** `url` and `@id` are `…/about/` and `…/fr/a-propos/`, but the canonicals are `…/about` and `…/fr/a-propos`. Structured data that points at a different URL from the canonical gives Google mixed signals.
+- **Fix:** remove the trailing slash: `"url": "https://www.billynightingale.com/about"`, `"@id": "https://www.billynightingale.com/about#webpage"`. Even better, build both from `url('about', lang)` in [routes.ts](src/i18n/routes.ts).
+
 ---
 
 ## 🟠 Inconsistencies between pages (standardise once all pages use the components)
@@ -71,6 +76,7 @@ Locations are given as files plus a search string, because line numbers move dur
 
 ### 11. Structured data (JSON-LD) is inconsistent between languages
 - The English `Person` has `@id …/#person` with `addressRegion: "Landes"`. The French one has `@id …/fr/#person` with `addressRegion: "Nouvelle-Aquitaine"`, and fewer fields (no `sameAs`, `knowsAbout` or `description`).
+- [fr/a-propos](src/pages/fr/a-propos.astro) already uses the shared `…/#person` id (with `addressRegion: "Landes"`), so the French pages aren't even consistent with each other.
 - Google may read these as **two different people**. Use one shared `@id` (`https://www.billynightingale.com/#person`) and the same data, translating only the text fields.
 - Fix: move the shared schema into one file, e.g. `src/data/schema.ts`, and import it on each page.
 
@@ -116,9 +122,20 @@ Locations are given as files plus a search string, because line numbers move dur
 - The apple-touch-icon `<link>` comment in the old heads.
 - Remove them or bring them back.
 
+### 23. Unused Font Awesome stylesheet on the about pages
+- **Where:** [about.astro](src/pages/about.astro) and [fr/a-propos.astro](src/pages/fr/a-propos.astro), in `<Fragment slot="head">`. The original HTML had a `<!--! Need to check this -->` comment next to it.
+- **Problem:** no `fa-` class is used anywhere: pages, CSS or `script.js`. It's a render-blocking request to a third-party CDN, loaded for nothing, so it slows first paint on the about pages.
+- **Fix:** delete the `<Fragment slot="head">` block on both pages. Check the icons visually afterwards.
+
 ### 21. README
 - [README.md](README.md) headings are missing the space after `#` (`#Personal Website`), so they don't render as headings.
 - Worth updating for the Astro setup: `npm run dev` / `build` / `seo:compare`.
+
+---
+
+## ✅ Already fixed as a side effect of the port
+- **fr/a-propos `twitter:url`:** it used `property="twitter:url"`; `BaseLayout` outputs the standard `name="twitter:url"`. X accepts both, so there's no SEO change, and the SEO compare treats them as the same tag.
+- **Relative nav and footer links** (`href="about"`): they're now absolute (`/about`) everywhere. They resolve to the same URLs.
 
 ---
 
