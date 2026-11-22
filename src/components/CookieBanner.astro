@@ -1,0 +1,30 @@
+---
+import type { Lang } from '../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    text: 'Cookies are used to improve your experience on our website. By continuing to use our site, you agree to our use of cookies.',
+    accept: 'Accept',
+    deny: 'Deny',
+  },
+  fr: {
+    text: 'Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En continuant à naviguer sur ce site, vous acceptez l’utilisation de cookies.',
+    accept: 'Accepter',
+    deny: 'Refuser',
+  },
+}[lang]
+---
+
+<div class="cookie-banner dark__glass-back">
+  <p>{t.text}</p>
+  <div class="cta-container">
+    <button class="btn__primary btn__prim--light" id="cookie-accept">{t.accept}</button>
+    <button class="btn__second btn__second--light" id="cookie-deny">{t.deny}</button>
+  </div>
+</div>

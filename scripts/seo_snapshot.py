@@ -273,9 +273,11 @@ def compare(base, new):
             if field in ('text_sha1',):
                 continue
             va, vb = a.get(field), b.get(field)
-            if field == 'links':   # normalise relative vs absolute internal links
-                va = sorted(json.dumps(x, sort_keys=True) for x in (va or []))
-                vb = sorted(json.dumps(x, sort_keys=True) for x in (vb or []))
+            if field == 'links':   # resolve hrefs like a crawler does: "about" == "/about" on /contact
+                def resolved(links):
+                    return sorted(json.dumps({**x, 'href': urllib.parse.urljoin(SITE + p, x['href'])}, sort_keys=True)
+                                  for x in (links or []))
+                va, vb = resolved(va), resolved(vb)
             if field == 'images':  # Astro rewrites src paths; compare alt/dimensions/order
                 va = [{k: v for k, v in x.items() if k != 'src'} for x in (va or [])]
                 vb = [{k: v for k, v in x.items() if k != 'src'} for x in (vb or [])]

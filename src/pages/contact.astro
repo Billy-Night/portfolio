@@ -1,670 +1,307 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- HTML Meta Tags -->
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Billy Nightingale | Web Designer in Capbreton</title>
-    <meta name="author" content="Billy Nightingale" />
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Contact Billy Nightingale, web developer and designer based in Capbreton. Get in touch for modern, fast, SEO-optimised websites or to discuss your next project."
-    />
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import CookieBanner from '../components/CookieBanner.astro'
+import Footer from '../components/Footer.astro'
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.billynightingale.com/contact" />
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.billynightingale.com/#person",
+    "name": "Billy Nightingale",
+    "jobTitle": "Web designer & web developer",
+    "url": "https://www.billynightingale.com/",
+    "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
+    "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Capbreton",
+      "addressRegion": "Landes",
+      "addressCountry": "FR"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/billynightingale/",
+      "https://github.com/Billy-Night"
+    ],
+    "knowsAbout": [
+      "web design",
+      "website creation",
+      "frontend development",
+      "WordPress",
+      "SEO",
+      "local SEO",
+      "performance optimisation"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.billynightingale.com/"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web design, website creation and SEO services",
+    "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
+    "provider": {
+      "@type": "Person",
+      "name": "Billy Nightingale",
+      "url": "https://www.billynightingale.com/"
+    },
+    "areaServed": [
+      "Capbreton",
+      "Hossegor",
+      "Landes",
+      "Pays Basque"
+    ]
+  }
+]
+---
 
-    <!-- Language hreflang -->
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.billynightingale.com/contact"
-    />
-    <link
-      rel="alternate"
-      hreflang="fr"
-      href="https://www.billynightingale.com/fr/contact"
-    />
-
-    <link
-      rel="preload"
-      href="/assets/fonts/MangoGrotesque-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
-    <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
-    <link rel="icon" href="/favicon-n-v1-16.png" sizes="16x16" />
-    <link rel="icon" href="/favicon-n-v1-ico.ico" sizes="any" />
-
-    <!-- Apple Touch Icon -->
-    <!-- <link rel="apple-touch-icon" href="/favicon-n-v1-180.png"> -->
-
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Theme color (mobile UI) -->
-    <meta name="theme-color" content="#000000" />
-
-    <!-- Open Graph / Facebook -->
-    <meta
-      property="og:url"
-      content="https://www.billynightingale.com/contact"
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Contact Billy Nightingale | Freelance Web Developer in Capbreton"
-    />
-    <meta
-      property="og:description"
-      content="Get in touch with Billy Nightingale, web developer and designer based in Capbreton. Send a message or start a new website project via the contact form."
-    />
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta
-      property="og:image"
-      content="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="627" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:url"
-      content="https://www.billynightingale.com/contact"
-    />
-    <meta
-      name="twitter:title"
-      content="Contact Billy Nightingale | Freelance Web Developer in Capbreton"
-    />
-    <meta
-      name="twitter:description"
-      content="Get in touch with Billy Nightingale for your next website project or any questions. Based in Capbreton, France."
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.billynightingale.com/assets/meta_preview1200x600.webp"
-    />
-
-    <link rel="stylesheet" href="/css/style.css?v=18" />
-    <!-- Putting the script in the head with the defer attribute allows the script to be loaded asynchronously and then deferred until the DOM tree is loaded -->
-    <script defer src="/script.js" is:inline></script>
-
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://www.billynightingale.com/#person",
-        "name": "Billy Nightingale",
-        "jobTitle": "Web designer & web developer",
-        "url": "https://www.billynightingale.com/",
-        "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-        "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Capbreton",
-          "addressRegion": "Landes",
-          "addressCountry": "FR"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/billynightingale/",
-          "https://github.com/Billy-Night"
-        ],
-        "knowsAbout": [
-          "web design",
-          "website creation",
-          "frontend development",
-          "WordPress",
-          "SEO",
-          "local SEO",
-          "performance optimisation"
-        ],
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://www.billynightingale.com/"
-        }
-      }
-    </script>
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Web design, website creation and SEO services",
-        "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
-        "provider": {
-          "@type": "Person",
-          "name": "Billy Nightingale",
-          "url": "https://www.billynightingale.com/"
-        },
-        "areaServed": ["Capbreton", "Hossegor", "Landes", "Pays Basque"]
-      }
-    </script>
-
-    <script type="text/javascript" is:inline>
-      const isProduction = [
-        'billynightingale.com',
-        'www.billynightingale.com',
-      ].includes(window.location.hostname)
-
-      const scriptLoaded = {
-        clarity: false,
-        googleAnalytics: false,
-      }
-
-      let cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
-
-      if (isProduction && cookiesAccepted) {
-        loadClarity()
-        loadGoogleAnalytics()
-      } else {
-        console.log(
-          `Tracking scripts not loaded., Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}`,
-        )
-      }
-
-      function updateCookiesAccepted() {
-        cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true'
-      }
-
-      function loadClarity() {
-        cookiesAccepted = localStorage.getItem('cookiesAccepted')
-        if (scriptLoaded.clarity || !isProduction || !cookiesAccepted) {
-          console.log(
-            `Clarity script already loaded:, ${scriptLoaded.clarity}, Production: ${isProduction}, Cookie: ${cookiesAccepted}`,
-          )
-          return
-        }
-        ;(function (c, l, a, r, i, t, y) {
-          c[a] =
-            c[a] ||
-            function () {
-              ;(c[a].q = c[a].q || []).push(arguments)
-            }
-          t = l.createElement(r)
-          t.async = 1
-          t.src = 'https://www.clarity.ms/tag/' + i
-          y = l.getElementsByTagName(r)[0]
-          y.parentNode.insertBefore(t, y)
-        })(window, document, 'clarity', 'script', 'wpv1qvf7nc')
-        scriptLoaded.clarity = true
-        console.log(
-          `Clarity script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.clarity}`,
-        )
-      }
-
-      function loadGoogleAnalytics() {
-        if (scriptLoaded.googleAnalytics || !isProduction) {
-          console.log(
-            `Google Analytics script already loaded:, ${scriptLoaded.googleAnalytics}, Production: ${isProduction},  Cookies accepted: ${cookiesAccepted}`,
-          )
-          return
-        }
-        const googleScript = document.createElement('script')
-        googleScript.src =
-          'https://www.googletagmanager.com/gtag/js?id=G-LVZ55QWZGE'
-        googleScript.async = true
-        document.head.appendChild(googleScript)
-
-        window.dataLayer = window.dataLayer || []
-        function gtag() {
-          dataLayer.push(arguments)
-        }
-        gtag('js', new Date())
-
-        gtag('config', 'G-LVZ55QWZGE')
-        scriptLoaded.googleAnalytics = true
-        console.log(
-          `Google Analytics script loaded successfully. Production: ${isProduction}, Cookies accepted: ${cookiesAccepted}, scriptLoaded: ${scriptLoaded.googleAnalytics}, Cookie: ${cookiesAccepted}`,
-        )
-      }
-    </script>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav__list-full nav__glass-back">
-        <a class="nav__link" href="/" aria-label="Home">
+<BaseLayout
+  lang="en"
+  route="contact"
+  title="Contact Billy Nightingale | Web Designer in Capbreton"
+  description="Contact Billy Nightingale, web developer and designer based in Capbreton. Get in touch for modern, fast, SEO-optimised websites or to discuss your next project."
+  og={{
+    title: "Contact Billy Nightingale | Freelance Web Developer in Capbreton",
+    description: "Get in touch with Billy Nightingale, web developer and designer based in Capbreton. Send a message or start a new website project via the contact form.",
+  }}
+  twitter={{
+    title: "Contact Billy Nightingale | Freelance Web Developer in Capbreton",
+    description: "Get in touch with Billy Nightingale for your next website project or any questions. Based in Capbreton, France.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="en" route="contact" />
+  <main>
+    <CookieBanner lang="en" />
+    <section class="section-pad">
+      <div class="layout-two-column content-cont-marg-right">
+        <div class="layout-two-column-img img-overlay-blur-left">
           <img
-            class="nav__logo"
-            src="/assets/nightingale_logo_gold.svg"
-            alt="Billy Nightingales logo"
+            class="img-rad"
+            src="/assets/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp"
+            alt="Billy Nightingale web designer having a meeting with clients in Hossegor"
           />
-        </a>
-        <ul class="nav__list">
-          <li><a class="nav__link mini" href="/fr/contact">FR</a></li>
-          <li><a class="nav__link mini" href="/#projects">Projects</a></li>
-          <li><a class="nav__link mini" href="about">About</a></li>
-          <li><a class="nav__link mini" href="contact">Contact</a></li>
-          <li><a class="nav__link mini" href="services">Services</a></li>
-          <li>
-            <a class="nav__link mini" href="website-development-landes"
-              >Landes</a
-            >
-          </li>
-          <li class="mob__hide">
-            <a
-              class="nav__link"
-              href="https://www.linkedin.com/in/billynightingale/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <svg
-                class="social__icons"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                width="30"
-                height="30"
-              >
-                <path
-                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li class="mob__hide">
-            <a
-              class="nav__link"
-              href="https://github.com/Billy-Night"
-              target="_blank"
-              aria-label="GitHub"
-              ><svg
-                class="social__icons"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-        <button
-          class="menu-btn--hamburger"
-          type="button"
-          aria-label="Open menu"
+        </div>
+        <div
+          class="layout-two-column-txt contact__txt-normal-flow glass__back loc-mob-margin-left"
         >
-          <img
-            src="/assets/icons/ham_menu.svg"
-            alt="navigation menu icon"
-            class="ham-btn-icon"
-          />
-        </button>
-      </nav>
-    </header>
-    <main>
-      <div class="cookie-banner dark__glass-back">
-        <p>
-          Cookies are used to improve your experience on our website. By
-          continuing to use our site, you agree to our use of cookies.
-        </p>
-        <div class="cta-container">
-          <button class="btn__primary btn__prim--light" id="cookie-accept">
-            Accept
-          </button>
-          <button class="btn__second btn__second--light" id="cookie-deny">
-            Deny
-          </button>
+          <h1 class="trans-caps">Let's work together</h1>
+          <p class="max-txt-width">
+            I enjoy working closely with clients and helping translate
+            technical ideas into clear, practical solutions. My goal is to
+            ensure every client understands the project, feels comfortable
+            with the technical decisions being made, and stays involved
+            throughout the process.
+          </p>
+          <p class="max-txt-width">
+            I see myself as a long-term technical partner rather than simply
+            someone who builds websites. From strategy and design to
+            performance, SEO and ongoing support, I work closely with
+            businesses to help them grow online with confidence.
+          </p>
         </div>
       </div>
-      <section class="section-pad">
-        <div class="layout-two-column content-cont-marg-right">
-          <div class="layout-two-column-img img-overlay-blur-left">
-            <img
-              class="img-rad"
-              src="/assets/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp"
-              alt="Billy Nightingale web designer having a meeting with clients in Hossegor"
-            />
-          </div>
-          <div
-            class="layout-two-column-txt contact__txt-normal-flow glass__back loc-mob-margin-left"
-          >
-            <h1 class="trans-caps">Let's work together</h1>
-            <p class="max-txt-width">
-              I enjoy working closely with clients and helping translate
-              technical ideas into clear, practical solutions. My goal is to
-              ensure every client understands the project, feels comfortable
-              with the technical decisions being made, and stays involved
-              throughout the process.
-            </p>
-            <p class="max-txt-width">
-              I see myself as a long-term technical partner rather than simply
-              someone who builds websites. From strategy and design to
-              performance, SEO and ongoing support, I work closely with
-              businesses to help them grow online with confidence.
-            </p>
-          </div>
+    </section>
+    <section class="sections sec-contact-form">
+      <div class="contact-form-container">
+        <div class="contact-form-title">
+          <h3>Project details</h3>
         </div>
-      </section>
-      <section class="sections sec-contact-form">
-        <div class="contact-form-container">
-          <div class="contact-form-title">
-            <h3>Project details</h3>
-          </div>
-          <form id="contact-form">
-            <input type="hidden" name="form-name" value="contact-form" />
+        <form id="contact-form">
+          <input type="hidden" name="form-name" value="contact-form" />
+          <input
+            type="text"
+            name="web-check"
+            tabindex="-1"
+            autocomplete="off"
+            style="position: absolute; left: -9999px; top: -9999px"
+          />
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Name</label>
             <input
               type="text"
-              name="web-check"
-              tabindex="-1"
-              autocomplete="off"
-              style="position: absolute; left: -9999px; top: -9999px"
+              id="name"
+              name="name"
+              required
+              placeholder="Your name"
             />
+          </div>
 
-            <!-- Name -->
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <!-- Reason for contact -->
+          <div class="form-group">
+            <label for="reason">How can I help you?</label>
+            <select id="reason" name="reason" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="new-website">Create a new website</option>
+              <option value="improve-website">
+                Improve an existing website
+              </option>
+              <option value="project-discussion">
+                Discuss a potential project
+              </option>
+              <option value="seo">SEO packages</option>
+              <option value="general-question">General question</option>
+            </select>
+          </div>
+
+          <!-- Conditional project fields -->
+          <div id="form-project-fields" class="hide-element">
+            <!-- Business name -->
             <div class="form-group">
-              <label for="name">Name</label>
+              <label for="business">Business name (optional)</label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Your name"
+                id="business"
+                name="business"
+                placeholder="Business name"
               />
             </div>
 
-            <!-- Email -->
+            <!-- Website URL -->
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="url">Current website (optional)</label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="you@example.com"
+                type="url"
+                id="url"
+                name="url"
+                placeholder="https://yourwebsite.com"
               />
             </div>
 
-            <!-- Reason for contact -->
-            <div class="form-group">
-              <label for="reason">How can I help you?</label>
-              <select id="reason" name="reason" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="new-website">Create a new website</option>
-                <option value="improve-website">
-                  Improve an existing website
-                </option>
-                <option value="project-discussion">
-                  Discuss a potential project
-                </option>
-                <option value="seo">SEO packages</option>
-                <option value="general-question">General question</option>
+            <!-- SEO specific -->
+            <div class="form-group" id="seo-objective-form">
+              <label for="seo-objective">Main goal for SEO</label>
+              <div>
+                <input
+                  type="checkbox"
+                  id="local"
+                  name="seo-features[]"
+                  value="local"
+                />
+                <label for="local">Local SEO</label>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="technical"
+                  name="seo-features[]"
+                  value="technical"
+                />
+                <label for="technical">Technical optimisation</label>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox"
+                  id="content"
+                  name="seo-features[]"
+                  value="content"
+                />
+                <label for="content">SEO content / blogging</label>
+              </div>
+            </div>
+
+            <!-- Budget SEO -->
+            <div class="form-group" id="SEO-budget-form">
+              <label for="seo-budget">Estimated budget SEO</label>
+              <select id="seo-budget" name="seo-budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="250-400">€250 – €400</option>
+                <option value="400-700">€400 – €700</option>
+                <option value="150-300/m">€150 – €300 / month</option>
+                <option value="700-1200">€700 – €1,200</option>
               </select>
             </div>
 
-            <!-- Conditional project fields -->
-            <div id="form-project-fields" class="hide-element">
-              <!-- Business name -->
-              <div class="form-group">
-                <label for="business">Business name (optional)</label>
-                <input
-                  type="text"
-                  id="business"
-                  name="business"
-                  placeholder="Business name"
-                />
-              </div>
-
-              <!-- Website URL -->
-              <div class="form-group">
-                <label for="url">Current website (optional)</label>
-                <input
-                  type="url"
-                  id="url"
-                  name="url"
-                  placeholder="https://yourwebsite.com"
-                />
-              </div>
-
-              <!-- SEO specific -->
-              <div class="form-group" id="seo-objective-form">
-                <label for="seo-objective">Main goal for SEO</label>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="local"
-                    name="seo-features[]"
-                    value="local"
-                  />
-                  <label for="local">Local SEO</label>
-                </div>
-
-                <div>
-                  <input
-                    type="checkbox"
-                    id="technical"
-                    name="seo-features[]"
-                    value="technical"
-                  />
-                  <label for="technical">Technical optimisation</label>
-                </div>
-
-                <div>
-                  <input
-                    type="checkbox"
-                    id="content"
-                    name="seo-features[]"
-                    value="content"
-                  />
-                  <label for="content">SEO content / blogging</label>
-                </div>
-              </div>
-
-              <!-- Budget SEO -->
-              <div class="form-group" id="SEO-budget-form">
-                <label for="seo-budget">Estimated budget SEO</label>
-                <select id="seo-budget" name="seo-budget">
-                  <option value="" disabled selected>Select a range</option>
-                  <option value="250-400">€250 – €400</option>
-                  <option value="400-700">€400 – €700</option>
-                  <option value="150-300/m">€150 – €300 / month</option>
-                  <option value="700-1200">€700 – €1,200</option>
-                </select>
-              </div>
-
-              <!-- Budget website -->
-              <div class="form-group" id="website-budget-form">
-                <label for="web-budget">Estimated budget website</label>
-                <select id="web-budget" name="web-budget">
-                  <option value="" disabled selected>Select a range</option>
-                  <option value="500-1000">€500 – €1,000</option>
-                  <option value="1000-2000">€1,000 – €2,000</option>
-                  <option value="2000-4000">€2,000 – €4,000</option>
-                  <option value="4000-plus">€4,000+</option>
-                </select>
-              </div>
-
-              <!-- SEO Timeline -->
-              <div class="form-group" id="pref-time-seo">
-                <label for="seo-timeline">Preferred timeline SEO</label>
-                <select id="seo-timeline" name="seo-timeline">
-                  <option value="" disabled selected>Select a timeline</option>
-                  <option value="start-asap">Start as soon as possible</option>
-                  <option value="1-month">Within 1 month</option>
-                  <option value="1-3-months">
-                    Within 1–3 months (recommended)
-                  </option>
-                  <option value="ongoing-monthly">
-                    Ongoing monthly support
-                  </option>
-                  <option value="no-rush">No rush / exploring options</option>
-                </select>
-              </div>
-
-              <!-- Website Timeline -->
-              <div class="form-group" id="pref-time-website">
-                <label for="web-timeline">Preferred timeline website</label>
-                <select id="web-timeline" name="web-timeline">
-                  <option value="" disabled selected>Select a timeline</option>
-                  <option value="asap">As soon as possible</option>
-                  <option value="1-month">Within 1 month</option>
-                  <option value="1-3-months">Within 1–3 months</option>
-                  <option value="no-rush">No rush</option>
-                </select>
-              </div>
+            <!-- Budget website -->
+            <div class="form-group" id="website-budget-form">
+              <label for="web-budget">Estimated budget website</label>
+              <select id="web-budget" name="web-budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="500-1000">€500 – €1,000</option>
+                <option value="1000-2000">€1,000 – €2,000</option>
+                <option value="2000-4000">€2,000 – €4,000</option>
+                <option value="4000-plus">€4,000+</option>
+              </select>
             </div>
 
-            <!-- Message -->
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                placeholder="Tell me more about your project or question..."
-              ></textarea>
+            <!-- SEO Timeline -->
+            <div class="form-group" id="pref-time-seo">
+              <label for="seo-timeline">Preferred timeline SEO</label>
+              <select id="seo-timeline" name="seo-timeline">
+                <option value="" disabled selected>Select a timeline</option>
+                <option value="start-asap">Start as soon as possible</option>
+                <option value="1-month">Within 1 month</option>
+                <option value="1-3-months">
+                  Within 1–3 months (recommended)
+                </option>
+                <option value="ongoing-monthly">
+                  Ongoing monthly support
+                </option>
+                <option value="no-rush">No rush / exploring options</option>
+              </select>
             </div>
 
-            <!-- Submit -->
-            <button type="submit" class="btn btn-form-submit">
-              Send Message
-            </button>
-            <div>
-              <p class="form-status-pass hide-element">
-                The form has been submitted, thanks
-              </p>
-              <p class="form-status-error hide-element">
-                There was a issue with submitting the form, please try again!
-              </p>
-            </div>
-          </form>
-        </div>
-      </section>
-      <div class="gradient"></div>
-      <section class="sections" id="footer">
-        <footer>
-          <div class="footer__container">
-            <div class="footer__info_container">
-              <h3>Create your digital system</h3>
-              <h4>Billy Nightingale - Web Design & Development in Capbreton</h4>
-              <h5>Contact Information:</h5>
-              <address class="footer__address">
-                Capbreton, Landes, 40130, France<br />
-                <a href="tel:+33766095864">+33 7 66 09 58 64</a><br />
-                <a href="mailto:contact@billynightingale.com"
-                  >contact@billynightingale.com</a
-                >
-              </address>
-              <div class="contact-icons-footer-cont">
-                <ul>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/billynightingale/"
-                      target="_blank"
-                      aria-label="LinkedIn"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512"
-                        width="30"
-                        height="30"
-                      >
-                        <path
-                          d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/billy.nightingale.studio/"
-                      target="_blank"
-                      aria-label="instagram"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        version="1.1"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="512"
-                        height="512"
-                        x="0"
-                        y="0"
-                        viewBox="0 0 511 511.9"
-                        style="enable-background: new 0 0 512 512"
-                        xml:space="preserve"
-                      >
-                        <g>
-                          <path
-                            d="M510.95 150.5c-1.2-27.2-5.598-45.898-11.9-62.102-6.5-17.199-16.5-32.597-29.6-45.398-12.802-13-28.302-23.102-45.302-29.5-16.296-6.3-34.898-10.7-62.097-11.898C334.648.3 325.949 0 256.449 0s-78.199.3-105.5 1.5c-27.199 1.2-45.898 5.602-62.097 11.898-17.204 6.5-32.602 16.5-45.403 29.602-13 12.8-23.097 28.3-29.5 45.3-6.3 16.302-10.699 34.9-11.898 62.098C.75 177.801.449 186.5.449 256s.301 78.2 1.5 105.5c1.2 27.2 5.602 45.898 11.903 62.102 6.5 17.199 16.597 32.597 29.597 45.398 12.801 13 28.301 23.102 45.301 29.5 16.3 6.3 34.898 10.7 62.102 11.898 27.296 1.204 36 1.5 105.5 1.5s78.199-.296 105.5-1.5c27.199-1.199 45.898-5.597 62.097-11.898a130.934 130.934 0 0 0 74.903-74.898c6.296-16.301 10.699-34.903 11.898-62.102 1.2-27.3 1.5-36 1.5-105.5s-.102-78.2-1.3-105.5zm-46.098 209c-1.102 25-5.301 38.5-8.801 47.5-8.602 22.3-26.301 40-48.602 48.602-9 3.5-22.597 7.699-47.5 8.796-27 1.204-35.097 1.5-103.398 1.5s-76.5-.296-103.403-1.5c-25-1.097-38.5-5.296-47.5-8.796C94.551 451.5 84.45 445 76.25 436.5c-8.5-8.3-15-18.3-19.102-29.398-3.5-9-7.699-22.602-8.796-47.5-1.204-27-1.5-35.102-1.5-103.403s.296-76.5 1.5-103.398c1.097-25 5.296-38.5 8.796-47.5C61.25 94.199 67.75 84.1 76.352 75.898c8.296-8.5 18.296-15 29.398-19.097 9-3.5 22.602-7.7 47.5-8.801 27-1.2 35.102-1.5 103.398-1.5 68.403 0 76.5.3 103.403 1.5 25 1.102 38.5 5.3 47.5 8.8 11.097 4.098 21.199 10.598 29.398 19.098 8.5 8.301 15 18.301 19.102 29.403 3.5 9 7.699 22.597 8.8 47.5 1.2 27 1.5 35.097 1.5 103.398s-.3 76.301-1.5 103.301zm0 0"
-                          ></path>
-                          <path
-                            d="M256.45 124.5c-72.598 0-131.5 58.898-131.5 131.5s58.902 131.5 131.5 131.5c72.6 0 131.5-58.898 131.5-131.5s-58.9-131.5-131.5-131.5zm0 216.8c-47.098 0-85.302-38.198-85.302-85.3s38.204-85.3 85.301-85.3c47.102 0 85.301 38.198 85.301 85.3s-38.2 85.3-85.3 85.3zM423.852 119.3c0 16.954-13.747 30.7-30.704 30.7-16.953 0-30.699-13.746-30.699-30.7 0-16.956 13.746-30.698 30.7-30.698 16.956 0 30.703 13.742 30.703 30.699zm0 0"
-                          ></path>
-                        </g>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.github.com/Billy-Night"
-                      target="_blank"
-                      aria-label="GitHub"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:contact@billynightingale.com"
-                      aria-label="Mail"
-                    >
-                      <svg
-                        class="social__icons__footer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__nav_container">
-              <ul class="footer__nav">
-                <li><a class="footer__nav__link" href="/">Home</a></li>
-                <li>
-                  <a class="footer__nav__link" href="#projects">Projects</a>
-                </li>
-                <li><a class="footer__nav__link" href="about">About</a></li>
-                <li><a class="footer__nav__link" href="contact">Contact</a></li>
-                <li>
-                  <a class="footer__nav__link" href="services">Services</a>
-                </li>
-                <li>
-                  <a class="footer__nav__link" href="website-development-landes"
-                    >Landes</a
-                  >
-                </li>
-              </ul>
+            <!-- Website Timeline -->
+            <div class="form-group" id="pref-time-website">
+              <label for="web-timeline">Preferred timeline website</label>
+              <select id="web-timeline" name="web-timeline">
+                <option value="" disabled selected>Select a timeline</option>
+                <option value="asap">As soon as possible</option>
+                <option value="1-month">Within 1 month</option>
+                <option value="1-3-months">Within 1–3 months</option>
+                <option value="no-rush">No rush</option>
+              </select>
             </div>
           </div>
-          <div class="footer__legal">
-            <p>&copy; 2026 Billy Nightingale. All rights reserved.</p>
-            <a href="terms-and-conditions">Terms and Conditions</a>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Tell me more about your project or question..."
+            ></textarea>
           </div>
-        </footer>
-      </section>
-    </main>
-  </body>
-</html>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-form-submit">
+            Send Message
+          </button>
+          <div>
+            <p class="form-status-pass hide-element">
+              The form has been submitted, thanks
+            </p>
+            <p class="form-status-error hide-element">
+              There was a issue with submitting the form, please try again!
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="gradient"></div>
+    <!-- TODO(pre-existing): "#projects" doesn't exist on this page; other pages link to "/#projects" -->
+    <Footer lang="en" wrapInSection projectsHref="#projects" />
+  </main>
+</BaseLayout>

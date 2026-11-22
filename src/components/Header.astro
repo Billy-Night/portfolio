@@ -1,0 +1,85 @@
+---
+import { GITHUB, LINKEDIN } from './icons'
+import { otherLang, routes, type Lang, type RouteKey } from '../i18n/routes'
+
+interface Props {
+  lang: Lang
+  /** Current page — the language switch links to its translation */
+  route: RouteKey
+  logoAlt?: string
+  menuIconAlt?: string
+  showLandes?: boolean
+}
+
+const {
+  lang,
+  route,
+  logoAlt = 'Billy Nightingales logo',
+  menuIconAlt = 'navigation menu icon',
+  showLandes = true,
+} = Astro.props
+
+const alt = otherLang(lang)
+const r = (key: RouteKey) => routes[key][lang]
+
+const labels = {
+  en: { projects: 'Projects', about: 'About', contact: 'Contact', services: 'Services', landes: 'Landes' },
+  fr: { projects: 'Projets', about: 'À propos', contact: 'Contact', services: 'Services', landes: 'Landes' },
+}[lang]
+
+const linkedIn =
+  lang === 'fr'
+    ? 'https://www.linkedin.com/in/billynightingale/?locale=fr_FR'
+    : 'https://www.linkedin.com/in/billynightingale/'
+---
+
+<header class="header">
+  <nav class="nav__list-full nav__glass-back">
+    <a class="nav__link" href={r('home')} aria-label="Home">
+      <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" alt={logoAlt} />
+    </a>
+    <ul class="nav__list">
+      <li><a class="nav__link mini" href={routes[route][alt]}>{alt.toUpperCase()}</a></li>
+      <li><a class="nav__link mini" href={`${r('home')}#projects`}>{labels.projects}</a></li>
+      <li><a class="nav__link mini" href={r('about')}>{labels.about}</a></li>
+      <li><a class="nav__link mini" href={r('contact')}>{labels.contact}</a></li>
+      <li><a class="nav__link mini" href={r('services')}>{labels.services}</a></li>
+      {
+        showLandes && (
+          <li>
+            <a class="nav__link mini" href={r('landes')}>{labels.landes}</a>
+          </li>
+        )
+      }
+      <li class="mob__hide">
+        <a class="nav__link" href={linkedIn} target="_blank" aria-label="LinkedIn">
+          <svg
+            class="social__icons"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            width="30"
+            height="30"
+          >
+            <path d={LINKEDIN}></path>
+          </svg>
+        </a>
+      </li>
+      <li class="mob__hide">
+        <a class="nav__link" href="https://github.com/Billy-Night" target="_blank" aria-label="GitHub">
+          <svg
+            class="social__icons"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path d={GITHUB}></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <button class="menu-btn--hamburger" type="button" aria-label="Open menu">
+      <img src="/assets/icons/ham_menu.svg" alt={menuIconAlt} class="ham-btn-icon" />
+    </button>
+  </nav>
+</header>
