@@ -1,0 +1,258 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    growYourBusiness: "GROW YOUR BUSINESS",
+    creatingWebsitesSystems: "CREATING WEBSITES & SYSTEMS",
+    iM: "I'm",
+    aWebDesignerHelping: "a web designer helping local businesses in Capbreton and southwest France build a strong, professional online presence.",
+    yourTechnicalPartnerFrom: "Your technical partner — from design to launch and SEO.",
+    availableForNewProjects: "Available for new projects, locally or remotely.",
+    learnMoreAboutMe: "Learn more about me and my recent projects",
+    projects: "Projects",
+  },
+  fr: {
+    growYourBusiness: "DÉVELOPPEZ VOTRE ENTREPRISE",
+    creatingWebsitesSystems: "CREATION DE SITE WEB ET SYSTEMS",
+    iM: "Je suis",
+    aWebDesignerHelping: "développeur web et designer web, j’aide les entreprises du sud-ouest de la France à créer une présence en ligne forte et professionnelle.",
+    yourTechnicalPartnerFrom: "Votre partenaire technique, de la conception au lancement et au SEO.",
+    availableForNewProjects: "Disponible pour de nouveaux projets, sur place ou à distance.",
+    learnMoreAboutMe: "",
+    projects: "Projets",
+  },
+}[lang]
+---
+
+<section class="hero__section" id="intro">
+  <svg
+    class="hero__horLine-top"
+    width="3000"
+    height="1"
+    viewBox="0 0 3000 1"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3000" y1="0.5" y2="0.5" />
+  </svg>
+  <svg
+    class="hero__verLine-left"
+    width="1"
+    height="3000"
+    viewBox="0 0 1 3000"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="0.5" y1="3000" x2="0.5" />
+  </svg>
+  <svg
+    class="hero__verLine-right"
+    width="1"
+    height="3000"
+    viewBox="0 0 1 3000"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="0.5" y1="3000" x2="0.5" />
+  </svg>
+  <svg
+    class="hero__horLine-bottom"
+    width="3000"
+    height="1"
+    viewBox="0 0 3000 1"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3000" y1="0.5" y2="0.5" />
+  </svg>
+  <div class="hero__full-container">
+    <div class="hero__title-container">
+      <div>
+        <span class:list={["xl-heading home-hero-title-mob", lang === 'fr' && "hero__title-word-fr"]}
+          >WEB DESIGNER CAPBRETON HOSSEGOR</span
+        >
+        <h1 class:list={["hero__title", lang === 'fr' && "hero__title-fr"]}>
+          <span class="hero__title-text">{t.growYourBusiness}</span>
+          <span class="type-measure">
+            <svg
+              class="measure"
+              width="14"
+              viewBox="0 0 14 302"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="rustic-metal-measure"
+                  x1="7"
+                  y1="0"
+                  x2="7"
+                  y2="302"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0%" stop-color="#75685b" />
+                  <stop offset="45%" stop-color="#353e43" />
+                  <stop offset="100%" stop-color="#1b2024" />
+                </linearGradient>
+              </defs>
+
+              <line
+                x1="7"
+                y1="1"
+                x2="7"
+                y2="301"
+                stroke="url(#rustic-metal-measure)"
+                stroke-width="1"
+              />
+
+              <line
+                x1="1"
+                y1="0.5"
+                x2="14"
+                y2="0.5"
+                stroke="#75685b"
+                stroke-width="1"
+              />
+
+              <line
+                x1="0"
+                y1="300.5"
+                x2="13"
+                y2="300.5"
+                stroke="#1b2024"
+                stroke-width="1"
+              />
+            </svg>
+            <span class="type-measure__label"></span>
+          </span>
+        </h1>
+      </div>
+    </div>
+    <div class="intro__img-container">
+      <svg
+        class="hero-small-circle"
+        width="900"
+        height="900"
+        viewBox="-20 -20 940 940"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="rustic-metal-hero-small"
+            x1="0"
+            y1="0"
+            x2="900"
+            y2="900"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="45%" stop-color="#75685b" />
+            <stop offset="75%" stop-color="#353e43" />
+            <stop offset="100%" stop-color="#1b2024" />
+          </linearGradient>
+        </defs>
+        <path
+          id="orbit-path-draw-1"
+          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+          fill="none"
+          stroke="url(#rustic-metal-hero-small)"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+        />
+        <path
+          id="orbitPath1"
+          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+        />
+        <circle id="orbitDot1" r="10"></circle>
+      </svg>
+      <div class="intro__image--frame">
+        <img
+          fetchpriority="high"
+          decoding="async"
+          class="home-intro__img"
+          src="/assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp"
+          srcset="
+            /assets/portraits/billy_nightingale_portrait_standing_laptop_v4-400.webp  400w,
+            /assets/portraits/billy_nightingale_portrait_standing_laptop_v4-800.webp  800w,
+            /assets/portraits/billy_nightingale_portrait_standing_laptop_v4.webp     1200w
+          "
+          sizes="(max-width: 768px) 90vw, 400px"
+          alt="Portrait of Billy Nightingale looking at web design on laptop"
+          width="1400"
+          height="1730"
+        />
+      </div>
+    </div>
+    <div class="hero__text-container">
+      <svg
+        class="hero-big-circle"
+        width="900"
+        height="900"
+        viewBox="-20 -20 940 940"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="rustic-metal-hero-bg-circle"
+            x1="0"
+            y1="0"
+            x2="900"
+            y2="900"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="45%" stop-color="#75685b" />
+            <stop offset="75%" stop-color="#353e43" />
+            <stop offset="100%" stop-color="#1b2024" />
+          </linearGradient>
+        </defs>
+        <path
+          id="orbit-path-draw-2"
+          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+          fill="none"
+          stroke="url(#rustic-metal-hero-bg-circle)"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+        />
+        <path
+          id="orbitPath2"
+          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+        />
+        <circle id="orbitDot2" r="10"></circle>
+      </svg>
+      <div class="intro__text-cont">
+        <div class="about__intro__txt-cont">
+          <h2>{t.creatingWebsitesSystems}</h2>
+          <p class="max-hero-txt-width">
+            {t.iM} <span class="name">Billy Nightingale,</span> {t.aWebDesignerHelping}
+          </p>
+          <p class="max-hero-txt-width">
+            {t.yourTechnicalPartnerFrom}
+          </p>
+          <p class="max-hero-txt-width">
+            {t.availableForNewProjects}
+          </p>
+          {/* English only: the French page has no equivalent line */}
+          {lang === 'en' && <p class="max-hero-txt-width"> {t.learnMoreAboutMe} </p>}
+          <div class="cta-container">
+            <a class="btn__primary btn__prim--light" href={r('contact')}
+              >Contact</a
+            >
+            <a class="btn__second btn__second--light" href={`${r('home')}#projects`}
+              >{t.projects}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

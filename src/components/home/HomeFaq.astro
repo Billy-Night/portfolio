@@ -1,0 +1,202 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    frequentlyAskedQuestions: "Frequently asked Questions",
+    someQuestionWhichI: "Some question which I regularly get asked",
+    howMuchDoesA: "How much does a website cost?",
+    answer: "Answer",
+    everyProjectIsDifferent: "Every project is different, but most websites start from around 1,500€. The final cost depends on the number of pages, functionality, content requirements, and integrations such as online booking or e-commerce.",
+    howLongDoesIt: "How long does it take to build a website?",
+    answer2: "Answer",
+    mostWebsitesTakeBetween: "Most websites take between 4 and 8 weeks from discovery to launch, depending on project complexity and how quickly content and feedback are provided.",
+    doYouWorkWith: "Do you work with businesses outside Capbreton and Hossegor?",
+    answer3: "Answer",
+    yesWhileIM: "Yes. While I'm based in Capbreton, I work with businesses throughout France and internationally.",
+    willMyWebsiteAppear: "Will my website appear on Google?",
+    answer4: "Answer",
+    everyWebsiteIsBuilt: "Every website is built with SEO best practices in mind, including performance, accessibility, technical SEO, and clear site structure. SEO is a long-term process, but your website will be set up to give you the best possible foundation.",
+    canYouRedesignMy: "Can you redesign my existing website?",
+    answer5: "Answer",
+    yesWhetherYourCurrent: "Yes. Whether your current website needs a visual refresh, improved performance, better SEO, or new functionality, I can help modernise and optimise it.",
+    doYouProvideMaintenance: "Do you provide maintenance?",
+    answer6: "Answer",
+    yesOngoingMaintenancePlans: "Yes. Ongoing maintenance plans are available and can include updates, backups, security monitoring, performance checks, and technical support.",
+    canYouAddOnline: "Can you add online booking or e-commerce?",
+    answer7: "Answer",
+    yesICanIntegrate: "Yes. I can integrate online booking systems, e-commerce platforms, and other third-party tools to enhance your website's functionality and meet your business needs.",
+    doIOwnMy: "Do I own my website?",
+    answer8: "Answer",
+    yesOnceTheProject: "Yes. Once the project is complete and paid for, you own the website and its content. You'll also receive access to the tools needed to manage it.",
+    whatDoYouNeed: "What do you need from me to get started?",
+    answer9: "Answer",
+    usuallyINeedAn: "Usually I need an initial discussion about your business goals, any existing branding or content, and an understanding of what you want your website to achieve.",
+    canYouHelpImprove: "Can you help improve an existing website's SEO?",
+    answer10: "Answer",
+    yesICanAudit: "Yes. I can audit your current website, identify opportunities, and implement improvements to help increase visibility and generate more qualified traffic.",
+  },
+  fr: {
+    frequentlyAskedQuestions: "Questions fréquentes",
+    someQuestionWhichI: "Quelques questions que l’on me pose régulièrement",
+    howMuchDoesA: "Combien coûte un site internet ?",
+    answer: "Réponse",
+    everyProjectIsDifferent: "Chaque projet est différent, mais la plupart des sites internet commencent à partir d’environ 1 500 €. Le coût final dépend du nombre de pages, des fonctionnalités, des besoins en contenu et des intégrations telles que la réservation en ligne ou l’e-commerce.",
+    howLongDoesIt: "Combien de temps faut-il pour créer un site internet ?",
+    answer2: "Réponse",
+    mostWebsitesTakeBetween: "La plupart des sites internet nécessitent entre 4 et 8 semaines entre la phase de découverte et la mise en ligne, selon la complexité du projet et la rapidité avec laquelle les contenus et retours sont fournis.",
+    doYouWorkWith: "Travaillez-vous avec des entreprises en dehors de Capbreton et Hossegor ?",
+    answer3: "Réponse",
+    yesWhileIM: "Oui. Bien que je sois basé à Capbreton, je travaille avec des entreprises partout en France et à l’international.",
+    willMyWebsiteAppear: "Mon site apparaîtra-t-il sur Google ?",
+    answer4: "Réponse",
+    everyWebsiteIsBuilt: "Chaque site est conçu selon les bonnes pratiques SEO, notamment en matière de performance, d’accessibilité, de référencement technique et de structure du contenu. Le SEO est un travail de long terme, mais votre site sera construit sur des bases solides pour maximiser ses chances de visibilité.",
+    canYouRedesignMy: "Pouvez-vous refondre un site internet existant ?",
+    answer5: "Réponse",
+    yesWhetherYourCurrent: "Oui. Que votre site ait besoin d’un nouveau design, de meilleures performances, d’un SEO plus efficace ou de nouvelles fonctionnalités, je peux vous aider à le moderniser et à l’optimiser.",
+    doYouProvideMaintenance: "Proposez-vous un service de maintenance ?",
+    answer6: "Réponse",
+    yesOngoingMaintenancePlans: "Oui. Des forfaits de maintenance sont disponibles et peuvent inclure les mises à jour, les sauvegardes, la surveillance de la sécurité, les contrôles de performance et l’assistance technique.",
+    canYouAddOnline: "Pouvez-vous ajouter une réservation en ligne ou une boutique e-commerce ?",
+    answer7: "Réponse",
+    yesICanIntegrate: "Oui. Je peux intégrer des systèmes de réservation en ligne, des solutions e-commerce, des paiements sécurisés ainsi que des outils adaptés aux besoins de votre activité.",
+    doIOwnMy: "Suis-je propriétaire de mon site internet ?",
+    answer8: "Réponse",
+    yesOnceTheProject: "Oui. Une fois le projet terminé et réglé, vous êtes propriétaire de votre site et de son contenu. Vous recevrez également les accès aux outils nécessaires pour le gérer.",
+    whatDoYouNeed: "De quoi avez-vous besoin pour commencer un projet ?",
+    answer9: "Réponse",
+    usuallyINeedAn: "Généralement, j’ai besoin d’un premier échange pour comprendre vos objectifs, votre activité, votre contenu existant et ce que vous souhaitez accomplir avec votre site internet.",
+    canYouHelpImprove: "Pouvez-vous améliorer le SEO d’un site existant ?",
+    answer10: "Réponse",
+    yesICanAudit: "Oui. Je peux réaliser un audit de votre site actuel, identifier les opportunités d’amélioration et mettre en place des optimisations pour augmenter votre visibilité et attirer un trafic plus qualifié.",
+  },
+}[lang]
+---
+
+<section class="section-pad section-center-max-width">
+  <div class="subheading-centred">
+    <h2>{t.frequentlyAskedQuestions}</h2>
+    <p>{t.someQuestionWhichI}</p>
+  </div>
+  <div class="vertical-switcher">
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn is-active" data-index="0">
+        <h3>{t.howMuchDoesA}</h3>
+      </button>
+      <div class="vertical-switcher-txt is-active">
+        <h3>{t.answer}</h3>
+        <p class="max-txt-width">
+          {t.everyProjectIsDifferent}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="1">
+        <h3>{t.howLongDoesIt}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer2}</h3>
+        <p class="max-txt-width">
+          {t.mostWebsitesTakeBetween}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="2">
+        <h3>
+          {t.doYouWorkWith}
+        </h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer3}</h3>
+        <p class="max-txt-width">
+          {t.yesWhileIM}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="3">
+        <h3>{t.willMyWebsiteAppear}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer4}</h3>
+        <p class="max-txt-width">
+          {t.everyWebsiteIsBuilt}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="4">
+        <h3>{t.canYouRedesignMy}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer5}</h3>
+        <p class="max-txt-width">
+          {t.yesWhetherYourCurrent}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="5">
+        <h3>{t.doYouProvideMaintenance}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer6}</h3>
+        <p class="max-txt-width">
+          {t.yesOngoingMaintenancePlans}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="6">
+        <h3>{t.canYouAddOnline}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer7}</h3>
+        <p class="max-txt-width">
+          {t.yesICanIntegrate}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="7">
+        <h3>{t.doIOwnMy}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer8}</h3>
+        <p class="max-txt-width">
+          {t.yesOnceTheProject}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="8">
+        <h3>{t.whatDoYouNeed}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer9}</h3>
+        <p class="max-txt-width">
+          {t.usuallyINeedAn}
+        </p>
+      </div>
+    </div>
+    <div class="vertical-switcher-content">
+      <button class="vertical-switcher-btn" data-index="9">
+        <h3>{t.canYouHelpImprove}</h3>
+      </button>
+      <div class="vertical-switcher-txt">
+        <h3>{t.answer10}</h3>
+        <p class="max-txt-width">
+          {t.yesICanAudit}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,449 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    clientProjects: "CLIENT PROJECTS",
+    hospitality: "Hospitality",
+    monkeyMoodRestaurant: "Monkey Mood - Restaurant",
+    completeWebsiteRedesignFor: "Complete website redesign for a growing vegan restaurant brand, simplifying the booking experience across two locations while elevating branding, performance, and SEO.",
+    keyAspectsOfThe: "Key aspects of the project:",
+    fullRedesignWithMockups: "Full redesign with mockups and brand direction",
+    userFlowMappingTo: "User flow mapping to optimise navigation and booking behaviour",
+    bookingSystemIntegrationZenchef: "Booking system integration (ZenChef)",
+    customAnimationsAndStorytelling: "Custom animations and storytelling elements to reinforce brand identity",
+    performanceAndSeoOptimisation: "Performance and SEO optimisation across all pages",
+    thisWebsiteImprovedBooking: "This website improved booking experience, increased organic traffic through SEO optimisation and provided and scalable foundation for future marketing growth.",
+    checkOutTheWebsite: "Check out the website and maybe try some vegan food,",
+    monkeyMoodWebsite: "Monkey Mood website",
+    eCommerce: "E-Commerce",
+    pacificCoastCafeCafe: "Pacific Coast Cafe - Café",
+    performanceOptimisationAndEcommerce: "Performance optimisation and eCommerce integration for a high-traffic café in Hossegor.",
+    improvedSiteSpeedBy: "Improved site speed by 20%, strengthened search visibility, and launched a seamless online shop with digital gift cards unlocking a new revenue stream without disrupting daily operations.",
+    thisProjectImprovedPacific: "This project improved Pacific Coasts Cafe's online presence and their revenue stream.",
+    theWebsiteCanBe: "The website can be found here:",
+    pacificCoastCafeWebsite: "Pacific Coast Cafe website",
+    altWeatherWiseAFrontend: "Weather Wise a frontend React web application, created by Billy",
+    wellnessClient: "Wellness Client",
+    eveMarieNeededA: "Eve-Marie needed a website to launch her sophrology practice and present her services in a clear, reassuring way. I created a custom WordPress website with Elementor Pro, focusing on soft colours, simple layouts, and a smooth user experience.",
+    theProjectIncludes: "The project includes:",
+    aStructuredSitemapAnd: "A structured sitemap and clean UI design",
+    blogSectionForLong: "Blog section for long-term SEO",
+    calendlyBookingSystemWith: "Calendly booking system with online payments",
+    speedOptimisationAndBest: "Speed optimisation and best practices for technical SEO",
+    fullSetupOfHosting: "Full setup of hosting, security, backups, and analytics",
+    thisProjectHelpedStrengthen: "This project helped strengthen her brand online and provide an easy way for clients to book sessions.",
+    altEveMarieASophrologue: "Eve-Marie, a sophrologue website created by Billy Nightingale",
+    iCreatedTurbulenteS: "I created Turbulente's first E-Commerce website to sell their wide range of kombucha's, it was an exciting opportunity to work with a local innovative brand, entwined in the surf culture of the Pays Basque region.",
+    theProjectIncludes2: "The project includes:",
+    aStructuredSitemapAnd2: "A structured sitemap and clean UI design",
+    fullOnlineShopWith: "Full online shop with different products",
+    integratedPaymentSystem: "Integrated Payment system",
+    minimalistDesignWithBeautiful: "Minimalist design with beautiful graphics and animation.",
+    fullSetupOfUrl: "Full setup of URL and hosting, including DNS and SSL.",
+    thisProjectBroughtTurbulente: "This project brought Turbulente online and improved their digital presence.",
+    clickHereToSee: "Click here to see the",
+    website: "website",
+    altWeatherWiseAFrontend2: "Weather Wise a frontend React web application, created by Billy",
+    webApplication: "WEB APPLICATION",
+    theWorldSurfJournal: "The World Surf Journal is a web application that allows the user to register an account and save their surf trips with various details. It's a CRUD application and the user can create, replace, update and delete their surf trips. It's a fullstack application and consists of a frontend, backend and database. Take a look at the deployed",
+    webApp: "web app",
+    clickHereToSee2: ". Click here to see the frontend",
+    githubRepository: "GitHub repository",
+    andTheBackend: "and the backend",
+    githubRepository2: "GitHub repository",
+    altTheWorldSurfJounrnal: "The world surf jounrnal a full-stack application created by Billy",
+    frontendProject: "Frontend Project",
+    weatherWiseIsA: "Weather Wise is a weather & sport application, that will provide the user with a rating on how good the conditions are for that day in their selected sport, which is calculated using an algorithm, which depends on certain weather condition in their current selected location. The application uses API's to get current weather and location information. Click to see a demo of the",
+    webApp2: "Web App",
+    clickHereToSee3: ", click here to see the",
+    altScreenshotOfWeatherWise: "Screenshot of Weather Wise a React web application created by Billy",
+    clientProject: "Client Project",
+    theTrowitProjectHas: "The TROWIT project has been created to improve the transfer of business and personal details between people. It fills this need by passing user information digitally in the form of Business Cards. The user can set-up an account and create their digital business cards, they can then order these cards as physical cards, which is a service TROWIT will provide. The user can connect with other users via their cards with a URL link. Apologies but the repository is private, I would be happy to discuss the project on request.",
+    altScreenshotOfTheTrowit: "Screenshot of the TROWIT full-stack application created by Billy",
+  },
+  fr: {
+    clientProjects: "PROJETS CLIENTS",
+    hospitality: "Restauration",
+    monkeyMoodRestaurant: "Monkey Mood - restaurant",
+    completeWebsiteRedesignFor: "Refonte complète du site web pour une marque de restaurant vegan en pleine croissance, simplifiant l’expérience de réservation sur deux établissements tout en renforçant l’identité de marque, les performances et le référencement naturel (SEO).",
+    keyAspectsOfThe: "Points clés du projet :",
+    fullRedesignWithMockups: "Refonte complète avec maquettes et direction artistique",
+    userFlowMappingTo: "Cartographie des parcours utilisateurs afin d’optimiser la navigation et le processus de réservation",
+    bookingSystemIntegrationZenchef: "Intégration du système de réservation (ZenChef)",
+    customAnimationsAndStorytelling: "Animations personnalisées et éléments narratifs pour renforcer l’identité de marque",
+    performanceAndSeoOptimisation: "Optimisation des performances et du SEO sur l’ensemble du site",
+    thisWebsiteImprovedBooking: "Ce site a permis d’améliorer l’expérience de réservation, d’augmenter le trafic organique grâce au SEO et de mettre en place une base scalable pour les futures actions marketing.",
+    checkOutTheWebsite: "Découvrez le site et pourquoi pas tester leur cuisine vegan,",
+    monkeyMoodWebsite: "site de Monkey Mood",
+    eCommerce: "E-commerce",
+    pacificCoastCafeCafe: "Pacific Coast Cafe - restauration",
+    performanceOptimisationAndEcommerce: "Optimisation des performances et intégration e-commerce pour un café à forte affluence à Hossegor.",
+    improvedSiteSpeedBy: "Amélioration de la vitesse du site de 20 %, renforcement de la visibilité sur les moteurs de recherche et lancement d’une boutique en ligne fluide avec cartes cadeaux digitales, créant une nouvelle source de revenus sans perturber les opérations quotidiennes.",
+    thisProjectImprovedPacific: "Ce projet a amélioré la présence en ligne de Pacific Coast Café ainsi que ses sources de revenus.",
+    theWebsiteCanBe: "Le site est accessible ici :",
+    pacificCoastCafeWebsite: "Site du Pacific Coast Café",
+    altWeatherWiseAFrontend: "Billy Nightingale client Pacific Coast Cafe Hossegor, capture ecran de site web",
+    wellnessClient: "Client bien-être",
+    eveMarieNeededA: "Eve-Marie avait besoin d’un site web pour lancer son activité de sophrologie et présenter ses services de manière claire et rassurante. J’ai créé un site personnalisé sous WordPress avec Elementor Pro, en mettant l’accent sur des couleurs douces, des mises en page simples et une expérience utilisateur fluide.",
+    theProjectIncludes: "Le projet comprend :",
+    aStructuredSitemapAnd: "Un sitemap structuré et un design d’interface clair et épuré",
+    blogSectionForLong: "Une section blog pour le SEO à long terme",
+    calendlyBookingSystemWith: "Un système de réservation Calendly avec paiements en ligne",
+    speedOptimisationAndBest: "Optimisation de la vitesse et bonnes pratiques pour le SEO technique",
+    fullSetupOfHosting: "Configuration complète de l’hébergement, de la sécurité, des sauvegardes et des outils d’analyse",
+    thisProjectHelpedStrengthen: "Ce projet a permis de renforcer sa présence en ligne et d’offrir un moyen simple pour ses clients de réserver des séances.",
+    altEveMarieASophrologue: "Billy Nightingale client Eve-Marie, capture ecran de site web",
+    iCreatedTurbulenteS: "J’ai créé le premier site e-commerce de Turbulentes pour vendre leur large gamme de kombuchas. C’était une belle opportunité de travailler avec une marque locale et innovante, étroitement liée à la culture surf du Pays Basque.",
+    theProjectIncludes2: "Le projet comprend :",
+    aStructuredSitemapAnd2: "Un sitemap structuré et un design d’interface épuré",
+    fullOnlineShopWith: "Une boutique en ligne complète avec différents produits",
+    integratedPaymentSystem: "Système de paiement intégré",
+    minimalistDesignWithBeautiful: "Un design minimaliste avec de magnifiques visuels et animations.",
+    fullSetupOfUrl: "Configuration complète de l’URL et de l’hébergement, incluant le DNS et le SSL.",
+    thisProjectBroughtTurbulente: "Ce projet a permis à Turbulente de passer en ligne et d’améliorer sa présence digitale.",
+    clickHereToSee: "Cliquez ici pour voir le",
+    website: "site web",
+    altWeatherWiseAFrontend2: "Billy Nightingale client Turbulente, capture ecran de site web",
+    webApplication: "APPLICATIONS WEB",
+    theWorldSurfJournal: "Le World Surf Journal est une application web qui permet à l'utilisateur de créer un compte et d'enregistrer ses voyages de surf avec divers détails. C'est une application CRUD, et l'utilisateur peut créer, remplacer, mettre à jour et supprimer ses voyages de surf. Il s'agit d'une application fullstack composée d'un frontend, d'un backend et d'une base de données. Découvrez la",
+    webApp: "web app déployée",
+    clickHereToSee2: ". Le dépôt du frontend est disponible sur",
+    githubRepository: "Github repository",
+    andTheBackend: "et le backend",
+    githubRepository2: "Github repository",
+    altTheWorldSurfJounrnal: "Capture d'écran de World Surf Journal, une application fullstack, créé par Billy Nightingale",
+    frontendProject: "Projet frontend",
+    weatherWiseIsA: "Weather Wise est une application météo et sport qui fournit à l'utilisateur une évaluation de la qualité des conditions météo pour sa pratique sportive choisie, calculée à l'aide d'un algorithme basé sur certaines conditions météorologiques et de sa localisation actuelle. L'application utilise des API pour obtenir les informations météo et de localisation actuelles. Live:",
+    webApp2: "web app",
+    clickHereToSee3: ", Le dépôt GitHub du frontend est disponible ici:",
+    altScreenshotOfWeatherWise: "Capture d'écran de Weather Wise, une application frontend, créé par Billy Nightingale",
+    clientProject: "Projet de client",
+    theTrowitProjectHas: "Le projet TROWIT a été créé pour améliorer le transfert d'informations professionnelles et personnelles entre les personnes. Il répond à ce besoin en transmettant les informations des utilisateurs sous forme de cartes de visite numériques. L'utilisateur peut créer un compte et concevoir ses cartes de visite numériques, puis les commander sous forme de cartes physiques, un service que TROWIT proposera. L'utilisateur peut se connecter avec d'autres utilisateurs via leurs cartes grâce à un lien URL. Désolé, mais le dépôt est privé. Je serai heureux de discuter du projet sur demande.",
+    altScreenshotOfTheTrowit: "Capture d'écran de TROWIT, une application fullstack, créée par Billy Nightingale",
+  },
+}[lang]
+---
+
+<section class="sections projects" id="projects">
+  <div class="section-project-container">
+    <h2>{t.clientProjects}</h2>
+    <article class="project-info-container">
+      <div class="text">
+        <h3 class="projects-heading heading-reverse">{t.hospitality}</h3>
+        <h4 class="projects-heading-name heading-reverse">
+          {t.monkeyMoodRestaurant}
+        </h4>
+        <div class="project__glass-back">
+          <p class="max-txt-width">
+            {t.completeWebsiteRedesignFor}
+          </p>
+          <p>{t.keyAspectsOfThe}</p>
+          <div class="project-task-list">
+            <ul>
+              <li>{t.fullRedesignWithMockups}</li>
+              <li>
+                {t.userFlowMappingTo}
+              </li>
+              <li>{t.bookingSystemIntegrationZenchef}</li>
+              <li>
+                {t.customAnimationsAndStorytelling}
+              </li>
+              <li>{t.performanceAndSeoOptimisation}</li>
+            </ul>
+          </div>
+          <p class="max-txt-width">
+            {t.thisWebsiteImprovedBooking}
+          </p>
+          <p>
+            {t.checkOutTheWebsite}
+            <a href="https://monkey-mood.fr" target="_blank"
+              >{t.monkeyMoodWebsite}</a
+            >
+          </p>
+        </div>
+        <h4 class="heading__project-tech heading-reverse">
+          Technologies
+        </h4>
+        <ul class="project-tech-list">
+          <li>Figma</li>
+          <li>WordPress CMS</li>
+          <li>Elementor Pro</li>
+          <li>Notion</li>
+          <li>Drive</li>
+          <li>ZenChef</li>
+        </ul>
+      </div>
+      <img
+        loading="lazy"
+        decoding="async"
+        src="/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp"
+        alt="Eve-Marie web site created by Billy"
+        data-src="/assets/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp"
+        width="600"
+        height="600"
+      />
+    </article>
+    <article class="reverse project-info-container">
+      <div class="text">
+        <h3 class="projects-heading">{t.eCommerce}</h3>
+        <h4 class="projects-heading-name">{t.pacificCoastCafeCafe}</h4>
+        <div class="project__glass-back">
+          <p class="max-txt-width">
+            {t.performanceOptimisationAndEcommerce}
+          </p>
+          <p>
+            {t.improvedSiteSpeedBy}
+          </p>
+          <p class="max-txt-width">
+            {t.thisProjectImprovedPacific}
+          </p>
+          <p>
+            {t.theWebsiteCanBe}
+            <a href="https://pacificcoasthossegor.com/" target="_blank"
+              >{t.pacificCoastCafeWebsite}</a
+            >
+          </p>
+        </div>
+        <h4 class="heading__project-tech">Technologies</h4>
+        <ul class="project-tech-list">
+          <li>Figma</li>
+          <li>CMS</li>
+          <li>Elementor Pro</li>
+          <li>Stripe</li>
+          <li>PW Gift Cards</li>
+          <li>Notion</li>
+          <li>Drive</li>
+        </ul>
+      </div>
+      <img
+        loading="lazy"
+        decoding="async"
+        src="/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp"
+        alt={t.altWeatherWiseAFrontend}
+        data-src="/assets/client_sites/Billy_nightingale_client_pacific_coast_cafe_hossegor.webp"
+        width="600"
+      />
+    </article>
+    <article class="project-info-container">
+      <div class="text">
+        <h3 class="projects-heading heading-reverse">{t.wellnessClient}</h3>
+        <h4 class="projects-heading-name heading-reverse">
+          Sophro by Eve - sophrologue
+        </h4>
+        <div class="project__glass-back">
+          <p class="max-txt-width">
+            {t.eveMarieNeededA}
+          </p>
+          <p>{t.theProjectIncludes}</p>
+          <div class="project-task-list">
+            <ul>
+              <li>{t.aStructuredSitemapAnd}</li>
+              <li>{t.blogSectionForLong}</li>
+              <li>{t.calendlyBookingSystemWith}</li>
+              <li>
+                {t.speedOptimisationAndBest}
+              </li>
+              <li>
+                {t.fullSetupOfHosting}
+              </li>
+            </ul>
+          </div>
+          <p class="max-txt-width">
+            {t.thisProjectHelpedStrengthen}
+          </p>
+        </div>
+        <h4 class="heading__project-tech heading-reverse">
+          Technologies
+        </h4>
+        <ul class="project-tech-list">
+          <li>Wordpress</li>
+          <li>Elementor Pro</li>
+          <li>Rank Math SEO</li>
+          <li>Hostinger</li>
+          <li>Calendly</li>
+        </ul>
+      </div>
+      <img
+        loading="lazy"
+        decoding="async"
+        src="/assets/client_sites/client_eve-marie_website.webp"
+        alt={t.altEveMarieASophrologue}
+        data-src="/assets/client_sites/client_eve-marie_website.webp"
+        width="600"
+        height="600"
+      />
+    </article>
+    <article class="reverse project-info-container">
+      <div class="text">
+        <h3 class="projects-heading">E-Commerce</h3>
+        <h4 class="projects-heading-name">Turbulente - kombucha</h4>
+        <div class="project__glass-back">
+          <p class="max-txt-width">
+            {t.iCreatedTurbulenteS}
+          </p>
+          <p>{t.theProjectIncludes2}</p>
+          <div class="project-task-list">
+            <ul>
+              <li>{t.aStructuredSitemapAnd2}</li>
+              <li>{t.fullOnlineShopWith}</li>
+              <li>{t.integratedPaymentSystem}</li>
+              <li>
+                {t.minimalistDesignWithBeautiful}
+              </li>
+              <li>
+                {t.fullSetupOfUrl}
+              </li>
+            </ul>
+          </div>
+          <p class="max-txt-width">
+            {t.thisProjectBroughtTurbulente}
+          </p>
+          <p>
+            {t.clickHereToSee}
+            <a href="https://www.turbulente.fr/" target="_blank"
+              >{t.website}</a
+            >
+          </p>
+        </div>
+        <h4 class="heading__project-tech">Technologies</h4>
+        <ul class="project-tech-list">
+          <li>Wix</li>
+          <li>Wix studio</li>
+          <li>Google console</li>
+          <li>Google analytics</li>
+          <li>Figma</li>
+        </ul>
+      </div>
+      <img
+        loading="lazy"
+        decoding="async"
+        src="/assets/client_sites/client_turbulente_website.webp"
+        alt={t.altWeatherWiseAFrontend2}
+        data-src="/assets/client_sites/client_turbulente_website.webp"
+        width="600"
+      />
+    </article>
+    <h2>{t.webApplication}</h2>
+    <article class="project-info-container">
+      <div class="text">
+        <h3 class="projects-heading heading-reverse">Full-Stack</h3>
+        <h4 class="projects-heading-name heading-reverse">
+          World Surf Journal
+        </h4>
+        <div class="project__glass-back">
+          <p class="max-txt-width">
+            {t.theWorldSurfJournal}
+            <a href="https://worldsurfjournal.netlify.app" target="_blank"
+              >{t.webApp}</a
+            >{t.clickHereToSee2}<a
+              href="https://github.com/Billy-Night/world_surf_journal"
+              target="_blank"
+            >
+              {t.githubRepository}</a
+            >
+            {t.andTheBackend}<a
+              href="https://github.com/Billy-Night/world_surf_journal_backend"
+              target="_blank"
+            >
+              {t.githubRepository2}</a
+            >.
+          </p>
+        </div>
+        <h4 class="heading__project-tech heading-reverse">
+          Technologies
+        </h4>
+        <ul class="project-tech-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Express</li>
+          <li>MySQL</li>
+        </ul>
+      </div>
+      <img
+        loading="lazy"
+        decoding="async"
+        src="/assets/personal_projects/app_world_surf_journal.webp"
+        alt={t.altTheWorldSurfJounrnal}
+        data-src="/assets/personal_projects/app_world_surf_journal.webp"
+        width="600"
+      />
+    </article>
+    <article class="reverse project-info-container">
+      <div class="text">
+        <h3 class="projects-heading">{t.frontendProject}</h3>
+        <h4 class="projects-heading-name">Weather Wise</h4>
+        <div class="project__glass-back">
+          <p class="max-txt-width">
+            {t.weatherWiseIsA}
+            <a href="https://weatherwise.netlify.app/" target="_blank"
+              >{t.webApp2}</a
+            >{t.clickHereToSee3}
+            <a
+              href="https://github.com/Billy-Night/weather_wise_app"
+              target="_blank"
+              >GitHub repository</a
+            >.
+          </p>
+        </div>
+        <h4 class="heading__project-tech">Technologies</h4>
+        <ul class="project-tech-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>OpenWeather API</li>
+        </ul>
+      </div>
+      <img
+        loading="lazy"
+        decoding="async"
+        src="/assets/personal_projects/app_weather_wise.webp"
+        alt={t.altScreenshotOfWeatherWise}
+        data-src="/assets/personal_projects/app_weather_wise.webp"
+        width="600"
+      />
+    </article>
+    <article class="project-info-container">
+      <div class="text">
+        <h3 class="projects-heading heading-reverse">{t.clientProject}</h3>
+        <h4 class="projects-heading-name heading-reverse">TROWIT</h4>
+        <div class="project__glass-back">
+          <p class="max-txt-width">
+            {t.theTrowitProjectHas}
+          </p>
+        </div>
+        <h4 class="heading__project-tech heading-reverse">
+          Technologies
+        </h4>
+        <ul class="project-tech-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Express</li>
+          <li>MySQL</li>
+        </ul>
+      </div>
+      <img
+        loading="lazy"
+        decoding="async"
+        src="/assets/personal_projects/app_trowit.webp"
+        alt={t.altScreenshotOfTheTrowit}
+        data-src="/assets/personal_projects/app_trowit.webp"
+        width="600"
+      />
+    </article>
+  </div>
+</section>
