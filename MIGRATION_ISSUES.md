@@ -33,16 +33,20 @@ Every page's sections are now components shared by the English and French pages,
   - `ServicesPackages`: the title has a different class per language.
   - `PackageFeatures`: each language passes its own list of bullets. They now say the same things (see "Content decisions" below).
 
-### B. Split `script.js` per component
-- [script.js](public/script.js) is one 970-line file loaded on every page. It was checked in a real browser on all 14 pages and throws no errors: every optional element is guarded with an `if`. The original issue #15 ("crashes on pages without certain elements") was wrong and is closed.
-- Splitting it into per-component `<script>` tags would only make it easier to maintain. Do it together with A.
+### B. Scripts per component: done
+- `public/script.js` (970 lines, loaded on every page) is now 13 modules in [src/scripts/](src/scripts/), one per feature. Each component imports the one it needs in a `<script>` tag at the bottom of its file, so a page only loads the scripts for what's on it. Two site-wide scripts (section reveal, lazy images) are imported by [BaseLayout.astro](src/layouts/BaseLayout.astro).
+- The code was moved unchanged. Three dead features were dropped (the "offers" tabs, a "learn more" scroll button and a contact scroll icon, whose elements no longer exist), along with one unused variable and three `console.log` calls. One of those logged every visitor's contact-form data to the browser console.
+- Astro inlines each single-use script into the page, minified. The two scripts shared by two components (`heroTitle.js`, `timeline.js`) become files in `/_astro/` with a hash in their name, cached for a year.
+- **How it was checked:** a scripted browser test drove every page of the old and new builds (scrolling, the menu button, the cookie buttons, the FAQ, the process phases, the reviews, the Landes switcher, changing the form's reason field and submitting it against a fake server) and compared the resulting page state after each step. All 14 pages match at desktop and mobile width. A second, real-time check confirmed the orbit animation, the review progress ring and auto-advance, and the scroll-drawn timeline run the same on both builds.
+- **Not covered by those tests:** real touch input, and browsers other than Chrome. Worth a manual pass on a phone and in Safari and Firefox.
+- The original issue #15 ("crashes on pages without certain elements") was wrong: every optional element was already guarded with an `if`.
 
 ### C. Process the CSS and images through Astro
 - **CSS:** bundling [style.css](public/css/style.css) through Astro was tried for #19 and reverted, because it changed how pages render:
   - The minifier keeps only the last of `backdrop-filter: blur(10px) saturate(120%)` and `-webkit-backdrop-filter: blur(10px)`, which is the `-webkit-` line. Chrome ignores that line, so the blur disappears. Putting the `-webkit-` line first in each of the 10 places would avoid this.
-  - Astro puts the stylesheet link after `script.js` in `<head>`. The script then runs before the styles apply, and its reveal-on-scroll logic leaves sections hidden. Moving the `script.js` tag to the end of `<body>` would avoid this.
+  - Astro put the stylesheet link at the end of `<head>`, after the old `script.js` tag, so the script ran before the styles applied and its reveal-on-scroll logic left sections hidden. The scripts now load from the page body (see B), so this would need retesting, not assuming.
 - **Images:** `astro:assets` could generate responsive sizes and modern formats for the images in `public/assets/` (7.3 MB in total).
-- **Caching:** done and verified for `style.css` and `script.js` (one year). Images are still cached for 10 minutes, because their URLs have no version. Processing them through Astro would give them hashed URLs too.
+- **Caching:** done and verified for `style.css` (one year). The bundled scripts in `/_astro/` have the same one-year rule; check it with `curl -I` on the next branch deploy. Images are still cached for 10 minutes, because their URLs have no version. Processing them through Astro would give them hashed URLs too.
 
 ### D. Unused files in `public/`
 - 24 files in `public/assets/` (2.6 MB) aren't referenced by any page, stylesheet or script, for example `lazyBillyPortrait.jpeg`, `TROWITScreenShot.png`, `portrait_standing_laptop_v3.webp` and five of the `portraits/`. `favicon-n-v1-180.png` and `favicon-n-v1-512.png` aren't referenced either.
@@ -100,6 +104,7 @@ Every page's sections are now components shared by the English and French pages,
   - The "Best for" and "Delivery time" labels are `<h4>` on both services pages. They were `<h3>` in English, so they're now smaller there.
   - The French package offers match the English ones, which are the reference. The French bullets, the pricing note and the ongoing visibility price ("250 € – 1 000 €+ / mois TTC") are translations of the English. [public/fr/services.md](public/fr/services.md) is updated to match.
   - Left as they were, because they say the same thing in natural French or are French conventions: the package names ("Site vitrine Essentiel"), the keyword-rich headings ("Tarifs de création de site internet"), the "Idéal pour" lines, the package descriptions, and "TTC" on prices.
+- **Scripts:** `script.js` split into one script per feature (see B).
 - **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."
 - **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
