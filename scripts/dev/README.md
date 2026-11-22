@@ -46,6 +46,12 @@ node scripts/dev/cdp_eval.mjs dist scripts/dev/phone_expr.js website-development
 node scripts/dev/cdp_eval.mjs dist scripts/dev/reveal_expr.js contact.html
 ```
 
+Set `BASE` to run the same expression against a deployed site. Pages are then given as paths:
+
+```bash
+BASE=https://astrotrans--billy-nightingale-web-dev.netlify.app SIZE=1920,1080 node scripts/dev/cdp_eval.mjs dist scripts/dev/imgbox_expr.js about website-development-landes
+```
+
 - `phone_expr.js`: which image the Landes phone shows at each scroll position.
 - `reveal_expr.js`: whether sections reveal, the photo loads and the fonts load.
 

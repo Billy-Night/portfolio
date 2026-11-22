@@ -1,7 +1,10 @@
-// usage: node cdp_eval.mjs <dist-dir> <expression-file> <page> [page...] — evaluate an async expression on built pages in real time
+// usage: [SIZE=1920,1080] [BASE=https://site] node cdp_eval.mjs <dist-dir> <expression-file> <page> [page...]
+// Evaluate an async expression on built pages in real time.
 import { spawn } from 'node:child_process'
 import { rmSync, readFileSync } from 'node:fs'
 const [dist, exprFile, ...pages] = process.argv.slice(2); const PORT = Number(process.env.PORT || 4593), DBG = Number(process.env.DBG || 9334); const SIZE = process.env.SIZE || '1280,900'
+// BASE=https://example.com evaluates against a deployed site instead of the local build (pages are then paths such as 'about')
+const BASE = process.env.BASE || `http://localhost:${PORT}`
 const expr = readFileSync(exprFile, 'utf8')
 const srv = spawn('python3', ['-m', 'http.server', String(PORT), '--directory', dist], { stdio: 'ignore' })
 const profile = `${dist}/../.cdpprofile-${Date.now()}`
@@ -10,7 +13,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 async function retry(fn) { for (let i = 0; i < 40; i++) { try { return await fn() } catch { await sleep(250) } } throw new Error('chrome not reachable') }
 try {
   for (const page of pages) {
-    const target = await retry(async () => (await fetch(`http://localhost:${DBG}/json/new?http://localhost:${PORT}/${page}`, { method: 'PUT' })).json())
+    const target = await retry(async () => (await fetch(`http://localhost:${DBG}/json/new?${BASE}/${page}`, { method: 'PUT' })).json())
     const ws = new WebSocket(target.webSocketDebuggerUrl)
     await new Promise((r) => ws.addEventListener('open', r))
     const res = await new Promise((resolve) => {
