@@ -1,43 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { person } from '../data/schema'
 import Header from '../components/Header.astro'
 import CookieBanner from '../components/CookieBanner.astro'
 import Footer from '../components/Footer.astro'
 
 const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://www.billynightingale.com/#person",
-    "name": "Billy Nightingale",
-    "jobTitle": "Web designer & web developer",
-    "url": "https://www.billynightingale.com/",
-    "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-    "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Capbreton",
-      "addressRegion": "Landes",
-      "addressCountry": "FR"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/billynightingale/",
-      "https://github.com/Billy-Night"
-    ],
-    "knowsAbout": [
-      "web design",
-      "website creation",
-      "frontend development",
-      "WordPress",
-      "SEO",
-      "local SEO",
-      "performance optimisation"
-    ],
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.billynightingale.com/"
-    }
-  },
+  person('en'),
   {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -45,6 +14,7 @@ const jsonLd = [
     "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
     "provider": {
       "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person",
       "name": "Billy Nightingale",
       "url": "https://www.billynightingale.com/"
     },

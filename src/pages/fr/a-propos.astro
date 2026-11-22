@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { person } from '../../data/schema'
 import Header from '../../components/Header.astro'
 import CookieBanner from '../../components/CookieBanner.astro'
 import Footer from '../../components/Footer.astro'
@@ -11,34 +12,7 @@ const jsonLd = [
     "@id": "https://www.billynightingale.com/fr/a-propos#webpage",
     "url": "https://www.billynightingale.com/fr/a-propos",
     "name": "À propos de Billy Nightingale",
-    "mainEntity": {
-      "@type": "Person",
-      "@id": "https://www.billynightingale.com/#person",
-      "name": "Billy Nightingale",
-      "jobTitle": "Créateur de sites web et développeur web",
-      "url": "https://www.billynightingale.com/fr/",
-      "image": "https://www.billynightingale.com/assets/portraits/billy_nightingale_web_designer_capbreton.webp",
-      "description": "Web designer et développeur web à Capbreton, créant des sites web modernes, rapides et optimisés pour le référencement pour les entreprises locales.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Capbreton",
-        "addressRegion": "Landes",
-        "addressCountry": "FR"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/billynightingale/",
-        "https://github.com/Billy-Night"
-      ],
-      "knowsAbout": [
-        "web design",
-        "création de sites web",
-        "développement frontend",
-        "WordPress",
-        "SEO",
-        "SEO local",
-        "optimisation des performances"
-      ]
-    }
+    "mainEntity": person('fr', { image: "https://www.billynightingale.com/assets/portraits/billy_nightingale_web_designer_capbreton.webp", embedded: true })
   }
 ]
 ---

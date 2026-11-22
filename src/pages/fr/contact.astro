@@ -1,25 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { person } from '../../data/schema'
 import Header from '../../components/Header.astro'
 import CookieBanner from '../../components/CookieBanner.astro'
 import Footer from '../../components/Footer.astro'
 
 const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://www.billynightingale.com/fr/#person",
-    "name": "Billy Nightingale",
-    "jobTitle": "Web designer et développeur web",
-    "url": "https://www.billynightingale.com/fr/",
-    "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Capbreton",
-      "addressRegion": "Nouvelle-Aquitaine",
-      "addressCountry": "FR"
-    }
-  }
+  person('fr')
 ]
 ---
 

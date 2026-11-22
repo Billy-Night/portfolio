@@ -202,6 +202,7 @@
           "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
           "name": "Web design, website creation and SEO services",
           "provider": {
+            "@id": "https://www.billynightingale.com/#person",
             "@type": "Person",
             "name": "Billy Nightingale",
             "url": "https://www.billynightingale.com/"
@@ -944,6 +945,7 @@
           "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
           "name": "Web design, website creation and SEO services",
           "provider": {
+            "@id": "https://www.billynightingale.com/#person",
             "@type": "Person",
             "name": "Billy Nightingale",
             "url": "https://www.billynightingale.com/"
@@ -1298,7 +1300,7 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/fr/#person",
+          "@id": "https://www.billynightingale.com/#person",
           "@type": "Person",
           "address": {
             "@type": "PostalAddress",
@@ -1341,6 +1343,7 @@
           "description": "Je propose des services de web design, de création de sites web et d'optimisation SEO pour les entreprises locales à Capbreton, Hossegor, Landes et Pays Basque.",
           "name": "Création de Site Web, Web Design, Développement Web, SEO",
           "provider": {
+            "@id": "https://www.billynightingale.com/#person",
             "@type": "Person",
             "name": "Billy Nightingale",
             "url": "https://www.billynightingale.com/fr/"
@@ -1688,16 +1691,16 @@
               "addressLocality": "Capbreton",
               "addressRegion": "Landes"
             },
-            "description": "Web designer et développeur web à Capbreton, créant des sites web modernes, rapides et optimisés pour le référencement pour les entreprises locales.",
+            "description": "Web designer et développeur web à Capbreton, créant des sites modernes, rapides et optimisés pour le SEO pour les entreprises locales.",
             "image": "https://www.billynightingale.com/assets/portraits/billy_nightingale_web_designer_capbreton.webp",
-            "jobTitle": "Créateur de sites web et développeur web",
+            "jobTitle": "Web designer et développeur web",
             "knowsAbout": [
               "web design",
-              "création de sites web",
+              "création de site internet",
               "développement frontend",
               "WordPress",
               "SEO",
-              "SEO local",
+              "référencement local",
               "optimisation des performances"
             ],
             "name": "Billy Nightingale",
@@ -2165,17 +2168,35 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/fr/#person",
+          "@id": "https://www.billynightingale.com/#person",
           "@type": "Person",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "FR",
             "addressLocality": "Capbreton",
-            "addressRegion": "Nouvelle-Aquitaine"
+            "addressRegion": "Landes"
           },
+          "description": "Web designer et développeur web à Capbreton, créant des sites modernes, rapides et optimisés pour le SEO pour les entreprises locales.",
           "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
           "jobTitle": "Web designer et développeur web",
+          "knowsAbout": [
+            "web design",
+            "création de site internet",
+            "développement frontend",
+            "WordPress",
+            "SEO",
+            "référencement local",
+            "optimisation des performances"
+          ],
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/fr/",
+            "@type": "WebPage"
+          },
           "name": "Billy Nightingale",
+          "sameAs": [
+            "https://www.linkedin.com/in/billynightingale/",
+            "https://github.com/Billy-Night"
+          ],
           "url": "https://www.billynightingale.com/fr/"
         }
       ],
@@ -2768,24 +2789,28 @@
             "addressLocality": "Capbreton",
             "addressRegion": "Landes"
           },
-          "description": "Web designer et développeur web à Capbreton. Je crée des sites web modernes, rapides et optimisés pour le SEO pour les petites entreprises.",
+          "description": "Web designer et développeur web à Capbreton, créant des sites modernes, rapides et optimisés pour le SEO pour les entreprises locales.",
           "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-          "jobTitle": "Web designer & développeur web",
+          "jobTitle": "Web designer et développeur web",
           "knowsAbout": [
             "web design",
-            "création de sites web",
-            "développement front-end",
+            "création de site internet",
+            "développement frontend",
             "WordPress",
             "SEO",
-            "SEO local",
+            "référencement local",
             "optimisation des performances"
           ],
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/fr/",
+            "@type": "WebPage"
+          },
           "name": "Billy Nightingale",
           "sameAs": [
             "https://www.linkedin.com/in/billynightingale/",
             "https://github.com/Billy-Night"
           ],
-          "url": "https://www.billynightingale.com/"
+          "url": "https://www.billynightingale.com/fr/"
         },
         {
           "@context": "https://schema.org",
@@ -3165,12 +3190,16 @@
           "knowsAbout": [
             "web design",
             "website creation",
-            "front-end development",
+            "frontend development",
             "WordPress",
             "SEO",
             "local SEO",
             "performance optimisation"
           ],
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/",
+            "@type": "WebPage"
+          },
           "name": "Billy Nightingale",
           "sameAs": [
             "https://www.linkedin.com/in/billynightingale/",
@@ -3544,6 +3573,7 @@
           "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
           "name": "Web design, website creation and SEO services",
           "provider": {
+            "@id": "https://www.billynightingale.com/#person",
             "@type": "Person",
             "name": "Billy Nightingale",
             "url": "https://www.billynightingale.com/"
