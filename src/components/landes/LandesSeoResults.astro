@@ -1,0 +1,106 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    topRankingSitesIn: "Top ranking sites in Landes",
+    myProvenLocalSeo: "My proven local SEO strategeis",
+    altMonkeyMoodOneOf: "Monkey Mood, one of Billy Nightingales clients ranking high in Google Search results, with excellent SEO",
+    monkeyMoodRestaurant: "Monkey Mood restaurant",
+    monkeyMoodIsA: "Monkey Mood is a local restaurant which focuses on Indonesian vegan cuisine.",
+    theyAreATop: "They are a top ranking website in Google search results for both their location in Capbreton and Bordeaux.",
+    altPacificCoastCafeOne: "Pacific Coast Cafe one of Billy Nightingales clients ranking high in Google search results",
+    pacificCoastCafe: "Pacific Coast Cafe",
+    pacificCoastCafeIs: "Pacific coast cafe is a local cafe in the centre of Hossegor, I worked with them to improve their sites performance and SEO. While integrating a online shop",
+    theResultAreEasy: "The result are easy to see as the website is 20% faster and also performs excellently in Google search results",
+  },
+  fr: {
+    topRankingSitesIn: "Des sites bien positionnés dans les Landes",
+    myProvenLocalSeo: "Des stratégies SEO locales qui donnent des résultats",
+    altMonkeyMoodOneOf: "Monkey Mood, l’un des clients de Billy Nightingale, bien positionné dans les résultats de recherche Google grâce à un excellent référencement naturel (SEO).",
+    monkeyMoodRestaurant: "Restaurant Monkey Mood",
+    monkeyMoodIsA: "Monkey Mood est un restaurant local spécialisé dans la cuisine végétale indonésienne.",
+    theyAreATop: "Le site bénéficie d’un excellent positionnement sur Google pour ses deux établissements à Capbreton et Bordeaux.",
+    altPacificCoastCafeOne: "Pacific Coast Café, client de Billy Nightingale, affichant un excellent positionnement dans les résultats de recherche Google.",
+    pacificCoastCafe: "Pacific Coast Café",
+    pacificCoastCafeIs: "Pacific Coast Café est un café situé au cœur d’Hossegor. J’ai travaillé avec l’équipe afin d’améliorer les performances du site, son référencement naturel et d’intégrer une boutique en ligne.",
+    theResultAreEasy: "Les résultats sont visibles : le site est environ 20 % plus rapide et obtient d’excellentes performances dans les résultats de recherche Google.",
+  },
+}[lang]
+---
+
+<section class="wid__sec">
+  <div class="wid__heading-container">
+    <h2>{t.topRankingSitesIn}</h2>
+    <p>{t.myProvenLocalSeo}</p>
+  </div>
+  <div class="wid__content-container">
+    <div class="row">
+      <div class="wid__img-cont">
+        <img
+          src="/assets/landes_seo_mockups/monkey_mood_seo_mockup.webp"
+          alt={t.altMonkeyMoodOneOf}
+        />
+      </div>
+      <div class="wid__text-cont txt-r">
+        <div class="wid__text box__shadow">
+          <div class="max-txt-width">
+            <h3>{t.monkeyMoodRestaurant}</h3>
+            <p>
+              {t.monkeyMoodIsA}
+            </p>
+            <p>
+              {t.theyAreATop}
+            </p>
+            <div class="wid__content_cta">
+              <a class="btn__primary btn__prim--dark" href={r('services')}
+                >SERVICES</a
+              >
+              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+                >PROJECTS</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wid__img-cont-right right">
+        <img
+          src="/assets/landes_seo_mockups/Pacific_Coast_cafe_seo_mockup.webp"
+          alt={t.altPacificCoastCafeOne}
+        />
+      </div>
+      <div class="wid__text-cont txt-l">
+        <div class="wid__text box__shadow">
+          <div class="max-txt-width">
+            <h3>{t.pacificCoastCafe}</h3>
+            <p>
+              {t.pacificCoastCafeIs}
+            </p>
+            <p>
+              {t.theResultAreEasy}
+            </p>
+            <div class="wid__content_cta">
+              <a class="btn__primary btn__prim--dark" href={r('services')}
+                >SERVICES</a
+              >
+              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+                >PROJECTS</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

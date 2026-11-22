@@ -1,0 +1,41 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    readyToDiscussYour: "Ready to discuss your project",
+    bookACallOr: "Book a call or request a quote now",
+    quote: "Quote",
+  },
+  fr: {
+    readyToDiscussYour: "Prêt à discuter de votre projet ?",
+    bookACallOr: "Réservez un appel ou demandez un devis dès aujourd’hui.",
+    quote: "Devis",
+  },
+}[lang]
+---
+
+<section class="sections">
+  <div class="section-contact-container">
+    <h2>{t.readyToDiscussYour}</h2>
+    <p>{t.bookACallOr}</p>
+    <div class="cta-container">
+      <a
+        class="btn__primary btn__prim--light"
+        href="mailto:contact@billynightingale.com"
+        >PAR MAIL</a
+      >
+      <a class="btn__second btn__second--light" href={r('contact')}
+        >{t.quote}</a
+      >
+    </div>
+  </div>
+</section>

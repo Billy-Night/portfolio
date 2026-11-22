@@ -1,0 +1,88 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    altPhoneContainingScreensThat: "Phone containing screens that illustrate website performance, SEO optimisation and solving business issues with technology",
+    srcPhoneWebPerformance: "/assets/landes_phone/phone_web_performance.webp",
+    fastWebsitesCreateBetter: "Fast websites create better first impressions",
+    visitorsExpectWebsitesTo: "Visitors expect websites to load quickly, especially on mobile devices.",
+    everyWebsiteIBuild: "Every website I build is optimised for performance, helping local businesses provide a smoother experience, improve search visibility and convert more visitors into customers.",
+    helpingLocalBusinessesGet: "Helping local businesses get found online",
+    aBeautifulWebsiteIs: "A beautiful website is only valuable if people can find it.",
+    iWorkWithBusinesses: "I work with businesses across the Landes region to improve visibility through technical SEO, local search optimisation and a strong website foundation.",
+    everyBusinessHasDifferent: "Every business has different challenges",
+    someBusinessesNeedMore: "Some businesses need more reservations, others want to sell products online, improve visibility or modernise their customer experience.",
+    myApproachIsTo: "My approach is to understand the problem first, then design and build a solution that supports your business goals.",
+  },
+  fr: {
+    altPhoneContainingScreensThat: "Smartphone affichant les performances d’un site web optimisé avec d’excellents scores de vitesse et de référencement.",
+    srcPhoneWebPerformance: "/assets/landes_phone/phone_web_performance_fr.webp",
+    fastWebsitesCreateBetter: "Des sites rapides pour une meilleure première impression",
+    visitorsExpectWebsitesTo: "Les visiteurs s’attendent à ce qu’un site web charge rapidement, particulièrement sur mobile.",
+    everyWebsiteIBuild: "Chaque site que je crée est optimisé pour la performance afin d’offrir une expérience fluide, d’améliorer votre visibilité sur Google et de transformer davantage de visiteurs en clients.",
+    helpingLocalBusinessesGet: "Aider les entreprises landaises à être trouvées en ligne",
+    aBeautifulWebsiteIs: "Un beau site internet n’a de valeur que s’il est visible.",
+    iWorkWithBusinesses: "J’accompagne les entreprises des Landes dans l’amélioration de leur présence en ligne grâce au référencement naturel (SEO), à l’optimisation locale et à des fondations techniques solides.",
+    everyBusinessHasDifferent: "Chaque entreprise a ses propres défis",
+    someBusinessesNeedMore: "Certaines entreprises ont besoin de davantage de réservations, d’autres souhaitent vendre en ligne, gagner en visibilité ou moderniser leur expérience client.",
+    myApproachIsTo: "Mon approche consiste à comprendre vos objectifs avant de concevoir et développer une solution adaptée à votre activité.",
+  },
+}[lang]
+---
+
+<section class="section-pad">
+  <div class="static-phone-channel">
+    <div class="phone-iteractive-content-container">
+      <div class="static-phone-container">
+        <img
+          class="static-phone-img"
+          src={t.srcPhoneWebPerformance}
+          alt={t.altPhoneContainingScreensThat}
+        />
+      </div>
+      <div class="phone-text-container">
+        <div class="phone-text-content-cont max-txt-width">
+          <h2 class="static-phone-title">
+            {t.fastWebsitesCreateBetter}
+          </h2>
+          <p class="max-txt-width">
+            {t.visitorsExpectWebsitesTo}
+          </p>
+          <p class="max-txt-width">
+            {t.everyWebsiteIBuild}
+          </p>
+        </div>
+        <div class="phone-text-content-cont max-txt-width">
+          <h2 class="static-phone-title">
+            {t.helpingLocalBusinessesGet}
+          </h2>
+          <p class="max-txt-width">
+            {t.aBeautifulWebsiteIs}
+          </p>
+          <p class="max-txt-width">
+            {t.iWorkWithBusinesses}
+          </p>
+        </div>
+        <div class="phone-text-content-cont max-txt-width">
+          <h2 class="static-phone-title">
+            {t.everyBusinessHasDifferent}
+          </h2>
+          <p class="max-txt-width">
+            {t.someBusinessesNeedMore}
+          </p>
+          <p class="max-txt-width">
+            {t.myApproachIsTo}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

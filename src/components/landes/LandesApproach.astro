@@ -1,0 +1,141 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    myApproachForLocal: "My approach for local businesses in Landes",
+    myApproachCombinesThoughtful: "My approach combines thoughtful design with technical performance, creating websites that not only look professional but help local businesses grow online.",
+    myDesignsAreFocused: "My designs are focused on bringing out the companies visual identity and crafting a design for the local culture, they are designed to be affective for the Landes market.",
+    thisMeansImprovingConversions: "This means improving conversions and increasing growth, locally in Landes.",
+    eachSiteIsOptimised: "Each site is optimised for performance and visibility in the local Landes market to convert clients.",
+    fasterWebsitesProvideA: "Faster websites provide a better user experience and stronger SEO performance, helping local businesses attract more visitors and generate more enquiries.",
+    solveBusinessProblems: "Solve Business problems",
+    everyBusinessIsDifferent: "Every business is different. Some need more reservations, some need more visibility and others need a better way to sell online. My goal is to understand the challenges behind the website and build a solution around them.",
+    seeSomeTailoredSolutions: "See some tailored solutions for local businesses below.",
+    asYourDigitalLocal: "As your digital local partner I offer ongoing support packages to insure your website stays at top performance while generating growth.",
+  },
+  fr: {
+    myApproachForLocal: "Mon approche pour les entreprises des Landes",
+    myApproachCombinesThoughtful: "J’associe design réfléchi et performance technique afin de créer des sites web qui inspirent confiance, renforcent votre image de marque et contribuent au développement de votre activité.",
+    myDesignsAreFocused: "Mes créations mettent en valeur l’identité visuelle de chaque entreprise tout en s’inspirant de la culture locale et de l’environnement des Landes.",
+    thisMeansImprovingConversions: "L’objectif est d’améliorer les conversions et de soutenir votre croissance locale.",
+    eachSiteIsOptimised: "Chaque site est optimisé pour offrir rapidité, visibilité et efficacité sur le marché local.",
+    fasterWebsitesProvideA: "Un site rapide améliore l’expérience utilisateur, favorise le référencement naturel et aide votre entreprise à attirer davantage de visiteurs qualifiés.",
+    solveBusinessProblems: "Résoudre des problèmes",
+    everyBusinessIsDifferent: "Chaque entreprise est différente. Certaines cherchent à augmenter leurs réservations, d’autres à gagner en visibilité ou à vendre plus efficacement en ligne. Mon rôle consiste à comprendre ces enjeux afin de construire une solution adaptée.",
+    seeSomeTailoredSolutions: "Découvrez quelques exemples de solutions mises en place pour des entreprises locales.",
+    asYourDigitalLocal: "En tant que partenaire digital local, je propose également un accompagnement continu afin de maintenir votre site performant, sécurisé et capable de soutenir votre croissance.",
+  },
+}[lang]
+---
+
+<section class="landes-approach-section">
+  <div class="subheading-centred">
+    <h2>{t.myApproachForLocal}</h2>
+    <p class="max-txt-width">
+      {t.myApproachCombinesThoughtful}
+    </p>
+  </div>
+  <div class="lan-approach-content-cont">
+    <div class="lan-approach-row1">
+      <div class="lan-approach-design approach-cont">
+        <svg
+          class="lan-approach-svg"
+          width="302"
+          height="102"
+          viewBox="0 0 302 102"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.1141 1L1 30.5918V71.4082L18.1141 101H283.886L301 71.4082V30.5918L283.886 1H18.1141Z"
+            stroke="none"
+            stroke-width="2"
+          />
+        </svg>
+        <div class="approach-design-heading">
+          <h3>Design</h3>
+        </div>
+
+        <p class="max-txt-width">
+          {t.myDesignsAreFocused}
+        </p>
+        <p class="max-txt-width">
+          {t.thisMeansImprovingConversions}
+        </p>
+      </div>
+      <div class="lan-approach-design approach-cont">
+        <svg
+          class="lan-approach-svg"
+          width="302"
+          height="102"
+          viewBox="0 0 302 102"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.1141 1L1 30.5918V71.4082L18.1141 101H283.886L301 71.4082V30.5918L283.886 1H18.1141Z"
+            stroke="none"
+            stroke-width="2"
+          />
+        </svg>
+        <div class="approach-design-heading">
+          <h3>performance</h3>
+        </div>
+
+        <p class="max-txt-width">
+          {t.eachSiteIsOptimised}
+        </p>
+        <p class="max-txt-width">
+          {t.fasterWebsitesProvideA}
+        </p>
+      </div>
+    </div>
+    <div class="lan-approach-row2">
+      <div class="lan-approach-performance approach-cont">
+        <svg
+          class="lan-approach-svg"
+          width="302"
+          height="102"
+          viewBox="0 0 302 102"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.1141 1L1 30.5918V71.4082L18.1141 101H283.886L301 71.4082V30.5918L283.886 1H18.1141Z"
+            stroke="none"
+            stroke-width="2"
+          />
+        </svg>
+        <div class="approach-design-heading">
+          <h3>{t.solveBusinessProblems}</h3>
+        </div>
+        <p class="max-txt-width">
+          {t.everyBusinessIsDifferent}
+        </p>
+        <p>{t.seeSomeTailoredSolutions}</p>
+      </div>
+    </div>
+  </div>
+  <div class="approach-cta-cont">
+    <p class="max-txt-width">
+      {t.asYourDigitalLocal}
+    </p>
+    <div class="cta-container">
+      <a class="btn__primary btn__prim--light" href={r('services')}
+        >SERVICES</a
+      >
+      <a class="btn__second btn__second--light" href={`${r('home')}#projects`}
+        >PROJECTS</a
+      >
+    </div>
+  </div>
+</section>
