@@ -1,0 +1,76 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    webDesign: "Web design",
+    webDevelopment: "Web Development",
+    projectManagement: "Project Management",
+    altBillyNightingaleSittingAt: "Billy Nightingale sitting at his MacBook working on web design",
+  },
+  fr: {
+    webDesign: "Web Design",
+    webDevelopment: "Web Développement",
+    projectManagement: "Gestion projet",
+    altBillyNightingaleSittingAt: "Billy Nightingale travaille sur le web design et développement à Capbreton",
+  },
+}[lang]
+---
+
+<section class="services-hero-section">
+  <div class="services-intro-container">
+    <div class="services-intro-img-frame">
+      <h2>
+        <a
+          href="#services-page__main-services"
+          class="paint-text flip-text"
+          data-replace={t.webDesign}
+          ><span>{t.webDesign}</span></a
+        >
+      </h2>
+      <h2>
+        <a
+          href="#services-page__main-services"
+          class="paint-text flip-text"
+          data-replace={t.webDevelopment}
+          ><span>{t.webDevelopment}</span></a
+        >
+      </h2>
+      <h2>
+        <a
+          href="#services-page__main-services"
+          class="paint-text flip-text"
+          data-replace="SEO"
+          ><span>SEO</span></a
+        >
+      </h2>
+      <h2>
+        <a
+          href="#services-page__sec-service-addons"
+          class="paint-text flip-text"
+          data-replace="Performance"
+          ><span>Performance</span></a
+        >
+      </h2>
+      <h2>
+        <a
+          href="#services__page-sec-project-management"
+          class="paint-text flip-text"
+          data-replace={t.projectManagement}
+          ><span>{t.projectManagement}</span></a
+        >
+      </h2>
+      <img
+        src="/assets/portraits/portrait_sitting_working_v2.webp"
+        alt={t.altBillyNightingaleSittingAt}
+      />
+    </div>
+  </div>
+</section>

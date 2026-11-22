@@ -1,0 +1,60 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    mainServices: "Main Services",
+    areYouReadyTo: "Are you ready to build your dream digital experience ?",
+    thoughtfulUserFocusedDesign: "Thoughtful, user-focused design that reflects your brand and makes it easy for visitors to take action.",
+    webDeveloppement: "Web Développement",
+    cleanFastAndReliable: "Clean, fast, and reliable websites built to scale, maintain, and perform long-term.",
+    solidTechnicalAndOn: "Solid technical and on-page foundations so your site can be found by the right people.",
+  },
+  fr: {
+    mainServices: "Services principaux",
+    areYouReadyTo: "Prêt à créer une expérience digitale à la hauteur de vos ambitions ?",
+    thoughtfulUserFocusedDesign: "Un design réfléchi et centré sur l’utilisateur, qui reflète votre marque et facilite le passage à l’action.",
+    webDeveloppement: "Développement Web",
+    cleanFastAndReliable: "Des sites web propres, rapides et fiables, conçus pour évoluer, être maintenus facilement et offrir des performances durables.",
+    solidTechnicalAndOn: "Des bases techniques et éditoriales solides pour que votre site soit visible auprès des bonnes personnes.",
+  },
+}[lang]
+---
+
+<section
+  class="sections sec-services-main"
+  id="services-page__main-services"
+>
+  <div class="services-main-title">
+    <h2 class="section-sub-headings">{t.mainServices}</h2>
+    <h3>{t.areYouReadyTo}</h3>
+  </div>
+  <div class="services-main-blocks">
+    <div class="service-card">
+      <h2>Web Design</h2>
+      <p class="max-txt-width">
+        {t.thoughtfulUserFocusedDesign}
+      </p>
+    </div>
+    <div class="service-card">
+      <h2>{t.webDeveloppement}</h2>
+      <p class="max-txt-width">
+        {t.cleanFastAndReliable}
+      </p>
+    </div>
+    <div class="service-card">
+      <h2>SEO</h2>
+      {/* The French page limits this paragraph's width; the English page does not */}
+      <p class={lang === 'fr' ? 'max-txt-width' : undefined}>
+        {t.solidTechnicalAndOn}
+      </p>
+    </div>
+  </div>
+</section>

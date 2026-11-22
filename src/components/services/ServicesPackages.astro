@@ -1,0 +1,460 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+import PackageFeatures from './PackageFeatures.astro'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+// The "Best for" and "Delivery time" labels are <h3> on the English page and <h4> on the French one
+const LabelHeading = lang === 'en' ? 'h3' : 'h4'
+
+const t = {
+  en: {
+    websitePackages: "Website packages",
+    threePathsOnePurpose: "Three paths. One purpose.",
+    yourOnlineGrowth: "Your online growth.",
+    chooseTheWebsitePackage: "Choose the website package that meets you where you are and gives you the foundation to grow with confidence.",
+    startYourPresence: "Start your presence",
+    starterWebsite: "Starter Website",
+    from: "From",
+    n700: "€700",
+    aProfessionalOnePage: "A professional one-page website designed to establish your online presence and create a strong foundation for future growth.",
+    bestFor: "Best for",
+    newBusinessesThatNeed: "New businesses that need to get online professionally",
+    deliveryTime: "Delivery time",
+    n12Weeks: "1–2 weeks",
+    bookACall: "Book a call",
+    seePricing: "See Pricing",
+    recommendedForMostEstablished: "Recommended for most established businesses",
+    businessWebsite: "Business Website",
+    arialabelThreeConcentricDiamonds: "Three concentric diamonds",
+    n1500: "€1,500",
+    aCompleteCustomWebsite: "A complete custom website designed to improve visibility, present your services professionally and generate customer enquiries.",
+    establishedBusinessesLookingTo: "Established businesses, looking to improve their online presence",
+    n23Weeks: "2-3 weeks",
+    scaleAndAutomate: "Scale and automate",
+    growthWebsite: "Growth Website",
+    arialabelThreeConcentricCircles: "Three concentric circles",
+    n3000: "€3,000",
+    scaleMeasureAndAutomate: "Scale, measure and automate Growth Website For growing businesses that need advanced enquiry journeys, integrations, location-focused content and measurable lead tracking.",
+    growingBusinessesWithMore: "Growing businesses with more advanced marketing needs",
+    n46Weeks: "4–6 weeks",
+    arialabelPackageBenefits: "Package benefits",
+    builtForPerformance: "Built for performance",
+    mobileOptimised: "Mobile optimised",
+    readyToGrow: "Ready to grow",
+    pricing: "Pricing",
+    starterLandingPage: "Starter landing page",
+    n7001200: "€700 - €1,200",
+    businessWebsite2: "Business website",
+    n15003000: "€1,500 - €3,000",
+    growthWebsite2: "Growth website",
+    n30006000: "€3,000 - €6,000",
+    eCommerceModuleProject: "E-commerce module / project",
+    n15005000: "€1,500 - €5,000",
+    maintenance: "Maintenance",
+    n35150Month: "€35 - €150 / Month",
+    ongoingVisibility: "OnGoing visibility",
+    n2501000Month: "€250 - €1000+ / Month",
+    everyProjectIncludes2: "Every project includes 2 - 3 rounds of revisions and a depending on the package selected on-going support, maintenance and training.",
+    projectsAreCustomBuilt: "Projects are custom built and to your requirements, so prices vary",
+    starterFeatures: [
+      "One custom landing page",
+      "Mobile and tablet optimisation",
+      "Plan clear routes that encourage visitors to contact you",
+      "Set up your pages so Google can understand them",
+      "Performance and SEO optimisation",
+    ],
+    businessFeatures: [
+      "Up to four custom pages",
+      "Website planning and content structure",
+      "Custom responsive website design",
+      "User journey and conversion planning",
+      "Connect enquiries to your existing CRM",
+    ],
+    growthFeatures: [
+      "Five or more custom pages",
+      "Advanced enquiry or booking flows",
+      "Analytics and conversion tracking",
+      "Useful, individually written service-area pages",
+      "Blog or resource-centre architecture",
+    ],
+  },
+  fr: {
+    websitePackages: "Offres de création de site internet",
+    threePathsOnePurpose: "Trois offres. Un seul objectif.",
+    yourOnlineGrowth: "Développer votre activité en ligne.",
+    chooseTheWebsitePackage: "Choisissez l’offre adaptée à votre entreprise et construisons un site internet sur mesure pour renforcer votre visibilité, attirer de nouveaux clients et accompagner votre croissance.",
+    startYourPresence: "Lancez votre présence en ligne",
+    starterWebsite: "Site vitrine Essentiel",
+    from: "À partir de",
+    n700: "700 €",
+    aProfessionalOnePage: "Un site vitrine professionnel d’une page, conçu sur mesure pour lancer votre présence en ligne et créer une base solide pour votre future croissance.",
+    bestFor: "Idéal pour",
+    newBusinessesThatNeed: "Les indépendants et jeunes entreprises qui souhaitent créer un site internet professionnel",
+    deliveryTime: "Délai de réalisation",
+    n12Weeks: "1 à 2 semaines",
+    bookACall: "Réserver un appel découverte",
+    seePricing: "Comparer les offres",
+    recommendedForMostEstablished: "Recommandé aux entreprises déjà établies",
+    businessWebsite: "Site internet professionnel",
+    arialabelThreeConcentricDiamonds: "Trois losanges concentriques",
+    n1500: "1 500 €",
+    aCompleteCustomWebsite: "Un site vitrine complet et sur mesure, conçu pour améliorer votre visibilité sur Google, valoriser vos services et générer davantage de demandes de contact ou de devis.",
+    establishedBusinessesLookingTo: "Les TPE, PME et indépendants établis qui souhaitent renforcer leur présence en ligne",
+    n23Weeks: "2 à 3 semaines",
+    scaleAndAutomate: "Développez et automatisez",
+    growthWebsite: "Site internet Croissance",
+    arialabelThreeConcentricCircles: "Trois cercles concentriques",
+    n3000: "3 000 €",
+    scaleMeasureAndAutomate: "Un site web évolutif pour les entreprises en croissance qui ont besoin de parcours de conversion avancés, d’intégrations, de contenus SEO locaux et d’un suivi précis des prospects.",
+    growingBusinessesWithMore: "Les entreprises en croissance avec des besoins avancés en acquisition et marketing digital",
+    n46Weeks: "4 à 6 semaines",
+    arialabelPackageBenefits: "Avantages inclus dans les offres",
+    builtForPerformance: "Conçu pour la performance",
+    mobileOptimised: "Optimisé pour mobile",
+    readyToGrow: "Prêt à évoluer",
+    pricing: "Tarifs de création de site internet",
+    starterLandingPage: "Landing page Essentiel",
+    n7001200: "700 € – 1 200 € TTC",
+    businessWebsite2: "Site internet professionnel",
+    n15003000: "1 500 € – 3 000 € TTC",
+    growthWebsite2: "Site web Croissance",
+    n30006000: "3 000 € – 6 000 € TTC",
+    eCommerceModuleProject: "Module ou projet e-commerce",
+    n15005000: "1 500 € – 5 000 € TTC",
+    maintenance: "Maintenance & hébergement de site internet",
+    n35150Month: "35 € – 150 € / mois TTC",
+    ongoingVisibility: "Référencement SEO et visibilité continue",
+    n2501000Month: "À partir de 250 € / mois TTC",
+    everyProjectIncludes2: "Chaque projet inclut 2 à 3 séries de modifications, ainsi qu’un accompagnement pour la mise en ligne et la prise en main du site.",
+    projectsAreCustomBuilt: "Chaque projet est conçu sur mesure selon vos objectifs et vos besoins : les tarifs peuvent donc varier.",
+    starterFeatures: [
+      "Une page de présentation entièrement sur mesure",
+      "Design responsive sur tous les écrans",
+      "Intégration des contenus fournis",
+      "Formulaire de contact standard",
+      "Configuration SEO technique essentielle",
+    ],
+    businessFeatures: [
+      "Jusqu’à quatre pages conçues sur mesure",
+      "Stratégie du site et organisation des contenus",
+      "Webdesign personnalisé pour chaque page",
+      "Recherche de mots-clés et optimisation SEO complète",
+      "Formulaire de devis personnalisé avec suivi des demandes",
+    ],
+    growthFeatures: [
+      "Cinq pages sur mesure ou plus",
+      "Parcours avancés de demande de devis ou de réservation",
+      "Intégration CRM et automatisation marketing",
+      "Web analytics et suivi des conversions",
+      "Pages locales utiles et rédigées sur mesure pour chaque zone d’intervention",
+      "Architecture de blog ou de centre de ressources",
+    ],
+  },
+}[lang]
+---
+
+<section class="sections-large packages" aria-labelledby="packages-title">
+  <div class="packages__container">
+    <div class="packages__header">
+      <div class="packages__heading">
+        <p class="packages__eyebrow">{t.websitePackages}</p>
+        <h2 id="packages-title" class:list={[lang === 'en' && "packages__title", lang === 'fr' && "packages__title_fr"]}>
+          {t.threePathsOnePurpose}<br />
+          {t.yourOnlineGrowth}
+        </h2>
+      </div>
+      <p class="packages__intro">
+        {t.chooseTheWebsitePackage}
+      </p>
+    </div>
+    <div class="packages__grid">
+      {/* Starter package */}
+      <article class="package-card package-card--featured">
+        <div class="package-card__top">
+          <div>
+            <div class="package-card__label">
+              <span>{t.startYourPresence}</span>
+              <span class="package-card__label-line"></span>
+            </div>
+            <h3 class="package-card__title">{t.starterWebsite}</h3>
+          </div>
+          <div class="package-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <rect x="14" y="20" width="28" height="28" />
+              <rect x="24" y="10" width="28" height="28" />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="package-card__divider package-card__divider--short"
+        ></div>
+        <div class="package-card__label">
+          <span>{t.from} <span class="package-card__price">{t.n700}</span></span>
+        </div>
+        <p class="package-card__description">
+          {t.aProfessionalOnePage}
+        </p>
+        <PackageFeatures items={t.starterFeatures} />
+        <LabelHeading>{t.bestFor}</LabelHeading>
+        <p>{t.newBusinessesThatNeed}</p>
+        <LabelHeading>{t.deliveryTime}</LabelHeading>
+        <p>{t.n12Weeks}</p>
+        <div class="package-card__actions">
+          <a class="btn__primary btn__prim--light" href={r('contact')}>
+            {t.bookACall} <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn__third" href="#pricing-table">
+            {t.seePricing}
+            <span class="price-btn-arrow" aria-hidden="true"
+              ><svg
+                width="15"
+                height="15"
+                viewBox="0 0 21 15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
+                  fill="white"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </article>
+      {/* Business package */}
+      <article class="package-card package-card--featured">
+        <div class="package-card__top">
+          <div>
+            <div class="package-card__label">
+              <span>{t.recommendedForMostEstablished}</span>
+              <span class="package-card__label-line"></span>
+            </div>
+            <h3 class="package-card__title package-card__title--large">
+              {t.businessWebsite}
+            </h3>
+          </div>
+          <div
+            class="package-card__icon package-card__icon--large"
+            aria-hidden="true"
+          >
+            <svg
+              viewBox="-10 -10 120 120"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label={t.arialabelThreeConcentricDiamonds}
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                vector-effect="non-scaling-stroke"
+              >
+                <rect
+                  x="30"
+                  y="30"
+                  width="40"
+                  height="40"
+                  transform="rotate(45 50 50)"
+                />
+                <rect
+                  x="20"
+                  y="20"
+                  width="60"
+                  height="60"
+                  transform="rotate(45 50 50)"
+                />
+                <rect
+                  x="10"
+                  y="10"
+                  width="80"
+                  height="80"
+                  transform="rotate(45 50 50)"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="package-card__divider package-card__divider--short"
+        ></div>
+        <div class="package-card__label">
+          <span
+            >{t.from} <span class="package-card__price">{t.n1500}</span></span
+          >
+        </div>
+        <p
+          class="package-card__description package-card__description--large"
+        >
+          {t.aCompleteCustomWebsite}
+        </p>
+        <PackageFeatures items={t.businessFeatures} large />
+        <LabelHeading>{t.bestFor}</LabelHeading>
+        <p>
+          {t.establishedBusinessesLookingTo}
+        </p>
+        <LabelHeading>{t.deliveryTime}</LabelHeading>
+        <p>{t.n23Weeks}</p>
+        <div class="package-card__actions">
+          <a class="btn__primary btn__prim--light" href={r('contact')}>
+            {t.bookACall} <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn__third" href="#pricing-table">
+            {t.seePricing}
+            <span class="price-btn-arrow" aria-hidden="true"
+              ><svg
+                width="15"
+                height="15"
+                viewBox="0 0 21 15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
+                  fill="white"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="package-card__pattern" aria-hidden="true"></div>
+      </article>
+      {/* Growth package */}
+      <article class="package-card package-card--featured">
+        <div class="package-card__top">
+          <div>
+            <div class="package-card__label">
+              <span>{t.scaleAndAutomate}</span>
+              <span class="package-card__label-line"></span>
+            </div>
+            <h3 class="package-card__title">{t.growthWebsite}</h3>
+          </div>
+          <div
+            class="package-card__icon package-card__icon"
+            aria-hidden="true"
+          >
+            <svg
+              viewBox="-7 -7 114 114"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label={t.arialabelThreeConcentricCircles}
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                vector-effect="non-scaling-stroke"
+              >
+                <circle cx="40" cy="50" r="20" />
+                <circle cx="50" cy="50" r="30" />
+                <circle cx="60" cy="50" r="40" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="package-card__divider package-card__divider--short"
+        ></div>
+        <div class="package-card__label">
+          <span
+            >{t.from} <span class="package-card__price">{t.n3000}</span></span
+          >
+        </div>
+        <p class="package-card__description">
+          {t.scaleMeasureAndAutomate}
+        </p>
+        <PackageFeatures items={t.growthFeatures} />
+        <LabelHeading>{t.bestFor}</LabelHeading>
+        <p>{t.growingBusinessesWithMore}</p>
+        <LabelHeading>{t.deliveryTime}</LabelHeading>
+        <p>{t.n46Weeks}</p>
+        <div class="package-card__actions">
+          <a class="btn__primary btn__prim--light" href={r('contact')}>
+            {t.bookACall} <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn__third" href="#pricing-table">
+            {t.seePricing}
+            <span class="price-btn-arrow" aria-hidden="true"
+              ><svg
+                width="15"
+                height="15"
+                viewBox="0 0 21 15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
+                  fill="white"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </article>
+    </div>
+    <div class="packages__benefits" aria-label={t.arialabelPackageBenefits}>
+      <div class="benefit">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 4 40 10v12c0 10-6 18-16 22C14 40 8 32 8 22V10Z" />
+          <path d="m17 24 5 5 10-11" />
+        </svg>
+        <span>{t.builtForPerformance}</span>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="6" y="8" width="24" height="32" rx="2" />
+          <rect x="34" y="17" width="8" height="15" rx="1" />
+          <path d="M14 34h8" />
+        </svg>
+        <span>{t.mobileOptimised}</span>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="7" y="30" width="7" height="11" />
+          <rect x="20" y="22" width="7" height="19" />
+          <rect x="33" y="12" width="7" height="29" />
+        </svg>
+        <span>{t.readyToGrow}</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="pricing-section" aria-labelledby="pricing-title">
+    <h2 class="section-sub-headings" id="pricing-title">{t.pricing}</h2>
+    <div class="pricing-container" id="pricing-table">
+      <div class="pricing-card">
+        <h3>{t.starterLandingPage}</h3>
+        <p>{t.n7001200}</p>
+      </div>
+      <div class="pricing-card">
+        <h3>{t.businessWebsite2}</h3>
+        <p>{t.n15003000}</p>
+      </div>
+      <div class="pricing-card">
+        <h3>{t.growthWebsite2}</h3>
+        <p>{t.n30006000}</p>
+      </div>
+      <div class="pricing-card">
+        <h3>{t.eCommerceModuleProject}</h3>
+        <p>{t.n15005000}</p>
+      </div>
+      <div class="pricing-card">
+        <h3>{t.maintenance}</h3>
+        <p>{t.n35150Month}</p>
+      </div>
+      <div class="pricing-card">
+        <h3>{t.ongoingVisibility}</h3>
+        <p>{t.n2501000Month}</p>
+      </div>
+    </div>
+    <p class="pricing-hook">
+      {t.everyProjectIncludes2}
+    </p>
+    <p class="pricing-hook">
+      {t.projectsAreCustomBuilt}
+    </p>
+  </section>
+</section>

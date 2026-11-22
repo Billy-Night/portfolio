@@ -1,0 +1,45 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    projectManagement: "Project Management",
+    discoveryGoals: "Discovery & Goals",
+    designStructure: "Design & Structure",
+    developpementTesting: "Développement & Testing",
+    launchSupport: "Launch & Support",
+    aClearCollaborativeProcess: "A clear, collaborative process from first call to launch.",
+  },
+  fr: {
+    projectManagement: "Gestion de projet",
+    discoveryGoals: "Découverte et objectifs",
+    designStructure: "Design et structure",
+    developpementTesting: "Développement et tests",
+    launchSupport: "Mise en ligne et support",
+    aClearCollaborativeProcess: "Un processus clair et collaboratif, du premier échange à la mise en ligne.",
+  },
+}[lang]
+---
+
+<section
+  class="sections sec-project-management"
+  id="services__page-sec-project-management"
+>
+  <h2 class="section-sub-headings">{t.projectManagement}</h2>
+  <div class="project-management-container">
+    <div class="task-card"><h3>{t.discoveryGoals}</h3></div>
+    <div class="task-card"><h3>{t.designStructure}</h3></div>
+    <div class="task-card"><h3>{t.developpementTesting}</h3></div>
+    <div class="task-card"><h3>{t.launchSupport}</h3></div>
+  </div>
+  <p class="project-management-hook">
+    {t.aClearCollaborativeProcess}
+  </p>
+</section>

@@ -1,0 +1,78 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    builtForPerformanceLongevity: "Built for performance & Longevity",
+    altIconIndicatingImprovingWeb: "icon indicating improving web performance",
+    performanceAccessibility: "Performance & Accessibility",
+    iEnsureAllMy: "I ensure all my clients sites are performance tested before and after deployment, to ensure the best service.",
+    allMySitesAre: "All my sites are built to industry standard and meet all accessibility requirements.",
+    altIconTechStack: "icon tech stack",
+    maintenanceHosting: "Maintenance & Hosting",
+    iOfferCarePackages: "I offer care packages for all my sites, keep them updated and my clients stress free.",
+    providingFastAndReliable: "Providing fast and reliable hosting for all my custom built sites.",
+  },
+  fr: {
+    builtForPerformanceLongevity: "Conçu pour la performance et la durabilité",
+    altIconIndicatingImprovingWeb: "qui indique une amélioration des performances du site web",
+    performanceAccessibility: "Performance et accessibilité",
+    iEnsureAllMy: "Je m’assure que tous les sites de mes clients sont testés en matière de performance avant et après la mise en ligne, afin de garantir un service de qualité.",
+    allMySitesAre: "Tous mes sites sont développés selon les standards du secteur et respectent les exigences en matière d’accessibilité.",
+    altIconTechStack: "icon qui indique le tech stack",
+    maintenanceHosting: "Maintenance & Hébergement",
+    iOfferCarePackages: "Je propose des formules de maintenance pour tous mes sites, afin de les maintenir à jour et d’offrir à mes clients une totale tranquillité d’esprit.",
+    providingFastAndReliable: "Je propose un hébergement rapide et fiable pour tous les sites que je développe sur mesure.",
+  },
+}[lang]
+---
+
+<section
+  class="sections sec-service-addons"
+  id="services-page__sec-service-addons"
+>
+  <h2 class="section-sub-headings">{t.builtForPerformanceLongevity}</h2>
+  <div class="sec-service-addons-content-container">
+    <div class="addons-content-container">
+      <div class="addons-performance-img-frame">
+        <img
+          src="/assets/icons/performance_arrow.svg"
+          alt={t.altIconIndicatingImprovingWeb}
+        />
+      </div>
+      <div class="addons-performance-text-container">
+        <h2>{t.performanceAccessibility}</h2>
+        <p>
+          {t.iEnsureAllMy}
+        </p>
+        <p>
+          {t.allMySitesAre}
+        </p>
+      </div>
+    </div>
+    <div class="addons-content-container">
+      <div class="addons-performance-img-frame">
+        <img
+          alt={t.altIconTechStack}
+          src="/assets/icons/tech_stack_icon.svg"
+        />
+      </div>
+      <div class="addons-performance-text-container">
+        <h2>{t.maintenanceHosting}</h2>
+        <p>
+          {t.iOfferCarePackages}
+        </p>
+        <p>
+          {t.providingFastAndReliable}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
