@@ -8,7 +8,6 @@ interface Props {
   route: RouteKey
   logoAlt?: string
   menuIconAlt?: string
-  showLandes?: boolean
 }
 
 const {
@@ -16,7 +15,6 @@ const {
   route,
   logoAlt = 'Billy Nightingales logo',
   menuIconAlt = 'navigation menu icon',
-  showLandes = true,
 } = Astro.props
 
 const alt = otherLang(lang)
@@ -44,13 +42,7 @@ const linkedIn =
       <li><a class="nav__link mini" href={r('about')}>{labels.about}</a></li>
       <li><a class="nav__link mini" href={r('contact')}>{labels.contact}</a></li>
       <li><a class="nav__link mini" href={r('services')}>{labels.services}</a></li>
-      {
-        showLandes && (
-          <li>
-            <a class="nav__link mini" href={r('landes')}>{labels.landes}</a>
-          </li>
-        )
-      }
+      <li><a class="nav__link mini" href={r('landes')}>{labels.landes}</a></li>
       <li class="mob__hide">
         <a class="nav__link" href={linkedIn} target="_blank" aria-label="LinkedIn">
           <svg
