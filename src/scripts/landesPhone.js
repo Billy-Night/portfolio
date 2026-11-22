@@ -8,7 +8,7 @@ const textCont = document.querySelectorAll('.phone-text-content-cont')
 if (staticPhone) {
   const screens = [
     '/assets/landes_phone/phone_web_performance.webp',
-    '/assets/landes_phone/phone_web_seo_fr.webp',
+    '/assets/landes_phone/phone_web_seo.webp',
     '/assets/landes_phone/phone_web_solutions.webp',
   ]
 
