@@ -23,8 +23,6 @@ const jsonLd = [
     "url": "https://www.billynightingale.com/website-development-landes"
   }
 ]
-
-// TODO(pre-existing, MIGRATION_ISSUES #6): "#projects" does not exist on this page
 ---
 
 <BaseLayout
@@ -43,7 +41,7 @@ const jsonLd = [
   twitterDomain="billynightingale.com"
   jsonLd={jsonLd}
 >
-  <Header lang="en" route="landes" projectsHref="#projects" logoAlt="Billy Nightingales logo for creating websites" menuIconAlt="menu icon" />
+  <Header lang="en" route="landes" logoAlt="Billy Nightingales logo for creating websites" menuIconAlt="menu icon" />
   <main>
     <CookieBanner lang="en" />
     <section class="section-center-max-width">
@@ -488,5 +486,5 @@ const jsonLd = [
         </div>
       </div>
     </section>  </main>
-  <Footer lang="en" projectsHref="#projects" />
+  <Footer lang="en" />
 </BaseLayout>

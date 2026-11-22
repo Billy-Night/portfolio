@@ -6,8 +6,6 @@ interface Props {
   lang: Lang
   /** Footer <h3>. Pages currently use different wording — defaults are the contact-page versions. */
   heading?: string
-  /** Defaults to the homepage projects section */
-  projectsHref?: string
   /**
    * Legacy markup: the EN contact page wraps a bare <footer> in
    * <section class="sections" id="footer"> inside <main>. Every other page
@@ -45,7 +43,6 @@ const t = {
 }[lang]
 
 const heading = Astro.props.heading ?? t.heading
-const projectsHref = Astro.props.projectsHref ?? `${r('home')}#projects`
 
 const Outer = wrapInSection ? 'section' : 'footer'
 const Inner = wrapInSection ? 'footer' : Fragment
@@ -120,7 +117,7 @@ const Inner = wrapInSection ? 'footer' : Fragment
       <div class="footer__nav_container">
         <ul class="footer__nav">
           <li><a class="footer__nav__link" href={r('home')}>{t.home}</a></li>
-          <li><a class="footer__nav__link" href={projectsHref}>{t.projects}</a></li>
+          <li><a class="footer__nav__link" href={`${r('home')}#projects`}>{t.projects}</a></li>
           <li><a class="footer__nav__link" href={r('about')}>{t.about}</a></li>
           <li><a class="footer__nav__link" href={r('contact')}>Contact</a></li>
           <li><a class="footer__nav__link" href={r('services')}>Services</a></li>
