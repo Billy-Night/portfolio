@@ -55,10 +55,10 @@ Un site vitrine professionnel d'une page, conçu sur mesure pour lancer une pré
 **Prestations incluses :**
 
 - Une page de présentation entièrement sur mesure.
-- Un design responsive, adapté à tous les écrans.
-- L'intégration des contenus fournis.
-- Un formulaire de contact standard.
-- Une configuration SEO technique essentielle.
+- L'optimisation pour mobile et tablette.
+- Des parcours clairs qui incitent les visiteurs à prendre contact.
+- Des pages structurées pour être bien comprises par Google.
+- L'optimisation des performances et du SEO.
 
 **Idéal pour :** les indépendants et jeunes entreprises qui souhaitent créer un site internet professionnel.
 
@@ -73,9 +73,9 @@ Un site vitrine complet et sur mesure, conçu pour améliorer la visibilité sur
 
 - Jusqu'à quatre pages conçues sur mesure.
 - La stratégie du site et l'organisation des contenus.
-- Un webdesign personnalisé pour chaque page.
-- Une recherche de mots-clés et une optimisation SEO complète.
-- Un formulaire de devis personnalisé avec suivi des demandes.
+- Un design de site responsive et sur mesure.
+- La conception du parcours utilisateur et des conversions.
+- La connexion des demandes au CRM existant de l'entreprise.
 
 **Idéal pour :** les TPE, PME et indépendants établis qui souhaitent renforcer leur présence en ligne.
 
@@ -89,8 +89,7 @@ Un site web évolutif pour les entreprises en croissance qui ont besoin de parco
 **Prestations incluses :**
 
 - Cinq pages sur mesure ou plus.
-- Des parcours avancés de demande de devis ou de réservation.
-- L'intégration CRM et l'automatisation marketing.
+- Des parcours avancés de demande de contact ou de réservation.
 - Des outils de mesure d'audience et de suivi des conversions (*web analytics*).
 - Des pages locales utiles, rédigées sur mesure pour chaque zone d'intervention.
 - Une architecture de blog ou de centre de ressources.
@@ -108,9 +107,9 @@ Les tarifs suivants sont ceux présentés dans le tableau de prix de la page de 
 | Site web Croissance | 3 000 € – 6 000 € TTC |
 | Module ou projet e-commerce | 1 500 € – 5 000 € TTC |
 | Maintenance et hébergement de site internet | 35 € – 150 € / mois TTC |
-| Référencement SEO et visibilité continue | À partir de 250 € / mois TTC |
+| Référencement SEO et visibilité continue | 250 € – 1 000 €+ / mois TTC |
 
-Chaque projet inclut **2 à 3 séries de modifications**, ainsi qu'un accompagnement pour la mise en ligne et la prise en main du site.
+Chaque projet inclut **2 à 3 séries de modifications**. Selon l'offre choisie, un accompagnement continu, la maintenance et une formation sont également fournis.
 
 Les projets étant réalisés sur mesure selon les objectifs et les besoins de chaque entreprise, les tarifs peuvent varier. Les prix de départ indiqués dans les offres et les fourchettes ci-dessus correspondent aux informations publiées sur la page de services.
 
