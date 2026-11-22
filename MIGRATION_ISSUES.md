@@ -27,9 +27,14 @@ Locations are given as files plus a search string, because line numbers move dur
 - **Fix:** use `/fr/contact` on the French page and `/contact` on the English page.
 
 ### 3. French homepage `og:image` is a relative URL
-- **Where:** [fr/index.astro](src/pages/fr/index.astro). Search for `og:image`.
+- **Where:** [fr/index.astro](src/pages/fr/index.astro) (`TODO`). Search for `ogImage=`.
 - **Problem:** the value is `/assets/meta_preview1200x600.webp`. Facebook, LinkedIn, WhatsApp and others need an absolute URL, so shares of `/fr/` probably show no preview image.
-- **Fix:** it is handled automatically once the page uses `BaseLayout`, which always outputs the absolute URL. The SEO compare will then show this as an expected change.
+- **Fix:** delete the `ogImage` and `twitterImage` props from the page. `BaseLayout` then outputs the absolute URL for both.
+
+### 24. French homepage `og:type` is "site web"
+- **Where:** [fr/index.astro](src/pages/fr/index.astro) (`TODO`). Search for `ogType=`.
+- **Problem:** `og:type` is a fixed keyword, not text to translate. "site web" isn't a valid value; it must be `website`.
+- **Fix:** delete the `ogType` prop. `BaseLayout` defaults to `website`.
 
 ### 4. `og:image:height` is wrong on most pages
 - **Where:** the default in [BaseLayout.astro](src/layouts/BaseLayout.astro) (`ogImageHeight = '627'`).
@@ -73,7 +78,7 @@ Locations are given as files plus a search string, because line numbers move dur
 
 ### 10. `<head>` extras are inconsistent
 - `twitter:domain` has a different value on each page that has it (`https://www.billynightingale.com/`, `.../about`, `.../fr/`, `billynightingale.com`), and most pages don't have it at all. It should be just `billynightingale.com`, or be removed everywhere: X barely uses it.
-- `og:date` isn't a real Open Graph property, and the homepages disagree (EN `2025-11-19`, FR `2022-11-19`). Remove it.
+- `og:date` and `twitter:date` aren't real Open Graph or X properties, and the homepages disagree (`og:date` is `2025-11-19` on EN and `2022-11-19` on FR). Remove the `ogDate` and `twitterDate` props from both homepages, then from `BaseLayout`.
 - `og:site_name` and `og:image:alt` are only on the services pages. Add them to `BaseLayout` for every page.
 
 ### 11. Structured data (JSON-LD) is inconsistent between languages
@@ -138,6 +143,7 @@ Locations are given as files plus a search string, because line numbers move dur
 ## ✅ Already fixed as a side effect of the port
 - **fr/a-propos `twitter:url`:** it used `property="twitter:url"`; `BaseLayout` outputs the standard `name="twitter:url"`. X accepts both, so there's no SEO change, and the SEO compare treats them as the same tag.
 - **Landes pages:** the `script.js` tag now comes before the structured data instead of after it. The script is deferred, so behaviour is the same.
+- **Homepage `#projects` links:** they're now `/#projects`. On the homepage that's the same link, and clicking still scrolls on the page.
 - **Relative nav and footer links** (`href="about"`): they're now absolute (`/about`) everywhere. They resolve to the same URLs.
 
 ---

@@ -16,6 +16,9 @@ interface Props {
   jsonLd?: object[]
   ogImage?: string
   ogImageHeight?: string
+  /** Defaults to ogImage */
+  twitterImage?: string
+  ogType?: string
   robots?: string
   // Optional extras used by some pages
   ogSiteName?: string
@@ -35,6 +38,7 @@ const {
   jsonLd = [],
   ogImage = `${SITE}/assets/meta_preview1200x600.webp`,
   ogImageHeight = '627',
+  ogType = 'website',
   robots = 'index, follow',
   ogSiteName,
   ogImageAlt,
@@ -44,6 +48,7 @@ const {
 } = Astro.props
 
 const canonical = url(route, lang)
+const twitterImage = Astro.props.twitterImage ?? ogImage
 const locale = { en: 'en_GB', fr: 'fr_FR' }
 const altLocale = lang === 'en' ? locale.fr : locale.en
 ---
@@ -87,7 +92,7 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
 
     <!-- Open Graph / Facebook -->
     <meta property="og:url" content={canonical} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     {ogSiteName && <meta property="og:site_name" content={ogSiteName} />}
     <meta property="og:title" content={og.title} />
     <meta property="og:description" content={og.description} />
@@ -105,7 +110,7 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <meta name="twitter:url" content={canonical} />
     <meta name="twitter:title" content={twitter.title} />
     <meta name="twitter:description" content={twitter.description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={twitterImage} />
     {twitterDate && <meta name="twitter:date" content={twitterDate} />}
 
     <!-- Page-specific head tags: <Fragment slot="head">...</Fragment> -->
