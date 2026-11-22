@@ -1,0 +1,134 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    whatIDo: "WHAT I DO",
+    iBuildWebsitesSystems: "I build websites, systems and applications",
+    altBillyNightingaleUsingFigma: "Billy Nightingale using Figma for web design",
+    websiteDesign: "WEBSITE DESIGN",
+    designingWebsitesForSmall: "Designing websites for small to medium size businesses, with the use of cutting edge technology like Figma and relume AI to provide the highest quality design",
+    creatingAssetsLikeSvgs: "Creating assets like SVGs, icons and editing images with Affinity and Adobe to enhance the visual experience",
+    projects: "PROJECTS",
+    seoPerfromanceOptimisation: "SEO & PERFROMANCE OPTIMISATION",
+    optimisePerformanceAndSeo: "Optimise performance and SEO to drive traffic and increase revenue, I strive to provide the fastest most accessible sites with great user experience.",
+    websiteDevelopment: "WEBSITE DEVELOPMENT",
+    fullStackWebDevelopment: "Full-stack web development, developing products and tools. I develop website using tool such as Wordpress and Elementor but also full-stack application through programming with languages such as JavaScript, frameworks like React and Node.JS",
+    projects2: "PROJECTS",
+  },
+  fr: {
+    whatIDo: "CE QUE JE FAIS",
+    iBuildWebsitesSystems: "Je crée des sites web, des systèmes et des applications",
+    altBillyNightingaleUsingFigma: "Billy Nightingale utilisant Figma pour le design web",
+    websiteDesign: "DESIGN DE SITE WEB",
+    designingWebsitesForSmall: "Création de sites web pour les petites et moyennes entreprises, en utilisant des technologies modernes comme Figma et Relume AI afin de proposer un design de haute qualité.",
+    creatingAssetsLikeSvgs: "Création d’éléments visuels comme des SVG, des icônes et retouche d’images avec Affinity et Adobe afin d’améliorer l’expérience visuelle.",
+    projects: "PROJETS",
+    seoPerfromanceOptimisation: "OPTIMISATION SEO & PERFORMANCE",
+    optimisePerformanceAndSeo: "J’optimise les performances et le SEO afin d’augmenter le trafic et les revenus. Je cherche à créer des sites rapides, accessibles et offrant une excellente expérience utilisateur.",
+    websiteDevelopment: "DÉVELOPPEMENT WEB",
+    fullStackWebDevelopment: "Développement web full-stack, création de produits et d’outils numériques. Je développe des sites avec des outils comme WordPress et Elementor, mais aussi des applications full-stack avec des langages comme JavaScript et des frameworks comme React et Node.js.",
+    projects2: "PROJETS",
+  },
+}[lang]
+---
+
+<section class="wid__sec">
+  <div class="wid__heading-container">
+    <h2>{t.whatIDo}</h2>
+    <p>{t.iBuildWebsitesSystems}</p>
+  </div>
+  <div class="wid__content-container">
+    <div class="row">
+      <div class="wid__img-cont">
+        <img
+          src="/assets/about_wid/billy_nightingale_web_design_figma.webp"
+          alt={t.altBillyNightingaleUsingFigma}
+        />
+      </div>
+      <div class="wid__text-cont txt-r">
+        <div class="wid__text box__shadow">
+          <div class="max-txt-width">
+            <h3>{t.websiteDesign}</h3>
+            <p>
+              {t.designingWebsitesForSmall}
+            </p>
+            <p>
+              {t.creatingAssetsLikeSvgs}
+            </p>
+            <div class="wid__content_cta">
+              <a class="btn__primary btn__prim--dark" href={r('services')}
+                >SERVICES</a
+              >
+              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+                >{t.projects}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wid__img-cont-right right">
+        <img
+          src="/assets/about_wid/billy_nightingale_web_optimistation_lighthouse.webp"
+          alt="Billy Nightingale using Google Lighthouse to optimise websites"
+        />
+      </div>
+      <div class="wid__text-cont txt-l">
+        <div class="wid__text box__shadow">
+          <div class="max-txt-width">
+            <h3>{t.seoPerfromanceOptimisation}</h3>
+            <p>
+              {t.optimisePerformanceAndSeo}
+            </p>
+            <div class="wid__content_cta">
+              <a class="btn__primary btn__prim--dark" href={r('services')}
+                >SERVICES</a
+              >
+              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+                >PROJECTS</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wid__img-cont">
+        <img
+          src="/assets/about_wid/billy_nightingale_web_development.webp"
+          alt="Billy Nightingale using VSCode for web development"
+        />
+      </div>
+      <div class="wid__text-cont txt-r">
+        <div class="wid__text box__shadow">
+          <div class="max-txt-width">
+            <h3>{t.websiteDevelopment}</h3>
+            <p>
+              {t.fullStackWebDevelopment}
+            </p>
+            <div class="wid__content_cta">
+              <a class="btn__primary btn__prim--dark" href={r('services')}
+                >SERVICES</a
+              >
+              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+                >{t.projects2}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

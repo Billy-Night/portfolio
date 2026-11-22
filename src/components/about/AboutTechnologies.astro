@@ -1,0 +1,75 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    theTechnologiesAndTools: "THE TECHNOLOGIES AND TOOLS",
+    theTechnologiesIChoose: "The technologies I choose for a project depend on the scope and requirements of the website or application, I work with the latest cutting edge technology, but I always choose what is practical for the size and budget of the project, some of the main technologies I work with are",
+    projectManagement: "Project Management",
+    deployment: "Deployment",
+  },
+  fr: {
+    theTechnologiesAndTools: "LES TECHNOLOGIES ET OUTILS",
+    theTechnologiesIChoose: "Les technologies que je choisis pour un projet dépendent de son périmètre et des besoins du site web ou de l’application. Je travaille avec des technologies modernes, mais je privilégie toujours les solutions les plus adaptées à la taille et au budget du projet. Voici quelques-unes des principales technologies avec lesquelles je travaille :",
+    projectManagement: "Gestion de projet",
+    deployment: "Déploiement",
+  },
+}[lang]
+---
+
+<section class="sections">
+  <div class="tech__title-cont">
+    <h2>{t.theTechnologiesAndTools}</h2>
+    <p class="max-txt-width">
+      {t.theTechnologiesIChoose}
+    </p>
+  </div>
+  <div class="tech__list-cont">
+    <div class="tech__containers">
+      <h4>{t.projectManagement}</h4>
+      <div class="tech__items-cont">
+        <span>Google Drive</span>
+        <span>Notion</span>
+        <span>Trello</span>
+        <span>ClickUp</span>
+      </div>
+    </div>
+    <div class="tech__containers">
+      <h4>Design</h4>
+      <div class="tech__items-cont">
+        <span>Relume</span>
+        <span>Figma</span>
+        <span>Affinity</span>
+        <span>Unicorn studio</span>
+      </div>
+    </div>
+    <div class="tech__containers">
+      <h4>Développement</h4>
+      <div class="tech__items-cont">
+        <span>Wordpress</span>
+        <span>Elementor Pro</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>React</span>
+        <span>NodeJS</span>
+        <span>MySQL</span>
+      </div>
+    </div>
+    <div class="tech__containers">
+      <h4>{t.deployment}</h4>
+      <div class="tech__items-cont">
+        <span>Hostinger</span>
+        <span>Netlify Pro</span>
+        <span>Railway</span>
+      </div>
+    </div>
+  </div>
+</section>
