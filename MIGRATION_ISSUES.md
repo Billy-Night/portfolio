@@ -77,24 +77,17 @@ Every page's sections are now components shared by the English and French pages,
 ### G. Code clean-up suggestions
 From a review of the code as it stood before the migration. Most of the list was done on 2026-11-23 (see "✅ Code clean-up" below). What is left:
 
-**1. Heading outline: levels still skipped on some pages**
-Found when checking the outline after the heading fixes. Each changes a heading level, so the SEO compare will report it. Decide page by page.
-- [404.astro](src/pages/404.astro), [contact](src/components/contact/): the page goes from `<h1>` straight to an `<h3>` (the footer tagline on the 404 pages, "Project details" in the contact form). An `<h2>` is missing in between, or these should be `<h2>`s.
-- About pages: two `<h4>`s directly under an `<h2>` ("BEng Motorsport Engineering", "Project Management").
-- Services pages: an `<h2>` comes before the `<h1>` in the source.
-- Homepage FAQ: each answer starts with an `<h3>` that only says "Answer". Ten identical headings add noise; a visually hidden label or no heading would be better.
-
-**2. Contact function: rate limiting** ([contact.js](netlify/functions/contact.js))
+**1. Contact function: rate limiting** ([contact.js](netlify/functions/contact.js))
 - There is still no rate limiting. Netlify's rate-limiting rules need the newer function format (`export default` with a `config` export), so this means converting the function and testing it on a branch deploy with a real submission.
 - The branch-deploy address is still in `allowedOrigins`. Remove it after the merge (already on the merge checklist).
 
-**3. CSS** ([style.css](public/css/style.css), now 3,787 lines)
+**2. CSS** ([style.css](public/css/style.css), now 3,787 lines)
 - **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common.
 - **Broad global rules.** `img { width: 100% }` applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer.
 - **Four half-dead selectors.** `.package-card--compact`, `.button`, `.button-link` and `.button--primary` are not used anywhere, but each shares a rule with a class that is, so they were left.
 - **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the text-box, image-box and screenshot tests in [scripts/dev/](scripts/dev/).
 
-**4. Translation keys**
+**3. Translation keys**
 The keys in the section components were generated from the first words of the English text (`readyToDiscussYour`, `iCraftPremiumWeb`). They work, and each sits next to its text. There are about 400. Renaming them by role (`heading`, `intro`, `ctaQuote`) is only worth it in the files you edit often: [HomeProjects.astro](src/components/home/HomeProjects.astro), [ServicesPackages.astro](src/components/services/ServicesPackages.astro) and [ContactForm.astro](src/components/contact/ContactForm.astro) hold the most. The built HTML must be byte-for-byte identical afterwards.
 
 **Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
@@ -175,6 +168,13 @@ The keys in the section components were generated from the first words of the En
 - **contactForm.js:** leftover `console.log` removed, variables renamed to full words.
 - **Contact function:** a request without an `Origin` header is refused.
 - **CSS:** `-webkit-backdrop-filter` comes before `backdrop-filter` with the same value; the misspelt `phone-iteractive…` class is fixed; 44 rules for classes that no longer exist are removed (252 lines).
+
+- **Heading levels:** every page now has one `<h1>` first and no skipped levels.
+  - Footer tagline: `<h3>` → `<h2>` (every page). Contact form title: `<h3>` → `<h2>`.
+  - About page: the four journey headings and the four technology group names: `<h4>` → `<h3>`.
+  - Services hero: the five linked words above the `<h1>` are paragraphs, no longer `<h2>`s.
+  - Homepage FAQ: the ten "Answer" labels are paragraphs, no longer `<h3>`s.
+  - They look the same through the new `.h2-style`, `.h3-style` and `.h4-style` classes in [style.css](public/css/style.css), which give an element the look of a heading level it doesn't have.
 
 All were checked with the tools in [scripts/dev/](scripts/dev/): every text element on the affected pages is in the same place at 390, 768, 1280 and 1920px, and the interaction recordings match.
 

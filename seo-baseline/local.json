@@ -40,26 +40,16 @@
         "h2: CONTACT ME",
         "h2: Frequently asked Questions",
         "h3: How much does a website cost?",
-        "h3: Answer",
         "h3: How long does it take to build a website?",
-        "h3: Answer",
         "h3: Do you work with businesses outside Capbreton and Hossegor?",
-        "h3: Answer",
         "h3: Will my website appear on Google?",
-        "h3: Answer",
         "h3: Can you redesign my existing website?",
-        "h3: Answer",
         "h3: Do you provide maintenance?",
-        "h3: Answer",
         "h3: Can you add online booking or e-commerce?",
-        "h3: Answer",
         "h3: Do I own my website?",
-        "h3: Answer",
         "h3: What do you need from me to get started?",
-        "h3: Answer",
         "h3: Can you help improve an existing website's SEO?",
-        "h3: Answer",
-        "h3: Create your digital system"
+        "h2: Create your digital system"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/",
@@ -471,7 +461,7 @@
       "canonical": [],
       "headings": [
         "h1: Page not found",
-        "h3: Create your digital system"
+        "h2: Create your digital system"
       ],
       "hreflang": {},
       "images": [
@@ -685,10 +675,10 @@
         "h1: BILLY NIGHTINGALE",
         "h2: A BRIEF INTRO",
         "h2: THE JOURNEY",
-        "h4: BEng Motorsport Engineering",
-        "h4: Mechatronics Engineer",
-        "h4: Bac +2 Web Development",
-        "h4: Billy Nightingale Web Studio",
+        "h3: BEng Motorsport Engineering",
+        "h3: Mechatronics Engineer",
+        "h3: Bac +2 Web Development",
+        "h3: Billy Nightingale Web Studio",
         "h2: WHAT I DO",
         "h3: WEBSITE DESIGN",
         "h3: SEO & PERFORMANCE OPTIMISATION",
@@ -703,16 +693,16 @@
         "h3: PHASE 4",
         "h4: Deployment",
         "h2: THE TECHNOLOGIES AND TOOLS",
-        "h4: Project Management",
-        "h4: Design",
-        "h4: Development",
-        "h4: Deployment",
+        "h3: Project Management",
+        "h3: Design",
+        "h3: Development",
+        "h3: Deployment",
         "h2: LOCATION",
         "h3: CAPBRETON & HOSSEGOR",
         "h2: PERSONAL",
         "h3: MY INTERESTS",
         "h2: CONTACT ME",
-        "h3: Create your digital system"
+        "h2: Create your digital system"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/about",
@@ -1055,8 +1045,8 @@
       ],
       "headings": [
         "h1: Let's work together",
-        "h3: Project details",
-        "h3: Create your digital system"
+        "h2: Project details",
+        "h2: Create your digital system"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/contact",
@@ -1362,26 +1352,16 @@
         "h2: CONTACTEZ-MOI",
         "h2: Questions fréquentes",
         "h3: Combien coûte un site internet ?",
-        "h3: Réponse",
         "h3: Combien de temps faut-il pour créer un site internet ?",
-        "h3: Réponse",
         "h3: Travaillez-vous avec des entreprises en dehors de Capbreton et Hossegor ?",
-        "h3: Réponse",
         "h3: Mon site apparaîtra-t-il sur Google ?",
-        "h3: Réponse",
         "h3: Pouvez-vous refondre un site internet existant ?",
-        "h3: Réponse",
         "h3: Proposez-vous un service de maintenance ?",
-        "h3: Réponse",
         "h3: Pouvez-vous ajouter une réservation en ligne ou une boutique e-commerce ?",
-        "h3: Réponse",
         "h3: Suis-je propriétaire de mon site internet ?",
-        "h3: Réponse",
         "h3: De quoi avez-vous besoin pour commencer un projet ?",
-        "h3: Réponse",
         "h3: Pouvez-vous améliorer le SEO d’un site existant ?",
-        "h3: Réponse",
-        "h3: Création de site web et système digital"
+        "h2: Création de site web et système digital"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/",
@@ -1793,7 +1773,7 @@
       "canonical": [],
       "headings": [
         "h1: Page introuvable",
-        "h3: Création de site web et système digital"
+        "h2: Création de site web et système digital"
       ],
       "hreflang": {},
       "images": [
@@ -2007,10 +1987,10 @@
         "h1: BILLY NIGHTINGALE",
         "h2: BRÈVE INTRODUCTION",
         "h2: LE PARCOURS",
-        "h4: BEng Ingénierie Motorsport",
-        "h4: Ingénieur Mécatronique",
-        "h4: Bac +2 Développement Web",
-        "h4: Billy Nightingale Web Studio",
+        "h3: BEng Ingénierie Motorsport",
+        "h3: Ingénieur Mécatronique",
+        "h3: Bac +2 Développement Web",
+        "h3: Billy Nightingale Web Studio",
         "h2: CE QUE JE FAIS",
         "h3: DESIGN DE SITE WEB",
         "h3: OPTIMISATION SEO & PERFORMANCE",
@@ -2025,16 +2005,16 @@
         "h3: PHASE 4",
         "h4: Déploiement",
         "h2: LES TECHNOLOGIES ET OUTILS",
-        "h4: Gestion de projet",
-        "h4: Design",
-        "h4: Développement",
-        "h4: Déploiement",
+        "h3: Gestion de projet",
+        "h3: Design",
+        "h3: Développement",
+        "h3: Déploiement",
         "h2: LOCALISATION",
         "h3: CAPBRETON & HOSSEGOR",
         "h2: PERSONNEL",
         "h3: MES CENTRES D’INTÉRÊT",
         "h2: CONTACTEZ-MOI",
-        "h3: Création de site web et système digital"
+        "h2: Création de site web et système digital"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/about",
@@ -2557,8 +2537,8 @@
       ],
       "headings": [
         "h1: Travaillons ensemble",
-        "h3: Détails du projet",
-        "h3: Création de site web et système digital"
+        "h2: Détails du projet",
+        "h2: Création de site web et système digital"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/contact",
@@ -2835,7 +2815,7 @@
         "h3: Défi",
         "h3: Solution",
         "h2: Prêt à discuter de votre projet ?",
-        "h3: Création de site web et système digital"
+        "h2: Création de site web et système digital"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/website-development-landes",
@@ -3135,11 +3115,6 @@
         "https://www.billynightingale.com/fr/services"
       ],
       "headings": [
-        "h2: Web Design",
-        "h2: Web Développement",
-        "h2: SEO",
-        "h2: Performance",
-        "h2: Gestion projet",
         "h1: Web Design, et SEO pour les entreprises",
         "h2: J’accompagne les entreprises dans la création de sites web modernes et rapides, conçus pour attirer des clients et soutenir une croissance durable.",
         "h2: Services principaux",
@@ -3173,7 +3148,7 @@
         "h3: Maintenance & hébergement de site internet",
         "h3: Référencement SEO et visibilité continue",
         "h2: Prêt à discuter de votre projet ?",
-        "h3: Création de site web et système digital"
+        "h2: Création de site web et système digital"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/services",
@@ -3531,11 +3506,6 @@
         "https://www.billynightingale.com/services"
       ],
       "headings": [
-        "h2: Web design",
-        "h2: Web Development",
-        "h2: SEO",
-        "h2: Performance",
-        "h2: Project Management",
         "h1: Web design, development & SEO for growing businesses",
         "h2: I help businesses build fast, modern websites that attract clients and support long-term growth.",
         "h2: Main Services",
@@ -3569,7 +3539,7 @@
         "h3: Maintenance",
         "h3: OnGoing visibility",
         "h2: Ready to discuss your project?",
-        "h3: Create your digital system"
+        "h2: Create your digital system"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/services",
@@ -4178,7 +4148,7 @@
         "h3: Challenge",
         "h3: Solution",
         "h2: Ready to discuss your project",
-        "h3: Create your digital system"
+        "h2: Create your digital system"
       ],
       "hreflang": {
         "en": "https://www.billynightingale.com/website-development-landes",

@@ -198,7 +198,8 @@ h1 {
   text-transform: uppercase;
 }
 
-h2 {
+h2,
+.h2-style {
   font-size: var(--title-2);
   line-height: var(--leading-title);
   font-family: var(--subHeading);
@@ -207,7 +208,8 @@ h2 {
   text-transform: uppercase;
 }
 
-h3 {
+h3,
+.h3-style {
   font-size: var(--title-4);
   line-height: var(--leading-title);
   font-family: var(--subHeading);
@@ -216,7 +218,8 @@ h3 {
   text-transform: uppercase;
 }
 
-h4 {
+h4,
+.h4-style {
   font-size: var(--title-5);
   line-height: var(--leading-title);
   font-family: var(--subHeading);
@@ -241,11 +244,17 @@ p {
   line-height: var(--leading-body);
 }
 
+/* .h2-style, .h3-style and .h4-style give an element the look of that heading
+   level. They are for the cases where the level that is right for the page
+   outline is not the one with the right look. */
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+.h2-style,
+.h3-style,
+.h4-style {
   margin: 0;
   font-weight: 400;
 }
@@ -2190,7 +2199,7 @@ a:hover .social__icons {
   width: 100%;
 }
 
-.footer__info_container h3 {
+.footer__info_container h2 {
   font-size: var(--title-4);
   margin-bottom: var(--space-3);
 }
@@ -2353,7 +2362,7 @@ a:hover .social__icons {
   margin-bottom: 20px;
 }
 
-.contact-form-title h3 {
+.contact-form-title h2 {
   color: var(--font-colour-dark);
   text-transform: uppercase;
 }
@@ -2426,7 +2435,7 @@ a:hover .social__icons {
   backdrop-filter: blur(10px) saturate(120%);
 }
 
-.services-intro-img-frame h2 {
+.services-intro-word {
   width: fit-content;
   margin-bottom: 0px;
 }
@@ -2510,7 +2519,7 @@ a:hover .social__icons {
 }
 
 @media screen and (max-width: 670px) {
-  .services-intro-img-frame h2 {
+  .services-intro-word {
     display: none;
   }
 
