@@ -7,7 +7,12 @@
 #   the camera, microphone or location
 # - Content-Security-Policy-Report-Only: the list of places the pages may load
 #   things from. Everything comes from this site, except the analytics that
-#   load after cookie consent (Microsoft Clarity, Google Analytics).
+#   load after cookie consent: Microsoft Clarity, Google Analytics, and the
+#   Google Ads addresses that Analytics calls for remarketing and conversions.
+#   The Google addresses are the ones in Google's own guide:
+#   https://developers.google.com/tag-platform/security/guides/csp
+#   A policy cannot say "google in any country", so each country is listed:
+#   .com, .fr, .es and .co.uk. Add more if visitors from elsewhere matter.
 #   "Report-Only" means the browser only logs what the policy would block, in
 #   its console, and blocks nothing. Once the live site shows no reports,
 #   rename the header to Content-Security-Policy to enforce it.
@@ -19,7 +24,7 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://*.clarity.ms https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.clarity.ms https://c.bing.com https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.clarity.ms https://c.bing.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://*.clarity.ms https://*.googletagmanager.com https://www.googleadservices.com https://www.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.clarity.ms https://c.bing.com https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.google.fr https://*.google.es https://*.google.co.uk https://*.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com; font-src 'self'; connect-src 'self' https://*.clarity.ms https://c.bing.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com https://*.google.fr https://*.google.es https://*.google.co.uk https://*.g.doubleclick.net https://ad.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com; frame-src https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
 
 # style.css is linked with a content hash (?v=...), added by assetUrl() in
 # src/utils/assetVersion.ts. A changed file gets a new URL, so browsers can
