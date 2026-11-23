@@ -2,6 +2,11 @@
 
 http://billynightingale.com/* https://www.billynightingale.com/:splat 301!
 
+# Netlify's own address for the live site serves a full copy of it. Send it to
+# the real domain. Branch previews (name--billy-nightingale-web-dev.netlify.app)
+# are different addresses and are not affected.
+https://billy-nightingale-web-dev.netlify.app/* https://www.billynightingale.com/:splat 301!
+
 # English
 
 /index.html / 301!
