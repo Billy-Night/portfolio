@@ -269,10 +269,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "/contact",
@@ -284,44 +286,55 @@
         },
         {
           "href": "https://monkey-mood.fr",
+          "rel": "noopener",
           "text": "Monkey Mood website"
         },
         {
           "href": "https://pacificcoasthossegor.com/",
+          "rel": "noopener",
           "text": "Pacific Coast Cafe website"
         },
         {
           "href": "https://www.turbulente.fr/",
+          "rel": "noopener",
           "text": "website"
         },
         {
           "href": "https://worldsurfjournal.netlify.app",
+          "rel": "noopener",
           "text": "web app"
         },
         {
           "href": "https://github.com/Billy-Night/world_surf_journal",
+          "rel": "noopener",
           "text": "GitHub repository"
         },
         {
           "href": "https://github.com/Billy-Night/world_surf_journal_backend",
+          "rel": "noopener",
           "text": "GitHub repository"
         },
         {
           "href": "https://weatherwise.netlify.app/",
+          "rel": "noopener",
           "text": "Web App"
         },
         {
           "href": "https://github.com/Billy-Night/weather_wise_app",
+          "rel": "noopener",
           "text": "GitHub repository"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -343,13 +356,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -537,10 +553,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "/",
@@ -559,13 +577,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -859,10 +880,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "#about__timeline-section",
@@ -897,13 +920,16 @@
           "text": "PROJECTS"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -925,13 +951,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -1184,10 +1213,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "tel:+33766095864",
@@ -1198,13 +1229,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -1581,10 +1615,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "/fr/contact",
@@ -1596,44 +1632,55 @@
         },
         {
           "href": "https://monkey-mood.fr",
+          "rel": "noopener",
           "text": "site de Monkey Mood"
         },
         {
           "href": "https://pacificcoasthossegor.com/",
+          "rel": "noopener",
           "text": "Site du Pacific Coast Café"
         },
         {
           "href": "https://www.turbulente.fr/",
+          "rel": "noopener",
           "text": "site web"
         },
         {
           "href": "https://worldsurfjournal.netlify.app",
+          "rel": "noopener",
           "text": "web app déployée"
         },
         {
           "href": "https://github.com/Billy-Night/world_surf_journal",
+          "rel": "noopener",
           "text": "GitHub"
         },
         {
           "href": "https://github.com/Billy-Night/world_surf_journal_backend",
+          "rel": "noopener",
           "text": "GitHub"
         },
         {
           "href": "https://weatherwise.netlify.app/",
+          "rel": "noopener",
           "text": "web app"
         },
         {
           "href": "https://github.com/Billy-Night/weather_wise_app",
+          "rel": "noopener",
           "text": "dépôt GitHub"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -1655,13 +1702,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -1849,10 +1899,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "/fr/",
@@ -1871,13 +1923,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -2171,10 +2226,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "#about__timeline-section",
@@ -2209,13 +2266,16 @@
           "text": "PROJETS"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -2237,13 +2297,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -2447,10 +2510,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com",
@@ -2658,10 +2723,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "tel:+33766095864",
@@ -2672,13 +2739,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -2946,10 +3016,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "/fr/contact",
@@ -2996,13 +3068,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -3317,10 +3392,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR"
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "#services-page__main-services",
@@ -3387,13 +3464,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -3707,10 +3787,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "#services-page__main-services",
@@ -3777,13 +3859,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
@@ -4039,10 +4124,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         }
       ],
       "meta": {
@@ -4279,10 +4366,12 @@
           "text": "Landes"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://github.com/Billy-Night"
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "/contact",
@@ -4329,13 +4418,16 @@
           "text": "contact@billynightingale.com"
         },
         {
-          "href": "https://www.linkedin.com/in/billynightingale/"
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.instagram.com/billy.nightingale.studio/"
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
         },
         {
-          "href": "https://www.github.com/Billy-Night"
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
         },
         {
           "href": "mailto:contact@billynightingale.com"
