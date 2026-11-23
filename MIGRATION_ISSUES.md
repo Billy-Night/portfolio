@@ -80,11 +80,10 @@ From a review of the code as it stood before the migration. Most of the list was
 **1. CSS** ([style.css](public/css/style.css), now 3,584 lines)
 - **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common.
 - **Broad global rules.** `img { width: 100% }` applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer.
-- **Four declarations that use a variable which doesn't exist.** The browser ignores each one, so they do nothing today. Giving them a real value would change the look, so they were left for a decision:
-  - `.package-card__description--large { font-size: var(--text-lg) }`: probably meant `--text-l`. Today the text takes its parent's size.
-  - `.benefit { color: var(--colour-text-muted) }`: today the text takes its parent's colour.
-  - `.packages__intro { max-width: var(--max-txt-width) }`: today there is no maximum width.
-  - `.type-measure svg { height: var(--measure-height) }`: today the height is automatic.
+- **Three design choices that were never applied.** Three declarations on the services page used variables that don't exist, so the browser ignored them. They were removed, which keeps the page exactly as it is. If you want the effect they were written for, each is one line:
+  - `.package-card__description--large`: a larger description on the featured package, for example `font-size: var(--text-l)`. This makes the services page about 70px taller on desktop.
+  - `.benefit`: a muted colour for the three benefit labels. There is no muted colour variable yet.
+  - `.packages__intro`: a maximum width for the packages intro, for example `max-width: 65ch`.
 - **54 selectors are written more than once** (not counting media queries would lower this). Merging them can change which rule wins, so each needs checking.
 - **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the text-box, image-box and screenshot tests in [scripts/dev/](scripts/dev/).
 
@@ -171,6 +170,7 @@ From a review of the code as it stood before the migration. Most of the list was
 - **CSS, second pass:** removed 49 blocks of commented-out code, 19 variables that nothing uses, one unused animation and the four selectors for classes that no longer exist (215 lines).
 - **Translation keys:** 310 keys in 29 section components renamed from the first words of the English text (`readyToDiscussYour`) to their role (`heading`, `intro`, `quoteButton`, `monkeyMoodTask1`). The built site is byte-for-byte identical before and after.
 - **Image descriptions on the homepage projects:** three screenshots were described as another project. Pacific Coast Cafe and Turbulente said "Weather Wise…" in English; Monkey Mood said "Eve-Marie web site…" in both languages. Each now names its own client.
+- **Undefined CSS variables:** three declarations that used a variable which doesn't exist (`--text-lg`, `--colour-text-muted`, `--max-txt-width`) are removed; the page looks the same. A fourth, `--measure-height`, turned out to be set by [heroTitle.js](src/scripts/heroTitle.js) at runtime, so it stays, now with a comment saying so.
 - **Heading levels:** every page now has one `<h1>` first and no skipped levels.
   - Footer tagline: `<h3>` → `<h2>` (every page). Contact form title: `<h3>` → `<h2>`.
   - About page: the four journey headings and the four technology group names: `<h4>` → `<h3>`.
