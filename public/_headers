@@ -1,5 +1,16 @@
+# Security headers, sent with every file:
+# - nosniff: the browser must use the file type the server states, not guess it
+# - X-Frame-Options: other sites cannot display these pages inside a frame
+# - Referrer-Policy: other sites are told which site a visitor came from, not
+#   which page
+# - Permissions-Policy: the site, and anything embedded in it, cannot ask for
+#   the camera, microphone or location
 /*
   Cache-Control: public, max-age=600, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 # style.css is linked with a content hash (?v=...), added by assetUrl() in
 # src/utils/assetVersion.ts. A changed file gets a new URL, so browsers can
