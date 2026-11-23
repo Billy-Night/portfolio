@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { person } from '../data/schema'
+import { businessRef, person } from '../data/schema'
 import Header from '../components/Header.astro'
 import CookieBanner from '../components/CookieBanner.astro'
 import ServicesHero from '../components/services/ServicesHero.astro'
@@ -24,10 +24,7 @@ const jsonLd = [
       "Web development",
       "SEO"
     ],
-    "provider": {
-      "@type": "Person",
-      "@id": "https://www.billynightingale.com/#person"
-    },
+    "provider": businessRef('en'),
     "areaServed": [
       "Capbreton",
       "Hossegor",
