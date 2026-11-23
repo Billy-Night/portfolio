@@ -1,4 +1,4 @@
-// usage: [SIZE=1920,1080] [BASE=https://site] node cdp_eval.mjs <dist-dir> <expression-file> <page> [page...]
+// usage: [SIZE=1920,1080] [BASE=https://site] [REDUCE=1 for the reduced-motion setting] node cdp_eval.mjs <dist-dir> <expression-file> <page> [page...]
 // Evaluate an async expression on built pages in real time.
 import { spawn } from 'node:child_process'
 import { rmSync, readFileSync } from 'node:fs'
@@ -8,7 +8,7 @@ const BASE = process.env.BASE || `http://localhost:${PORT}`
 const expr = readFileSync(exprFile, 'utf8')
 const srv = spawn('python3', ['-m', 'http.server', String(PORT), '--directory', dist], { stdio: 'ignore' })
 const profile = `${dist}/../.cdpprofile-${Date.now()}`
-const chrome = spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', ['--headless=new', '--disable-gpu', '--no-first-run', `--user-data-dir=${profile}`, `--remote-debugging-port=${DBG}`, `--window-size=${SIZE}`, 'about:blank'], { stdio: 'ignore' })
+const chrome = spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', ['--headless=new', '--disable-gpu', '--no-first-run', `--user-data-dir=${profile}`, `--remote-debugging-port=${DBG}`, `--window-size=${SIZE}`, ...(process.env.REDUCE ? ['--force-prefers-reduced-motion'] : []), 'about:blank'], { stdio: 'ignore' })
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 async function retry(fn) { for (let i = 0; i < 40; i++) { try { return await fn() } catch { await sleep(250) } } throw new Error('chrome not reachable') }
 try {
