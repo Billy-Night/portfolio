@@ -27,6 +27,8 @@ function updatePhases(activePhase) {
 
     if (button) {
       button.classList.toggle('btn--open', isOpen)
+      // Tells screen readers whether this phase's details are showing
+      button.setAttribute('aria-expanded', String(isOpen))
       button.textContent = isOpen ? labelCollapse : labelExpand
     }
   })
