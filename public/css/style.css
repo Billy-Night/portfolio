@@ -624,7 +624,9 @@ a {
   text-decoration: none;
   cursor: pointer;
   text-align: left;
-  opacity: 45%;
+  /* 60% is the faintest this gold can go on the navy background and still
+     be readable enough for large text (contrast 3.6 to 1; 3 to 1 is the minimum) */
+  opacity: 60%;
 }
 
 @media screen and (max-width: 765px) {
@@ -689,7 +691,9 @@ a {
   text-decoration: none;
   cursor: pointer;
   text-align: left;
-  opacity: 45%;
+  /* 60% is the faintest this gold can go on the navy background and still
+     be readable enough for large text (contrast 3.6 to 1; 3 to 1 is the minimum) */
+  opacity: 60%;
   /* The button sits inside the question's <h3> and takes its type styles */
   font: inherit;
   letter-spacing: inherit;
