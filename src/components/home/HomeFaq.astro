@@ -70,9 +70,15 @@ const t = {
   <div class="vertical-switcher">
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn is-active" data-index="0">{t.costQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn is-active"
+          data-index="0"
+          aria-expanded="true"
+          aria-controls="faq-answer-0"
+        >{t.costQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt is-active">
+      <div class="vertical-switcher-txt is-active" id="faq-answer-0">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.costAnswer}
@@ -81,9 +87,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="1">{t.durationQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="1"
+          aria-expanded="false"
+          aria-controls="faq-answer-1"
+        >{t.durationQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-1">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.durationAnswer}
@@ -92,9 +104,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="2">{t.locationQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="2"
+          aria-expanded="false"
+          aria-controls="faq-answer-2"
+        >{t.locationQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-2">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.locationAnswer}
@@ -103,9 +121,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="3">{t.googleQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="3"
+          aria-expanded="false"
+          aria-controls="faq-answer-3"
+        >{t.googleQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-3">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.googleAnswer}
@@ -114,9 +138,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="4">{t.redesignQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="4"
+          aria-expanded="false"
+          aria-controls="faq-answer-4"
+        >{t.redesignQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-4">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.redesignAnswer}
@@ -125,9 +155,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="5">{t.maintenanceQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="5"
+          aria-expanded="false"
+          aria-controls="faq-answer-5"
+        >{t.maintenanceQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-5">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.maintenanceAnswer}
@@ -136,9 +172,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="6">{t.bookingQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="6"
+          aria-expanded="false"
+          aria-controls="faq-answer-6"
+        >{t.bookingQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-6">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.bookingAnswer}
@@ -147,9 +189,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="7">{t.ownershipQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="7"
+          aria-expanded="false"
+          aria-controls="faq-answer-7"
+        >{t.ownershipQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-7">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.ownershipAnswer}
@@ -158,9 +206,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="8">{t.gettingStartedQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="8"
+          aria-expanded="false"
+          aria-controls="faq-answer-8"
+        >{t.gettingStartedQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-8">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.gettingStartedAnswer}
@@ -169,9 +223,15 @@ const t = {
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button type="button" class="vertical-switcher-btn" data-index="9">{t.seoQuestion}</button>
+        <button
+          type="button"
+          class="vertical-switcher-btn"
+          data-index="9"
+          aria-expanded="false"
+          aria-controls="faq-answer-9"
+        >{t.seoQuestion}</button>
       </h3>
-      <div class="vertical-switcher-txt">
+      <div class="vertical-switcher-txt" id="faq-answer-9">
         <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
           {t.seoAnswer}

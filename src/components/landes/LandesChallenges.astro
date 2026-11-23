@@ -53,18 +53,36 @@ const t = {
   </div>
   <div class="layout-two-column lan-chall-cont">
     <div class="ver-switcher-btn-cont">
-      <button type="button" class="ver-switcher-btn is-active" data-index="0">
+      <button
+        type="button"
+        class="ver-switcher-btn is-active"
+        data-index="0"
+        aria-expanded="true"
+        aria-controls="challenge-panel-0"
+      >
         <span class="ver-switcher-btn__label">{t.bookingTab}</span>
       </button>
-      <button type="button" class="ver-switcher-btn" data-index="1">
+      <button
+        type="button"
+        class="ver-switcher-btn"
+        data-index="1"
+        aria-expanded="false"
+        aria-controls="challenge-panel-1"
+      >
         <span class="ver-switcher-btn__label">{t.revenueTab}</span>
       </button>
-      <button type="button" class="ver-switcher-btn" data-index="2">
+      <button
+        type="button"
+        class="ver-switcher-btn"
+        data-index="2"
+        aria-expanded="false"
+        aria-controls="challenge-panel-2"
+      >
         <span class="ver-switcher-btn__label">{t.launchTab}</span>
       </button>
     </div>
     <div class="ver-switcher-content">
-      <div class="ver-switcher-content-txt is-active">
+      <div class="ver-switcher-content-txt is-active" id="challenge-panel-0">
         <h3>{t.bookingHeading}</h3>
         <p>Client: Monkey Mood</p>
         <h3>{t.challengeLabel}</h3>
@@ -76,7 +94,7 @@ const t = {
           {t.bookingSolution}
         </p>
       </div>
-      <div class="ver-switcher-content-txt">
+      <div class="ver-switcher-content-txt" id="challenge-panel-1">
         <h3>{t.revenueHeading}</h3>
         <p>Client: Pacific Coast Cafe</p>
         <h3>{t.challengeLabel}</h3>
@@ -88,7 +106,7 @@ const t = {
           {t.revenueSolution}
         </p>
       </div>
-      <div class="ver-switcher-content-txt">
+      <div class="ver-switcher-content-txt" id="challenge-panel-2">
         <h3>{t.launchHeading}</h3>
         <p>Client: Turbulente Kombucha</p>
         <h3>{t.challengeLabel}</h3>

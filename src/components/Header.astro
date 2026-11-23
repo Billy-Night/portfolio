@@ -20,12 +20,12 @@ const labels = {
   en: {
     projects: 'Projects', about: 'About', contact: 'Contact', services: 'Services', landes: 'Landes',
     logoAlt: 'Billy Nightingale logo', menuIconAlt: 'Menu icon',
-    homeLabel: 'Home', menuLabel: 'Open menu',
+    homeLabel: 'Home', menuLabel: 'Open menu', menuCloseLabel: 'Close menu',
   },
   fr: {
     projects: 'Projets', about: 'À propos', contact: 'Contact', services: 'Services', landes: 'Landes',
     logoAlt: 'Logo Billy Nightingale', menuIconAlt: 'Icône du menu',
-    homeLabel: 'Accueil', menuLabel: 'Ouvrir le menu',
+    homeLabel: 'Accueil', menuLabel: 'Ouvrir le menu', menuCloseLabel: 'Fermer le menu',
   },
 }[lang]
 
@@ -40,7 +40,7 @@ const linkedIn =
     <a class="nav__link" href={r('home')} aria-label={labels.homeLabel}>
       <img class="nav__logo" src="/assets/nightingale_logo_gold.svg" alt={labels.logoAlt} />
     </a>
-    <ul class="nav__list">
+    <ul class="nav__list" id="nav-list">
       <li><a class="nav__link mini" href={routes[route][alt]}>{alt.toUpperCase()}</a></li>
       <li><a class="nav__link mini" href={`${r('home')}#projects`}>{labels.projects}</a></li>
       <li><a class="nav__link mini" href={r('about')}>{labels.about}</a></li>
@@ -74,7 +74,15 @@ const linkedIn =
         </a>
       </li>
     </ul>
-    <button class="menu-btn--hamburger" type="button" aria-label={labels.menuLabel}>
+    <button
+      class="menu-btn--hamburger"
+      type="button"
+      aria-label={labels.menuLabel}
+      aria-expanded="false"
+      aria-controls="nav-list"
+      data-label-open={labels.menuLabel}
+      data-label-close={labels.menuCloseLabel}
+    >
       <img src="/assets/icons/ham_menu.svg" alt={labels.menuIconAlt} class="ham-btn-icon" />
     </button>
   </nav>

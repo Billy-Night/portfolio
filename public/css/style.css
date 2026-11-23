@@ -624,7 +624,9 @@ a {
   text-decoration: none;
   cursor: pointer;
   text-align: left;
-  opacity: 45%;
+  /* 60% is the faintest this gold can go on the navy background and still
+     be readable enough for large text (contrast 3.6 to 1; 3 to 1 is the minimum) */
+  opacity: 60%;
 }
 
 @media screen and (max-width: 765px) {
@@ -689,7 +691,9 @@ a {
   text-decoration: none;
   cursor: pointer;
   text-align: left;
-  opacity: 45%;
+  /* 60% is the faintest this gold can go on the navy background and still
+     be readable enough for large text (contrast 3.6 to 1; 3 to 1 is the minimum) */
+  opacity: 60%;
   /* The button sits inside the question's <h3> and takes its type styles */
   font: inherit;
   letter-spacing: inherit;
@@ -2911,14 +2915,16 @@ a:hover .social__icons {
   }
 }
 
+/* :nth-child(n) matches every circle. It is there to give this rule the same
+   weight as the :nth-child(1) rules above, which a plain "circle" lost to. */
 @media (prefers-reduced-motion: reduce) {
-  .package-card__icon circle {
+  .package-card__icon circle:nth-child(n) {
     animation: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .package-card__icon rect {
+  .package-card__icon rect:nth-child(n) {
     animation: none;
     transform: rotate(45deg);
   }
@@ -3576,4 +3582,30 @@ a:hover .social__icons {
 
 .approach-design-heading:hover {
   transform: translateY(-80%);
+}
+
+/* Reduced motion
+   For visitors who have asked their device to reduce motion: nothing moves on
+   its own and nothing slides in. Content still fades in, and hover and click
+   effects stay. The orbit and the review slider are handled in their scripts
+   (src/scripts/heroTitle.js and reviews.js). */
+@media (prefers-reduced-motion: reduce) {
+  .home-services__circle,
+  .svg--pulse,
+  .phase__fade-line {
+    animation: none;
+  }
+
+  /* Timeline headings appear in place instead of rising */
+  .reveal-text span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Sections and package bullet points fade in without sliding up */
+  .sections--hidden,
+  .bullet-point-container {
+    transform: none;
+  }
 }

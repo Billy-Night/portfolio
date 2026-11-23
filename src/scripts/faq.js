@@ -18,6 +18,7 @@ if (verticalSwitcher && verticalSwitcherContent.length > 0) {
       .querySelectorAll('.vertical-switcher-btn')
       .forEach((btn) => {
         btn.classList.remove('is-active')
+        btn.setAttribute('aria-expanded', 'false')
       })
 
     verticalSwitcher
@@ -27,6 +28,8 @@ if (verticalSwitcher && verticalSwitcherContent.length > 0) {
       })
 
     button.classList.add('is-active')
+    // Tells screen readers which question's answer is showing
+    button.setAttribute('aria-expanded', 'true')
     text.classList.add('is-active')
   }
 

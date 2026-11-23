@@ -46,6 +46,8 @@ node scripts/dev/cdp_eval.mjs dist scripts/dev/phone_expr.js website-development
 node scripts/dev/cdp_eval.mjs dist scripts/dev/reveal_expr.js contact.html
 ```
 
+Set `REDUCE=1` to run Chrome with the "reduce motion" setting on, to check what those visitors get.
+
 Set `BASE` to run the same expression against a deployed site. Pages are then given as paths:
 
 ```bash

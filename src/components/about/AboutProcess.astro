@@ -47,8 +47,8 @@ const t = {
   </div>
   <div class="about__process-cont" data-label-expand={t.expand} data-label-collapse={t.collapse}>
     <div class="phase-cont phase__cont--align glass__back">
-      <h3>PHASE 1</h3>
-      <div class="phase__content phase__content--hidden">
+      <h3 id="phase-1-title">PHASE 1</h3>
+      <div class="phase__content phase__content--hidden" id="phase-1-content">
         <div class="phase__cont__text">
           <h4>{t.discoveryHeading}</h4>
           <p>
@@ -109,13 +109,19 @@ const t = {
           </svg>
         </div>
       </div>
-      <button type="button" class="btn-expand-process btn__second btn__second--light">
+      <button
+        type="button"
+        class="btn-expand-process btn__second btn__second--light"
+        aria-expanded="false"
+        aria-controls="phase-1-content"
+        aria-describedby="phase-1-title"
+      >
         {t.expand}
       </button>
     </div>
     <div class="phase-cont phase__cont--align glass__back">
-      <h3>PHASE 2</h3>
-      <div class="phase__content phase__content--hidden">
+      <h3 id="phase-2-title">PHASE 2</h3>
+      <div class="phase__content phase__content--hidden" id="phase-2-content">
         <div class="phase__cont__text">
           <h4>Design</h4>
           <p>
@@ -192,13 +198,19 @@ const t = {
           </svg>
         </div>
       </div>
-      <button type="button" class="btn-expand-process btn__second btn__second--light">
+      <button
+        type="button"
+        class="btn-expand-process btn__second btn__second--light"
+        aria-expanded="false"
+        aria-controls="phase-2-content"
+        aria-describedby="phase-2-title"
+      >
         {t.expand}
       </button>
     </div>
     <div class="phase-cont phase__cont--align glass__back">
-      <h3>PHASE 3</h3>
-      <div class="phase__content phase__content--hidden">
+      <h3 id="phase-3-title">PHASE 3</h3>
+      <div class="phase__content phase__content--hidden" id="phase-3-content">
         <div class="phase__cont__text">
           <h4>{t.developmentHeading}</h4>
           <p>
@@ -255,13 +267,19 @@ const t = {
           </svg>
         </div>
       </div>
-      <button type="button" class="btn-expand-process btn__second btn__second--light">
+      <button
+        type="button"
+        class="btn-expand-process btn__second btn__second--light"
+        aria-expanded="false"
+        aria-controls="phase-3-content"
+        aria-describedby="phase-3-title"
+      >
         {t.expand}
       </button>
     </div>
     <div class="phase-cont phase__cont--align glass__back">
-      <h3>PHASE 4</h3>
-      <div class="phase__content phase__content--hidden">
+      <h3 id="phase-4-title">PHASE 4</h3>
+      <div class="phase__content phase__content--hidden" id="phase-4-content">
         <div class="phase__cont__text">
           <h4>{t.deploymentHeading}</h4>
           <p>
@@ -488,7 +506,13 @@ const t = {
           </svg>
         </div>
       </div>
-      <button type="button" class="btn-expand-process btn__second btn__second--light">
+      <button
+        type="button"
+        class="btn-expand-process btn__second btn__second--light"
+        aria-expanded="false"
+        aria-controls="phase-4-content"
+        aria-describedby="phase-4-title"
+      >
         {t.expand}
       </button>
     </div>

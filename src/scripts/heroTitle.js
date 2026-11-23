@@ -51,6 +51,15 @@ function animateOrbit({
   drawPath.style.strokeDasharray = `${length}px`
   drawPath.style.strokeDashoffset = `${length}px`
 
+  // Reduced motion: show the whole orbit, with the dot at rest on it
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const point = path.getPointAtLength(length * (reverse ? 0.75 : 0.25))
+    dot.setAttribute('cx', point.x)
+    dot.setAttribute('cy', point.y)
+    drawPath.style.strokeDashoffset = '0px'
+    return
+  }
+
   function loop(timeStamp) {
     // const rawProgress = (timeStamp % duration) / duration
     // const progress = reverse ? 1 - rawProgress : rawProgress

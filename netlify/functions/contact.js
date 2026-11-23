@@ -21,7 +21,6 @@ const allowedOrigins = new Set([
   'https://billynightingale.com',
   'https://www.billynightingale.com',
   'http://localhost:8888', // netlify dev
-  'https://astrotrans--billy-nightingale-web-dev.netlify.app', // AstroTrans branch deploy (for testing)
 ])
 
 export default async function contact(request) {
