@@ -77,10 +77,15 @@ Every page's sections are now components shared by the English and French pages,
 ### G. Code clean-up suggestions
 From a review of the code as it stood before the migration. Most of the list was done on 2026-11-23 (see "✅ Code clean-up" below). What is left:
 
-**1. CSS** ([style.css](public/css/style.css), now 3,787 lines)
+**1. CSS** ([style.css](public/css/style.css), now 3,584 lines)
 - **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common.
 - **Broad global rules.** `img { width: 100% }` applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer.
-- **Four half-dead selectors.** `.package-card--compact`, `.button`, `.button-link` and `.button--primary` are not used anywhere, but each shares a rule with a class that is, so they were left.
+- **Four declarations that use a variable which doesn't exist.** The browser ignores each one, so they do nothing today. Giving them a real value would change the look, so they were left for a decision:
+  - `.package-card__description--large { font-size: var(--text-lg) }`: probably meant `--text-l`. Today the text takes its parent's size.
+  - `.benefit { color: var(--colour-text-muted) }`: today the text takes its parent's colour.
+  - `.packages__intro { max-width: var(--max-txt-width) }`: today there is no maximum width.
+  - `.type-measure svg { height: var(--measure-height) }`: today the height is automatic.
+- **54 selectors are written more than once** (not counting media queries would lower this). Merging them can change which rule wins, so each needs checking.
 - **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the text-box, image-box and screenshot tests in [scripts/dev/](scripts/dev/).
 
 **2. Translation keys**
@@ -166,6 +171,7 @@ The keys in the section components were generated from the first words of the En
 - **CSS:** `-webkit-backdrop-filter` comes before `backdrop-filter` with the same value; the misspelt `phone-iteractive…` class is fixed; 44 rules for classes that no longer exist are removed (252 lines).
 
 - **Contact function rate limit:** [contact.js](netlify/functions/contact.js) is converted to Netlify's current function format, which is what allows a rate limit: more than 5 requests a minute from one visitor get status 429 before the function runs. A rate limit needs a path, so the form now posts to `/api/contact`, and `/.netlify/functions/contact` is no longer served. Netlify only checks the rule when it deploys: look for it in the deploy log under post-processing. The Free and Pro plans allow 2 and 5 such rules per site; this is the only one.
+- **CSS, second pass:** removed 49 blocks of commented-out code, 19 variables that nothing uses, one unused animation and the four selectors for classes that no longer exist (215 lines).
 - **Heading levels:** every page now has one `<h1>` first and no skipped levels.
   - Footer tagline: `<h3>` → `<h2>` (every page). Contact form title: `<h3>` → `<h2>`.
   - About page: the four journey headings and the four technology group names: `<h4>` → `<h3>`.
