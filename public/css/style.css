@@ -3854,7 +3854,7 @@ spline-viewer {
   height: 1200px;
 }
 
-.phone-iteractive-content-container {
+.phone-interactive-content-container {
   display: flex;
   flex-direction: row;
   position: sticky;
@@ -3902,12 +3902,12 @@ spline-viewer {
     font-size: var(--title-3);
   }
 
-  .phone-iteractive-content-container {
+  .phone-interactive-content-container {
     flex-direction: column;
     gap: var(--gap-sm);
   }
 
-  .phone-iteractive-content-container {
+  .phone-interactive-content-container {
     top: 90px;
   }
 
