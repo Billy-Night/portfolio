@@ -82,7 +82,6 @@ if (contactForm) {
       webTimeline: formData.get('web-timeline') || null,
     }
 
-
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
