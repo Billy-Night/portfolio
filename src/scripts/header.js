@@ -31,37 +31,29 @@ if (nav) {
   nav.addEventListener('mouseout', handlerHover.bind(1))
 }
 
-let hamToggle = true
+let menuOpen = false
 
-const handleNavHamBtn = () => {
-  if (hamToggle) {
-    navLinksMini.forEach((e) => e.classList.add('nav__links-mob'))
-    navHamImg.src = '/assets/icons/close.svg'
-    navList.classList.add('nav__dropdown')
-    hamToggle = false
-  } else {
-    navLinksMini.forEach((e) => e.classList.remove('nav__links-mob'))
-    navList.classList.remove('nav__dropdown')
-    navHamImg.src = '/assets/icons/ham_menu.svg'
-    hamToggle = true
-  }
+const openMenu = () => {
+  navLinksMini.forEach((e) => e.classList.add('nav__links-mob'))
+  navHamImg.src = '/assets/icons/close.svg'
+  navList.classList.add('nav__dropdown')
+  menuOpen = true
+}
+
+const closeMenu = () => {
+  navLinksMini.forEach((e) => e.classList.remove('nav__links-mob'))
+  navList.classList.remove('nav__dropdown')
+  navHamImg.src = '/assets/icons/ham_menu.svg'
+  menuOpen = false
 }
 
 if (navHamBtn) {
-  navHamBtn.addEventListener('click', handleNavHamBtn)
+  navHamBtn.addEventListener('click', () => (menuOpen ? closeMenu() : openMenu()))
 }
 
-const isMobile = window.matchMedia('(max-width: 800px)')
-
-const handleViewportChange = () => {
-  if (isMobile) {
-    hamToggle = false
-    handleNavHamBtn()
-    hamToggle = true
-  }
-}
-
-isMobile.addEventListener('change', handleViewportChange)
+// Close the menu whenever the window crosses the mobile breakpoint, in either
+// direction, so the desktop links never keep the mobile menu's classes.
+window.matchMedia('(max-width: 800px)').addEventListener('change', closeMenu)
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > navHeight) {
