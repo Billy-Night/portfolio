@@ -1,4 +1,5 @@
-// Landes page "Real challenges" switcher: hovering a button shows its text.
+// Landes page "Real challenges" switcher: hovering, clicking or focusing a
+// button shows its text.
 // Used by src/components/landes/LandesChallenges.astro.
 
 const challengeBtns = document.querySelectorAll('.ver-switcher-btn')
@@ -18,15 +19,22 @@ if (challengeBtns.length && challengeContents.length) {
   function activeBtn(btn) {
     challengeBtns.forEach((block) => {
       block.classList.remove('is-active')
+      block.setAttribute('aria-expanded', 'false')
     })
 
     btn.classList.add('is-active')
+    // Tells screen readers which text is showing
+    btn.setAttribute('aria-expanded', 'true')
     activeContent(btn.dataset.index)
   }
 
+  // Hovering is not possible with a keyboard, so a click (Enter or Space) and
+  // moving the focus onto a button show its text too.
   challengeBtns.forEach((btn) => {
-    btn.addEventListener('mouseenter', () => {
-      activeBtn(btn)
+    ;['mouseenter', 'click', 'focus'].forEach((type) => {
+      btn.addEventListener(type, () => {
+        activeBtn(btn)
+      })
     })
   })
 }
