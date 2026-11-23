@@ -192,5 +192,5 @@ All were checked with the tools in [scripts/dev/](scripts/dev/): every text elem
 - [ ] After pushing the 2026-11-23 clean-up commits: send the contact form once on the branch deploy, in each language (the function now refuses requests without an `Origin` header), and look at the FAQ, the Landes challenge buttons, the about page phases and the mobile menu.
 - [ ] Visual check on desktop and mobile: fonts, images, animations, sliders, mobile menu, cookie banner, language switch, the contact page footer.
 - [ ] Accept the cookie banner on the live site after merging and confirm in the browser's Network tab that Clarity and Google Analytics load, and that they don't load after "Deny".
-- [ ] Optional: remove the branch-deploy address from `allowedOrigins` in [contact.js](netlify/functions/contact.js) once testing is finished.
+- [x] The branch-deploy address is removed from `allowedOrigins` in [contact.js](netlify/functions/contact.js) (after the merge).
 - [ ] After merging: share the homepage and `/fr/` in a social preview tool to confirm the preview image shows, and check Search Console over the following days.
