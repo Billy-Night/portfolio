@@ -24,8 +24,10 @@ export async function handler(event) {
     'https://astrotrans--billy-nightingale-web-dev.netlify.app', // AstroTrans branch deploy (for testing)
   ])
 
+  // Browsers send Origin on every POST, so a request without one does not
+  // come from the form and is refused too.
   const origin = event.headers.origin || event.headers.Origin
-  if (origin && !allowedOrigins.has(origin)) {
+  if (!allowedOrigins.has(origin)) {
     return { statusCode: 403, body: 'Forbidden' }
   }
 
