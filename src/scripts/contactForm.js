@@ -94,7 +94,6 @@ if (clientContactForm) {
         const err = await response
           .json()
           .catch(async () => await response.text())
-        console.log('Function error:', response.status, err)
         throw new Error(
           typeof err === 'string' ? err : err.error || 'Unknown error',
         )
