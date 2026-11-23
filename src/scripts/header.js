@@ -33,22 +33,41 @@ if (nav) {
 
 let menuOpen = false
 
+// The button tells screen readers whether the menu is open, and its label says
+// what pressing it will do. Both labels come from Header.astro.
+const setMenuState = (open) => {
+  menuOpen = open
+  navHamBtn.setAttribute('aria-expanded', String(open))
+  navHamBtn.setAttribute(
+    'aria-label',
+    open ? navHamBtn.dataset.labelClose : navHamBtn.dataset.labelOpen,
+  )
+}
+
 const openMenu = () => {
   navLinksMini.forEach((e) => e.classList.add('nav__links-mob'))
   navHamImg.src = '/assets/icons/close.svg'
   navList.classList.add('nav__dropdown')
-  menuOpen = true
+  setMenuState(true)
 }
 
 const closeMenu = () => {
   navLinksMini.forEach((e) => e.classList.remove('nav__links-mob'))
   navList.classList.remove('nav__dropdown')
   navHamImg.src = '/assets/icons/ham_menu.svg'
-  menuOpen = false
+  setMenuState(false)
 }
 
 if (navHamBtn) {
   navHamBtn.addEventListener('click', () => (menuOpen ? closeMenu() : openMenu()))
+
+  // Escape closes the menu and puts the keyboard focus back on the button
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuOpen) {
+      closeMenu()
+      navHamBtn.focus()
+    }
+  })
 }
 
 // Close the menu whenever the window crosses the mobile breakpoint, in either
