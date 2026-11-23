@@ -34,7 +34,7 @@ Every page's sections are now components shared by the English and French pages,
   - `PackageFeatures`: each language passes its own list of bullets. They now say the same things (see "Content decisions" below).
 
 ### B. Scripts per component: done
-- `public/script.js` (970 lines, loaded on every page) is now 13 modules in [src/scripts/](src/scripts/), one per feature. Each component imports the one it needs in a `<script>` tag at the bottom of its file, so a page only loads the scripts for what's on it. Two site-wide scripts (section reveal, lazy images) are imported by [BaseLayout.astro](src/layouts/BaseLayout.astro).
+- `public/script.js` (970 lines, loaded on every page) is now 13 modules in [src/scripts/](src/scripts/), one per feature. Each component imports the one it needs in a `<script>` tag at the bottom of its file, so a page only loads the scripts for what's on it. One site-wide script (section reveal) is imported by [BaseLayout.astro](src/layouts/BaseLayout.astro). The old lazy-image script was removed with the image work (see C).
 - The code was moved unchanged. Three dead features were dropped (the "offers" tabs, a "learn more" scroll button and a contact scroll icon, whose elements no longer exist), along with one unused variable and three `console.log` calls. One of those logged every visitor's contact-form data to the browser console.
 - Astro inlines each single-use script into the page, minified. The two scripts shared by two components (`heroTitle.js`, `timeline.js`) become files in `/_astro/` with a hash in their name, cached for a year.
 - **How it was checked:** a scripted browser test drove every page of the old and new builds (scrolling, the menu button, the cookie buttons, the FAQ, the process phases, the reviews, the Landes switcher, changing the form's reason field and submitting it against a fake server) and compared the resulting page state after each step. All 14 pages match at desktop and mobile width. A second, real-time check confirmed the orbit animation, the review progress ring and auto-advance, and the scroll-drawn timeline run the same on both builds.
@@ -161,7 +161,7 @@ Headings are sometimes chosen for their look, not their meaning, which makes the
 - **Unused files:** 26 deleted from `public/` (see D).
 - **Landes phone animation:** on the English page, the second screen showed the French image. It now shows `phone_web_seo.webp`. That file is no longer one of the unused assets in D.
 - **Proofreading:** about 20 typos fixed in the English copy of the Landes, about, services and home components (for example "strategeis", "affective", "insure", "website’s", "Deployement", "PERFROMANCE"). On the French homepage, the GitHub link texts read "GitHub" and "dépôt GitHub" instead of "Github repository", and the sentence around them is now "Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub."
-- **Caching:** verified on the branch deploy. `style.css` and `script.js` are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
+- **Caching:** verified on the branch deploy. `style.css` and everything in `/_astro/` (the scripts and photos) are served with `max-age=31536000, immutable`, and everything else with the 10-minute value.
 
 ## ✅ Code quality fixes (one commit each)
 - **#14 Google Fonts on the terms page:** removed. The Oxygen fonts were never used, and the page screenshot is pixel-identical without them.
@@ -170,18 +170,18 @@ Headings are sometimes chosen for their look, not their meaning, which makes the
 - **#18 Copyright year:** set when the site is built.
 - **#20 Commented-out markup:** seven blocks removed from the homepages and Landes pages (an old offer section, the Spline viewer, two project links and a tagline). They are in git history, in the commit "Remove commented-out markup from the homepages and Landes pages".
 - **#16 Analytics consent:** `loadClarity()` and `loadGoogleAnalytics()` now check consent themselves, and the `console.log` calls are gone. Tested for nine combinations of domain and consent.
-- **#19 Cache-busting:** `style.css` and `script.js` get a version from a hash of their contents (`assetUrl()` in [src/utils/assetVersion.ts](src/utils/assetVersion.ts)). No more `?v=18` to bump by hand. The files themselves are served untouched.
+- **#19 Cache-busting:** `style.css` gets a version from a hash of its contents (as `script.js` did until it was split, see B) (`assetUrl()` in [src/utils/assetVersion.ts](src/utils/assetVersion.ts)). No more `?v=18` to bump by hand. The files themselves are served untouched.
 - **#27 404 page:** rebuilt on the site layout with the header, footer and cookie banner, in English and French ([NotFound.astro](src/components/NotFound.astro)). Unknown `/fr/…` addresses get the French version through a rule in [public/_redirects](public/_redirects).
 - **#21 README:** rewritten for the Astro setup.
 - **#15 `script.js` crashes:** not a bug. See B above.
 
 ## Before merging `AstroTrans` → `main`
-- [ ] **In Make.com: check the old webhook.** The French contact form's HTML contained `action="https://hook.eu1.make.com/1sbn8f4m…"`, so that webhook URL was public on the live site and is still in the git history. It has been removed from the page. It isn't the webhook the Netlify function uses. If it's still active in Make, delete it or replace it with a new one, because anyone can post to it directly.
+- [x] **Make.com: the old webhook.** The French contact form's HTML contained `action="https://hook.eu1.make.com/1sbn8f4m…"`. Billy deleted that webhook in Make long ago, when he realised it was exposed, so the address is dead. It is removed from the page on this branch; the live site's French contact page still shows it until the merge. The Netlify function uses a different webhook.
 - [x] Netlify builds the branch from [netlify.toml](netlify.toml) (Node 24, publish `dist`).
 - [x] Contact form tested on the branch deploy, in both languages.
 - [x] `/about.html` → 301 → `/about`, and an unknown URL returns the 404 page.
 - [x] SEO compare of the branch deploy against `seo-baseline/live.json`: only the Cloudflare differences (email obfuscation and the managed `robots.txt`). This was run before the fixes above.
-- [ ] On the branch deploy: an unknown address such as `/nope` shows the new English 404, and `/fr/nope` shows the French one. Both must return status 404.
+- [x] On the branch deploy: an unknown address such as `/nope` shows the new English 404, and `/fr/nope` shows the French one. Both return status 404.
 - [ ] Visual check on desktop and mobile: fonts, images, animations, sliders, mobile menu, cookie banner, language switch, the contact page footer.
 - [ ] Accept the cookie banner on the live site after merging and confirm in the browser's Network tab that Clarity and Google Analytics load, and that they don't load after "Deny".
 - [ ] Optional: remove the branch-deploy address from `allowedOrigins` in [contact.js](netlify/functions/contact.js) once testing is finished.
