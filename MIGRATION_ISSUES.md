@@ -75,36 +75,27 @@ Every page's sections are now components shared by the English and French pages,
 
 
 ### G. Code clean-up suggestions
-From a review of the code as it stood before the migration. Nothing here is broken. The list is ordered by how much each item matters, most important first.
+From a review of the code as it stood before the migration. Most of the list was done on 2026-11-23 (see "✅ Code clean-up" below). What is left:
 
-**1. Heading structure (affects screen-reader users)**
-Headings are sometimes chosen for their look, not their meaning, which makes the page outline noisy for assistive technology.
-- [LandesChallenges.astro](src/components/landes/LandesChallenges.astro): each of the three switcher buttons contains an `<h3>`. A `<button>` may only contain text-level content, so this isn't valid HTML. Use a `<span>` with the same styling.
-- [HomeServices.astro](src/components/home/HomeServices.astro): four `<h2>`s for the single words "Design", "Development", "SEO" and "Automation". They are labels, not section headings: use `<p>` or `<span>`, or `<h3>` under the section's own heading.
-- [Footer.astro](src/components/Footer.astro): `<h3>`, `<h4>` and `<h5>` stacked for the tagline, the business name and "Contact Information". Only the first is a heading; the others can be paragraphs.
-- These change the heading outline, so the SEO compare will report them. Check each page's outline afterwards: one `<h1>`, then `<h2>` per section, with no skipped levels.
+**1. Heading outline: levels still skipped on some pages**
+Found when checking the outline after the heading fixes. Each changes a heading level, so the SEO compare will report it. Decide page by page.
+- [404.astro](src/pages/404.astro), [contact](src/components/contact/): the page goes from `<h1>` straight to an `<h3>` (the footer tagline on the 404 pages, "Project details" in the contact form). An `<h2>` is missing in between, or these should be `<h2>`s.
+- About pages: two `<h4>`s directly under an `<h2>` ("BEng Motorsport Engineering", "Project Management").
+- Services pages: an `<h2>` comes before the `<h1>` in the source.
+- Homepage FAQ: each answer starts with an `<h3>` that only says "Answer". Ten identical headings add noise; a visually hidden label or no heading would be better.
 
-**2. Logic that works by accident** ([src/scripts/](src/scripts/))
-- [header.js](src/scripts/header.js): `handleViewportChange` tests `if (isMobile)`. `isMobile` is the media-query object, which is always truthy. It should be `if (isMobile.matches)`, or take the event: `(e) => { if (e.matches) … }`. Decide what should happen when the window grows past 800px with the menu open, then test both directions.
-- [processPhases.js](src/scripts/processPhases.js): `updatePhases` toggles `phase__cont--align`, `phase__content--hidden` and `phase__content--expanded` on every phase on every click. It stays correct only because the toggles happen in pairs. Set each class from the state instead: `classList.toggle('phase__content--expanded', isActive)`.
-- [processPhases.js](src/scripts/processPhases.js): the button text ("Expand" / "Ouvrir") is chosen by looking for `/fr/` in the address. Pass the labels from [AboutProcess.astro](src/components/about/AboutProcess.astro) in `data-` attributes, as the Landes phone does with `data-screens`.
-- [contactForm.js](src/scripts/contactForm.js): one `console.log` is left (the "Function error" line). `console.error` on the next lines already reports the failure.
-
-**3. Contact function** ([contact.js](netlify/functions/contact.js))
-- A request with no `Origin` header skips the origin check (`if (origin && …)`). Browsers always send it on a cross-site POST, so this only lets through non-browser clients, which the honeypot doesn't stop either. Rejecting requests without an allowed origin closes it.
-- There is no rate limiting. Netlify has rate-limiting rules, or the function could ignore repeat submissions from one address within a short time.
+**2. Contact function: rate limiting** ([contact.js](netlify/functions/contact.js))
+- There is still no rate limiting. Netlify's rate-limiting rules need the newer function format (`export default` with a `config` export), so this means converting the function and testing it on a branch deploy with a real submission.
 - The branch-deploy address is still in `allowedOrigins`. Remove it after the merge (already on the merge checklist).
 
-**4. CSS** ([style.css](public/css/style.css), 4,011 lines)
-- **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common. One class name has a typo: `phone-iteractive-content-container` (used in the CSS and in [LandesPhone.astro](src/components/landes/LandesPhone.astro)).
+**3. CSS** ([style.css](public/css/style.css), now 3,787 lines)
+- **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common.
 - **Broad global rules.** `img { width: 100% }` applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer.
-- **Vendor prefix order.** In 10 places `-webkit-backdrop-filter: blur(…)` comes after `backdrop-filter: blur(…) saturate(…)`, with a different value. The convention is prefixed first, standard last, same value. This is also what stopped the stylesheet being minified (see C).
-- **Dead rules.** There are rules for sections that no longer exist (for example the `.offers__*` tabs). Chrome DevTools' Coverage panel shows which rules each page uses.
-- **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the image-box and screenshot tests in [scripts/dev/](scripts/dev/).
+- **Four half-dead selectors.** `.package-card--compact`, `.button`, `.button-link` and `.button--primary` are not used anywhere, but each shares a rule with a class that is, so they were left.
+- **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the text-box, image-box and screenshot tests in [scripts/dev/](scripts/dev/).
 
-**5. Naming in the scripts and components**
-- [contactForm.js](src/scripts/contactForm.js): variable names such as `cFPrefTimWeb` and `clientContFormWebBud` are hard to read. Full words (`websiteTimelineField`, `websiteBudgetField`) cost nothing.
-- **Translation keys.** The keys in the section components were generated from the first words of the English text (`readyToDiscussYour`, `iCraftPremiumWeb`). They work, and each sits next to its text. Renaming them by role (`heading`, `intro`, `ctaQuote`) in the files you edit often would make those files easier to work in.
+**4. Translation keys**
+The keys in the section components were generated from the first words of the English text (`readyToDiscussYour`, `iCraftPremiumWeb`). They work, and each sits next to its text. There are about 400. Renaming them by role (`heading`, `intro`, `ctaQuote`) is only worth it in the files you edit often: [HomeProjects.astro](src/components/home/HomeProjects.astro), [ServicesPackages.astro](src/components/services/ServicesPackages.astro) and [ContactForm.astro](src/components/contact/ContactForm.astro) hold the most. The built HTML must be byte-for-byte identical afterwards.
 
 **Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
 
@@ -175,6 +166,20 @@ Headings are sometimes chosen for their look, not their meaning, which makes the
 - **#21 README:** rewritten for the Astro setup.
 - **#15 `script.js` crashes:** not a bug. See B above.
 
+## ✅ Code clean-up (section G, 2026-11-23, one commit each)
+- **Landes challenge buttons:** the `<h3>` inside each switcher button is now a `<span>`. Removes three `<h3>`s per Landes page from the outline.
+- **Homepage FAQ:** each button now sits inside its `<h3>`, not the other way round. The outline is unchanged.
+- **Homepage service labels and footer:** "Design", "Development", "SEO", "Automation" are paragraphs, not `<h2>`s. The footer's business name and "Contact Information" are paragraphs, not an `<h4>` and `<h5>`.
+- **header.js:** the menu state is tracked directly, and the menu closes when the window crosses 800px in either direction (what it already did, by accident).
+- **processPhases.js:** each class is set from the state. The button labels come from `data-` attributes on [AboutProcess.astro](src/components/about/AboutProcess.astro).
+- **contactForm.js:** leftover `console.log` removed, variables renamed to full words.
+- **Contact function:** a request without an `Origin` header is refused.
+- **CSS:** `-webkit-backdrop-filter` comes before `backdrop-filter` with the same value; the misspelt `phone-iteractive…` class is fixed; 44 rules for classes that no longer exist are removed (252 lines).
+
+All were checked with the tools in [scripts/dev/](scripts/dev/): every text element on the affected pages is in the same place at 390, 768, 1280 and 1920px, and the interaction recordings match.
+
+---
+
 ## Before merging `AstroTrans` → `main`
 - [x] **Make.com: the old webhook.** The French contact form's HTML contained `action="https://hook.eu1.make.com/1sbn8f4m…"`. Billy deleted that webhook in Make long ago, when he realised it was exposed, so the address is dead. It is removed from the page on this branch; the live site's French contact page still shows it until the merge. The Netlify function uses a different webhook.
 - [x] Netlify builds the branch from [netlify.toml](netlify.toml) (Node 24, publish `dist`).
@@ -182,6 +187,7 @@ Headings are sometimes chosen for their look, not their meaning, which makes the
 - [x] `/about.html` → 301 → `/about`, and an unknown URL returns the 404 page.
 - [x] SEO compare of the branch deploy against `seo-baseline/live.json`: only the Cloudflare differences (email obfuscation and the managed `robots.txt`). This was run before the fixes above.
 - [x] On the branch deploy: an unknown address such as `/nope` shows the new English 404, and `/fr/nope` shows the French one. Both return status 404.
+- [ ] After pushing the 2026-11-23 clean-up commits: send the contact form once on the branch deploy, in each language (the function now refuses requests without an `Origin` header), and look at the FAQ, the Landes challenge buttons, the about page phases and the mobile menu.
 - [ ] Visual check on desktop and mobile: fonts, images, animations, sliders, mobile menu, cookie banner, language switch, the contact page footer.
 - [ ] Accept the cookie banner on the live site after merging and confirm in the browser's Network tab that Clarity and Google Analytics load, and that they don't load after "Deny".
 - [ ] Optional: remove the branch-deploy address from `allowedOrigins` in [contact.js](netlify/functions/contact.js) once testing is finished.

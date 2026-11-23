@@ -54,6 +54,7 @@ BASE=https://astrotrans--billy-nightingale-web-dev.netlify.app SIZE=1920,1080 no
 
 - `phone_expr.js`: which image the Landes phone shows at each scroll position.
 - `reveal_expr.js`: whether sections reveal, the photo loads and the fonts load.
+- `textbox_expr.js`: position, size and type styles of every element that contains text, without the tag name. Run it on both builds and `diff` the output to check that swapping one tag for another (an `<h4>` for a `<p>`) or editing the CSS did not move or restyle anything.
 
 ## Images: position, size and sharpness
 
