@@ -11,50 +11,44 @@ function validate(data) {
   return null
 }
 
-export async function handler(event) {
-  //   console.log(event)
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' }
-  }
+const json = (status, body) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  })
 
-  const allowedOrigins = new Set([
-    'https://billynightingale.com',
-    'https://www.billynightingale.com',
-    'http://localhost:8888', // netlify dev
-    'https://astrotrans--billy-nightingale-web-dev.netlify.app', // AstroTrans branch deploy (for testing)
-  ])
+const allowedOrigins = new Set([
+  'https://billynightingale.com',
+  'https://www.billynightingale.com',
+  'http://localhost:8888', // netlify dev
+  'https://astrotrans--billy-nightingale-web-dev.netlify.app', // AstroTrans branch deploy (for testing)
+])
+
+export default async function contact(request) {
+  if (request.method !== 'POST') {
+    return new Response('Method Not Allowed', { status: 405 })
+  }
 
   // Browsers send Origin on every POST, so a request without one does not
   // come from the form and is refused too.
-  const origin = event.headers.origin || event.headers.Origin
-  if (!allowedOrigins.has(origin)) {
-    return { statusCode: 403, body: 'Forbidden' }
+  if (!allowedOrigins.has(request.headers.get('origin'))) {
+    return new Response('Forbidden', { status: 403 })
   }
 
   const makeWebhookUrl = process.env.MAKE_FORM_API
   if (!makeWebhookUrl) {
-    return { statusCode: 500, body: 'Missing MAKE_FORM_API env var' }
+    return new Response('Missing MAKE_FORM_API env var', { status: 500 })
   }
 
   let data
   try {
-    data = JSON.parse(event.body || '{}')
+    data = JSON.parse((await request.text()) || '{}')
   } catch {
-    return {
-      statusCode: 400,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ok: false, error: 'Invalid JSON' }),
-    }
+    return json(400, { ok: false, error: 'Invalid JSON' })
   }
 
   const error = validate(data)
-  if (error) {
-    return {
-      statusCode: 400,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ok: false, error }),
-    }
-  }
+  if (error) return json(400, { ok: false, error })
 
   try {
     const res = await fetch(makeWebhookUrl, {
@@ -65,22 +59,26 @@ export async function handler(event) {
 
     if (!res.ok) {
       const text = await res.text().catch(() => '')
-      return {
-        statusCode: 502,
-        body: `Make webhook error: ${res.status} ${text}`,
-      }
+      return new Response(`Make webhook error: ${res.status} ${text}`, {
+        status: 502,
+      })
     }
 
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ok: true }),
-    }
+    return json(200, { ok: true })
   } catch (err) {
-    return {
-      statusCode: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ok: false, error: String(err) }),
-    }
+    return json(500, { ok: false, error: String(err) })
   }
+}
+
+// The form posts to /api/contact. Netlify refuses a visitor who sends more than
+// 5 requests in a minute (status 429) before the function runs. A rate limit
+// needs a path, and a function with a path is no longer served at
+// /.netlify/functions/contact.
+export const config = {
+  path: '/api/contact',
+  rateLimit: {
+    windowLimit: 5,
+    windowSize: 60,
+    aggregateBy: ['ip', 'domain'],
+  },
 }

@@ -77,17 +77,13 @@ Every page's sections are now components shared by the English and French pages,
 ### G. Code clean-up suggestions
 From a review of the code as it stood before the migration. Most of the list was done on 2026-11-23 (see "✅ Code clean-up" below). What is left:
 
-**1. Contact function: rate limiting** ([contact.js](netlify/functions/contact.js))
-- There is still no rate limiting. Netlify's rate-limiting rules need the newer function format (`export default` with a `config` export), so this means converting the function and testing it on a branch deploy with a real submission.
-- The branch-deploy address is still in `allowedOrigins`. Remove it after the merge (already on the merge checklist).
-
-**2. CSS** ([style.css](public/css/style.css), now 3,787 lines)
+**1. CSS** ([style.css](public/css/style.css), now 3,787 lines)
 - **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common.
 - **Broad global rules.** `img { width: 100% }` applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer.
 - **Four half-dead selectors.** `.package-card--compact`, `.button`, `.button-link` and `.button--primary` are not used anywhere, but each shares a rule with a class that is, so they were left.
 - **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the text-box, image-box and screenshot tests in [scripts/dev/](scripts/dev/).
 
-**3. Translation keys**
+**2. Translation keys**
 The keys in the section components were generated from the first words of the English text (`readyToDiscussYour`, `iCraftPremiumWeb`). They work, and each sits next to its text. There are about 400. Renaming them by role (`heading`, `intro`, `ctaQuote`) is only worth it in the files you edit often: [HomeProjects.astro](src/components/home/HomeProjects.astro), [ServicesPackages.astro](src/components/services/ServicesPackages.astro) and [ContactForm.astro](src/components/contact/ContactForm.astro) hold the most. The built HTML must be byte-for-byte identical afterwards.
 
 **Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
@@ -169,6 +165,7 @@ The keys in the section components were generated from the first words of the En
 - **Contact function:** a request without an `Origin` header is refused.
 - **CSS:** `-webkit-backdrop-filter` comes before `backdrop-filter` with the same value; the misspelt `phone-iteractive…` class is fixed; 44 rules for classes that no longer exist are removed (252 lines).
 
+- **Contact function rate limit:** [contact.js](netlify/functions/contact.js) is converted to Netlify's current function format, which is what allows a rate limit: more than 5 requests a minute from one visitor get status 429 before the function runs. A rate limit needs a path, so the form now posts to `/api/contact`, and `/.netlify/functions/contact` is no longer served. Netlify only checks the rule when it deploys: look for it in the deploy log under post-processing. The Free and Pro plans allow 2 and 5 such rules per site; this is the only one.
 - **Heading levels:** every page now has one `<h1>` first and no skipped levels.
   - Footer tagline: `<h3>` → `<h2>` (every page). Contact form title: `<h3>` → `<h2>`.
   - About page: the four journey headings and the four technology group names: `<h4>` → `<h3>`.

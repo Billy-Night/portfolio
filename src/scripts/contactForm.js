@@ -1,5 +1,5 @@
 // Contact form: show the fields that fit the chosen reason, and send the form to
-// /.netlify/functions/contact (which forwards it to Make).
+// /api/contact (the Netlify function in netlify/functions/contact.js, which forwards it to Make).
 // Used by src/components/contact/ContactForm.astro.
 
 const reasonField = document.querySelector('#reason')
@@ -84,7 +84,7 @@ if (contactForm) {
 
 
     try {
-      const response = await fetch('/.netlify/functions/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
