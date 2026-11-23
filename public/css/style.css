@@ -810,15 +810,15 @@ a {
   cursor: pointer;
   text-align: left;
   opacity: 45%;
+  /* The button sits inside the question's <h3> and takes its type styles */
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-transform: inherit;
 }
 
-.vertical-switcher-btn h3 {
+.vertical-switcher-question {
   font-size: var(--title-2);
-  line-height: var(--leading-title);
-  font-family: var(--subHeading);
-  letter-spacing: 4%;
-  color: var(--subHeading-colour);
-  text-transform: uppercase;
 }
 
 .vertical-switcher-btn.is-active {
