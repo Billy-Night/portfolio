@@ -1,0 +1,26 @@
+{
+  "name": "billynightingale-portfolio",
+  "version": "1.0.0",
+  "description": "This is my personal web development portfolio, where my most relevant work can be found.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "seo:compare": "python3 scripts/seo_snapshot.py compare seo-baseline/local.json dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Billy-Night/portfolio.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Billy-Night/portfolio/issues"
+  },
+  "homepage": "https://github.com/Billy-Night/portfolio#readme",
+  "dependencies": {
+    "astro": "^7.4.13"
+  },
+  "private": true
+}

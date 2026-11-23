@@ -1,0 +1,249 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import Photo from '../Photo.astro'
+import imgBillyNightingaleWebDesignerCapbreton from '../../assets/images/portraits/billy_nightingale_web_designer_capbreton.webp'
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    titleWord: "ABOUT",
+    introHeading: "A BRIEF INTRO",
+    intro1: "I’m Billy Nightingale, a web designer and developer based in Capbreton, which is part of the Landes region in France. I help small local businesses create modern, high-performing websites that are fast, search-engine friendly, and designed to support real business growth.",
+    intro2: "With a background in mechanical engineering and a strong focus on problem solving, I combine technical development with thoughtful design to build websites that are both functional and visually engaging. My work ranges from WordPress websites for local businesses to custom web applications and digital tools designed to simplify operations and improve online presence.",
+    ctaText: "Jump back and check out my projects or learn more",
+    learnMoreButton: "LEARN MORE",
+    projectsButton: "PROJECTS",
+  },
+  fr: {
+    titleWord: "À PROPOS",
+    introHeading: "BRÈVE INTRODUCTION",
+    intro1: "Je suis Billy Nightingale, web designer et développeur basé à Capbreton, dans les Landes, en France. J’aide les petites entreprises locales à créer des sites web modernes, performants, rapides, optimisés pour les moteurs de recherche et pensés pour soutenir leur croissance.",
+    intro2: "Avec une formation en ingénierie mécanique et une approche axée sur la résolution de problèmes, je combine développement technique et design réfléchi pour créer des sites web à la fois fonctionnels et visuellement engageants. Mon travail va des sites WordPress pour les entreprises locales aux applications web sur mesure et aux outils numériques conçus pour simplifier les opérations et améliorer la présence en ligne.",
+    ctaText: "Retournez voir mes projets ou découvrez-en plus",
+    learnMoreButton: "EN SAVOIR PLUS",
+    projectsButton: "PROJETS",
+  },
+}[lang]
+---
+
+<section class="hero__section" id="intro">
+  <svg
+    class="hero__horLine-top"
+    width="3000"
+    height="1"
+    viewBox="0 0 3000 1"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3000" y1="0.5" y2="0.5" />
+  </svg>
+  <svg
+    class="hero__verLine-left"
+    width="1"
+    height="3000"
+    viewBox="0 0 1 3000"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="0.5" y1="3000" x2="0.5" />
+  </svg>
+  <svg
+    class="hero__verLine-right"
+    width="1"
+    height="3000"
+    viewBox="0 0 1 3000"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="0.5" y1="3000" x2="0.5" />
+  </svg>
+  <svg
+    class="hero__horLine-bottom"
+    width="3000"
+    height="1"
+    viewBox="0 0 3000 1"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3000" y1="0.5" y2="0.5" />
+  </svg>
+  <div class="hero__full-container">
+    <div class="hero__title-container">
+      <div>
+        <span class="hero__title-word">{t.titleWord}</span>
+        <h1 class="hero__title">
+          <span class="hero__title-text">BILLY NIGHTINGALE</span>
+          <span class="type-measure">
+            <svg
+              class="measure"
+              width="14"
+              viewBox="0 0 14 302"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="rustic-metal-measure"
+                  x1="7"
+                  y1="0"
+                  x2="7"
+                  y2="302"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0%" stop-color="#75685b" />
+                  <stop offset="45%" stop-color="#353e43" />
+                  <stop offset="100%" stop-color="#1b2024" />
+                </linearGradient>
+              </defs>
+              <line
+                x1="7"
+                y1="1"
+                x2="7"
+                y2="301"
+                stroke="url(#rustic-metal-measure)"
+                stroke-width="1"
+              />
+
+              <line
+                x1="1"
+                y1="0.5"
+                x2="14"
+                y2="0.5"
+                stroke="#75685b"
+                stroke-width="1"
+              />
+
+              <line
+                x1="0"
+                y1="300.5"
+                x2="13"
+                y2="300.5"
+                stroke="#1b2024"
+                stroke-width="1"
+              />
+            </svg>
+            <span class="type-measure__label"></span>
+          </span>
+        </h1>
+      </div>
+    </div>
+    <div class="intro__img-container">
+      <svg
+        class="hero-small-circle"
+        width="900"
+        height="900"
+        viewBox="-20 -20 940 940"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="rustic-metal-hero-small"
+            x1="0"
+            y1="0"
+            x2="900"
+            y2="900"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="45%" stop-color="#75685b" />
+            <stop offset="75%" stop-color="#353e43" />
+            <stop offset="100%" stop-color="#1b2024" />
+          </linearGradient>
+        </defs>
+        <path
+          id="orbit-path-draw-1"
+          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+          fill="none"
+          stroke="url(#rustic-metal-hero-small)"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+        />
+        <path
+          id="orbitPath1"
+          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+        />
+        <circle id="orbitDot1" r="10"></circle>
+      </svg>
+      <div class="intro__image--frame">
+        <Photo
+          src={imgBillyNightingaleWebDesignerCapbreton}
+          alt="Portrait of Billy Nightingale looking at web design on laptop"
+          class="about-intro__image"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+    <div class="hero__text-container">
+      <svg
+        class="hero-big-circle"
+        width="900"
+        height="900"
+        viewBox="-20 -20 940 940"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="rustic-metal-hero-bg-circle"
+            x1="0"
+            y1="0"
+            x2="900"
+            y2="900"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="45%" stop-color="#75685b" />
+            <stop offset="75%" stop-color="#353e43" />
+            <stop offset="100%" stop-color="#1b2024" />
+          </linearGradient>
+        </defs>
+        <path
+          id="orbit-path-draw-2"
+          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+          fill="none"
+          stroke="url(#rustic-metal-hero-bg-circle)"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+        />
+        <path
+          id="orbitPath2"
+          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+        />
+        <circle id="orbitDot2" r="10"></circle>
+      </svg>
+      <div class="intro__text-cont">
+        <div class="about__intro__txt-cont">
+          <h2>{t.introHeading}</h2>
+          <p>
+            {t.intro1}
+          </p>
+          <p>
+            {t.intro2}
+          </p>
+          <p>{t.ctaText}</p>
+          <div class="cta-container">
+            <a
+              class="btn__primary btn__prim--light"
+              href="#about__timeline-section"
+              >{t.learnMoreButton}</a
+            >
+            <a class="btn__second btn__second--light" href={`${r('home')}#projects`}
+              >{t.projectsButton}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/heroTitle.js'
+</script>

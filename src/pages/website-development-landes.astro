@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import CookieBanner from '../components/CookieBanner.astro'
+import LandesHero from '../components/landes/LandesHero.astro'
+import LandesPhone from '../components/landes/LandesPhone.astro'
+import LandesMission from '../components/landes/LandesMission.astro'
+import LandesSeoResults from '../components/landes/LandesSeoResults.astro'
+import LandesApproach from '../components/landes/LandesApproach.astro'
+import LandesStudio from '../components/landes/LandesStudio.astro'
+import LandesChallenges from '../components/landes/LandesChallenges.astro'
+import LandesContactCta from '../components/landes/LandesContactCta.astro'
+import Footer from '../components/Footer.astro'
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.billynightingale.com/website-development-landes#service",
+    "name": "Website Development in Landes",
+    "description": "Professional website development services in Landes, including custom website design, SEO, performance optimisation and ongoing support.",
+    "provider": {
+      "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person",
+      "name": "Billy Nightingale"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Landes"
+    },
+    "url": "https://www.billynightingale.com/website-development-landes"
+  }
+]
+---
+
+<BaseLayout
+  lang="en"
+  route="landes"
+  title="Website Design & Development in Landes | Billy Nightingale"
+  description="Website design in Landes for businesses that want to stand out online. Fast, modern websites focused on performance, SEO and generating enquiries."
+  og={{
+    title: "Website Development in Landes | Billy Nightingale",
+    description: "Professional website development in Landes. Fast, modern websites designed to help local businesses improve visibility, attract customers and grow online.",
+  }}
+  twitter={{
+    title: "Website Development in Landes | Billy Nightingale",
+    description: "Professional website development in Landes. Fast, modern websites designed to help local businesses improve visibility, attract customers and grow online.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="en" route="landes" />
+  <main>
+    <CookieBanner lang="en" />
+    <LandesHero lang="en" />
+    <LandesPhone lang="en" />
+    <div class="gradient"></div>
+    <LandesMission lang="en" />
+    <div class="gradient"></div>
+    <LandesSeoResults lang="en" />
+    <div class="gradient"></div>
+    <LandesApproach lang="en" />
+    <LandesStudio lang="en" />
+    <LandesChallenges lang="en" />
+    <LandesContactCta lang="en" />
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

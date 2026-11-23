@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { person } from '../../data/schema'
+import Header from '../../components/Header.astro'
+import CookieBanner from '../../components/CookieBanner.astro'
+import ServicesHero from '../../components/services/ServicesHero.astro'
+import ServicesIntro from '../../components/services/ServicesIntro.astro'
+import ServicesMain from '../../components/services/ServicesMain.astro'
+import ServicesPerformance from '../../components/services/ServicesPerformance.astro'
+import ServicesProjectManagement from '../../components/services/ServicesProjectManagement.astro'
+import ServicesPackages from '../../components/services/ServicesPackages.astro'
+import ServicesContactCta from '../../components/services/ServicesContactCta.astro'
+import Footer from '../../components/Footer.astro'
+
+const jsonLd = [
+  person('fr'),
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.billynightingale.com/fr/services#service",
+    "name": "Services de web design, développement web et SEO",
+    "description": "Services professionnels de création de sites web, développement web et référencement SEO pour les entreprises locales.",
+    "serviceType": [
+      "Web design",
+      "Développement web",
+      "SEO"
+    ],
+    "provider": {
+      "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person"
+    },
+    "areaServed": [
+      "Capbreton",
+      "Hossegor",
+      "Landes",
+      "Pays Basque"
+    ],
+    "url": "https://www.billynightingale.com/fr/services"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.billynightingale.com/fr/services#webpage",
+    "url": "https://www.billynightingale.com/fr/services",
+    "name": "Services | Billy Nightingale",
+    "inLanguage": "fr-FR",
+    "description": "Services de web design, développement web et SEO à Capbreton, Hossegor, dans les Landes et le Pays Basque.",
+    "about": {
+      "@id": "https://www.billynightingale.com/fr/services#service"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+      "width": 1200,
+      "height": 600
+    }
+  }
+]
+---
+
+<BaseLayout
+  lang="fr"
+  route="services"
+  title="Services de création de sites web | Billy Nightingale"
+  description="Services de web design, développement web et SEO à Capbreton, Hossegor et Landes. J’aide les entreprises à créer des sites web modernes et performants."
+  og={{
+    title: "Billy Nightingale | Web design, web dévelopment & SEO services",
+    description: "Services de web design, développement web et SEO à Capbreton, Hossegor et Landes. J’aide les entreprises à créer des sites web modernes et performants. Demandez un devis ou prenez contact.",
+  }}
+  twitter={{
+    title: "Billy Nightingale | Services de web design, web development & SEO",
+    description: "Services de web design, développement web et SEO à Capbreton, Hossegor et Landes. J’aide les entreprises à créer des sites web modernes et performants. Demandez un devis ou prenez contact.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="fr" route="services" />
+  <main>
+    <CookieBanner lang="fr" />
+    <ServicesHero lang="fr" />
+    <ServicesIntro lang="fr" />
+    <div class="gradient"></div>
+    <ServicesMain lang="fr" />
+    <div class="gradient"></div>
+    <ServicesPerformance lang="fr" />
+    <div class="gradient"></div>
+    <ServicesProjectManagement lang="fr" />
+    <div class="gradient"></div>
+    <ServicesPackages lang="fr" />
+    <div class="gradient"></div>
+    <ServicesContactCta lang="fr" />
+    <div class="gradient"></div>
+  </main>
+  <Footer lang="fr" />
+</BaseLayout>

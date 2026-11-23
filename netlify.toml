@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  # Astro 7 requires Node >= 22.23.4; match the version used locally
+  NODE_VERSION = "24"

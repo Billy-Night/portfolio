@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { person } from '../../data/schema'
+import Header from '../../components/Header.astro'
+import CookieBanner from '../../components/CookieBanner.astro'
+import HomeHero from '../../components/home/HomeHero.astro'
+import HomeServices from '../../components/home/HomeServices.astro'
+import HomeProjects from '../../components/home/HomeProjects.astro'
+import HomeProcess from '../../components/home/HomeProcess.astro'
+import HomeReviews from '../../components/home/HomeReviews.astro'
+import HomeContact from '../../components/home/HomeContact.astro'
+import HomeFaq from '../../components/home/HomeFaq.astro'
+import Footer from '../../components/Footer.astro'
+
+const jsonLd = [
+  person('fr'),
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Création de Site Web, Web Design, Développement Web, SEO",
+    "description": "Je propose des services de web design, de création de sites web et d'optimisation SEO pour les entreprises locales à Capbreton, Hossegor, Landes et Pays Basque.",
+    "provider": {
+      "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person",
+      "name": "Billy Nightingale",
+      "url": "https://www.billynightingale.com/fr/"
+    },
+    "areaServed": [
+      "Capbreton",
+      "Hossegor",
+      "Landes",
+      "Pays Basque"
+    ]
+  }
+]
+---
+
+<BaseLayout
+  lang="fr"
+  route="home"
+  title="Web Designer & Développeur Web à Capbreton | Billy Nightingale"
+  description="Création de site web, web design, développement web et SEO à Capbreton dans les Landes. Sites modernes et performants pour les entreprises locales."
+  og={{
+    title: "Billy Nightingale | Web Designer & Développeur Web",
+    description: "Création de site web, web design, développement web et SEO à Capbreton dans les Landes. Sites modernes et performants pour les entreprises locales.",
+  }}
+  twitter={{
+    title: "Billy Nightingale | Web Designer & Développeur Web",
+    description: "Création de site web, web design, développement web et SEO à Capbreton dans les Landes. Sites modernes et performants pour les entreprises locales.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="fr" route="home" />
+  <main>
+    <CookieBanner lang="fr" />
+    <HomeHero lang="fr" />
+    <HomeServices lang="fr" />
+    <div class="gradient"></div>
+    <HomeProjects lang="fr" />
+    <HomeProcess lang="fr" />
+    <div class="gradient"></div>
+    <HomeReviews lang="fr" />
+    <div class="gradient"></div>
+    <HomeContact lang="fr" />
+    <div class="gradient"></div>
+    <HomeFaq lang="fr" />
+  </main>
+  <div class="gradient"></div>
+  <Footer lang="fr" />
+</BaseLayout>

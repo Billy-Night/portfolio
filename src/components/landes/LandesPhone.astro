@@ -1,0 +1,104 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+import performance from '../../assets/images/landes_phone/phone_web_performance.webp'
+import seo from '../../assets/images/landes_phone/phone_web_seo.webp'
+import solutions from '../../assets/images/landes_phone/phone_web_solutions.webp'
+import performanceFr from '../../assets/images/landes_phone/phone_web_performance_fr.webp'
+import seoFr from '../../assets/images/landes_phone/phone_web_seo_fr.webp'
+import solutionsFr from '../../assets/images/landes_phone/phone_web_solutions_fr.webp'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+// The three phone screens, in the order the section scrolls through them.
+// src/scripts/landesPhone.js swaps the image, reading the URLs from data-screens.
+// The original files are used as they are (800px wide, already the right size).
+const screens = { en: [performance, seo, solutions], fr: [performanceFr, seoFr, solutionsFr] }[lang]
+
+const t = {
+  en: {
+    phoneAlt: "Phone containing screens that illustrate website performance, SEO optimisation and solving business issues with technology",
+    performanceHeading: "Fast websites create better first impressions",
+    performanceText1: "Visitors expect websites to load quickly, especially on mobile devices.",
+    performanceText2: "Every website I build is optimised for performance, helping local businesses provide a smoother experience, improve search visibility and convert more visitors into customers.",
+    seoHeading: "Helping local businesses get found online",
+    seoText1: "A beautiful website is only valuable if people can find it.",
+    seoText2: "I work with businesses across the Landes region to improve visibility through technical SEO, local search optimisation and a strong website foundation.",
+    challengesHeading: "Every business has different challenges",
+    challengesText1: "Some businesses need more reservations, others want to sell products online, improve visibility or modernise their customer experience.",
+    challengesText2: "My approach is to understand the problem first, then design and build a solution that supports your business goals.",
+  },
+  fr: {
+    phoneAlt: "Smartphone affichant les performances d’un site web optimisé avec d’excellents scores de vitesse et de référencement.",
+    performanceHeading: "Des sites rapides pour une meilleure première impression",
+    performanceText1: "Les visiteurs s’attendent à ce qu’un site web charge rapidement, particulièrement sur mobile.",
+    performanceText2: "Chaque site que je crée est optimisé pour la performance afin d’offrir une expérience fluide, d’améliorer votre visibilité sur Google et de transformer davantage de visiteurs en clients.",
+    seoHeading: "Aider les entreprises landaises à être trouvées en ligne",
+    seoText1: "Un beau site internet n’a de valeur que s’il est visible.",
+    seoText2: "J’accompagne les entreprises des Landes dans l’amélioration de leur présence en ligne grâce au référencement naturel (SEO), à l’optimisation locale et à des fondations techniques solides.",
+    challengesHeading: "Chaque entreprise a ses propres défis",
+    challengesText1: "Certaines entreprises ont besoin de davantage de réservations, d’autres souhaitent vendre en ligne, gagner en visibilité ou moderniser leur expérience client.",
+    challengesText2: "Mon approche consiste à comprendre vos objectifs avant de concevoir et développer une solution adaptée à votre activité.",
+  },
+}[lang]
+---
+
+<section class="section-pad">
+  <div class="static-phone-channel">
+    <div class="phone-interactive-content-container">
+      <div class="static-phone-container">
+        <img
+          class="static-phone-img"
+          src={screens[0].src}
+          width={screens[0].width}
+          height={screens[0].height}
+          alt={t.phoneAlt}
+          data-screens={JSON.stringify(screens.map((screen) => screen.src))}
+        />
+      </div>
+      <div class="phone-text-container">
+        <div class="phone-text-content-cont max-txt-width">
+          <h2 class="static-phone-title">
+            {t.performanceHeading}
+          </h2>
+          <p class="max-txt-width">
+            {t.performanceText1}
+          </p>
+          <p class="max-txt-width">
+            {t.performanceText2}
+          </p>
+        </div>
+        <div class="phone-text-content-cont max-txt-width">
+          <h2 class="static-phone-title">
+            {t.seoHeading}
+          </h2>
+          <p class="max-txt-width">
+            {t.seoText1}
+          </p>
+          <p class="max-txt-width">
+            {t.seoText2}
+          </p>
+        </div>
+        <div class="phone-text-content-cont max-txt-width">
+          <h2 class="static-phone-title">
+            {t.challengesHeading}
+          </h2>
+          <p class="max-txt-width">
+            {t.challengesText1}
+          </p>
+          <p class="max-txt-width">
+            {t.challengesText2}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/landesPhone.js'
+</script>

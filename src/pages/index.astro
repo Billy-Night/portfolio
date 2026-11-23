@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { person } from '../data/schema'
+import Header from '../components/Header.astro'
+import CookieBanner from '../components/CookieBanner.astro'
+import HomeHero from '../components/home/HomeHero.astro'
+import HomeServices from '../components/home/HomeServices.astro'
+import HomeProjects from '../components/home/HomeProjects.astro'
+import HomeProcess from '../components/home/HomeProcess.astro'
+import HomeReviews from '../components/home/HomeReviews.astro'
+import HomeContact from '../components/home/HomeContact.astro'
+import HomeFaq from '../components/home/HomeFaq.astro'
+import Footer from '../components/Footer.astro'
+
+const jsonLd = [
+  person('en'),
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web design, website creation and SEO services",
+    "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
+    "provider": {
+      "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person",
+      "name": "Billy Nightingale",
+      "url": "https://www.billynightingale.com/"
+    },
+    "areaServed": [
+      "Capbreton",
+      "Hossegor",
+      "Landes",
+      "Pays Basque"
+    ]
+  }
+]
+---
+
+<BaseLayout
+  lang="en"
+  route="home"
+  title="Web Designer & Developer in Capbreton | Billy Nightingale"
+  description="Web designer and developer in Capbreton creating modern, fast, SEO-optimised websites for businesses in Landes and the Pays Basque."
+  og={{
+    title: "Billy Nightingale | Web Designer and Developer Portfolio",
+    description: "Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Explore modern projects, bio, and contact details.",
+  }}
+  twitter={{
+    title: "Billy Nightingale | Web Designer & Developer Portfolio",
+    description: "Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Explore modern projects, bio, and contact details.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="en" route="home" />
+  <main>
+    <CookieBanner lang="en" />
+    <HomeHero lang="en" />
+    <HomeServices lang="en" />
+    <div class="gradient"></div>
+    <HomeProjects lang="en" />
+    <HomeProcess lang="en" />
+    <div class="gradient"></div>
+    <HomeReviews lang="en" />
+    <div class="gradient"></div>
+    <HomeContact lang="en" />
+    <div class="gradient"></div>
+    <HomeFaq lang="en" />
+  </main>
+  <div class="gradient"></div>
+  <Footer lang="en" />
+</BaseLayout>

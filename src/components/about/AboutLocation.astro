@@ -1,0 +1,92 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import Photo from '../Photo.astro'
+import imgWebDesignCapbretonHossegor from '../../assets/images/about_wid/web_design_capbreton_hossegor.webp'
+import imgBillyNightingaleSnowboardLaMongie from '../../assets/images/about_wid/billy_nightingale_snowboard_la_mongie.webp'
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    locationHeading: "LOCATION",
+    locationText1: "I’m located in the beautiful town of Capbreton, which is part of the Landes region in France. Primarily, I work with local clients like restaurants, healthcare providers, beverage produces and local businesses. But I am of course available for remote work.",
+    locationText2: "I take a lot of care in producing high quality work, which includes SEO optimised website's, focused on location, checkout some of my top ranking projects",
+    personalHeading: "PERSONAL",
+    interestsHeading: "MY INTERESTS",
+    interestsText1: "When I’m not working on client projects, I’m usually programming and building tools or applications.",
+    interestsText2: "In my leisure time I’m very social and active, my favourite sports are snowboarding and surfing, I’ve travelled all over the world practising these sports.",
+    interestsText3: "I'm also a qualified personal trainer and a snowboard instructor.",
+  },
+  fr: {
+    locationHeading: "LOCALISATION",
+    locationText1: "Je suis basé dans la belle ville de Capbreton, dans les Landes, en France. Je travaille principalement avec des clients locaux comme des restaurants, des professionnels de santé, des producteurs de boissons et des entreprises locales. Je suis bien sûr également disponible pour des projets à distance.",
+    locationText2: "J’accorde beaucoup d’importance à la qualité de mon travail, notamment à la création de sites optimisés pour le SEO local. Découvrez quelques-uns de mes projets les mieux positionnés.",
+    personalHeading: "PERSONNEL",
+    interestsHeading: "MES CENTRES D’INTÉRÊT",
+    interestsText1: "Quand je ne travaille pas sur des projets clients, je programme généralement et je développe des outils ou des applications.",
+    interestsText2: "Pendant mon temps libre, je suis très actif et sociable. Mes sports préférés sont le snowboard et le surf, que j’ai pratiqués dans plusieurs pays à travers le monde.",
+    interestsText3: "Je suis également coach sportif diplômé et moniteur de snowboard.",
+  },
+}[lang]
+---
+
+<section class="section-pad">
+  <div class="abt-loc__heading-cont">
+    <h2>{t.locationHeading}</h2>
+  </div>
+  <div class="layout-two-column content-cont-marg-right">
+    <div class="layout-two-column-img img-overlay-blur-left">
+      <Photo
+        src={imgWebDesignCapbretonHossegor}
+        alt="Capbreton - location of Billy Nightingale, web designer and developer"
+        class="img-rad"
+        loading="lazy"
+      />
+    </div>
+    <div
+      class="layout-two-column-txt txt-normal-flow glass__back loc-mob-margin-left"
+    >
+      <h3>CAPBRETON & HOSSEGOR</h3>
+      <p class="max-txt-width">
+        {t.locationText1}
+      </p>
+      <p class="max-txt-width">
+        {t.locationText2}
+      </p>
+    </div>
+  </div>
+  <div class="abt-per__heading-cont per__title-marg">
+    <h2>{t.personalHeading}</h2>
+  </div>
+  <div
+    class="layout-two-column perso__content-reversed content-cont-marg-left"
+  >
+    <div class="layout-two-column-img img-overlay-blur-right">
+      <Photo
+        src={imgBillyNightingaleSnowboardLaMongie}
+        alt="Billy Nightingale web designer and developer snowboarding in the La Mongie"
+        class="img-rad img-reversed"
+        loading="lazy"
+      />
+    </div>
+    <div
+      class="layout-two-column-txt glass__back loc-mob-margin-right txt-reversed per-mob-margin-right"
+    >
+      <h3>{t.interestsHeading}</h3>
+      <p class="max-txt-width per__txt-mar">
+        {t.interestsText1}
+      </p>
+      <p class="max-txt-width per__txt-mar">
+        {t.interestsText2}
+      </p>
+      <p class="max-txt-width per__txt-mar">
+        {t.interestsText3}
+      </p>
+    </div>
+  </div>
+</section>

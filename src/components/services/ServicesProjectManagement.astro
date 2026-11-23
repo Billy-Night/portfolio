@@ -1,0 +1,45 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    heading: "Project Management",
+    discoveryHeading: "Discovery & Goals",
+    designHeading: "Design & Structure",
+    developmentHeading: "Development & Testing",
+    launchHeading: "Launch & Support",
+    intro: "A clear, collaborative process from first call to launch.",
+  },
+  fr: {
+    heading: "Gestion de projet",
+    discoveryHeading: "Découverte et objectifs",
+    designHeading: "Design et structure",
+    developmentHeading: "Développement et tests",
+    launchHeading: "Mise en ligne et support",
+    intro: "Un processus clair et collaboratif, du premier échange à la mise en ligne.",
+  },
+}[lang]
+---
+
+<section
+  class="sections sec-project-management"
+  id="services__page-sec-project-management"
+>
+  <h2 class="section-sub-headings">{t.heading}</h2>
+  <div class="project-management-container">
+    <div class="task-card"><h3>{t.discoveryHeading}</h3></div>
+    <div class="task-card"><h3>{t.designHeading}</h3></div>
+    <div class="task-card"><h3>{t.developmentHeading}</h3></div>
+    <div class="task-card"><h3>{t.launchHeading}</h3></div>
+  </div>
+  <p class="project-management-hook">
+    {t.intro}
+  </p>
+</section>

@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { person } from '../data/schema'
+import Header from '../components/Header.astro'
+import CookieBanner from '../components/CookieBanner.astro'
+import ServicesHero from '../components/services/ServicesHero.astro'
+import ServicesIntro from '../components/services/ServicesIntro.astro'
+import ServicesMain from '../components/services/ServicesMain.astro'
+import ServicesPerformance from '../components/services/ServicesPerformance.astro'
+import ServicesProjectManagement from '../components/services/ServicesProjectManagement.astro'
+import ServicesPackages from '../components/services/ServicesPackages.astro'
+import ServicesContactCta from '../components/services/ServicesContactCta.astro'
+import Footer from '../components/Footer.astro'
+
+const jsonLd = [
+  person('en'),
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.billynightingale.com/services#service",
+    "name": "Web design, web development and SEO services",
+    "serviceType": [
+      "Web design",
+      "Web development",
+      "SEO"
+    ],
+    "provider": {
+      "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person"
+    },
+    "areaServed": [
+      "Capbreton",
+      "Hossegor",
+      "Landes",
+      "Pays Basque"
+    ],
+    "url": "https://www.billynightingale.com/services"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.billynightingale.com/services#webpage",
+    "url": "https://www.billynightingale.com/services",
+    "name": "Services | Billy Nightingale",
+    "inLanguage": "en-GB",
+    "description": "Web design, web development and SEO services in Capbreton, Hossegor, Landes and the Pays Basque.",
+    "about": {
+      "@id": "https://www.billynightingale.com/services#service"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+      "width": 1200,
+      "height": 600
+    }
+  }
+]
+---
+
+<BaseLayout
+  lang="en"
+  route="services"
+  title="Billy Nightingale | Services"
+  description="Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch."
+  og={{
+    title: "Billy Nightingale | Web design, web development & SEO services",
+    description: "Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch.",
+  }}
+  twitter={{
+    title: "Billy Nightingale | Web design, web development & SEO services",
+    description: "Web design, development and SEO services in Capbreton. Helping small businesses build fast, modern websites. Request a quote or get in touch.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="en" route="services" />
+  <main>
+    <CookieBanner lang="en" />
+    <ServicesHero lang="en" />
+    <ServicesIntro lang="en" />
+    <div class="gradient"></div>
+    <ServicesMain lang="en" />
+    <div class="gradient"></div>
+    <ServicesPerformance lang="en" />
+    <div class="gradient"></div>
+    <ServicesProjectManagement lang="en" />
+    <div class="gradient"></div>
+    <ServicesPackages lang="en" />
+    <div class="gradient"></div>
+    <ServicesContactCta lang="en" />
+    <div class="gradient"></div>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { person } from '../../data/schema'
+import Header from '../../components/Header.astro'
+import CookieBanner from '../../components/CookieBanner.astro'
+import Footer from '../../components/Footer.astro'
+import ContactIntro from '../../components/contact/ContactIntro.astro'
+import ContactForm from '../../components/contact/ContactForm.astro'
+
+const jsonLd = [
+  person('fr')
+]
+---
+
+<BaseLayout
+  lang="fr"
+  route="contact"
+  title="Contact | Billy Nightingale, Web Designer à Capbreton"
+  description="Contactez Billy Nightingale, développeur web et designer web à Capbreton. Discutons de votre site moderne, rapide et optimisé SEO."
+  og={{
+    title: "Contactez Billy Nightingale | Développeur Web Freelance à Capbreton",
+    description: "Contactez Billy Nightingale, développeur web et designer web basé à Capbreton. Envoyez un message ou démarrez un nouveau projet via le formulaire de contact.",
+  }}
+  twitter={{
+    title: "Contactez Billy Nightingale | Développeur Web Freelance à Capbreton",
+    description: "Envoyez un message ou discutez de votre projet web avec Billy Nightingale, développeur web et designer web à Capbreton.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="fr" route="contact" />
+  <main>
+    <CookieBanner lang="fr" />
+    <ContactIntro lang="fr" />
+    <ContactForm lang="fr" />
+    <div class="gradient"></div>
+  </main>
+  <Footer lang="fr" />
+</BaseLayout>

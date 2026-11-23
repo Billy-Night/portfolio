@@ -1,0 +1,113 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import Photo from '../Photo.astro'
+import imgMonkeyMoodSeoMockup from '../../assets/images/landes_seo_mockups/monkey_mood_seo_mockup.webp'
+import imgPacificCoastCafeSeoMockup from '../../assets/images/landes_seo_mockups/Pacific_Coast_cafe_seo_mockup.webp'
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    heading: "Top ranking sites in Landes",
+    intro: "My proven local SEO strategies",
+    monkeyMoodImageAlt: "Monkey Mood, one of Billy Nightingales clients ranking high in Google Search results, with excellent SEO",
+    monkeyMoodHeading: "Monkey Mood restaurant",
+    monkeyMoodText1: "Monkey Mood is a local restaurant which focuses on Indonesian vegan cuisine.",
+    monkeyMoodText2: "They are a top ranking website in Google search results for both their location in Capbreton and Bordeaux.",
+    pacificCoastImageAlt: "Pacific Coast Cafe one of Billy Nightingales clients ranking high in Google search results",
+    pacificCoastHeading: "Pacific Coast Cafe",
+    pacificCoastText1: "Pacific Coast Cafe is a local cafe in the centre of Hossegor, I worked with them to improve their site’s performance and SEO, while integrating an online shop",
+    pacificCoastText2: "The results are easy to see as the website is 20% faster and also performs excellently in Google search results",
+    projectsButton: "PROJECTS",
+  },
+  fr: {
+    heading: "Des sites bien positionnés dans les Landes",
+    intro: "Des stratégies SEO locales qui donnent des résultats",
+    monkeyMoodImageAlt: "Monkey Mood, l’un des clients de Billy Nightingale, bien positionné dans les résultats de recherche Google grâce à un excellent référencement naturel (SEO).",
+    monkeyMoodHeading: "Restaurant Monkey Mood",
+    monkeyMoodText1: "Monkey Mood est un restaurant local spécialisé dans la cuisine végétale indonésienne.",
+    monkeyMoodText2: "Le site bénéficie d’un excellent positionnement sur Google pour ses deux établissements à Capbreton et Bordeaux.",
+    pacificCoastImageAlt: "Pacific Coast Café, client de Billy Nightingale, affichant un excellent positionnement dans les résultats de recherche Google.",
+    pacificCoastHeading: "Pacific Coast Café",
+    pacificCoastText1: "Pacific Coast Café est un café situé au cœur d’Hossegor. J’ai travaillé avec l’équipe afin d’améliorer les performances du site, son référencement naturel et d’intégrer une boutique en ligne.",
+    pacificCoastText2: "Les résultats sont visibles : le site est environ 20 % plus rapide et obtient d’excellentes performances dans les résultats de recherche Google.",
+    projectsButton: "PROJETS",
+  },
+}[lang]
+---
+
+<section class="wid__sec">
+  <div class="wid__heading-container">
+    <h2>{t.heading}</h2>
+    <p>{t.intro}</p>
+  </div>
+  <div class="wid__content-container">
+    <div class="row">
+      <div class="wid__img-cont">
+        <Photo
+          src={imgMonkeyMoodSeoMockup}
+          alt={t.monkeyMoodImageAlt}
+          loading="lazy"
+        />
+      </div>
+      <div class="wid__text-cont txt-r">
+        <div class="wid__text box__shadow">
+          <div class="max-txt-width">
+            <h3>{t.monkeyMoodHeading}</h3>
+            <p>
+              {t.monkeyMoodText1}
+            </p>
+            <p>
+              {t.monkeyMoodText2}
+            </p>
+            <div class="wid__content_cta">
+              <a class="btn__primary btn__prim--dark" href={r('services')}
+                >SERVICES</a
+              >
+              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+                >{t.projectsButton}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wid__img-cont-right right">
+        <Photo
+          src={imgPacificCoastCafeSeoMockup}
+          alt={t.pacificCoastImageAlt}
+          loading="lazy"
+        />
+      </div>
+      <div class="wid__text-cont txt-l">
+        <div class="wid__text box__shadow">
+          <div class="max-txt-width">
+            <h3>{t.pacificCoastHeading}</h3>
+            <p>
+              {t.pacificCoastText1}
+            </p>
+            <p>
+              {t.pacificCoastText2}
+            </p>
+            <div class="wid__content_cta">
+              <a class="btn__primary btn__prim--dark" href={r('services')}
+                >SERVICES</a
+              >
+              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+                >{t.projectsButton}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+---
+// Shared <html> + <head> for every standard page.
+// Canonical, hreflang, og:url and twitter:url are all derived from `route`
+// via src/i18n/routes.ts. The page body goes in the default slot.
+import Analytics from '../components/Analytics.astro'
+import { assetUrl } from '../utils/assetVersion'
+import { SITE, routes, url, type Lang, type RouteKey } from '../i18n/routes'
+
+interface Props {
+  lang: Lang
+  /**
+   * The page's entry in src/i18n/routes.ts. Omit it only for pages with no
+   * fixed address (the 404 pages): they get no canonical, hreflang or og:url.
+   */
+  route?: RouteKey
+  title: string
+  description: string
+  /** Social share title/description. og defaults to the page title and description; twitter defaults to og. */
+  og?: { title: string; description: string }
+  twitter?: { title: string; description: string }
+  /** JSON-LD objects, each rendered in its own <script type="application/ld+json"> */
+  jsonLd?: object[]
+  ogImage?: string
+  robots?: string
+}
+
+const {
+  lang,
+  route,
+  title,
+  description,
+  jsonLd = [],
+  ogImage = `${SITE}/assets/meta_preview1200x600.webp`,
+  robots = 'index, follow',
+} = Astro.props
+
+const canonical = route && url(route, lang)
+const og = Astro.props.og ?? { title, description }
+const twitter = Astro.props.twitter ?? og
+const locale = { en: 'en_GB', fr: 'fr_FR' }
+const ogImageAlt = {
+  en: 'Billy Nightingale – Web design, development & SEO services',
+  fr: 'Billy Nightingale – Service de Web design, développement & SEO',
+}[lang]
+const altLocale = lang === 'en' ? locale.fr : locale.en
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta name="robots" content={robots} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="author" content="Billy Nightingale" />
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+
+    {
+      route && (
+        <Fragment>
+          <link rel="canonical" href={canonical} />
+          <link rel="alternate" hreflang="en" href={SITE + routes[route].en} />
+          <link rel="alternate" hreflang="fr" href={SITE + routes[route].fr} />
+        </Fragment>
+      )
+    }
+
+    <link
+      rel="preload"
+      href="/assets/fonts/MangoGrotesque-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon-n-v1-48.png" sizes="48x48" />
+    <link rel="icon" href="/favicon-n-v1-32.png" sizes="32x32" />
+    <link rel="icon" href="/favicon-n-v1-16.png" sizes="16x16" />
+    <link rel="icon" href="/favicon-n-v1-ico.ico" sizes="any" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
+
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Billy Nightingale" />
+    <meta property="og:title" content={og.title} />
+    <meta property="og:description" content={og.description} />
+    <meta property="og:locale" content={locale[lang]} />
+    <meta property="og:locale:alternate" content={altLocale} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {canonical && <meta name="twitter:url" content={canonical} />}
+    <meta name="twitter:title" content={twitter.title} />
+    <meta name="twitter:description" content={twitter.description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Page-specific head tags: <Fragment slot="head">...</Fragment> -->
+    <slot name="head" />
+    <link rel="stylesheet" href={assetUrl('/css/style.css')} />
+
+    {
+      jsonLd.map((data) => (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify(data)}
+        />
+      ))
+    }
+
+    <Analytics />
+  </head>
+  <body>
+    <slot />
+    {/* Site-wide script. Each component loads its own script; this one applies to every page. */}
+    <script>
+      import '../scripts/revealSections.js'
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    heading: "Main Services",
+    subheading: "Are you ready to build your dream digital experience ?",
+    designText: "Thoughtful, user-focused design that reflects your brand and makes it easy for visitors to take action.",
+    developmentHeading: "Web Development",
+    developmentText: "Clean, fast, and reliable websites built to scale, maintain, and perform long-term.",
+    seoText: "Solid technical and on-page foundations so your site can be found by the right people.",
+  },
+  fr: {
+    heading: "Services principaux",
+    subheading: "Prêt à créer une expérience digitale à la hauteur de vos ambitions ?",
+    designText: "Un design réfléchi et centré sur l’utilisateur, qui reflète votre marque et facilite le passage à l’action.",
+    developmentHeading: "Développement Web",
+    developmentText: "Des sites web propres, rapides et fiables, conçus pour évoluer, être maintenus facilement et offrir des performances durables.",
+    seoText: "Des bases techniques et éditoriales solides pour que votre site soit visible auprès des bonnes personnes.",
+  },
+}[lang]
+---
+
+<section
+  class="sections sec-services-main"
+  id="services-page__main-services"
+>
+  <div class="services-main-title">
+    <h2 class="section-sub-headings">{t.heading}</h2>
+    <h3>{t.subheading}</h3>
+  </div>
+  <div class="services-main-blocks">
+    <div class="service-card">
+      <h2>Web Design</h2>
+      <p class="max-txt-width">
+        {t.designText}
+      </p>
+    </div>
+    <div class="service-card">
+      <h2>{t.developmentHeading}</h2>
+      <p class="max-txt-width">
+        {t.developmentText}
+      </p>
+    </div>
+    <div class="service-card">
+      <h2>SEO</h2>
+      {/* The French page limits this paragraph's width; the English page does not */}
+      <p class={lang === 'fr' ? 'max-txt-width' : undefined}>
+        {t.seoText}
+      </p>
+    </div>
+  </div>
+</section>

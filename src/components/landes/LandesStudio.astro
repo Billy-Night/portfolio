@@ -1,0 +1,56 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import Photo from '../Photo.astro'
+import imgBillyNightingaleWebDesignerRendezVousAvecPacificCoastCafeHossegor from '../../assets/images/client_meetings/billy_nightingale_web_designer_rendez_vous_avec_pacific_coast_cafe_hossegor.webp'
+import type { Lang } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const t = {
+  en: {
+    imageAlt: "Billy Nightingale web designer having a meeting with clients in Hossegor",
+    heading: "Studio in Landes",
+    intro: "My handmade custom built studio is based in Capbreton, Landes, France.",
+    text1: "I believe good websites are built through attention to detail, clear communication and long-term thinking. The studio was created as a dedicated space for focused design and development work.",
+    text2: "Being based in Capbreton allows me to understand local business and the local market, which is very important when designing and creating websites and systems for clients.",
+  },
+  fr: {
+    imageAlt: "Billy Nightingale, concepteur et développeur web, en rendez-vous avec des clients à Hossegor",
+    heading: "Studio web dans les Landes",
+    intro: "Mon studio de création web est basé à Capbreton, dans les Landes.",
+    text1: "Je suis convaincu que les meilleurs sites web naissent de l’attention portée aux détails, d’une communication claire et d’une vision à long terme. Ce studio a été conçu comme un espace dédié à la création et au développement de solutions digitales de qualité.",
+    text2: "Être implanté à Capbreton me permet de comprendre les entreprises locales, leur marché et leurs clients, un atout essentiel pour concevoir des sites web efficaces et adaptés à leur environnement.",
+  },
+}[lang]
+---
+
+<section class="section-pad">
+  <div class="layout-two-column content-cont-marg-right">
+    <div class="layout-two-column-img img-overlay-blur-left">
+      <Photo
+        src={imgBillyNightingaleWebDesignerRendezVousAvecPacificCoastCafeHossegor}
+        alt={t.imageAlt}
+        class="img-rad"
+        loading="lazy"
+      />
+    </div>
+    <div
+      class="layout-two-column-txt contact__txt-normal-flow glass__back loc-mob-margin-left"
+    >
+      <h2>{t.heading}</h2>
+      <p>
+        {t.intro}
+      </p>
+      <p class="max-txt-width">
+        {t.text1}
+      </p>
+      <p class="max-txt-width">
+        {t.text2}
+      </p>
+    </div>
+  </div>
+</section>

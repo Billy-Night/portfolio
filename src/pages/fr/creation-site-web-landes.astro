@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Header from '../../components/Header.astro'
+import CookieBanner from '../../components/CookieBanner.astro'
+import LandesHero from '../../components/landes/LandesHero.astro'
+import LandesPhone from '../../components/landes/LandesPhone.astro'
+import LandesMission from '../../components/landes/LandesMission.astro'
+import LandesSeoResults from '../../components/landes/LandesSeoResults.astro'
+import LandesApproach from '../../components/landes/LandesApproach.astro'
+import LandesStudio from '../../components/landes/LandesStudio.astro'
+import LandesChallenges from '../../components/landes/LandesChallenges.astro'
+import LandesContactCta from '../../components/landes/LandesContactCta.astro'
+import Footer from '../../components/Footer.astro'
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.billynightingale.com/fr/creation-site-web-landes#service",
+    "name": "Création de site internet dans les Landes",
+    "description": "Services professionnels de création de sites internet dans les Landes, incluant la conception de sites sur mesure, le référencement naturel (SEO), l’optimisation des performances et l’accompagnement continu.",
+    "provider": {
+      "@type": "Person",
+      "@id": "https://www.billynightingale.com/#person",
+      "name": "Billy Nightingale"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Landes"
+    },
+    "url": "https://www.billynightingale.com/fr/creation-site-web-landes"
+  }
+]
+---
+
+<BaseLayout
+  lang="fr"
+  route="landes"
+  title="Création de site internet dans les Landes | Billy Nightingale"
+  description="Création de sites web sur mesure dans les Landes. Design, référencement local, performance et accompagnement pour développer votre activité."
+  og={{
+    title: "Création de sites web dans les Landes | Billy Nightingale",
+    description: "Sites web sur mesure, référencement local et solutions digitales pour les entreprises des Landes. Basé à Capbreton.",
+  }}
+  twitter={{
+    title: "Création de sites web dans les Landes | Billy Nightingale",
+    description: "Sites web sur mesure, référencement local et solutions digitales pour les entreprises des Landes. Basé à Capbreton.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="fr" route="landes" />
+  <main>
+    <CookieBanner lang="fr" />
+    <LandesHero lang="fr" />
+    <LandesPhone lang="fr" />
+    <div class="gradient"></div>
+    <LandesMission lang="fr" />
+    <div class="gradient"></div>
+    <LandesSeoResults lang="fr" />
+    <div class="gradient"></div>
+    <LandesApproach lang="fr" />
+    <LandesStudio lang="fr" />
+    <LandesChallenges lang="fr" />
+    <LandesContactCta lang="fr" />
+  </main>
+  <Footer lang="fr" />
+</BaseLayout>

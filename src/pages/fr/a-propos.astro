@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { person } from '../../data/schema'
+import Header from '../../components/Header.astro'
+import CookieBanner from '../../components/CookieBanner.astro'
+import AboutHero from '../../components/about/AboutHero.astro'
+import AboutJourney from '../../components/about/AboutJourney.astro'
+import AboutWhatIDo from '../../components/about/AboutWhatIDo.astro'
+import AboutProcess from '../../components/about/AboutProcess.astro'
+import AboutTechnologies from '../../components/about/AboutTechnologies.astro'
+import AboutLocation from '../../components/about/AboutLocation.astro'
+import AboutContact from '../../components/about/AboutContact.astro'
+import Footer from '../../components/Footer.astro'
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://www.billynightingale.com/fr/a-propos#webpage",
+    "url": "https://www.billynightingale.com/fr/a-propos",
+    "name": "À propos de Billy Nightingale",
+    "mainEntity": person('fr', { image: "https://www.billynightingale.com/assets/portraits/billy_nightingale_web_designer_capbreton.webp", embedded: true })
+  }
+]
+---
+
+<BaseLayout
+  lang="fr"
+  route="about"
+  title="À propos | Billy Nightingale, Web Designer & Développeur"
+  description="À propos de Billy Nightingale : développeur web & designer Pays Basque/Landes. Sites modernes, solutions digitales."
+  og={{
+    title: "Billy Nightingale | Portfolio de développeur Web | À propos",
+    description: "À propos de Billy Nightingale : développeur web & designer Pays Basque/Landes. Sites modernes, solutions digitales.",
+  }}
+  twitter={{
+    title: "Billy Nightingale | Portfolio de développeur Web | À propos",
+    description: "À propos de Billy Nightingale : développeur web & designer Pays Basque/Landes. Sites modernes, solutions digitales.",
+  }}
+  jsonLd={jsonLd}
+>
+  <Header lang="fr" route="about" />
+  <main>
+    <CookieBanner lang="fr" />
+    <AboutHero lang="fr" />
+    <AboutJourney lang="fr" />
+    <AboutWhatIDo lang="fr" />
+    <AboutProcess lang="fr" />
+    <AboutTechnologies lang="fr" />
+    <AboutLocation lang="fr" />
+    <AboutContact lang="fr" />
+    <div class="gradient"></div>
+  </main>
+  <Footer lang="fr" />
+</BaseLayout>

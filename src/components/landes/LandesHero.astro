@@ -1,0 +1,76 @@
+---
+// Shared by the English and French pages. Text that differs is in the table below.
+import Photo from '../Photo.astro'
+import imgBillyNightingaleWebDesignerV2 from '../../assets/images/portraits/billy_nightingale_web_designer_v2.webp'
+import { routes, type Lang, type RouteKey } from '../../i18n/routes'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const r = (key: RouteKey) => routes[key][lang]
+
+const t = {
+  en: {
+    heading: "Website Design & Development in Landes",
+    imageAlt: "Billy Nightingale - web designer and developer discussing website creation with clients",
+    ctaButton: "Launch a project",
+  },
+  fr: {
+    heading: "Création de sites web dans les Landes",
+    imageAlt: "Billy Nightingale web designer et développeur parler avec des clients",
+    ctaButton: "Lancer un projet",
+  },
+}[lang]
+---
+
+<section class="section-center-max-width">
+  <div class="landes-hero-container">
+    <div class="landes-hero-text-container">
+      <h1 class="landes-hero__title">
+        {t.heading}
+      </h1>
+    </div>
+    <div class="landes-hero-img-container">
+      <svg
+        class="landes-hero-svg1"
+        viewBox="0 0 900 900"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M873.597 146.264L853.224 338.41C852.802 342.453 850.077 345.881 846.245 347.234C842.413 348.588 838.142 347.621 835.277 344.756L796.816 306.295L485.226 617.867C483.257 619.836 480.568 620.961 477.773 620.961H265.904L124.312 762.553C122.255 764.609 119.548 765.646 116.859 765.646C114.169 765.646 111.462 764.609 109.406 762.553L29.4779 682.625C25.3646 678.512 25.3646 671.832 29.4779 667.701L207.263 489.916C209.232 487.947 211.921 486.822 214.716 486.822H426.568L701.947 211.443L663.486 172.982C660.62 170.117 659.636 165.846 661.007 162.014C662.361 158.182 665.788 155.475 669.831 155.035L861.978 134.662C865.142 134.328 868.288 135.435 870.556 137.685C872.806 139.935 873.931 143.082 873.597 146.264ZM851.238 157.004L694.019 173.685L724.324 203.99C728.437 208.103 728.437 214.783 724.324 218.914L438.398 504.84C436.429 506.809 433.74 507.934 430.945 507.934H219.093L51.8549 675.172L116.859 740.176L254.091 602.943C256.06 600.975 258.749 599.85 261.544 599.85H473.396L789.345 283.9C793.458 279.787 800.138 279.787 804.251 283.9L834.556 314.205L851.238 157.004Z"
+          fill="#DCA868"
+        />
+      </svg>
+      <svg
+        class="landes-hero-svg2"
+        width="682"
+        height="682"
+        viewBox="0 0 682 682"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M367.693 468.205L603.809 232.103L598.148 215.133L358.729 454.552H198.192C196.075 454.552 194.037 455.405 192.545 456.897L88.553 560.888L94.2008 577.845L201.496 470.55H362.046C364.164 470.55 366.202 469.697 367.693 468.205Z"
+          fill="#DCA868"
+        />
+      </svg>
+
+      <Photo
+        src={imgBillyNightingaleWebDesignerV2}
+        alt={t.imageAlt}
+        class="landes-hero-img"
+        loading="eager"
+      />
+    </div>
+  </div>
+  <div class="landes-cta-container">
+    <div class="cta-container">
+      <a class="btn__primary btn__prim--light" href={r('contact')}
+        >{t.ctaButton}</a
+      >
+    </div>
+  </div>
+</section>
