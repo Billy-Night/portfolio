@@ -7,33 +7,33 @@ const phases = document.querySelectorAll('.phase-cont')
 let openPhase = null
 
 function updatePhases(activePhase) {
+  // The button labels come from the component, in the page's language
+  const { labelExpand, labelCollapse } = processWrapper.dataset
+
   phases.forEach((phase) => {
     const button = phase.querySelector('.btn-expand-process')
     const phaseContent = phase.querySelector('.phase__content')
-    const isActive = phase === activePhase
+    const isOpen = phase === activePhase
 
-    phase.classList.toggle('phase--active', !!activePhase && isActive)
-    phase.classList.toggle('phase__cont--align')
-    phase.classList.toggle('phase--inactive', !!activePhase && !isActive)
+    phase.classList.toggle('phase--active', isOpen)
+    phase.classList.toggle('phase__cont--align', !isOpen)
+    // While one phase is open, the others are hidden
+    phase.classList.toggle('phase--inactive', !!activePhase && !isOpen)
 
     if (phaseContent) {
-      phaseContent.classList.toggle('phase__content--hidden')
-      phaseContent.classList.toggle('phase__content--expanded')
+      phaseContent.classList.toggle('phase__content--hidden', !isOpen)
+      phaseContent.classList.toggle('phase__content--expanded', isOpen)
     }
 
     if (button) {
-      button.classList.toggle('btn--open', !!activePhase && isActive)
-      if (window.location.pathname.includes('/fr/')) {
-        button.textContent = !!activePhase && isActive ? 'Fermer' : 'Ouvrir'
-      } else {
-        button.textContent = !!activePhase && isActive ? 'Collapse' : 'Expand'
-      }
+      button.classList.toggle('btn--open', isOpen)
+      button.textContent = isOpen ? labelCollapse : labelExpand
     }
   })
 }
 
 if (processWrapper) {
-  processWrapper?.addEventListener('click', (e) => {
+  processWrapper.addEventListener('click', (e) => {
     const button = e.target.closest('.btn-expand-process')
     if (!button) return
 

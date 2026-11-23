@@ -15,6 +15,7 @@ const t = {
     discovery: "Discovery",
     inTheDiscoveryPhase: "In the discovery phase I have a discussion with my client and study their requirements and issues, I create mood boards and we discuss design options and available solutions to their issues. This includes research into competitors and design direction.",
     expand: "Expand",
+    collapse: "Collapse",
     inTheDesignPhase: "In the design phase, I present a style guide with a selection of fonts pairs and a colour palette with low-fidelity wireframes, once approved we move to high-fidelity wireframes.",
     inTheDevelopmentPhase: "In the development phase, I begin developing the project and optimising it for production, this includes building out a fully customised system using reusable components and optimising images and fonts for web performance, creating a custom layout system with equal and fluid spacing. All of my designs are crafted to be fully responsive and fluid, they're optimised for all major devices.",
     deploymentHeading: "Deployment",
@@ -27,6 +28,7 @@ const t = {
     discovery: "Découverte",
     inTheDiscoveryPhase: "Pendant la phase de découverte, j’échange avec mon client afin de comprendre ses besoins et ses problématiques. Je crée des moodboards, puis nous discutons des options de design et des solutions possibles. Cette phase inclut également une analyse des concurrents et de la direction créative.",
     expand: "Ouvrir",
+    collapse: "Fermer",
     inTheDesignPhase: "Pendant la phase de design, je présente un guide de style avec une sélection de combinaisons typographiques, une palette de couleurs et des wireframes basse fidélité. Une fois validés, nous passons aux maquettes haute fidélité.",
     inTheDevelopmentPhase: "Pendant la phase de développement, je commence à construire le projet et à l’optimiser pour la mise en production. Cela inclut la création d’un système entièrement personnalisé avec des composants réutilisables, l’optimisation des images et des polices pour les performances web, ainsi qu’un système de mise en page fluide et cohérent. Tous mes designs sont conçus pour être entièrement responsives et optimisés pour les principaux appareils.",
     deploymentHeading: "Déploiement",
@@ -43,7 +45,7 @@ const t = {
       {t.dependingOnTheProject}
     </p>
   </div>
-  <div class="about__process-cont">
+  <div class="about__process-cont" data-label-expand={t.expand} data-label-collapse={t.collapse}>
     <div class="phase-cont phase__cont--align glass__back">
       <h3>PHASE 1</h3>
       <div class="phase__content phase__content--hidden">
