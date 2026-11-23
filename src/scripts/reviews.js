@@ -133,14 +133,18 @@ if (clientReviews.length > 0) {
     reviewIconAnimation?.resume()
   }
 
+  // Reduced motion: the reviews start paused. Pressing the button plays them.
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches
+  let isPaused = reduceMotion
+
   const container = document.querySelector('.review-hover-wrap')
   if (container) {
     container.addEventListener('mouseenter', stop)
     container.addEventListener('mouseleave', () => {
       if (!isPaused) start()
     })
-
-    let isPaused = false
 
     container.addEventListener('click', () => {
       isPaused = !isPaused
@@ -153,5 +157,9 @@ if (clientReviews.length > 0) {
     })
   }
 
-  start()
+  if (reduceMotion) {
+    stop()
+  } else {
+    start()
+  }
 }
