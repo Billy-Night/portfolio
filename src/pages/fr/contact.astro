@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { person } from '../../data/schema'
+import { business, person, service } from '../../data/schema'
 import Header from '../../components/Header.astro'
 import CookieBanner from '../../components/CookieBanner.astro'
 import Footer from '../../components/Footer.astro'
@@ -8,7 +8,9 @@ import ContactIntro from '../../components/contact/ContactIntro.astro'
 import ContactForm from '../../components/contact/ContactForm.astro'
 
 const jsonLd = [
-  person('fr')
+  business('fr'),
+  person('fr'),
+  service('fr'),
 ]
 ---
 

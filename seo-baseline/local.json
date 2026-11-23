@@ -157,6 +157,73 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/#website",
+          "@type": "WebSite",
+          "inLanguage": [
+            "en",
+            "fr"
+          ],
+          "name": "Billy Nightingale",
+          "publisher": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
+          },
+          "url": "https://www.billynightingale.com/"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/#business",
+          "@type": "ProfessionalService",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR",
+            "addressLocality": "Capbreton",
+            "addressRegion": "Landes",
+            "postalCode": "40130"
+          },
+          "areaServed": [
+            "Capbreton",
+            "Hossegor",
+            "Landes",
+            "Pays Basque"
+          ],
+          "description": "Web design, custom website development and SEO studio in Capbreton, Landes, for local businesses in Hossegor, the Landes and the Pays Basque.",
+          "email": "contact@billynightingale.com",
+          "founder": {
+            "@id": "https://www.billynightingale.com/#person",
+            "@type": "Person",
+            "name": "Billy Nightingale"
+          },
+          "image": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+          "logo": "https://www.billynightingale.com/assets/nightingale_logo_gold.svg",
+          "name": "Billy Nightingale",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "closes": "18:00",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00"
+            }
+          ],
+          "priceRange": "€700 - €6000",
+          "sameAs": [
+            "https://www.instagram.com/billy.nightingale.studio/",
+            "https://www.linkedin.com/in/billynightingale/"
+          ],
+          "telephone": "+33766095864",
+          "url": "https://www.billynightingale.com/"
+        },
+        {
+          "@context": "https://schema.org",
           "@id": "https://www.billynightingale.com/#person",
           "@type": "Person",
           "address": {
@@ -170,6 +237,7 @@
           "jobTitle": "Web designer & web developer",
           "knowsAbout": [
             "web design",
+            "custom website development",
             "website creation",
             "frontend development",
             "WordPress",
@@ -186,7 +254,13 @@
             "https://www.linkedin.com/in/billynightingale/",
             "https://github.com/Billy-Night"
           ],
-          "url": "https://www.billynightingale.com/"
+          "url": "https://www.billynightingale.com/",
+          "worksFor": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
+          }
         },
         {
           "@context": "https://schema.org",
@@ -200,8 +274,8 @@
           "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
           "name": "Web design, website creation and SEO services",
           "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person",
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
             "name": "Billy Nightingale",
             "url": "https://www.billynightingale.com/"
           }
@@ -800,6 +874,7 @@
             "jobTitle": "Web designer & web developer",
             "knowsAbout": [
               "web design",
+              "custom website development",
               "website creation",
               "frontend development",
               "WordPress",
@@ -812,7 +887,13 @@
               "https://www.linkedin.com/in/billynightingale/",
               "https://github.com/Billy-Night"
             ],
-            "url": "https://www.billynightingale.com/"
+            "url": "https://www.billynightingale.com/",
+            "worksFor": {
+              "@id": "https://www.billynightingale.com/#business",
+              "@type": "ProfessionalService",
+              "name": "Billy Nightingale",
+              "url": "https://www.billynightingale.com/"
+            }
           },
           "name": "About Billy Nightingale",
           "url": "https://www.billynightingale.com/about"
@@ -1101,6 +1182,56 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/#business",
+          "@type": "ProfessionalService",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR",
+            "addressLocality": "Capbreton",
+            "addressRegion": "Landes",
+            "postalCode": "40130"
+          },
+          "areaServed": [
+            "Capbreton",
+            "Hossegor",
+            "Landes",
+            "Pays Basque"
+          ],
+          "description": "Web design, custom website development and SEO studio in Capbreton, Landes, for local businesses in Hossegor, the Landes and the Pays Basque.",
+          "email": "contact@billynightingale.com",
+          "founder": {
+            "@id": "https://www.billynightingale.com/#person",
+            "@type": "Person",
+            "name": "Billy Nightingale"
+          },
+          "image": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+          "logo": "https://www.billynightingale.com/assets/nightingale_logo_gold.svg",
+          "name": "Billy Nightingale",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "closes": "18:00",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00"
+            }
+          ],
+          "priceRange": "€700 - €6000",
+          "sameAs": [
+            "https://www.instagram.com/billy.nightingale.studio/",
+            "https://www.linkedin.com/in/billynightingale/"
+          ],
+          "telephone": "+33766095864",
+          "url": "https://www.billynightingale.com/"
+        },
+        {
+          "@context": "https://schema.org",
           "@id": "https://www.billynightingale.com/#person",
           "@type": "Person",
           "address": {
@@ -1114,6 +1245,7 @@
           "jobTitle": "Web designer & web developer",
           "knowsAbout": [
             "web design",
+            "custom website development",
             "website creation",
             "frontend development",
             "WordPress",
@@ -1130,7 +1262,13 @@
             "https://www.linkedin.com/in/billynightingale/",
             "https://github.com/Billy-Night"
           ],
-          "url": "https://www.billynightingale.com/"
+          "url": "https://www.billynightingale.com/",
+          "worksFor": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
+          }
         },
         {
           "@context": "https://schema.org",
@@ -1144,8 +1282,8 @@
           "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
           "name": "Web design, website creation and SEO services",
           "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person",
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
             "name": "Billy Nightingale",
             "url": "https://www.billynightingale.com/"
           }
@@ -1503,6 +1641,73 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/#website",
+          "@type": "WebSite",
+          "inLanguage": [
+            "en",
+            "fr"
+          ],
+          "name": "Billy Nightingale",
+          "publisher": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          },
+          "url": "https://www.billynightingale.com/"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/#business",
+          "@type": "ProfessionalService",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR",
+            "addressLocality": "Capbreton",
+            "addressRegion": "Landes",
+            "postalCode": "40130"
+          },
+          "areaServed": [
+            "Capbreton",
+            "Hossegor",
+            "Landes",
+            "Pays Basque"
+          ],
+          "description": "Studio de web design, de création de sites internet sur mesure et de SEO à Capbreton, dans les Landes, pour les entreprises locales de Hossegor, des Landes et du Pays Basque.",
+          "email": "contact@billynightingale.com",
+          "founder": {
+            "@id": "https://www.billynightingale.com/#person",
+            "@type": "Person",
+            "name": "Billy Nightingale"
+          },
+          "image": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+          "logo": "https://www.billynightingale.com/assets/nightingale_logo_gold.svg",
+          "name": "Billy Nightingale",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "closes": "18:00",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00"
+            }
+          ],
+          "priceRange": "€700 - €6000",
+          "sameAs": [
+            "https://www.instagram.com/billy.nightingale.studio/",
+            "https://www.linkedin.com/in/billynightingale/"
+          ],
+          "telephone": "+33766095864",
+          "url": "https://www.billynightingale.com/fr/"
+        },
+        {
+          "@context": "https://schema.org",
           "@id": "https://www.billynightingale.com/#person",
           "@type": "Person",
           "address": {
@@ -1516,6 +1721,7 @@
           "jobTitle": "Web designer et développeur web",
           "knowsAbout": [
             "web design",
+            "création de site internet sur mesure",
             "création de site internet",
             "développement frontend",
             "WordPress",
@@ -1532,7 +1738,13 @@
             "https://www.linkedin.com/in/billynightingale/",
             "https://github.com/Billy-Night"
           ],
-          "url": "https://www.billynightingale.com/fr/"
+          "url": "https://www.billynightingale.com/fr/",
+          "worksFor": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          }
         },
         {
           "@context": "https://schema.org",
@@ -1546,8 +1758,8 @@
           "description": "Je propose des services de web design, de création de sites web et d'optimisation SEO pour les entreprises locales à Capbreton, Hossegor, Landes et Pays Basque.",
           "name": "Création de Site Web, Web Design, Développement Web, SEO",
           "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person",
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
             "name": "Billy Nightingale",
             "url": "https://www.billynightingale.com/fr/"
           }
@@ -2146,6 +2358,7 @@
             "jobTitle": "Web designer et développeur web",
             "knowsAbout": [
               "web design",
+              "création de site internet sur mesure",
               "création de site internet",
               "développement frontend",
               "WordPress",
@@ -2158,7 +2371,13 @@
               "https://www.linkedin.com/in/billynightingale/",
               "https://github.com/Billy-Night"
             ],
-            "url": "https://www.billynightingale.com/fr/"
+            "url": "https://www.billynightingale.com/fr/",
+            "worksFor": {
+              "@id": "https://www.billynightingale.com/#business",
+              "@type": "ProfessionalService",
+              "name": "Billy Nightingale",
+              "url": "https://www.billynightingale.com/fr/"
+            }
           },
           "name": "À propos de Billy Nightingale",
           "url": "https://www.billynightingale.com/fr/a-propos"
@@ -2629,6 +2848,56 @@
       "jsonld": [
         {
           "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/#business",
+          "@type": "ProfessionalService",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR",
+            "addressLocality": "Capbreton",
+            "addressRegion": "Landes",
+            "postalCode": "40130"
+          },
+          "areaServed": [
+            "Capbreton",
+            "Hossegor",
+            "Landes",
+            "Pays Basque"
+          ],
+          "description": "Studio de web design, de création de sites internet sur mesure et de SEO à Capbreton, dans les Landes, pour les entreprises locales de Hossegor, des Landes et du Pays Basque.",
+          "email": "contact@billynightingale.com",
+          "founder": {
+            "@id": "https://www.billynightingale.com/#person",
+            "@type": "Person",
+            "name": "Billy Nightingale"
+          },
+          "image": "https://www.billynightingale.com/assets/meta_preview1200x600.webp",
+          "logo": "https://www.billynightingale.com/assets/nightingale_logo_gold.svg",
+          "name": "Billy Nightingale",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "closes": "18:00",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00"
+            }
+          ],
+          "priceRange": "€700 - €6000",
+          "sameAs": [
+            "https://www.instagram.com/billy.nightingale.studio/",
+            "https://www.linkedin.com/in/billynightingale/"
+          ],
+          "telephone": "+33766095864",
+          "url": "https://www.billynightingale.com/fr/"
+        },
+        {
+          "@context": "https://schema.org",
           "@id": "https://www.billynightingale.com/#person",
           "@type": "Person",
           "address": {
@@ -2642,6 +2911,7 @@
           "jobTitle": "Web designer et développeur web",
           "knowsAbout": [
             "web design",
+            "création de site internet sur mesure",
             "création de site internet",
             "développement frontend",
             "WordPress",
@@ -2658,7 +2928,31 @@
             "https://www.linkedin.com/in/billynightingale/",
             "https://github.com/Billy-Night"
           ],
-          "url": "https://www.billynightingale.com/fr/"
+          "url": "https://www.billynightingale.com/fr/",
+          "worksFor": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "areaServed": [
+            "Capbreton",
+            "Hossegor",
+            "Landes",
+            "Pays Basque"
+          ],
+          "description": "Je propose des services de web design, de création de sites web et d'optimisation SEO pour les entreprises locales à Capbreton, Hossegor, Landes et Pays Basque.",
+          "name": "Création de Site Web, Web Design, Développement Web, SEO",
+          "provider": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          }
         }
       ],
       "lang": "fr",
@@ -2947,9 +3241,10 @@
           "description": "Services professionnels de création de sites internet dans les Landes, incluant la conception de sites sur mesure, le référencement naturel (SEO), l’optimisation des performances et l’accompagnement continu.",
           "name": "Création de site internet dans les Landes",
           "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person",
-            "name": "Billy Nightingale"
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
           },
           "url": "https://www.billynightingale.com/fr/creation-site-web-landes"
         }
@@ -3270,6 +3565,7 @@
           "jobTitle": "Web designer et développeur web",
           "knowsAbout": [
             "web design",
+            "création de site internet sur mesure",
             "création de site internet",
             "développement frontend",
             "WordPress",
@@ -3286,7 +3582,13 @@
             "https://www.linkedin.com/in/billynightingale/",
             "https://github.com/Billy-Night"
           ],
-          "url": "https://www.billynightingale.com/fr/"
+          "url": "https://www.billynightingale.com/fr/",
+          "worksFor": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          }
         },
         {
           "@context": "https://schema.org",
@@ -3301,8 +3603,10 @@
           "description": "Services professionnels de création de sites web, développement web et référencement SEO pour les entreprises locales.",
           "name": "Services de web design, développement web et SEO",
           "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person"
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
           },
           "serviceType": [
             "Web design",
@@ -3666,6 +3970,7 @@
           "jobTitle": "Web designer & web developer",
           "knowsAbout": [
             "web design",
+            "custom website development",
             "website creation",
             "frontend development",
             "WordPress",
@@ -3682,7 +3987,13 @@
             "https://www.linkedin.com/in/billynightingale/",
             "https://github.com/Billy-Night"
           ],
-          "url": "https://www.billynightingale.com/"
+          "url": "https://www.billynightingale.com/",
+          "worksFor": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
+          }
         },
         {
           "@context": "https://schema.org",
@@ -3696,8 +4007,10 @@
           ],
           "name": "Web design, web development and SEO services",
           "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person"
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
           },
           "serviceType": [
             "Web design",
@@ -4009,59 +4322,7 @@
           "src": "/assets/icons/ham_menu.svg"
         }
       ],
-      "jsonld": [
-        {
-          "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/#person",
-          "@type": "Person",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "FR",
-            "addressLocality": "Capbreton",
-            "addressRegion": "Landes"
-          },
-          "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
-          "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-          "jobTitle": "Web designer & web developer",
-          "knowsAbout": [
-            "web design",
-            "website creation",
-            "frontend development",
-            "WordPress",
-            "SEO",
-            "local SEO",
-            "performance optimisation"
-          ],
-          "mainEntityOfPage": {
-            "@id": "https://www.billynightingale.com/",
-            "@type": "WebPage"
-          },
-          "name": "Billy Nightingale",
-          "sameAs": [
-            "https://www.linkedin.com/in/billynightingale/",
-            "https://github.com/Billy-Night"
-          ],
-          "url": "https://www.billynightingale.com/"
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "areaServed": [
-            "Capbreton",
-            "Hossegor",
-            "Landes",
-            "Pays Basque"
-          ],
-          "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
-          "name": "Web design, website creation and SEO services",
-          "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person",
-            "name": "Billy Nightingale",
-            "url": "https://www.billynightingale.com/"
-          }
-        }
-      ],
+      "jsonld": [],
       "lang": "en",
       "link_tags": [
         {
@@ -4297,9 +4558,10 @@
           "description": "Professional website development services in Landes, including custom website design, SEO, performance optimisation and ongoing support.",
           "name": "Website Development in Landes",
           "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person",
-            "name": "Billy Nightingale"
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
           },
           "url": "https://www.billynightingale.com/website-development-landes"
         }

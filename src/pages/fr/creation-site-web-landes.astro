@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { businessRef } from '../../data/schema'
 import Header from '../../components/Header.astro'
 import CookieBanner from '../../components/CookieBanner.astro'
 import LandesHero from '../../components/landes/LandesHero.astro'
@@ -19,11 +20,7 @@ const jsonLd = [
     "@id": "https://www.billynightingale.com/fr/creation-site-web-landes#service",
     "name": "Création de site internet dans les Landes",
     "description": "Services professionnels de création de sites internet dans les Landes, incluant la conception de sites sur mesure, le référencement naturel (SEO), l’optimisation des performances et l’accompagnement continu.",
-    "provider": {
-      "@type": "Person",
-      "@id": "https://www.billynightingale.com/#person",
-      "name": "Billy Nightingale"
-    },
+    "provider": businessRef('fr'),
     "areaServed": {
       "@type": "AdministrativeArea",
       "name": "Landes"

@@ -1,31 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { person } from '../data/schema'
 import Header from '../components/Header.astro'
 import CookieBanner from '../components/CookieBanner.astro'
 
-const jsonLd = [
-  person('en'),
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Web design, website creation and SEO services",
-    "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
-    "provider": {
-      "@type": "Person",
-      "@id": "https://www.billynightingale.com/#person",
-      "name": "Billy Nightingale",
-      "url": "https://www.billynightingale.com/"
-    },
-    "areaServed": [
-      "Capbreton",
-      "Hossegor",
-      "Landes",
-      "Pays Basque"
-    ]
-  }
-]
-
+// No structured data: this page is marked noindex, like the French one (fr/cgv.astro)
 ---
 
 <BaseLayout
@@ -34,7 +12,6 @@ const jsonLd = [
   title="Terms and Conditions of Service | Billy Nightingale"
   description="Portfolio of Billy Nightingale, web developer and designer based in Landes & Pays Basque, France. Terms and conditions page."
   robots="noindex, follow"
-  jsonLd={jsonLd}
 >
   <Header lang="en" route="terms" />
   <main id="legal_main">
