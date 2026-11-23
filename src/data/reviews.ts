@@ -25,7 +25,7 @@ export const reviews: Review[] = [
     photo: eveMariePhoto,
     photoAlt: {
       en: 'portrait of Eve-Marie, a client of Billy Nightingale',
-      fr: 'portrait of Eve-Marie, a client of Billy Nightingale',
+      fr: 'Portrait d’Eve-Marie, cliente de Billy Nightingale',
     },
     photoClass: 'client__portrait',
     paragraphs: {
@@ -42,7 +42,7 @@ export const reviews: Review[] = [
     photo: pacificCoastPhoto,
     photoAlt: {
       en: 'Portrait of Aaron and Izia the owners of Pacific Coast Cafe',
-      fr: 'Portrait of Aaron and Izia the owners of Pacific Coast Cafe, a client of Billy Nightingale',
+      fr: 'Portrait d’Aaron et Izia, propriétaires du Pacific Coast Cafe et clients de Billy Nightingale',
     },
     photoClass: 'client__portrait_1',
     paragraphs: {
