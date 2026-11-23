@@ -2,49 +2,49 @@
 // /.netlify/functions/contact (which forwards it to Make).
 // Used by src/components/contact/ContactForm.astro.
 
-const clientFormReason = document.querySelector('#reason')
-const clientFormProjectFields = document.querySelector('#form-project-fields')
-const clientContactForm = document.querySelector('#contact-form')
-const clientContactFormSeo = document.querySelector('#seo-objective-form')
-const clientContactFormSeoBudget = document.querySelector('#SEO-budget-form')
-const cFPrefTimWeb = document.querySelector('#pref-time-website')
-const clientContFormWebBud = document.querySelector('#website-budget-form')
-const cFPrefTimSeo = document.querySelector('#pref-time-seo')
+const reasonField = document.querySelector('#reason')
+const projectFields = document.querySelector('#form-project-fields')
+const contactForm = document.querySelector('#contact-form')
+const seoObjectiveField = document.querySelector('#seo-objective-form')
+const seoBudgetField = document.querySelector('#SEO-budget-form')
+const websiteTimelineField = document.querySelector('#pref-time-website')
+const websiteBudgetField = document.querySelector('#website-budget-form')
+const seoTimelineField = document.querySelector('#pref-time-seo')
 
-const statusElPass = document.querySelector('.form-status-pass')
-const statusElError = document.querySelector('.form-status-error')
+const statusSuccess = document.querySelector('.form-status-pass')
+const statusError = document.querySelector('.form-status-error')
 
-if (clientFormReason) {
-  clientFormReason.addEventListener('change', function () {
-    const useChoice = clientFormReason.value
-    if (useChoice !== 'general-question') {
-      clientFormProjectFields.classList.remove('hide-element')
+if (reasonField) {
+  reasonField.addEventListener('change', function () {
+    const chosenReason = reasonField.value
+    if (chosenReason !== 'general-question') {
+      projectFields.classList.remove('hide-element')
     } else {
-      clientFormProjectFields.classList.add('hide-element')
+      projectFields.classList.add('hide-element')
     }
-    if (useChoice !== 'seo') {
+    if (chosenReason !== 'seo') {
       // Show website options
-      clientContFormWebBud.classList.replace('hide-element', 'form-group')
-      cFPrefTimWeb.classList.replace('hide-element', 'form-group')
+      websiteBudgetField.classList.replace('hide-element', 'form-group')
+      websiteTimelineField.classList.replace('hide-element', 'form-group')
       // Hide SEO options
-      clientContactFormSeo.classList.replace('form-group', 'hide-element')
-      clientContactFormSeoBudget.classList.replace('form-group', 'hide-element')
-      cFPrefTimSeo.classList.replace('form-group', 'hide-element')
+      seoObjectiveField.classList.replace('form-group', 'hide-element')
+      seoBudgetField.classList.replace('form-group', 'hide-element')
+      seoTimelineField.classList.replace('form-group', 'hide-element')
     } else {
       // Hide website options
-      clientContFormWebBud.classList.replace('form-group', 'hide-element')
-      cFPrefTimWeb.classList.replace('form-group', 'hide-element')
+      websiteBudgetField.classList.replace('form-group', 'hide-element')
+      websiteTimelineField.classList.replace('form-group', 'hide-element')
       // Show SEO options
-      clientContactFormSeo.classList.replace('hide-element', 'form-group')
-      clientContactFormSeoBudget.classList.replace('hide-element', 'form-group')
-      cFPrefTimSeo.classList.replace('hide-element', 'form-group')
+      seoObjectiveField.classList.replace('hide-element', 'form-group')
+      seoBudgetField.classList.replace('hide-element', 'form-group')
+      seoTimelineField.classList.replace('hide-element', 'form-group')
     }
   })
 }
 
-if (clientContactForm) {
+if (contactForm) {
   //* NEW code test to hide MAKE API in Netlify functions
-  clientContactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     const form = e.target
@@ -99,13 +99,13 @@ if (clientContactForm) {
         )
       }
 
-      statusElError.classList.add('hide-element')
-      statusElPass.classList.remove('hide-element')
+      statusError.classList.add('hide-element')
+      statusSuccess.classList.remove('hide-element')
       form.reset()
     } catch (err) {
       console.error(err)
-      statusElPass.classList.add('hide-element')
-      statusElError.classList.remove('hide-element')
+      statusSuccess.classList.add('hide-element')
+      statusError.classList.remove('hide-element')
     }
   })
 }
