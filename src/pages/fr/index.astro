@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { person } from '../../data/schema'
+import { person, service } from '../../data/schema'
 import Header from '../../components/Header.astro'
 import CookieBanner from '../../components/CookieBanner.astro'
 import HomeHero from '../../components/home/HomeHero.astro'
@@ -14,24 +14,7 @@ import Footer from '../../components/Footer.astro'
 
 const jsonLd = [
   person('fr'),
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Création de Site Web, Web Design, Développement Web, SEO",
-    "description": "Je propose des services de web design, de création de sites web et d'optimisation SEO pour les entreprises locales à Capbreton, Hossegor, Landes et Pays Basque.",
-    "provider": {
-      "@type": "Person",
-      "@id": "https://www.billynightingale.com/#person",
-      "name": "Billy Nightingale",
-      "url": "https://www.billynightingale.com/fr/"
-    },
-    "areaServed": [
-      "Capbreton",
-      "Hossegor",
-      "Landes",
-      "Pays Basque"
-    ]
-  }
+  service('fr'),
 ]
 ---
 

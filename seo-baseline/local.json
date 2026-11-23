@@ -2659,6 +2659,24 @@
             "https://github.com/Billy-Night"
           ],
           "url": "https://www.billynightingale.com/fr/"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "areaServed": [
+            "Capbreton",
+            "Hossegor",
+            "Landes",
+            "Pays Basque"
+          ],
+          "description": "Je propose des services de web design, de création de sites web et d'optimisation SEO pour les entreprises locales à Capbreton, Hossegor, Landes et Pays Basque.",
+          "name": "Création de Site Web, Web Design, Développement Web, SEO",
+          "provider": {
+            "@id": "https://www.billynightingale.com/#person",
+            "@type": "Person",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          }
         }
       ],
       "lang": "fr",
@@ -4009,59 +4027,7 @@
           "src": "/assets/icons/ham_menu.svg"
         }
       ],
-      "jsonld": [
-        {
-          "@context": "https://schema.org",
-          "@id": "https://www.billynightingale.com/#person",
-          "@type": "Person",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "FR",
-            "addressLocality": "Capbreton",
-            "addressRegion": "Landes"
-          },
-          "description": "Web designer and developer in Capbreton, creating modern, fast, SEO-optimised websites for local businesses.",
-          "image": "https://www.billynightingale.com/assets/billy_portrait.webp",
-          "jobTitle": "Web designer & web developer",
-          "knowsAbout": [
-            "web design",
-            "website creation",
-            "frontend development",
-            "WordPress",
-            "SEO",
-            "local SEO",
-            "performance optimisation"
-          ],
-          "mainEntityOfPage": {
-            "@id": "https://www.billynightingale.com/",
-            "@type": "WebPage"
-          },
-          "name": "Billy Nightingale",
-          "sameAs": [
-            "https://www.linkedin.com/in/billynightingale/",
-            "https://github.com/Billy-Night"
-          ],
-          "url": "https://www.billynightingale.com/"
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "areaServed": [
-            "Capbreton",
-            "Hossegor",
-            "Landes",
-            "Pays Basque"
-          ],
-          "description": "Web design, website creation and SEO services for local businesses in Capbreton, Hossegor, Landes and the Pays Basque.",
-          "name": "Web design, website creation and SEO services",
-          "provider": {
-            "@id": "https://www.billynightingale.com/#person",
-            "@type": "Person",
-            "name": "Billy Nightingale",
-            "url": "https://www.billynightingale.com/"
-          }
-        }
-      ],
+      "jsonld": [],
       "lang": "en",
       "link_tags": [
         {
