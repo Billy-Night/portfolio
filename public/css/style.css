@@ -710,7 +710,11 @@ a {
   z-index: 2;
 }
 
-.ver-switcher-btn-cont h3 {
+/* The label is a <span>, not a heading: a <button> may only contain text-level
+   elements. It is styled to look like the headings beside it. */
+.ver-switcher-btn__label {
+  display: block;
+  font-weight: 400;
   font-size: var(--title-2);
   line-height: var(--leading-title);
   font-family: var(--subHeading);
