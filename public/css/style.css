@@ -655,6 +655,19 @@ a {
   grid-area: img;
 }
 
+/* The four words around the circle are labels, not section headings, so they
+   are paragraphs styled like an <h2>. */
+.home-services__label {
+  margin: 0;
+  font-weight: 400;
+  font-size: var(--title-2);
+  line-height: var(--leading-title);
+  font-family: var(--subHeading);
+  letter-spacing: 4%;
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
+}
+
 .home-services__circle {
   width: 100%;
   height: auto;
@@ -2417,16 +2430,27 @@ a:hover .social__icons {
   margin-bottom: var(--space-3);
 }
 
-.footer__info_container h4 {
-  font-size: var(--title-6);
+/* The business name and the contact title are paragraphs, not headings:
+   only the tagline above them is a heading. */
+.footer__business {
   margin-top: 0px;
   margin-bottom: var(--space-7);
+  font-weight: 400;
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  font-family: var(--subHeading);
+  letter-spacing: 3%;
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
 }
 
-.footer__info_container h5 {
+.footer__contact-title {
   margin-top: 0px;
-  font-size: var(--text-m);
   margin-bottom: var(--space-3);
+  font-weight: 400;
+  font-size: var(--text-m);
+  line-height: var(--leading-title);
+  color: var(--subHeading-colour);
 }
 
 .footer__address {
