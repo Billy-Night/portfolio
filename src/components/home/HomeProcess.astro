@@ -10,51 +10,51 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    fromStrategyToLaunch: "From Strategy to Launch",
-    aStructuredProcessDesigned: "A structured process designed to deliver a fast, effective website that supports your business goals.",
-    discoveryStrategy: "Discovery & Strategy",
-    understandYourBusinessGoals: "Understand your business goals",
-    researchCompetitorsAndOpportunities: "Research competitors and opportunities",
-    defineAClearStrategy: "Define a clear strategy",
-    createTheVisualDirection: "Create the visual direction",
-    designKeyPagesAnd: "Design key pages and user journeys",
-    refineTheExperience: "Refine the experience",
-    development: "Development",
-    buildTheWebsite: "Build the website",
-    integrateRequiredFunctionality: "Integrate required functionality",
-    optimisePerformanceAndSeo: "Optimise performance and SEO",
-    launch: "Launch",
-    testAndDeploy: "Test and deploy",
-    configureAnalytics: "Configure analytics",
-    monitorAndSupport: "Monitor and support",
+    heading: "From Strategy to Launch",
+    intro: "A structured process designed to deliver a fast, effective website that supports your business goals.",
+    discoveryHeading: "Discovery & Strategy",
+    discoveryStep1: "Understand your business goals",
+    discoveryStep2: "Research competitors and opportunities",
+    discoveryStep3: "Define a clear strategy",
+    designStep1: "Create the visual direction",
+    designStep2: "Design key pages and user journeys",
+    designStep3: "Refine the experience",
+    developmentHeading: "Development",
+    developmentStep1: "Build the website",
+    developmentStep2: "Integrate required functionality",
+    developmentStep3: "Optimise performance and SEO",
+    launchHeading: "Launch",
+    launchStep1: "Test and deploy",
+    launchStep2: "Configure analytics",
+    launchStep3: "Monitor and support",
   },
   fr: {
-    fromStrategyToLaunch: "De la Stratégie au Lancement",
-    aStructuredProcessDesigned: "Un processus structuré conçu pour créer un site web rapide, performant et aligné sur vos objectifs commerciaux.",
-    discoveryStrategy: "Découverte & Stratégie",
-    understandYourBusinessGoals: "Comprendre vos objectifs commerciaux",
-    researchCompetitorsAndOpportunities: "Analyser vos concurrents et identifier les opportunités",
-    defineAClearStrategy: "Définir une stratégie claire",
-    createTheVisualDirection: "Définir la direction visuelle",
-    designKeyPagesAnd: "Concevoir les pages clés et les parcours utilisateurs",
-    refineTheExperience: "Affiner l’expérience utilisateur",
-    development: "Développement",
-    buildTheWebsite: "Développer le site web",
-    integrateRequiredFunctionality: "Intégrer les fonctionnalités nécessaires",
-    optimisePerformanceAndSeo: "Optimiser les performances et le référencement (SEO)",
-    launch: "Lancement",
-    testAndDeploy: "Tester et mettre en ligne le site",
-    configureAnalytics: "Configurer les outils d’analyse",
-    monitorAndSupport: "Assurer le suivi et l’accompagnement",
+    heading: "De la Stratégie au Lancement",
+    intro: "Un processus structuré conçu pour créer un site web rapide, performant et aligné sur vos objectifs commerciaux.",
+    discoveryHeading: "Découverte & Stratégie",
+    discoveryStep1: "Comprendre vos objectifs commerciaux",
+    discoveryStep2: "Analyser vos concurrents et identifier les opportunités",
+    discoveryStep3: "Définir une stratégie claire",
+    designStep1: "Définir la direction visuelle",
+    designStep2: "Concevoir les pages clés et les parcours utilisateurs",
+    designStep3: "Affiner l’expérience utilisateur",
+    developmentHeading: "Développement",
+    developmentStep1: "Développer le site web",
+    developmentStep2: "Intégrer les fonctionnalités nécessaires",
+    developmentStep3: "Optimiser les performances et le référencement (SEO)",
+    launchHeading: "Lancement",
+    launchStep1: "Tester et mettre en ligne le site",
+    launchStep2: "Configurer les outils d’analyse",
+    launchStep3: "Assurer le suivi et l’accompagnement",
   },
 }[lang]
 ---
 
 <section class="timeline__section">
   <div class="tl__heading-container">
-    <h2>{t.fromStrategyToLaunch}</h2>
+    <h2>{t.heading}</h2>
     <p>
-      {t.aStructuredProcessDesigned}
+      {t.intro}
     </p>
   </div>
   <div class="tl__container">
@@ -75,7 +75,7 @@ const t = {
     <div class="tl__content-container">
       <div class="time-step time__step-1 glass__back ts-padding-m">
         <div class="ts-heading hide-ts-h ts-p-marg">
-          <h3>{t.discoveryStrategy}</h3>
+          <h3>{t.discoveryHeading}</h3>
           <div class="flex-two-col">
             <svg
               class="default-svg home-process-svg"
@@ -92,7 +92,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.understandYourBusinessGoals}</p>
+            <p>{t.discoveryStep1}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -110,7 +110,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.researchCompetitorsAndOpportunities}</p>
+            <p>{t.discoveryStep2}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -128,7 +128,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.defineAClearStrategy}</p>
+            <p>{t.discoveryStep3}</p>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.createTheVisualDirection}</p>
+            <p>{t.designStep1}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -169,7 +169,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.designKeyPagesAnd}</p>
+            <p>{t.designStep2}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -187,13 +187,13 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.refineTheExperience}</p>
+            <p>{t.designStep3}</p>
           </div>
         </div>
       </div>
       <div class="time-step time__step-3 glass__back ts-padding-m">
         <div class="ts-heading hide-ts-h ts-p-marg">
-          <h3>{t.development}</h3>
+          <h3>{t.developmentHeading}</h3>
           <div class="flex-two-col">
             <svg
               class="default-svg home-process-svg"
@@ -210,7 +210,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.buildTheWebsite}</p>
+            <p>{t.developmentStep1}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -228,7 +228,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.integrateRequiredFunctionality}</p>
+            <p>{t.developmentStep2}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -246,13 +246,13 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.optimisePerformanceAndSeo}</p>
+            <p>{t.developmentStep3}</p>
           </div>
         </div>
       </div>
       <div class="time-step time__step-4 glass__back ts-padding-m">
         <div class="ts-heading hide-ts-h ts-p-marg">
-          <h3>{t.launch}</h3>
+          <h3>{t.launchHeading}</h3>
           <div class="flex-two-col">
             <svg
               class="default-svg home-process-svg"
@@ -269,7 +269,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.testAndDeploy}</p>
+            <p>{t.launchStep1}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -287,7 +287,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.configureAnalytics}</p>
+            <p>{t.launchStep2}</p>
           </div>
           <div class="flex-two-col">
             <svg
@@ -305,7 +305,7 @@ const t = {
                 />
               </g>
             </svg>
-            <p>{t.monitorAndSupport}</p>
+            <p>{t.launchStep3}</p>
           </div>
         </div>
       </div>

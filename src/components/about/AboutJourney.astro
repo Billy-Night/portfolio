@@ -10,16 +10,16 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    theJourney: "THE JOURNEY",
-    myEngineeringAndWeb: "My engineering and web development journey",
+    heading: "THE JOURNEY",
+    intro: "My engineering and web development journey",
     // Each timeline step is two words, each in its own <span>
     degree: ["Motorsport", "Engineering"],
     firstCareer: ["Mechatronics", "Engineer"],
     webTraining: ["Web", "Development"],
   },
   fr: {
-    theJourney: "LE PARCOURS",
-    myEngineeringAndWeb: "Mon parcours en ingénierie et développement web",
+    heading: "LE PARCOURS",
+    intro: "Mon parcours en ingénierie et développement web",
     degree: ["Ingénierie", "Motorsport"],
     firstCareer: ["Ingénieur", "Mécatronique"],
     webTraining: ["Développement", "Web"],
@@ -29,8 +29,8 @@ const t = {
 
 <section class="timeline__section" id="about__timeline-section">
   <div class="tl__heading-container">
-    <h2>{t.theJourney}</h2>
-    <p>{t.myEngineeringAndWeb}</p>
+    <h2>{t.heading}</h2>
+    <p>{t.intro}</p>
   </div>
   <div class="tl__container">
     <div class="tl__line-container">

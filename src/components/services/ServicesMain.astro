@@ -10,20 +10,20 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    mainServices: "Main Services",
-    areYouReadyTo: "Are you ready to build your dream digital experience ?",
-    thoughtfulUserFocusedDesign: "Thoughtful, user-focused design that reflects your brand and makes it easy for visitors to take action.",
-    webDevelopment: "Web Development",
-    cleanFastAndReliable: "Clean, fast, and reliable websites built to scale, maintain, and perform long-term.",
-    solidTechnicalAndOn: "Solid technical and on-page foundations so your site can be found by the right people.",
+    heading: "Main Services",
+    subheading: "Are you ready to build your dream digital experience ?",
+    designText: "Thoughtful, user-focused design that reflects your brand and makes it easy for visitors to take action.",
+    developmentHeading: "Web Development",
+    developmentText: "Clean, fast, and reliable websites built to scale, maintain, and perform long-term.",
+    seoText: "Solid technical and on-page foundations so your site can be found by the right people.",
   },
   fr: {
-    mainServices: "Services principaux",
-    areYouReadyTo: "Prêt à créer une expérience digitale à la hauteur de vos ambitions ?",
-    thoughtfulUserFocusedDesign: "Un design réfléchi et centré sur l’utilisateur, qui reflète votre marque et facilite le passage à l’action.",
-    webDevelopment: "Développement Web",
-    cleanFastAndReliable: "Des sites web propres, rapides et fiables, conçus pour évoluer, être maintenus facilement et offrir des performances durables.",
-    solidTechnicalAndOn: "Des bases techniques et éditoriales solides pour que votre site soit visible auprès des bonnes personnes.",
+    heading: "Services principaux",
+    subheading: "Prêt à créer une expérience digitale à la hauteur de vos ambitions ?",
+    designText: "Un design réfléchi et centré sur l’utilisateur, qui reflète votre marque et facilite le passage à l’action.",
+    developmentHeading: "Développement Web",
+    developmentText: "Des sites web propres, rapides et fiables, conçus pour évoluer, être maintenus facilement et offrir des performances durables.",
+    seoText: "Des bases techniques et éditoriales solides pour que votre site soit visible auprès des bonnes personnes.",
   },
 }[lang]
 ---
@@ -33,27 +33,27 @@ const t = {
   id="services-page__main-services"
 >
   <div class="services-main-title">
-    <h2 class="section-sub-headings">{t.mainServices}</h2>
-    <h3>{t.areYouReadyTo}</h3>
+    <h2 class="section-sub-headings">{t.heading}</h2>
+    <h3>{t.subheading}</h3>
   </div>
   <div class="services-main-blocks">
     <div class="service-card">
       <h2>Web Design</h2>
       <p class="max-txt-width">
-        {t.thoughtfulUserFocusedDesign}
+        {t.designText}
       </p>
     </div>
     <div class="service-card">
-      <h2>{t.webDevelopment}</h2>
+      <h2>{t.developmentHeading}</h2>
       <p class="max-txt-width">
-        {t.cleanFastAndReliable}
+        {t.developmentText}
       </p>
     </div>
     <div class="service-card">
       <h2>SEO</h2>
       {/* The French page limits this paragraph's width; the English page does not */}
       <p class={lang === 'fr' ? 'max-txt-width' : undefined}>
-        {t.solidTechnicalAndOn}
+        {t.seoText}
       </p>
     </div>
   </div>

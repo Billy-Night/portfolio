@@ -11,30 +11,30 @@ const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
   en: {
-    readyToDiscussYour: "Ready to discuss your project?",
-    bookACallOr: "Book a call or request a quote now",
-    requestAQuote: "Request a quote",
-    bookACall: "Book a call",
+    heading: "Ready to discuss your project?",
+    intro: "Book a call or request a quote now",
+    quoteButton: "Request a quote",
+    callButton: "Book a call",
   },
   fr: {
-    readyToDiscussYour: "Prêt à discuter de votre projet ?",
-    bookACallOr: "Réservez un appel ou demandez un devis",
-    requestAQuote: "Devis",
-    bookACall: "Appel",
+    heading: "Prêt à discuter de votre projet ?",
+    intro: "Réservez un appel ou demandez un devis",
+    quoteButton: "Devis",
+    callButton: "Appel",
   },
 }[lang]
 ---
 
 <section class="sections">
   <div class="section-contact-container">
-    <h2>{t.readyToDiscussYour}</h2>
-    <p>{t.bookACallOr}</p>
+    <h2>{t.heading}</h2>
+    <p>{t.intro}</p>
     <div class="cta-container">
       <a class="btn__primary btn__prim--light" href={r('contact')}
-        >{t.requestAQuote}</a
+        >{t.quoteButton}</a
       >
       <a class="btn__second btn__second--light" href="tel:+33766095864"
-        >{t.bookACall}</a
+        >{t.callButton}</a
       >
     </div>
   </div>

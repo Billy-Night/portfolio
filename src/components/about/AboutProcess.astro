@@ -10,39 +10,39 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    theProcess: "THE PROCESS",
-    dependingOnTheProject: "Depending on the project I have a four phase approach, discovery, design and develop",
-    discovery: "Discovery",
-    inTheDiscoveryPhase: "In the discovery phase I have a discussion with my client and study their requirements and issues, I create mood boards and we discuss design options and available solutions to their issues. This includes research into competitors and design direction.",
+    heading: "THE PROCESS",
+    intro: "Depending on the project I have a four phase approach, discovery, design and develop",
+    discoveryHeading: "Discovery",
+    discoveryText: "In the discovery phase I have a discussion with my client and study their requirements and issues, I create mood boards and we discuss design options and available solutions to their issues. This includes research into competitors and design direction.",
     expand: "Expand",
     collapse: "Collapse",
-    inTheDesignPhase: "In the design phase, I present a style guide with a selection of fonts pairs and a colour palette with low-fidelity wireframes, once approved we move to high-fidelity wireframes.",
-    inTheDevelopmentPhase: "In the development phase, I begin developing the project and optimising it for production, this includes building out a fully customised system using reusable components and optimising images and fonts for web performance, creating a custom layout system with equal and fluid spacing. All of my designs are crafted to be fully responsive and fluid, they're optimised for all major devices.",
+    designText: "In the design phase, I present a style guide with a selection of fonts pairs and a colour palette with low-fidelity wireframes, once approved we move to high-fidelity wireframes.",
+    developmentText: "In the development phase, I begin developing the project and optimising it for production, this includes building out a fully customised system using reusable components and optimising images and fonts for web performance, creating a custom layout system with equal and fluid spacing. All of my designs are crafted to be fully responsive and fluid, they're optimised for all major devices.",
     deploymentHeading: "Deployment",
-    theDeploymentPhaseIs: "The deployment phase is the stage I connect the domain and ensure the site is secure with SSL, then launch the site and begin to optimise the SEO and ensure stability via test using various tools like Google Search Console and Ahrefs auditing, I run Lighthouse performance tests to ensure page speed and accessibility are optimum.",
-    development: "Development",
+    deploymentText: "The deployment phase is the stage I connect the domain and ensure the site is secure with SSL, then launch the site and begin to optimise the SEO and ensure stability via test using various tools like Google Search Console and Ahrefs auditing, I run Lighthouse performance tests to ensure page speed and accessibility are optimum.",
+    developmentHeading: "Development",
   },
   fr: {
-    theProcess: "LE PROCESSUS",
-    dependingOnTheProject: "Selon le projet, j’utilise une approche en quatre phases : découverte, design, développement et déploiement.",
-    discovery: "Découverte",
-    inTheDiscoveryPhase: "Pendant la phase de découverte, j’échange avec mon client afin de comprendre ses besoins et ses problématiques. Je crée des moodboards, puis nous discutons des options de design et des solutions possibles. Cette phase inclut également une analyse des concurrents et de la direction créative.",
+    heading: "LE PROCESSUS",
+    intro: "Selon le projet, j’utilise une approche en quatre phases : découverte, design, développement et déploiement.",
+    discoveryHeading: "Découverte",
+    discoveryText: "Pendant la phase de découverte, j’échange avec mon client afin de comprendre ses besoins et ses problématiques. Je crée des moodboards, puis nous discutons des options de design et des solutions possibles. Cette phase inclut également une analyse des concurrents et de la direction créative.",
     expand: "Ouvrir",
     collapse: "Fermer",
-    inTheDesignPhase: "Pendant la phase de design, je présente un guide de style avec une sélection de combinaisons typographiques, une palette de couleurs et des wireframes basse fidélité. Une fois validés, nous passons aux maquettes haute fidélité.",
-    inTheDevelopmentPhase: "Pendant la phase de développement, je commence à construire le projet et à l’optimiser pour la mise en production. Cela inclut la création d’un système entièrement personnalisé avec des composants réutilisables, l’optimisation des images et des polices pour les performances web, ainsi qu’un système de mise en page fluide et cohérent. Tous mes designs sont conçus pour être entièrement responsives et optimisés pour les principaux appareils.",
+    designText: "Pendant la phase de design, je présente un guide de style avec une sélection de combinaisons typographiques, une palette de couleurs et des wireframes basse fidélité. Une fois validés, nous passons aux maquettes haute fidélité.",
+    developmentText: "Pendant la phase de développement, je commence à construire le projet et à l’optimiser pour la mise en production. Cela inclut la création d’un système entièrement personnalisé avec des composants réutilisables, l’optimisation des images et des polices pour les performances web, ainsi qu’un système de mise en page fluide et cohérent. Tous mes designs sont conçus pour être entièrement responsives et optimisés pour les principaux appareils.",
     deploymentHeading: "Déploiement",
-    theDeploymentPhaseIs: "La phase de déploiement consiste à connecter le nom de domaine, sécuriser le site avec SSL, puis lancer le site. Ensuite, j’optimise le SEO et vérifie la stabilité grâce à différents outils comme Google Search Console et les audits Ahrefs. J’effectue également des tests Lighthouse afin de garantir une vitesse de chargement et une accessibilité optimales.",
-    development: "Développement",
+    deploymentText: "La phase de déploiement consiste à connecter le nom de domaine, sécuriser le site avec SSL, puis lancer le site. Ensuite, j’optimise le SEO et vérifie la stabilité grâce à différents outils comme Google Search Console et les audits Ahrefs. J’effectue également des tests Lighthouse afin de garantir une vitesse de chargement et une accessibilité optimales.",
+    developmentHeading: "Développement",
   },
 }[lang]
 ---
 
 <section class="sections about__process-sec">
   <div class="process__title-cont">
-    <h2>{t.theProcess}</h2>
+    <h2>{t.heading}</h2>
     <p class="max-txt-width">
-      {t.dependingOnTheProject}
+      {t.intro}
     </p>
   </div>
   <div class="about__process-cont" data-label-expand={t.expand} data-label-collapse={t.collapse}>
@@ -50,9 +50,9 @@ const t = {
       <h3>PHASE 1</h3>
       <div class="phase__content phase__content--hidden">
         <div class="phase__cont__text">
-          <h4>{t.discovery}</h4>
+          <h4>{t.discoveryHeading}</h4>
           <p>
-            {t.inTheDiscoveryPhase}
+            {t.discoveryText}
           </p>
         </div>
         <div class="phase__cont__svg">
@@ -119,7 +119,7 @@ const t = {
         <div class="phase__cont__text">
           <h4>Design</h4>
           <p>
-            {t.inTheDesignPhase}
+            {t.designText}
           </p>
         </div>
         <div class="phase__cont__svg">
@@ -200,9 +200,9 @@ const t = {
       <h3>PHASE 3</h3>
       <div class="phase__content phase__content--hidden">
         <div class="phase__cont__text">
-          <h4>{t.development}</h4>
+          <h4>{t.developmentHeading}</h4>
           <p>
-            {t.inTheDevelopmentPhase}
+            {t.developmentText}
           </p>
         </div>
         <div class="phase__cont__svg">
@@ -265,7 +265,7 @@ const t = {
         <div class="phase__cont__text">
           <h4>{t.deploymentHeading}</h4>
           <p>
-            {t.theDeploymentPhaseIs}
+            {t.deploymentText}
           </p>
         </div>
         <div class="phase__cont__svg">

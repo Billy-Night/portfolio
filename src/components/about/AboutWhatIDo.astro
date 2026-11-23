@@ -15,66 +15,64 @@ const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
   en: {
-    whatIDo: "WHAT I DO",
-    iBuildWebsitesSystems: "I build websites, systems and applications",
-    altBillyNightingaleUsingFigma: "Billy Nightingale using Figma for web design",
-    websiteDesign: "WEBSITE DESIGN",
-    designingWebsitesForSmall: "Designing websites for small to medium size businesses, with the use of cutting edge technology like Figma and relume AI to provide the highest quality design",
-    creatingAssetsLikeSvgs: "Creating assets like SVGs, icons and editing images with Affinity and Adobe to enhance the visual experience",
-    projects: "PROJECTS",
-    seoPerformanceOptimisation: "SEO & PERFORMANCE OPTIMISATION",
-    optimisePerformanceAndSeo: "Optimise performance and SEO to drive traffic and increase revenue, I strive to provide the fastest most accessible sites with great user experience.",
-    websiteDevelopment: "WEBSITE DEVELOPMENT",
-    fullStackWebDevelopment: "Full-stack web development, developing products and tools. I develop website using tool such as Wordpress and Elementor but also full-stack application through programming with languages such as JavaScript, frameworks like React and Node.JS",
-    projects: "PROJECTS",
+    heading: "WHAT I DO",
+    intro: "I build websites, systems and applications",
+    designImageAlt: "Billy Nightingale using Figma for web design",
+    designHeading: "WEBSITE DESIGN",
+    designText1: "Designing websites for small to medium size businesses, with the use of cutting edge technology like Figma and relume AI to provide the highest quality design",
+    designText2: "Creating assets like SVGs, icons and editing images with Affinity and Adobe to enhance the visual experience",
+    projectsButton: "PROJECTS",
+    seoHeading: "SEO & PERFORMANCE OPTIMISATION",
+    seoText: "Optimise performance and SEO to drive traffic and increase revenue, I strive to provide the fastest most accessible sites with great user experience.",
+    developmentHeading: "WEBSITE DEVELOPMENT",
+    developmentText: "Full-stack web development, developing products and tools. I develop website using tool such as Wordpress and Elementor but also full-stack application through programming with languages such as JavaScript, frameworks like React and Node.JS",
   },
   fr: {
-    whatIDo: "CE QUE JE FAIS",
-    iBuildWebsitesSystems: "Je crée des sites web, des systèmes et des applications",
-    altBillyNightingaleUsingFigma: "Billy Nightingale utilisant Figma pour le design web",
-    websiteDesign: "DESIGN DE SITE WEB",
-    designingWebsitesForSmall: "Création de sites web pour les petites et moyennes entreprises, en utilisant des technologies modernes comme Figma et Relume AI afin de proposer un design de haute qualité.",
-    creatingAssetsLikeSvgs: "Création d’éléments visuels comme des SVG, des icônes et retouche d’images avec Affinity et Adobe afin d’améliorer l’expérience visuelle.",
-    projects: "PROJETS",
-    seoPerformanceOptimisation: "OPTIMISATION SEO & PERFORMANCE",
-    optimisePerformanceAndSeo: "J’optimise les performances et le SEO afin d’augmenter le trafic et les revenus. Je cherche à créer des sites rapides, accessibles et offrant une excellente expérience utilisateur.",
-    websiteDevelopment: "DÉVELOPPEMENT WEB",
-    fullStackWebDevelopment: "Développement web full-stack, création de produits et d’outils numériques. Je développe des sites avec des outils comme WordPress et Elementor, mais aussi des applications full-stack avec des langages comme JavaScript et des frameworks comme React et Node.js.",
-    projects: "PROJETS",
+    heading: "CE QUE JE FAIS",
+    intro: "Je crée des sites web, des systèmes et des applications",
+    designImageAlt: "Billy Nightingale utilisant Figma pour le design web",
+    designHeading: "DESIGN DE SITE WEB",
+    designText1: "Création de sites web pour les petites et moyennes entreprises, en utilisant des technologies modernes comme Figma et Relume AI afin de proposer un design de haute qualité.",
+    designText2: "Création d’éléments visuels comme des SVG, des icônes et retouche d’images avec Affinity et Adobe afin d’améliorer l’expérience visuelle.",
+    projectsButton: "PROJETS",
+    seoHeading: "OPTIMISATION SEO & PERFORMANCE",
+    seoText: "J’optimise les performances et le SEO afin d’augmenter le trafic et les revenus. Je cherche à créer des sites rapides, accessibles et offrant une excellente expérience utilisateur.",
+    developmentHeading: "DÉVELOPPEMENT WEB",
+    developmentText: "Développement web full-stack, création de produits et d’outils numériques. Je développe des sites avec des outils comme WordPress et Elementor, mais aussi des applications full-stack avec des langages comme JavaScript et des frameworks comme React et Node.js.",
   },
 }[lang]
 ---
 
 <section class="wid__sec">
   <div class="wid__heading-container">
-    <h2>{t.whatIDo}</h2>
-    <p>{t.iBuildWebsitesSystems}</p>
+    <h2>{t.heading}</h2>
+    <p>{t.intro}</p>
   </div>
   <div class="wid__content-container">
     <div class="row">
       <div class="wid__img-cont">
         <Photo
           src={imgBillyNightingaleWebDesignFigma}
-          alt={t.altBillyNightingaleUsingFigma}
+          alt={t.designImageAlt}
           loading="lazy"
         />
       </div>
       <div class="wid__text-cont txt-r">
         <div class="wid__text box__shadow">
           <div class="max-txt-width">
-            <h3>{t.websiteDesign}</h3>
+            <h3>{t.designHeading}</h3>
             <p>
-              {t.designingWebsitesForSmall}
+              {t.designText1}
             </p>
             <p>
-              {t.creatingAssetsLikeSvgs}
+              {t.designText2}
             </p>
             <div class="wid__content_cta">
               <a class="btn__primary btn__prim--dark" href={r('services')}
                 >SERVICES</a
               >
               <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projects}</a
+                >{t.projectsButton}</a
               >
             </div>
           </div>
@@ -93,16 +91,16 @@ const t = {
       <div class="wid__text-cont txt-l">
         <div class="wid__text box__shadow">
           <div class="max-txt-width">
-            <h3>{t.seoPerformanceOptimisation}</h3>
+            <h3>{t.seoHeading}</h3>
             <p>
-              {t.optimisePerformanceAndSeo}
+              {t.seoText}
             </p>
             <div class="wid__content_cta">
               <a class="btn__primary btn__prim--dark" href={r('services')}
                 >SERVICES</a
               >
               <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projects}</a
+                >{t.projectsButton}</a
               >
             </div>
           </div>
@@ -121,16 +119,16 @@ const t = {
       <div class="wid__text-cont txt-r">
         <div class="wid__text box__shadow">
           <div class="max-txt-width">
-            <h3>{t.websiteDevelopment}</h3>
+            <h3>{t.developmentHeading}</h3>
             <p>
-              {t.fullStackWebDevelopment}
+              {t.developmentText}
             </p>
             <div class="wid__content_cta">
               <a class="btn__primary btn__prim--dark" href={r('services')}
                 >SERVICES</a
               >
               <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projects}</a
+                >{t.projectsButton}</a
               >
             </div>
           </div>

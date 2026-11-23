@@ -10,171 +10,171 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    frequentlyAskedQuestions: "Frequently asked Questions",
-    someQuestionWhichI: "Some question which I regularly get asked",
-    howMuchDoesA: "How much does a website cost?",
-    answer: "Answer",
-    everyProjectIsDifferent: "Every project is different, but most websites start from around 1,500€. The final cost depends on the number of pages, functionality, content requirements, and integrations such as online booking or e-commerce.",
-    howLongDoesIt: "How long does it take to build a website?",
-    mostWebsitesTakeBetween: "Most websites take between 4 and 8 weeks from discovery to launch, depending on project complexity and how quickly content and feedback are provided.",
-    doYouWorkWith: "Do you work with businesses outside Capbreton and Hossegor?",
-    yesWhileIM: "Yes. While I'm based in Capbreton, I work with businesses throughout France and internationally.",
-    willMyWebsiteAppear: "Will my website appear on Google?",
-    everyWebsiteIsBuilt: "Every website is built with SEO best practices in mind, including performance, accessibility, technical SEO, and clear site structure. SEO is a long-term process, but your website will be set up to give you the best possible foundation.",
-    canYouRedesignMy: "Can you redesign my existing website?",
-    yesWhetherYourCurrent: "Yes. Whether your current website needs a visual refresh, improved performance, better SEO, or new functionality, I can help modernise and optimise it.",
-    doYouProvideMaintenance: "Do you provide maintenance?",
-    yesOngoingMaintenancePlans: "Yes. Ongoing maintenance plans are available and can include updates, backups, security monitoring, performance checks, and technical support.",
-    canYouAddOnline: "Can you add online booking or e-commerce?",
-    yesICanIntegrate: "Yes. I can integrate online booking systems, e-commerce platforms, and other third-party tools to enhance your website's functionality and meet your business needs.",
-    doIOwnMy: "Do I own my website?",
-    yesOnceTheProject: "Yes. Once the project is complete and paid for, you own the website and its content. You'll also receive access to the tools needed to manage it.",
-    whatDoYouNeed: "What do you need from me to get started?",
-    usuallyINeedAn: "Usually I need an initial discussion about your business goals, any existing branding or content, and an understanding of what you want your website to achieve.",
-    canYouHelpImprove: "Can you help improve an existing website's SEO?",
-    yesICanAudit: "Yes. I can audit your current website, identify opportunities, and implement improvements to help increase visibility and generate more qualified traffic.",
+    heading: "Frequently asked Questions",
+    intro: "Some question which I regularly get asked",
+    costQuestion: "How much does a website cost?",
+    answerLabel: "Answer",
+    costAnswer: "Every project is different, but most websites start from around 1,500€. The final cost depends on the number of pages, functionality, content requirements, and integrations such as online booking or e-commerce.",
+    durationQuestion: "How long does it take to build a website?",
+    durationAnswer: "Most websites take between 4 and 8 weeks from discovery to launch, depending on project complexity and how quickly content and feedback are provided.",
+    locationQuestion: "Do you work with businesses outside Capbreton and Hossegor?",
+    locationAnswer: "Yes. While I'm based in Capbreton, I work with businesses throughout France and internationally.",
+    googleQuestion: "Will my website appear on Google?",
+    googleAnswer: "Every website is built with SEO best practices in mind, including performance, accessibility, technical SEO, and clear site structure. SEO is a long-term process, but your website will be set up to give you the best possible foundation.",
+    redesignQuestion: "Can you redesign my existing website?",
+    redesignAnswer: "Yes. Whether your current website needs a visual refresh, improved performance, better SEO, or new functionality, I can help modernise and optimise it.",
+    maintenanceQuestion: "Do you provide maintenance?",
+    maintenanceAnswer: "Yes. Ongoing maintenance plans are available and can include updates, backups, security monitoring, performance checks, and technical support.",
+    bookingQuestion: "Can you add online booking or e-commerce?",
+    bookingAnswer: "Yes. I can integrate online booking systems, e-commerce platforms, and other third-party tools to enhance your website's functionality and meet your business needs.",
+    ownershipQuestion: "Do I own my website?",
+    ownershipAnswer: "Yes. Once the project is complete and paid for, you own the website and its content. You'll also receive access to the tools needed to manage it.",
+    gettingStartedQuestion: "What do you need from me to get started?",
+    gettingStartedAnswer: "Usually I need an initial discussion about your business goals, any existing branding or content, and an understanding of what you want your website to achieve.",
+    seoQuestion: "Can you help improve an existing website's SEO?",
+    seoAnswer: "Yes. I can audit your current website, identify opportunities, and implement improvements to help increase visibility and generate more qualified traffic.",
   },
   fr: {
-    frequentlyAskedQuestions: "Questions fréquentes",
-    someQuestionWhichI: "Quelques questions que l’on me pose régulièrement",
-    howMuchDoesA: "Combien coûte un site internet ?",
-    answer: "Réponse",
-    everyProjectIsDifferent: "Chaque projet est différent, mais la plupart des sites internet commencent à partir d’environ 1 500 €. Le coût final dépend du nombre de pages, des fonctionnalités, des besoins en contenu et des intégrations telles que la réservation en ligne ou l’e-commerce.",
-    howLongDoesIt: "Combien de temps faut-il pour créer un site internet ?",
-    mostWebsitesTakeBetween: "La plupart des sites internet nécessitent entre 4 et 8 semaines entre la phase de découverte et la mise en ligne, selon la complexité du projet et la rapidité avec laquelle les contenus et retours sont fournis.",
-    doYouWorkWith: "Travaillez-vous avec des entreprises en dehors de Capbreton et Hossegor ?",
-    yesWhileIM: "Oui. Bien que je sois basé à Capbreton, je travaille avec des entreprises partout en France et à l’international.",
-    willMyWebsiteAppear: "Mon site apparaîtra-t-il sur Google ?",
-    everyWebsiteIsBuilt: "Chaque site est conçu selon les bonnes pratiques SEO, notamment en matière de performance, d’accessibilité, de référencement technique et de structure du contenu. Le SEO est un travail de long terme, mais votre site sera construit sur des bases solides pour maximiser ses chances de visibilité.",
-    canYouRedesignMy: "Pouvez-vous refondre un site internet existant ?",
-    yesWhetherYourCurrent: "Oui. Que votre site ait besoin d’un nouveau design, de meilleures performances, d’un SEO plus efficace ou de nouvelles fonctionnalités, je peux vous aider à le moderniser et à l’optimiser.",
-    doYouProvideMaintenance: "Proposez-vous un service de maintenance ?",
-    yesOngoingMaintenancePlans: "Oui. Des forfaits de maintenance sont disponibles et peuvent inclure les mises à jour, les sauvegardes, la surveillance de la sécurité, les contrôles de performance et l’assistance technique.",
-    canYouAddOnline: "Pouvez-vous ajouter une réservation en ligne ou une boutique e-commerce ?",
-    yesICanIntegrate: "Oui. Je peux intégrer des systèmes de réservation en ligne, des solutions e-commerce, des paiements sécurisés ainsi que des outils adaptés aux besoins de votre activité.",
-    doIOwnMy: "Suis-je propriétaire de mon site internet ?",
-    yesOnceTheProject: "Oui. Une fois le projet terminé et réglé, vous êtes propriétaire de votre site et de son contenu. Vous recevrez également les accès aux outils nécessaires pour le gérer.",
-    whatDoYouNeed: "De quoi avez-vous besoin pour commencer un projet ?",
-    usuallyINeedAn: "Généralement, j’ai besoin d’un premier échange pour comprendre vos objectifs, votre activité, votre contenu existant et ce que vous souhaitez accomplir avec votre site internet.",
-    canYouHelpImprove: "Pouvez-vous améliorer le SEO d’un site existant ?",
-    yesICanAudit: "Oui. Je peux réaliser un audit de votre site actuel, identifier les opportunités d’amélioration et mettre en place des optimisations pour augmenter votre visibilité et attirer un trafic plus qualifié.",
+    heading: "Questions fréquentes",
+    intro: "Quelques questions que l’on me pose régulièrement",
+    costQuestion: "Combien coûte un site internet ?",
+    answerLabel: "Réponse",
+    costAnswer: "Chaque projet est différent, mais la plupart des sites internet commencent à partir d’environ 1 500 €. Le coût final dépend du nombre de pages, des fonctionnalités, des besoins en contenu et des intégrations telles que la réservation en ligne ou l’e-commerce.",
+    durationQuestion: "Combien de temps faut-il pour créer un site internet ?",
+    durationAnswer: "La plupart des sites internet nécessitent entre 4 et 8 semaines entre la phase de découverte et la mise en ligne, selon la complexité du projet et la rapidité avec laquelle les contenus et retours sont fournis.",
+    locationQuestion: "Travaillez-vous avec des entreprises en dehors de Capbreton et Hossegor ?",
+    locationAnswer: "Oui. Bien que je sois basé à Capbreton, je travaille avec des entreprises partout en France et à l’international.",
+    googleQuestion: "Mon site apparaîtra-t-il sur Google ?",
+    googleAnswer: "Chaque site est conçu selon les bonnes pratiques SEO, notamment en matière de performance, d’accessibilité, de référencement technique et de structure du contenu. Le SEO est un travail de long terme, mais votre site sera construit sur des bases solides pour maximiser ses chances de visibilité.",
+    redesignQuestion: "Pouvez-vous refondre un site internet existant ?",
+    redesignAnswer: "Oui. Que votre site ait besoin d’un nouveau design, de meilleures performances, d’un SEO plus efficace ou de nouvelles fonctionnalités, je peux vous aider à le moderniser et à l’optimiser.",
+    maintenanceQuestion: "Proposez-vous un service de maintenance ?",
+    maintenanceAnswer: "Oui. Des forfaits de maintenance sont disponibles et peuvent inclure les mises à jour, les sauvegardes, la surveillance de la sécurité, les contrôles de performance et l’assistance technique.",
+    bookingQuestion: "Pouvez-vous ajouter une réservation en ligne ou une boutique e-commerce ?",
+    bookingAnswer: "Oui. Je peux intégrer des systèmes de réservation en ligne, des solutions e-commerce, des paiements sécurisés ainsi que des outils adaptés aux besoins de votre activité.",
+    ownershipQuestion: "Suis-je propriétaire de mon site internet ?",
+    ownershipAnswer: "Oui. Une fois le projet terminé et réglé, vous êtes propriétaire de votre site et de son contenu. Vous recevrez également les accès aux outils nécessaires pour le gérer.",
+    gettingStartedQuestion: "De quoi avez-vous besoin pour commencer un projet ?",
+    gettingStartedAnswer: "Généralement, j’ai besoin d’un premier échange pour comprendre vos objectifs, votre activité, votre contenu existant et ce que vous souhaitez accomplir avec votre site internet.",
+    seoQuestion: "Pouvez-vous améliorer le SEO d’un site existant ?",
+    seoAnswer: "Oui. Je peux réaliser un audit de votre site actuel, identifier les opportunités d’amélioration et mettre en place des optimisations pour augmenter votre visibilité et attirer un trafic plus qualifié.",
   },
 }[lang]
 ---
 
 <section class="section-pad section-center-max-width">
   <div class="subheading-centred">
-    <h2>{t.frequentlyAskedQuestions}</h2>
-    <p>{t.someQuestionWhichI}</p>
+    <h2>{t.heading}</h2>
+    <p>{t.intro}</p>
   </div>
   <div class="vertical-switcher">
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn is-active" data-index="0">{t.howMuchDoesA}</button>
+        <button class="vertical-switcher-btn is-active" data-index="0">{t.costQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt is-active">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.everyProjectIsDifferent}
+          {t.costAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="1">{t.howLongDoesIt}</button>
+        <button class="vertical-switcher-btn" data-index="1">{t.durationQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.mostWebsitesTakeBetween}
+          {t.durationAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="2">{t.doYouWorkWith}</button>
+        <button class="vertical-switcher-btn" data-index="2">{t.locationQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.yesWhileIM}
+          {t.locationAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="3">{t.willMyWebsiteAppear}</button>
+        <button class="vertical-switcher-btn" data-index="3">{t.googleQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.everyWebsiteIsBuilt}
+          {t.googleAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="4">{t.canYouRedesignMy}</button>
+        <button class="vertical-switcher-btn" data-index="4">{t.redesignQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.yesWhetherYourCurrent}
+          {t.redesignAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="5">{t.doYouProvideMaintenance}</button>
+        <button class="vertical-switcher-btn" data-index="5">{t.maintenanceQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.yesOngoingMaintenancePlans}
+          {t.maintenanceAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="6">{t.canYouAddOnline}</button>
+        <button class="vertical-switcher-btn" data-index="6">{t.bookingQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.yesICanIntegrate}
+          {t.bookingAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="7">{t.doIOwnMy}</button>
+        <button class="vertical-switcher-btn" data-index="7">{t.ownershipQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.yesOnceTheProject}
+          {t.ownershipAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="8">{t.whatDoYouNeed}</button>
+        <button class="vertical-switcher-btn" data-index="8">{t.gettingStartedQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.usuallyINeedAn}
+          {t.gettingStartedAnswer}
         </p>
       </div>
     </div>
     <div class="vertical-switcher-content">
       <h3 class="vertical-switcher-question">
-        <button class="vertical-switcher-btn" data-index="9">{t.canYouHelpImprove}</button>
+        <button class="vertical-switcher-btn" data-index="9">{t.seoQuestion}</button>
       </h3>
       <div class="vertical-switcher-txt">
-        <p class="h3-style">{t.answer}</p>
+        <p class="h3-style">{t.answerLabel}</p>
         <p class="max-txt-width">
-          {t.yesICanAudit}
+          {t.seoAnswer}
         </p>
       </div>
     </div>

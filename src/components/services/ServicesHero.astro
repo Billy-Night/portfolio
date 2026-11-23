@@ -12,16 +12,16 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    webDesign: "Web design",
-    webDevelopment: "Web Development",
-    projectManagement: "Project Management",
-    altBillyNightingaleSittingAt: "Billy Nightingale sitting at his MacBook working on web design",
+    designLink: "Web design",
+    developmentLink: "Web Development",
+    projectManagementLink: "Project Management",
+    imageAlt: "Billy Nightingale sitting at his MacBook working on web design",
   },
   fr: {
-    webDesign: "Web Design",
-    webDevelopment: "Web Développement",
-    projectManagement: "Gestion projet",
-    altBillyNightingaleSittingAt: "Billy Nightingale travaille sur le web design et développement à Capbreton",
+    designLink: "Web Design",
+    developmentLink: "Web Développement",
+    projectManagementLink: "Gestion projet",
+    imageAlt: "Billy Nightingale travaille sur le web design et développement à Capbreton",
   },
 }[lang]
 ---
@@ -33,16 +33,16 @@ const t = {
         <a
           href="#services-page__main-services"
           class="paint-text flip-text"
-          data-replace={t.webDesign}
-          ><span>{t.webDesign}</span></a
+          data-replace={t.designLink}
+          ><span>{t.designLink}</span></a
         >
       </p>
       <p class="services-intro-word h2-style">
         <a
           href="#services-page__main-services"
           class="paint-text flip-text"
-          data-replace={t.webDevelopment}
-          ><span>{t.webDevelopment}</span></a
+          data-replace={t.developmentLink}
+          ><span>{t.developmentLink}</span></a
         >
       </p>
       <p class="services-intro-word h2-style">
@@ -65,13 +65,13 @@ const t = {
         <a
           href="#services__page-sec-project-management"
           class="paint-text flip-text"
-          data-replace={t.projectManagement}
-          ><span>{t.projectManagement}</span></a
+          data-replace={t.projectManagementLink}
+          ><span>{t.projectManagementLink}</span></a
         >
       </p>
       <Photo
         src={imgPortraitSittingWorkingV2}
-        alt={t.altBillyNightingaleSittingAt}
+        alt={t.imageAlt}
         loading="eager"
       />
     </div>

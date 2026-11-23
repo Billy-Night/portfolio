@@ -88,8 +88,11 @@ From a review of the code as it stood before the migration. Most of the list was
 - **54 selectors are written more than once** (not counting media queries would lower this). Merging them can change which rule wins, so each needs checking.
 - **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the text-box, image-box and screenshot tests in [scripts/dev/](scripts/dev/).
 
-**2. Translation keys**
-The keys in the section components were generated from the first words of the English text (`readyToDiscussYour`, `iCraftPremiumWeb`). They work, and each sits next to its text. There are about 400. Renaming them by role (`heading`, `intro`, `ctaQuote`) is only worth it in the files you edit often: [HomeProjects.astro](src/components/home/HomeProjects.astro), [ServicesPackages.astro](src/components/services/ServicesPackages.astro) and [ContactForm.astro](src/components/contact/ContactForm.astro) hold the most. The built HTML must be byte-for-byte identical afterwards.
+**2. Two English image descriptions belong to another project** ([HomeProjects.astro](src/components/home/HomeProjects.astro))
+Found while renaming the translation keys. The French descriptions are right; the English ones were copied from the Weather Wise project:
+- `pacificCoastImageAlt` (the Pacific Coast Cafe screenshot) says "Weather Wise a frontend React web application, created by Billy".
+- `turbulenteImageAlt` (the Turbulente screenshot) says the same.
+These are read by screen readers and by search engines, so they are worth correcting. The SEO compare will report the change.
 
 **Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
 
@@ -172,6 +175,7 @@ The keys in the section components were generated from the first words of the En
 
 - **Contact function rate limit:** [contact.js](netlify/functions/contact.js) is converted to Netlify's current function format, which is what allows a rate limit: more than 5 requests a minute from one visitor get status 429 before the function runs. A rate limit needs a path, so the form now posts to `/api/contact`, and `/.netlify/functions/contact` is no longer served. Netlify only checks the rule when it deploys: look for it in the deploy log under post-processing. The Free and Pro plans allow 2 and 5 such rules per site; this is the only one.
 - **CSS, second pass:** removed 49 blocks of commented-out code, 19 variables that nothing uses, one unused animation and the four selectors for classes that no longer exist (215 lines).
+- **Translation keys:** 310 keys in 29 section components renamed from the first words of the English text (`readyToDiscussYour`) to their role (`heading`, `intro`, `quoteButton`, `monkeyMoodTask1`). The built site is byte-for-byte identical before and after.
 - **Heading levels:** every page now has one `<h1>` first and no skipped levels.
   - Footer tagline: `<h3>` → `<h2>` (every page). Contact form title: `<h3>` → `<h2>`.
   - About page: the four journey headings and the four technology group names: `<h4>` → `<h3>`.

@@ -11,28 +11,28 @@ const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
   en: {
-    webDesignDevelopmentSeo: "Web design, development & SEO for growing businesses",
-    iHelpBusinessesBuild: "I help businesses build fast, modern websites that attract clients and support long-term growth.",
-    startAProject: "[ START A PROJECT ]",
+    heading: "Web design, development & SEO for growing businesses",
+    subheading: "I help businesses build fast, modern websites that attract clients and support long-term growth.",
+    ctaLink: "[ START A PROJECT ]",
   },
   fr: {
-    webDesignDevelopmentSeo: "Web Design, et SEO pour les entreprises",
-    iHelpBusinessesBuild: "J’accompagne les entreprises dans la création de sites web modernes et rapides, conçus pour attirer des clients et soutenir une croissance durable.",
-    startAProject: "[ COMMENCER UN PROJECT ]",
+    heading: "Web Design, et SEO pour les entreprises",
+    subheading: "J’accompagne les entreprises dans la création de sites web modernes et rapides, conçus pour attirer des clients et soutenir une croissance durable.",
+    ctaLink: "[ COMMENCER UN PROJECT ]",
   },
 }[lang]
 ---
 
 <section class="services-intro-section">
   <div class="services__hero-text">
-    <h1>{t.webDesignDevelopmentSeo}</h1>
+    <h1>{t.heading}</h1>
     <div class="services__hero-sub-heading">
       <h2 class="max-txt-width">
-        {t.iHelpBusinessesBuild}
+        {t.subheading}
       </h2>
     </div>
   </div>
   <div class="services__hero-link">
-    <a class="hero__contact-link" href={r('contact')}>{t.startAProject}</a>
+    <a class="hero__contact-link" href={r('contact')}>{t.ctaLink}</a>
   </div>
 </section>

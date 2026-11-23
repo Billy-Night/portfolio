@@ -13,24 +13,24 @@ const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
   en: {
-    growYourBusiness: "GROW YOUR BUSINESS",
-    creatingWebsitesSystems: "CREATING WEBSITES & SYSTEMS",
-    iM: "I'm",
-    aWebDesignerHelping: "a web designer helping local businesses in Capbreton and southwest France build a strong, professional online presence.",
-    yourTechnicalPartnerFrom: "Your technical partner — from design to launch and SEO.",
-    availableForNewProjects: "Available for new projects, locally or remotely.",
-    learnMoreAboutMe: "Learn more about me and my recent projects",
-    projects: "Projects",
+    titleText: "GROW YOUR BUSINESS",
+    subheading: "CREATING WEBSITES & SYSTEMS",
+    introStart: "I'm",
+    introRest: "a web designer helping local businesses in Capbreton and southwest France build a strong, professional online presence.",
+    tagline: "Your technical partner — from design to launch and SEO.",
+    availability: "Available for new projects, locally or remotely.",
+    ctaText: "Learn more about me and my recent projects",
+    projectsButton: "Projects",
   },
   fr: {
-    growYourBusiness: "DÉVELOPPEZ VOTRE ENTREPRISE",
-    creatingWebsitesSystems: "CRÉATION DE SITE WEB ET SYSTÈMES",
-    iM: "Je suis",
-    aWebDesignerHelping: "développeur web et designer web, j’aide les entreprises du sud-ouest de la France à créer une présence en ligne forte et professionnelle.",
-    yourTechnicalPartnerFrom: "Votre partenaire technique, de la conception au lancement et au SEO.",
-    availableForNewProjects: "Disponible pour de nouveaux projets, sur place ou à distance.",
-    learnMoreAboutMe: "Découvrez-en plus sur moi et mes projets récents",
-    projects: "Projets",
+    titleText: "DÉVELOPPEZ VOTRE ENTREPRISE",
+    subheading: "CRÉATION DE SITE WEB ET SYSTÈMES",
+    introStart: "Je suis",
+    introRest: "développeur web et designer web, j’aide les entreprises du sud-ouest de la France à créer une présence en ligne forte et professionnelle.",
+    tagline: "Votre partenaire technique, de la conception au lancement et au SEO.",
+    availability: "Disponible pour de nouveaux projets, sur place ou à distance.",
+    ctaText: "Découvrez-en plus sur moi et mes projets récents",
+    projectsButton: "Projets",
   },
 }[lang]
 ---
@@ -83,7 +83,7 @@ const t = {
           >WEB DESIGNER CAPBRETON HOSSEGOR</span
         >
         <h1 class:list={["hero__title", lang === 'fr' && "hero__title-fr"]}>
-          <span class="hero__title-text">{t.growYourBusiness}</span>
+          <span class="hero__title-text">{t.titleText}</span>
           <span class="type-measure">
             <svg
               class="measure"
@@ -226,25 +226,25 @@ const t = {
       </svg>
       <div class="intro__text-cont">
         <div class="about__intro__txt-cont">
-          <h2>{t.creatingWebsitesSystems}</h2>
+          <h2>{t.subheading}</h2>
           <p class="max-hero-txt-width">
-            {t.iM} <span class="name">Billy Nightingale,</span> {t.aWebDesignerHelping}
+            {t.introStart} <span class="name">Billy Nightingale,</span> {t.introRest}
           </p>
           <p class="max-hero-txt-width">
-            {t.yourTechnicalPartnerFrom}
+            {t.tagline}
           </p>
           <p class="max-hero-txt-width">
-            {t.availableForNewProjects}
+            {t.availability}
           </p>
           <p class="max-hero-txt-width">
-            {t.learnMoreAboutMe}
+            {t.ctaText}
           </p>
           <div class="cta-container">
             <a class="btn__primary btn__prim--light" href={r('contact')}
               >Contact</a
             >
             <a class="btn__second btn__second--light" href={`${r('home')}#projects`}
-              >{t.projects}</a
+              >{t.projectsButton}</a
             >
           </div>
         </div>

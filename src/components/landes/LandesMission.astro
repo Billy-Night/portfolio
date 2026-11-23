@@ -10,32 +10,32 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    growYourBusiness: "grow your business",
-    iCraftPremiumWeb: "I craft premium websites and digital systems in the region of Landes, France.",
-    theObjectiveIsTo: "The objective is to support local businesses in developing and growing in their local market, which is achieved by ongoing support and growth strategies tailored for the Landes region.",
-    withAStrongFocus: "With a strong focus on building high performance websites with a 95+ score and top ranking websites in search results.",
+    heading: "grow your business",
+    text1: "I craft premium websites and digital systems in the region of Landes, France.",
+    text2: "The objective is to support local businesses in developing and growing in their local market, which is achieved by ongoing support and growth strategies tailored for the Landes region.",
+    text3: "With a strong focus on building high performance websites with a 95+ score and top ranking websites in search results.",
   },
   fr: {
-    growYourBusiness: "Développez votre activité",
-    iCraftPremiumWeb: "Je conçois des sites web haut de gamme et des solutions digitales pour les entreprises situées dans les Landes.",
-    theObjectiveIsTo: "Mon objectif est d’accompagner les entreprises locales dans leur développement grâce à un suivi personnalisé et à des stratégies de croissance adaptées au marché landais.",
-    withAStrongFocus: "Je mets un point d’honneur à créer des sites performants, obtenant régulièrement des scores supérieurs à 95/100 et de solides résultats dans les moteurs de recherche.",
+    heading: "Développez votre activité",
+    text1: "Je conçois des sites web haut de gamme et des solutions digitales pour les entreprises situées dans les Landes.",
+    text2: "Mon objectif est d’accompagner les entreprises locales dans leur développement grâce à un suivi personnalisé et à des stratégies de croissance adaptées au marché landais.",
+    text3: "Je mets un point d’honneur à créer des sites performants, obtenant régulièrement des scores supérieurs à 95/100 et de solides résultats dans les moteurs de recherche.",
   },
 }[lang]
 ---
 
 <section class="landes-mission-section">
   <div class="landes-mission-container">
-    <h2>{t.growYourBusiness}</h2>
+    <h2>{t.heading}</h2>
     <div class="mission-text-container">
       <p class="max-txt-width">
-        {t.iCraftPremiumWeb}
+        {t.text1}
       </p>
       <p class="max-txt-width">
-        {t.theObjectiveIsTo}
+        {t.text2}
       </p>
       <p class="max-txt-width">
-        {t.withAStrongFocus}
+        {t.text3}
       </p>
     </div>
   </div>

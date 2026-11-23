@@ -11,25 +11,25 @@ const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
   en: {
-    contactMe: "CONTACT ME",
-    iMAlwaysInterested: "I'm always interested in hearing about new exciting projects in the tech space.",
-    emailMe: "EMAIL ME",
-    aboutMe: "ABOUT ME",
+    heading: "CONTACT ME",
+    intro: "I'm always interested in hearing about new exciting projects in the tech space.",
+    emailButton: "EMAIL ME",
+    aboutButton: "ABOUT ME",
   },
   fr: {
-    contactMe: "CONTACTEZ-MOI",
-    iMAlwaysInterested: "Je suis toujours ouvert à discuter de nouveaux projets avec vous.",
-    emailMe: "PAR MAIL",
-    aboutMe: "À PROPOS",
+    heading: "CONTACTEZ-MOI",
+    intro: "Je suis toujours ouvert à discuter de nouveaux projets avec vous.",
+    emailButton: "PAR MAIL",
+    aboutButton: "À PROPOS",
   },
 }[lang]
 ---
 
 <section class="sections" id="contact">
   <div class="section-contact-container">
-    <h2>{t.contactMe}</h2>
+    <h2>{t.heading}</h2>
     <p>
-      {t.iMAlwaysInterested}
+      {t.intro}
     </p>
     <ul>
       <li>
@@ -116,9 +116,9 @@ const t = {
       <a
         class="btn__primary btn__prim--light"
         href="mailto:contact@billynightingale.com"
-        >{t.emailMe}</a
+        >{t.emailButton}</a
       >
-      <a class="btn__second btn__second--light" href={r('about')}>{t.aboutMe}</a>
+      <a class="btn__second btn__second--light" href={r('about')}>{t.aboutButton}</a>
     </div>
   </div>
 </section>

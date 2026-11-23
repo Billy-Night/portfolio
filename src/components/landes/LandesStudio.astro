@@ -12,18 +12,18 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    altBillyNightingaleWebDesigner: "Billy Nightingale web designer having a meeting with clients in Hossegor",
-    studioInLandes: "Studio in Landes",
-    myHandmadeCustomBuilt: "My handmade custom built studio is based in Capbreton, Landes, France.",
-    iBelieveGoodWebsites: "I believe good websites are built through attention to detail, clear communication and long-term thinking. The studio was created as a dedicated space for focused design and development work.",
-    beingBasedInCapbreton: "Being based in Capbreton allows me to understand local business and the local market, which is very important when designing and creating websites and systems for clients.",
+    imageAlt: "Billy Nightingale web designer having a meeting with clients in Hossegor",
+    heading: "Studio in Landes",
+    intro: "My handmade custom built studio is based in Capbreton, Landes, France.",
+    text1: "I believe good websites are built through attention to detail, clear communication and long-term thinking. The studio was created as a dedicated space for focused design and development work.",
+    text2: "Being based in Capbreton allows me to understand local business and the local market, which is very important when designing and creating websites and systems for clients.",
   },
   fr: {
-    altBillyNightingaleWebDesigner: "Billy Nightingale, concepteur et développeur web, en rendez-vous avec des clients à Hossegor",
-    studioInLandes: "Studio web dans les Landes",
-    myHandmadeCustomBuilt: "Mon studio de création web est basé à Capbreton, dans les Landes.",
-    iBelieveGoodWebsites: "Je suis convaincu que les meilleurs sites web naissent de l’attention portée aux détails, d’une communication claire et d’une vision à long terme. Ce studio a été conçu comme un espace dédié à la création et au développement de solutions digitales de qualité.",
-    beingBasedInCapbreton: "Être implanté à Capbreton me permet de comprendre les entreprises locales, leur marché et leurs clients, un atout essentiel pour concevoir des sites web efficaces et adaptés à leur environnement.",
+    imageAlt: "Billy Nightingale, concepteur et développeur web, en rendez-vous avec des clients à Hossegor",
+    heading: "Studio web dans les Landes",
+    intro: "Mon studio de création web est basé à Capbreton, dans les Landes.",
+    text1: "Je suis convaincu que les meilleurs sites web naissent de l’attention portée aux détails, d’une communication claire et d’une vision à long terme. Ce studio a été conçu comme un espace dédié à la création et au développement de solutions digitales de qualité.",
+    text2: "Être implanté à Capbreton me permet de comprendre les entreprises locales, leur marché et leurs clients, un atout essentiel pour concevoir des sites web efficaces et adaptés à leur environnement.",
   },
 }[lang]
 ---
@@ -33,7 +33,7 @@ const t = {
     <div class="layout-two-column-img img-overlay-blur-left">
       <Photo
         src={imgBillyNightingaleWebDesignerRendezVousAvecPacificCoastCafeHossegor}
-        alt={t.altBillyNightingaleWebDesigner}
+        alt={t.imageAlt}
         class="img-rad"
         loading="lazy"
       />
@@ -41,15 +41,15 @@ const t = {
     <div
       class="layout-two-column-txt contact__txt-normal-flow glass__back loc-mob-margin-left"
     >
-      <h2>{t.studioInLandes}</h2>
+      <h2>{t.heading}</h2>
       <p>
-        {t.myHandmadeCustomBuilt}
+        {t.intro}
       </p>
       <p class="max-txt-width">
-        {t.iBelieveGoodWebsites}
+        {t.text1}
       </p>
       <p class="max-txt-width">
-        {t.beingBasedInCapbreton}
+        {t.text2}
       </p>
     </div>
   </div>

@@ -10,36 +10,36 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    howIGrowYour: "How I grow your business",
-    theServicesIOffer: "The services I offer to help your business succeed online.",
-    development: "Development",
-    automation: "Automation",
+    heading: "How I grow your business",
+    intro: "The services I offer to help your business succeed online.",
+    developmentLabel: "Development",
+    automationLabel: "Automation",
   },
   fr: {
-    howIGrowYour: "Services pour votre entreprise",
-    theServicesIOffer: "Les services que je propose pour aider votre entreprise à réussir en ligne.",
-    development: "Développement",
-    automation: "Automatisation",
+    heading: "Services pour votre entreprise",
+    intro: "Les services que je propose pour aider votre entreprise à réussir en ligne.",
+    developmentLabel: "Développement",
+    automationLabel: "Automatisation",
   },
 }[lang]
 ---
 
 <section class="section-center-max-width section-pad">
   <div class="flex-center">
-    <h2 class="xl-heading txt-center">{t.howIGrowYour}</h2>
+    <h2 class="xl-heading txt-center">{t.heading}</h2>
     <p class="max-txt-width txt-center">
-      {t.theServicesIOffer}
+      {t.intro}
     </p>
   </div>
   <div class="flex-center">
     <div class="layout-6x6-grid home-services-grid">
       <div class="home-services-design flex-center"><p class="home-services__label">Design</p></div>
       <div class="home-services-development flex-center">
-        <p class="home-services__label">{t.development}</p>
+        <p class="home-services__label">{t.developmentLabel}</p>
       </div>
       <div class="home-services-seo flex-center"><p class="home-services__label">SEO</p></div>
       <div class="home-services-automation flex-center">
-        <p class="home-services__label">{t.automation}</p>
+        <p class="home-services__label">{t.automationLabel}</p>
       </div>
       <div class="home-services-img flex-center">
         <svg

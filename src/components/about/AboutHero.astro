@@ -13,22 +13,22 @@ const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
   en: {
-    about: "ABOUT",
-    aBriefIntro: "A BRIEF INTRO",
-    iMBillyNightingale: "I’m Billy Nightingale, a web designer and developer based in Capbreton, which is part of the Landes region in France. I help small local businesses create modern, high-performing websites that are fast, search-engine friendly, and designed to support real business growth.",
-    withABackgroundIn: "With a background in mechanical engineering and a strong focus on problem solving, I combine technical development with thoughtful design to build websites that are both functional and visually engaging. My work ranges from WordPress websites for local businesses to custom web applications and digital tools designed to simplify operations and improve online presence.",
-    jumpBackAndCheck: "Jump back and check out my projects or learn more",
-    learnMore: "LEARN MORE",
-    projects: "PROJECTS",
+    titleWord: "ABOUT",
+    introHeading: "A BRIEF INTRO",
+    intro1: "I’m Billy Nightingale, a web designer and developer based in Capbreton, which is part of the Landes region in France. I help small local businesses create modern, high-performing websites that are fast, search-engine friendly, and designed to support real business growth.",
+    intro2: "With a background in mechanical engineering and a strong focus on problem solving, I combine technical development with thoughtful design to build websites that are both functional and visually engaging. My work ranges from WordPress websites for local businesses to custom web applications and digital tools designed to simplify operations and improve online presence.",
+    ctaText: "Jump back and check out my projects or learn more",
+    learnMoreButton: "LEARN MORE",
+    projectsButton: "PROJECTS",
   },
   fr: {
-    about: "À PROPOS",
-    aBriefIntro: "BRÈVE INTRODUCTION",
-    iMBillyNightingale: "Je suis Billy Nightingale, web designer et développeur basé à Capbreton, dans les Landes, en France. J’aide les petites entreprises locales à créer des sites web modernes, performants, rapides, optimisés pour les moteurs de recherche et pensés pour soutenir leur croissance.",
-    withABackgroundIn: "Avec une formation en ingénierie mécanique et une approche axée sur la résolution de problèmes, je combine développement technique et design réfléchi pour créer des sites web à la fois fonctionnels et visuellement engageants. Mon travail va des sites WordPress pour les entreprises locales aux applications web sur mesure et aux outils numériques conçus pour simplifier les opérations et améliorer la présence en ligne.",
-    jumpBackAndCheck: "Retournez voir mes projets ou découvrez-en plus",
-    learnMore: "EN SAVOIR PLUS",
-    projects: "PROJETS",
+    titleWord: "À PROPOS",
+    introHeading: "BRÈVE INTRODUCTION",
+    intro1: "Je suis Billy Nightingale, web designer et développeur basé à Capbreton, dans les Landes, en France. J’aide les petites entreprises locales à créer des sites web modernes, performants, rapides, optimisés pour les moteurs de recherche et pensés pour soutenir leur croissance.",
+    intro2: "Avec une formation en ingénierie mécanique et une approche axée sur la résolution de problèmes, je combine développement technique et design réfléchi pour créer des sites web à la fois fonctionnels et visuellement engageants. Mon travail va des sites WordPress pour les entreprises locales aux applications web sur mesure et aux outils numériques conçus pour simplifier les opérations et améliorer la présence en ligne.",
+    ctaText: "Retournez voir mes projets ou découvrez-en plus",
+    learnMoreButton: "EN SAVOIR PLUS",
+    projectsButton: "PROJETS",
   },
 }[lang]
 ---
@@ -77,7 +77,7 @@ const t = {
   <div class="hero__full-container">
     <div class="hero__title-container">
       <div>
-        <span class="hero__title-word">{t.about}</span>
+        <span class="hero__title-word">{t.titleWord}</span>
         <h1 class="hero__title">
           <span class="hero__title-text">BILLY NIGHTINGALE</span>
           <span class="type-measure">
@@ -220,22 +220,22 @@ const t = {
       </svg>
       <div class="intro__text-cont">
         <div class="about__intro__txt-cont">
-          <h2>{t.aBriefIntro}</h2>
+          <h2>{t.introHeading}</h2>
           <p>
-            {t.iMBillyNightingale}
+            {t.intro1}
           </p>
           <p>
-            {t.withABackgroundIn}
+            {t.intro2}
           </p>
-          <p>{t.jumpBackAndCheck}</p>
+          <p>{t.ctaText}</p>
           <div class="cta-container">
             <a
               class="btn__primary btn__prim--light"
               href="#about__timeline-section"
-              >{t.learnMore}</a
+              >{t.learnMoreButton}</a
             >
             <a class="btn__second btn__second--light" href={`${r('home')}#projects`}
-              >{t.projects}</a
+              >{t.projectsButton}</a
             >
           </div>
         </div>

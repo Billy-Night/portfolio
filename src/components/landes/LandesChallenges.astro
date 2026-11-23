@@ -10,94 +10,94 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    realChallengesTailoredSolutions: "Real challenges, tailored solutions",
-    iFindTailoredSolutions: "I find tailored solutions to my clients’ requirements",
-    simplifyingReservationAcrossLocations: "Simplifying reservation across locations",
-    creatingNewRevenueOpportunities: "Creating new revenue opportunities",
-    launchingABrandOnline: "Launching a brand online from day one",
-    multiLocationBooking: "Multi-location booking",
-    challenge: "Challenge",
-    monkeyMoodOperatesRestaurants: "Monkey Mood operates restaurants in both Capbreton and Bordeaux. Customers needed a clearer way to navigate between locations and complete reservations.",
-    redesignedAndRebuiltThe: "Redesigned and rebuilt the website with a simplified booking journey, improved mobile experience and clearer location structure.",
-    creatingNewRevenueOpportunities2: "Creating new revenue opportunities",
-    pacificCoastCafeNeeded: "Pacific Coast Café needed a stronger digital platform to support future growth and create additional revenue streams beyond the physical café.",
-    improvedWebsitePerformanceAnd: "Improved website performance and integrated an online shop, creating a foundation for e-commerce, gift cards and future expansion.",
-    launchingABrandOnline2: "Launching a brand online from day one",
-    turbulenteKombuchaNeededIts: "Turbulente Kombucha needed its first online presence to reflect its identity and connect with customers beyond local distribution.",
-    designedAndDevelopedThe: "Designed and developed the company's first e-commerce website with a visual identity inspired by surfing, nature and the local coastline.",
+    heading: "Real challenges, tailored solutions",
+    intro: "I find tailored solutions to my clients’ requirements",
+    bookingTab: "Simplifying reservation across locations",
+    revenueTab: "Creating new revenue opportunities",
+    launchTab: "Launching a brand online from day one",
+    bookingHeading: "Multi-location booking",
+    challengeLabel: "Challenge",
+    bookingChallenge: "Monkey Mood operates restaurants in both Capbreton and Bordeaux. Customers needed a clearer way to navigate between locations and complete reservations.",
+    bookingSolution: "Redesigned and rebuilt the website with a simplified booking journey, improved mobile experience and clearer location structure.",
+    revenueHeading: "Creating new revenue opportunities",
+    revenueChallenge: "Pacific Coast Café needed a stronger digital platform to support future growth and create additional revenue streams beyond the physical café.",
+    revenueSolution: "Improved website performance and integrated an online shop, creating a foundation for e-commerce, gift cards and future expansion.",
+    launchHeading: "Launching a brand online from day one",
+    launchChallenge: "Turbulente Kombucha needed its first online presence to reflect its identity and connect with customers beyond local distribution.",
+    launchSolution: "Designed and developed the company's first e-commerce website with a visual identity inspired by surfing, nature and the local coastline.",
   },
   fr: {
-    realChallengesTailoredSolutions: "Des défis concrets, des solutions sur mesure",
-    iFindTailoredSolutions: "Des solutions adaptées aux besoins réels de chaque client",
-    simplifyingReservationAcrossLocations: "Simplifier les réservations entre plusieurs établissements",
-    creatingNewRevenueOpportunities: "Créer des opportunités de revenus",
-    launchingABrandOnline: "Lancer une marque en ligne",
-    multiLocationBooking: "Simplifier les réservations entre plusieurs établissements",
-    challenge: "Défi",
-    monkeyMoodOperatesRestaurants: "Monkey Mood possède deux restaurants, à Capbreton et à Bordeaux. Les clients avaient besoin d’un parcours plus clair pour choisir leur établissement et réserver facilement.",
-    redesignedAndRebuiltThe: "Refonte complète du site avec un parcours de réservation simplifié, une expérience mobile améliorée et une structure plus claire entre les différents établissements.",
-    creatingNewRevenueOpportunities2: "Créer de nouvelles opportunités de revenus",
-    pacificCoastCafeNeeded: "Pacific Coast Café souhaitait renforcer sa présence en ligne afin de soutenir sa croissance et développer de nouvelles sources de revenus au-delà du café physique.",
-    improvedWebsitePerformanceAnd: "Optimisation des performances du site et intégration d’une boutique en ligne, ouvrant la voie à l’e-commerce, aux cartes cadeaux et à de futurs développements.",
-    launchingABrandOnline2: "Lancer une marque en ligne dès le premier jour",
-    turbulenteKombuchaNeededIts: "Turbulente Kombucha avait besoin de sa première présence en ligne afin de présenter son identité de marque et de toucher ses clients au-delà de son réseau de distribution local.",
-    designedAndDevelopedThe: "Conception et développement du premier site e-commerce de la marque, avec une identité visuelle inspirée du surf, de la nature et du littoral landais.",
+    heading: "Des défis concrets, des solutions sur mesure",
+    intro: "Des solutions adaptées aux besoins réels de chaque client",
+    bookingTab: "Simplifier les réservations entre plusieurs établissements",
+    revenueTab: "Créer des opportunités de revenus",
+    launchTab: "Lancer une marque en ligne",
+    bookingHeading: "Simplifier les réservations entre plusieurs établissements",
+    challengeLabel: "Défi",
+    bookingChallenge: "Monkey Mood possède deux restaurants, à Capbreton et à Bordeaux. Les clients avaient besoin d’un parcours plus clair pour choisir leur établissement et réserver facilement.",
+    bookingSolution: "Refonte complète du site avec un parcours de réservation simplifié, une expérience mobile améliorée et une structure plus claire entre les différents établissements.",
+    revenueHeading: "Créer de nouvelles opportunités de revenus",
+    revenueChallenge: "Pacific Coast Café souhaitait renforcer sa présence en ligne afin de soutenir sa croissance et développer de nouvelles sources de revenus au-delà du café physique.",
+    revenueSolution: "Optimisation des performances du site et intégration d’une boutique en ligne, ouvrant la voie à l’e-commerce, aux cartes cadeaux et à de futurs développements.",
+    launchHeading: "Lancer une marque en ligne dès le premier jour",
+    launchChallenge: "Turbulente Kombucha avait besoin de sa première présence en ligne afin de présenter son identité de marque et de toucher ses clients au-delà de son réseau de distribution local.",
+    launchSolution: "Conception et développement du premier site e-commerce de la marque, avec une identité visuelle inspirée du surf, de la nature et du littoral landais.",
   },
 }[lang]
 ---
 
 <section class="section-pad">
   <div class="subheading-centred">
-    <h2>{t.realChallengesTailoredSolutions}</h2>
-    <p>{t.iFindTailoredSolutions}</p>
+    <h2>{t.heading}</h2>
+    <p>{t.intro}</p>
   </div>
   <div class="layout-two-column lan-chall-cont">
     <div class="ver-switcher-btn-cont">
       <button class="ver-switcher-btn is-active" data-index="0">
-        <span class="ver-switcher-btn__label">{t.simplifyingReservationAcrossLocations}</span>
+        <span class="ver-switcher-btn__label">{t.bookingTab}</span>
       </button>
       <button class="ver-switcher-btn" data-index="1">
-        <span class="ver-switcher-btn__label">{t.creatingNewRevenueOpportunities}</span>
+        <span class="ver-switcher-btn__label">{t.revenueTab}</span>
       </button>
       <button class="ver-switcher-btn" data-index="2">
-        <span class="ver-switcher-btn__label">{t.launchingABrandOnline}</span>
+        <span class="ver-switcher-btn__label">{t.launchTab}</span>
       </button>
     </div>
     <div class="ver-switcher-content">
       <div class="ver-switcher-content-txt is-active">
-        <h3>{t.multiLocationBooking}</h3>
+        <h3>{t.bookingHeading}</h3>
         <p>Client: Monkey Mood</p>
-        <h3>{t.challenge}</h3>
+        <h3>{t.challengeLabel}</h3>
         <p class="max-txt-width">
-          {t.monkeyMoodOperatesRestaurants}
+          {t.bookingChallenge}
         </p>
         <h3>Solution</h3>
         <p class="max-txt-width">
-          {t.redesignedAndRebuiltThe}
+          {t.bookingSolution}
         </p>
       </div>
       <div class="ver-switcher-content-txt">
-        <h3>{t.creatingNewRevenueOpportunities2}</h3>
+        <h3>{t.revenueHeading}</h3>
         <p>Client: Pacific Coast Cafe</p>
-        <h3>{t.challenge}</h3>
+        <h3>{t.challengeLabel}</h3>
         <p class="max-txt-width">
-          {t.pacificCoastCafeNeeded}
+          {t.revenueChallenge}
         </p>
         <h3>Solution</h3>
         <p class="max-txt-width">
-          {t.improvedWebsitePerformanceAnd}
+          {t.revenueSolution}
         </p>
       </div>
       <div class="ver-switcher-content-txt">
-        <h3>{t.launchingABrandOnline2}</h3>
+        <h3>{t.launchHeading}</h3>
         <p>Client: Turbulente Kombucha</p>
-        <h3>{t.challenge}</h3>
+        <h3>{t.challengeLabel}</h3>
         <p class="max-txt-width">
-          {t.turbulenteKombuchaNeededIts}
+          {t.launchChallenge}
         </p>
         <h3>Solution</h3>
         <p class="max-txt-width">
-          {t.designedAndDevelopedThe}
+          {t.launchSolution}
         </p>
       </div>
     </div>

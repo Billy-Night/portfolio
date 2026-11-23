@@ -13,14 +13,14 @@ const r = (key: RouteKey) => routes[key][lang]
 
 const t = {
   en: {
-    websiteDesignDevelopmentIn: "Website Design & Development in Landes",
-    altBillyNightingaleWebDesigner: "Billy Nightingale - web designer and developer discussing website creation with clients",
-    launchAProject: "Launch a project",
+    heading: "Website Design & Development in Landes",
+    imageAlt: "Billy Nightingale - web designer and developer discussing website creation with clients",
+    ctaButton: "Launch a project",
   },
   fr: {
-    websiteDesignDevelopmentIn: "Création de sites web dans les Landes",
-    altBillyNightingaleWebDesigner: "Billy Nightingale web designer et développeur parler avec des clients",
-    launchAProject: "Lancer un projet",
+    heading: "Création de sites web dans les Landes",
+    imageAlt: "Billy Nightingale web designer et développeur parler avec des clients",
+    ctaButton: "Lancer un projet",
   },
 }[lang]
 ---
@@ -29,7 +29,7 @@ const t = {
   <div class="landes-hero-container">
     <div class="landes-hero-text-container">
       <h1 class="landes-hero__title">
-        {t.websiteDesignDevelopmentIn}
+        {t.heading}
       </h1>
     </div>
     <div class="landes-hero-img-container">
@@ -60,7 +60,7 @@ const t = {
 
       <Photo
         src={imgBillyNightingaleWebDesignerV2}
-        alt={t.altBillyNightingaleWebDesigner}
+        alt={t.imageAlt}
         class="landes-hero-img"
         loading="eager"
       />
@@ -69,7 +69,7 @@ const t = {
   <div class="landes-cta-container">
     <div class="cta-container">
       <a class="btn__primary btn__prim--light" href={r('contact')}
-        >{t.launchAProject}</a
+        >{t.ctaButton}</a
       >
     </div>
   </div>
