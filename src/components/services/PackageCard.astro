@@ -1,0 +1,80 @@
+---
+// One website package card on the services page. The text comes from
+// src/data/pricing.ts; the labels shared by every card are in the table below.
+import { routes, type Lang } from '../../i18n/routes'
+import type { Package } from '../../data/pricing'
+import PackageFeatures from './PackageFeatures.astro'
+import PackageIcon from './PackageIcon.astro'
+
+interface Props {
+  pkg: Package
+  lang: Lang
+}
+
+const { pkg, lang } = Astro.props
+const large = pkg.highlighted === true
+
+const t = {
+  en: {
+    priceFrom: "From",
+    bestForLabel: "Best for",
+    deliveryLabel: "Delivery time",
+    callButton: "Book a call",
+    pricingButton: "See Pricing",
+  },
+  fr: {
+    priceFrom: "À partir de",
+    bestForLabel: "Idéal pour",
+    deliveryLabel: "Délai de réalisation",
+    callButton: "Réserver un appel découverte",
+    pricingButton: "Comparer les offres",
+  },
+}[lang]
+---
+
+<article class="package-card package-card--featured">
+  <div class="package-card__top">
+    <div>
+      <div class="package-card__label">
+        <span>{pkg.tagline[lang]}</span>
+        <span class="package-card__label-line"></span>
+      </div>
+      <h3 class:list={['package-card__title', large && 'package-card__title--large']}>{pkg.name[lang]}</h3>
+    </div>
+    <PackageIcon id={pkg.id} label={pkg.iconLabel?.[lang]} large={large} />
+  </div>
+  <div class="package-card__divider package-card__divider--short"></div>
+  <div class="package-card__label">
+    <span>{t.priceFrom} <span class="package-card__price">{pkg.price[lang]}</span></span>
+  </div>
+  <p class:list={['package-card__description', large && 'package-card__description--large']}>
+    {pkg.description[lang]}
+  </p>
+  <PackageFeatures items={pkg.features[lang]} large={large} />
+  <h4>{t.bestForLabel}</h4>
+  <p>{pkg.bestFor[lang]}</p>
+  <h4>{t.deliveryLabel}</h4>
+  <p>{pkg.delivery[lang]}</p>
+    <div class="package-card__actions">
+      <a class="btn__primary btn__prim--light" href={routes.contact[lang]}>
+        {t.callButton} <span aria-hidden="true">→</span>
+      </a>
+      <a class="btn__third" href="#pricing-table">
+        {t.pricingButton}
+        <span class="price-btn-arrow" aria-hidden="true"
+          ><svg
+            width="15"
+            height="15"
+            viewBox="0 0 21 15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.7071 8.07088C21.0976 7.68035 21.0976 7.04719 20.7071 6.65666L14.3431 0.292702C13.9526 -0.0978227 13.3195 -0.0978227 12.9289 0.292702C12.5384 0.683226 12.5384 1.31639 12.9289 1.70692L18.5858 7.36377L12.9289 13.0206C12.5384 13.4111 12.5384 14.0443 12.9289 14.4348C13.3195 14.8254 13.9526 14.8254 14.3431 14.4348L20.7071 8.07088ZM0 7.36377V8.36377H20V7.36377V6.36377H0V7.36377Z"
+              fill="white"
+            />
+          </svg>
+        </span>
+      </a>
+    </div>
+  {large && <div class="package-card__pattern" aria-hidden="true" />}
+</article>
