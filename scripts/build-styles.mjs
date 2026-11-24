@@ -1,6 +1,6 @@
 // Joins the files in src/styles/ into the one stylesheet the site serves,
 // public/css/style.css. The files are joined in the order of their names
-// (01-tokens.css first, 90-reduced-motion.css last) and nothing in them is
+// (01-tokens.css first, 09-reduced-motion.css last) and nothing in them is
 // changed: no bundling, no minifying.
 //
 // astro.config.mjs runs this at the start of every build and dev session, and

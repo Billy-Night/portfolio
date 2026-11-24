@@ -1,48 +1,46 @@
-# The stylesheet
+# Styles
 
-The site serves one stylesheet, `/css/style.css`. It is written here as separate files, one per part of the site, so that each is short enough to read in one go.
+Styles live in two places.
 
-## How it works
+## 1. In the component
 
-`scripts/build-styles.mjs` joins every `.css` file in this folder into `public/css/style.css`, in the order of the file names. Nothing in the files is changed: no bundling, no minifying. It runs by itself:
+A component's own styles are in a `<style is:global>` block at the end of its `.astro` file. Astro adds them only to the pages that use the component.
 
-- when `npm run dev` or `npm run build` starts;
-- in dev, each time a file in this folder is saved. The page then reloads.
+Parts used on several pages are components too, so their styles live with them: `Hero`, `Timeline`, `ImageTextRows`, `ContactCta`, `BulletList` and `home/ProjectCard`.
 
-`public/css/style.css` is a generated file. Do not edit it, and it is not in git. To see which file a rule came from, look for the `===== src/styles/... =====` line above it in the generated file or in the browser's developer tools.
+Three rules to keep:
 
-## The files
+- **Only the component's own classes.** Put a rule in a component only if it targets a class that component alone uses. A rule for a shared class (a button, `.glass__back`, `.layout-two-column`) belongs in this folder, or the other pages lose it.
+- **Order inside a block.** Rules follow the order of the markup, with `@media` blocks at the end. If a state rule must override a `@media` rule (the open menu in `Header.astro`), it comes after it, with a comment.
+- **An override goes after what it overrides.** Component styles load after this folder's files. So a "reduced motion" rule sits in the same component as the animation it switches off, after it.
 
-The number at the start of each name sets the order.
+`is:global` means the rules are not scoped to the component: class names must stay unique across the site.
 
-| Files | What they hold |
+## 2. In this folder
+
+What every page needs, joined in the order of the file names into one stylesheet, `/css/style.css`:
+
+| File | What it holds |
 | --- | --- |
-| `01` to `04` | Tokens, fonts, base elements, small utility classes |
-| `10`, `11` | Buttons and bullet lists |
-| `15` to `18` | Parts shared by several components: the contact call to action, the hero with the orbit, the timeline, the image and text rows |
-| `21`, `22` | The homepage project cards (three components share them) and the review photo and stars (shared with the project pages) |
-| `80` | Legal pages: two pages share them and there is no component to hold them |
-| `90` | Reduced motion. It must stay last |
+| `01-tokens.css` | Colours, fonts, type sizes, spacing, glass panel values |
+| `02-fonts.css` | The font files |
+| `03-base.css` | The page, headings, paragraphs, images, links |
+| `04-utilities.css` | Small helper classes, section widths, glass panels |
+| `05-buttons.css` | Buttons and button rows |
+| `06-project-panel.css` | The panel, technology tags and gold labels shared by the homepage cards and the project pages |
+| `07-review-photo.css` | The client photo and stars shared by the homepage reviews and the project pages |
+| `08-legal.css` | The two legal pages, which have no component |
+| `09-reduced-motion.css` | Reduced motion for the fade-in sections. Keep it last |
 
-Everything else lives in its own component: see the next section. To add a shared file, give it the next free number in its group. Order matters only when two rules of equal weight set the same property on the same element: the later one wins.
-
-## Styles inside a component
-
-A component holds its own styles in a `<style is:global>` block at the end of its `.astro` file. Astro adds those styles only to the pages that use the component, after the main stylesheet. Every component that has styles of its own does this now: the header, footer, cookie banner, contact form, the project pages, and the sections of the homepage, About, Services and Landes pages. What is left in this folder is shared by more than one component.
-
-- `is:global` keeps the rules unscoped, so they behave exactly as they would in this folder.
-- Only put a rule in a component if every selector in it has a class that belongs to that component alone. A rule for a shared class (`.layout-two-column`, `.glass__back`, a button) must stay in this folder, or the other pages that use the class lose it.
-- Component styles load after this folder's files. So a rule here cannot override a component's rule of equal weight. That is why the reduced-motion rules for the services circle and the About process are inside those two components, after the animations they switch off, and not in `90-reduced-motion.css`.
-- Astro minifies these styles. `cssTarget` in `astro.config.mjs` stops it removing the `-webkit-backdrop-filter` lines that Safari before version 18 needs. Do not remove that setting.
-- The minifier rewrites some values, for example `background: none` becomes `background: 0 0`. That is the same thing written shorter.
+`scripts/build-styles.mjs` does the joining, at the start of `npm run dev` and `npm run build` and each time a file here is saved. Nothing is processed or minified. `public/css/style.css` is the generated result: do not edit it, and it is not in git.
 
 ## Tokens
 
-`01-tokens.css` holds the shared values: colours, fonts, type sizes, spacing, and the glass panel set (`--glass-bg-*`, `--glass-border`, `--glass-shadow`, `--glass-blur`). Use a token when one exists; add one there when the same value is needed in a second place.
+Use a token from `01-tokens.css` when one exists, and add one there when a value is needed in a second place. The glass panels use `--glass-bg-*`, `--glass-border`, `--glass-shadow` and `--glass-blur`.
 
 ## Screen widths
 
-The older rules use many different widths. For anything new, pick from these three, so that layouts change together:
+The older rules use many different widths. For anything new, pick from these three:
 
 ```css
 @media (max-width: 600px)  { /* phones */ }
@@ -50,8 +48,13 @@ The older rules use many different widths. For anything new, pick from these thr
 @media (max-width: 1100px) { /* small laptops and below */ }
 ```
 
-A "from this width up" rule starts one pixel later (`min-width: 801px`), so it never applies at the same time as its "up to" partner. A width cannot be stored as a token: browsers do not allow variables inside `@media`.
+A "from this width up" rule starts one pixel later (`min-width: 801px`), so it never applies together with its "up to" partner.
+
+## Two things Astro does to component styles
+
+- **It minifies them,** which rewrites some values: `background: none` becomes `background: 0 0`, and `to left` becomes `270deg`. These mean the same.
+- **It would remove `-webkit-backdrop-filter`,** which Safari before version 18 needs for the glass blur. `cssTarget` in `astro.config.mjs` prevents that. Do not remove that setting.
 
 ## Checking a change
 
-`scripts/dev/README.md` describes the tools. For a change that should not alter how anything looks, the "Styles" section there compares every element on every page between two builds.
+`scripts/dev/README.md` describes the tools. The "Styles" section there compares every element on every page between two builds.
