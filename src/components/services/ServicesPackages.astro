@@ -148,6 +148,10 @@ const t = {
   }
 
   .packages__intro {
+    /* A reading-length limit. Today the grid column keeps the paragraph
+       narrower than this at every width, so it is a safeguard for a future
+       layout change, not something you can see. */
+    max-width: 65ch;
     margin: 0 0 0.5rem;
     color: var(--body-colour);
     font-size: clamp(1rem, 1.5vw, 1.25rem);

@@ -82,10 +82,10 @@ From a review of the code as it stood before the migration. Most of the list was
 Done on 2026-11-24: one naming convention, the repeated selectors merged, and the styles moved out of the single file into the components. What is left:
 
 - **One broad global rule.** `img { width: 100% }` in [03-base.css](src/styles/03-base.css) applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer. Left as it is by choice.
-- **Three design choices that were never applied.** Three declarations on the services page used variables that don't exist, so the browser ignored them. They were removed, which keeps the page exactly as it is. If you want the effect they were written for, each is one line:
+- **Two design choices that were never applied.** Three declarations on the services page used variables that don't exist, so the browser ignored them. They were removed, which keeps the page exactly as it is. If you want the effect they were written for, each is one line:
   - `.package-card__description--large`: a larger description on the featured package, for example `font-size: var(--text-l)`. This makes the services page about 70px taller on desktop.
   - `.benefit`: a muted colour for the three benefit labels. There is no muted colour variable yet.
-  - `.packages__intro`: a maximum width for the packages intro, for example `max-width: 65ch`.
+  - Done on 2026-11-24: `.packages__intro` has `max-width: 65ch`. It changes nothing visible, because the grid column already keeps the paragraph to about 36 characters a line on wide screens.
 
 **Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
 
