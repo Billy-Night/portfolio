@@ -77,9 +77,9 @@ window.matchMedia('(max-width: 800px)').addEventListener('change', closeMenu)
 window.addEventListener('scroll', () => {
   if (window.scrollY > navHeight) {
     header.classList.add('small-nav')
-    nav.classList.add('nav_radius')
+    nav.classList.add('nav--rounded')
   } else {
     header.classList.remove('small-nav')
-    nav.classList.remove('nav_radius')
+    nav.classList.remove('nav--rounded')
   }
 })
