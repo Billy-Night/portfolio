@@ -35,8 +35,8 @@ const t = {
 }[lang]
 ---
 
-<article class:list={[reverse && 'reverse', 'project-info-container']}>
-  <div class="text">
+<article class:list={[reverse && 'project-info-container--reverse', 'project-info-container']}>
+  <div class="project-info__text">
     <h3 class:list={['projects-heading', headingReverse]}>{project.category[lang]}</h3>
     <h4 class:list={['projects-heading-name', headingReverse]}>{project.name[lang]}</h4>
     <div class="project__glass-back">
