@@ -1,0 +1,24 @@
+---
+// One row inside ImageTextRows.astro: a photo on one side, a text panel on the
+// other. Its styles are in ImageTextRows.astro.
+interface Props {
+  /** Which side the photo sits on. The text panel takes the other side. */
+  imageSide: 'left' | 'right'
+}
+
+const { imageSide } = Astro.props
+const right = imageSide === 'right'
+---
+
+<div class="row">
+  <div class={right ? 'wid__img-cont-right right' : 'wid__img-cont'}>
+    <slot name="image" />
+  </div>
+  <div class:list={['wid__text-cont', right ? 'txt-l' : 'txt-r']}>
+    <div class="wid__text box__shadow">
+      <div class="max-txt-width">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

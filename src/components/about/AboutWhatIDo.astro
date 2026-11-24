@@ -1,5 +1,7 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import ImageTextRow from '../ImageTextRow.astro'
+import ImageTextRows from '../ImageTextRows.astro'
 import Photo from '../Photo.astro'
 import imgBillyNightingaleWebDesignFigma from '../../assets/images/about_wid/billy_nightingale_web_design_figma.webp'
 import imgBillyNightingaleWebOptimistationLighthouse from '../../assets/images/about_wid/billy_nightingale_web_optimistation_lighthouse.webp'
@@ -43,97 +45,70 @@ const t = {
 }[lang]
 ---
 
-<section class="wid__sec">
-  <div class="wid__heading-container">
-    <h2>{t.heading}</h2>
-    <p>{t.intro}</p>
-  </div>
-  <div class="wid__content-container">
-    <div class="row">
-      <div class="wid__img-cont">
-        <Photo
-          src={imgBillyNightingaleWebDesignFigma}
-          alt={t.designImageAlt}
-          loading="lazy"
-        />
-      </div>
-      <div class="wid__text-cont txt-r">
-        <div class="wid__text box__shadow">
-          <div class="max-txt-width">
-            <h3>{t.designHeading}</h3>
-            <p>
-              {t.designText1}
-            </p>
-            <p>
-              {t.designText2}
-            </p>
-            <div class="wid__content_cta">
-              <a class="btn__primary btn__prim--dark" href={r('services')}
-                >SERVICES</a
-              >
-              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projectsButton}</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+<ImageTextRows heading={t.heading} intro={t.intro}>
+  <ImageTextRow imageSide="left">
+    <Photo
+      slot="image"
+      src={imgBillyNightingaleWebDesignFigma}
+      alt={t.designImageAlt}
+      loading="lazy"
+    />
+    <h3>{t.designHeading}</h3>
+    <p>
+      {t.designText1}
+    </p>
+    <p>
+      {t.designText2}
+    </p>
+    <div class="wid__content_cta">
+      <a class="btn__primary btn__prim--dark" href={r('services')}
+        >SERVICES</a
+      >
+      <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+        >{t.projectsButton}</a
+      >
     </div>
+  </ImageTextRow>
 
-    <div class="row">
-      <div class="wid__img-cont-right right">
-        <Photo
-          src={imgBillyNightingaleWebOptimistationLighthouse}
-          alt="Billy Nightingale using Google Lighthouse to optimise websites"
-          loading="lazy"
-        />
-      </div>
-      <div class="wid__text-cont txt-l">
-        <div class="wid__text box__shadow">
-          <div class="max-txt-width">
-            <h3>{t.seoHeading}</h3>
-            <p>
-              {t.seoText}
-            </p>
-            <div class="wid__content_cta">
-              <a class="btn__primary btn__prim--dark" href={r('services')}
-                >SERVICES</a
-              >
-              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projectsButton}</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+  <ImageTextRow imageSide="right">
+    <Photo
+      slot="image"
+      src={imgBillyNightingaleWebOptimistationLighthouse}
+      alt="Billy Nightingale using Google Lighthouse to optimise websites"
+      loading="lazy"
+    />
+    <h3>{t.seoHeading}</h3>
+    <p>
+      {t.seoText}
+    </p>
+    <div class="wid__content_cta">
+      <a class="btn__primary btn__prim--dark" href={r('services')}
+        >SERVICES</a
+      >
+      <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+        >{t.projectsButton}</a
+      >
     </div>
+  </ImageTextRow>
 
-    <div class="row">
-      <div class="wid__img-cont">
-        <Photo
-          src={imgBillyNightingaleWebDevelopment}
-          alt="Billy Nightingale using VSCode for web development"
-          loading="lazy"
-        />
-      </div>
-      <div class="wid__text-cont txt-r">
-        <div class="wid__text box__shadow">
-          <div class="max-txt-width">
-            <h3>{t.developmentHeading}</h3>
-            <p>
-              {t.developmentText}
-            </p>
-            <div class="wid__content_cta">
-              <a class="btn__primary btn__prim--dark" href={r('services')}
-                >SERVICES</a
-              >
-              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projectsButton}</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+  <ImageTextRow imageSide="left">
+    <Photo
+      slot="image"
+      src={imgBillyNightingaleWebDevelopment}
+      alt="Billy Nightingale using VSCode for web development"
+      loading="lazy"
+    />
+    <h3>{t.developmentHeading}</h3>
+    <p>
+      {t.developmentText}
+    </p>
+    <div class="wid__content_cta">
+      <a class="btn__primary btn__prim--dark" href={r('services')}
+        >SERVICES</a
+      >
+      <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+        >{t.projectsButton}</a
+      >
     </div>
-  </div>
-</section>
+  </ImageTextRow>
+</ImageTextRows>
