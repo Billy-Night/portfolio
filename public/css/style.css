@@ -734,16 +734,16 @@ a {
   display: flex;
   align-items: center;
   gap: var(--gap-sm);
-  opacity: 0;
-  transform: translateY(20px);
   transition:
     opacity 600ms ease,
     transform 600ms ease;
 }
 
-.bullet-point-container.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Added by src/scripts/bullets.js to bullets further down the page, and
+   removed when they scroll into view. Without the script nothing is hidden. */
+.bullet-point-container.is-waiting {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .bullet-point-svg {
@@ -3849,7 +3849,7 @@ a:hover .social__icons {
 
   /* Sections and package bullet points fade in without sliding up */
   .sections--hidden,
-  .bullet-point-container {
+  .bullet-point-container.is-waiting {
     transform: none;
   }
 }
