@@ -79,3 +79,150 @@ const { id, label, large = false } = Astro.props
     </svg>
   )}
 </div>
+
+<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
+     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<style is:global>
+  .package-card__icon {
+    flex: 0 0 auto;
+    width: 3.5rem;
+    color: var(--gold);
+  }
+
+  .package-card__icon--large {
+    width: clamp(5rem, 9vw, 8rem);
+  }
+
+  .package-card__icon svg {
+    display: block;
+    width: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @media (max-width: 680px) {
+    .package-card__icon {
+        width: 2.75rem;
+      }
+
+    .package-card__icon--large {
+        width: 4rem;
+      }
+  }
+
+  .package-card__icon svg {
+    overflow: visible;
+  }
+
+  .package-card__icon rect {
+    transform-box: view-box;
+    transform-origin: center;
+  }
+
+  /* Inner rectangle — clockwise */
+  .package-card__icon rect:nth-child(1) {
+    animation: rotate-clockwise 14s linear infinite;
+  }
+
+  /* Middle rectangle — anti-clockwise */
+  .package-card__icon rect:nth-child(2) {
+    animation: rotate-anticlockwise 20s linear infinite;
+  }
+
+  /* Outer rectangle — clockwise */
+  .package-card__icon rect:nth-child(3) {
+    animation: rotate-clockwise 28s linear infinite;
+  }
+
+  @keyframes rotate-clockwise {
+    from {
+      transform: rotate(45deg);
+    }
+
+    to {
+      transform: rotate(405deg);
+    }
+  }
+
+  @keyframes rotate-anticlockwise {
+    from {
+      transform: rotate(45deg);
+    }
+
+    to {
+      transform: rotate(-315deg);
+    }
+  }
+
+  .package-card__icon circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  /* Small inner lens */
+  .package-card__icon circle:nth-child(1) {
+    animation: telescope-inner 6s ease-in-out infinite;
+  }
+
+  /* Middle lens */
+  .package-card__icon circle:nth-child(2) {
+    animation: telescope-middle 6s ease-in-out infinite;
+  }
+
+  /* Outer lens */
+  .package-card__icon circle:nth-child(3) {
+    animation: telescope-outer 6s ease-in-out infinite;
+  }
+
+  @keyframes telescope-inner {
+    0%,
+    100% {
+      transform: translateX(0) scale(1);
+    }
+
+    50% {
+      transform: translateX(-2px) scale(0.94);
+    }
+  }
+
+  @keyframes telescope-middle {
+    0%,
+    100% {
+      transform: translateX(0) scale(1);
+    }
+
+    50% {
+      transform: translateX(2px) scale(1.02);
+    }
+  }
+
+  @keyframes telescope-outer {
+    0%,
+    100% {
+      transform: translateX(0) scale(1);
+    }
+
+    50% {
+      transform: translateX(7px) scale(1.06);
+    }
+  }
+
+  /* :nth-child(n) matches every circle. It is there to give this rule the same
+     weight as the :nth-child(1) rules above, which a plain "circle" lost to. */
+  @media (prefers-reduced-motion: reduce) {
+    .package-card__icon circle:nth-child(n) {
+        animation: none;
+      }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .package-card__icon rect:nth-child(n) {
+        animation: none;
+        transform: rotate(45deg);
+      }
+  }
+</style>

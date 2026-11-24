@@ -102,3 +102,72 @@ const t = {
 <script>
   import '../../scripts/landesPhone.js'
 </script>
+
+<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
+     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<style is:global>
+  .static-phone-channel {
+    height: 1200px;
+  }
+
+  .phone-interactive-content-container {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 120px;
+  }
+
+  .static-phone-container {
+    width: 80%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .static-phone-img {
+    width: clamp(180px, 40vw, 500px);
+    height: auto;
+    align-self: center;
+  }
+
+  .phone-text-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+  }
+
+  .phone-text-content-cont {
+    grid-area: 1/1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+  }
+
+  .phone-text-content-cont.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 600px) {
+    .static-phone-title {
+        font-size: var(--title-3);
+      }
+
+    .phone-interactive-content-container {
+        flex-direction: column;
+        gap: var(--gap-sm);
+      }
+
+    .phone-interactive-content-container {
+        top: 90px;
+      }
+
+    .phone-text-content-cont {
+        display: block;
+      }
+  }
+</style>

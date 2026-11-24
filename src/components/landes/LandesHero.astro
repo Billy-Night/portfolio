@@ -74,3 +74,93 @@ const t = {
     </div>
   </div>
 </section>
+
+<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
+     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<style is:global>
+  .landes-hero-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: var(--page-gutter);
+    max-width: 2000px;
+  }
+
+  .landes-hero-text-container {
+    flex: 1;
+    padding-top: var(--space-7);
+    padding-left: var(--space-3);
+  }
+
+  .landes-hero__title {
+    position: relative;
+    display: inline-block;
+    font-family: var(--display);
+    font-size: clamp(3.9rem, 1.558rem + 11.71vw, 14rem);
+    color: var(--brightGold);
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+  }
+
+  .landes-hero-img-container {
+    display: grid;
+    width: clamp(260px, 45vw, 700px);
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .landes-hero-img-container img {
+    width: clamp(260px, 45vw, 650px);
+  }
+
+  .landes-hero-img,
+  .landes-hero-svg1,
+  .landes-hero-svg2 {
+    grid-area: 1 / 1;
+    display: block;
+  }
+
+  .landes-hero-img {
+    width: 100%;
+  }
+
+  .landes-hero-svg1,
+  .landes-hero-svg2 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .landes-hero-img {
+    z-index: 2;
+  }
+
+  .landes-hero-svg1 {
+    z-index: 1;
+  }
+
+  .landes-hero-svg2 {
+    z-index: 3;
+  }
+
+  @media screen and (max-width: 600px) {
+    .landes-hero-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-right: var(--space-2);
+        padding-top: var(--space-2);
+        gap: var(--gap-sm);
+      }
+
+    .landes-hero-text-container {
+        padding-top: var(--space-3);
+      }
+  }
+
+  .landes-cta-container {
+    padding: var(--space-3);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+</style>

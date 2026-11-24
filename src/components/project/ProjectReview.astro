@@ -31,3 +31,34 @@ const t = {
     <img class="review__stars" src="/assets/icons/stars.svg" alt={t.starsAlt} />
   </figure>
 </section>
+
+<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
+     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<style is:global>
+  .project-review {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--gap-md);
+  }
+
+  .project-review__photo {
+    width: 150px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .project-review blockquote {
+    margin: 0;
+    max-width: 65ch;
+  }
+
+  .project-review figcaption {
+    font-family: var(--mono);
+    color: var(--gold);
+  }
+</style>

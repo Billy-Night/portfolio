@@ -139,4 +139,127 @@ const t = {
     text-align: center;
     margin-top: var(--space-6);
   }
+
+  .packages__container {
+    width: min(100%, 2200px);
+    margin-inline: auto;
+    margin-bottom: var(--padding-hor-section);
+  }
+
+  .packages__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    gap: var(--gap-lg);
+    margin-bottom: var(--gap-lg);
+  }
+
+  .packages__eyebrow {
+    margin: 0 0 1.25rem;
+    color: var(--body-colour);
+    text-transform: uppercase;
+  }
+
+  .packages__title {
+    margin: 0;
+    line-height: 0.95;
+  }
+
+  .packages__title {
+    max-width: 15ch;
+    font-size: var(--fs-hero-xl);
+  }
+
+  .packages__title_fr {
+    max-width: 30ch;
+    font-size: var(--fs-hero-xl);
+  }
+
+  .packages__intro {
+    margin: 0 0 0.5rem;
+    color: var(--body-colour);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+    grid-column: 3 / 4;
+  }
+
+  .packages__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap-md);
+  }
+
+  .benefit svg {
+    display: block;
+    width: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .packages__benefits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 0;
+    padding-top: 1.5rem;
+  }
+
+  .benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 2rem;
+    font-size: 0.85rem;
+  }
+
+  .benefit:first-child {
+    padding-left: 0;
+  }
+
+  .benefit + .benefit {
+    border-left: 1px solid var(--gold);
+  }
+
+  .benefit svg {
+    width: 1.8rem;
+    color: var(--gold);
+  }
+
+  @media (max-width: 1181px) {
+    .packages__header,
+      .packages__grid {
+        grid-template-columns: 1fr;
+      }
+
+    .packages__header {
+        align-items: start;
+        gap: 1.5rem;
+      }
+
+    .packages__intro {
+        max-width: 42rem;
+        grid-column: 1 / 2;
+      }
+  }
+
+  @media (max-width: 680px) {
+    .benefit {
+        width: 100%;
+        padding: 0;
+      }
+
+    .benefit + .benefit {
+        border-left: 0;
+      }
+  }
+
+  /* The section itself */
+  .packages {
+    position: relative;
+    overflow: hidden;
+    padding: var(--padding-hor-section) var(--page-gutter);
+  }
 </style>

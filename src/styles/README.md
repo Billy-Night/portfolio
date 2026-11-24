@@ -21,9 +21,6 @@ The number at the start of each name sets the order.
 | `10`, `11` | Buttons and bullet lists |
 | `15` to `18` | Parts shared by several components: the contact call to action, the hero with the orbit, the timeline, the image and text rows |
 | `21`, `22` | The homepage project cards (three components share them) and the review photo and stars (shared with the project pages) |
-| `30` | Project pages |
-| `53` | Services page: the packages |
-| `60` | Landes page: hero, phone, mission and approach |
 | `80` | Legal pages: two pages share them and there is no component to hold them |
 | `90` | Reduced motion. It must stay last |
 
@@ -31,7 +28,7 @@ Everything else lives in its own component: see the next section. To add a share
 
 ## Styles inside a component
 
-A component holds its own styles in a `<style is:global>` block at the end of its `.astro` file. Astro adds those styles only to the pages that use the component, after the main stylesheet. Most components do this now: the header, footer, cookie banner, contact form, and most sections of the homepage, About, Services and Landes pages.
+A component holds its own styles in a `<style is:global>` block at the end of its `.astro` file. Astro adds those styles only to the pages that use the component, after the main stylesheet. Every component that has styles of its own does this now: the header, footer, cookie banner, contact form, the project pages, and the sections of the homepage, About, Services and Landes pages. What is left in this folder is shared by more than one component.
 
 - `is:global` keeps the rules unscoped, so they behave exactly as they would in this folder.
 - Only put a rule in a component if every selector in it has a class that belongs to that component alone. A rule for a shared class (`.layout-two-column`, `.glass__back`, a button) must stay in this folder, or the other pages that use the class lose it.
