@@ -7,13 +7,19 @@ import BulletIcon from './BulletIcon.astro'
 interface Props {
   items: string[]
   /** Replaces the default 'bullet-list' class, for a list with its own layout (the package cards) */
+  listClass?: string
+  /**
+   * Not for callers. Astro passes the scope class of the component that uses
+   * this list in here by itself, which is why the list's own class has a
+   * prop of its own above: as `class`, its default would be overwritten.
+   */
   class?: string
 }
 
-const { items, class: className = 'bullet-list' } = Astro.props
+const { items, listClass = 'bullet-list', class: scopeClass } = Astro.props
 ---
 
-<ul class={className}>
+<ul class:list={[listClass, scopeClass]}>
   {
     items.map((item) => (
       <li>
@@ -30,9 +36,10 @@ const { items, class: className = 'bullet-list' } = Astro.props
   import '../scripts/bullets.js'
 </script>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md
      The package cards on the services page give their list its own class and layout instead of 'bullet-list'. -->
-<style is:global>
+<style>
   .bullet-point-container {
     display: flex;
     align-items: center;
@@ -49,7 +56,7 @@ const { items, class: className = 'bullet-list' } = Astro.props
     transform: translateY(20px);
   }
 
-  .bullet-point-svg {
+  :global(.bullet-point-svg) {
     flex-shrink: 0;
     width: var(--icon-size-md);
     height: var(--icon-size-md);
@@ -58,7 +65,7 @@ const { items, class: className = 'bullet-list' } = Astro.props
 
   /* A plain bullet list (src/components/BulletList.astro). The package cards on
      the services page give their list its own class and layout instead. */
-  .bullet-list {
+  :global(.bullet-list) {
     list-style: none;
     padding: 0;
     margin: var(--space-4) 0;
@@ -67,11 +74,11 @@ const { items, class: className = 'bullet-list' } = Astro.props
   }
 
   /* Keep the diamond beside the first line when the text runs to several lines */
-  .bullet-list .bullet-point-container {
+  :global(.bullet-list) .bullet-point-container {
     align-items: flex-start;
   }
 
-  .bullet-list span {
+  :global(.bullet-list) :global(span) {
     line-height: var(--leading-body);
   }
 
