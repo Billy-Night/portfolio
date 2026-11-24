@@ -58,7 +58,13 @@ export default defineConfig({
   site: 'https://www.billynightingale.com',
   // Keep URLs identical to the pre-Astro site: /about, /fr/a-propos, /fr/
   trailingSlash: 'never',
-  build: { format: 'preserve' }, // about.astro -> about.html, fr/index.astro -> fr/index.html
+  build: {
+    format: 'preserve', // about.astro -> about.html, fr/index.astro -> fr/index.html
+    // Component styles go straight into each page's <head>. Left to itself,
+    // Astro moves the larger ones into extra files, and a page then waits
+    // for two or three stylesheets, not one, before it can show anything.
+    inlineStylesheets: 'always',
+  },
   // Keep HTML output readable/diffable during the 1:1 port
   compressHTML: false,
   integrations: [stylesheet(), legacyImageUrls()],

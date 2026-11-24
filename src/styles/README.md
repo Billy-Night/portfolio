@@ -4,7 +4,7 @@ Styles live in two places.
 
 ## 1. In the component
 
-A component's own styles are in a `<style is:global>` block at the end of its `.astro` file. Astro adds them only to the pages that use the component.
+A component's own styles are in a `<style is:global>` block at the end of its `.astro` file. Astro adds them only to the pages that use the component, written straight into the page's `<head>` (`inlineStylesheets` in `astro.config.mjs`), so a page still loads one stylesheet file.
 
 Parts used on several pages are components too, so their styles live with them: `Hero`, `Timeline`, `ImageTextRows`, `ContactCta`, `BulletList` and `home/ProjectCard`.
 
