@@ -1031,7 +1031,7 @@ a:hover .social__icons {
 }
 
 .projects-heading {
-  color: white;
+  color: var(--subHeading-colour);
   font-size: var(--text-base);
   font-family: var(--mono);
   margin-bottom: var(--space-1);
@@ -1149,6 +1149,38 @@ a:hover .social__icons {
   .heading-reverse {
     text-align: left;
   }
+}
+
+/* Client project cards (src/components/home/ClientProjectCard.astro) */
+
+.project-card__points {
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+/* "The problem" and "The result": the look of the small headings on the site */
+.project-card__points dt {
+  font-family: var(--subHeading);
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  color: var(--subHeading-colour);
+  margin-bottom: var(--space-1);
+}
+
+.project-card__points dd {
+  margin: 0 0 var(--space-4);
+  max-width: 65ch;
+  line-height: var(--leading-body);
+}
+
+.project-card__points dd:last-child {
+  margin-bottom: 0;
+}
+
+.project-card__link {
+  display: inline-block;
+  max-width: none;
 }
 
 /*~ Project pages (src/components/project/) */

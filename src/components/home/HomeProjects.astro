@@ -1,7 +1,8 @@
 ---
 // Shared by the English and French pages. The projects are in
 // src/data/projects.ts; the two headings are in the table below.
-import ProjectCard from './ProjectCard.astro'
+import ClientProjectCard from './ClientProjectCard.astro'
+import WebAppCard from './WebAppCard.astro'
 import type { Lang } from '../../i18n/routes'
 import { clientProjects, webApps } from '../../data/projects'
 
@@ -26,8 +27,8 @@ const t = {
 <section class="sections projects" id="projects">
   <div class="section-project-container">
     <h2>{t.clientProjectsHeading}</h2>
-    {clientProjects.map((project, index) => <ProjectCard project={project} lang={lang} reverse={index % 2 === 1} />)}
+    {clientProjects.map((project, index) => <ClientProjectCard project={project} lang={lang} reverse={index % 2 === 1} />)}
     <h2>{t.webAppsHeading}</h2>
-    {webApps.map((project, index) => <ProjectCard project={project} lang={lang} reverse={index % 2 === 1} />)}
+    {webApps.map((app, index) => <WebAppCard app={app} lang={lang} reverse={index % 2 === 1} />)}
   </div>
 </section>

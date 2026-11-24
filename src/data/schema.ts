@@ -12,7 +12,7 @@
 // Every entry has one @id, and pages refer to it by that @id, so search
 // engines read one business and one person across the whole site.
 import { SITE, projectPaths, routes, type Lang } from '../i18n/routes'
-import type { Project } from './projects'
+import type { ClientProject } from './projects'
 
 export const PERSON_ID = `${SITE}/#person`
 export const BUSINESS_ID = `${SITE}/#business`
@@ -211,7 +211,7 @@ const projectText = {
  * The client's review is shown on the page but not marked up here: search
  * engines do not show stars for reviews a business publishes about itself.
  */
-export function projectSchema(project: Project, lang: Lang) {
+export function projectSchema(project: ClientProject, lang: Lang) {
   const page = project.page!
   const home = SITE + routes.home[lang]
   const pageUrl = SITE + projectPaths(page.slug)[lang]
@@ -257,7 +257,7 @@ export function projectSchema(project: Project, lang: Lang) {
       image,
       creator: businessRef(lang),
       mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
-      ...(project.link ? { sameAs: project.link.href } : {}),
+      ...(project.liveUrl ? { sameAs: project.liveUrl } : {}),
     },
   ]
 }

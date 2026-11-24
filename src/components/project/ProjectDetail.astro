@@ -5,10 +5,10 @@
 import Photo from '../Photo.astro'
 import BulletList from '../BulletList.astro'
 import { routes, type Lang } from '../../i18n/routes'
-import type { Project, ProjectPage } from '../../data/projects'
+import type { ClientProject, ProjectPage } from '../../data/projects'
 
 interface Props {
-  project: Project
+  project: ClientProject
   page: ProjectPage
   lang: Lang
 }
@@ -97,8 +97,8 @@ const home = routes.home[lang]
         </dd>
       </dl>
       {
-        project.link && (
-          <a class="project-page__live" href={project.link.href} target="_blank" rel="noopener">
+        project.liveUrl && (
+          <a class="project-page__live" href={project.liveUrl} target="_blank" rel="noopener">
             {t.liveSite} <span aria-hidden="true">→</span>
           </a>
         )
@@ -111,7 +111,7 @@ const home = routes.home[lang]
       {page.problem[lang].map((paragraph) => <p>{paragraph}</p>)}
       <h2>{t.solutionHeading}</h2>
       {page.solution[lang].map((paragraph) => <p>{paragraph}</p>)}
-      {project.tasks && <BulletList items={project.tasks.items[lang]} />}
+      {page.tasks && <BulletList items={page.tasks[lang]} />}
       <h2>{t.resultHeading}</h2>
       {page.result[lang].map((paragraph) => <p>{paragraph}</p>)}
       {

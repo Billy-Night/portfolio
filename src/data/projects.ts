@@ -1,12 +1,15 @@
 // The projects on the homepage: client websites first, then web applications.
-// Each entry holds one project in both languages. To add a project, put its
-// screenshot in src/assets/images/, import it below and copy an entry. Only
-// `category`, `name`, `summary`, `technologies`, `photo` and `photoAlt` are
-// required; leave out the other parts a project does not need. The page shows
-// the projects in this order, alternating the side the screenshot sits on.
-// A project with a `page` part also gets its own page in each language.
-// Used by src/components/home/HomeProjects.astro and ProjectCard.astro, and
-// by the project pages (src/pages/projects/ and src/components/project/).
+// Each entry holds one project in both languages. The page shows the projects
+// in this order, alternating the side the screenshot sits on.
+//
+// To add a client project, put its screenshot in src/assets/images/, import it
+// below and copy an entry. Its homepage card shows the three short `card`
+// sentences. Give it a `page` part and it also gets its own page in each
+// language, and the card links to that page; without one, the card links to
+// `liveUrl`.
+//
+// Used by src/components/home/ (HomeProjects, ClientProjectCard, WebAppCard)
+// and by the project pages (src/pages/projects/ and src/components/project/).
 import type { ImageMetadata } from 'astro'
 import type { Lang } from '../i18n/routes'
 import monkeyMoodPhoto from '../assets/images/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp'
@@ -19,38 +22,19 @@ import trowitPhoto from '../assets/images/personal_projects/app_trowit.webp'
 
 type Text = Record<Lang, string>
 
-/** A link inside a sentence */
-export interface InlineLink {
-  text: string
-  href: string
-}
-
-export interface Project {
-  /** Small heading above the name, for example the client's sector */
+export interface ClientProject {
+  /** Small heading above the name */
   category: Text
   name: Text
-  /**
-   * First paragraph. A plain string, or a list of pieces when the sentence has
-   * links inside it. The pieces are joined exactly as written, so put the
-   * spaces around a link in the text before and after it.
-   */
-  summary: Record<Lang, string | (string | InlineLink)[]>
-  /** A second paragraph */
-  detail?: Text
-  /** A bullet list with the line that introduces it */
-  tasks?: {
-    intro: Text
-    items: Record<Lang, string[]>
+  /** The homepage card: one short sentence each. Keep the town in `client`. */
+  card: {
+    client: Text
+    problem: Text
+    result: Text
   }
-  /** What the project achieved, shown after the list */
-  result?: Text
-  /** A closing line that ends with a link to the live site */
-  link?: {
-    intro: Text
-    text: Text
-    href: string
-  }
-  /** Not translated */
+  /** The client's live website */
+  liveUrl?: string
+  /** Not translated. Shown on the project page. */
   technologies: string[]
   photo: ImageMetadata
   photoAlt: Text
@@ -62,8 +46,8 @@ export interface Project {
 
 /**
  * What a project's own page adds to the entry above. The page also shows the
- * project's name, task list, technologies, screenshot and link to the live
- * site, and the client's review if one in reviews.ts names this `slug`.
+ * project's name, technologies, screenshot and link to the live site, and the
+ * client's review if one in reviews.ts names this `slug`.
  * Each of `client`, `problem`, `solution` and `result` is a list of paragraphs.
  */
 export interface ProjectPage {
@@ -81,50 +65,54 @@ export interface ProjectPage {
   client: Record<Lang, string[]>
   problem: Record<Lang, string[]>
   solution: Record<Lang, string[]>
+  /** A bullet list shown after `solution` */
+  tasks?: Record<Lang, string[]>
   result: Record<Lang, string[]>
   /** Headline numbers shown under the result. Only real, checkable figures. */
   figures?: { value: Text; label: Text }[]
 }
 
-export const clientProjects: Project[] = [
+/** A link inside a sentence */
+export interface InlineLink {
+  text: string
+  href: string
+}
+
+export interface WebApp {
+  /** Small heading above the name */
+  category: Text
+  name: Text
+  /**
+   * A plain string, or a list of pieces when the sentence has links inside it.
+   * The pieces are joined exactly as written, so put the spaces around a link
+   * in the text before and after it.
+   */
+  summary: Record<Lang, string | (string | InlineLink)[]>
+  /** Not translated */
+  technologies: string[]
+  photo: ImageMetadata
+  photoAlt: Text
+}
+
+export const clientProjects: ClientProject[] = [
   {
     category: { en: 'Hospitality', fr: 'Restauration' },
     name: { en: 'Monkey Mood - Restaurant', fr: 'Monkey Mood - restaurant' },
-    summary: {
-      en: 'Complete website redesign for a growing vegan restaurant brand, simplifying the booking experience across two locations while elevating branding, performance, and SEO.',
-      fr: 'Refonte complète du site web pour une marque de restaurant vegan en pleine croissance, simplifiant l’expérience de réservation sur deux établissements tout en renforçant l’identité de marque, les performances et le référencement naturel (SEO).',
-    },
-    tasks: {
-      intro: { en: 'Key aspects of the project:', fr: 'Points clés du projet :' },
-      items: {
-        en: [
-          'Full redesign with mockups and brand direction',
-          'User flow mapping to optimise navigation and booking behaviour',
-          'Booking system integration (ZenChef)',
-          'Custom animations and storytelling elements to reinforce brand identity',
-          'Performance and SEO optimisation across all pages',
-        ],
-        fr: [
-          'Refonte complète avec maquettes et direction artistique',
-          'Cartographie des parcours utilisateurs afin d’optimiser la navigation et le processus de réservation',
-          'Intégration du système de réservation (ZenChef)',
-          'Animations personnalisées et éléments narratifs pour renforcer l’identité de marque',
-          'Optimisation des performances et du SEO sur l’ensemble du site',
-        ],
+    card: {
+      client: {
+        en: 'A growing vegan restaurant brand with two restaurants, in Capbreton and Bordeaux.',
+        fr: 'Une marque de restaurants vegan en pleine croissance, avec deux établissements à Capbreton et Bordeaux.',
+      },
+      problem: {
+        en: 'Customers kept booking a table at the wrong restaurant.',
+        fr: 'Les clients réservaient régulièrement une table dans le mauvais établissement.',
+      },
+      result: {
+        en: 'A new booking flow, and not a single wrong-location booking since launch.',
+        fr: 'Un nouveau parcours de réservation, et plus aucune erreur d’établissement depuis la mise en ligne.',
       },
     },
-    result: {
-      en: 'This website improved booking experience, increased organic traffic through SEO optimisation and provided and scalable foundation for future marketing growth.',
-      fr: 'Ce site a permis d’améliorer l’expérience de réservation, d’augmenter le trafic organique grâce au SEO et de mettre en place une base scalable pour les futures actions marketing.',
-    },
-    link: {
-      intro: {
-        en: 'Check out the website and maybe try some vegan food,',
-        fr: 'Découvrez le site et pourquoi pas tester leur cuisine vegan,',
-      },
-      text: { en: 'Monkey Mood website', fr: 'site de Monkey Mood' },
-      href: 'https://monkey-mood.fr',
-    },
+    liveUrl: 'https://monkey-mood.fr',
     technologies: ['Figma', 'WordPress CMS', 'Elementor Pro', 'Notion', 'Drive', 'ZenChef'],
     photo: monkeyMoodPhoto,
     photoAlt: {
@@ -166,6 +154,22 @@ export const clientProjects: Project[] = [
           'J’ai cartographié le parcours des visiteurs et reconstruit le parcours de réservation, afin que chaque réservation soit clairement rattachée à un seul restaurant. Le système de réservation ZenChef est intégré au site.',
         ],
       },
+      tasks: {
+        en: [
+          'Full redesign with mockups and brand direction',
+          'User flow mapping to optimise navigation and booking behaviour',
+          'Booking system integration (ZenChef)',
+          'Custom animations and storytelling elements to reinforce brand identity',
+          'Performance and SEO optimisation across all pages',
+        ],
+        fr: [
+          'Refonte complète avec maquettes et direction artistique',
+          'Cartographie des parcours utilisateurs afin d’optimiser la navigation et le processus de réservation',
+          'Intégration du système de réservation (ZenChef)',
+          'Animations personnalisées et éléments narratifs pour renforcer l’identité de marque',
+          'Optimisation des performances et du SEO sur l’ensemble du site',
+        ],
+      },
       result: {
         en: [
           'Since launch there has not been a single wrong-location booking.',
@@ -195,23 +199,21 @@ export const clientProjects: Project[] = [
   {
     category: { en: 'E-Commerce', fr: 'E-commerce' },
     name: { en: 'Pacific Coast Cafe - Café', fr: 'Pacific Coast Cafe - restauration' },
-    summary: {
-      en: 'Performance optimisation and eCommerce integration for a high-traffic café in Hossegor.',
-      fr: 'Optimisation des performances et intégration e-commerce pour un café à forte affluence à Hossegor.',
+    card: {
+      client: {
+        en: 'A high-traffic café in Hossegor.',
+        fr: 'Un café à forte affluence à Hossegor.',
+      },
+      problem: {
+        en: 'A slow site with layout faults, not GDPR compliant, and no way to sell merchandise or gift cards online.',
+        fr: 'Un site lent, avec des défauts de mise en page, non conforme au RGPD, et aucun moyen de vendre en ligne des produits dérivés ou des cartes cadeaux.',
+      },
+      result: {
+        en: 'A site 20% faster and GDPR compliant, with an online shop and digital gift cards.',
+        fr: 'Un site 20 % plus rapide et conforme au RGPD, avec une boutique en ligne et des cartes cadeaux digitales.',
+      },
     },
-    detail: {
-      en: 'Improved site speed by 20%, strengthened search visibility, and launched a seamless online shop with digital gift cards unlocking a new revenue stream without disrupting daily operations.',
-      fr: 'Amélioration de la vitesse du site de 20 %, renforcement de la visibilité sur les moteurs de recherche et lancement d’une boutique en ligne fluide avec cartes cadeaux digitales, créant une nouvelle source de revenus sans perturber les opérations quotidiennes.',
-    },
-    result: {
-      en: "This project improved Pacific Coasts Cafe's online presence and their revenue stream.",
-      fr: 'Ce projet a amélioré la présence en ligne de Pacific Coast Café ainsi que ses sources de revenus.',
-    },
-    link: {
-      intro: { en: 'The website can be found here:', fr: 'Le site est accessible ici :' },
-      text: { en: 'Pacific Coast Cafe website', fr: 'Site du Pacific Coast Café' },
-      href: 'https://pacificcoasthossegor.com/',
-    },
+    liveUrl: 'https://pacificcoasthossegor.com/',
     technologies: ['Figma', 'CMS', 'Elementor Pro', 'Stripe', 'PW Gift Cards', 'Notion', 'Drive'],
     photo: pacificCoastPhoto,
     photoAlt: {
@@ -278,32 +280,19 @@ export const clientProjects: Project[] = [
   {
     category: { en: 'Wellness Client', fr: 'Client bien-être' },
     name: { en: 'Sophro by Eve - sophrologue', fr: 'Sophro by Eve - sophrologue' },
-    summary: {
-      en: 'Eve-Marie needed a website to launch her sophrology practice and present her services in a clear, reassuring way. I created a custom WordPress website with Elementor Pro, focusing on soft colours, simple layouts, and a smooth user experience.',
-      fr: 'Eve-Marie avait besoin d’un site web pour lancer son activité de sophrologie et présenter ses services de manière claire et rassurante. J’ai créé un site personnalisé sous WordPress avec Elementor Pro, en mettant l’accent sur des couleurs douces, des mises en page simples et une expérience utilisateur fluide.',
-    },
-    tasks: {
-      intro: { en: 'The project includes:', fr: 'Le projet comprend :' },
-      items: {
-        en: [
-          'A structured sitemap and clean UI design',
-          'Blog section for long-term SEO',
-          'Calendly booking system with online payments',
-          'Speed optimisation and best practices for technical SEO',
-          'Full setup of hosting, security, backups, and analytics',
-        ],
-        fr: [
-          'Un sitemap structuré et un design d’interface clair et épuré',
-          'Une section blog pour le SEO à long terme',
-          'Un système de réservation Calendly avec paiements en ligne',
-          'Optimisation de la vitesse et bonnes pratiques pour le SEO technique',
-          'Configuration complète de l’hébergement, de la sécurité, des sauvegardes et des outils d’analyse',
-        ],
+    card: {
+      client: {
+        en: 'A sophrologist opening a new practice in Montauban, for individuals and businesses.',
+        fr: 'Une sophrologue qui ouvre un nouveau cabinet à Montauban, pour les particuliers et les entreprises.',
       },
-    },
-    result: {
-      en: 'This project helped strengthen her brand online and provide an easy way for clients to book sessions.',
-      fr: 'Ce projet a permis de renforcer sa présence en ligne et d’offrir un moyen simple pour ses clients de réserver des séances.',
+      problem: {
+        en: 'She needed a site that takes bookings, presents her services to both audiences and has a blog.',
+        fr: 'Elle avait besoin d’un site qui prend les réservations, présente ses services à ces deux publics et comprend un blog.',
+      },
+      result: {
+        en: 'Online booking with payment, a blog, and a 90+ performance score.',
+        fr: 'La réservation et le paiement en ligne, un blog et un score de performance de 90+.',
+      },
     },
     technologies: ['Wordpress', 'Elementor Pro', 'Rank Math SEO', 'Hostinger', 'Calendly'],
     photo: eveMariePhoto,
@@ -347,6 +336,22 @@ export const clientProjects: Project[] = [
           'Les réservations et les paiements en ligne passent par Calendly. Le blog et le reste du contenu sont gérés dans le CMS, avec des types de champs personnalisés.',
         ],
       },
+      tasks: {
+        en: [
+          'A structured sitemap and clean UI design',
+          'Blog section for long-term SEO',
+          'Calendly booking system with online payments',
+          'Speed optimisation and best practices for technical SEO',
+          'Full setup of hosting, security, backups, and analytics',
+        ],
+        fr: [
+          'Un sitemap structuré et un design d’interface clair et épuré',
+          'Une section blog pour le SEO à long terme',
+          'Un système de réservation Calendly avec paiements en ligne',
+          'Optimisation de la vitesse et bonnes pratiques pour le SEO technique',
+          'Configuration complète de l’hébergement, de la sécurité, des sauvegardes et des outils d’analyse',
+        ],
+      },
       result: {
         en: [
           'Eve-Marie launched her practice with a site where clients can book and pay for a session online. The site scores 90+ for performance in Lighthouse, on mobile and desktop.',
@@ -366,38 +371,21 @@ export const clientProjects: Project[] = [
   {
     category: { en: 'E-Commerce', fr: 'E-Commerce' },
     name: { en: 'Turbulente - kombucha', fr: 'Turbulente - kombucha' },
-    summary: {
-      en: "I created Turbulente's first E-Commerce website to sell their wide range of kombucha's, it was an exciting opportunity to work with a local innovative brand, entwined in the surf culture of the Pays Basque region.",
-      fr: 'J’ai créé le premier site e-commerce de Turbulentes pour vendre leur large gamme de kombuchas. C’était une belle opportunité de travailler avec une marque locale et innovante, étroitement liée à la culture surf du Pays Basque.',
-    },
-    tasks: {
-      intro: { en: 'The project includes:', fr: 'Le projet comprend :' },
-      items: {
-        en: [
-          'A structured sitemap and clean UI design',
-          'Full online shop with different products',
-          'Integrated Payment system',
-          'Minimalist design with beautiful graphics and animation.',
-          'Full setup of URL and hosting, including DNS and SSL.',
-        ],
-        fr: [
-          'Un sitemap structuré et un design d’interface épuré',
-          'Une boutique en ligne complète avec différents produits',
-          'Système de paiement intégré',
-          'Un design minimaliste avec de magnifiques visuels et animations.',
-          'Configuration complète de l’URL et de l’hébergement, incluant le DNS et le SSL.',
-        ],
+    card: {
+      client: {
+        en: 'A kombucha maker in Bayonne, tied to the surf culture of the Basque Country.',
+        fr: 'Un producteur de kombucha à Bayonne, étroitement lié à la culture surf du Pays Basque.',
+      },
+      problem: {
+        en: 'They had no website and no way to sell online.',
+        fr: 'Ils n’avaient ni site web ni moyen de vendre en ligne.',
+      },
+      result: {
+        en: 'Their first website, with a full online shop and integrated payment.',
+        fr: 'Leur premier site web, avec une boutique en ligne complète et un paiement intégré.',
       },
     },
-    result: {
-      en: 'This project brought Turbulente online and improved their digital presence.',
-      fr: 'Ce projet a permis à Turbulente de passer en ligne et d’améliorer sa présence digitale.',
-    },
-    link: {
-      intro: { en: 'Click here to see the', fr: 'Cliquez ici pour voir le' },
-      text: { en: 'website', fr: 'site web' },
-      href: 'https://www.turbulente.fr/',
-    },
+    liveUrl: 'https://www.turbulente.fr/',
     technologies: ['Wix', 'Wix studio', 'Google console', 'Google analytics', 'Figma'],
     photo: turbulentePhoto,
     photoAlt: {
@@ -408,7 +396,7 @@ export const clientProjects: Project[] = [
   },
 ]
 
-export const webApps: Project[] = [
+export const webApps: WebApp[] = [
   {
     category: { en: 'Full-Stack', fr: 'Full-Stack' },
     name: { en: 'World Surf Journal', fr: 'World Surf Journal' },

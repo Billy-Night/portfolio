@@ -10,12 +10,12 @@ import ServicesContactCta from '../services/ServicesContactCta.astro'
 import ProjectDetail from './ProjectDetail.astro'
 import ProjectReview from './ProjectReview.astro'
 import { projectPaths, type Lang } from '../../i18n/routes'
-import { clientProjects, type Project } from '../../data/projects'
+import { clientProjects, type ClientProject } from '../../data/projects'
 import { reviews } from '../../data/reviews'
 import { projectSchema } from '../../data/schema'
 
 interface Props {
-  project: Project
+  project: ClientProject
   lang: Lang
 }
 
