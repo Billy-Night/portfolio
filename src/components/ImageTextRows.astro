@@ -64,6 +64,20 @@ const { heading, intro } = Astro.props
   :global(.image-row__image--right) {
     grid-column: 2 / 3;
     grid-row: 1;
+    width: 100%;
+    display: block;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 60%,
+      rgba(0, 0, 0, 0.6) 80%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      black 60%,
+      rgba(0, 0, 0, 0.6) 80%,
+      transparent 100%
+    );
   }
 
   :global(.image-row__image) {
@@ -82,23 +96,6 @@ const { heading, intro } = Astro.props
     );
     mask-image: linear-gradient(
       to left,
-      black 60%,
-      rgba(0, 0, 0, 0.6) 80%,
-      transparent 100%
-    );
-  }
-
-  :global(.image-row__image--right) {
-    width: 100%;
-    display: block;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      black 60%,
-      rgba(0, 0, 0, 0.6) 80%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
       black 60%,
       rgba(0, 0, 0, 0.6) 80%,
       transparent 100%
