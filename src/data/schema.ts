@@ -7,9 +7,12 @@
 // - the website: its name, used by Google for the site name in results.
 // - the services: each offered by the business.
 //
+// Each project page adds its own entries: see projectSchema at the end.
+//
 // Every entry has one @id, and pages refer to it by that @id, so search
 // engines read one business and one person across the whole site.
-import { SITE, routes, type Lang } from '../i18n/routes'
+import { SITE, projectPaths, routes, type Lang } from '../i18n/routes'
+import type { ClientProject } from './projects'
 
 export const PERSON_ID = `${SITE}/#person`
 export const BUSINESS_ID = `${SITE}/#business`
@@ -193,4 +196,68 @@ export function website(lang: Lang) {
     inLanguage: ['en', 'fr'],
     publisher: businessRef(lang),
   }
+}
+
+const LANGUAGE_TAG = { en: 'en-GB', fr: 'fr-FR' }
+
+const projectText = {
+  en: { home: 'Home', projects: 'Projects' },
+  fr: { home: 'Accueil', projects: 'Projets' },
+}
+
+/**
+ * A project page (src/components/project/ProjectPage.astro): the page, its
+ * breadcrumb, and the website that was built, with the business as its creator.
+ * The client's review is shown on the page but not marked up here: search
+ * engines do not show stars for reviews a business publishes about itself.
+ */
+export function projectSchema(project: ClientProject, lang: Lang) {
+  const page = project.page!
+  const home = SITE + routes.home[lang]
+  const pageUrl = SITE + projectPaths(page.slug)[lang]
+  const image = {
+    '@type': 'ImageObject',
+    url: SITE + project.photo.src,
+    width: project.photo.width,
+    height: project.photo.height,
+  }
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: page.title[lang],
+      description: page.description[lang],
+      inLanguage: LANGUAGE_TAG[lang],
+      isPartOf: { '@id': WEBSITE_ID },
+      about: { '@id': `${pageUrl}#project` },
+      primaryImageOfPage: image,
+      breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: projectText[lang].home, item: home },
+        { '@type': 'ListItem', position: 2, name: projectText[lang].projects, item: `${home}#projects` },
+        { '@type': 'ListItem', position: 3, name: project.name[lang], item: pageUrl },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      '@id': `${pageUrl}#project`,
+      name: project.name[lang],
+      description: page.description[lang],
+      genre: page.sector[lang],
+      dateCreated: String(page.year),
+      inLanguage: LANGUAGE_TAG[lang],
+      image,
+      creator: businessRef(lang),
+      mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+      ...(project.liveUrl ? { sameAs: project.liveUrl } : {}),
+    },
+  ]
 }

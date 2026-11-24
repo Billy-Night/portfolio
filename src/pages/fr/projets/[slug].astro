@@ -1,0 +1,16 @@
+---
+// One page per client project that has a `page` part in src/data/projects.ts:
+// /fr/projets/monkey-mood and so on. The English pages are in projects/.
+import ProjectPage from '../../../components/project/ProjectPage.astro'
+import { clientProjects } from '../../../data/projects'
+
+export function getStaticPaths() {
+  return clientProjects
+    .filter((project) => project.page)
+    .map((project) => ({ params: { slug: project.page!.slug }, props: { project } }))
+}
+
+const { project } = Astro.props
+---
+
+<ProjectPage project={project} lang="fr" />

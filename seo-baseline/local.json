@@ -11,16 +11,12 @@
         "h2: CLIENT PROJECTS",
         "h3: Hospitality",
         "h4: Monkey Mood - Restaurant",
-        "h4: Technologies",
         "h3: E-Commerce",
         "h4: Pacific Coast Cafe - Café",
-        "h4: Technologies",
         "h3: Wellness Client",
         "h4: Sophro by Eve - sophrologue",
-        "h4: Technologies",
         "h3: E-Commerce",
         "h4: Turbulente - kombucha",
-        "h4: Technologies",
         "h2: WEB APPLICATION",
         "h3: Full-Stack",
         "h4: World Surf Journal",
@@ -359,19 +355,21 @@
           "text": "Projects"
         },
         {
-          "href": "https://monkey-mood.fr",
-          "rel": "noopener",
-          "text": "Monkey Mood website"
+          "href": "/projects/monkey-mood",
+          "text": "View the project →"
         },
         {
-          "href": "https://pacificcoasthossegor.com/",
-          "rel": "noopener",
-          "text": "Pacific Coast Cafe website"
+          "href": "/projects/pacific-coast-cafe",
+          "text": "View the project →"
+        },
+        {
+          "href": "/projects/sophro-by-eve",
+          "text": "View the project →"
         },
         {
           "href": "https://www.turbulente.fr/",
           "rel": "noopener",
-          "text": "website"
+          "text": "Visit the website →"
         },
         {
           "href": "https://worldsurfjournal.netlify.app",
@@ -542,10 +540,10 @@
         ]
       },
       "status": 200,
-      "text": "FR Projects About Contact Services Landes Cookies are used to improve your experience on our website. By continuing to use our site, you agree to our use of cookies. Accept Deny WEB DESIGNER CAPBRETON HOSSEGOR GROW YOUR BUSINESS CREATING WEBSITES & SYSTEMS I'm Billy Nightingale, a web designer helping local businesses in Capbreton and southwest France build a strong, professional online presence. Your technical partner — from design to launch and SEO. Available for new projects, locally or remotely. Learn more about me and my recent projects Contact Projects How I grow your business The services I offer to help your business succeed online. Design Development SEO Automation CLIENT PROJECTS Hospitality Monkey Mood - Restaurant Complete website redesign for a growing vegan restaurant brand, simplifying the booking experience across two locations while elevating branding, performance, and SEO. Key aspects of the project: Full redesign with mockups and brand direction User flow mapping to optimise navigation and booking behaviour Booking system integration (ZenChef) Custom animations and storytelling elements to reinforce brand identity Performance and SEO optimisation across all pages This website improved booking experience, increased organic traffic through SEO optimisation and provided and scalable foundation for future marketing growth. Check out the website and maybe try some vegan food, Monkey Mood website Technologies Figma WordPress CMS Elementor Pro Notion Drive ZenChef E-Commerce Pacific Coast Cafe - Café Performance optimisation and eCommerce integration for a high-traffic café in Hossegor. Improved site speed by 20%, strengthened search visibility, and launched a seamless online shop with digital gift cards unlocking a new revenue stream without disrupting daily operations. This project improved Pacific Coasts Cafe's online presence and their revenue stream. The website can be found here: Pacific Coast Cafe website Technologies Figma CMS Elementor Pro Stripe PW Gift Cards Notion Drive Wellness Client Sophro by Eve - sophrologue Eve-Marie needed a website to launch her sophrology practice and present her services in a clear, reassuring way. I created a custom WordPress website with Elementor Pro, focusing on soft colours, simple layouts, and a smooth user experience. The project includes: A structured sitemap and clean UI design Blog section for long-term SEO Calendly booking system with online payments Speed optimisation and best practices for technical SEO Full setup of hosting, security, backups, and analytics This project helped strengthen her brand online and provide an easy way for clients to book sessions. Technologies Wordpress Elementor Pro Rank Math SEO Hostinger Calendly E-Commerce Turbulente - kombucha I created Turbulente's first E-Commerce website to sell their wide range of kombucha's, it was an exciting opportunity to work with a local innovative brand, entwined in the surf culture of the Pays Basque region. The project includes: A structured sitemap and clean UI design Full online shop with different products Integrated Payment system Minimalist design with beautiful graphics and animation. Full setup of URL and hosting, including DNS and SSL. This project brought Turbulente online and improved their digital presence. Click here to see the website Technologies Wix Wix studio Google console Google analytics Figma WEB APPLICATION Full-Stack World Surf Journal The World Surf Journal is a web application that allows the user to register an account and save their surf trips with various details. It's a CRUD application and the user can create, replace, update and delete their surf trips. It's a fullstack application and consists of a frontend, backend and database. Take a look at the deployed web app . Click here to see the frontend GitHub repository and the backend GitHub repository . Technologies HTML CSS JavaScript React Node.js Express MySQL Frontend Project Weather Wise Weather Wise is a weather & sport application, that will provide the user with a rating on how good the conditions are for that day in their selected sport, which is calculated using an algorithm, which depends on certain weather condition in their current selected location. The application uses API's to get current weather and location information. Click to see a demo of the Web App , click here to see the GitHub repository . Technologies HTML CSS JavaScript React OpenWeather API Client Project TROWIT The TROWIT project has been created to improve the transfer of business and personal details between people. It fills this need by passing user information digitally in the form of Business Cards. The user can set-up an account and create their digital business cards, they can then order these cards as physical cards, which is a service TROWIT will provide. The user can connect with other users via their cards with a URL link. Apologies but the repository is private, I would be happy to discuss the project on request. Technologies HTML CSS JavaScript React Node.js Express MySQL From Strategy to Launch A structured process designed to deliver a fast, effective website that supports your business goals. Discovery & Strategy Understand your business goals Research competitors and opportunities Define a clear strategy Design Create the visual direction Design key pages and user journeys Refine the experience Development Build the website Integrate required functionality Optimise performance and SEO Launch Test and deploy Configure analytics Monitor and support TRUSTED BY MY CLIENTS Feedback from my clients Trust Billy! He created my website from start to finish, as well as my blog, in September 2025. He is extremely professional, detail-oriented, and very pleasant to work with. By choosing him, you’re choosing excellent value for money. He speaks French very fluently, makes strong and relevant suggestions throughout the entire project process — and even afterwards. He always takes every request into account. I truly recommend him without hesitation. Eve-Marie, Sophrologue, Montauban We hired Billy to create our online store, which is linked to our website, as well as for maintenance and SEO work, and we are absolutely delighted with the result! Billy is very attentive, responsive, always available, and incredibly kind. Highly professional, he doesn't just execute tasks: he advises, proposes relevant solutions, and even takes the time to do research for us. Thanks to him, we had a clear vision of the actions to take throughout the entire process (with organized lists on Notion), which made the process very smooth. His support goes far beyond simple technical services: he is a true partner we can trust. We wholeheartedly recommend him. A huge thank you for this excellent work, Billy! Izia Dunn - Pacific Coast Cafe A huge thank you to Billy for creating our fantastic website. He designed and built a bespoke WordPress site that perfectly meets our needs. If you're looking for a professional website with online booking functionality and multiple pages for your business, we highly recommend working with Billy. His strong understanding of the local Capbreton and Hossegor market was invaluable in helping us identify our requirements and shape the project. Throughout the process, his attention to detail, professionalism, and communication were exceptional. Thank you again! Matt Hughes - Monkey Mood CONTACT ME I'm always interested in hearing about new exciting projects in the tech space. EMAIL ME ABOUT ME Frequently asked Questions Some question which I regularly get asked How much does a website cost? Answer Every project is different, but most websites start from around 1,500€. The final cost depends on the number of pages, functionality, content requirements, and integrations such as online booking or e-commerce. How long does it take to build a website? Answer Most websites take between 4 and 8 weeks from discovery to launch, depending on project complexity and how quickly content and feedback are provided. Do you work with businesses outside Capbreton and Hossegor? Answer Yes. While I'm based in Capbreton, I work with businesses throughout France and internationally. Will my website appear on Google? Answer Every website is built with SEO best practices in mind, including performance, accessibility, technical SEO, and clear site structure. SEO is a long-term process, but your website will be set up to give you the best possible foundation. Can you redesign my existing website? Answer Yes. Whether your current website needs a visual refresh, improved performance, better SEO, or new functionality, I can help modernise and optimise it. Do you provide maintenance? Answer Yes. Ongoing maintenance plans are available and can include updates, backups, security monitoring, performance checks, and technical support. Can you add online booking or e-commerce? Answer Yes. I can integrate online booking systems, e-commerce platforms, and other third-party tools to enhance your website's functionality and meet your business needs. Do I own my website? Answer Yes. Once the project is complete and paid for, you own the website and its content. You'll also receive access to the tools needed to manage it. What do you need from me to get started? Answer Usually I need an initial discussion about your business goals, any existing branding or content, and an understanding of what you want your website to achieve. Can you help improve an existing website's SEO? Answer Yes. I can audit your current website, identify opportunities, and implement improvements to help increase visibility and generate more qualified traffic. Create your digital system Billy Nightingale - Web Design & Development in Capbreton Contact Information: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Home Projects About Contact Services Landes © 2026 Billy Nightingale. All rights reserved. Terms and Conditions",
-      "text_sha1": "06147a6e4d00936493b65102e114f9eb8d4a975b",
+      "text": "FR Projects About Contact Services Landes Cookies are used to improve your experience on our website. By continuing to use our site, you agree to our use of cookies. Accept Deny WEB DESIGNER CAPBRETON HOSSEGOR GROW YOUR BUSINESS CREATING WEBSITES & SYSTEMS I'm Billy Nightingale, a web designer helping local businesses in Capbreton and southwest France build a strong, professional online presence. Your technical partner — from design to launch and SEO. Available for new projects, locally or remotely. Learn more about me and my recent projects Contact Projects How I grow your business The services I offer to help your business succeed online. Design Development SEO Automation CLIENT PROJECTS Hospitality Monkey Mood - Restaurant A growing vegan restaurant brand with two restaurants, in Capbreton and Bordeaux. The problem Customers kept booking a table at the wrong restaurant. The result A new booking flow, and not a single wrong-location booking since launch. View the project → E-Commerce Pacific Coast Cafe - Café A high-traffic café in Hossegor. The problem A slow site with layout faults, not GDPR compliant, and no way to sell merchandise or gift cards online. The result A site 20% faster and GDPR compliant, with an online shop and digital gift cards. View the project → Wellness Client Sophro by Eve - sophrologue A sophrologist opening a new practice in Montauban, for individuals and businesses. The problem She needed a site that takes bookings, presents her services to both audiences and has a blog. The result Online booking with payment, a blog, and a 90+ performance score. View the project → E-Commerce Turbulente - kombucha A kombucha maker in Bayonne, tied to the surf culture of the Basque Country. The problem They had no website and no way to sell online. The result Their first website, with a full online shop and integrated payment. Visit the website → WEB APPLICATION Full-Stack World Surf Journal The World Surf Journal is a web application that allows the user to register an account and save their surf trips with various details. It's a CRUD application and the user can create, replace, update and delete their surf trips. It's a fullstack application and consists of a frontend, backend and database. Take a look at the deployed web app . Click here to see the frontend GitHub repository and the backend GitHub repository . Technologies HTML CSS JavaScript React Node.js Express MySQL Frontend Project Weather Wise Weather Wise is a weather & sport application, that will provide the user with a rating on how good the conditions are for that day in their selected sport, which is calculated using an algorithm, which depends on certain weather condition in their current selected location. The application uses API's to get current weather and location information. Click to see a demo of the Web App , click here to see the GitHub repository . Technologies HTML CSS JavaScript React OpenWeather API Client Project TROWIT The TROWIT project has been created to improve the transfer of business and personal details between people. It fills this need by passing user information digitally in the form of Business Cards. The user can set-up an account and create their digital business cards, they can then order these cards as physical cards, which is a service TROWIT will provide. The user can connect with other users via their cards with a URL link. Apologies but the repository is private, I would be happy to discuss the project on request. Technologies HTML CSS JavaScript React Node.js Express MySQL From Strategy to Launch A structured process designed to deliver a fast, effective website that supports your business goals. Discovery & Strategy Understand your business goals Research competitors and opportunities Define a clear strategy Design Create the visual direction Design key pages and user journeys Refine the experience Development Build the website Integrate required functionality Optimise performance and SEO Launch Test and deploy Configure analytics Monitor and support TRUSTED BY MY CLIENTS Feedback from my clients Trust Billy! He created my website from start to finish, as well as my blog, in September 2025. He is extremely professional, detail-oriented, and very pleasant to work with. By choosing him, you’re choosing excellent value for money. He speaks French very fluently, makes strong and relevant suggestions throughout the entire project process — and even afterwards. He always takes every request into account. I truly recommend him without hesitation. Eve-Marie, Sophrologue, Montauban We hired Billy to create our online store, which is linked to our website, as well as for maintenance and SEO work, and we are absolutely delighted with the result! Billy is very attentive, responsive, always available, and incredibly kind. Highly professional, he doesn't just execute tasks: he advises, proposes relevant solutions, and even takes the time to do research for us. Thanks to him, we had a clear vision of the actions to take throughout the entire process (with organized lists on Notion), which made the process very smooth. His support goes far beyond simple technical services: he is a true partner we can trust. We wholeheartedly recommend him. A huge thank you for this excellent work, Billy! Izia Dunn - Pacific Coast Cafe A huge thank you to Billy for creating our fantastic website. He designed and built a bespoke WordPress site that perfectly meets our needs. If you're looking for a professional website with online booking functionality and multiple pages for your business, we highly recommend working with Billy. His strong understanding of the local Capbreton and Hossegor market was invaluable in helping us identify our requirements and shape the project. Throughout the process, his attention to detail, professionalism, and communication were exceptional. Thank you again! Matt Hughes - Monkey Mood CONTACT ME I'm always interested in hearing about new exciting projects in the tech space. EMAIL ME ABOUT ME Frequently asked Questions Some question which I regularly get asked How much does a website cost? Answer Every project is different, but most websites start from around 1,500€. The final cost depends on the number of pages, functionality, content requirements, and integrations such as online booking or e-commerce. How long does it take to build a website? Answer Most websites take between 4 and 8 weeks from discovery to launch, depending on project complexity and how quickly content and feedback are provided. Do you work with businesses outside Capbreton and Hossegor? Answer Yes. While I'm based in Capbreton, I work with businesses throughout France and internationally. Will my website appear on Google? Answer Every website is built with SEO best practices in mind, including performance, accessibility, technical SEO, and clear site structure. SEO is a long-term process, but your website will be set up to give you the best possible foundation. Can you redesign my existing website? Answer Yes. Whether your current website needs a visual refresh, improved performance, better SEO, or new functionality, I can help modernise and optimise it. Do you provide maintenance? Answer Yes. Ongoing maintenance plans are available and can include updates, backups, security monitoring, performance checks, and technical support. Can you add online booking or e-commerce? Answer Yes. I can integrate online booking systems, e-commerce platforms, and other third-party tools to enhance your website's functionality and meet your business needs. Do I own my website? Answer Yes. Once the project is complete and paid for, you own the website and its content. You'll also receive access to the tools needed to manage it. What do you need from me to get started? Answer Usually I need an initial discussion about your business goals, any existing branding or content, and an understanding of what you want your website to achieve. Can you help improve an existing website's SEO? Answer Yes. I can audit your current website, identify opportunities, and implement improvements to help increase visibility and generate more qualified traffic. Create your digital system Billy Nightingale - Web Design & Development in Capbreton Contact Information: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Home Projects About Contact Services Landes © 2026 Billy Nightingale. All rights reserved. Terms and Conditions",
+      "text_sha1": "445d49ff228437d25d6774981fff96ee9876f9c4",
       "title": "Web Designer & Developer in Capbreton | Billy Nightingale",
-      "word_count": 1539
+      "word_count": 1345
     },
     "/404": {
       "canonical": [],
@@ -1495,16 +1493,12 @@
         "h2: PROJETS CLIENTS",
         "h3: Restauration",
         "h4: Monkey Mood - restaurant",
-        "h4: Technologies",
         "h3: E-commerce",
         "h4: Pacific Coast Cafe - restauration",
-        "h4: Technologies",
         "h3: Client bien-être",
         "h4: Sophro by Eve - sophrologue",
-        "h4: Technologies",
         "h3: E-Commerce",
         "h4: Turbulente - kombucha",
-        "h4: Technologies",
         "h2: APPLICATIONS WEB",
         "h3: Full-Stack",
         "h4: World Surf Journal",
@@ -1843,19 +1837,21 @@
           "text": "Projets"
         },
         {
-          "href": "https://monkey-mood.fr",
-          "rel": "noopener",
-          "text": "site de Monkey Mood"
+          "href": "/fr/projets/monkey-mood",
+          "text": "Voir le projet →"
         },
         {
-          "href": "https://pacificcoasthossegor.com/",
-          "rel": "noopener",
-          "text": "Site du Pacific Coast Café"
+          "href": "/fr/projets/pacific-coast-cafe",
+          "text": "Voir le projet →"
+        },
+        {
+          "href": "/fr/projets/sophro-by-eve",
+          "text": "Voir le projet →"
         },
         {
           "href": "https://www.turbulente.fr/",
           "rel": "noopener",
-          "text": "site web"
+          "text": "Voir le site →"
         },
         {
           "href": "https://worldsurfjournal.netlify.app",
@@ -2026,10 +2022,10 @@
         ]
       },
       "status": 200,
-      "text": "EN Projets À propos Contact Services Landes Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En continuant à naviguer sur ce site, vous acceptez l’utilisation de cookies. Accepter Refuser WEB DESIGNER CAPBRETON HOSSEGOR DÉVELOPPEZ VOTRE ENTREPRISE CRÉATION DE SITE WEB ET SYSTÈMES Je suis Billy Nightingale, développeur web et designer web, j’aide les entreprises du sud-ouest de la France à créer une présence en ligne forte et professionnelle. Votre partenaire technique, de la conception au lancement et au SEO. Disponible pour de nouveaux projets, sur place ou à distance. Découvrez-en plus sur moi et mes projets récents Contact Projets Services pour votre entreprise Les services que je propose pour aider votre entreprise à réussir en ligne. Design Développement SEO Automatisation PROJETS CLIENTS Restauration Monkey Mood - restaurant Refonte complète du site web pour une marque de restaurant vegan en pleine croissance, simplifiant l’expérience de réservation sur deux établissements tout en renforçant l’identité de marque, les performances et le référencement naturel (SEO). Points clés du projet : Refonte complète avec maquettes et direction artistique Cartographie des parcours utilisateurs afin d’optimiser la navigation et le processus de réservation Intégration du système de réservation (ZenChef) Animations personnalisées et éléments narratifs pour renforcer l’identité de marque Optimisation des performances et du SEO sur l’ensemble du site Ce site a permis d’améliorer l’expérience de réservation, d’augmenter le trafic organique grâce au SEO et de mettre en place une base scalable pour les futures actions marketing. Découvrez le site et pourquoi pas tester leur cuisine vegan, site de Monkey Mood Technologies Figma WordPress CMS Elementor Pro Notion Drive ZenChef E-commerce Pacific Coast Cafe - restauration Optimisation des performances et intégration e-commerce pour un café à forte affluence à Hossegor. Amélioration de la vitesse du site de 20 %, renforcement de la visibilité sur les moteurs de recherche et lancement d’une boutique en ligne fluide avec cartes cadeaux digitales, créant une nouvelle source de revenus sans perturber les opérations quotidiennes. Ce projet a amélioré la présence en ligne de Pacific Coast Café ainsi que ses sources de revenus. Le site est accessible ici : Site du Pacific Coast Café Technologies Figma CMS Elementor Pro Stripe PW Gift Cards Notion Drive Client bien-être Sophro by Eve - sophrologue Eve-Marie avait besoin d’un site web pour lancer son activité de sophrologie et présenter ses services de manière claire et rassurante. J’ai créé un site personnalisé sous WordPress avec Elementor Pro, en mettant l’accent sur des couleurs douces, des mises en page simples et une expérience utilisateur fluide. Le projet comprend : Un sitemap structuré et un design d’interface clair et épuré Une section blog pour le SEO à long terme Un système de réservation Calendly avec paiements en ligne Optimisation de la vitesse et bonnes pratiques pour le SEO technique Configuration complète de l’hébergement, de la sécurité, des sauvegardes et des outils d’analyse Ce projet a permis de renforcer sa présence en ligne et d’offrir un moyen simple pour ses clients de réserver des séances. Technologies Wordpress Elementor Pro Rank Math SEO Hostinger Calendly E-Commerce Turbulente - kombucha J’ai créé le premier site e-commerce de Turbulentes pour vendre leur large gamme de kombuchas. C’était une belle opportunité de travailler avec une marque locale et innovante, étroitement liée à la culture surf du Pays Basque. Le projet comprend : Un sitemap structuré et un design d’interface épuré Une boutique en ligne complète avec différents produits Système de paiement intégré Un design minimaliste avec de magnifiques visuels et animations. Configuration complète de l’URL et de l’hébergement, incluant le DNS et le SSL. Ce projet a permis à Turbulente de passer en ligne et d’améliorer sa présence digitale. Cliquez ici pour voir le site web Technologies Wix Wix studio Google console Google analytics Figma APPLICATIONS WEB Full-Stack World Surf Journal Le World Surf Journal est une application web qui permet à l'utilisateur de créer un compte et d'enregistrer ses voyages de surf avec divers détails. C'est une application CRUD, et l'utilisateur peut créer, remplacer, mettre à jour et supprimer ses voyages de surf. Il s'agit d'une application fullstack composée d'un frontend, d'un backend et d'une base de données. Découvrez la web app déployée . Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub . Technologies HTML CSS JavaScript React Node.js Express MySQL Projet frontend Weather Wise Weather Wise est une application météo et sport qui fournit à l'utilisateur une évaluation de la qualité des conditions météo pour sa pratique sportive choisie, calculée à l'aide d'un algorithme basé sur certaines conditions météorologiques et de sa localisation actuelle. L'application utilise des API pour obtenir les informations météo et de localisation actuelles. Live: web app , Le dépôt GitHub du frontend est disponible ici: dépôt GitHub . Technologies HTML CSS JavaScript React OpenWeather API Projet de client TROWIT Le projet TROWIT a été créé pour améliorer le transfert d'informations professionnelles et personnelles entre les personnes. Il répond à ce besoin en transmettant les informations des utilisateurs sous forme de cartes de visite numériques. L'utilisateur peut créer un compte et concevoir ses cartes de visite numériques, puis les commander sous forme de cartes physiques, un service que TROWIT proposera. L'utilisateur peut se connecter avec d'autres utilisateurs via leurs cartes grâce à un lien URL. Désolé, mais le dépôt est privé. Je serai heureux de discuter du projet sur demande. Technologies HTML CSS JavaScript React Node.js Express MySQL De la Stratégie au Lancement Un processus structuré conçu pour créer un site web rapide, performant et aligné sur vos objectifs commerciaux. Découverte & Stratégie Comprendre vos objectifs commerciaux Analyser vos concurrents et identifier les opportunités Définir une stratégie claire Design Définir la direction visuelle Concevoir les pages clés et les parcours utilisateurs Affiner l’expérience utilisateur Développement Développer le site web Intégrer les fonctionnalités nécessaires Optimiser les performances et le référencement (SEO) Lancement Tester et mettre en ligne le site Configurer les outils d’analyse Assurer le suivi et l’accompagnement Ils m’ont fait confiance Retour d’expérience sur des projets récent Faites confiance à Billy ! Il m'a créé mon site internet de A à Z ainsi que mon blog en Septembre 2025. C'est une personne extrêmement professionnelle, perfectionniste et très aimable. En le choisissant, vous choisissez l'excellent rapport qualité/prix. Il parle très très bien français, est force de proposition sur tout le process de la conception du projet et même après. Il prends à chaque fois en compte toutes les demandes. Vraiment, je le recommande sans hésitez. Eve-Marie, Sophrologue, Montauban Nous avons fait appel à Billy pour la création de notre e-shop relié à notre site web, ainsi que pour la maintenance et le travail sur le SEO, et nous sommes absolument ravis du résultat ! Billy est très à l’écoute, réactif, toujours disponible et d’une grande gentillesse. Très professionnel, il ne se contente pas d’exécuter : il conseille, propose des solutions pertinentes et prend même le temps de faire des recherches pour nous. Grâce à lui, nous avons eu une vision claire des actions à mener tout le long (avec des listes organisées sur Notion) ce qui a rendu le processus très fluide. Son accompagnement va bien au-delà de la simple prestation technique : c’est un vrai partenaire de confiance. Nous ne pouvons que le recommander les yeux fermés. Un grand merci pour ce travail de qualité Billy ! Izia Dunn - Pacific Coast Cafe Un immense merci à Billy pour notre superbe site web, qu'il a conçu et réalisé sur mesure avec WordPress. Si vous avez besoin d'un site web fonctionnel avec un système de réservation et plusieurs pages pour votre entreprise, nous vous recommandons vivement Billy. Sa connaissance approfondie du marché local de Capbreton et Hossegor nous a également été précieuse pour définir précisément nos besoins. Son souci du détail et sa communication sont les points forts de son travail. Encore merci ! Matt Hughes - Monkey Mood CONTACTEZ-MOI Je suis toujours ouvert à discuter de nouveaux projets avec vous. PAR MAIL À PROPOS Questions fréquentes Quelques questions que l’on me pose régulièrement Combien coûte un site internet ? Réponse Chaque projet est différent, mais la plupart des sites internet commencent à partir d’environ 1 500 €. Le coût final dépend du nombre de pages, des fonctionnalités, des besoins en contenu et des intégrations telles que la réservation en ligne ou l’e-commerce. Combien de temps faut-il pour créer un site internet ? Réponse La plupart des sites internet nécessitent entre 4 et 8 semaines entre la phase de découverte et la mise en ligne, selon la complexité du projet et la rapidité avec laquelle les contenus et retours sont fournis. Travaillez-vous avec des entreprises en dehors de Capbreton et Hossegor ? Réponse Oui. Bien que je sois basé à Capbreton, je travaille avec des entreprises partout en France et à l’international. Mon site apparaîtra-t-il sur Google ? Réponse Chaque site est conçu selon les bonnes pratiques SEO, notamment en matière de performance, d’accessibilité, de référencement technique et de structure du contenu. Le SEO est un travail de long terme, mais votre site sera construit sur des bases solides pour maximiser ses chances de visibilité. Pouvez-vous refondre un site internet existant ? Réponse Oui. Que votre site ait besoin d’un nouveau design, de meilleures performances, d’un SEO plus efficace ou de nouvelles fonctionnalités, je peux vous aider à le moderniser et à l’optimiser. Proposez-vous un service de maintenance ? Réponse Oui. Des forfaits de maintenance sont disponibles et peuvent inclure les mises à jour, les sauvegardes, la surveillance de la sécurité, les contrôles de performance et l’assistance technique. Pouvez-vous ajouter une réservation en ligne ou une boutique e-commerce ? Réponse Oui. Je peux intégrer des systèmes de réservation en ligne, des solutions e-commerce, des paiements sécurisés ainsi que des outils adaptés aux besoins de votre activité. Suis-je propriétaire de mon site internet ? Réponse Oui. Une fois le projet terminé et réglé, vous êtes propriétaire de votre site et de son contenu. Vous recevrez également les accès aux outils nécessaires pour le gérer. De quoi avez-vous besoin pour commencer un projet ? Réponse Généralement, j’ai besoin d’un premier échange pour comprendre vos objectifs, votre activité, votre contenu existant et ce que vous souhaitez accomplir avec votre site internet. Pouvez-vous améliorer le SEO d’un site existant ? Réponse Oui. Je peux réaliser un audit de votre site actuel, identifier les opportunités d’amélioration et mettre en place des optimisations pour augmenter votre visibilité et attirer un trafic plus qualifié. Création de site web et système digital Billy Nightingale - Web Design & Développement à Capbreton Contact: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Accueil Projets À Propos Contact Services Landes © 2026 Billy Nightingale. Tous droits réservés. CGV",
-      "text_sha1": "ed54356029085c402e0a25b74c91ae412050d430",
+      "text": "EN Projets À propos Contact Services Landes Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En continuant à naviguer sur ce site, vous acceptez l’utilisation de cookies. Accepter Refuser WEB DESIGNER CAPBRETON HOSSEGOR DÉVELOPPEZ VOTRE ENTREPRISE CRÉATION DE SITE WEB ET SYSTÈMES Je suis Billy Nightingale, développeur web et designer web, j’aide les entreprises du sud-ouest de la France à créer une présence en ligne forte et professionnelle. Votre partenaire technique, de la conception au lancement et au SEO. Disponible pour de nouveaux projets, sur place ou à distance. Découvrez-en plus sur moi et mes projets récents Contact Projets Services pour votre entreprise Les services que je propose pour aider votre entreprise à réussir en ligne. Design Développement SEO Automatisation PROJETS CLIENTS Restauration Monkey Mood - restaurant Une marque de restaurants vegan en pleine croissance, avec deux établissements à Capbreton et Bordeaux. Le problème Les clients réservaient régulièrement une table dans le mauvais établissement. Le résultat Un nouveau parcours de réservation, et plus aucune erreur d’établissement depuis la mise en ligne. Voir le projet → E-commerce Pacific Coast Cafe - restauration Un café à forte affluence à Hossegor. Le problème Un site lent, avec des défauts de mise en page, non conforme au RGPD, et aucun moyen de vendre en ligne des produits dérivés ou des cartes cadeaux. Le résultat Un site 20 % plus rapide et conforme au RGPD, avec une boutique en ligne et des cartes cadeaux digitales. Voir le projet → Client bien-être Sophro by Eve - sophrologue Une sophrologue qui ouvre un nouveau cabinet à Montauban, pour les particuliers et les entreprises. Le problème Elle avait besoin d’un site qui prend les réservations, présente ses services à ces deux publics et comprend un blog. Le résultat La réservation et le paiement en ligne, un blog et un score de performance de 90+. Voir le projet → E-Commerce Turbulente - kombucha Un producteur de kombucha à Bayonne, étroitement lié à la culture surf du Pays Basque. Le problème Ils n’avaient ni site web ni moyen de vendre en ligne. Le résultat Leur premier site web, avec une boutique en ligne complète et un paiement intégré. Voir le site → APPLICATIONS WEB Full-Stack World Surf Journal Le World Surf Journal est une application web qui permet à l'utilisateur de créer un compte et d'enregistrer ses voyages de surf avec divers détails. C'est une application CRUD, et l'utilisateur peut créer, remplacer, mettre à jour et supprimer ses voyages de surf. Il s'agit d'une application fullstack composée d'un frontend, d'un backend et d'une base de données. Découvrez la web app déployée . Le dépôt du frontend est disponible sur GitHub et celui du backend sur GitHub . Technologies HTML CSS JavaScript React Node.js Express MySQL Projet frontend Weather Wise Weather Wise est une application météo et sport qui fournit à l'utilisateur une évaluation de la qualité des conditions météo pour sa pratique sportive choisie, calculée à l'aide d'un algorithme basé sur certaines conditions météorologiques et de sa localisation actuelle. L'application utilise des API pour obtenir les informations météo et de localisation actuelles. Live: web app , Le dépôt GitHub du frontend est disponible ici: dépôt GitHub . Technologies HTML CSS JavaScript React OpenWeather API Projet de client TROWIT Le projet TROWIT a été créé pour améliorer le transfert d'informations professionnelles et personnelles entre les personnes. Il répond à ce besoin en transmettant les informations des utilisateurs sous forme de cartes de visite numériques. L'utilisateur peut créer un compte et concevoir ses cartes de visite numériques, puis les commander sous forme de cartes physiques, un service que TROWIT proposera. L'utilisateur peut se connecter avec d'autres utilisateurs via leurs cartes grâce à un lien URL. Désolé, mais le dépôt est privé. Je serai heureux de discuter du projet sur demande. Technologies HTML CSS JavaScript React Node.js Express MySQL De la Stratégie au Lancement Un processus structuré conçu pour créer un site web rapide, performant et aligné sur vos objectifs commerciaux. Découverte & Stratégie Comprendre vos objectifs commerciaux Analyser vos concurrents et identifier les opportunités Définir une stratégie claire Design Définir la direction visuelle Concevoir les pages clés et les parcours utilisateurs Affiner l’expérience utilisateur Développement Développer le site web Intégrer les fonctionnalités nécessaires Optimiser les performances et le référencement (SEO) Lancement Tester et mettre en ligne le site Configurer les outils d’analyse Assurer le suivi et l’accompagnement Ils m’ont fait confiance Retour d’expérience sur des projets récent Faites confiance à Billy ! Il m'a créé mon site internet de A à Z ainsi que mon blog en Septembre 2025. C'est une personne extrêmement professionnelle, perfectionniste et très aimable. En le choisissant, vous choisissez l'excellent rapport qualité/prix. Il parle très très bien français, est force de proposition sur tout le process de la conception du projet et même après. Il prends à chaque fois en compte toutes les demandes. Vraiment, je le recommande sans hésitez. Eve-Marie, Sophrologue, Montauban Nous avons fait appel à Billy pour la création de notre e-shop relié à notre site web, ainsi que pour la maintenance et le travail sur le SEO, et nous sommes absolument ravis du résultat ! Billy est très à l’écoute, réactif, toujours disponible et d’une grande gentillesse. Très professionnel, il ne se contente pas d’exécuter : il conseille, propose des solutions pertinentes et prend même le temps de faire des recherches pour nous. Grâce à lui, nous avons eu une vision claire des actions à mener tout le long (avec des listes organisées sur Notion) ce qui a rendu le processus très fluide. Son accompagnement va bien au-delà de la simple prestation technique : c’est un vrai partenaire de confiance. Nous ne pouvons que le recommander les yeux fermés. Un grand merci pour ce travail de qualité Billy ! Izia Dunn - Pacific Coast Cafe Un immense merci à Billy pour notre superbe site web, qu'il a conçu et réalisé sur mesure avec WordPress. Si vous avez besoin d'un site web fonctionnel avec un système de réservation et plusieurs pages pour votre entreprise, nous vous recommandons vivement Billy. Sa connaissance approfondie du marché local de Capbreton et Hossegor nous a également été précieuse pour définir précisément nos besoins. Son souci du détail et sa communication sont les points forts de son travail. Encore merci ! Matt Hughes - Monkey Mood CONTACTEZ-MOI Je suis toujours ouvert à discuter de nouveaux projets avec vous. PAR MAIL À PROPOS Questions fréquentes Quelques questions que l’on me pose régulièrement Combien coûte un site internet ? Réponse Chaque projet est différent, mais la plupart des sites internet commencent à partir d’environ 1 500 €. Le coût final dépend du nombre de pages, des fonctionnalités, des besoins en contenu et des intégrations telles que la réservation en ligne ou l’e-commerce. Combien de temps faut-il pour créer un site internet ? Réponse La plupart des sites internet nécessitent entre 4 et 8 semaines entre la phase de découverte et la mise en ligne, selon la complexité du projet et la rapidité avec laquelle les contenus et retours sont fournis. Travaillez-vous avec des entreprises en dehors de Capbreton et Hossegor ? Réponse Oui. Bien que je sois basé à Capbreton, je travaille avec des entreprises partout en France et à l’international. Mon site apparaîtra-t-il sur Google ? Réponse Chaque site est conçu selon les bonnes pratiques SEO, notamment en matière de performance, d’accessibilité, de référencement technique et de structure du contenu. Le SEO est un travail de long terme, mais votre site sera construit sur des bases solides pour maximiser ses chances de visibilité. Pouvez-vous refondre un site internet existant ? Réponse Oui. Que votre site ait besoin d’un nouveau design, de meilleures performances, d’un SEO plus efficace ou de nouvelles fonctionnalités, je peux vous aider à le moderniser et à l’optimiser. Proposez-vous un service de maintenance ? Réponse Oui. Des forfaits de maintenance sont disponibles et peuvent inclure les mises à jour, les sauvegardes, la surveillance de la sécurité, les contrôles de performance et l’assistance technique. Pouvez-vous ajouter une réservation en ligne ou une boutique e-commerce ? Réponse Oui. Je peux intégrer des systèmes de réservation en ligne, des solutions e-commerce, des paiements sécurisés ainsi que des outils adaptés aux besoins de votre activité. Suis-je propriétaire de mon site internet ? Réponse Oui. Une fois le projet terminé et réglé, vous êtes propriétaire de votre site et de son contenu. Vous recevrez également les accès aux outils nécessaires pour le gérer. De quoi avez-vous besoin pour commencer un projet ? Réponse Généralement, j’ai besoin d’un premier échange pour comprendre vos objectifs, votre activité, votre contenu existant et ce que vous souhaitez accomplir avec votre site internet. Pouvez-vous améliorer le SEO d’un site existant ? Réponse Oui. Je peux réaliser un audit de votre site actuel, identifier les opportunités d’amélioration et mettre en place des optimisations pour augmenter votre visibilité et attirer un trafic plus qualifié. Création de site web et système digital Billy Nightingale - Web Design & Développement à Capbreton Contact: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Accueil Projets À Propos Contact Services Landes © 2026 Billy Nightingale. Tous droits réservés. CGV",
+      "text_sha1": "3c95b96a8a194db1a69f43ffa8145f57adf4e751",
       "title": "Web Designer & Développeur Web à Capbreton | Billy Nightingale",
-      "word_count": 1781
+      "word_count": 1521
     },
     "/fr/404": {
       "canonical": [],
@@ -3480,6 +3476,1047 @@
       "title": "Création de site internet dans les Landes | Billy Nightingale",
       "word_count": 912
     },
+    "/fr/projets/monkey-mood": {
+      "canonical": [
+        "https://www.billynightingale.com/fr/projets/monkey-mood"
+      ],
+      "headings": [
+        "h1: Refonte du site d’un restaurant à Capbreton : Monkey Mood",
+        "h2: Fiche projet",
+        "h2: Le client",
+        "h2: Le problème",
+        "h2: Ce que j’ai fait",
+        "h2: Le résultat",
+        "h2: L’avis du client",
+        "h2: Autres projets",
+        "h2: Prêt à discuter de votre projet ?",
+        "h2: Création de site web et système digital"
+      ],
+      "hreflang": {
+        "en": "https://www.billynightingale.com/projects/monkey-mood",
+        "fr": "https://www.billynightingale.com/fr/projets/monkey-mood"
+      },
+      "images": [
+        {
+          "alt": "Logo Billy Nightingale",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Icône du menu",
+          "src": "/assets/icons/ham_menu.svg"
+        },
+        {
+          "alt": "Billy Nightingale client Monkey Mood, capture ecran de site web",
+          "height": "900",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI.webp",
+          "width": "1200"
+        },
+        {
+          "alt": "Matt et Jenny, propriétaires du restaurant Monkey Mood à Capbreton et clients de Billy Nightingale Création de Sites Web",
+          "height": "258",
+          "loading": "lazy",
+          "src": "/_astro/monkey_mood_owners_jenny_matt_billy_nightingales_client._HoGqV-C_GaFNV.webp",
+          "width": "360"
+        },
+        {
+          "alt": "Cinq étoiles",
+          "src": "/assets/icons/stars.svg"
+        }
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/monkey-mood#webpage",
+          "@type": "WebPage",
+          "about": {
+            "@id": "https://www.billynightingale.com/fr/projets/monkey-mood#project"
+          },
+          "breadcrumb": {
+            "@id": "https://www.billynightingale.com/fr/projets/monkey-mood#breadcrumb"
+          },
+          "description": "Comment un nouveau parcours de réservation a mis fin aux erreurs d’établissement pour Monkey Mood, restaurant vegan à Capbreton et Bordeaux. Web design, WordPress et SEO.",
+          "inLanguage": "fr-FR",
+          "isPartOf": {
+            "@id": "https://www.billynightingale.com/#website"
+          },
+          "name": "Refonte du site d’un restaurant à Capbreton : Monkey Mood",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI.webp",
+            "width": 1200
+          },
+          "url": "https://www.billynightingale.com/fr/projets/monkey-mood"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/monkey-mood#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/",
+              "name": "Accueil",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/#projects",
+              "name": "Projets",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/projets/monkey-mood",
+              "name": "Monkey Mood - restaurant",
+              "position": 3
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/monkey-mood#project",
+          "@type": "CreativeWork",
+          "creator": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          },
+          "dateCreated": "2026",
+          "description": "Comment un nouveau parcours de réservation a mis fin aux erreurs d’établissement pour Monkey Mood, restaurant vegan à Capbreton et Bordeaux. Web design, WordPress et SEO.",
+          "genre": "Restauration",
+          "image": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI.webp",
+            "width": 1200
+          },
+          "inLanguage": "fr-FR",
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/fr/projets/monkey-mood#webpage"
+          },
+          "name": "Monkey Mood - restaurant",
+          "sameAs": "https://monkey-mood.fr"
+        }
+      ],
+      "lang": "fr",
+      "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
+          "rel": "icon",
+          "sizes": "32x32"
+        },
+        {
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
+        },
+        {
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
+          "rel": "manifest"
+        }
+      ],
+      "links": [
+        {
+          "href": "/fr/"
+        },
+        {
+          "href": "/projects/monkey-mood",
+          "text": "EN"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "/fr/",
+          "text": "Accueil"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "https://monkey-mood.fr",
+          "rel": "noopener",
+          "text": "Voir le site →"
+        },
+        {
+          "href": "/fr/projets/pacific-coast-cafe",
+          "text": "Café · Hossegor Pacific Coast Cafe - restauration"
+        },
+        {
+          "href": "/fr/projets/sophro-by-eve",
+          "text": "Bien-être · Montauban Sophro by Eve - sophrologue"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Devis"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "Appel"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/fr/",
+          "text": "Accueil"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À Propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/fr/cgv",
+          "text": "CGV"
+        }
+      ],
+      "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
+        "charset": [
+          "UTF-8"
+        ],
+        "description": [
+          "Comment un nouveau parcours de réservation a mis fin aux erreurs d’établissement pour Monkey Mood, restaurant vegan à Capbreton et Bordeaux. Web design, WordPress et SEO."
+        ],
+        "og:description": [
+          "Comment un nouveau parcours de réservation a mis fin aux erreurs d’établissement pour Monkey Mood, restaurant vegan à Capbreton et Bordeaux. Web design, WordPress et SEO."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "fr_FR"
+        ],
+        "og:locale:alternate": [
+          "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Refonte du site d’un restaurant à Capbreton : Monkey Mood | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/fr/projets/monkey-mood"
+        ],
+        "robots": [
+          "index, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "Comment un nouveau parcours de réservation a mis fin aux erreurs d’établissement pour Monkey Mood, restaurant vegan à Capbreton et Bordeaux. Web design, WordPress et SEO."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Refonte du site d’un restaurant à Capbreton : Monkey Mood | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/fr/projets/monkey-mood"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0"
+        ]
+      },
+      "status": 200,
+      "text": "EN Projets À propos Contact Services Landes Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En continuant à naviguer sur ce site, vous acceptez l’utilisation de cookies. Accepter Refuser Accueil Projets Monkey Mood - restaurant Restauration · Capbreton · 2026 Refonte du site d’un restaurant à Capbreton : Monkey Mood Fiche projet Client Monkey Mood - restaurant Secteur Restauration Lieu Capbreton Année 2026 Prestations Web design Développement WordPress Intégration de la réservation SEO Performance Technologies Figma WordPress CMS Elementor Pro Notion Drive ZenChef Voir le site → Le client Monkey Mood est une marque de restaurants vegan en pleine croissance, avec deux établissements : l’un à Capbreton, l’autre à Bordeaux. Le problème Avec deux restaurants sur un seul site, les clients réservaient régulièrement une table dans le mauvais établissement. C’était un problème majeur pour les restaurants. Ce que j’ai fait J’ai entièrement repensé le site, des maquettes et de la direction artistique jusqu’au développement sous WordPress. J’ai cartographié le parcours des visiteurs et reconstruit le parcours de réservation, afin que chaque réservation soit clairement rattachée à un seul restaurant. Le système de réservation ZenChef est intégré au site. Refonte complète avec maquettes et direction artistique Cartographie des parcours utilisateurs afin d’optimiser la navigation et le processus de réservation Intégration du système de réservation (ZenChef) Animations personnalisées et éléments narratifs pour renforcer l’identité de marque Optimisation des performances et du SEO sur l’ensemble du site Le résultat Depuis la mise en ligne, plus aucune réservation dans le mauvais établissement. Le site se classe dans le top 3 sur Google pour « restaurant Capbreton » et « restaurant vegan Bordeaux » (positions moyennes de 2,4 et 2,2 dans la Search Console, novembre 2026). Il obtient un score de performance de 90+ dans Lighthouse, sur mobile comme sur ordinateur. 0 erreur d’établissement depuis la mise en ligne Top 3 sur Google pour « restaurant Capbreton » 90+ Performance Lighthouse, mobile et ordinateur L’avis du client Un immense merci à Billy pour notre superbe site web, qu'il a conçu et réalisé sur mesure avec WordPress. Si vous avez besoin d'un site web fonctionnel avec un système de réservation et plusieurs pages pour votre entreprise, nous vous recommandons vivement Billy. Sa connaissance approfondie du marché local de Capbreton et Hossegor nous a également été précieuse pour définir précisément nos besoins. Son souci du détail et sa communication sont les points forts de son travail. Encore merci ! Matt Hughes - Monkey Mood Autres projets Café · Hossegor Pacific Coast Cafe - restauration Bien-être · Montauban Sophro by Eve - sophrologue Prêt à discuter de votre projet ? Réservez un appel ou demandez un devis Devis Appel Création de site web et système digital Billy Nightingale - Web Design & Développement à Capbreton Contact: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Accueil Projets À Propos Contact Services Landes © 2026 Billy Nightingale. Tous droits réservés. CGV",
+      "text_sha1": "2cc0612ecbdf96158c0495e44ae8a3f00d664f99",
+      "title": "Refonte du site d’un restaurant à Capbreton : Monkey Mood | Billy Nightingale",
+      "word_count": 488
+    },
+    "/fr/projets/pacific-coast-cafe": {
+      "canonical": [
+        "https://www.billynightingale.com/fr/projets/pacific-coast-cafe"
+      ],
+      "headings": [
+        "h1: Site web et boutique en ligne d’un café à Hossegor : Pacific Coast Cafe",
+        "h2: Fiche projet",
+        "h2: Le client",
+        "h2: Le problème",
+        "h2: Ce que j’ai fait",
+        "h2: Le résultat",
+        "h2: L’avis du client",
+        "h2: Autres projets",
+        "h2: Prêt à discuter de votre projet ?",
+        "h2: Création de site web et système digital"
+      ],
+      "hreflang": {
+        "en": "https://www.billynightingale.com/projects/pacific-coast-cafe",
+        "fr": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe"
+      },
+      "images": [
+        {
+          "alt": "Logo Billy Nightingale",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Icône du menu",
+          "src": "/assets/icons/ham_menu.svg"
+        },
+        {
+          "alt": "Billy Nightingale client Pacific Coast Cafe Hossegor, capture ecran de site web",
+          "height": "900",
+          "loading": "eager",
+          "src": "/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4.webp",
+          "width": "1200"
+        },
+        {
+          "alt": "Portrait d’Aaron et Izia, propriétaires du Pacific Coast Cafe et clients de Billy Nightingale",
+          "height": "240",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_client_pacific_coast_cafe_web_design.DcIHUYZG_l9ceP.webp",
+          "width": "360"
+        },
+        {
+          "alt": "Cinq étoiles",
+          "src": "/assets/icons/stars.svg"
+        }
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe#webpage",
+          "@type": "WebPage",
+          "about": {
+            "@id": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe#project"
+          },
+          "breadcrumb": {
+            "@id": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe#breadcrumb"
+          },
+          "description": "Un site plus rapide et conforme au RGPD, et une nouvelle boutique en ligne avec cartes cadeaux pour le Pacific Coast Cafe à Hossegor. Performance, e-commerce et SEO.",
+          "inLanguage": "fr-FR",
+          "isPartOf": {
+            "@id": "https://www.billynightingale.com/#website"
+          },
+          "name": "Site web et boutique en ligne d’un café à Hossegor : Pacific Coast Cafe",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4.webp",
+            "width": 1200
+          },
+          "url": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/",
+              "name": "Accueil",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/#projects",
+              "name": "Projets",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe",
+              "name": "Pacific Coast Cafe - restauration",
+              "position": 3
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe#project",
+          "@type": "CreativeWork",
+          "creator": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          },
+          "dateCreated": "2026",
+          "description": "Un site plus rapide et conforme au RGPD, et une nouvelle boutique en ligne avec cartes cadeaux pour le Pacific Coast Cafe à Hossegor. Performance, e-commerce et SEO.",
+          "genre": "Café",
+          "image": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4.webp",
+            "width": 1200
+          },
+          "inLanguage": "fr-FR",
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe#webpage"
+          },
+          "name": "Pacific Coast Cafe - restauration",
+          "sameAs": "https://pacificcoasthossegor.com/"
+        }
+      ],
+      "lang": "fr",
+      "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
+          "rel": "icon",
+          "sizes": "32x32"
+        },
+        {
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
+        },
+        {
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
+          "rel": "manifest"
+        }
+      ],
+      "links": [
+        {
+          "href": "/fr/"
+        },
+        {
+          "href": "/projects/pacific-coast-cafe",
+          "text": "EN"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "/fr/",
+          "text": "Accueil"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "https://pacificcoasthossegor.com/",
+          "rel": "noopener",
+          "text": "Voir le site →"
+        },
+        {
+          "href": "/fr/projets/monkey-mood",
+          "text": "Restauration · Capbreton Monkey Mood - restaurant"
+        },
+        {
+          "href": "/fr/projets/sophro-by-eve",
+          "text": "Bien-être · Montauban Sophro by Eve - sophrologue"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Devis"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "Appel"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/fr/",
+          "text": "Accueil"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À Propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/fr/cgv",
+          "text": "CGV"
+        }
+      ],
+      "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
+        "charset": [
+          "UTF-8"
+        ],
+        "description": [
+          "Un site plus rapide et conforme au RGPD, et une nouvelle boutique en ligne avec cartes cadeaux pour le Pacific Coast Cafe à Hossegor. Performance, e-commerce et SEO."
+        ],
+        "og:description": [
+          "Un site plus rapide et conforme au RGPD, et une nouvelle boutique en ligne avec cartes cadeaux pour le Pacific Coast Cafe à Hossegor. Performance, e-commerce et SEO."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "fr_FR"
+        ],
+        "og:locale:alternate": [
+          "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Site web et boutique en ligne d’un café à Hossegor : Pacific Coast Cafe | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/fr/projets/pacific-coast-cafe"
+        ],
+        "robots": [
+          "index, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "Un site plus rapide et conforme au RGPD, et une nouvelle boutique en ligne avec cartes cadeaux pour le Pacific Coast Cafe à Hossegor. Performance, e-commerce et SEO."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Site web et boutique en ligne d’un café à Hossegor : Pacific Coast Cafe | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/fr/projets/pacific-coast-cafe"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0"
+        ]
+      },
+      "status": 200,
+      "text": "EN Projets À propos Contact Services Landes Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En continuant à naviguer sur ce site, vous acceptez l’utilisation de cookies. Accepter Refuser Accueil Projets Pacific Coast Cafe - restauration Café · Hossegor · 2026 Site web et boutique en ligne d’un café à Hossegor : Pacific Coast Cafe Fiche projet Client Pacific Coast Cafe - restauration Secteur Café Lieu Hossegor Année 2026 Prestations Optimisation des performances Boutique en ligne Conformité RGPD SEO Maintenance Technologies Figma CMS Elementor Pro Stripe PW Gift Cards Notion Drive Voir le site → Le client Pacific Coast Cafe est un café à forte affluence à Hossegor. Le problème Le site était lent : le thème et les extensions n’étaient plus à jour et les images n’étaient pas optimisées. Il présentait aussi des défauts de mise en page hérités d’un ancien design et n’était pas conforme au RGPD. Le café souhaitait en plus une boutique en ligne pour vendre ses produits dérivés et des cartes cadeaux. Ce que j’ai fait J’ai mis à jour le thème et les extensions, optimisé les images et corrigé la mise en page. J’ai également mis le site en conformité avec le RGPD. J’ai ensuite ajouté une boutique en ligne avec paiement par Stripe et cartes cadeaux digitales, sans perturber l’activité quotidienne du café. Le résultat Le site est 20 % plus rapide, mieux référencé et désormais conforme au RGPD. La boutique en ligne et ses cartes cadeaux digitales offrent au café une nouvelle source de revenus. 20 % de vitesse en plus L’avis du client Nous avons fait appel à Billy pour la création de notre e-shop relié à notre site web, ainsi que pour la maintenance et le travail sur le SEO, et nous sommes absolument ravis du résultat ! Billy est très à l’écoute, réactif, toujours disponible et d’une grande gentillesse. Très professionnel, il ne se contente pas d’exécuter : il conseille, propose des solutions pertinentes et prend même le temps de faire des recherches pour nous. Grâce à lui, nous avons eu une vision claire des actions à mener tout le long (avec des listes organisées sur Notion) ce qui a rendu le processus très fluide. Son accompagnement va bien au-delà de la simple prestation technique : c’est un vrai partenaire de confiance. Nous ne pouvons que le recommander les yeux fermés. Un grand merci pour ce travail de qualité Billy ! Izia Dunn - Pacific Coast Cafe Autres projets Restauration · Capbreton Monkey Mood - restaurant Bien-être · Montauban Sophro by Eve - sophrologue Prêt à discuter de votre projet ? Réservez un appel ou demandez un devis Devis Appel Création de site web et système digital Billy Nightingale - Web Design & Développement à Capbreton Contact: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Accueil Projets À Propos Contact Services Landes © 2026 Billy Nightingale. Tous droits réservés. CGV",
+      "text_sha1": "2c182b3e3e39d3cc8b15f0cfc3136c6a76d83e9d",
+      "title": "Site web et boutique en ligne d’un café à Hossegor : Pacific Coast Cafe | Billy Nightingale",
+      "word_count": 488
+    },
+    "/fr/projets/sophro-by-eve": {
+      "canonical": [
+        "https://www.billynightingale.com/fr/projets/sophro-by-eve"
+      ],
+      "headings": [
+        "h1: Site web de sophrologue avec réservation en ligne à Montauban : Sophro by Eve",
+        "h2: Fiche projet",
+        "h2: Le client",
+        "h2: Le problème",
+        "h2: Ce que j’ai fait",
+        "h2: Le résultat",
+        "h2: L’avis du client",
+        "h2: Autres projets",
+        "h2: Prêt à discuter de votre projet ?",
+        "h2: Création de site web et système digital"
+      ],
+      "hreflang": {
+        "en": "https://www.billynightingale.com/projects/sophro-by-eve",
+        "fr": "https://www.billynightingale.com/fr/projets/sophro-by-eve"
+      },
+      "images": [
+        {
+          "alt": "Logo Billy Nightingale",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Icône du menu",
+          "src": "/assets/icons/ham_menu.svg"
+        },
+        {
+          "alt": "Billy Nightingale client Eve-Marie, capture ecran de site web",
+          "height": "1080",
+          "loading": "eager",
+          "src": "/_astro/client_eve-marie_website.vv20zxUB_Z1DmVl7.webp",
+          "width": "1440"
+        },
+        {
+          "alt": "Portrait d’Eve-Marie, cliente de Billy Nightingale",
+          "height": "360",
+          "loading": "lazy",
+          "src": "/_astro/eve-marie-billy-web-design-client.nEmDNwHz_Z1hvXqr.webp",
+          "width": "360"
+        },
+        {
+          "alt": "Cinq étoiles",
+          "src": "/assets/icons/stars.svg"
+        }
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/sophro-by-eve#webpage",
+          "@type": "WebPage",
+          "about": {
+            "@id": "https://www.billynightingale.com/fr/projets/sophro-by-eve#project"
+          },
+          "breadcrumb": {
+            "@id": "https://www.billynightingale.com/fr/projets/sophro-by-eve#breadcrumb"
+          },
+          "description": "Un site WordPress avec réservation et paiement en ligne et un blog pour Eve-Marie, sophrologue qui ouvre son cabinet à Montauban.",
+          "inLanguage": "fr-FR",
+          "isPartOf": {
+            "@id": "https://www.billynightingale.com/#website"
+          },
+          "name": "Site web de sophrologue avec réservation en ligne à Montauban : Sophro by Eve",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "height": 4500,
+            "url": "https://www.billynightingale.com/_astro/client_eve-marie_website.vv20zxUB.webp",
+            "width": 6000
+          },
+          "url": "https://www.billynightingale.com/fr/projets/sophro-by-eve"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/sophro-by-eve#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/",
+              "name": "Accueil",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/#projects",
+              "name": "Projets",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/fr/projets/sophro-by-eve",
+              "name": "Sophro by Eve - sophrologue",
+              "position": 3
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/fr/projets/sophro-by-eve#project",
+          "@type": "CreativeWork",
+          "creator": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/fr/"
+          },
+          "dateCreated": "2025",
+          "description": "Un site WordPress avec réservation et paiement en ligne et un blog pour Eve-Marie, sophrologue qui ouvre son cabinet à Montauban.",
+          "genre": "Bien-être",
+          "image": {
+            "@type": "ImageObject",
+            "height": 4500,
+            "url": "https://www.billynightingale.com/_astro/client_eve-marie_website.vv20zxUB.webp",
+            "width": 6000
+          },
+          "inLanguage": "fr-FR",
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/fr/projets/sophro-by-eve#webpage"
+          },
+          "name": "Sophro by Eve - sophrologue"
+        }
+      ],
+      "lang": "fr",
+      "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
+          "rel": "icon",
+          "sizes": "32x32"
+        },
+        {
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
+        },
+        {
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
+          "rel": "manifest"
+        }
+      ],
+      "links": [
+        {
+          "href": "/fr/"
+        },
+        {
+          "href": "/projects/sophro-by-eve",
+          "text": "EN"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/?locale=fr_FR",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "/fr/",
+          "text": "Accueil"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/projets/monkey-mood",
+          "text": "Restauration · Capbreton Monkey Mood - restaurant"
+        },
+        {
+          "href": "/fr/projets/pacific-coast-cafe",
+          "text": "Café · Hossegor Pacific Coast Cafe - restauration"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Devis"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "Appel"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/fr/",
+          "text": "Accueil"
+        },
+        {
+          "href": "/fr/#projects",
+          "text": "Projets"
+        },
+        {
+          "href": "/fr/a-propos",
+          "text": "À Propos"
+        },
+        {
+          "href": "/fr/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/fr/services",
+          "text": "Services"
+        },
+        {
+          "href": "/fr/creation-site-web-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/fr/cgv",
+          "text": "CGV"
+        }
+      ],
+      "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
+        "charset": [
+          "UTF-8"
+        ],
+        "description": [
+          "Un site WordPress avec réservation et paiement en ligne et un blog pour Eve-Marie, sophrologue qui ouvre son cabinet à Montauban."
+        ],
+        "og:description": [
+          "Un site WordPress avec réservation et paiement en ligne et un blog pour Eve-Marie, sophrologue qui ouvre son cabinet à Montauban."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Service de Web design, développement & SEO"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "fr_FR"
+        ],
+        "og:locale:alternate": [
+          "en_GB"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Site web de sophrologue avec réservation en ligne à Montauban : Sophro by Eve | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/fr/projets/sophro-by-eve"
+        ],
+        "robots": [
+          "index, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "Un site WordPress avec réservation et paiement en ligne et un blog pour Eve-Marie, sophrologue qui ouvre son cabinet à Montauban."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Site web de sophrologue avec réservation en ligne à Montauban : Sophro by Eve | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/fr/projets/sophro-by-eve"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0"
+        ]
+      },
+      "status": 200,
+      "text": "EN Projets À propos Contact Services Landes Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En continuant à naviguer sur ce site, vous acceptez l’utilisation de cookies. Accepter Refuser Accueil Projets Sophro by Eve - sophrologue Bien-être · Montauban · 2025 Site web de sophrologue avec réservation en ligne à Montauban : Sophro by Eve Fiche projet Client Sophro by Eve - sophrologue Secteur Bien-être Lieu Montauban Année 2025 Prestations Web design Développement WordPress Réservation et paiement en ligne Blog SEO Mise en place de l’hébergement Technologies Wordpress Elementor Pro Rank Math SEO Hostinger Calendly Le client Eve-Marie est sophrologue et a ouvert un nouveau cabinet à Montauban. Elle accompagne les particuliers comme les entreprises. Le problème Elle avait besoin d’un site web pour lancer son activité : un site qui prend les réservations, présente clairement ses services à ces deux publics et comprend un blog. Ce que j’ai fait J’ai créé un site personnalisé sous WordPress avec Elementor Pro, avec des couleurs douces, des mises en page simples et une expérience utilisateur fluide. Les réservations et les paiements en ligne passent par Calendly. Le blog et le reste du contenu sont gérés dans le CMS, avec des types de champs personnalisés. Un sitemap structuré et un design d’interface clair et épuré Une section blog pour le SEO à long terme Un système de réservation Calendly avec paiements en ligne Optimisation de la vitesse et bonnes pratiques pour le SEO technique Configuration complète de l’hébergement, de la sécurité, des sauvegardes et des outils d’analyse Le résultat Eve-Marie a lancé son activité avec un site où ses clients peuvent réserver et payer une séance en ligne. Le site obtient un score de performance de 90+ dans Lighthouse, sur mobile comme sur ordinateur. 90+ Performance Lighthouse, mobile et ordinateur L’avis du client Faites confiance à Billy ! Il m'a créé mon site internet de A à Z ainsi que mon blog en Septembre 2025. C'est une personne extrêmement professionnelle, perfectionniste et très aimable. En le choisissant, vous choisissez l'excellent rapport qualité/prix. Il parle très très bien français, est force de proposition sur tout le process de la conception du projet et même après. Il prends à chaque fois en compte toutes les demandes. Vraiment, je le recommande sans hésitez. Eve-Marie, Sophrologue, Montauban Autres projets Restauration · Capbreton Monkey Mood - restaurant Café · Hossegor Pacific Coast Cafe - restauration Prêt à discuter de votre projet ? Réservez un appel ou demandez un devis Devis Appel Création de site web et système digital Billy Nightingale - Web Design & Développement à Capbreton Contact: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Accueil Projets À Propos Contact Services Landes © 2026 Billy Nightingale. Tous droits réservés. CGV",
+      "text_sha1": "77d85d571c0e450219141bc235f53cd09b7ecd06",
+      "title": "Site web de sophrologue avec réservation en ligne à Montauban : Sophro by Eve | Billy Nightingale",
+      "word_count": 460
+    },
     "/fr/services": {
       "canonical": [
         "https://www.billynightingale.com/fr/services"
@@ -3884,6 +4921,1047 @@
       "text_sha1": "a87baf14f9e404afd0819f13532a30786c2e3ffe",
       "title": "Services de création de sites web | Billy Nightingale",
       "word_count": 821
+    },
+    "/projects/monkey-mood": {
+      "canonical": [
+        "https://www.billynightingale.com/projects/monkey-mood"
+      ],
+      "headings": [
+        "h1: Restaurant website redesign in Capbreton: Monkey Mood",
+        "h2: Project details",
+        "h2: The client",
+        "h2: The problem",
+        "h2: What I did",
+        "h2: The result",
+        "h2: What the client says",
+        "h2: More projects",
+        "h2: Ready to discuss your project?",
+        "h2: Create your digital system"
+      ],
+      "hreflang": {
+        "en": "https://www.billynightingale.com/projects/monkey-mood",
+        "fr": "https://www.billynightingale.com/fr/projets/monkey-mood"
+      },
+      "images": [
+        {
+          "alt": "Billy Nightingale logo",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Menu icon",
+          "src": "/assets/icons/ham_menu.svg"
+        },
+        {
+          "alt": "Billy Nightingale client Monkey Mood, website screenshot",
+          "height": "900",
+          "loading": "eager",
+          "src": "/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI.webp",
+          "width": "1200"
+        },
+        {
+          "alt": "Portrait of Matt and Jenny the owners of Monkey Mood restaurant, billy nightingale web design client",
+          "height": "258",
+          "loading": "lazy",
+          "src": "/_astro/monkey_mood_owners_jenny_matt_billy_nightingales_client._HoGqV-C_GaFNV.webp",
+          "width": "360"
+        },
+        {
+          "alt": "Five stars",
+          "src": "/assets/icons/stars.svg"
+        }
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/monkey-mood#webpage",
+          "@type": "WebPage",
+          "about": {
+            "@id": "https://www.billynightingale.com/projects/monkey-mood#project"
+          },
+          "breadcrumb": {
+            "@id": "https://www.billynightingale.com/projects/monkey-mood#breadcrumb"
+          },
+          "description": "How a new booking flow ended wrong-location bookings for Monkey Mood, a vegan restaurant in Capbreton and Bordeaux. Web design, WordPress build and SEO.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.billynightingale.com/#website"
+          },
+          "name": "Restaurant website redesign in Capbreton: Monkey Mood",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI.webp",
+            "width": 1200
+          },
+          "url": "https://www.billynightingale.com/projects/monkey-mood"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/monkey-mood#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/",
+              "name": "Home",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/#projects",
+              "name": "Projects",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/projects/monkey-mood",
+              "name": "Monkey Mood - Restaurant",
+              "position": 3
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/monkey-mood#project",
+          "@type": "CreativeWork",
+          "creator": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
+          },
+          "dateCreated": "2026",
+          "description": "How a new booking flow ended wrong-location bookings for Monkey Mood, a vegan restaurant in Capbreton and Bordeaux. Web design, WordPress build and SEO.",
+          "genre": "Restaurant",
+          "image": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/billy_nightingale_client_monkey_mood_creation_de_site_web.DFcxYNKI.webp",
+            "width": 1200
+          },
+          "inLanguage": "en-GB",
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/projects/monkey-mood#webpage"
+          },
+          "name": "Monkey Mood - Restaurant",
+          "sameAs": "https://monkey-mood.fr"
+        }
+      ],
+      "lang": "en",
+      "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
+          "rel": "icon",
+          "sizes": "32x32"
+        },
+        {
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
+        },
+        {
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
+          "rel": "manifest"
+        }
+      ],
+      "links": [
+        {
+          "href": "/"
+        },
+        {
+          "href": "/fr/projets/monkey-mood",
+          "text": "FR"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "https://monkey-mood.fr",
+          "rel": "noopener",
+          "text": "Visit the website →"
+        },
+        {
+          "href": "/projects/pacific-coast-cafe",
+          "text": "Café · Hossegor Pacific Coast Cafe - Café"
+        },
+        {
+          "href": "/projects/sophro-by-eve",
+          "text": "Wellness · Montauban Sophro by Eve - sophrologue"
+        },
+        {
+          "href": "/contact",
+          "text": "Request a quote"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "Book a call"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/terms-and-conditions",
+          "text": "Terms and Conditions"
+        }
+      ],
+      "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
+        "charset": [
+          "UTF-8"
+        ],
+        "description": [
+          "How a new booking flow ended wrong-location bookings for Monkey Mood, a vegan restaurant in Capbreton and Bordeaux. Web design, WordPress build and SEO."
+        ],
+        "og:description": [
+          "How a new booking flow ended wrong-location bookings for Monkey Mood, a vegan restaurant in Capbreton and Bordeaux. Web design, WordPress build and SEO."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "en_GB"
+        ],
+        "og:locale:alternate": [
+          "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Restaurant website redesign in Capbreton: Monkey Mood | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/projects/monkey-mood"
+        ],
+        "robots": [
+          "index, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "How a new booking flow ended wrong-location bookings for Monkey Mood, a vegan restaurant in Capbreton and Bordeaux. Web design, WordPress build and SEO."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Restaurant website redesign in Capbreton: Monkey Mood | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/projects/monkey-mood"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0"
+        ]
+      },
+      "status": 200,
+      "text": "FR Projects About Contact Services Landes Cookies are used to improve your experience on our website. By continuing to use our site, you agree to our use of cookies. Accept Deny Home Projects Monkey Mood - Restaurant Restaurant · Capbreton · 2026 Restaurant website redesign in Capbreton: Monkey Mood Project details Client Monkey Mood - Restaurant Sector Restaurant Location Capbreton Year 2026 Services Web design WordPress build Booking integration SEO Performance Technologies Figma WordPress CMS Elementor Pro Notion Drive ZenChef Visit the website → The client Monkey Mood is a growing vegan restaurant brand with two restaurants, one in Capbreton and one in Bordeaux. The problem With two restaurants on one website, customers regularly booked a table at the wrong one. It was a major problem for the restaurants. What I did I redesigned the whole site, from the mockups and brand direction to the finished WordPress build. I mapped how visitors move through the site and rebuilt the booking flow, so that every booking is clearly tied to one restaurant. The ZenChef booking system is integrated into the site. Full redesign with mockups and brand direction User flow mapping to optimise navigation and booking behaviour Booking system integration (ZenChef) Custom animations and storytelling elements to reinforce brand identity Performance and SEO optimisation across all pages The result Since launch there has not been a single wrong-location booking. The site ranks in the top 3 on Google for “restaurant Capbreton” and “restaurant vegan Bordeaux” (average positions 2.4 and 2.2 in Search Console, November 2026). It scores 90+ for performance in Lighthouse, on mobile and desktop. 0 wrong-location bookings since launch Top 3 on Google for “restaurant Capbreton” 90+ Lighthouse performance, mobile and desktop What the client says A huge thank you to Billy for creating our fantastic website. He designed and built a bespoke WordPress site that perfectly meets our needs. If you're looking for a professional website with online booking functionality and multiple pages for your business, we highly recommend working with Billy. His strong understanding of the local Capbreton and Hossegor market was invaluable in helping us identify our requirements and shape the project. Throughout the process, his attention to detail, professionalism, and communication were exceptional. Thank you again! Matt Hughes - Monkey Mood More projects Café · Hossegor Pacific Coast Cafe - Café Wellness · Montauban Sophro by Eve - sophrologue Ready to discuss your project? Book a call or request a quote now Request a quote Book a call Create your digital system Billy Nightingale - Web Design & Development in Capbreton Contact Information: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Home Projects About Contact Services Landes © 2026 Billy Nightingale. All rights reserved. Terms and Conditions",
+      "text_sha1": "1a8c4f2dc37747b7b8fb247fb24ce4677bfc6411",
+      "title": "Restaurant website redesign in Capbreton: Monkey Mood | Billy Nightingale",
+      "word_count": 455
+    },
+    "/projects/pacific-coast-cafe": {
+      "canonical": [
+        "https://www.billynightingale.com/projects/pacific-coast-cafe"
+      ],
+      "headings": [
+        "h1: Café website and online shop in Hossegor: Pacific Coast Cafe",
+        "h2: Project details",
+        "h2: The client",
+        "h2: The problem",
+        "h2: What I did",
+        "h2: The result",
+        "h2: What the client says",
+        "h2: More projects",
+        "h2: Ready to discuss your project?",
+        "h2: Create your digital system"
+      ],
+      "hreflang": {
+        "en": "https://www.billynightingale.com/projects/pacific-coast-cafe",
+        "fr": "https://www.billynightingale.com/fr/projets/pacific-coast-cafe"
+      },
+      "images": [
+        {
+          "alt": "Billy Nightingale logo",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Menu icon",
+          "src": "/assets/icons/ham_menu.svg"
+        },
+        {
+          "alt": "Billy Nightingale client Pacific Coast Cafe Hossegor, website screenshot",
+          "height": "900",
+          "loading": "eager",
+          "src": "/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4.webp",
+          "width": "1200"
+        },
+        {
+          "alt": "Portrait of Aaron and Izia the owners of Pacific Coast Cafe",
+          "height": "240",
+          "loading": "lazy",
+          "src": "/_astro/billy_nightingale_client_pacific_coast_cafe_web_design.DcIHUYZG_l9ceP.webp",
+          "width": "360"
+        },
+        {
+          "alt": "Five stars",
+          "src": "/assets/icons/stars.svg"
+        }
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/pacific-coast-cafe#webpage",
+          "@type": "WebPage",
+          "about": {
+            "@id": "https://www.billynightingale.com/projects/pacific-coast-cafe#project"
+          },
+          "breadcrumb": {
+            "@id": "https://www.billynightingale.com/projects/pacific-coast-cafe#breadcrumb"
+          },
+          "description": "A faster, GDPR-compliant website and a new online shop with gift cards for Pacific Coast Cafe in Hossegor. Performance, e-commerce and SEO.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.billynightingale.com/#website"
+          },
+          "name": "Café website and online shop in Hossegor: Pacific Coast Cafe",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4.webp",
+            "width": 1200
+          },
+          "url": "https://www.billynightingale.com/projects/pacific-coast-cafe"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/pacific-coast-cafe#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/",
+              "name": "Home",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/#projects",
+              "name": "Projects",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/projects/pacific-coast-cafe",
+              "name": "Pacific Coast Cafe - Café",
+              "position": 3
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/pacific-coast-cafe#project",
+          "@type": "CreativeWork",
+          "creator": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
+          },
+          "dateCreated": "2026",
+          "description": "A faster, GDPR-compliant website and a new online shop with gift cards for Pacific Coast Cafe in Hossegor. Performance, e-commerce and SEO.",
+          "genre": "Café",
+          "image": {
+            "@type": "ImageObject",
+            "height": 900,
+            "url": "https://www.billynightingale.com/_astro/Billy_nightingale_client_pacific_coast_cafe_hossegor.j913_zJ4.webp",
+            "width": 1200
+          },
+          "inLanguage": "en-GB",
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/projects/pacific-coast-cafe#webpage"
+          },
+          "name": "Pacific Coast Cafe - Café",
+          "sameAs": "https://pacificcoasthossegor.com/"
+        }
+      ],
+      "lang": "en",
+      "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
+          "rel": "icon",
+          "sizes": "32x32"
+        },
+        {
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
+        },
+        {
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
+          "rel": "manifest"
+        }
+      ],
+      "links": [
+        {
+          "href": "/"
+        },
+        {
+          "href": "/fr/projets/pacific-coast-cafe",
+          "text": "FR"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "https://pacificcoasthossegor.com/",
+          "rel": "noopener",
+          "text": "Visit the website →"
+        },
+        {
+          "href": "/projects/monkey-mood",
+          "text": "Restaurant · Capbreton Monkey Mood - Restaurant"
+        },
+        {
+          "href": "/projects/sophro-by-eve",
+          "text": "Wellness · Montauban Sophro by Eve - sophrologue"
+        },
+        {
+          "href": "/contact",
+          "text": "Request a quote"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "Book a call"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/terms-and-conditions",
+          "text": "Terms and Conditions"
+        }
+      ],
+      "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
+        "charset": [
+          "UTF-8"
+        ],
+        "description": [
+          "A faster, GDPR-compliant website and a new online shop with gift cards for Pacific Coast Cafe in Hossegor. Performance, e-commerce and SEO."
+        ],
+        "og:description": [
+          "A faster, GDPR-compliant website and a new online shop with gift cards for Pacific Coast Cafe in Hossegor. Performance, e-commerce and SEO."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "en_GB"
+        ],
+        "og:locale:alternate": [
+          "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Café website and online shop in Hossegor: Pacific Coast Cafe | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/projects/pacific-coast-cafe"
+        ],
+        "robots": [
+          "index, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "A faster, GDPR-compliant website and a new online shop with gift cards for Pacific Coast Cafe in Hossegor. Performance, e-commerce and SEO."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Café website and online shop in Hossegor: Pacific Coast Cafe | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/projects/pacific-coast-cafe"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0"
+        ]
+      },
+      "status": 200,
+      "text": "FR Projects About Contact Services Landes Cookies are used to improve your experience on our website. By continuing to use our site, you agree to our use of cookies. Accept Deny Home Projects Pacific Coast Cafe - Café Café · Hossegor · 2026 Café website and online shop in Hossegor: Pacific Coast Cafe Project details Client Pacific Coast Cafe - Café Sector Café Location Hossegor Year 2026 Services Performance optimisation Online shop GDPR compliance SEO Maintenance Technologies Figma CMS Elementor Pro Stripe PW Gift Cards Notion Drive Visit the website → The client Pacific Coast Cafe is a high-traffic café in Hossegor. The problem The site was slow: the theme and plugins were out of date and the images were not optimised. It also had layout faults left over from a previous design, and it was not GDPR compliant. On top of that, the café wanted an online shop to sell merchandise and gift cards. What I did I updated the theme and plugins, optimised the images and fixed the layout. I also brought the site into line with GDPR. Then I added an online shop with Stripe payments and digital gift cards, without disrupting the café’s daily operations. The result The site is 20% faster, more visible in search and now GDPR compliant. The online shop and its digital gift cards give the café a new source of revenue. 20% faster site What the client says We hired Billy to create our online store, which is linked to our website, as well as for maintenance and SEO work, and we are absolutely delighted with the result! Billy is very attentive, responsive, always available, and incredibly kind. Highly professional, he doesn't just execute tasks: he advises, proposes relevant solutions, and even takes the time to do research for us. Thanks to him, we had a clear vision of the actions to take throughout the entire process (with organized lists on Notion), which made the process very smooth. His support goes far beyond simple technical services: he is a true partner we can trust. We wholeheartedly recommend him. A huge thank you for this excellent work, Billy! Izia Dunn - Pacific Coast Cafe More projects Restaurant · Capbreton Monkey Mood - Restaurant Wellness · Montauban Sophro by Eve - sophrologue Ready to discuss your project? Book a call or request a quote now Request a quote Book a call Create your digital system Billy Nightingale - Web Design & Development in Capbreton Contact Information: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Home Projects About Contact Services Landes © 2026 Billy Nightingale. All rights reserved. Terms and Conditions",
+      "text_sha1": "ed353bee844e4fef3b24155624aebf67394c7610",
+      "title": "Café website and online shop in Hossegor: Pacific Coast Cafe | Billy Nightingale",
+      "word_count": 440
+    },
+    "/projects/sophro-by-eve": {
+      "canonical": [
+        "https://www.billynightingale.com/projects/sophro-by-eve"
+      ],
+      "headings": [
+        "h1: Sophrologist website with online booking in Montauban: Sophro by Eve",
+        "h2: Project details",
+        "h2: The client",
+        "h2: The problem",
+        "h2: What I did",
+        "h2: The result",
+        "h2: What the client says",
+        "h2: More projects",
+        "h2: Ready to discuss your project?",
+        "h2: Create your digital system"
+      ],
+      "hreflang": {
+        "en": "https://www.billynightingale.com/projects/sophro-by-eve",
+        "fr": "https://www.billynightingale.com/fr/projets/sophro-by-eve"
+      },
+      "images": [
+        {
+          "alt": "Billy Nightingale logo",
+          "src": "/assets/nightingale_logo_gold.svg"
+        },
+        {
+          "alt": "Menu icon",
+          "src": "/assets/icons/ham_menu.svg"
+        },
+        {
+          "alt": "Eve-Marie, a sophrologue website created by Billy Nightingale",
+          "height": "1080",
+          "loading": "eager",
+          "src": "/_astro/client_eve-marie_website.vv20zxUB_Z1DmVl7.webp",
+          "width": "1440"
+        },
+        {
+          "alt": "portrait of Eve-Marie, a client of Billy Nightingale",
+          "height": "360",
+          "loading": "lazy",
+          "src": "/_astro/eve-marie-billy-web-design-client.nEmDNwHz_Z1hvXqr.webp",
+          "width": "360"
+        },
+        {
+          "alt": "Five stars",
+          "src": "/assets/icons/stars.svg"
+        }
+      ],
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/sophro-by-eve#webpage",
+          "@type": "WebPage",
+          "about": {
+            "@id": "https://www.billynightingale.com/projects/sophro-by-eve#project"
+          },
+          "breadcrumb": {
+            "@id": "https://www.billynightingale.com/projects/sophro-by-eve#breadcrumb"
+          },
+          "description": "A WordPress website with online booking, payments and a blog for Eve-Marie, a sophrologist opening her practice in Montauban.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.billynightingale.com/#website"
+          },
+          "name": "Sophrologist website with online booking in Montauban: Sophro by Eve",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "height": 4500,
+            "url": "https://www.billynightingale.com/_astro/client_eve-marie_website.vv20zxUB.webp",
+            "width": 6000
+          },
+          "url": "https://www.billynightingale.com/projects/sophro-by-eve"
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/sophro-by-eve#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/",
+              "name": "Home",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/#projects",
+              "name": "Projects",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "item": "https://www.billynightingale.com/projects/sophro-by-eve",
+              "name": "Sophro by Eve - sophrologue",
+              "position": 3
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@id": "https://www.billynightingale.com/projects/sophro-by-eve#project",
+          "@type": "CreativeWork",
+          "creator": {
+            "@id": "https://www.billynightingale.com/#business",
+            "@type": "ProfessionalService",
+            "name": "Billy Nightingale",
+            "url": "https://www.billynightingale.com/"
+          },
+          "dateCreated": "2025",
+          "description": "A WordPress website with online booking, payments and a blog for Eve-Marie, a sophrologist opening her practice in Montauban.",
+          "genre": "Wellness",
+          "image": {
+            "@type": "ImageObject",
+            "height": 4500,
+            "url": "https://www.billynightingale.com/_astro/client_eve-marie_website.vv20zxUB.webp",
+            "width": 6000
+          },
+          "inLanguage": "en-GB",
+          "mainEntityOfPage": {
+            "@id": "https://www.billynightingale.com/projects/sophro-by-eve#webpage"
+          },
+          "name": "Sophro by Eve - sophrologue"
+        }
+      ],
+      "lang": "en",
+      "link_tags": [
+        {
+          "as": "font",
+          "href": "/assets/fonts/MangoGrotesque-Regular.woff2",
+          "rel": "preload",
+          "type": "font/woff2"
+        },
+        {
+          "href": "/favicon-n-v1-48.png",
+          "rel": "icon",
+          "sizes": "48x48"
+        },
+        {
+          "href": "/favicon-n-v1-32.png",
+          "rel": "icon",
+          "sizes": "32x32"
+        },
+        {
+          "href": "/favicon-n-v1-16.png",
+          "rel": "icon",
+          "sizes": "16x16"
+        },
+        {
+          "href": "/favicon-n-v1-ico.ico",
+          "rel": "icon",
+          "sizes": "any"
+        },
+        {
+          "href": "/site.webmanifest",
+          "rel": "manifest"
+        }
+      ],
+      "links": [
+        {
+          "href": "/"
+        },
+        {
+          "href": "/fr/projets/sophro-by-eve",
+          "text": "FR"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/projects/monkey-mood",
+          "text": "Restaurant · Capbreton Monkey Mood - Restaurant"
+        },
+        {
+          "href": "/projects/pacific-coast-cafe",
+          "text": "Café · Hossegor Pacific Coast Cafe - Café"
+        },
+        {
+          "href": "/contact",
+          "text": "Request a quote"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "Book a call"
+        },
+        {
+          "href": "tel:+33766095864",
+          "text": "+33 7 66 09 58 64"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com",
+          "text": "contact@billynightingale.com"
+        },
+        {
+          "href": "https://www.linkedin.com/in/billynightingale/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.instagram.com/billy.nightingale.studio/",
+          "rel": "noopener"
+        },
+        {
+          "href": "https://www.github.com/Billy-Night",
+          "rel": "noopener"
+        },
+        {
+          "href": "mailto:contact@billynightingale.com"
+        },
+        {
+          "href": "/",
+          "text": "Home"
+        },
+        {
+          "href": "/#projects",
+          "text": "Projects"
+        },
+        {
+          "href": "/about",
+          "text": "About"
+        },
+        {
+          "href": "/contact",
+          "text": "Contact"
+        },
+        {
+          "href": "/services",
+          "text": "Services"
+        },
+        {
+          "href": "/website-development-landes",
+          "text": "Landes"
+        },
+        {
+          "href": "/terms-and-conditions",
+          "text": "Terms and Conditions"
+        }
+      ],
+      "meta": {
+        "author": [
+          "Billy Nightingale"
+        ],
+        "charset": [
+          "UTF-8"
+        ],
+        "description": [
+          "A WordPress website with online booking, payments and a blog for Eve-Marie, a sophrologist opening her practice in Montauban."
+        ],
+        "og:description": [
+          "A WordPress website with online booking, payments and a blog for Eve-Marie, a sophrologist opening her practice in Montauban."
+        ],
+        "og:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "og:image:alt": [
+          "Billy Nightingale – Web design, development & SEO services"
+        ],
+        "og:image:height": [
+          "600"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:locale": [
+          "en_GB"
+        ],
+        "og:locale:alternate": [
+          "fr_FR"
+        ],
+        "og:site_name": [
+          "Billy Nightingale"
+        ],
+        "og:title": [
+          "Sophrologist website with online booking in Montauban: Sophro by Eve | Billy Nightingale"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://www.billynightingale.com/projects/sophro-by-eve"
+        ],
+        "robots": [
+          "index, follow"
+        ],
+        "theme-color": [
+          "#000000"
+        ],
+        "twitter:card": [
+          "summary_large_image"
+        ],
+        "twitter:description": [
+          "A WordPress website with online booking, payments and a blog for Eve-Marie, a sophrologist opening her practice in Montauban."
+        ],
+        "twitter:image": [
+          "https://www.billynightingale.com/assets/meta_preview1200x600.webp"
+        ],
+        "twitter:title": [
+          "Sophrologist website with online booking in Montauban: Sophro by Eve | Billy Nightingale"
+        ],
+        "twitter:url": [
+          "https://www.billynightingale.com/projects/sophro-by-eve"
+        ],
+        "viewport": [
+          "width=device-width, initial-scale=1.0"
+        ]
+      },
+      "status": 200,
+      "text": "FR Projects About Contact Services Landes Cookies are used to improve your experience on our website. By continuing to use our site, you agree to our use of cookies. Accept Deny Home Projects Sophro by Eve - sophrologue Wellness · Montauban · 2025 Sophrologist website with online booking in Montauban: Sophro by Eve Project details Client Sophro by Eve - sophrologue Sector Wellness Location Montauban Year 2025 Services Web design WordPress build Online booking and payments Blog SEO Hosting setup Technologies Wordpress Elementor Pro Rank Math SEO Hostinger Calendly The client Eve-Marie is a sophrologist who opened a new practice in Montauban. She works with individuals and with businesses. The problem She needed a website to launch the practice: one that takes bookings, presents her services clearly to both audiences and has a blog. What I did I created a custom WordPress website with Elementor Pro, with soft colours, simple layouts and a smooth user experience. Bookings and online payments go through Calendly. The blog and the rest of the content are managed in the CMS, with custom field types. A structured sitemap and clean UI design Blog section for long-term SEO Calendly booking system with online payments Speed optimisation and best practices for technical SEO Full setup of hosting, security, backups, and analytics The result Eve-Marie launched her practice with a site where clients can book and pay for a session online. The site scores 90+ for performance in Lighthouse, on mobile and desktop. 90+ Lighthouse performance, mobile and desktop What the client says Trust Billy! He created my website from start to finish, as well as my blog, in September 2025. He is extremely professional, detail-oriented, and very pleasant to work with. By choosing him, you’re choosing excellent value for money. He speaks French very fluently, makes strong and relevant suggestions throughout the entire project process — and even afterwards. He always takes every request into account. I truly recommend him without hesitation. Eve-Marie, Sophrologue, Montauban More projects Restaurant · Capbreton Monkey Mood - Restaurant Café · Hossegor Pacific Coast Cafe - Café Ready to discuss your project? Book a call or request a quote now Request a quote Book a call Create your digital system Billy Nightingale - Web Design & Development in Capbreton Contact Information: Capbreton, Landes, 40130, France +33 7 66 09 58 64 contact@billynightingale.com Home Projects About Contact Services Landes © 2026 Billy Nightingale. All rights reserved. Terms and Conditions",
+      "text_sha1": "f2b116a0088bb11647acc55500ba8a1288b8be96",
+      "title": "Sophrologist website with online booking in Montauban: Sophro by Eve | Billy Nightingale",
+      "word_count": 406
     },
     "/services": {
       "canonical": [
@@ -4814,7 +6892,7 @@
     "/robots.txt": "User-agent: *\nAllow: /\nDisallow: /cdn-cgi/\n\nSitemap: https://www.billynightingale.com/sitemap.xml\n\n# Block DeepSeek AI crawler\nUser-agent: DeepSeekBot\nDisallow: /\n\n# Block xAI (Grok) crawler\nUser-agent: xAI-Bot\nDisallow: /",
     "/services.md": "# Web Design, Development & SEO Services — Billy Nightingale\n\n> Billy Nightingale provides web design, web development and SEO services for growing businesses. The focus is on building fast, modern websites that attract clients and support long-term growth.\n\n- **Provider:** Billy Nightingale, web designer and developer\n- **Based in:** Capbreton, Landes, France\n- **Service areas:** Capbreton, Hossegor, Landes and Pays Basque\n- **Original page:** [Web Design, Development & SEO Services](https://www.billynightingale.com/services)\n- **French version:** [Contact — Français](https://www.billynightingale.com/fr/services)\n- **Contact:** [Start a project or request a quote](https://www.billynightingale.com/contact)\n\n## Main Services\n\n### Web Design\n\nThoughtful, user-focused design that reflects your brand and makes it easy for visitors to take action.\n\n### Web Development\n\nClean, fast, and reliable websites built to scale, maintain, and perform long-term.\n\n### SEO\n\nSolid technical and on-page foundations so your site can be found by the right people.\n\n## Built for Performance & Longevity\n\n### Performance & Accessibility\n\nWebsites are performance-tested before and after deployment. Sites are built to industry standards, with a focus on accessibility requirements.\n\n### Maintenance & Hosting\n\nCare packages help keep websites updated and clients stress-free. Fast and reliable hosting is offered for custom-built websites.\n\n## Project Management\n\nA clear, collaborative process from the first call to launch:\n\n1. **Discovery & Goals**\n2. **Design & Structure**\n3. **Development & Testing**\n4. **Launch & Support**\n\n## Website Packages\n\nThree website packages are available, with different scopes depending on business needs and growth plans.\n\n### Starter Website\n\n**Starting price:** €700  \n**Best for:** New businesses that need to get online professionally  \n**Estimated delivery:** 1–2 weeks\n\nA professional one-page website designed to establish your online presence and create a strong foundation for future growth.\n\n**Includes:**\n\n- One custom landing page\n- Mobile and tablet optimisation\n- Clear routes that encourage visitors to contact you\n- Pages set up so Google can understand them\n- Performance and SEO optimisation\n\n### Business Website\n\n**Starting price:** €1,500  \n**Best for:** Established businesses looking to improve their online presence  \n**Estimated delivery:** 2–3 weeks\n\nA complete custom website designed to improve visibility, present your services professionally and generate customer enquiries.\n\n**Includes:**\n\n- Up to four custom pages\n- Website planning and content structure\n- Custom responsive website design\n- User journey and conversion planning\n- Connecting enquiries to your existing CRM\n\n### Growth Website\n\n**Starting price:** €3,000  \n**Best for:** Growing businesses with more advanced marketing needs  \n**Estimated delivery:** 4–6 weeks\n\nA website package for growing businesses that need advanced enquiry journeys, integrations, location-focused content and measurable lead tracking.\n\n**Includes:**\n\n- Five or more custom pages\n- Advanced enquiry or booking flows\n- Analytics and conversion tracking\n- Useful, individually written service-area pages\n- Blog or resource-centre architecture\n\n## Pricing Guide\n\n| Service or package          | Indicative price       |\n| --------------------------- | ---------------------- |\n| Starter landing page        | €700–€1,200            |\n| Business website            | €1,500–€3,000          |\n| Growth website              | €3,000–€6,000          |\n| E-commerce module / project | €1,500–€5,000          |\n| Maintenance                 | €35–€150 per month     |\n| Ongoing visibility          | €250–€1,000+ per month |\n\nEvery project includes **2–3 rounds of revisions**. Depending on the package selected, ongoing support, maintenance and training are also provided.\n\nAll projects are custom-built to client requirements, so final prices vary.\n\n## Start a Project\n\nReady to discuss your project? Book a call or request a quote.\n\n- [Request a quote / contact Billy Nightingale](https://www.billynightingale.com/contact)\n- [Call Billy Nightingale](tel:+33766095864)\n",
     "/site.webmanifest": "{\n  \"name\": \"Billy Nightingale\",\n  \"short_name\": \"N\",\n  \"icons\": [\n    {\n      \"src\": \"/web-app-manifest-192x192.png\",\n      \"sizes\": \"192x192\",\n      \"type\": \"image/png\",\n      \"purpose\": \"maskable\"\n    },\n    {\n      \"src\": \"/web-app-manifest-512x512.png\",\n      \"sizes\": \"512x512\",\n      \"type\": \"image/png\",\n      \"purpose\": \"maskable\"\n    }\n  ],\n  \"theme_color\": \"#000000\",\n  \"background_color\": \"#000000\",\n  \"display\": \"standalone\"\n}\n",
-    "/sitemap.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n\n  <!-- Homepage -->\n  <url>\n    <loc>https://www.billynightingale.com/</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Homepage (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- About page -->\n  <url>\n    <loc>https://www.billynightingale.com/about</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- About page (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/a-propos</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Contact (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/contact</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n\n    <!-- Contact (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/contact</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Services page (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/services</loc>\n    <lastmod>2026-08-06</lastmod>\n  </url>\n\n  <!-- Services (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/services</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n   <!-- Website development landes page (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/website-development-landes</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Creation de site web landes (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/creation-site-web-landes</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n</urlset>",
+    "/sitemap.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n\n  <!-- Homepage -->\n  <url>\n    <loc>https://www.billynightingale.com/</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Homepage (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- About page -->\n  <url>\n    <loc>https://www.billynightingale.com/about</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- About page (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/a-propos</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Contact (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/contact</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n\n    <!-- Contact (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/contact</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Services page (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/services</loc>\n    <lastmod>2026-08-06</lastmod>\n  </url>\n\n  <!-- Services (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/services</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n   <!-- Website development landes page (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/website-development-landes</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Creation de site web landes (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/creation-site-web-landes</loc>\n    <lastmod>2026-07-06</lastmod>\n  </url>\n\n  <!-- Project: Monkey Mood (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/projects/monkey-mood</loc>\n    <lastmod>2026-11-24</lastmod>\n  </url>\n\n  <!-- Project: Monkey Mood (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/projets/monkey-mood</loc>\n    <lastmod>2026-11-24</lastmod>\n  </url>\n\n  <!-- Project: Pacific Coast Cafe (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/projects/pacific-coast-cafe</loc>\n    <lastmod>2026-11-24</lastmod>\n  </url>\n\n  <!-- Project: Pacific Coast Cafe (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/projets/pacific-coast-cafe</loc>\n    <lastmod>2026-11-24</lastmod>\n  </url>\n\n  <!-- Project: Sophro by Eve (English) -->\n  <url>\n    <loc>https://www.billynightingale.com/projects/sophro-by-eve</loc>\n    <lastmod>2026-11-24</lastmod>\n  </url>\n\n  <!-- Project: Sophro by Eve (French) -->\n  <url>\n    <loc>https://www.billynightingale.com/fr/projets/sophro-by-eve</loc>\n    <lastmod>2026-11-24</lastmod>\n  </url>\n\n</urlset>",
     "/website-development-landes.md": "# Website Design & Development in Landes | Billy Nightingale\n\n> Billy Nightingale is a web designer and developer based in Capbreton, Landes, France. He creates custom websites and digital solutions for local businesses, with a focus on website performance, search engine optimisation (SEO), customer enquiries and long-term growth.\n\n**Original webpage:** [Website Design & Development in Landes](https://www.billynightingale.com/website-development-landes)  \n**French-language webpage:** [Création de site web dans les Landes](https://www.billynightingale.com/fr/creation-site-web-landes)\n\n## Website Design, Development & Digital Solutions for Businesses in Landes\n\nBilly Nightingale helps businesses in Landes build modern, fast websites and digital systems tailored to their goals. The approach starts by understanding the business challenge, whether that is generating more reservations, selling products online, improving search visibility or modernising the customer experience.\n\n### Fast Websites Create Better First Impressions\n\nVisitors expect websites to load quickly, especially on mobile devices. Websites are built with performance in mind to provide a smoother user experience, support search visibility and help turn visitors into customers.\n\n### Helping Local Businesses Get Found Online\n\nA well-designed website needs to be discoverable. Services for businesses across Landes include technical SEO, local search optimisation and a strong website foundation designed to improve online visibility.\n\n### Solving Different Business Challenges\n\nEach business has different needs. Billy works to understand the underlying problem before designing and developing a solution that supports the business's goals.\n\n## Helping Businesses Grow in Landes\n\nBilly designs and develops custom websites and digital systems for businesses in Landes, France. The aim is to support local growth through tailored digital solutions, ongoing support and strategies suited to the local market.\n\nThe studio places a strong emphasis on high website performance, with a stated goal of performance scores of 95+ and strong search visibility. Specific performance and ranking results depend on the website and its circumstances.\n\n## Local SEO & Website Projects\n\n### Monkey Mood — Restaurant Websites in Capbreton and Bordeaux\n\nMonkey Mood is a restaurant business focused on Indonesian vegan cuisine, with locations in Capbreton and Bordeaux. The website is described as performing strongly in Google search results for both locations.\n\nThe project also involved redesigning and rebuilding the website to simplify the customer booking journey, improve the mobile experience and make navigation between restaurant locations clearer.\n\n### Pacific Coast Cafe — Website Performance, SEO & E-commerce in Hossegor\n\nPacific Coast Cafe is a local café in central Hossegor. Billy worked on its website performance and SEO and integrated an online shop.\n\nThe original page reports that the website became **20% faster** and performs well in Google search results. The online shop also supports e-commerce, gift cards and future business expansion.\n\n## Approach to Website Design & Development in Landes\n\n### Design\n\nWebsite design reflects the client's visual identity while taking local culture and the Landes market into account. The goal is a professional-looking website that encourages enquiries and helps businesses convert visitors into customers.\n\n### Website Performance & SEO\n\nWebsites are optimised for speed, usability and visibility in local search. Faster websites can improve user experience and support search performance, helping businesses attract visitors and generate enquiries.\n\n### Business-Focused Digital Solutions\n\nThe work is shaped around the client's business requirements: improving reservations, increasing visibility, selling online or solving another digital challenge. The objective is to build a useful solution rather than simply launch a website.\n\n### Ongoing Support\n\nOngoing support packages are available to help maintain website performance and support long-term growth.\n\n## Web Design Studio in Capbreton, Landes\n\nBilly Nightingale's studio is based in **Capbreton, Landes, 40130, France**.\n\nThe studio focuses on custom design and development, attention to detail, clear communication and long-term planning. Being based in Capbreton helps Billy understand the needs of businesses operating in the local market.\n\n## Client Challenges & Tailored Solutions\n\n### 1. Simplifying Reservations Across Multiple Locations — Monkey Mood\n\n**Client:** Monkey Mood  \n**Challenge:** The restaurant operates in Capbreton and Bordeaux. Customers needed a clearer way to choose a location and complete a reservation.  \n**Solution:** A redesigned and rebuilt website with a simplified booking journey, a better mobile experience and a clearer location structure.\n\n### 2. Creating New Revenue Opportunities — Pacific Coast Cafe\n\n**Client:** Pacific Coast Cafe  \n**Challenge:** The café needed a stronger digital platform to support growth and create revenue opportunities beyond its physical location.  \n**Solution:** Website performance improvements and an integrated online shop, providing a foundation for e-commerce, gift cards and future expansion.\n\n### 3. Launching a Brand Online — Turbulente Kombucha\n\n**Client:** Turbulente Kombucha  \n**Challenge:** The brand needed its first online presence to express its identity and reach customers beyond local distribution.  \n**Solution:** Design and development of its first e-commerce website, with a visual identity inspired by surfing, nature and the local coastline.\n\n## Discuss Your Website Project\n\nFor website design, web development, SEO or digital projects in Landes, contact Billy Nightingale to discuss your requirements or request a quote.\n\n- **Location:** Capbreton, Landes, 40130, France\n- **Email:** [contact@billynightingale.com](mailto:contact@billynightingale.com)\n- **Telephone:** [+33 7 66 09 58 64](tel:+33766095864)\n- **Contact page:** [Contact Billy Nightingale](https://www.billynightingale.com/contact)\n\n## Related Pages\n\n- [Web Design, Development & SEO Services](https://www.billynightingale.com/services)\n- [Projects](https://www.billynightingale.com/#projects)\n- [About Billy Nightingale](https://www.billynightingale.com/about)\n- [LinkedIn](https://www.linkedin.com/in/billynightingale/)\n"
   },
   "source": "/Users/billy/Web_Development/Projects/portfolio_project/dist"

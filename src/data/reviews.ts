@@ -2,14 +2,17 @@
 // and words in both languages, one string per paragraph. To add a review, put
 // the photo in src/assets/images/client_reviews/, import it below and copy an
 // entry. The page shows them in this order.
-// Used by src/components/home/HomeReviews.astro.
+// Used by src/components/home/HomeReviews.astro and, for clients with a
+// project page, src/components/project/ProjectReview.astro.
 import type { ImageMetadata } from 'astro'
 import type { Lang } from '../i18n/routes'
 import eveMariePhoto from '../assets/images/client_reviews/eve-marie-billy-web-design-client.webp'
 import pacificCoastPhoto from '../assets/images/client_reviews/billy_nightingale_client_pacific_coast_cafe_web_design.webp'
 import monkeyMoodPhoto from '../assets/images/client_reviews/monkey_mood_owners_jenny_matt_billy_nightingales_client.webp'
 
-interface Review {
+export interface Review {
+  /** The `slug` of this client's project page in projects.ts, if it has one: the review is shown on that page too */
+  project?: string
   /** Name and business, shown under the review */
   author: string
   photo: ImageMetadata
@@ -21,6 +24,7 @@ interface Review {
 
 export const reviews: Review[] = [
   {
+    project: 'sophro-by-eve',
     author: 'Eve-Marie, Sophrologue, Montauban',
     photo: eveMariePhoto,
     photoAlt: {
@@ -38,6 +42,7 @@ export const reviews: Review[] = [
     },
   },
   {
+    project: 'pacific-coast-cafe',
     author: 'Izia Dunn - Pacific Coast Cafe',
     photo: pacificCoastPhoto,
     photoAlt: {
@@ -59,6 +64,7 @@ export const reviews: Review[] = [
     },
   },
   {
+    project: 'monkey-mood',
     author: 'Matt Hughes - Monkey Mood',
     photo: monkeyMoodPhoto,
     photoAlt: {

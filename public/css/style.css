@@ -734,16 +734,16 @@ a {
   display: flex;
   align-items: center;
   gap: var(--gap-sm);
-  opacity: 0;
-  transform: translateY(20px);
   transition:
     opacity 600ms ease,
     transform 600ms ease;
 }
 
-.bullet-point-container.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Added by src/scripts/bullets.js to bullets further down the page, and
+   removed when they scroll into view. Without the script nothing is hidden. */
+.bullet-point-container.is-waiting {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .bullet-point-svg {
@@ -751,6 +751,25 @@ a {
   width: var(--icon-size-md);
   height: var(--icon-size-md);
   fill: var(--gold);
+}
+
+/* A plain bullet list (src/components/BulletList.astro). The package cards on
+   the services page give their list its own class and layout instead. */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* Keep the diamond beside the first line when the text runs to several lines */
+.bullet-list .bullet-point-container {
+  align-items: flex-start;
+}
+
+.bullet-list span {
+  line-height: var(--leading-body);
 }
 
 /* Global text animations:  */
@@ -1012,7 +1031,7 @@ a:hover .social__icons {
 }
 
 .projects-heading {
-  color: white;
+  color: var(--subHeading-colour);
   font-size: var(--text-base);
   font-family: var(--mono);
   margin-bottom: var(--space-1);
@@ -1130,6 +1149,268 @@ a:hover .social__icons {
   .heading-reverse {
     text-align: left;
   }
+}
+
+/* Client project cards (src/components/home/ClientProjectCard.astro) */
+
+.project-card__points {
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+/* "The problem" and "The result": the look of the small headings on the site */
+.project-card__points dt {
+  font-family: var(--subHeading);
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  color: var(--subHeading-colour);
+  margin-bottom: var(--space-1);
+}
+
+.project-card__points dd {
+  margin: 0 0 var(--space-4);
+  max-width: 65ch;
+  line-height: var(--leading-body);
+}
+
+.project-card__points dd:last-child {
+  margin-bottom: 0;
+}
+
+.project-card__link {
+  display: inline-block;
+  max-width: none;
+}
+
+/*~ Project pages (src/components/project/) */
+
+/* Same width and padding as .sections, without the fade-in: this is the first
+   thing on the page and holds its main image. */
+.project-page {
+  max-width: var(--sec-width);
+  margin: 0 auto;
+  padding: var(--padding-hor-section) var(--page-gutter);
+}
+
+.project-page__breadcrumb {
+  font-family: var(--mono);
+  margin-bottom: var(--space-7);
+}
+
+.project-page__breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+}
+
+.project-page__breadcrumb li + li::before {
+  content: '/';
+  margin-right: var(--space-2);
+  opacity: 0.6;
+}
+
+.project-page__meta {
+  font-family: var(--mono);
+  color: var(--subHeading-colour);
+  text-align: center;
+  margin: 0 0 var(--space-3);
+}
+
+.project-page h1 {
+  font-size: var(--title-2);
+  text-align: center;
+  max-width: 26ch;
+  margin-inline: auto;
+}
+
+.project-page__photo {
+  display: block;
+  max-width: 1000px;
+  margin: var(--space-7) auto;
+  border-left: 1px solid var(--gold);
+  border-top: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.project-page__body {
+  display: grid;
+  /* minmax(0, ...) lets the column shrink to the screen: without it the row of
+     figures sets a minimum width and the page scrolls sideways on a phone */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--gap-lx);
+}
+
+.project-page__text h2,
+.project-page__facts h2 {
+  font-size: var(--title-4);
+}
+
+.project-page__text h2 {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-3);
+}
+
+.project-page__text h2:first-child {
+  margin-top: 0;
+}
+
+.project-page__text p,
+.project-page__text > ul {
+  max-width: 65ch;
+}
+
+.project-page__figures {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--gap-sm);
+}
+
+.project-page__figures li {
+  padding: var(--space-5);
+  background: rgba(18, 38, 62, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--corner-rad);
+}
+
+.project-page__figure-value {
+  display: block;
+  font-family: var(--display);
+  font-size: var(--title-2);
+  line-height: 1;
+  color: var(--title-colour);
+  margin-bottom: var(--space-2);
+}
+
+.project-page__facts h2 {
+  margin-bottom: var(--space-4);
+}
+
+.project-page__facts dl {
+  margin: 0;
+}
+
+/* The same small-heading look as "The problem" and "The result" on the homepage cards */
+.project-page__facts dt {
+  font-family: var(--subHeading);
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  color: var(--subHeading-colour);
+  margin-bottom: var(--space-1);
+}
+
+.project-page__facts dd {
+  margin: 0 0 var(--space-4);
+}
+
+.project-page__facts dd ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-page__facts .project-tech-list {
+  justify-content: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.project-page__facts .project-tech-list li {
+  line-height: 1;
+}
+
+.project-page__live {
+  font-family: var(--mono);
+  text-transform: uppercase;
+}
+
+.project-page__live:hover,
+.project-more a:hover .project-more__name {
+  color: var(--white);
+}
+
+@media (min-width: 900px) {
+  /* Text on the left, facts box on the right. The facts box comes first in the
+     page so that on a phone it sits directly under the screenshot. */
+  .project-page__body {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    align-items: start;
+  }
+
+  .project-page__text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .project-page__facts {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+.project-review {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--gap-md);
+}
+
+.project-review__photo {
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+.project-review blockquote {
+  margin: 0;
+  max-width: 65ch;
+}
+
+.project-review figcaption {
+  font-family: var(--mono);
+  color: var(--gold);
+}
+
+.project-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+.project-more ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap-lx);
+}
+
+.project-more a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: center;
+}
+
+.project-more__sector {
+  font-family: var(--mono);
+  color: var(--subHeading-colour);
 }
 
 /*~ About Page */
@@ -3605,7 +3886,7 @@ a:hover .social__icons {
 
   /* Sections and package bullet points fade in without sliding up */
   .sections--hidden,
-  .bullet-point-container {
+  .bullet-point-container.is-waiting {
     transform: none;
   }
 }
