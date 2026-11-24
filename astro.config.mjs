@@ -62,4 +62,13 @@ export default defineConfig({
   // Keep HTML output readable/diffable during the 1:1 port
   compressHTML: false,
   integrations: [stylesheet(), legacyImageUrls()],
+  vite: {
+    build: {
+      // Styles written inside components are minified by Astro. Without this it
+      // removes the -webkit- line of each backdrop-filter pair, and the glass
+      // panels lose their blur in Safari before version 18 (iPhones on iOS 17
+      // and older). Naming an older Safari here keeps both lines.
+      cssTarget: ['chrome100', 'firefox100', 'safari14'],
+    },
+  },
 })

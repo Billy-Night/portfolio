@@ -118,3 +118,120 @@ const t = {
     <a href={r('terms')}>{t.terms}</a>
   </div>
 </footer>
+
+<!-- The footer's own styles. is:global keeps them unscoped, so every rule behaves
+     exactly as it did in the shared stylesheet. Shared classes used here (sections,
+     gradient...) are in src/styles/. -->
+<style is:global>
+  .footer__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footer__info_container {
+    width: 100%;
+  }
+
+  .footer__info_container h2 {
+    font-size: var(--title-4);
+    margin-bottom: var(--space-3);
+  }
+
+  /* The business name and the contact title are paragraphs, not headings:
+     only the tagline above them is a heading. */
+  .footer__business {
+    margin-top: 0px;
+    margin-bottom: var(--space-7);
+    font-weight: 400;
+    font-size: var(--title-6);
+    line-height: var(--leading-title);
+    font-family: var(--subHeading);
+    letter-spacing: 3%;
+    color: var(--subHeading-colour);
+    text-transform: uppercase;
+  }
+
+  .footer__contact-title {
+    margin-top: 0px;
+    margin-bottom: var(--space-3);
+    font-weight: 400;
+    font-size: var(--text-m);
+    line-height: var(--leading-title);
+    color: var(--subHeading-colour);
+  }
+
+  .footer__address {
+    font-style: normal;
+  }
+
+  .footer__address a {
+    color: white;
+  }
+
+  .footer__address a:hover {
+    color: var(--gold);
+  }
+
+  .contact-icons-footer-cont ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    margin-top: var(--space-5);
+  }
+
+  .social__icons__footer {
+    width: 25px;
+    height: 25px;
+    fill: var(--gold);
+  }
+
+  .footer__nav_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    align-items: end;
+  }
+
+  .footer__nav__link {
+    font-family: var(--mono);
+  }
+
+  .footer__nav {
+    list-style: none;
+  }
+
+  .footer__nav li {
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+  }
+
+  .footer__legal {
+    margin-top: var(--space-5);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__legal a {
+    margin: 0;
+    margin-left: var(--space-3);
+  }
+
+  .footer__legal p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .footer__nav_container {
+      display: none;
+    }
+
+    .footer__legal a {
+      text-align: right;
+    }
+  }
+</style>

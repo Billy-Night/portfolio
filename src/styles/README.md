@@ -18,7 +18,7 @@ The number at the start of each name sets the order. The groups:
 | Files | What they hold |
 | --- | --- |
 | `01` to `04` | Tokens, fonts, base elements, small utility classes |
-| `10` to `18` | Components used on more than one page: buttons, bullet lists, cookie banner, header, footer, contact call to action, hero, timeline, image and text rows |
+| `10` to `18` | Components used on more than one page: buttons, bullet lists, cookie banner, header, contact call to action, hero, timeline, image and text rows |
 | `20` to `23` | Homepage |
 | `30` | Project pages |
 | `40` to `42` | About page |
@@ -29,6 +29,14 @@ The number at the start of each name sets the order. The groups:
 | `90` | Reduced motion. It must stay last |
 
 To style a new component, add a file in the right group with the next free number, for example `24-home-something.css`. Order matters only when two rules of equal weight set the same property on the same element: the later file wins.
+
+## Styles inside a component
+
+A component can also hold its own styles, in a `<style is:global>` block at the end of its `.astro` file. The footer does this (`src/components/Footer.astro`), as a trial. Astro then adds those styles only to the pages that use the component, after the main stylesheet.
+
+- `is:global` keeps the rules unscoped, so they behave exactly as they would in this folder.
+- Astro minifies these styles. `cssTarget` in `astro.config.mjs` stops it removing the `-webkit-backdrop-filter` lines that Safari before version 18 needs. Do not remove that setting.
+- Tokens, base elements, utilities and anything shared by several components stay in this folder.
 
 ## Tokens
 
