@@ -123,6 +123,18 @@
   padding: clamp(var(--space-4), 4vw, var(--space-10));
 }
 
+/* On phones and small tablets the two columns stack. Used by the About
+   location, contact intro and Landes studio sections. */
+@media screen and (max-width: 767px) {
+  .layout-two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-two-column-txt {
+    margin-top: 0%;
+  }
+}
+
 .flex-two-col {
   display: flex;
   flex-direction: row;

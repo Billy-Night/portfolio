@@ -41,14 +41,6 @@
   .perso__content-reversed {
     grid-template-areas: 'image' 'text';
   }
-  .layout-two-column {
-    grid-template-columns: 1fr;
-  }
-
-  .layout-two-column-txt {
-    margin-top: 0%;
-  }
-
   .txt-normal-flow {
     transform: translateX(0%) translateY(-10%);
   }
