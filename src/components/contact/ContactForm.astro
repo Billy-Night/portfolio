@@ -232,8 +232,9 @@ const t = {
   import '../../scripts/contactForm.js'
 </script>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .sec-contact-form {
     display: flex;
     flex-direction: row;
@@ -265,7 +266,7 @@ const t = {
     margin-bottom: 20px;
   }
 
-  .contact-form-title h2 {
+  .contact-form-title :global(h2) {
     color: var(--font-colour-dark);
     text-transform: uppercase;
   }
@@ -281,18 +282,18 @@ const t = {
     font-family: var(--sans);
   }
 
-  .form-group label {
+  .form-group :global(label) {
     font-size: var(--text-m);
     margin-bottom: 5px;
   }
 
-  .form-group input {
+  .form-group :global(input) {
     padding: 10px;
     border: 2px solid black;
     border-radius: var(--corner-rad);
   }
 
-  .form-group select {
+  .form-group :global(select) {
     padding: 10px;
     border: 2px solid black;
     border-radius: var(--corner-rad);
@@ -300,13 +301,13 @@ const t = {
     font-size: var(--text-base);
   }
 
-  .form-group select:active {
+  .form-group :global(select:active) {
     padding: 10px;
     border: 2px solid black;
     border-radius: var(--corner-rad);
   }
 
-  .form-group textarea {
+  .form-group :global(textarea) {
     padding: 10px;
     border: 2px solid black;
     border-radius: var(--corner-rad);

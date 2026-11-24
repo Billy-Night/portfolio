@@ -32,8 +32,9 @@ const t = {
   </figure>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .project-review {
     margin: 0;
     display: flex;
@@ -43,12 +44,12 @@ const t = {
     gap: var(--gap-md);
   }
 
-  .project-review blockquote {
+  .project-review :global(blockquote) {
     margin: 0;
     max-width: 65ch;
   }
 
-  .project-review figcaption {
+  .project-review :global(figcaption) {
     font-family: var(--mono);
     color: var(--gold);
   }

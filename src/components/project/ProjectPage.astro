@@ -76,9 +76,10 @@ const t = {
   <Footer lang={lang} />
 </BaseLayout>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
-  .project-more a:hover .project-more__name {
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
+  .project-more :global(a:hover) .project-more__name {
     color: var(--white);
   }
 
@@ -89,7 +90,7 @@ const t = {
     gap: var(--gap-md);
   }
 
-  .project-more ul {
+  .project-more :global(ul) {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -99,7 +100,7 @@ const t = {
     gap: var(--gap-lx);
   }
 
-  .project-more a {
+  .project-more :global(a) {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
