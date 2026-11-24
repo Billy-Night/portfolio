@@ -1,9 +1,9 @@
 // Landes page phone: swap the screen image and the text beside it as the section scrolls.
 // Used by src/components/landes/LandesPhone.astro.
 
-const staticPhone = document.querySelector('.static-phone-img')
-const phoneChannel = document.querySelector('.static-phone-channel')
-const textCont = document.querySelectorAll('.phone-text-content-cont')
+const staticPhone = document.querySelector('.landes-phone__image')
+const phoneChannel = document.querySelector('.landes-phone')
+const textCont = document.querySelectorAll('.landes-phone__text')
 
 if (staticPhone) {
   // The image URLs for the three screens, provided by LandesPhone.astro in the page's language

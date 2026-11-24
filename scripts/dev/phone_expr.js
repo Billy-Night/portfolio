@@ -1,7 +1,7 @@
 ;(async () => {
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-  const ch = document.querySelector('.static-phone-channel'),
-    img = document.querySelector('.static-phone-img')
+  const ch = document.querySelector('.landes-phone'),
+    img = document.querySelector('.landes-phone__image')
   const abs = ch.getBoundingClientRect().top + scrollY,
     h = ch.getBoundingClientRect().height
   const out = []
@@ -17,7 +17,7 @@
       }
     })
     const active = [
-      ...document.querySelectorAll('.phone-text-content-cont'),
+      ...document.querySelectorAll('.landes-phone__text'),
     ].findIndex((e) => e.classList.contains('is-active'))
     const name = img.currentSrc
       .split('/')
