@@ -27,7 +27,7 @@ done
 python3 scripts/dev/intcmp.py /tmp/int-ref /tmp/int-new      # must end with ALL MATCH
 ```
 
-Add `500 900` to each `interact.sh` call for mobile width. Several runs are needed because two scroll-triggered effects (the section fade-in and the timeline headings) land on slightly different steps from run to run. `intcmp.py` ignores which step they land on.
+Add `500 900` to each `interact.sh` call for mobile width. Several runs are needed because three scroll-triggered effects (the section fade-in, the bullet fade-in and the timeline headings) land on slightly different steps from run to run. `intcmp.py` ignores which step they land on.
 
 ## Animations, in real time
 

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""intcmp.py <ref-runs> <new-runs> — compare interaction recordings, ignoring which scroll step the two scroll-timed effects land on."""
+"""intcmp.py <ref-runs> <new-runs> — compare interaction recordings, ignoring which scroll step the scroll-timed effects land on."""
 import glob,re,os,sys,difflib
 def canon(t):
     out=[]
     for l in t.splitlines():
         if not l.strip(): continue
-        l2=re.sub(r'\.sections--hidden','',l)
+        # two scroll-timed effects land on different steps from run to run: the section fade-in and the bullet fade-in
+        l2=re.sub(r'\.sections--hidden|\.is-waiting','',l)
         # image URLs: compare by file name only (the optimised copies have a hash and live in /_astro/)
         l2=re.sub(r'\[src=[^\]]*?/([^/\]]+?)(?:\.[A-Za-z0-9_-]{8}(?:_[A-Za-z0-9_-]+)?)?\.(?:webp|png|jpe?g|svg)\]',r'[src=\1]',l2)
         if '=>' in l2:
