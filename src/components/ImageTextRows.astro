@@ -42,6 +42,14 @@ const { heading, intro } = Astro.props
     padding: var(--space-6) var(--page-gutter);
   }
 
+  /* Full width, up to the rows' own limit. Without a width of its own this box
+     took its width from the photos, so on tablets the rows were narrow until
+     each photo loaded and then jumped wider. */
+  .image-rows__list {
+    width: 100%;
+    max-width: 2000px;
+  }
+
   .image-row {
     display: grid;
     max-width: 2000px;
