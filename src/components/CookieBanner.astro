@@ -32,3 +32,26 @@ const t = {
 <script>
   import '../scripts/cookieBanner.js'
 </script>
+
+<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
+     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<style is:global>
+  .cookie-banner {
+    display: none;
+    max-width: 300px;
+    z-index: 1000;
+    position: fixed;
+    bottom: var(--space-4);
+    right: var(--page-gutter);
+    color: var(--white);
+    padding: var(--space-4);
+    border-radius: var(--corner-rad);
+  }
+
+  @media screen and (max-width: 800px) {
+    .cookie-banner {
+      max-width: 90%;
+      right: var(--page-gutter);
+    }
+  }
+</style>

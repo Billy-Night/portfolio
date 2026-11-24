@@ -6,12 +6,6 @@
    effects stay. The orbit and the review slider are handled in their scripts
    (src/scripts/heroTitle.js and reviews.js). */
 @media (prefers-reduced-motion: reduce) {
-  .home-services__circle,
-  .svg--pulse,
-  .phase__fade-line {
-    animation: none;
-  }
-
   /* Timeline headings appear in place instead of rising */
   .reveal-text span {
     animation: none;

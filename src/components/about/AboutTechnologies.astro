@@ -75,3 +75,54 @@ const t = {
     </div>
   </div>
 </section>
+
+<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
+     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<style is:global>
+  .tech__title-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
+  .tech__list-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 2px solid white;
+    border-radius: var(--corner-rad);
+    box-shadow: var(--glass-shadow);
+  }
+
+  @media screen and (max-width: 848px) {
+    .tech__list-cont {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tech__containers {
+    padding: clamp(var(--space-3), 4vw, var(--space-7));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(var(--space-3), 4vw, var(--space-5));
+  }
+
+  .tech__items-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+
+  .tech__items-cont > span {
+    background-color: var(--gold);
+    padding: var(--space-3);
+    border-radius: var(--corner-rad);
+    color: var(--dark);
+    font-family: var(--mono);
+  }
+</style>

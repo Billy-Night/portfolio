@@ -76,3 +76,82 @@ const t = {
     </div>
   </div>
 </section>
+
+<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
+     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<style is:global>
+  .addons-content-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+  }
+
+  .addons-performance-img-frame {
+    min-width: 200px;
+    background-color: var(--secondary-sand);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--corner-rad);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .addons-performance-img-frame img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .addons-performance-text-container {
+    width: 100%;
+    background-color: var(--light-container);
+    color: black;
+    border-radius: var(--corner-rad);
+    padding: var(--space-4);
+  }
+
+  .addons-performance-text-container h2 {
+    font-size: var(--title-5);
+    margin-bottom: var(--space-4);
+    color: var(--font-colour-dark);
+  }
+
+  @media screen and (max-width: 680px) {
+    .addons-content-container {
+      gap: var(--space-4);
+    }
+
+    .sec-service-addons h2 {
+      margin-bottom: var(--space-2);
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .addons-performance-img-frame {
+      min-width: 80px;
+      padding-top: var(--space-2);
+      padding-bottom: var(--space-2);
+    }
+
+    .addons-performance-img-frame img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .addons-content-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .addons-performance-img-frame {
+      width: auto;
+    }
+
+    .addons-performance-img-frame img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+</style>

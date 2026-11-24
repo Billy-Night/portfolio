@@ -13,32 +13,31 @@ The site serves one stylesheet, `/css/style.css`. It is written here as separate
 
 ## The files
 
-The number at the start of each name sets the order. The groups:
+The number at the start of each name sets the order.
 
 | Files | What they hold |
 | --- | --- |
 | `01` to `04` | Tokens, fonts, base elements, small utility classes |
-| `10` to `18` | Components used on more than one page: buttons, bullet lists, cookie banner, header, contact call to action, hero, timeline, image and text rows |
-| `20` to `23` | Homepage: services circle, projects, FAQ. `22` is the review photo and stars, shared with the project pages |
+| `10`, `11` | Buttons and bullet lists |
+| `15` to `18` | Parts shared by several components: the contact call to action, the hero with the orbit, the timeline, the image and text rows |
+| `21`, `22` | The homepage project cards (three components share them) and the review photo and stars (shared with the project pages) |
 | `30` | Project pages |
-| `40`, `41` | About page: process phases and technologies |
-| `50` to `56` | Services page |
+| `53` | Services page: the packages |
 | `60` | Landes page: hero, phone, mission and approach |
-| `80` | Legal pages |
+| `80` | Legal pages: two pages share them and there is no component to hold them |
 | `90` | Reduced motion. It must stay last |
 
-To style a new component, add a file in the right group with the next free number, for example `24-home-something.css`. Order matters only when two rules of equal weight set the same property on the same element: the later file wins.
+Everything else lives in its own component: see the next section. To add a shared file, give it the next free number in its group. Order matters only when two rules of equal weight set the same property on the same element: the later one wins.
 
 ## Styles inside a component
 
-A component can also hold its own styles, in a `<style is:global>` block at the end of its `.astro` file. Astro then adds those styles only to the pages that use the component, after the main stylesheet. So far these do: `Footer.astro`, `contact/ContactForm.astro`, `about/AboutLocation.astro`, `landes/LandesChallenges.astro` and `home/HomeReviews.astro`. The rest are being moved group by group.
+A component holds its own styles in a `<style is:global>` block at the end of its `.astro` file. Astro adds those styles only to the pages that use the component, after the main stylesheet. Most components do this now: the header, footer, cookie banner, contact form, and most sections of the homepage, About, Services and Landes pages.
 
 - `is:global` keeps the rules unscoped, so they behave exactly as they would in this folder.
+- Only put a rule in a component if every selector in it has a class that belongs to that component alone. A rule for a shared class (`.layout-two-column`, `.glass__back`, a button) must stay in this folder, or the other pages that use the class lose it.
+- Component styles load after this folder's files. So a rule here cannot override a component's rule of equal weight. That is why the reduced-motion rules for the services circle and the About process are inside those two components, after the animations they switch off, and not in `90-reduced-motion.css`.
 - Astro minifies these styles. `cssTarget` in `astro.config.mjs` stops it removing the `-webkit-backdrop-filter` lines that Safari before version 18 needs. Do not remove that setting.
-- Only move a rule into a component if every class in it belongs to that component alone. A rule for a shared class (`.layout-two-column`, `.glass__back`, a button) must stay in this folder, or the other pages that use the class lose it.
-- Astro's minifier rewrites some values, for example `background: none` becomes `background: 0 0`. That is the same thing written shorter.
-- Tokens, base elements, utilities and anything shared by several components stay in this folder.
-- The legal pages' styles (`80-legal.css`) stay here too: two pages share them and there is no component to hold them.
+- The minifier rewrites some values, for example `background: none` becomes `background: 0 0`. That is the same thing written shorter.
 
 ## Tokens
 
