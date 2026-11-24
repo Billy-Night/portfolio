@@ -37,8 +37,9 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .services-intro-section {
     padding: var(--padding-hor-section) var(--page-gutter);
     display: flex;
@@ -53,7 +54,7 @@ const t = {
     text-align: center;
   }
 
-  .services__hero-text h1 {
+  .services__hero-text :global(h1) {
     font-size: var(--title-hero-xl);
     font-family: var(--display);
     color: var(--bright-gold);
@@ -69,7 +70,7 @@ const t = {
     align-items: center;
   }
 
-  .services__hero-sub-heading h2 {
+  .services__hero-sub-heading :global(h2) {
     font-family: var(--sans);
     font-size: var(--title-6);
     color: var(--body-colour);

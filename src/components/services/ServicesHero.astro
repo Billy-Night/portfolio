@@ -78,8 +78,9 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .services-hero-section {
     max-width: var(--sec-width-lg);
     margin: 0 auto;
@@ -101,7 +102,7 @@ const t = {
     backdrop-filter: var(--glass-blur-rich);
   }
 
-  .services-intro-img-frame img {
+  .services-intro-img-frame :global(img) {
     width: clamp(300px, 40vw, 450px);
     height: auto;
     position: absolute;
@@ -166,20 +167,20 @@ const t = {
     transform: translate3d(0, 0, 0);
   }
 
-  .flip-text span {
+  .flip-text :global(span) {
     display: inline-block;
     transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
   }
 
-  .flip-text:hover span,
-  .flip-text:focus-visible span {
+  .flip-text:hover :global(span),
+  .flip-text:focus-visible :global(span) {
     transform: translate3d(-100%, 0, 0);
   }
 
   @media (prefers-reduced-motion: reduce) {
     .flip-text::before,
     .flip-text::after,
-    .flip-text span {
+    .flip-text :global(span) {
       transition: none;
     }
   }
@@ -189,7 +190,7 @@ const t = {
       display: none;
     }
 
-    .services-intro-img-frame img {
+    .services-intro-img-frame :global(img) {
       left: 50%;
     }
   }

@@ -59,14 +59,15 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .services-main-title {
     text-align: center;
     margin-bottom: var(--space-6);
   }
 
-  .services-main-title h3 {
+  .services-main-title :global(h3) {
     font-family: var(--sans);
     font-size: var(--title-6);
     color: var(--body-colour);

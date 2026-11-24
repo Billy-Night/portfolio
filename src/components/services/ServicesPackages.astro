@@ -105,8 +105,9 @@ const t = {
   </section>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   /* The section itself */
   .packages {
     position: relative;
@@ -171,7 +172,7 @@ const t = {
     padding-top: 1.5rem;
   }
 
-  .benefit svg {
+  .benefit :global(svg) {
     display: block;
     width: 100%;
     fill: none;
@@ -197,7 +198,7 @@ const t = {
     border-left: 1px solid var(--gold);
   }
 
-  .benefit svg {
+  .benefit :global(svg) {
     width: 1.8rem;
     color: var(--gold);
   }
@@ -218,7 +219,7 @@ const t = {
     align-items: center;
   }
 
-  .pricing-card h3 {
+  .pricing-card :global(h3) {
     font-size: var(--title-5);
     text-align: center;
   }
