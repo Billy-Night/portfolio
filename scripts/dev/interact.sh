@@ -80,10 +80,10 @@ f.addEventListener('load', async () => {
   if (deny) { deny.click(); await sleep(100); await step('cookie deny', d, 'stored=' + w.localStorage.getItem('cookiesAccepted')) }
   if (accept) { accept.click(); await sleep(100); await step('cookie accept', d, 'stored=' + w.localStorage.getItem('cookiesAccepted')) }
   // landes challenges
-  for (const [i, b] of all('.ver-switcher-btn').entries()) { ev(b, 'mouseenter'); await sleep(100); await step('challenge hover ' + i, d) }
+  for (const [i, b] of all('.challenges__button').entries()) { ev(b, 'mouseenter'); await sleep(100); await step('challenge hover ' + i, d) }
   // faq
-  for (const [i, c] of all('.vertical-switcher-content').entries()) { if (i > 3) break; ev(c, 'mouseenter'); await sleep(100); await step('faq hover ' + i, d) }
-  for (const [i, b] of all('.vertical-switcher-btn').entries()) { if (i > 3) break; b.click(); await sleep(100); await step('faq click ' + i, d) }
+  for (const [i, c] of all('.faq__item').entries()) { if (i > 3) break; ev(c, 'mouseenter'); await sleep(100); await step('faq hover ' + i, d) }
+  for (const [i, b] of all('.faq__button').entries()) { if (i > 3) break; b.click(); await sleep(100); await step('faq click ' + i, d) }
   // about process phases
   for (const [i, b] of all('.btn-expand-process').entries()) { b.click(); await sleep(300); await step('phase click ' + i, d) }
   const firstPhase = d.querySelector('.btn-expand-process'); if (firstPhase) { firstPhase.click(); await sleep(300); await step('phase click 0 again', d) }
