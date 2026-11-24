@@ -1,0 +1,24 @@
+/* A client's photo and the stars under a review. Shared by the homepage
+   reviews (HomeReviews.astro) and the review on each project page
+   (ProjectReview.astro). The photo class is chosen per review in
+   src/data/reviews.ts. */
+
+/* Shows the whole photo */
+.client__portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fills the frame and crops the edges */
+.client__portrait_1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.review__stars {
+  width: 60px;
+}
