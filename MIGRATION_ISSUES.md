@@ -41,7 +41,7 @@ Every page's sections are now components shared by the English and French pages,
 - **Not covered by those tests:** real touch input, and browsers other than Chrome. Worth a manual pass on a phone and in Safari and Firefox.
 - The original issue #15 ("crashes on pages without certain elements") was wrong: every optional element was already guarded with an `if`.
 
-### C. Images through Astro: done. CSS: tried and reverted
+### C. Images through Astro: done. CSS through Astro: done later
 - **Images: done, with one correction.** The 28 displayed photos are in [src/assets/images/](src/assets/images/) and render through [Photo.astro](src/components/Photo.astro).
   - **Your files are not recompressed.** For 22 photos, the main version is the original file, byte for byte. They were already WebP at roughly quality 95, so recompressing them only saves bytes by lowering quality.
   - **Six files were much larger than they are ever displayed** and are resized at quality 90: the two 6000px client screenshots (to 1440px), the three review photos (to 360px) and the homepage portrait (1400px to 750px).
@@ -52,14 +52,14 @@ Every page's sections are now components shared by the English and French pages,
   - **Image URLs changed** to `/_astro/<name>.<hash>.webp`. The file names are kept, and every `alt` text is unchanged. Google Images will re-index them over the following weeks.
   - **Old URLs still work.** `legacyImageUrls` in [astro.config.mjs](astro.config.mjs) copies the originals to `dist/assets/` on every build. The structured data on the about pages points at one of them.
   - **Not moved:** the social preview image, `billy_portrait.webp` (structured data), favicons, logos, icons and CSS backgrounds. They stay in `public/`.
-  - **One CSS rule was needed:** `height: auto` on `img` in [style.css](public/css/style.css). Without it, images with a CSS width kept the height from their new `height` attribute and looked stretched.
+  - **One CSS rule was needed:** `height: auto` on `img` in [03-base.css](src/styles/03-base.css). Without it, images with a CSS width kept the height from their new `height` attribute and looked stretched.
   - **The Landes phone animation** gets its image URLs from the component (a `data-screens` attribute), not from paths written in the script. The old `data-src` lazy-loading script is removed: browsers do it natively now.
   - **How it was checked:** the position and size of every image box was compared with the pre-pipeline build at seven window widths (390, 768, 1024, 1280, 1440, 1920 and 2560px), 385 boxes in all. None differs by more than 2px and none is displayed from a smaller file than before. The interaction and animation tests from B also pass.
   - **If the uncompressed originals exist** (the PNG or JPEG exports), putting those in `src/assets/images/` would let Astro compress each photo once, at a chosen quality, and the large versions could then be optimised too.
-- **CSS:** bundling [style.css](public/css/style.css) through Astro was tried for #19 and reverted, because it changed how pages render:
-  - The minifier keeps only the last of `backdrop-filter: blur(10px) saturate(120%)` and `-webkit-backdrop-filter: blur(10px)`, which is the `-webkit-` line. Chrome ignores that line, so the blur disappears. Putting the `-webkit-` line first in each of the 10 places would avoid this.
-  - Astro put the stylesheet link at the end of `<head>`, after the old `script.js` tag, so the script ran before the styles applied and its reveal-on-scroll logic left sections hidden. The scripts now load from the page body (see B), so this would need retesting, not assuming.
-- **Caching:** `style.css` and everything in `/_astro/` (scripts and now photos) are cached for a year, because their URLs change when their content does. Files still in `public/assets/` are cached for 10 minutes.
+- **CSS:** bundling the whole stylesheet through Astro was tried for #19 during the migration and reverted, because it changed how pages render. On 2026-11-24 the styles went through Astro after all, component by component (see "Styles restructured" below). The two problems from the first attempt, and what settled them:
+  - **The blur disappeared,** because the minifier dropped one of the two `backdrop-filter` lines. It still drops the `-webkit-` line by default, which Safari before version 18 needs. `cssTarget` in [astro.config.mjs](astro.config.mjs) makes it keep both.
+  - **Sections stayed hidden,** because the stylesheet loaded after the old `script.js`. The scripts now load per component, and the fade-in sections reveal as before with component styles in place.
+- **Caching:** `style.css` and everything in `/_astro/` (scripts and now photos) are cached for a year, because their URLs change when their content does. Files still in `public/assets/` are cached for 10 minutes. Since 2026-11-24 `style.css` holds only the shared styles; each component's styles are written into the page itself.
 
 ### D. Unused files: cleaned up
 - **Deleted 26 files (2.6 MB)** that nothing referenced: 23 images and SVGs in `public/assets/` (old screenshots, `lazy*` placeholders, spare portraits and logos, two backgrounds) and three font files that only appeared in commented-out CSS. The three commented-out `@font-face` blocks were removed from [style.css](public/css/style.css) too. Everything is still in git history.
@@ -77,15 +77,15 @@ Every page's sections are now components shared by the English and French pages,
 ### G. Code clean-up suggestions
 From a review of the code as it stood before the migration. Most of the list was done on 2026-11-23 (see "✅ Code clean-up" below). What is left:
 
-**1. CSS** ([style.css](public/css/style.css), now 3,584 lines)
-- **Naming.** Three conventions are mixed: BEM (`nav__link`, `package-card__title--large`), abbreviations (`wid__sec`, `ts-heading`, `lan-chall-cont`) and one-offs (`packages__title_fr`). Pick one for new code. BEM is already the most common.
-- **Broad global rules.** `img { width: 100% }` applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer.
+**1. CSS** (now in [src/styles/](src/styles/) and in each component: see "Styles restructured" below)
+
+Done on 2026-11-24: one naming convention, the repeated selectors merged, and the styles moved out of the single file into the components. What is left:
+
+- **One broad global rule.** `img { width: 100% }` in [03-base.css](src/styles/03-base.css) applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer. Left as it is by choice.
 - **Three design choices that were never applied.** Three declarations on the services page used variables that don't exist, so the browser ignored them. They were removed, which keeps the page exactly as it is. If you want the effect they were written for, each is one line:
   - `.package-card__description--large`: a larger description on the featured package, for example `font-size: var(--text-l)`. This makes the services page about 70px taller on desktop.
   - `.benefit`: a muted colour for the three benefit labels. There is no muted colour variable yet.
   - `.packages__intro`: a maximum width for the packages intro, for example `max-width: 65ch`.
-- **54 selectors are written more than once** (not counting media queries would lower this). Merging them can change which rule wins, so each needs checking.
-- **One file.** With components in place, styles that belong to one component could move into a `<style>` block in that component, leaving the tokens and shared rules in the global file. Do it one component at a time, with the text-box, image-box and screenshot tests in [scripts/dev/](scripts/dev/).
 
 **Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
 
@@ -176,11 +176,31 @@ From a review of the code as it stood before the migration. Most of the list was
   - About page: the four journey headings and the four technology group names: `<h4>` → `<h3>`.
   - Services hero: the five linked words above the `<h1>` are paragraphs, no longer `<h2>`s.
   - Homepage FAQ: the ten "Answer" labels are paragraphs, no longer `<h3>`s.
-  - They look the same through the new `.h2-style`, `.h3-style` and `.h4-style` classes in [style.css](public/css/style.css), which give an element the look of a heading level it doesn't have.
+  - They look the same through the new `.h2-style`, `.h3-style` and `.h4-style` classes in [03-base.css](src/styles/03-base.css), which give an element the look of a heading level it doesn't have.
 
 All were checked with the tools in [scripts/dev/](scripts/dev/): every text element on the affected pages is in the same place at 390, 768, 1280 and 1920px, and the interaction recordings match.
 
 ---
+
+## ✅ Styles restructured (2026-11-24, pull requests #32 to #34 and the `scopedStyles` branch)
+The single stylesheet of about 3,900 lines became nine shared files plus a style block in each component. No page changed appearance, apart from the small fixes listed at the end. How styles are organised now is described in [src/styles/README.md](src/styles/README.md).
+
+- **Clean-up first.** Rules that applied too broadly got their own classes (the `article` grid that every `<article>` inherited), repeated values became tokens (`--glass-*`, `--shadow-soft`, `--transition-lift`), and near-duplicate screen widths were merged.
+- **Split into files.** The shared styles are in [src/styles/](src/styles/), numbered `01` to `09`. `scripts/build-styles.mjs` joins them, unchanged, into `public/css/style.css`, which is now a generated file and no longer in git.
+- **Styles moved into the components.** Each component holds its own styles at the end of its `.astro` file. Astro writes them into the `<head>` of the pages that use the component (`inlineStylesheets: 'always'`), so a page still loads one stylesheet file.
+- **Shared markup became shared components.** `Hero`, `Timeline`, `ImageTextRows` with `ImageTextRow`, `ContactCta` and `home/ProjectCard` replace markup that was duplicated between two or more sections.
+- **One naming convention.** About 130 abbreviated class names (`wid__`, `tl_`, `ts-`, `lan-chall-cont`) were renamed to full words, one prefix per component, in the form `block__part--variant`. The five tokens in a different style were renamed too (`--brightGold` is now `--bright-gold`).
+- **Scoped styles.** A component's rules only reach elements written in its own file. `scopedStyleStrategy: 'where'` keeps every rule's weight as it was. A rule that must reach passed-in content or a child component uses `:global(...)`.
+- **Type check.** `npm run check` runs Astro's checker. It found and fixed eight errors when it was added.
+- **Visible fixes made along the way:**
+  - The About and Landes photo rows no longer start narrow and jump wider as each photo loads.
+  - At exactly 800px wide the homepage project cards stack, where two conflicting layouts used to apply together.
+  - The hero title takes its phone size at 700px and the Landes challenge buttons at 767px, two pixels earlier than before, to line up with the neighbouring rules.
+
+Every step was checked with the tools in [scripts/dev/](scripts/dev/): the position and full computed style of every element on all 20 pages at nine widths, the click-through recordings at desktop and phone width, the real-time animations, and reduced motion. Safari was checked by eye for the glass blur on the reviews section; the later steps were only checked in Chrome.
+
+---
+
 
 ## Before merging `AstroTrans` → `main`
 - [x] **Make.com: the old webhook.** The French contact form's HTML contained `action="https://hook.eu1.make.com/1sbn8f4m…"`. Billy deleted that webhook in Make long ago, when he realised it was exposed, so the address is dead. It is removed from the page on this branch; the live site's French contact page still shows it until the merge. The Netlify function uses a different webhook.
