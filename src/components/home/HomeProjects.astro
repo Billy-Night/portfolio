@@ -33,9 +33,10 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
-  .projects h2 {
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
+  .projects :global(h2) {
     margin-bottom: 4%;
     margin-left: 0;
   }

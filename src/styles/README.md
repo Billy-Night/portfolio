@@ -4,17 +4,36 @@ Styles live in two places.
 
 ## 1. In the component
 
-A component's own styles are in a `<style is:global>` block at the end of its `.astro` file. Astro adds them only to the pages that use the component, written straight into the page's `<head>` (`inlineStylesheets` in `astro.config.mjs`), so a page still loads one stylesheet file.
+A component's own styles are in a `<style>` block at the end of its `.astro` file. Astro adds them only to the pages that use the component, written straight into the page's `<head>` (`inlineStylesheets` in `astro.config.mjs`), so a page still loads one stylesheet file.
+
+These styles are **scoped**: a rule only reaches elements written in that same file. Astro does this by adding a class such as `astro-7oq6r4yx` to each of the component's elements and to each of its selectors. So a class name only has to be unique inside its component.
 
 Parts used on several pages are components too, so their styles live with them: `Hero`, `Timeline`, `ImageTextRows`, `ContactCta`, `BulletList` and `home/ProjectCard`.
 
-Three rules to keep:
+### When a rule must reach outside: `:global(...)`
 
-- **Only the component's own classes.** Put a rule in a component only if it targets a class that component alone uses. A rule for a shared class (a button, `.glass__back`, `.layout-two-column`) belongs in this folder, or the other pages lose it.
+A scoped rule cannot see three kinds of element, because they are not written in the component's own file:
+
+- content passed in through a `<slot>` (the text and photo given to `Hero`, the boxes given to `Timeline`);
+- anything a child component renders (the `<img>` from `Photo`, the list from `BulletList`);
+- a plain tag such as `p`, `ul` or `img`, which could be either of the above.
+
+Wrap that part of the selector in `:global(...)` and it works as an unscoped selector:
+
+```css
+.project-page__facts :global(ul) { margin: 0; }     /* the list comes from BulletList */
+:global(.hero__name) { color: var(--light-gold); }   /* the name is written in HomeHero */
+```
+
+If a new rule seems to do nothing, this is the first thing to check.
+
+### Rules to keep
+
+- **Shared classes stay in this folder.** A rule for a button, `.glass__back` or `.layout-two-column` belongs here, or the other pages lose it.
 - **Order inside a block.** Rules follow the order of the markup, with `@media` blocks at the end. If a state rule must override a `@media` rule (the open menu in `Header.astro`), it comes after it, with a comment.
 - **An override goes after what it overrides.** Component styles load after this folder's files. So a "reduced motion" rule sits in the same component as the animation it switches off, after it.
-
-`is:global` means the rules are not scoped to the component: class names must stay unique across the site.
+- **Scoping adds no weight.** `scopedStyleStrategy: 'where'` in `astro.config.mjs` means a scoped rule ranks exactly as it would unscoped. Do not change that setting: with Astro's default, every scoped rule would outrank the shared styles.
+- **A component cannot take `class` as a prop with a default.** Astro passes the parent's scope class to every child component as `class`. A prop with a default value would be overwritten by it, which is why `BulletList` calls its prop `listClass`.
 
 ## 2. In this folder
 

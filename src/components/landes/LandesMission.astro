@@ -41,8 +41,9 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .landes-mission-section {
     padding: var(--padding-hor-section) var(--page-gutter);
     padding-top: var(--padding-hor-section);

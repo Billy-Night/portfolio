@@ -33,8 +33,9 @@ const t = {
   import '../scripts/cookieBanner.js'
 </script>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .cookie-banner {
     display: none;
     max-width: 300px;

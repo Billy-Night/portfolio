@@ -118,8 +118,9 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .contact-cta {
     display: flex;
     flex-direction: column;
@@ -128,7 +129,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
     gap: var(--gap-md);
   }
 
-  .contact-cta ul {
+  .contact-cta :global(ul) {
     list-style-type: none;
     padding: 0;
     margin: var(--space-6) auto;
@@ -150,11 +151,11 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
       height: 32px;
     }
 
-    .contact-cta ul {
+    .contact-cta :global(ul) {
       gap: 2rem;
     }
 
-    .contact-cta a {
+    .contact-cta :global(a) {
       margin: 0px;
     }
   }

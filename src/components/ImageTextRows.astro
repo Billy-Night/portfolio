@@ -27,9 +27,10 @@ const { heading, intro } = Astro.props
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md
      They also style the rows inside it (ImageTextRow.astro). -->
-<style is:global>
+<style>
   .image-rows {
     width: 100%;
     display: flex;
@@ -50,7 +51,7 @@ const { heading, intro } = Astro.props
     max-width: 2000px;
   }
 
-  .image-row {
+  :global(.image-row) {
     display: grid;
     max-width: 2000px;
     grid-template-columns: 1fr 1fr;
@@ -60,16 +61,30 @@ const { heading, intro } = Astro.props
     padding-bottom: clamp(var(--space-7), 8vw, var(--space-9));
   }
 
-  .image-row__image--right {
+  :global(.image-row__image--right) {
     grid-column: 2 / 3;
     grid-row: 1;
+    width: 100%;
+    display: block;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 60%,
+      rgba(0, 0, 0, 0.6) 80%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      black 60%,
+      rgba(0, 0, 0, 0.6) 80%,
+      transparent 100%
+    );
   }
 
-  .image-row__image {
+  :global(.image-row__image) {
     position: relative;
   }
 
-  .image-row__image img {
+  :global(.image-row__image) :global(img) {
     width: 100%;
     max-width: 900px;
     display: block;
@@ -87,31 +102,14 @@ const { heading, intro } = Astro.props
     );
   }
 
-  .image-row__image--right {
-    width: 100%;
-    display: block;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      black 60%,
-      rgba(0, 0, 0, 0.6) 80%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      black 60%,
-      rgba(0, 0, 0, 0.6) 80%,
-      transparent 100%
-    );
-  }
-
-  .image-row__text {
+  :global(.image-row__text) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .image-row__panel {
+  :global(.image-row__panel) {
     background-color: var(--cream);
     border: var(--glass-border-faint);
     border-radius: var(--corner-rad);
@@ -119,23 +117,23 @@ const { heading, intro } = Astro.props
     padding: clamp(var(--space-4), 4vw, var(--space-10));
   }
 
-  .image-row__panel h3 {
+  :global(.image-row__panel) :global(h3) {
     color: var(--dark);
   }
 
-  .image-row__panel p {
+  :global(.image-row__panel) :global(p) {
     color: var(--dark);
   }
 
-  .image-row__text--pad-left {
+  :global(.image-row__text--pad-left) {
     padding-left: var(--page-gutter);
   }
 
-  .image-row__text--pad-right {
+  :global(.image-row__text--pad-right) {
     padding-right: var(--page-gutter);
   }
 
-  .image-row__buttons {
+  :global(.image-row__buttons) {
     margin-top: clamp(var(--space-3), 4vw, var(--space-6));
     display: flex;
     flex-direction: row;
@@ -144,15 +142,15 @@ const { heading, intro } = Astro.props
   }
 
   @media screen and (max-width: 900px) {
-    .image-row {
+    :global(.image-row) {
       grid-template-columns: 1fr;
     }
 
-    .image-row__image--right {
+    :global(.image-row__image--right) {
       grid-column: 1;
     }
 
-    .image-row__text {
+    :global(.image-row__text) {
       padding-left: var(--page-gutter);
       padding-right: var(--page-gutter);
     }

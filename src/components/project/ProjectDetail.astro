@@ -130,8 +130,9 @@ const home = routes.home[lang]
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   /* Same width and padding as .sections, without the fade-in: this is the first
      thing on the page and holds its main image. */
   .project-page {
@@ -140,7 +141,7 @@ const home = routes.home[lang]
     padding: var(--padding-hor-section) var(--page-gutter);
   }
 
-  .project-page h1 {
+  .project-page :global(h1) {
     font-size: var(--title-2);
     text-align: center;
     max-width: 26ch;
@@ -152,7 +153,7 @@ const home = routes.home[lang]
     margin-bottom: var(--space-7);
   }
 
-  .project-page__breadcrumb ol {
+  .project-page__breadcrumb :global(ol) {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -161,7 +162,7 @@ const home = routes.home[lang]
     margin: 0;
   }
 
-  .project-page__breadcrumb li + li::before {
+  .project-page__breadcrumb :global(li) + :global(li::before) {
     content: '/';
     margin-right: var(--space-2);
     opacity: 0.6;
@@ -174,7 +175,7 @@ const home = routes.home[lang]
     margin: 0 0 var(--space-3);
   }
 
-  .project-page__photo {
+  :global(.project-page__photo) {
     display: block;
     max-width: 1000px;
     margin: var(--space-7) auto;
@@ -192,19 +193,19 @@ const home = routes.home[lang]
     gap: var(--gap-lx);
   }
 
-  .project-page__facts h2 {
+  .project-page__facts :global(h2) {
     margin-bottom: var(--space-4);
   }
 
-  .project-page__facts dl {
+  .project-page__facts :global(dl) {
     margin: 0;
   }
 
-  .project-page__facts dd {
+  .project-page__facts :global(dd) {
     margin: 0 0 var(--space-4);
   }
 
-  .project-page__facts dd ul {
+  .project-page__facts :global(dd) :global(ul) {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -216,7 +217,7 @@ const home = routes.home[lang]
     margin-top: var(--space-2);
   }
 
-  .project-page__facts .project-tech-list li {
+  .project-page__facts .project-tech-list :global(li) {
     line-height: 1;
   }
 
@@ -229,22 +230,22 @@ const home = routes.home[lang]
     color: var(--white);
   }
 
-  .project-page__text h2,
-  .project-page__facts h2 {
+  .project-page__text :global(h2),
+  .project-page__facts :global(h2) {
     font-size: var(--title-4);
   }
 
-  .project-page__text h2 {
+  .project-page__text :global(h2) {
     margin-top: var(--space-7);
     margin-bottom: var(--space-3);
   }
 
-  .project-page__text h2:first-child {
+  .project-page__text :global(h2:first-child) {
     margin-top: 0;
   }
 
-  .project-page__text p,
-  .project-page__text > ul {
+  .project-page__text :global(p),
+  .project-page__text > :global(ul) {
     max-width: 65ch;
   }
 
@@ -257,7 +258,7 @@ const home = routes.home[lang]
     gap: var(--gap-sm);
   }
 
-  .project-page__figures li {
+  .project-page__figures :global(li) {
     padding: var(--space-5);
     background: var(--glass-bg-navy);
     border: var(--glass-border-faint);

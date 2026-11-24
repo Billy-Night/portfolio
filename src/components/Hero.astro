@@ -213,16 +213,17 @@ const { title, titleClass } = Astro.props
   import '../scripts/heroTitle.js'
 </script>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md
      They cover both uses of the hero, including the classes the homepage and the About page
      put on their own title word and photo. -->
-<style is:global>
-  .hero__name {
+<style>
+  :global(.hero__name) {
     font-size: var(--title-3);
     color: var(--light-gold);
   }
 
-  .hero__photo--home {
+  :global(.hero__photo--home) {
     width: clamp(315px, 30vw, 375px);
     height: auto;
     position: absolute;
@@ -233,12 +234,12 @@ const { title, titleClass } = Astro.props
   }
 
   @media screen and (max-width: 800px) {
-    .hero__photo--home {
+    :global(.hero__photo--home) {
       width: clamp(260px, 42vw, 310px);
       margin-left: var(--space-4);
     }
 
-    .hero__title-word--hide-on-phone {
+    :global(.hero__title-word--hide-on-phone) {
       display: none;
     }
   }
@@ -259,7 +260,7 @@ const { title, titleClass } = Astro.props
     z-index: 2;
   }
 
-  .hero__line--top line {
+  .hero__line--top :global(line) {
     stroke: var(--news-paper-gray);
   }
 
@@ -270,7 +271,7 @@ const { title, titleClass } = Astro.props
     z-index: 2;
   }
 
-  .hero__line--bottom line {
+  .hero__line--bottom :global(line) {
     stroke: var(--news-paper-gray);
   }
 
@@ -281,7 +282,7 @@ const { title, titleClass } = Astro.props
     z-index: 2;
   }
 
-  .hero__line--left line {
+  .hero__line--left :global(line) {
     stroke: var(--news-paper-gray);
   }
 
@@ -292,7 +293,7 @@ const { title, titleClass } = Astro.props
     z-index: 2;
   }
 
-  .hero__line--right line {
+  .hero__line--right :global(line) {
     stroke: var(--news-paper-gray);
   }
 
@@ -320,7 +321,7 @@ const { title, titleClass } = Astro.props
     padding-left: var(--space-2);
   }
 
-  .hero__title-word {
+  :global(.hero__title-word) {
     font-family: var(--display);
     font-size: clamp(2.75rem, 2.379rem + 1.854vw, 4.5rem);
     color: var(--bright-gold);
@@ -339,7 +340,7 @@ const { title, titleClass } = Astro.props
     letter-spacing: 3%;
   }
 
-  .hero__title--fr {
+  :global(.hero__title--fr) {
     font-size: clamp(5rem, 10vw, 12rem);
     line-height: 1.1;
   }
@@ -363,14 +364,14 @@ const { title, titleClass } = Astro.props
     color: white;
   }
 
-  .hero__measure svg {
+  .hero__measure :global(svg) {
     width: 14px;
     /* --measure-height is set by src/scripts/heroTitle.js to the title's height */
     height: var(--measure-height);
     overflow: visible;
   }
 
-  .hero__measure line {
+  .hero__measure :global(line) {
     stroke-width: 1;
     vector-effect: non-scaling-stroke;
   }
@@ -398,7 +399,7 @@ const { title, titleClass } = Astro.props
       display: inline;
     }
 
-    .hero__title--fr {
+    :global(.hero__title--fr) {
       margin-top: var(--space-3);
     }
   }
@@ -493,7 +494,7 @@ const { title, titleClass } = Astro.props
     max-width: 60ch;
   }
 
-  .hero__photo--about {
+  :global(.hero__photo--about) {
     width: clamp(200px, 40vw, 315px);
     height: auto;
     position: absolute;
@@ -530,7 +531,7 @@ const { title, titleClass } = Astro.props
       min-height: 240px;
     }
 
-    .hero__photo--about {
+    :global(.hero__photo--about) {
       width: clamp(210px, 35vw, 325px);
     }
 

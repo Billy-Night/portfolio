@@ -103,8 +103,9 @@ const t = {
   import '../../scripts/landesPhone.js'
 </script>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .landes-phone {
     height: 1200px;
   }
@@ -146,7 +147,7 @@ const t = {
     gap: 0px;
   }
 
-  .landes-phone__text.is-active {
+  :global(.landes-phone__text.is-active) {
     opacity: 1;
     visibility: visible;
   }

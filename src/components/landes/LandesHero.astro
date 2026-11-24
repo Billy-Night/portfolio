@@ -75,8 +75,9 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .landes-hero-container {
     display: flex;
     flex-direction: row;
@@ -107,7 +108,7 @@ const t = {
     align-items: center;
   }
 
-  .landes-hero-img-container img {
+  .landes-hero-img-container :global(img) {
     width: clamp(260px, 45vw, 650px);
   }
 
@@ -125,18 +126,15 @@ const t = {
     z-index: 3;
   }
 
-  .landes-hero-img,
+  :global(.landes-hero-img),
   .landes-hero-svg1,
   .landes-hero-svg2 {
     grid-area: 1 / 1;
     display: block;
   }
 
-  .landes-hero-img {
+  :global(.landes-hero-img) {
     width: 100%;
-  }
-
-  .landes-hero-img {
     z-index: 2;
   }
 

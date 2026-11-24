@@ -77,8 +77,9 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .addons-content-container {
     display: flex;
     flex-direction: row;
@@ -96,7 +97,7 @@ const t = {
     box-shadow: var(--glass-shadow);
   }
 
-  .addons-performance-img-frame img {
+  .addons-performance-img-frame :global(img) {
     height: 80px;
     width: 80px;
   }
@@ -109,7 +110,7 @@ const t = {
     padding: var(--space-4);
   }
 
-  .addons-performance-text-container h2 {
+  .addons-performance-text-container :global(h2) {
     font-size: var(--title-5);
     margin-bottom: var(--space-4);
     color: var(--font-colour-dark);
@@ -120,7 +121,7 @@ const t = {
       gap: var(--space-4);
     }
 
-    .sec-service-addons h2 {
+    .sec-service-addons :global(h2) {
       margin-bottom: var(--space-2);
     }
   }
@@ -132,7 +133,7 @@ const t = {
       padding-bottom: var(--space-2);
     }
 
-    .addons-performance-img-frame img {
+    .addons-performance-img-frame :global(img) {
       height: 50px;
       width: 50px;
     }
@@ -148,7 +149,7 @@ const t = {
       width: auto;
     }
 
-    .addons-performance-img-frame img {
+    .addons-performance-img-frame :global(img) {
       height: 80px;
       width: 80px;
     }

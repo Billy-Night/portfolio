@@ -44,8 +44,9 @@ const t = {
   </p>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .project-management-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -70,7 +71,7 @@ const t = {
     padding: 0 var(--space-8) 0 var(--space-8);
   }
 
-  .task-card h3 {
+  .task-card :global(h3) {
     font-size: var(--text-l);
   }
 
