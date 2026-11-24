@@ -24,8 +24,9 @@ src/
   data/schema.ts    Shared structured data (the "Person" used on every page)
   scripts/          One script per feature (header menu, cookie banner, reviews, timeline, contact form...).
                     Each component imports the one it needs, so a page only loads the scripts it uses.
+  styles/           The stylesheet, one file per part of the site. Joined into public/css/style.css (see styles/README.md).
   utils/            assetUrl(): adds a content hash to /css/style.css
-public/             Served as-is: CSS, the social preview image, logos, icons, fonts, robots.txt, sitemap.xml, llms.txt,
+public/             Served as-is: the social preview image, logos, icons, fonts, robots.txt, sitemap.xml, llms.txt,
                     the Markdown copies of each page, and Netlify's _redirects and _headers
 netlify/functions/  contact.js: the contact form backend (forwards to a Make.com webhook)
 scripts/            seo_snapshot.py: the SEO snapshot and compare tool. dev/: regression tests for behaviour, layout and images

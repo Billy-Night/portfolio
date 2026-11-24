@@ -1,0 +1,111 @@
+/* Buttons and button rows */
+
+.btn {
+  cursor: pointer;
+  background-color: var(--gold);
+  color: var(--dark);
+  padding: 0.5rem;
+  border-radius: var(--corner-rad);
+  font-family: var(--mono);
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: var(--dark);
+  background-color: var(--white);
+}
+
+.btn__primary {
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--corner-rad);
+  font-family: var(--mono);
+  text-decoration: none;
+  text-transform: uppercase;
+  min-width: 120px;
+  text-align: center;
+}
+
+.btn__prim--light {
+  background-color: var(--gold);
+  color: var(--dark);
+  border: solid 2px var(--gold);
+}
+
+.btn__prim--dark {
+  background-color: var(--dark);
+  color: var(--body-colour);
+  border: solid 2px var(--dark);
+}
+
+.btn__prim--dark:hover {
+  background-color: transparent;
+  color: var(--dark);
+}
+
+.btn__prim--light:hover {
+  background-color: var(--white);
+  color: black;
+}
+
+.btn__second {
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--corner-rad);
+  font-family: var(--mono);
+  text-transform: uppercase;
+  text-decoration: none;
+  min-width: 120px;
+  max-width: 140px;
+  text-align: center;
+}
+
+.btn__second--light {
+  background-color: transparent;
+  color: white;
+  border: solid 2px white;
+}
+
+.btn__second--dark {
+  background-color: transparent;
+  color: var(--dark);
+  border: solid 2px var(--dark);
+}
+
+.btn__second--light:hover {
+  background-color: var(--darkTrans);
+}
+
+.btn__second--dark:hover {
+  background-color: var(--darkTrans);
+}
+
+.btn__third {
+  display: flex;
+  gap: var(--gap-sm);
+  cursor: pointer;
+  padding: var(--space-2);
+  font-family: var(--mono);
+  text-transform: uppercase;
+  text-decoration: none;
+  min-width: 120px;
+  text-align: center;
+  color: var(--txt-body);
+}
+
+.btn__third:hover {
+  transform: translateX(5px);
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+.cta-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -32,3 +32,25 @@ const t = {
 <script>
   import '../scripts/cookieBanner.js'
 </script>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  .cookie-banner {
+    display: none;
+    max-width: 300px;
+    z-index: 1000;
+    position: fixed;
+    bottom: var(--space-4);
+    right: var(--page-gutter);
+    color: var(--white);
+    padding: var(--space-4);
+    border-radius: var(--corner-rad);
+  }
+
+  @media screen and (max-width: 800px) {
+    .cookie-banner {
+      max-width: 90%;
+      right: var(--page-gutter);
+    }
+  }
+</style>

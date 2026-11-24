@@ -75,3 +75,39 @@ const t = {
   </main>
   <Footer lang={lang} />
 </BaseLayout>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  .project-more a:hover .project-more__name {
+    color: var(--white);
+  }
+
+  .project-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-md);
+  }
+
+  .project-more ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-lx);
+  }
+
+  .project-more a {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    text-align: center;
+  }
+
+  .project-more__sector {
+    font-family: var(--mono);
+    color: var(--subHeading-colour);
+  }
+</style>

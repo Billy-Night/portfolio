@@ -13,3 +13,29 @@ const { items, large = false } = Astro.props
 ---
 
 <BulletList items={items} class={large ? 'package-card__features package-card__features--large' : 'package-card__features'} />
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  .package-card__features {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: var(--gap-sm);
+    padding: 0;
+    margin: 0 0 1.75rem;
+    list-style: none;
+  }
+
+  .package-card__features li {
+    position: relative;
+  }
+
+  .package-card__features--large {
+    gap: var(--gap-sm);
+    margin-top: var(--gap-sm);
+  }
+
+  .package-card__features--large li {
+    font-size: var(--text-base);
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import Hero from '../Hero.astro'
 import Photo from '../Photo.astro'
 import imgBillyNightingalePortraitStandingLaptopV4 from '../../assets/images/portraits/billy_nightingale_portrait_standing_laptop_v4.webp'
 import { routes, type Lang, type RouteKey } from '../../i18n/routes'
@@ -35,224 +36,38 @@ const t = {
 }[lang]
 ---
 
-<section class="hero__section" id="intro">
-  <svg
-    class="hero__horLine-top"
-    width="3000"
-    height="1"
-    viewBox="0 0 3000 1"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+<Hero title={t.titleText} titleClass={lang === 'fr' && 'hero__title-fr'}>
+  <span slot="title-word" class:list={["xl-heading home-hero-title-mob", lang === 'fr' && "hero__title-word-fr"]}
+    >WEB DESIGNER CAPBRETON HOSSEGOR</span
   >
-    <line x1="3000" y1="0.5" y2="0.5" />
-  </svg>
-  <svg
-    class="hero__verLine-left"
-    width="1"
-    height="3000"
-    viewBox="0 0 1 3000"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <line x1="0.5" y1="3000" x2="0.5" />
-  </svg>
-  <svg
-    class="hero__verLine-right"
-    width="1"
-    height="3000"
-    viewBox="0 0 1 3000"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <line x1="0.5" y1="3000" x2="0.5" />
-  </svg>
-  <svg
-    class="hero__horLine-bottom"
-    width="3000"
-    height="1"
-    viewBox="0 0 3000 1"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <line x1="3000" y1="0.5" y2="0.5" />
-  </svg>
-  <div class="hero__full-container">
-    <div class="hero__title-container">
-      <div>
-        <span class:list={["xl-heading home-hero-title-mob", lang === 'fr' && "hero__title-word-fr"]}
-          >WEB DESIGNER CAPBRETON HOSSEGOR</span
-        >
-        <h1 class:list={["hero__title", lang === 'fr' && "hero__title-fr"]}>
-          <span class="hero__title-text">{t.titleText}</span>
-          <span class="type-measure">
-            <svg
-              class="measure"
-              width="14"
-              viewBox="0 0 14 302"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient
-                  id="rustic-metal-measure"
-                  x1="7"
-                  y1="0"
-                  x2="7"
-                  y2="302"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0%" stop-color="#75685b" />
-                  <stop offset="45%" stop-color="#353e43" />
-                  <stop offset="100%" stop-color="#1b2024" />
-                </linearGradient>
-              </defs>
-
-              <line
-                x1="7"
-                y1="1"
-                x2="7"
-                y2="301"
-                stroke="url(#rustic-metal-measure)"
-                stroke-width="1"
-              />
-
-              <line
-                x1="1"
-                y1="0.5"
-                x2="14"
-                y2="0.5"
-                stroke="#75685b"
-                stroke-width="1"
-              />
-
-              <line
-                x1="0"
-                y1="300.5"
-                x2="13"
-                y2="300.5"
-                stroke="#1b2024"
-                stroke-width="1"
-              />
-            </svg>
-            <span class="type-measure__label"></span>
-          </span>
-        </h1>
-      </div>
-    </div>
-    <div class="intro__img-container">
-      <svg
-        class="hero-small-circle"
-        width="900"
-        height="900"
-        viewBox="-20 -20 940 940"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient
-            id="rustic-metal-hero-small"
-            x1="0"
-            y1="0"
-            x2="900"
-            y2="900"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="45%" stop-color="#75685b" />
-            <stop offset="75%" stop-color="#353e43" />
-            <stop offset="100%" stop-color="#1b2024" />
-          </linearGradient>
-        </defs>
-        <path
-          id="orbit-path-draw-1"
-          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
-          fill="none"
-          stroke="url(#rustic-metal-hero-small)"
-          stroke-width="2"
-          stroke-dasharray="4 4"
-        />
-        <path
-          id="orbitPath1"
-          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
-        />
-        <circle id="orbitDot1" r="10"></circle>
-      </svg>
-      <div class="intro__image--frame">
-        <Photo
-          src={imgBillyNightingalePortraitStandingLaptopV4}
-          maxWidth={750}
-          alt="Portrait of Billy Nightingale looking at web design on laptop"
-          class="home-intro__img"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
-    </div>
-    <div class="hero__text-container">
-      <svg
-        class="hero-big-circle"
-        width="900"
-        height="900"
-        viewBox="-20 -20 940 940"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient
-            id="rustic-metal-hero-bg-circle"
-            x1="0"
-            y1="0"
-            x2="900"
-            y2="900"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="45%" stop-color="#75685b" />
-            <stop offset="75%" stop-color="#353e43" />
-            <stop offset="100%" stop-color="#1b2024" />
-          </linearGradient>
-        </defs>
-        <path
-          id="orbit-path-draw-2"
-          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
-          fill="none"
-          stroke="url(#rustic-metal-hero-bg-circle)"
-          stroke-width="2"
-          stroke-dasharray="4 4"
-        />
-        <path
-          id="orbitPath2"
-          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
-        />
-        <circle id="orbitDot2" r="10"></circle>
-      </svg>
-      <div class="intro__text-cont">
-        <div class="about__intro__txt-cont">
-          <h2>{t.subheading}</h2>
-          <p class="max-hero-txt-width">
-            {t.introStart} <span class="home-intro__name">Billy Nightingale,</span> {t.introRest}
-          </p>
-          <p class="max-hero-txt-width">
-            {t.tagline}
-          </p>
-          <p class="max-hero-txt-width">
-            {t.availability}
-          </p>
-          <p class="max-hero-txt-width">
-            {t.ctaText}
-          </p>
-          <div class="cta-container">
-            <a class="btn__primary btn__prim--light" href={r('contact')}
-              >Contact</a
-            >
-            <a class="btn__second btn__second--light" href={`${r('home')}#projects`}
-              >{t.projectsButton}</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+  <Photo
+    slot="photo"
+    src={imgBillyNightingalePortraitStandingLaptopV4}
+    maxWidth={750}
+    alt="Portrait of Billy Nightingale looking at web design on laptop"
+    class="home-intro__img"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <h2>{t.subheading}</h2>
+  <p class="max-hero-txt-width">
+    {t.introStart} <span class="home-intro__name">Billy Nightingale,</span> {t.introRest}
+  </p>
+  <p class="max-hero-txt-width">
+    {t.tagline}
+  </p>
+  <p class="max-hero-txt-width">
+    {t.availability}
+  </p>
+  <p class="max-hero-txt-width">
+    {t.ctaText}
+  </p>
+  <div class="cta-container">
+    <a class="btn__primary btn__prim--light" href={r('contact')}
+      >Contact</a
+    >
+    <a class="btn__second btn__second--light" href={`${r('home')}#projects`}
+      >{t.projectsButton}</a
+    >
   </div>
-</section>
-
-<script>
-  import '../../scripts/heroTitle.js'
-</script>
+</Hero>

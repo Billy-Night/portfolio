@@ -1,0 +1,56 @@
+/* Parts shared by the homepage project cards and the project pages: the glass
+   panel behind the text, the technology tags, and the small gold labels.
+   (home/ProjectCard.astro, home/WebAppCard.astro, home/ClientProjectCard.astro,
+   project/ProjectDetail.astro) */
+
+.project__glass-back {
+  background: var(--glass-bg-navy);
+  padding: var(--space-5);
+  color: var(--body-colour);
+  transition: var(--transition-lift);
+  border-radius: var(--corner-rad);
+  border: var(--glass-border-faint);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: var(--glass-blur-rich);
+  backdrop-filter: var(--glass-blur-rich);
+}
+
+.project-tech-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto 4% 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-family: var(--mono);
+}
+
+.project-tech-list li {
+  background-color: var(--gold);
+  padding: var(--space-2);
+  border-radius: var(--corner-rad);
+  color: var(--dark);
+}
+
+/* From 801px the tags line up on the right */
+@media (min-width: 801px) {
+  .project-tech-list {
+    justify-content: flex-end;
+  }
+}
+
+/* Small gold labels: "The problem" and "The result" on the homepage cards,
+   and the labels in the facts box on a project page */
+.project-card__points dt,
+.project-page__facts dt {
+  font-family: var(--subHeading);
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  color: var(--subHeading-colour);
+  margin-bottom: var(--space-1);
+}

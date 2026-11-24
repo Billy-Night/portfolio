@@ -27,7 +27,7 @@ done
 python3 scripts/dev/intcmp.py /tmp/int-ref /tmp/int-new      # must end with ALL MATCH
 ```
 
-Add `500 900` to each `interact.sh` call for mobile width. Several runs are needed because two scroll-triggered effects (the section fade-in and the timeline headings) land on slightly different steps from run to run. `intcmp.py` ignores which step they land on.
+Add `500 900` to each `interact.sh` call for mobile width. Several runs are needed because three scroll-triggered effects (the section fade-in, the bullet fade-in and the timeline headings) land on slightly different steps from run to run. `intcmp.py` ignores which step they land on.
 
 ## Animations, in real time
 
@@ -57,6 +57,35 @@ BASE=https://astrotrans--billy-nightingale-web-dev.netlify.app SIZE=1920,1080 no
 - `phone_expr.js`: which image the Landes phone shows at each scroll position.
 - `reveal_expr.js`: whether sections reveal, the photo loads and the fonts load.
 - `textbox_expr.js`: position, size and type styles of every element that contains text, without the tag name. Run it on both builds and `diff` the output to check that swapping one tag for another (an `<h4>` for a `<p>`) or editing the CSS did not move or restyle anything.
+
+## Styles: has anything changed how a page looks?
+
+The strictest check, written for the stylesheet clean-up. `style_measure.mjs` records the position, size and every computed style property of every element, on every page, at each window width you give it. It sets the width itself, so real phone widths such as 390 work.
+
+```bash
+W=390,600,700,767,800,801,1024,1280,1920
+node scripts/dev/style_measure.mjs /tmp/dist-before /tmp/style/before  $W
+node scripts/dev/style_measure.mjs /tmp/dist-before /tmp/style/before2 $W    # the same build again
+node scripts/dev/style_measure.mjs dist             /tmp/style/after   $W
+python3 scripts/dev/style_compare.py /tmp/style/before /tmp/style/after /tmp/style/before2
+```
+
+A full run is 180 page views and takes about a minute and a half. The second measurement of the "before" build is there because a few animated elements (the hero orbit, the Landes phone, the About timeline) differ from one run to the next: `style_compare.py` ignores any element that differs between two runs of the same build. If a page is still listed with a handful of 1px differences, measure it once more to see whether they repeat.
+
+To see which property changed on an element, measure one page with `DETAIL=<element number>` on both builds and `diff` the two files:
+
+```bash
+DETAIL=116 node scripts/dev/style_measure.mjs dist /tmp/style/detail 1280 services.html
+```
+
+Its limits: it measures the page as it first appears, so it does not see hover or focus styles, or classes that scripts add later, such as the open menu. When rules have been moved around in the stylesheet, check those with `rule_order.py`, which reports every pair of rules that can apply to the same element with equal weight and whose order changed:
+
+```bash
+python3 scripts/dev/rule_order.py /tmp/style-before.css public/css/style.css /tmp/order.js
+node scripts/dev/cdp_eval.mjs dist /tmp/order.js index.html about.html services.html     # order-conflicts=0 is the goal
+```
+
+It treats a class that appears in no built page as one a script adds, and assumes it could land on any element, so read what it reports: a pair is only a problem if both rules can really apply to the same element.
 
 ## Images: position, size and sharpness
 

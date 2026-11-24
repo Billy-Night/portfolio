@@ -129,3 +129,166 @@ const home = routes.home[lang]
     </div>
   </div>
 </section>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  /* Same width and padding as .sections, without the fade-in: this is the first
+     thing on the page and holds its main image. */
+  .project-page {
+    max-width: var(--sec-width);
+    margin: 0 auto;
+    padding: var(--padding-hor-section) var(--page-gutter);
+  }
+
+  .project-page h1 {
+    font-size: var(--title-2);
+    text-align: center;
+    max-width: 26ch;
+    margin-inline: auto;
+  }
+
+  .project-page__breadcrumb {
+    font-family: var(--mono);
+    margin-bottom: var(--space-7);
+  }
+
+  .project-page__breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: 0;
+    margin: 0;
+  }
+
+  .project-page__breadcrumb li + li::before {
+    content: '/';
+    margin-right: var(--space-2);
+    opacity: 0.6;
+  }
+
+  .project-page__meta {
+    font-family: var(--mono);
+    color: var(--subHeading-colour);
+    text-align: center;
+    margin: 0 0 var(--space-3);
+  }
+
+  .project-page__photo {
+    display: block;
+    max-width: 1000px;
+    margin: var(--space-7) auto;
+    border-left: 1px solid var(--gold);
+    border-top: 1px solid var(--gold);
+    border-radius: var(--corner-rad-lg);
+    padding: 1rem;
+  }
+
+  .project-page__body {
+    display: grid;
+    /* minmax(0, ...) lets the column shrink to the screen: without it the row of
+       figures sets a minimum width and the page scrolls sideways on a phone */
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-lx);
+  }
+
+  .project-page__facts h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .project-page__facts dl {
+    margin: 0;
+  }
+
+  .project-page__facts dd {
+    margin: 0 0 var(--space-4);
+  }
+
+  .project-page__facts dd ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .project-page__facts .project-tech-list {
+    justify-content: flex-start;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+  }
+
+  .project-page__facts .project-tech-list li {
+    line-height: 1;
+  }
+
+  .project-page__live {
+    font-family: var(--mono);
+    text-transform: uppercase;
+  }
+
+  .project-page__live:hover {
+    color: var(--white);
+  }
+
+  .project-page__text h2,
+  .project-page__facts h2 {
+    font-size: var(--title-4);
+  }
+
+  .project-page__text h2 {
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-3);
+  }
+
+  .project-page__text h2:first-child {
+    margin-top: 0;
+  }
+
+  .project-page__text p,
+  .project-page__text > ul {
+    max-width: 65ch;
+  }
+
+  .project-page__figures {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: var(--gap-sm);
+  }
+
+  .project-page__figures li {
+    padding: var(--space-5);
+    background: var(--glass-bg-navy);
+    border: var(--glass-border-faint);
+    border-radius: var(--corner-rad);
+  }
+
+  .project-page__figure-value {
+    display: block;
+    font-family: var(--display);
+    font-size: var(--title-2);
+    line-height: 1;
+    color: var(--title-colour);
+    margin-bottom: var(--space-2);
+  }
+
+  @media (min-width: 900px) {
+    /* Text on the left, facts box on the right. The facts box comes first in the
+         page so that on a phone it sits directly under the screenshot. */
+    .project-page__body {
+      grid-template-columns: minmax(0, 1fr) 340px;
+      align-items: start;
+    }
+
+    .project-page__text {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .project-page__facts {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+</style>

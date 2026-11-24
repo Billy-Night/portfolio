@@ -1,5 +1,7 @@
 ---
 // Shared by the English and French pages. Text that differs is in the table below.
+import ImageTextRow from '../ImageTextRow.astro'
+import ImageTextRows from '../ImageTextRows.astro'
 import Photo from '../Photo.astro'
 import imgMonkeyMoodSeoMockup from '../../assets/images/landes_seo_mockups/monkey_mood_seo_mockup.webp'
 import imgPacificCoastCafeSeoMockup from '../../assets/images/landes_seo_mockups/Pacific_Coast_cafe_seo_mockup.webp'
@@ -42,72 +44,52 @@ const t = {
 }[lang]
 ---
 
-<section class="wid__sec">
-  <div class="wid__heading-container">
-    <h2>{t.heading}</h2>
-    <p>{t.intro}</p>
-  </div>
-  <div class="wid__content-container">
-    <div class="row">
-      <div class="wid__img-cont">
-        <Photo
-          src={imgMonkeyMoodSeoMockup}
-          alt={t.monkeyMoodImageAlt}
-          loading="lazy"
-        />
-      </div>
-      <div class="wid__text-cont txt-r">
-        <div class="wid__text box__shadow">
-          <div class="max-txt-width">
-            <h3>{t.monkeyMoodHeading}</h3>
-            <p>
-              {t.monkeyMoodText1}
-            </p>
-            <p>
-              {t.monkeyMoodText2}
-            </p>
-            <div class="wid__content_cta">
-              <a class="btn__primary btn__prim--dark" href={r('services')}
-                >SERVICES</a
-              >
-              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projectsButton}</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+<ImageTextRows heading={t.heading} intro={t.intro}>
+  <ImageTextRow imageSide="left">
+    <Photo
+      slot="image"
+      src={imgMonkeyMoodSeoMockup}
+      alt={t.monkeyMoodImageAlt}
+      loading="lazy"
+    />
+    <h3>{t.monkeyMoodHeading}</h3>
+    <p>
+      {t.monkeyMoodText1}
+    </p>
+    <p>
+      {t.monkeyMoodText2}
+    </p>
+    <div class="wid__content_cta">
+      <a class="btn__primary btn__prim--dark" href={r('services')}
+        >SERVICES</a
+      >
+      <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+        >{t.projectsButton}</a
+      >
     </div>
+  </ImageTextRow>
 
-    <div class="row">
-      <div class="wid__img-cont-right right">
-        <Photo
-          src={imgPacificCoastCafeSeoMockup}
-          alt={t.pacificCoastImageAlt}
-          loading="lazy"
-        />
-      </div>
-      <div class="wid__text-cont txt-l">
-        <div class="wid__text box__shadow">
-          <div class="max-txt-width">
-            <h3>{t.pacificCoastHeading}</h3>
-            <p>
-              {t.pacificCoastText1}
-            </p>
-            <p>
-              {t.pacificCoastText2}
-            </p>
-            <div class="wid__content_cta">
-              <a class="btn__primary btn__prim--dark" href={r('services')}
-                >SERVICES</a
-              >
-              <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
-                >{t.projectsButton}</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+  <ImageTextRow imageSide="right">
+    <Photo
+      slot="image"
+      src={imgPacificCoastCafeSeoMockup}
+      alt={t.pacificCoastImageAlt}
+      loading="lazy"
+    />
+    <h3>{t.pacificCoastHeading}</h3>
+    <p>
+      {t.pacificCoastText1}
+    </p>
+    <p>
+      {t.pacificCoastText2}
+    </p>
+    <div class="wid__content_cta">
+      <a class="btn__primary btn__prim--dark" href={r('services')}
+        >SERVICES</a
+      >
+      <a class="btn__second btn__second--dark" href={`${r('home')}#projects`}
+        >{t.projectsButton}</a
+      >
     </div>
-  </div>
-</section>
+  </ImageTextRow>
+</ImageTextRows>

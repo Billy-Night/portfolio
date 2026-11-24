@@ -91,3 +91,141 @@ const linkedIn =
 <script>
   import '../scripts/header.js'
 </script>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+     Keep the order of these rules: the open-menu rules (.nav__links-mob, .nav__dropdown) must come
+     after the phone rules that hide the links, or the menu opens empty. -->
+<style is:global>
+  .nav__glass-back {
+    background: var(--glass-bg-dark);
+    transition: var(--transition-lift);
+    border: var(--glass-border-faint);
+    -webkit-backdrop-filter: var(--glass-blur-rich);
+    backdrop-filter: var(--glass-blur-rich);
+  }
+
+  .header {
+    height: auto;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    transition:
+      top 0.3s ease-in-out,
+      width 0.3s ease-in-out;
+  }
+
+  .nav__list-full {
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    font-family: var(--mono);
+    font-size: var(--text-base);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+
+  .nav__logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .nav__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav__link {
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .social__icons {
+    width: 20px;
+    height: 20px;
+    fill: var(--gold);
+    vertical-align: -0.125em;
+  }
+
+  a:hover .social__icons {
+    fill: var(--white);
+  }
+
+  .small-nav {
+    max-width: 1280px;
+    top: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+  }
+
+  .nav_radius {
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .mob__hide {
+      display: none;
+    }
+  }
+
+  .menu-btn--hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+  }
+
+  .menu-btn--hamburger:hover {
+    cursor: pointer;
+  }
+
+  .ham-btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .nav__list-full {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mini {
+      display: none;
+    }
+
+    .menu-btn--hamburger {
+      display: flex;
+    }
+  }
+
+  .nav__links-mob {
+    display: inline-block;
+  }
+
+  .nav__dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 92vh;
+    font-size: var(--title-4);
+  }
+</style>

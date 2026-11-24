@@ -1,0 +1,126 @@
+---
+// The frame of a project on the homepage: the small category line, the name,
+// a glass panel for the text, and the screenshot beside it. Used by
+// ClientProjectCard.astro and WebAppCard.astro, which supply what goes in the
+// panel:
+//
+//   <ProjectCard category="..." name="..." reverse={...} photo={...} photoAlt="...">
+//     ...                                  the contents of the glass panel
+//     <Fragment slot="below">...</Fragment>   anything under the panel
+//   </ProjectCard>
+import type { ImageMetadata } from 'astro'
+import Photo from '../Photo.astro'
+
+interface Props {
+  /** The small line above the name */
+  category: string
+  name: string
+  /** Put the screenshot on the other side. HomeProjects.astro sets this on every second project. */
+  reverse: boolean
+  photo: ImageMetadata
+  photoAlt: string
+  /** Resize the screenshot to this width. Only for files much larger than their displayed size. */
+  photoMaxWidth?: number
+}
+
+const { category, name, reverse, photo, photoAlt, photoMaxWidth } = Astro.props
+
+// The headings carry 'heading-reverse' on the projects that are not reversed
+const headingReverse = !reverse && 'heading-reverse'
+---
+
+<article class:list={[reverse && 'project-info-container--reverse', 'project-info-container']}>
+  <div class="project-info__text">
+    <h3 class:list={['projects-heading', headingReverse]}>{category}</h3>
+    <h4 class:list={['projects-heading-name', headingReverse]}>{name}</h4>
+    <div class="project__glass-back">
+      <slot />
+    </div>
+    <slot name="below" />
+  </div>
+  <Photo src={photo} maxWidth={photoMaxWidth} alt={photoAlt} loading="lazy" />
+</article>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+     They style the frame for both kinds of card. The glass panel and the technology tags are
+     shared with the project pages, so those rules are in src/styles/. -->
+<style is:global>
+  .projects-heading {
+    color: var(--subHeading-colour);
+    font-size: var(--text-base);
+    font-family: var(--mono);
+    margin-bottom: var(--space-1);
+  }
+
+  .heading-reverse {
+    text-align: right;
+  }
+
+  .projects-heading-name {
+    color: var(--gold);
+    margin-top: 0;
+    margin-bottom: var(--space-3);
+  }
+
+  .project-info-container {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-project-gap);
+  }
+
+  .projects img {
+    width: 100%;
+    height: auto;
+    margin: 8% 0 8% 0;
+    border-left: 1px solid var(--gold);
+    border-top: 1px solid var(--gold);
+    border-radius: var(--corner-rad-lg);
+    padding: 1rem;
+  }
+
+  .project-info-container--reverse img {
+    border-left: 0px;
+    border-right: 1px solid var(--gold);
+  }
+
+  /* From 801px, so it never applies together with the 'up to 800px' rules below */
+  @media (min-width: 801px) {
+    .project-info-container {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 1rem;
+    }
+
+    .projects img {
+      grid-column: 1/6;
+      grid-row: 1/2;
+    }
+
+    .project-info__text {
+      grid-column: 5/11;
+      grid-row: 1/2;
+      order: 2;
+      text-align: left;
+    }
+
+    .projects .project-info-container--reverse .project-info__text {
+      grid-column: 1/7;
+      order: 2;
+      text-align: left;
+    }
+
+    .projects .project-info-container--reverse img {
+      grid-column: 6/11;
+      grid-row: 1/2;
+    }
+
+    .projects .project-info-container--reverse ul {
+      justify-content: flex-start;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .heading-reverse {
+      text-align: left;
+    }
+  }
+</style>

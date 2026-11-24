@@ -141,3 +141,111 @@ const t = {
     </div>
   </div>
 </section>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  .landes-approach-section {
+    max-width: var(--sec-width);
+    margin: 0 auto;
+    padding: var(--padding-hor-section) var(--page-gutter);
+  }
+
+  .lan-approach-content-cont {
+    padding-top: var(--padding-hor-section);
+  }
+
+  .lan-approach-row1 {
+    padding-top: var(--padding-hor-section);
+    padding-bottom: var(--padding-hor-section);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-md);
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .approach-cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--light-container);
+    border-radius: var(--corner-rad);
+    color: var(--dark);
+    padding: var(--space-5);
+    padding-top: var(--space-7);
+    width: 100%;
+  }
+
+  .approach-cont:hover {
+    .approach-design-heading {
+      transform: translateY(-80%);
+    }
+  }
+
+  .lan-approach-svg {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    fill: var(--page-background);
+  }
+
+  .approach-design-heading {
+    background-image: url('/assets/art_work/title_rect.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 302px;
+    height: 102px;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .approach-design-heading:hover {
+    transform: translateY(-80%);
+  }
+
+  .lan-approach-row2 {
+    padding-top: var(--padding-hor-section);
+    display: flex;
+    justify-content: center;
+  }
+
+  .approach-cta-cont {
+    padding-top: var(--padding-hor-section);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    .lan-approach-row1 {
+      flex-direction: column;
+      gap: var(--space-10);
+      padding-bottom: 0px;
+    }
+
+    .lan-approach-row2 {
+      padding-top: var(--space-10);
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .lan-approach-svg {
+      width: 240px;
+    }
+
+    .approach-design-heading {
+      width: 240px;
+      background-size: contain;
+    }
+  }
+</style>

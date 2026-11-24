@@ -40,3 +40,23 @@ const t = {
     </div>
   </div>
 </section>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  .landes-mission-section {
+    padding: var(--padding-hor-section) var(--page-gutter);
+    padding-top: var(--padding-hor-section);
+    padding-bottom: var(--padding-hor-section);
+  }
+
+  .landes-mission-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mission-text-container {
+    text-align: center;
+  }
+</style>
