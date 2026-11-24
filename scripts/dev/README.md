@@ -108,7 +108,7 @@ Each pass takes about a minute per window width. `matrixcmp.py` also lists image
 scripts/dev/screenshots.sh /tmp/shots-before 1280 2600 /tmp/dist-before
 scripts/dev/screenshots.sh /tmp/shots-after  1280 2600 dist
 python3 scripts/dev/pngdiff.py /tmp/shots-before/contact.png /tmp/shots-after/contact.png
-node scripts/dev/cdp_shot.mjs dist about.html '.wid__sec' /tmp/about.png      # one section, scrolled to in real time
+node scripts/dev/cdp_shot.mjs dist about.html '.image-rows' /tmp/about.png      # one section, scrolled to in real time
 ```
 
 `screenshots.sh` also prints any console errors. Its screenshots are only repeatable on pages without animations (the legal pages, the 404 pages, the Landes pages). On the others, compare several captures or use `cdp_shot.mjs`. Lazy-loaded images only appear in `cdp_shot.mjs` captures, because it scrolls the real page.
