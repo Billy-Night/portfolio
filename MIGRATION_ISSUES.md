@@ -82,6 +82,8 @@ From a review of the code as it stood before the migration. Most of the list was
 Done on 2026-11-24: one naming convention, the repeated selectors merged, and the styles moved out of the single file into the components. What is left:
 
 - **One broad global rule.** `img { width: 100% }` in [03-base.css](src/styles/03-base.css) applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer. Left as it is by choice.
+- **About 25 different screen widths.** The older rules change layout at 700, 767 and 800px, among others. Merging them means deciding what each layout does in the gaps, which is design work, so do it one component at a time when a section is next redesigned. New rules use 600, 800 or 1100px (see [src/styles/README.md](src/styles/README.md)).
+- **The shared wrapper components are only partly scoped.** `Hero`, `Timeline`, `ImageTextRows` and `home/ProjectCard` style content that the pages pass into them, so about a quarter of all rules use `:global(...)` to reach it. This works and is deliberate. A class name used inside `:global(...)` must still be unique across the site.
 - **Two design choices that were never applied.** Three declarations on the services page used variables that don't exist, so the browser ignored them. They were removed, which keeps the page exactly as it is. If you want the effect they were written for, each is one line:
   - `.package-card__description--large`: a larger description on the featured package, for example `font-size: var(--text-l)`. This makes the services page about 70px taller on desktop.
   - `.benefit`: a muted colour for the three benefit labels. There is no muted colour variable yet.
@@ -182,7 +184,7 @@ All were checked with the tools in [scripts/dev/](scripts/dev/): every text elem
 
 ---
 
-## ✅ Styles restructured (2026-11-24, pull requests #32 to #34 and the `scopedStyles` branch)
+## ✅ Styles restructured (2026-11-24, pull requests #32 to #35)
 The single stylesheet of about 3,900 lines became nine shared files plus a style block in each component. No page changed appearance, apart from the small fixes listed at the end. How styles are organised now is described in [src/styles/README.md](src/styles/README.md).
 
 - **Clean-up first.** Rules that applied too broadly got their own classes (the `article` grid that every `<article>` inherited), repeated values became tokens (`--glass-*`, `--shadow-soft`, `--transition-lift`), and near-duplicate screen widths were merged.
@@ -197,7 +199,9 @@ The single stylesheet of about 3,900 lines became nine shared files plus a style
   - At exactly 800px wide the homepage project cards stack, where two conflicting layouts used to apply together.
   - The hero title takes its phone size at 700px and the Landes challenge buttons at 767px, two pixels earlier than before, to line up with the neighbouring rules.
 
-Every step was checked with the tools in [scripts/dev/](scripts/dev/): the position and full computed style of every element on all 20 pages at nine widths, the click-through recordings at desktop and phone width, the real-time animations, and reduced motion. Safari was checked by eye for the glass blur on the reviews section; the later steps were only checked in Chrome.
+Every step was checked with the tools in [scripts/dev/](scripts/dev/): the position and full computed style of every element on all 20 pages at nine widths, the click-through recordings at desktop and phone width, the real-time animations, and reduced motion. Safari was checked by eye for the glass blur on the reviews section. Everything after that, including scoped styles, was only checked in Chrome: **look at a project page and the services page in Safari.**
+
+What is still open is in the CSS list under G above, and the next pieces of work (images, a generated sitemap, prefetching) are in [TODO.md](TODO.md).
 
 ---
 
