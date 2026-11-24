@@ -1,0 +1,77 @@
+---
+// A whole project page, in one language. Used by src/pages/projects/[slug].astro
+// and src/pages/fr/projets/[slug].astro, which make one page for every client
+// project in src/data/projects.ts that has a `page` part.
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Header from '../Header.astro'
+import CookieBanner from '../CookieBanner.astro'
+import Footer from '../Footer.astro'
+import ServicesContactCta from '../services/ServicesContactCta.astro'
+import ProjectDetail from './ProjectDetail.astro'
+import ProjectReview from './ProjectReview.astro'
+import { projectPaths, type Lang } from '../../i18n/routes'
+import { clientProjects, type Project } from '../../data/projects'
+import { reviews } from '../../data/reviews'
+import { projectSchema } from '../../data/schema'
+
+interface Props {
+  project: Project
+  lang: Lang
+}
+
+const { project, lang } = Astro.props
+const page = project.page!
+const paths = projectPaths(page.slug)
+
+const review = reviews.find((entry) => entry.project === page.slug)
+const otherProjects = clientProjects.filter((other) => other.page && other !== project)
+
+const t = {
+  en: { moreHeading: "More projects" },
+  fr: { moreHeading: "Autres projets" },
+}[lang]
+---
+
+<BaseLayout
+  lang={lang}
+  route={paths}
+  title={`${page.title[lang]} | Billy Nightingale`}
+  description={page.description[lang]}
+  jsonLd={projectSchema(project, lang)}
+>
+  <Header lang={lang} route={paths} />
+  <main>
+    <CookieBanner lang={lang} />
+    <ProjectDetail project={project} page={page} lang={lang} />
+    {
+      review && (
+        <>
+          <div class="gradient" />
+          <ProjectReview review={review} lang={lang} />
+        </>
+      )
+    }
+    <div class="gradient"></div>
+    <section class="sections">
+      <nav class="project-more" aria-labelledby="project-more-heading">
+        <h2 id="project-more-heading">{t.moreHeading}</h2>
+        <ul>
+          {
+            otherProjects.map((other) => (
+              <li>
+                <a href={projectPaths(other.page!.slug)[lang]}>
+                  <span class="project-more__sector">{other.page!.sector[lang]} · {other.page!.town}</span>
+                  <span class="project-more__name h3-style">{other.name[lang]}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </section>
+    <div class="gradient"></div>
+    <ServicesContactCta lang={lang} />
+    <div class="gradient"></div>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

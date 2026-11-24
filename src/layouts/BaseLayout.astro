@@ -4,15 +4,16 @@
 // via src/i18n/routes.ts. The page body goes in the default slot.
 import Analytics from '../components/Analytics.astro'
 import { assetUrl } from '../utils/assetVersion'
-import { SITE, routes, url, type Lang, type RouteKey } from '../i18n/routes'
+import { SITE, pathsOf, type Lang, type PageRoute } from '../i18n/routes'
 
 interface Props {
   lang: Lang
   /**
-   * The page's entry in src/i18n/routes.ts. Omit it only for pages with no
-   * fixed address (the 404 pages): they get no canonical, hreflang or og:url.
+   * The page's entry in src/i18n/routes.ts, or its two addresses for a page
+   * generated from a data list. Omit it only for pages with no fixed address
+   * (the 404 pages): they get no canonical, hreflang or og:url.
    */
-  route?: RouteKey
+  route?: PageRoute
   title: string
   description: string
   /** Social share title/description. og defaults to the page title and description; twitter defaults to og. */
@@ -34,7 +35,8 @@ const {
   robots = 'index, follow',
 } = Astro.props
 
-const canonical = route && url(route, lang)
+const paths = route && pathsOf(route)
+const canonical = paths && SITE + paths[lang]
 const og = Astro.props.og ?? { title, description }
 const twitter = Astro.props.twitter ?? og
 const locale = { en: 'en_GB', fr: 'fr_FR' }
@@ -56,11 +58,11 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
     <meta name="description" content={description} />
 
     {
-      route && (
+      paths && (
         <Fragment>
           <link rel="canonical" href={canonical} />
-          <link rel="alternate" hreflang="en" href={SITE + routes[route].en} />
-          <link rel="alternate" hreflang="fr" href={SITE + routes[route].fr} />
+          <link rel="alternate" hreflang="en" href={SITE + paths.en} />
+          <link rel="alternate" hreflang="fr" href={SITE + paths.fr} />
         </Fragment>
       )
     }

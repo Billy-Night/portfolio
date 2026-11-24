@@ -1,0 +1,131 @@
+---
+// The main part of a project page: heading, screenshot, facts box and the
+// client / problem / work / result text. The text comes from
+// src/data/projects.ts; the labels shared by every project are in the table below.
+import Photo from '../Photo.astro'
+import BulletList from '../BulletList.astro'
+import { routes, type Lang } from '../../i18n/routes'
+import type { Project, ProjectPage } from '../../data/projects'
+
+interface Props {
+  project: Project
+  page: ProjectPage
+  lang: Lang
+}
+
+const { project, page, lang } = Astro.props
+
+const t = {
+  en: {
+    breadcrumbLabel: "Breadcrumb",
+    home: "Home",
+    projects: "Projects",
+    factsHeading: "Project details",
+    client: "Client",
+    sector: "Sector",
+    location: "Location",
+    year: "Year",
+    services: "Services",
+    technologies: "Technologies",
+    liveSite: "Visit the website",
+    clientHeading: "The client",
+    problemHeading: "The problem",
+    solutionHeading: "What I did",
+    resultHeading: "The result",
+  },
+  fr: {
+    breadcrumbLabel: "Fil d’Ariane",
+    home: "Accueil",
+    projects: "Projets",
+    factsHeading: "Fiche projet",
+    client: "Client",
+    sector: "Secteur",
+    location: "Lieu",
+    year: "Année",
+    services: "Prestations",
+    technologies: "Technologies",
+    liveSite: "Voir le site",
+    clientHeading: "Le client",
+    problemHeading: "Le problème",
+    solutionHeading: "Ce que j’ai fait",
+    resultHeading: "Le résultat",
+  },
+}[lang]
+
+const home = routes.home[lang]
+---
+
+<section class="project-page">
+  <nav class="project-page__breadcrumb" aria-label={t.breadcrumbLabel}>
+    <ol>
+      <li><a href={home}>{t.home}</a></li>
+      <li><a href={`${home}#projects`}>{t.projects}</a></li>
+      <li aria-current="page">{project.name[lang]}</li>
+    </ol>
+  </nav>
+  <p class="project-page__meta">{page.sector[lang]} · {page.town} · {page.year}</p>
+  <h1>{page.title[lang]}</h1>
+  <Photo
+    src={project.photo}
+    maxWidth={project.photoMaxWidth}
+    alt={project.photoAlt[lang]}
+    class="project-page__photo"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="project-page__body">
+    <aside class="project-page__facts project__glass-back" aria-labelledby="project-facts-heading">
+      <h2 id="project-facts-heading">{t.factsHeading}</h2>
+      <dl>
+        <dt>{t.client}</dt>
+        <dd>{project.name[lang]}</dd>
+        <dt>{t.sector}</dt>
+        <dd>{page.sector[lang]}</dd>
+        <dt>{t.location}</dt>
+        <dd>{page.town}</dd>
+        <dt>{t.year}</dt>
+        <dd>{page.year}</dd>
+        <dt>{t.services}</dt>
+        <dd>
+          <BulletList items={page.services[lang]} />
+        </dd>
+        <dt>{t.technologies}</dt>
+        <dd>
+          <ul class="project-tech-list">
+            {project.technologies.map((technology) => <li>{technology}</li>)}
+          </ul>
+        </dd>
+      </dl>
+      {
+        project.link && (
+          <a class="project-page__live" href={project.link.href} target="_blank" rel="noopener">
+            {t.liveSite} <span aria-hidden="true">→</span>
+          </a>
+        )
+      }
+    </aside>
+    <div class="project-page__text">
+      <h2>{t.clientHeading}</h2>
+      {page.client[lang].map((paragraph) => <p>{paragraph}</p>)}
+      <h2>{t.problemHeading}</h2>
+      {page.problem[lang].map((paragraph) => <p>{paragraph}</p>)}
+      <h2>{t.solutionHeading}</h2>
+      {page.solution[lang].map((paragraph) => <p>{paragraph}</p>)}
+      {project.tasks && <BulletList items={project.tasks.items[lang]} />}
+      <h2>{t.resultHeading}</h2>
+      {page.result[lang].map((paragraph) => <p>{paragraph}</p>)}
+      {
+        page.figures && (
+          <ul class="project-page__figures">
+            {page.figures.map((figure) => (
+              <li>
+                <span class="project-page__figure-value">{figure.value[lang]}</span>
+                <span class="project-page__figure-label">{figure.label[lang]}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </div>
+</section>

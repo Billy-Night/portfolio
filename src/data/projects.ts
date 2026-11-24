@@ -4,7 +4,9 @@
 // `category`, `name`, `summary`, `technologies`, `photo` and `photoAlt` are
 // required; leave out the other parts a project does not need. The page shows
 // the projects in this order, alternating the side the screenshot sits on.
-// Used by src/components/home/HomeProjects.astro and ProjectCard.astro.
+// A project with a `page` part also gets its own page in each language.
+// Used by src/components/home/HomeProjects.astro and ProjectCard.astro, and
+// by the project pages (src/pages/projects/ and src/components/project/).
 import type { ImageMetadata } from 'astro'
 import type { Lang } from '../i18n/routes'
 import monkeyMoodPhoto from '../assets/images/client_sites/billy_nightingale_client_monkey_mood_creation_de_site_web.webp'
@@ -54,6 +56,34 @@ export interface Project {
   photoAlt: Text
   /** Resize the screenshot to this width. Only for files much larger than their displayed size. */
   photoMaxWidth?: number
+  /** The project's own page. Leave out for a project that has none. */
+  page?: ProjectPage
+}
+
+/**
+ * What a project's own page adds to the entry above. The page also shows the
+ * project's name, task list, technologies, screenshot and link to the live
+ * site, and the client's review if one in reviews.ts names this `slug`.
+ * Each of `client`, `problem`, `solution` and `result` is a list of paragraphs.
+ */
+export interface ProjectPage {
+  /** The last part of the page's address: /projects/<slug> and /fr/projets/<slug>. Do not change it once the page is live. */
+  slug: string
+  /** Main heading and browser title */
+  title: Text
+  /** The summary shown in search results, about 150 characters */
+  description: Text
+  sector: Text
+  town: string
+  year: number
+  /** What the work covered, shown in the facts box */
+  services: Record<Lang, string[]>
+  client: Record<Lang, string[]>
+  problem: Record<Lang, string[]>
+  solution: Record<Lang, string[]>
+  result: Record<Lang, string[]>
+  /** Headline numbers shown under the result. Only real, checkable figures. */
+  figures?: { value: Text; label: Text }[]
 }
 
 export const clientProjects: Project[] = [
@@ -101,6 +131,66 @@ export const clientProjects: Project[] = [
       en: 'Billy Nightingale client Monkey Mood, website screenshot',
       fr: 'Billy Nightingale client Monkey Mood, capture ecran de site web',
     },
+    page: {
+      slug: 'monkey-mood',
+      title: {
+        en: 'Restaurant website redesign in Capbreton: Monkey Mood',
+        fr: 'Refonte du site d’un restaurant à Capbreton : Monkey Mood',
+      },
+      description: {
+        en: 'How a new booking flow ended wrong-location bookings for Monkey Mood, a vegan restaurant in Capbreton and Bordeaux. Web design, WordPress build and SEO.',
+        fr: 'Comment un nouveau parcours de réservation a mis fin aux erreurs d’établissement pour Monkey Mood, restaurant vegan à Capbreton et Bordeaux. Web design, WordPress et SEO.',
+      },
+      sector: { en: 'Restaurant', fr: 'Restauration' },
+      town: 'Capbreton',
+      year: 2026,
+      services: {
+        en: ['Web design', 'WordPress build', 'Booking integration', 'SEO', 'Performance'],
+        fr: ['Web design', 'Développement WordPress', 'Intégration de la réservation', 'SEO', 'Performance'],
+      },
+      client: {
+        en: ['Monkey Mood is a growing vegan restaurant brand with two restaurants, one in Capbreton and one in Bordeaux.'],
+        fr: ['Monkey Mood est une marque de restaurants vegan en pleine croissance, avec deux établissements : l’un à Capbreton, l’autre à Bordeaux.'],
+      },
+      problem: {
+        en: ['With two restaurants on one website, customers regularly booked a table at the wrong one. It was a major problem for the restaurants.'],
+        fr: ['Avec deux restaurants sur un seul site, les clients réservaient régulièrement une table dans le mauvais établissement. C’était un problème majeur pour les restaurants.'],
+      },
+      solution: {
+        en: [
+          'I redesigned the whole site, from the mockups and brand direction to the finished WordPress build.',
+          'I mapped how visitors move through the site and rebuilt the booking flow, so that every booking is clearly tied to one restaurant. The ZenChef booking system is integrated into the site.',
+        ],
+        fr: [
+          'J’ai entièrement repensé le site, des maquettes et de la direction artistique jusqu’au développement sous WordPress.',
+          'J’ai cartographié le parcours des visiteurs et reconstruit le parcours de réservation, afin que chaque réservation soit clairement rattachée à un seul restaurant. Le système de réservation ZenChef est intégré au site.',
+        ],
+      },
+      result: {
+        en: [
+          'Since launch there has not been a single wrong-location booking.',
+          'The site ranks in the top 3 on Google for “restaurant Capbreton” and “restaurant vegan Bordeaux” (average positions 2.4 and 2.2 in Search Console, November 2026). It scores 90+ for performance in Lighthouse, on mobile and desktop.',
+        ],
+        fr: [
+          'Depuis la mise en ligne, plus aucune réservation dans le mauvais établissement.',
+          'Le site se classe dans le top 3 sur Google pour « restaurant Capbreton » et « restaurant vegan Bordeaux » (positions moyennes de 2,4 et 2,2 dans la Search Console, novembre 2026). Il obtient un score de performance de 90+ dans Lighthouse, sur mobile comme sur ordinateur.',
+        ],
+      },
+      figures: [
+        {
+          value: { en: '0', fr: '0' },
+          label: { en: 'wrong-location bookings since launch', fr: 'erreur d’établissement depuis la mise en ligne' },
+        },
+        {
+          value: { en: 'Top 3', fr: 'Top 3' },
+          label: { en: 'on Google for “restaurant Capbreton”', fr: 'sur Google pour « restaurant Capbreton »' },
+        },
+        {
+          value: { en: '90+', fr: '90+' },
+          label: { en: 'Lighthouse performance, mobile and desktop', fr: 'Performance Lighthouse, mobile et ordinateur' },
+        },
+      ],
+    },
   },
   {
     category: { en: 'E-Commerce', fr: 'E-commerce' },
@@ -127,6 +217,62 @@ export const clientProjects: Project[] = [
     photoAlt: {
       en: 'Billy Nightingale client Pacific Coast Cafe Hossegor, website screenshot',
       fr: 'Billy Nightingale client Pacific Coast Cafe Hossegor, capture ecran de site web',
+    },
+    page: {
+      slug: 'pacific-coast-cafe',
+      title: {
+        en: 'Café website and online shop in Hossegor: Pacific Coast Cafe',
+        fr: 'Site web et boutique en ligne d’un café à Hossegor : Pacific Coast Cafe',
+      },
+      description: {
+        en: 'A faster, GDPR-compliant website and a new online shop with gift cards for Pacific Coast Cafe in Hossegor. Performance, e-commerce and SEO.',
+        fr: 'Un site plus rapide et conforme au RGPD, et une nouvelle boutique en ligne avec cartes cadeaux pour le Pacific Coast Cafe à Hossegor. Performance, e-commerce et SEO.',
+      },
+      sector: { en: 'Café', fr: 'Café' },
+      town: 'Hossegor',
+      year: 2026,
+      services: {
+        en: ['Performance optimisation', 'Online shop', 'GDPR compliance', 'SEO', 'Maintenance'],
+        fr: ['Optimisation des performances', 'Boutique en ligne', 'Conformité RGPD', 'SEO', 'Maintenance'],
+      },
+      client: {
+        en: ['Pacific Coast Cafe is a high-traffic café in Hossegor.'],
+        fr: ['Pacific Coast Cafe est un café à forte affluence à Hossegor.'],
+      },
+      problem: {
+        en: [
+          'The site was slow: the theme and plugins were out of date and the images were not optimised. It also had layout faults left over from a previous design, and it was not GDPR compliant.',
+          'On top of that, the café wanted an online shop to sell merchandise and gift cards.',
+        ],
+        fr: [
+          'Le site était lent : le thème et les extensions n’étaient plus à jour et les images n’étaient pas optimisées. Il présentait aussi des défauts de mise en page hérités d’un ancien design et n’était pas conforme au RGPD.',
+          'Le café souhaitait en plus une boutique en ligne pour vendre ses produits dérivés et des cartes cadeaux.',
+        ],
+      },
+      solution: {
+        en: [
+          'I updated the theme and plugins, optimised the images and fixed the layout. I also brought the site into line with GDPR.',
+          'Then I added an online shop with Stripe payments and digital gift cards, without disrupting the café’s daily operations.',
+        ],
+        fr: [
+          'J’ai mis à jour le thème et les extensions, optimisé les images et corrigé la mise en page. J’ai également mis le site en conformité avec le RGPD.',
+          'J’ai ensuite ajouté une boutique en ligne avec paiement par Stripe et cartes cadeaux digitales, sans perturber l’activité quotidienne du café.',
+        ],
+      },
+      result: {
+        en: [
+          'The site is 20% faster, more visible in search and now GDPR compliant. The online shop and its digital gift cards give the café a new source of revenue.',
+        ],
+        fr: [
+          'Le site est 20 % plus rapide, mieux référencé et désormais conforme au RGPD. La boutique en ligne et ses cartes cadeaux digitales offrent au café une nouvelle source de revenus.',
+        ],
+      },
+      figures: [
+        {
+          value: { en: '20%', fr: '20 %' },
+          label: { en: 'faster site', fr: 'de vitesse en plus' },
+        },
+      ],
     },
   },
   {
@@ -166,6 +312,56 @@ export const clientProjects: Project[] = [
       fr: 'Billy Nightingale client Eve-Marie, capture ecran de site web',
     },
     photoMaxWidth: 1440,
+    page: {
+      slug: 'sophro-by-eve',
+      title: {
+        en: 'Sophrologist website with online booking in Montauban: Sophro by Eve',
+        fr: 'Site web de sophrologue avec réservation en ligne à Montauban : Sophro by Eve',
+      },
+      description: {
+        en: 'A WordPress website with online booking, payments and a blog for Eve-Marie, a sophrologist opening her practice in Montauban.',
+        fr: 'Un site WordPress avec réservation et paiement en ligne et un blog pour Eve-Marie, sophrologue qui ouvre son cabinet à Montauban.',
+      },
+      sector: { en: 'Wellness', fr: 'Bien-être' },
+      town: 'Montauban',
+      year: 2025,
+      services: {
+        en: ['Web design', 'WordPress build', 'Online booking and payments', 'Blog', 'SEO', 'Hosting setup'],
+        fr: ['Web design', 'Développement WordPress', 'Réservation et paiement en ligne', 'Blog', 'SEO', 'Mise en place de l’hébergement'],
+      },
+      client: {
+        en: ['Eve-Marie is a sophrologist who opened a new practice in Montauban. She works with individuals and with businesses.'],
+        fr: ['Eve-Marie est sophrologue et a ouvert un nouveau cabinet à Montauban. Elle accompagne les particuliers comme les entreprises.'],
+      },
+      problem: {
+        en: ['She needed a website to launch the practice: one that takes bookings, presents her services clearly to both audiences and has a blog.'],
+        fr: ['Elle avait besoin d’un site web pour lancer son activité : un site qui prend les réservations, présente clairement ses services à ces deux publics et comprend un blog.'],
+      },
+      solution: {
+        en: [
+          'I created a custom WordPress website with Elementor Pro, with soft colours, simple layouts and a smooth user experience.',
+          'Bookings and online payments go through Calendly. The blog and the rest of the content are managed in the CMS, with custom field types.',
+        ],
+        fr: [
+          'J’ai créé un site personnalisé sous WordPress avec Elementor Pro, avec des couleurs douces, des mises en page simples et une expérience utilisateur fluide.',
+          'Les réservations et les paiements en ligne passent par Calendly. Le blog et le reste du contenu sont gérés dans le CMS, avec des types de champs personnalisés.',
+        ],
+      },
+      result: {
+        en: [
+          'Eve-Marie launched her practice with a site where clients can book and pay for a session online. The site scores 90+ for performance in Lighthouse, on mobile and desktop.',
+        ],
+        fr: [
+          'Eve-Marie a lancé son activité avec un site où ses clients peuvent réserver et payer une séance en ligne. Le site obtient un score de performance de 90+ dans Lighthouse, sur mobile comme sur ordinateur.',
+        ],
+      },
+      figures: [
+        {
+          value: { en: '90+', fr: '90+' },
+          label: { en: 'Lighthouse performance, mobile and desktop', fr: 'Performance Lighthouse, mobile et ordinateur' },
+        },
+      ],
+    },
   },
   {
     category: { en: 'E-Commerce', fr: 'E-Commerce' },

@@ -1,0 +1,33 @@
+---
+// The client's review on their project page. The review comes from
+// src/data/reviews.ts: the one whose `project` names this page's slug.
+import Photo from '../Photo.astro'
+import type { Lang } from '../../i18n/routes'
+import type { Review } from '../../data/reviews'
+
+interface Props {
+  review: Review
+  lang: Lang
+}
+
+const { review, lang } = Astro.props
+
+const t = {
+  en: { heading: "What the client says", starsAlt: "Five stars" },
+  fr: { heading: "L’avis du client", starsAlt: "Cinq étoiles" },
+}[lang]
+---
+
+<section class="sections">
+  <figure class="project-review">
+    <h2>{t.heading}</h2>
+    <div class="project-review__photo">
+      <Photo src={review.photo} maxWidth={360} alt={review.photoAlt[lang]} class={review.photoClass} loading="lazy" />
+    </div>
+    <blockquote>
+      {review.paragraphs[lang].map((paragraph) => <p>{paragraph}</p>)}
+    </blockquote>
+    <figcaption>{review.author}</figcaption>
+    <img class="review__stars" src="/assets/icons/stars.svg" alt={t.starsAlt} />
+  </figure>
+</section>

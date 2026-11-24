@@ -1,8 +1,9 @@
 ---
 // One project on the homepage. The text comes from src/data/projects.ts.
+// A project that has its own page gets a link to it.
 import Photo from '../Photo.astro'
 import BulletList from '../BulletList.astro'
-import type { Lang } from '../../i18n/routes'
+import { projectPaths, type Lang } from '../../i18n/routes'
 import type { Project } from '../../data/projects'
 
 interface Props {
@@ -16,6 +17,11 @@ const { project, lang, reverse } = Astro.props
 
 // The headings carry 'heading-reverse' on the projects that are not reversed
 const headingReverse = !reverse && 'heading-reverse'
+
+const t = {
+  en: { pageLink: "Read the full project" },
+  fr: { pageLink: "Voir le projet en détail" },
+}[lang]
 
 const summary = project.summary[lang]
 const summaryPieces = typeof summary === 'string' ? [summary] : summary
@@ -50,6 +56,15 @@ const summaryPieces = typeof summary === 'string' ? [summary] : summary
           <p>
             {project.link.intro[lang]}
             <a href={project.link.href} target="_blank" rel="noopener">{project.link.text[lang]}</a>
+          </p>
+        )
+      }
+      {
+        project.page && (
+          <p>
+            <a href={projectPaths(project.page.slug)[lang]}>
+              {t.pageLink} <span aria-hidden="true">→</span>
+            </a>
           </p>
         )
       }

@@ -22,3 +22,20 @@ export type RouteKey = keyof typeof routes
 export const otherLang = (lang: Lang): Lang => (lang === 'en' ? 'fr' : 'en')
 
 export const url = (route: RouteKey, lang: Lang) => SITE + routes[route][lang]
+
+/** The address of one page in each language */
+export type Paths = Record<Lang, string>
+
+/**
+ * A page given either by its name in `routes` above, or by its two addresses
+ * for pages generated from a data list (the project pages).
+ */
+export type PageRoute = RouteKey | Paths
+
+export const pathsOf = (route: PageRoute): Paths => (typeof route === 'string' ? routes[route] : route)
+
+/** The addresses of a project page. `slug` comes from src/data/projects.ts. */
+export const projectPaths = (slug: string): Paths => ({
+  en: `/projects/${slug}`,
+  fr: `/fr/projets/${slug}`,
+})
