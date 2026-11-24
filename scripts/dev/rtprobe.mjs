@@ -11,8 +11,8 @@ const probe = `(async () => {
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms)); const q = (s) => document.querySelector(s); const r = {}
   await sleep(1500)
   const snap = () => ({ o1: q('#orbitDot1')?.getAttribute('cx'), d1: q('#orbit-path-draw-1')?.style.strokeDashoffset, o2: q('#orbitDot2')?.getAttribute('cx'),
-    ring: q('.review-icon-loading-circle-drawPath')?.style.strokeDashoffset, line: q('.timeline__line')?.style.strokeDashoffset, dot: q('.timeline__dot')?.getAttribute('cx'),
-    review: [...document.querySelectorAll('.cont__review-content')].findIndex((e) => e.classList.contains('review-is-active')) })
+    ring: q('.reviews__play-ring')?.style.strokeDashoffset, line: q('.timeline__line')?.style.strokeDashoffset, dot: q('.timeline__dot')?.getAttribute('cx'),
+    review: [...document.querySelectorAll('.reviews__item')].findIndex((e) => e.classList.contains('reviews__item--active')) })
   const a = snap(); await sleep(1200); const b = snap()
   r.orbit1_dot_moves = a.o1 != null && a.o1 !== b.o1
   r.orbit1_line_draws = !!a.d1 && a.d1 !== b.d1

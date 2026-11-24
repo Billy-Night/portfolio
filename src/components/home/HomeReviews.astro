@@ -23,14 +23,14 @@ const t = {
 ---
 
 <section class="sections" id="reviews">
-  <div class="cont__review">
+  <div class="reviews">
     <h2>{t.heading}</h2>
     <p>{t.intro}</p>
-    <div class="review-hover-wrap">
+    <div class="reviews__stage">
       {
         reviews.map((review) => (
-          <div class="cont__review-content">
-            <div class="review-avatar">
+          <div class="reviews__item">
+            <div class="reviews__avatar">
               <Photo
                 src={review.photo}
                 maxWidth={360}
@@ -39,9 +39,9 @@ const t = {
                 loading="lazy"
               />
             </div>
-            <div class="cont__review-text">
+            <div class="reviews__text">
               <svg
-                class="review__svg--play"
+                class="reviews__play"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 485 485"
                 fill="currentColor"
@@ -53,7 +53,7 @@ const t = {
       S125.327,30,242.5,30S455,125.327,455,242.5S359.673,455,242.5,455z"
                 />
                 <circle
-                  class="review-icon-loading-circle-drawPath"
+                  class="reviews__play-ring"
                   cx="242.5"
                   cy="242.5"
                   r="227.5"
@@ -63,7 +63,7 @@ const t = {
                 />
               </svg>
               <svg
-                class="review__svg--pause"
+                class="reviews__pause"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -93,7 +93,7 @@ const t = {
               </svg>
               {review.paragraphs[lang].map((paragraph) => <p class="max-txt-width">{paragraph}</p>)}
               <p>{review.author}</p>
-              <div class="cont__review-stars">
+              <div class="reviews__rating">
                 <img
                   class="review__stars"
                   src="/assets/icons/stars.svg"
@@ -114,25 +114,25 @@ const t = {
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .cont__review {
+  .reviews {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .review-hover-wrap {
+  .reviews__stage {
     position: relative;
     width: 100%;
     max-width: 900px;
     min-height: 700px;
   }
 
-  .review-hover-wrap:hover {
+  .reviews__stage:hover {
     cursor: pointer;
   }
 
-  .cont__review-content {
+  .reviews__item {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -145,14 +145,14 @@ const t = {
       visibility 0s linear 0.8s;
   }
 
-  .cont__review-content.review-is-active {
+  .reviews__item.reviews__item--active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .review-avatar {
+  .reviews__avatar {
     z-index: 1;
     width: 180px;
     aspect-ratio: 1 / 1;
@@ -167,7 +167,7 @@ const t = {
     backdrop-filter: var(--glass-blur);
   }
 
-  .cont__review-text {
+  .reviews__text {
     position: relative;
     z-index: 2;
     transition: var(--transition-lift);
@@ -185,7 +185,7 @@ const t = {
     padding: var(--space-6);
   }
 
-  .review__svg--play {
+  .reviews__play {
     width: var(--icon-size-md);
     height: var(--icon-size-md);
     position: absolute;
@@ -195,11 +195,11 @@ const t = {
     fill: var(--body-colour);
   }
 
-  .review__svg--play.play-icon-is-hidden {
+  .reviews__play.reviews__play--hidden {
     opacity: 0;
   }
 
-  .review-icon-loading-circle-drawPath {
+  .reviews__play-ring {
     fill: none;
     stroke: var(--bright-gold);
     stroke-width: 30;
@@ -208,7 +208,7 @@ const t = {
     transform-origin: 242.5px 242.5px;
   }
 
-  .review__svg--pause {
+  .reviews__pause {
     width: var(--icon-size-md);
     height: var(--icon-size-md);
     position: absolute;
@@ -218,43 +218,43 @@ const t = {
     fill: var(--body-colour);
   }
 
-  .review__svg--pause.pause-icon-is-active {
+  .reviews__pause.reviews__pause--active {
     opacity: 1;
   }
 
-  .cont__review-stars {
+  .reviews__rating {
     padding: 0px;
   }
 
   @media screen and (max-width: 600px) {
-    .review-hover-wrap {
+    .reviews__stage {
       min-height: 800px;
     }
   }
 
   @media screen and (max-width: 400px) {
-    .review-hover-wrap {
+    .reviews__stage {
       min-height: 1000px;
     }
   }
 
   @media screen and (max-width: 700px) {
-    .review-avatar {
+    .reviews__avatar {
       width: 150px;
       left: 50%;
       transform: translate(-50%);
     }
 
-    .cont__review-content {
+    .reviews__item {
       padding-top: var(--space-11);
       padding-left: 0;
     }
 
-    .cont__review-text {
+    .reviews__text {
       padding: var(--space-5);
     }
 
-    .cont__review h2 {
+    .reviews h2 {
       text-align: center;
     }
   }

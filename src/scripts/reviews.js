@@ -1,9 +1,9 @@
 // Homepage reviews: rotate every 5 seconds, pause on hover or click, and draw the progress ring.
 // Used by src/components/home/HomeReviews.astro.
 
-const clientReviews = document.querySelectorAll('.cont__review-content')
-const reviewPauseIcon = document.querySelectorAll('.review__svg--pause')
-const reviewPlayIcon = document.querySelectorAll('.review__svg--play')
+const clientReviews = document.querySelectorAll('.reviews__item')
+const reviewPauseIcon = document.querySelectorAll('.reviews__pause')
+const reviewPlayIcon = document.querySelectorAll('.reviews__play')
 
 if (clientReviews.length > 0) {
   let currentReview = 0
@@ -11,7 +11,7 @@ if (clientReviews.length > 0) {
 
   const runReviewIconAnimation = (parentReview, duration = 5000) => {
     const drawPath = parentReview.querySelector(
-      '.review-icon-loading-circle-drawPath',
+      '.reviews__play-ring',
     )
 
     if (!drawPath) return null
@@ -68,7 +68,7 @@ if (clientReviews.length > 0) {
     }
   }
 
-  clientReviews[0].classList.add('review-is-active')
+  clientReviews[0].classList.add('reviews__item--active')
   const duration = 5000
 
   let reviewIconAnimation = runReviewIconAnimation(
@@ -86,8 +86,8 @@ if (clientReviews.length > 0) {
     clearTimeout(timeout) // Clear any existing timeout to avoid multiple timers running
     timerStartedAt = performance.now()
 
-    reviewPauseIcon[currentReview].classList.remove('pause-icon-is-active')
-    reviewPlayIcon[currentReview].classList.remove('play-icon-is-hidden')
+    reviewPauseIcon[currentReview].classList.remove('reviews__pause--active')
+    reviewPlayIcon[currentReview].classList.remove('reviews__play--hidden')
 
     timeout = setTimeout(() => {
       isRunning = false
@@ -109,11 +109,11 @@ if (clientReviews.length > 0) {
   function nextReview() {
     reviewIconAnimation?.destroy()
     remaining = duration
-    clientReviews[currentReview].classList.remove('review-is-active')
+    clientReviews[currentReview].classList.remove('reviews__item--active')
 
     currentReview = (currentReview + 1) % clientReviews.length
 
-    clientReviews[currentReview].classList.add('review-is-active')
+    clientReviews[currentReview].classList.add('reviews__item--active')
 
     reviewIconAnimation = runReviewIconAnimation(
       reviewPlayIcon[currentReview],
@@ -122,8 +122,8 @@ if (clientReviews.length > 0) {
   }
 
   const stop = () => {
-    reviewPlayIcon[currentReview].classList.add('play-icon-is-hidden')
-    reviewPauseIcon[currentReview].classList.add('pause-icon-is-active')
+    reviewPlayIcon[currentReview].classList.add('reviews__play--hidden')
+    reviewPauseIcon[currentReview].classList.add('reviews__pause--active')
     stopTimer()
     reviewIconAnimation?.pause()
   }
@@ -139,7 +139,7 @@ if (clientReviews.length > 0) {
   ).matches
   let isPaused = reduceMotion
 
-  const container = document.querySelector('.review-hover-wrap')
+  const container = document.querySelector('.reviews__stage')
   if (container) {
     container.addEventListener('mouseenter', stop)
     container.addEventListener('mouseleave', () => {

@@ -88,7 +88,7 @@ f.addEventListener('load', async () => {
   for (const [i, b] of all('.btn-expand-process').entries()) { b.click(); await sleep(300); await step('phase click ' + i, d) }
   const firstPhase = d.querySelector('.btn-expand-process'); if (firstPhase) { firstPhase.click(); await sleep(300); await step('phase click 0 again', d) }
   // reviews
-  const rev = d.querySelector('.review-hover-wrap')
+  const rev = d.querySelector('.reviews__stage')
   if (rev) {
     ev(rev, 'mouseenter'); await sleep(200); await step('reviews hover', d)
     rev.click(); await sleep(200); await step('reviews click (pause)', d)
