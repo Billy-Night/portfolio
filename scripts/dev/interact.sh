@@ -85,8 +85,8 @@ f.addEventListener('load', async () => {
   for (const [i, c] of all('.faq__item').entries()) { if (i > 3) break; ev(c, 'mouseenter'); await sleep(100); await step('faq hover ' + i, d) }
   for (const [i, b] of all('.faq__button').entries()) { if (i > 3) break; b.click(); await sleep(100); await step('faq click ' + i, d) }
   // about process phases
-  for (const [i, b] of all('.btn-expand-process').entries()) { b.click(); await sleep(300); await step('phase click ' + i, d) }
-  const firstPhase = d.querySelector('.btn-expand-process'); if (firstPhase) { firstPhase.click(); await sleep(300); await step('phase click 0 again', d) }
+  for (const [i, b] of all('.process__toggle').entries()) { b.click(); await sleep(300); await step('phase click ' + i, d) }
+  const firstPhase = d.querySelector('.process__toggle'); if (firstPhase) { firstPhase.click(); await sleep(300); await step('phase click 0 again', d) }
   // reviews
   const rev = d.querySelector('.reviews__stage')
   if (rev) {
