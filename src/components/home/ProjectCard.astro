@@ -41,10 +41,11 @@ const headingReverse = !reverse && 'project-card__heading--align-right'
   <Photo src={photo} maxWidth={photoMaxWidth} alt={photoAlt} loading="lazy" />
 </article>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md
      They style the frame for both kinds of card. The glass panel and the technology tags are
      shared with the project pages, so those rules are in src/styles/. -->
-<style is:global>
+<style>
   .project-card__category {
     color: var(--sub-heading-colour);
     font-size: var(--text-base);
@@ -52,7 +53,7 @@ const headingReverse = !reverse && 'project-card__heading--align-right'
     margin-bottom: var(--space-1);
   }
 
-  .project-card__heading--align-right {
+  :global(.project-card__heading--align-right) {
     text-align: right;
   }
 
@@ -67,7 +68,7 @@ const headingReverse = !reverse && 'project-card__heading--align-right'
     margin-bottom: var(--space-project-gap);
   }
 
-  .projects img {
+  :global(.projects) :global(img) {
     width: 100%;
     height: auto;
     margin: 8% 0 8% 0;
@@ -77,7 +78,7 @@ const headingReverse = !reverse && 'project-card__heading--align-right'
     padding: 1rem;
   }
 
-  .project-card--reverse img {
+  .project-card--reverse :global(img) {
     border-left: 0px;
     border-right: 1px solid var(--gold);
   }
@@ -90,7 +91,7 @@ const headingReverse = !reverse && 'project-card__heading--align-right'
       gap: 1rem;
     }
 
-    .projects img {
+    :global(.projects) :global(img) {
       grid-column: 1/6;
       grid-row: 1/2;
     }
@@ -102,24 +103,24 @@ const headingReverse = !reverse && 'project-card__heading--align-right'
       text-align: left;
     }
 
-    .projects .project-card--reverse .project-card__text {
+    :global(.projects) .project-card--reverse .project-card__text {
       grid-column: 1/7;
       order: 2;
       text-align: left;
     }
 
-    .projects .project-card--reverse img {
+    :global(.projects) .project-card--reverse :global(img) {
       grid-column: 6/11;
       grid-row: 1/2;
     }
 
-    .projects .project-card--reverse ul {
+    :global(.projects) .project-card--reverse :global(ul) {
       justify-content: flex-start;
     }
   }
 
   @media screen and (max-width: 800px) {
-    .project-card__heading--align-right {
+    :global(.project-card__heading--align-right) {
       text-align: left;
     }
   }

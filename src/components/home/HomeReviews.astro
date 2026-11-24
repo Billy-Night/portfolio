@@ -112,8 +112,9 @@ const t = {
   import '../../scripts/reviews.js'
 </script>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .reviews {
     position: relative;
     display: flex;
@@ -254,7 +255,7 @@ const t = {
       padding: var(--space-5);
     }
 
-    .reviews h2 {
+    .reviews :global(h2) {
       text-align: center;
     }
   }

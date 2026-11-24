@@ -37,8 +37,9 @@ const summaryPieces = typeof summary === 'string' ? [summary] : summary
   </Fragment>
 </ProjectCard>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .project-card__tech-heading {
     font-size: var(--title-6);
     margin-bottom: var(--space-2);

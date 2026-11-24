@@ -63,20 +63,21 @@ const t = {
   }
 </ProjectCard>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   /* Client project cards (src/components/home/ClientProjectCard.astro) */
   .project-card__points {
     margin: var(--space-4) 0 var(--space-5);
   }
 
-  .project-card__points dd {
+  .project-card__points :global(dd) {
     margin: 0 0 var(--space-4);
     max-width: 65ch;
     line-height: var(--leading-body);
   }
 
-  .project-card__points dd:last-child {
+  .project-card__points :global(dd:last-child) {
     margin-bottom: 0;
   }
 
