@@ -21,8 +21,6 @@
   );
 
   --metal-light: #75685b;
-  --metal-base: #353e43;
-  --metal-dark: #1b2024;
 
   /* element colours */
   --page-background: var(--navy);
