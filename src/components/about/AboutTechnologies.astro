@@ -76,8 +76,9 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
-<style is:global>
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md -->
+<style>
   .technologies__heading {
     display: flex;
     flex-direction: column;
@@ -111,7 +112,7 @@ const t = {
     flex-wrap: wrap;
   }
 
-  .technologies__items > span {
+  .technologies__items > :global(span) {
     background-color: var(--gold);
     padding: var(--space-3);
     border-radius: var(--corner-rad);
