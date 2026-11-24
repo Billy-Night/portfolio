@@ -46,6 +46,7 @@
   --subHeading: 'MgDisplay-Regular', sans-serif;
 
   --corner-rad: 5px;
+  --corner-rad-lg: 20px; /* the rounded frame around screenshots */
 
   /* Micro spacing (typography & UI) */
   --space-1: 0.25rem; /* 4px */
@@ -104,6 +105,27 @@
 
   /* Icon size variables */
   --icon-size-md: 24px;
+  /* Glass panels: the translucent boxes behind text (navigation, project
+     cards, reviews, facts box). Pick one background, then add the border,
+     shadow and blur that go with it. */
+  --glass-bg-navy: rgba(18, 38, 62, 0.55); /* on the page background */
+  --glass-bg-dark: rgba(33, 29, 27, 0.55); /* navigation and menus */
+  --glass-bg-light: rgba(255, 255, 255, 0.06); /* a lighter panel, as on the reviews */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.14);
+  --glass-border-faint: 1px solid rgba(255, 255, 255, 0.08);
+  --glass-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  --glass-blur: blur(10px) saturate(100%);
+  --glass-blur-rich: blur(10px) saturate(120%); /* slightly stronger colours behind the panel */
+
+  /* A plain drop shadow, without the glass highlight */
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.28);
+
+  /* The small lift used when hovering a panel */
+  --transition-lift:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
 }
 
 @font-face {
@@ -404,13 +426,11 @@ a {
 }
 
 .nav__glass-back {
-  background: rgba(33, 29, 27, 0.55);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
+  background: var(--glass-bg-dark);
+  transition: var(--transition-lift);
+  border: var(--glass-border-faint);
+  -webkit-backdrop-filter: var(--glass-blur-rich);
+  backdrop-filter: var(--glass-blur-rich);
 }
 
 .trans-caps {
@@ -816,33 +836,27 @@ a {
 /* Backgrounds */
 
 .glass__back {
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: var(--transition-lift);
+  background-color: var(--glass-bg-light);
+  border: var(--glass-border);
   border-radius: var(--corner-rad);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: var(--glass-shadow);
   -webkit-backdrop-filter: blur(15px) saturate(100%);
   backdrop-filter: blur(15px) saturate(100%);
 }
 
 .box__shadow {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
-  -webkit-backdrop-filter: blur(10px) saturate(100%);
-  backdrop-filter: blur(10px) saturate(100%);
+  box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
 }
 
 .dark__glass-back {
-  background: rgba(33, 29, 27, 0.55);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
+  background: var(--glass-bg-dark);
+  transition: var(--transition-lift);
+  border: var(--glass-border-faint);
+  -webkit-backdrop-filter: var(--glass-blur-rich);
+  backdrop-filter: var(--glass-blur-rich);
 }
 
 /* navbar */
@@ -1057,19 +1071,17 @@ a:hover .social__icons {
 }
 
 .project__glass-back {
-  background: rgba(18, 38, 62, 0.55);
+  background: var(--glass-bg-navy);
   padding: var(--space-5);
   color: var(--body-colour);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
+  transition: var(--transition-lift);
   border-radius: var(--corner-rad);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: var(--glass-border-faint);
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: var(--glass-blur-rich);
+  backdrop-filter: var(--glass-blur-rich);
 }
 
 .project-tech-list {
@@ -1096,7 +1108,7 @@ a:hover .social__icons {
   margin: 8% 0 8% 0;
   border-left: 1px solid var(--gold);
   border-top: 1px solid var(--gold);
-  border-radius: 20px;
+  border-radius: var(--corner-rad-lg);
   padding: 1rem;
 }
 
@@ -1155,8 +1167,10 @@ a:hover .social__icons {
   margin: var(--space-4) 0 var(--space-5);
 }
 
-/* "The problem" and "The result": the look of the small headings on the site */
-.project-card__points dt {
+/* Small gold labels: "The problem" and "The result" on the homepage cards,
+   and the labels in the facts box on a project page */
+.project-card__points dt,
+.project-page__facts dt {
   font-family: var(--subHeading);
   font-size: var(--title-6);
   line-height: var(--leading-title);
@@ -1231,7 +1245,7 @@ a:hover .social__icons {
   margin: var(--space-7) auto;
   border-left: 1px solid var(--gold);
   border-top: 1px solid var(--gold);
-  border-radius: 20px;
+  border-radius: var(--corner-rad-lg);
   padding: 1rem;
 }
 
@@ -1273,8 +1287,8 @@ a:hover .social__icons {
 
 .project-page__figures li {
   padding: var(--space-5);
-  background: rgba(18, 38, 62, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg-navy);
+  border: var(--glass-border-faint);
   border-radius: var(--corner-rad);
 }
 
@@ -1293,17 +1307,6 @@ a:hover .social__icons {
 
 .project-page__facts dl {
   margin: 0;
-}
-
-/* The same small-heading look as "The problem" and "The result" on the homepage cards */
-.project-page__facts dt {
-  font-family: var(--subHeading);
-  font-size: var(--title-6);
-  line-height: var(--leading-title);
-  letter-spacing: 3%;
-  text-transform: uppercase;
-  color: var(--subHeading-colour);
-  margin-bottom: var(--space-1);
 }
 
 .project-page__facts dd {
@@ -1369,7 +1372,7 @@ a:hover .social__icons {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  box-shadow: var(--shadow-soft);
 }
 
 .project-review blockquote {
@@ -1996,7 +1999,7 @@ a:hover .social__icons {
 
 .wid__text {
   background-color: var(--cream);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: var(--glass-border-faint);
   border-radius: var(--corner-rad);
   text-align: center;
   padding: clamp(var(--space-4), 4vw, var(--space-10));
@@ -2169,9 +2172,7 @@ a:hover .social__icons {
   grid-template-columns: repeat(2, 1fr);
   border: 2px solid white;
   border-radius: var(--corner-rad);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: var(--glass-shadow);
 }
 
 @media screen and (max-width: 848px) {
@@ -2556,8 +2557,8 @@ a:hover .social__icons {
   border-radius: var(--corner-rad);
   position: relative;
   margin-top: clamp(3rem, 9.6vw, 16rem);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: var(--glass-blur-rich);
+  backdrop-filter: var(--glass-blur-rich);
 }
 
 .services-intro-word {
@@ -2776,18 +2777,14 @@ a:hover .social__icons {
 
 .service-card {
   position: relative;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
+  transition: var(--transition-lift);
   height: 350px;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background-color: var(--glass-bg-light);
+  border: var(--glass-border);
   border-radius: var(--corner-rad);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  -webkit-backdrop-filter: blur(10px) saturate(100%);
-  backdrop-filter: blur(10px) saturate(100%);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3236,9 +3233,7 @@ a:hover .social__icons {
   justify-content: center;
   align-items: center;
   border-radius: var(--corner-rad);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: var(--glass-shadow);
 }
 
 .addons-performance-img-frame img {
@@ -3309,18 +3304,14 @@ a:hover .social__icons {
 
 .task-card {
   position: relative;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
+  transition: var(--transition-lift);
   height: 200px;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background-color: var(--glass-bg-light);
+  border: var(--glass-border);
   border-radius: var(--corner-rad);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  -webkit-backdrop-filter: blur(10px) saturate(100%);
-  backdrop-filter: blur(10px) saturate(100%);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3400,9 +3391,7 @@ a:hover .social__icons {
   grid-template-columns: repeat(2, 1fr);
   border: 2px solid white;
   border-radius: var(--corner-rad);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: var(--glass-shadow);
 }
 
 .pricing-card {
@@ -3484,17 +3473,13 @@ a:hover .social__icons {
 .cont__review-text {
   position: relative;
   z-index: 2;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: var(--transition-lift);
+  background-color: var(--glass-bg-light);
+  border: var(--glass-border);
   border-radius: var(--corner-rad);
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  -webkit-backdrop-filter: blur(10px) saturate(100%);
-  backdrop-filter: blur(10px) saturate(100%);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3513,11 +3498,9 @@ a:hover .social__icons {
   position: absolute;
   top: 0;
   left: 0;
-  box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  -webkit-backdrop-filter: blur(10px) saturate(100%);
-  backdrop-filter: blur(10px) saturate(100%);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
 }
 
 @media screen and (max-width: 700px) {
