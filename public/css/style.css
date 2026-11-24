@@ -39,6 +39,16 @@
 
    Each section below starts with a line of = signs, so searching for its
    number and name (for example "6. Homepage") jumps straight to it.
+
+   Screen widths for new rules. The older rules use many different widths;
+   for anything new, pick from these three so the layouts change together:
+     @media (max-width: 600px)    phones
+     @media (max-width: 800px)    tablets and below: the menu becomes a button
+     @media (max-width: 1100px)   small laptops and below
+   A "from this width up" rule starts one pixel later (min-width: 801px), so
+   it never applies at the same time as its "up to" partner.
+   A width cannot be stored as a token: browsers do not allow variables
+   inside @media.
    ========================================================================== */
 
 /* ==========================================================================
@@ -1180,7 +1190,7 @@ a:hover .social__icons {
   }
 }
 
-@media screen and (max-width: 698px) {
+@media screen and (max-width: 700px) {
   .hero__title {
     display: block;
     line-height: 0.8;
@@ -1249,7 +1259,8 @@ a:hover .social__icons {
   fill: var(--metal-light);
 }
 
-@media (min-width: 820px) and (max-width: 1119px) {
+/* From 822px: up to 821px the phone layout further down sets this position */
+@media (min-width: 822px) and (max-width: 1119px) {
   .hero-small-circle {
     left: 45%;
   }
@@ -1840,7 +1851,8 @@ a:hover .social__icons {
   border-right: 1px solid var(--gold);
 }
 
-@media (min-width: 800px) {
+/* From 801px, so it never applies together with the 'up to 800px' rules below */
+@media (min-width: 801px) {
   .project-info-container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -3798,7 +3810,7 @@ a:hover .social__icons {
   opacity: 60%;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 767px) {
   .ver-switcher-btn {
     padding-left: 0px;
     padding-top: 0px;
