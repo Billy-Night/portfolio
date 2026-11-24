@@ -26,7 +26,7 @@ const probe = `(async () => {
   r.timeline_steps_revealed = document.querySelectorAll('.timeline__step-heading.timeline__step-heading--reveal').length
   r.header_small_after_scroll = q('.header').classList.contains('small-nav')
   if (a.review >= 0) { scrollTo({ top: 0, behavior: 'instant' }); await sleep(4200); r.review_auto_advances = snap().review !== a.review } else r.review_auto_advances = 'n/a'
-  r.title_measure_label = q('.type-measure__label')?.textContent
+  r.title_measure_label = q('.hero__measure-label')?.textContent
   return JSON.stringify(r)
 })()`
 try {

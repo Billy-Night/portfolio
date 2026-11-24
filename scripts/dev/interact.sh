@@ -27,7 +27,7 @@ function dump(d) {
     let s = e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + '.' + [...e.classList].filter((c) => !c.startsWith('astro-')).sort().join('.')
     const st = e.getAttribute('style'); if (st && e.tagName.toLowerCase() !== 'svg') s += ' [style=' + st.replace(/\s+/g, ' ') + ']'
     if (e.tagName === 'IMG') s += ' [src=' + e.getAttribute('src') + ']'
-    if (e.tagName === 'BUTTON' || e.classList.contains('type-measure__label')) s += ' [text=' + e.textContent.trim().replace(/\s+/g, ' ').slice(0, 40) + ']'
+    if (e.tagName === 'BUTTON' || e.classList.contains('hero__measure-label')) s += ' [text=' + e.textContent.trim().replace(/\s+/g, ' ').slice(0, 40) + ']'
     return s
   }).filter(Boolean)
 }
