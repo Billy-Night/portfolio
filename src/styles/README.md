@@ -21,10 +21,9 @@ The number at the start of each name sets the order. The groups:
 | `10` to `18` | Components used on more than one page: buttons, bullet lists, cookie banner, header, contact call to action, hero, timeline, image and text rows |
 | `20` to `23` | Homepage |
 | `30` | Project pages |
-| `40` to `42` | About page |
+| `40`, `41` | About page: process phases and technologies |
 | `50` to `56` | Services page |
-| `60`, `61` | Landes page |
-| `70` | Contact page |
+| `60` | Landes page: hero, phone, mission and approach |
 | `80` | Legal pages |
 | `90` | Reduced motion. It must stay last |
 
@@ -32,11 +31,14 @@ To style a new component, add a file in the right group with the next free numbe
 
 ## Styles inside a component
 
-A component can also hold its own styles, in a `<style is:global>` block at the end of its `.astro` file. The footer does this (`src/components/Footer.astro`), as a trial. Astro then adds those styles only to the pages that use the component, after the main stylesheet.
+A component can also hold its own styles, in a `<style is:global>` block at the end of its `.astro` file. Astro then adds those styles only to the pages that use the component, after the main stylesheet. So far these do: `Footer.astro`, `contact/ContactForm.astro`, `about/AboutLocation.astro` and `landes/LandesChallenges.astro`. The rest are being moved group by group.
 
 - `is:global` keeps the rules unscoped, so they behave exactly as they would in this folder.
 - Astro minifies these styles. `cssTarget` in `astro.config.mjs` stops it removing the `-webkit-backdrop-filter` lines that Safari before version 18 needs. Do not remove that setting.
+- Only move a rule into a component if every class in it belongs to that component alone. A rule for a shared class (`.layout-two-column`, `.glass__back`, a button) must stay in this folder, or the other pages that use the class lose it.
+- Astro's minifier rewrites some values, for example `background: none` becomes `background: 0 0`. That is the same thing written shorter.
 - Tokens, base elements, utilities and anything shared by several components stay in this folder.
+- The legal pages' styles (`80-legal.css`) stay here too: two pages share them and there is no component to hold them.
 
 ## Tokens
 
