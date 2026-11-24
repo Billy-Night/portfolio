@@ -1,6 +1,7 @@
 ---
 // One project on the homepage. The text comes from src/data/projects.ts.
 import Photo from '../Photo.astro'
+import BulletList from '../BulletList.astro'
 import type { Lang } from '../../i18n/routes'
 import type { Project } from '../../data/projects'
 
@@ -38,9 +39,7 @@ const summaryPieces = typeof summary === 'string' ? [summary] : summary
           <>
             <p>{project.tasks.intro[lang]}</p>
             <div class="project-task-list">
-              <ul>
-                {project.tasks.items[lang].map((item) => <li>{item}</li>)}
-              </ul>
+              <BulletList items={project.tasks.items[lang]} />
             </div>
           </>
         )

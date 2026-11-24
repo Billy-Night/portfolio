@@ -1,0 +1,31 @@
+---
+// A list with the gold diamond as its bullet. Each bullet fades in the first
+// time it scrolls into view (src/scripts/bullets.js). Use it wherever the site
+// needs a bullet list, so they all look and behave the same.
+import BulletIcon from './BulletIcon.astro'
+
+interface Props {
+  items: string[]
+  /** Replaces the default 'bullet-list' class, for a list with its own layout (the package cards) */
+  class?: string
+}
+
+const { items, class: className = 'bullet-list' } = Astro.props
+---
+
+<ul class={className}>
+  {
+    items.map((item) => (
+      <li>
+        <div class="bullet-point-container">
+          <BulletIcon class="bullet-point-svg" />
+          <span>{item}</span>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<script>
+  import '../scripts/bullets.js'
+</script>

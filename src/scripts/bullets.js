@@ -1,5 +1,5 @@
-// Package cards (services page): animate each bullet in the first time it scrolls into view.
-// Used by src/components/services/PackageFeatures.astro.
+// Bullet lists: animate each bullet in the first time it scrolls into view.
+// Used by src/components/BulletList.astro.
 
 const bulletPackage = document.querySelectorAll('.bullet-point-container')
 

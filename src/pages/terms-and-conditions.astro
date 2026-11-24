@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
+import BulletList from '../components/BulletList.astro'
 import CookieBanner from '../components/CookieBanner.astro'
 
 // No structured data: this page is marked noindex, like the French one (fr/cgv.astro)
@@ -57,10 +58,12 @@ import CookieBanner from '../components/CookieBanner.astro'
         293 B of the French General Tax Code).
       </p>
       <p>Unless otherwise agreed in writing, payments are made as follows:</p>
-      <ul>
-        <li>50% upon acceptance of the quotation</li>
-        <li>50% upon delivery of the project</li>
-      </ul>
+      <BulletList
+        items={[
+          "50% upon acceptance of the quotation",
+          "50% upon delivery of the project",
+        ]}
+      />
       <p>
         Invoices must be paid within 14 days from the date of issue, by bank
         transfer.
@@ -124,18 +127,22 @@ import CookieBanner from '../components/CookieBanner.astro'
         annual plans.
       </p>
       <p>Unless otherwise stated, these plans include:</p>
-      <ul>
-        <li>Technical updates, including CMS, themes, and plugins</li>
-        <li>Backups</li>
-        <li>Security monitoring</li>
-        <li>Performance checks</li>
-      </ul>
+      <BulletList
+        items={[
+          "Technical updates, including CMS, themes, and plugins",
+          "Backups",
+          "Security monitoring",
+          "Performance checks",
+        ]}
+      />
       <p>They do not include:</p>
-      <ul>
-        <li>Content modifications</li>
-        <li>Website enhancements</li>
-        <li>The addition of new features</li>
-      </ul>
+      <BulletList
+        items={[
+          "Content modifications",
+          "Website enhancements",
+          "The addition of new features",
+        ]}
+      />
       <p>
         Any request outside this scope will be subject to an additional
         quotation.
@@ -161,15 +168,14 @@ import CookieBanner from '../components/CookieBanner.astro'
         performance of services.
       </p>
       <p>Liability cannot be held in cases of:</p>
-      <ul>
-        <li>Improper use of the website by the client</li>
-        <li>Modifications carried out by a third party</li>
-        <li>
-          Failures or interruptions of services related to external providers,
-          including hosting providers, registrars, plugins, etc.
-        </li>
-        <li>Temporary unavailability of the website beyond his control</li>
-      </ul>
+      <BulletList
+        items={[
+          "Improper use of the website by the client",
+          "Modifications carried out by a third party",
+          "Failures or interruptions of services related to external providers, including hosting providers, registrars, plugins, etc.",
+          "Temporary unavailability of the website beyond his control",
+        ]}
+      />
     </section>
 
     <section id="cancellation">

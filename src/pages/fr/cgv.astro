@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import Header from '../../components/Header.astro'
+import BulletList from '../../components/BulletList.astro'
 import CookieBanner from '../../components/CookieBanner.astro'
 
 const jsonLd = []
@@ -65,10 +66,12 @@ const jsonLd = []
       <p>
         Sauf accord contraire écrit, les paiements s’effectuent comme suit :
       </p>
-      <ul>
-        <li>50% à la signature du devis</li>
-        <li>50% à la livraison du projet</li>
-      </ul>
+      <BulletList
+        items={[
+          "50% à la signature du devis",
+          "50% à la livraison du projet",
+        ]}
+      />
       <p>
         Les factures doivent être réglées sous 14 jours à compter de leur date
         d’émission, par virement bancaire.
@@ -134,18 +137,22 @@ const jsonLd = []
         annuels.
       </p>
       <p>Ces forfaits incluent, sauf mention contraire :</p>
-      <ul>
-        <li>les mises à jour techniques (CMS, thèmes, extensions),</li>
-        <li>les sauvegardes,</li>
-        <li>la surveillance de sécurité,</li>
-        <li>les vérifications de performance.</li>
-      </ul>
+      <BulletList
+        items={[
+          "les mises à jour techniques (CMS, thèmes, extensions),",
+          "les sauvegardes,",
+          "la surveillance de sécurité,",
+          "les vérifications de performance.",
+        ]}
+      />
       <p>Ils n’incluent pas :</p>
-      <ul>
-        <li>les modifications de contenu,</li>
-        <li>les évolutions du site,</li>
-        <li>l’ajout de nouvelles fonctionnalités.</li>
-      </ul>
+      <BulletList
+        items={[
+          "les modifications de contenu,",
+          "les évolutions du site,",
+          "l’ajout de nouvelles fonctionnalités.",
+        ]}
+      />
       <p>
         Toute demande hors périmètre fera l’objet d’un devis complémentaire.
       </p>
@@ -171,17 +178,14 @@ const jsonLd = []
         de ses prestations.
       </p>
       <p>Sa responsabilité ne saurait être engagée en cas de :</p>
-      <ul>
-        <li>Mauvaise utilisation du site par le client,</li>
-        <li>Modifications effectuées par un tiers,</li>
-        <li>
-          défaillances ou interruptions de services liés à des prestataires
-          externes (hébergeurs, registrars, extensions, etc.)
-        </li>
-        <li>
-          indisponibilité temporaire du site indépendante de sa volonté.
-        </li>
-      </ul>
+      <BulletList
+        items={[
+          "Mauvaise utilisation du site par le client,",
+          "Modifications effectuées par un tiers,",
+          "défaillances ou interruptions de services liés à des prestataires externes (hébergeurs, registrars, extensions, etc.)",
+          "indisponibilité temporaire du site indépendante de sa volonté.",
+        ]}
+      />
     </section>
 
     <section id="cancellation">

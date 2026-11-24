@@ -753,6 +753,25 @@ a {
   fill: var(--gold);
 }
 
+/* A plain bullet list (src/components/BulletList.astro). The package cards on
+   the services page give their list its own class and layout instead. */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* Keep the diamond beside the first line when the text runs to several lines */
+.bullet-list .bullet-point-container {
+  align-items: flex-start;
+}
+
+.bullet-list span {
+  line-height: var(--leading-body);
+}
+
 /* Global text animations:  */
 
 /* Cookie banner */
