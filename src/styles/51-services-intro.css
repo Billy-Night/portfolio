@@ -1,0 +1,45 @@
+/* Services page: introduction with the large title (ServicesIntro.astro) */
+
+.services-intro-section {
+  padding: var(--padding-hor-section) var(--page-gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-lx);
+}
+
+.services__hero-text {
+  max-width: var(--sec-width-lg);
+  margin: auto var(--page-gutter);
+  text-align: center;
+}
+
+.services__hero-text h1 {
+  font-size: var(--title-hero-xl);
+  font-family: var(--display);
+  color: var(--brightGold);
+  margin-bottom: var(--space-5);
+  text-transform: uppercase;
+}
+
+.services__hero-sub-heading {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services__hero-sub-heading h2 {
+  font-family: var(--sans);
+  font-size: var(--title-6);
+  color: var(--body-colour);
+  text-transform: none;
+}
+
+.services__hero-link {
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 62px;
+}

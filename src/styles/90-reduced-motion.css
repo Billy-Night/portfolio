@@ -1,0 +1,27 @@
+/* Reduced motion. Keep this file last: its rules must come after the ones they switch off */
+
+/* Reduced motion
+   For visitors who have asked their device to reduce motion: nothing moves on
+   its own and nothing slides in. Content still fades in, and hover and click
+   effects stay. The orbit and the review slider are handled in their scripts
+   (src/scripts/heroTitle.js and reviews.js). */
+@media (prefers-reduced-motion: reduce) {
+  .home-services__circle,
+  .svg--pulse,
+  .phase__fade-line {
+    animation: none;
+  }
+
+  /* Timeline headings appear in place instead of rising */
+  .reveal-text span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Sections and package bullet points fade in without sliding up */
+  .sections--hidden,
+  .bullet-point-container.is-waiting {
+    transform: none;
+  }
+}

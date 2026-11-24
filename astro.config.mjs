@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config'
 import { cp } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
+import { buildStylesheet, stylesDir } from './scripts/build-styles.mjs'
 
 /**
  * Photos live in src/assets/images/ and are optimised by Astro, which serves
@@ -27,6 +28,32 @@ function legacyImageUrls() {
   }
 }
 
+/**
+ * The stylesheet is written as separate files in src/styles/ and served as
+ * one file, public/css/style.css. This joins them (scripts/build-styles.mjs)
+ * when a build or dev session starts, and in dev again each time one of the
+ * files is saved, then reloads the page.
+ *
+ * @returns {import('astro').AstroIntegration}
+ */
+function stylesheet() {
+  return {
+    name: 'stylesheet',
+    hooks: {
+      'astro:config:setup': () => {
+        buildStylesheet()
+      },
+      'astro:server:setup': ({ server }) => {
+        server.watcher.add(stylesDir)
+        server.watcher.on('all', (_event, file) => {
+          if (!file.startsWith(stylesDir) || !file.endsWith('.css')) return
+          if (buildStylesheet()) server.ws.send({ type: 'full-reload' })
+        })
+      },
+    },
+  }
+}
+
 export default defineConfig({
   site: 'https://www.billynightingale.com',
   // Keep URLs identical to the pre-Astro site: /about, /fr/a-propos, /fr/
@@ -34,5 +61,5 @@ export default defineConfig({
   build: { format: 'preserve' }, // about.astro -> about.html, fr/index.astro -> fr/index.html
   // Keep HTML output readable/diffable during the 1:1 port
   compressHTML: false,
-  integrations: [legacyImageUrls()],
+  integrations: [stylesheet(), legacyImageUrls()],
 })

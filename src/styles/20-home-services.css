@@ -1,0 +1,81 @@
+/* Homepage: services circle (HomeServices.astro) */
+
+.layout-6x6-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: var(--gap-sm);
+}
+
+.home-services-grid {
+  width: min(100%, 860px);
+  margin-inline: auto;
+  grid-template-areas:
+    '. . development development . .'
+    '. img img img img .'
+    'design img img img img seo'
+    'design img img img img seo'
+    '. img img img img .'
+    '. . automation automation . .';
+}
+
+.home-services-development {
+  grid-area: development;
+}
+
+.home-services-seo {
+  grid-area: seo;
+  min-width: 72px;
+}
+
+.home-services-design {
+  grid-area: design;
+  min-width: 72px;
+}
+
+.home-services-automation {
+  grid-area: automation;
+}
+
+.home-services-img {
+  grid-area: img;
+}
+
+/* The four words around the circle are labels, not section headings, so they
+   are paragraphs styled like an <h2>. */
+.home-services__label {
+  margin: 0;
+  font-weight: 400;
+  font-size: var(--title-2);
+  line-height: var(--leading-title);
+  font-family: var(--subHeading);
+  letter-spacing: 4%;
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
+}
+
+.home-services__circle {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  display: block;
+
+  animation: gentle-rotate 20s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes gentle-rotate {
+  0%,
+  40% {
+    transform: rotate(0deg);
+  }
+
+  50%,
+  90% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

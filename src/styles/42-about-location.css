@@ -1,0 +1,59 @@
+/* About page: location (AboutLocation.astro) */
+
+.abt-loc__heading-cont {
+  padding-bottom: var(--space-6);
+}
+
+.abt-per__heading-cont {
+  padding-bottom: var(--space-6);
+  text-align: right;
+}
+
+.per__title-marg {
+  margin-top: var(--gap-xxl);
+}
+
+@media (min-width: 768px) and (max-width: 1860px) {
+  .per__txt-mar {
+    margin-right: 10%;
+    text-align: left;
+  }
+}
+
+.txt-normal-flow {
+  transform: translateX(-20%) translateY(10%);
+}
+
+.perso__content-reversed {
+  grid-template-areas: 'text image';
+}
+
+.txt-reversed {
+  grid-area: text;
+  transform: translateX(20%) translateY(10%);
+}
+
+.img-reversed {
+  grid-area: image;
+}
+
+@media screen and (max-width: 767px) {
+  .perso__content-reversed {
+    grid-template-areas: 'image' 'text';
+  }
+  .layout-two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-two-column-txt {
+    margin-top: 0%;
+  }
+
+  .txt-normal-flow {
+    transform: translateX(0%) translateY(-10%);
+  }
+
+  .txt-reversed {
+    transform: translateX(0%) translateY(-10%);
+  }
+}

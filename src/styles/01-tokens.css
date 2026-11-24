@@ -1,0 +1,131 @@
+/* Tokens: the colours, fonts, sizes, spacing and glass panel values everything else uses */
+
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+  /* Colour Palette */
+  --white: #f7f8fa;
+  --news-paper-gray: #e5e7df;
+  --dark: #182625;
+  --darkTrans: rgb(24, 38, 37, 0.9);
+  --navy: #11293f;
+  --secondary-sand: #e0cca1;
+  --light-gold: #e6c79a;
+  --gold: #d9b282;
+  --brightGold: #dca868;
+  --cream: #e5e7df;
+  --body-colour: #e6edf2;
+
+  /* Gradients */
+  --dividerBackground: linear-gradient(
+    90deg,
+    rgba(191, 137, 117, 1) 0%,
+    rgba(64, 47, 41, 1) 100%
+  );
+
+  --metal-light: #75685b;
+
+  /* element colours */
+  --page-background: var(--navy);
+
+  /* Button colours */
+
+  /* Font colours */
+  --title-colour: #dca868;
+  --subHeading-colour: var(--gold);
+  --txt-body: var(--body-colour);
+
+  --font-colour-dark: var(--dark);
+
+  /* container colours */
+  --light-container: var(--news-paper-gray);
+  --navy-card-hover: rgba(16, 45, 68, 0.82);
+
+  /* fonts */
+  --mono: 'GeistMono', monospace;
+  --sans: 'Switzer', sans-serif;
+  --display:
+    'MgDisplay-Regular', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+  --subHeading: 'MgDisplay-Regular', sans-serif;
+
+  --corner-rad: 5px;
+  --corner-rad-lg: 20px; /* the rounded frame around screenshots */
+
+  /* Micro spacing (typography & UI) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+
+  /* Component spacing */
+  --space-5: 1.5rem; /* 24px */
+  --space-6: 2rem; /* 32px */
+  --space-7: 3rem; /* 48px */
+
+  /* Section spacing */
+  --space-8: 4rem; /* 64px padding top and bottom of sections */
+  --space-9: 5rem; /* 80px */
+  --space-10: 6rem; /* 96px */
+
+  /* Hero / major blocks */
+  --space-11: 8rem; /* 128px */
+  --space-12: 10rem; /* 160px */
+  --space-13: 12rem;
+
+  --space-project-gap: clamp(var(--space-10), 6vw, var(--space-12));
+  --fs-hero-xl: clamp(3rem, 6vw, 4.8rem);
+
+  /* Responsive gap design system */
+  --gap-sm: clamp(var(--space-3), 2vw, var(--space-5));
+  --gap-md: clamp(var(--space-4), 3vw, var(--space-6));
+  --gap-lg: clamp(var(--space-5), 4vw, var(--space-7));
+  --gap-lx: clamp(var(--space-6), 5vw, var(--space-8));
+  --gap-xxl: clamp(var(--space-10), 9vw, var(--space-12));
+  --gap-2xl: clamp(var(--space-11), 10vw, var(--space-13));
+  /* Responsive font design system */ /** Headings */
+  /* clamp(var(--fs-6), 7vw, 14rem) */
+  --title-hero-xl: clamp(4rem, 10vw, 11rem);
+  --title-1: clamp(2.75rem, 2.167rem + 2.917vw, 4.5rem);
+  --title-2: clamp(2.5rem, 2.25rem + 1.25vw, 3.25rem);
+  --title-3: clamp(2rem, 1.75rem + 1.25vw, 2.75rem);
+  --title-4: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+  --title-5: clamp(1.25rem, 1.083rem + 0.833vw, 1.75rem);
+  --title-6: clamp(1.125rem, 1.042rem + 0.417vw, 1.375rem);
+  /** Body text */
+  --text-l: clamp(1.125rem, 1.042rem + 0.417vw, 1.375rem);
+  --text-m: clamp(1rem, 0.958rem + 0.208vw, 1.125rem);
+  --text-base: 1rem;
+  /** Line height tokens */
+  --leading-title: 1.2;
+  --leading-body: 1.55;
+
+  --sec-width: 1280px;
+  --sec-width-lg: 1600px;
+  --sec-width-max: 3000px;
+  --page-gutter: clamp(16px, 5vw, 24px);
+  --hero-gutter: clamp(0.5rem, 2vw, 1rem);
+  --padding-hor-section: clamp(2rem, 5vw, 4rem);
+
+  /* Icon size variables */
+  --icon-size-md: 24px;
+  /* Glass panels: the translucent boxes behind text (navigation, project
+     cards, reviews, facts box). Pick one background, then add the border,
+     shadow and blur that go with it. */
+  --glass-bg-navy: rgba(18, 38, 62, 0.55); /* on the page background */
+  --glass-bg-dark: rgba(33, 29, 27, 0.55); /* navigation and menus */
+  --glass-bg-light: rgba(255, 255, 255, 0.06); /* a lighter panel, as on the reviews */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.14);
+  --glass-border-faint: 1px solid rgba(255, 255, 255, 0.08);
+  --glass-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  --glass-blur: blur(10px) saturate(100%);
+  --glass-blur-rich: blur(10px) saturate(120%); /* slightly stronger colours behind the panel */
+
+  /* A plain drop shadow, without the glass highlight */
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.28);
+
+  /* The small lift used when hovering a panel */
+  --transition-lift:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
+}

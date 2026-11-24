@@ -1,0 +1,159 @@
+/* Homepage: projects (HomeProjects, ClientProjectCard, WebAppCard) */
+
+.projects h2 {
+  margin-bottom: 4%;
+  margin-left: 0;
+}
+
+.projects-heading {
+  color: var(--subHeading-colour);
+  font-size: var(--text-base);
+  font-family: var(--mono);
+  margin-bottom: var(--space-1);
+}
+
+.heading-reverse {
+  text-align: right;
+}
+
+.heading__project-tech {
+  font-size: var(--title-6);
+  margin-bottom: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.projects-heading-name {
+  color: var(--gold);
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+.project-info-container {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-project-gap);
+}
+
+.project__glass-back {
+  background: var(--glass-bg-navy);
+  padding: var(--space-5);
+  color: var(--body-colour);
+  transition: var(--transition-lift);
+  border-radius: var(--corner-rad);
+  border: var(--glass-border-faint);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: var(--glass-blur-rich);
+  backdrop-filter: var(--glass-blur-rich);
+}
+
+.project-tech-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto 4% 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-family: var(--mono);
+}
+
+.project-tech-list li {
+  background-color: var(--gold);
+  padding: var(--space-2);
+  border-radius: var(--corner-rad);
+  color: var(--dark);
+}
+
+.projects img {
+  width: 100%;
+  height: auto;
+  margin: 8% 0 8% 0;
+  border-left: 1px solid var(--gold);
+  border-top: 1px solid var(--gold);
+  border-radius: var(--corner-rad-lg);
+  padding: 1rem;
+}
+
+.project-info-container--reverse img {
+  border-left: 0px;
+  border-right: 1px solid var(--gold);
+}
+
+/* From 801px, so it never applies together with the 'up to 800px' rules below */
+@media (min-width: 801px) {
+  .project-info-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+  }
+
+  .projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  .project-info__text {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    order: 2;
+    text-align: left;
+  }
+  .project-tech-list {
+    justify-content: flex-end;
+  }
+
+  .projects .project-info-container--reverse .project-info__text {
+    grid-column: 1/7;
+    order: 2;
+    text-align: left;
+  }
+
+  .projects .project-info-container--reverse img {
+    grid-column: 6/11;
+    grid-row: 1/2;
+  }
+
+  .projects .project-info-container--reverse ul {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .heading-reverse {
+    text-align: left;
+  }
+}
+
+/* Client project cards (src/components/home/ClientProjectCard.astro) */
+.project-card__points {
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+/* Small gold labels: "The problem" and "The result" on the homepage cards,
+   and the labels in the facts box on a project page */
+.project-card__points dt,
+.project-page__facts dt {
+  font-family: var(--subHeading);
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  color: var(--subHeading-colour);
+  margin-bottom: var(--space-1);
+}
+
+.project-card__points dd {
+  margin: 0 0 var(--space-4);
+  max-width: 65ch;
+  line-height: var(--leading-body);
+}
+
+.project-card__points dd:last-child {
+  margin-bottom: 0;
+}
+
+.project-card__link {
+  display: inline-block;
+  max-width: none;
+}

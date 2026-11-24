@@ -1,0 +1,197 @@
+/* Utilities and layout helpers: small classes used across many components */
+
+/* --- Spacing, text and visibility helpers --- */
+
+/* The flow class is used to set a global margin automatically on a container with child elements, if the variable --flow-space is not defined locally then the fallback variable is used which is var(--space-4) */
+.flow > * + * {
+  margin-top: var(--flow-space, var(--space-4));
+}
+
+.hide-element {
+  display: none;
+}
+
+.xl-heading {
+  font-family: var(--display);
+  font-size: clamp(2.75rem, 2.379rem + 1.854vw, 4.5rem);
+  color: var(--brightGold);
+  line-height: 1;
+  letter-spacing: 3%;
+  margin-left: 0.3%;
+}
+
+.section-pad {
+  padding: var(--padding-hor-section) var(--page-gutter);
+}
+
+.section-center-max-width {
+  width: min(100%, var(--sec-width-max, 1200px));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.max-txt-width {
+  max-width: 65ch;
+}
+
+.max-hero-txt-width {
+  max-width: 55ch;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.trans-caps {
+  text-transform: uppercase;
+}
+
+/* Center h2 subheading container */
+.subheading-centred {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Layout helpers --- */
+
+.layout-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.layout-two-column-img img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+}
+
+.img-overlay-blur-left img {
+  -webkit-mask-image: linear-gradient(
+    to left,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.img-overlay-blur-right img {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+@media screen and (max-width: 767px) {
+  .img-overlay-blur-left {
+    padding-right: 5%;
+  }
+
+  .img-overlay-blur-right {
+    padding-left: 5%;
+  }
+}
+
+.img-rad {
+  border-radius: var(--corner-rad);
+}
+
+.layout-two-column-txt {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(var(--space-4), 4vw, var(--space-10));
+}
+
+.flex-two-col {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-sm);
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Sections: width, padding and the fade-in --- */
+
+.sections {
+  max-width: var(--sec-width);
+  margin: 0 auto;
+  padding: var(--padding-hor-section) var(--page-gutter);
+  transition:
+    transform 1s,
+    opacity 2s;
+}
+
+.sections-large {
+  max-width: var(--sec-width-lg);
+  margin: 0 auto;
+  padding: var(--padding-hor-section) var(--page-gutter);
+  transition:
+    transform 1s,
+    opacity 2s;
+}
+
+.sections--hidden {
+  opacity: 0;
+  transform: translateY(6rem);
+}
+
+.section-sub-headings {
+  margin-bottom: var(--space-6);
+}
+
+/* --- Divider, glass panels and shadow --- */
+
+.gradient {
+  background: var(--dividerBackground);
+  height: 2px;
+}
+
+.glass__back {
+  transition: var(--transition-lift);
+  background-color: var(--glass-bg-light);
+  border: var(--glass-border);
+  border-radius: var(--corner-rad);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(15px) saturate(100%);
+  backdrop-filter: blur(15px) saturate(100%);
+}
+
+.box__shadow {
+  box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.dark__glass-back {
+  background: var(--glass-bg-dark);
+  transition: var(--transition-lift);
+  border: var(--glass-border-faint);
+  -webkit-backdrop-filter: var(--glass-blur-rich);
+  backdrop-filter: var(--glass-blur-rich);
+}

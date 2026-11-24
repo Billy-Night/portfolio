@@ -1,0 +1,126 @@
+/* Image and text rows (AboutWhatIDo.astro, LandesSeoResults.astro) */
+
+.wid__sec {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wid__heading-container {
+  text-align: center;
+  padding: var(--space-6) var(--page-gutter);
+}
+
+.row {
+  display: grid;
+  max-width: 2000px;
+  grid-template-columns: 1fr 1fr;
+  row-gap: var(--gap-md);
+  column-gap: clamp(var(--space-6), 6vw, var(--space-9));
+  padding-top: clamp(var(--space-7), 8vw, var(--space-9));
+  padding-bottom: clamp(var(--space-7), 8vw, var(--space-9));
+}
+
+.left {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.right {
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.wid__img-cont {
+  position: relative;
+}
+
+.wid__img-cont img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  -webkit-mask-image: linear-gradient(
+    to left,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.wid__img-cont-right {
+  width: 100%;
+  display: block;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.wid__text-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wid__text {
+  background-color: var(--cream);
+  border: var(--glass-border-faint);
+  border-radius: var(--corner-rad);
+  text-align: center;
+  padding: clamp(var(--space-4), 4vw, var(--space-10));
+}
+
+.wid__text h3 {
+  color: var(--dark);
+}
+
+.wid__text p {
+  color: var(--dark);
+}
+
+.txt-l {
+  padding-left: var(--page-gutter);
+}
+
+.txt-r {
+  padding-right: var(--page-gutter);
+}
+
+.wid__content_cta {
+  margin-top: clamp(var(--space-3), 4vw, var(--space-6));
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+@media screen and (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    grid-column: 1;
+  }
+
+  .wid__text-cont {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+  }
+}

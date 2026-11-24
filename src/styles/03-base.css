@@ -1,0 +1,113 @@
+/* Base elements: the page, headings, paragraphs, images and links before any class is added */
+
+/* border box model: https://css-tricks.com/box-sizing/ */
+html,
+body {
+  width: 100%;
+}
+
+html {
+  cursor:
+    url('/assets/icons/cursor_polgon_24x24.png') 1 1,
+    auto;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--page-background);
+  color: var(--body-colour);
+}
+
+h1 {
+  font-size: var(--title-1);
+  line-height: var(--leading-title);
+  letter-spacing: 6%;
+  font-family: var(--display);
+  color: var(--title-colour);
+  text-transform: uppercase;
+}
+
+h2,
+.h2-style {
+  font-size: var(--title-2);
+  line-height: var(--leading-title);
+  font-family: var(--subHeading);
+  letter-spacing: 4%;
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
+}
+
+h3,
+.h3-style {
+  font-size: var(--title-4);
+  line-height: var(--leading-title);
+  font-family: var(--subHeading);
+  letter-spacing: 4%;
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
+}
+
+h4,
+.h4-style {
+  font-size: var(--title-5);
+  line-height: var(--leading-title);
+  font-family: var(--subHeading);
+  letter-spacing: 3%;
+  color: var(--subHeading-colour);
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  color: var(--subHeading-colour);
+}
+
+h6 {
+  font-size: var(--text-l);
+  line-height: var(--leading-title);
+}
+
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+
+/* .h2-style, .h3-style and .h4-style give an element the look of that heading
+   level. They are for the cases where the level that is right for the page
+   outline is not the one with the right look. */
+h1,
+h2,
+h3,
+h4,
+h5,
+.h2-style,
+.h3-style,
+.h4-style {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Images */
+img {
+  width: 100%;
+  /* Images carry width and height attributes (added by Astro so the browser
+     can reserve their space before they load). Without height: auto they
+     would keep the attribute's height at this width and look stretched. */
+  height: auto;
+  transition: filter 0.2s;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}

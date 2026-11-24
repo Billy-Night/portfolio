@@ -1,0 +1,15 @@
+/* Legal pages (terms-and-conditions.astro, fr/cgv.astro) */
+
+#legal_main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5% 2% 5% 2%;
+}
+
+#legal_main h1 {
+  font-size: var(--title-2);
+}
+
+#legal_main h2 {
+  font-size: var(--title-4);
+}
