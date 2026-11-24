@@ -247,15 +247,6 @@
   }
 }
 
-.hero-small-circle .ring {
-  stroke: rgba(255, 255, 255, 0.4);
-  stroke-width: 1.4;
-}
-
-.hero-small-circle .node {
-  fill: var(--gold);
-}
-
 .intro__img-container {
   position: relative;
   display: flex;

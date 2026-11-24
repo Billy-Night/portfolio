@@ -12,7 +12,7 @@
   --light-gold: #e6c79a;
   --gold: #d9b282;
   --brightGold: #dca868;
-  --cream: #e5e7df;
+  --cream: var(--news-paper-gray);
   --body-colour: #e6edf2;
 
   /* Gradients */
@@ -30,7 +30,7 @@
   /* Button colours */
 
   /* Font colours */
-  --title-colour: #dca868;
+  --title-colour: var(--brightGold);
   --subHeading-colour: var(--gold);
   --txt-body: var(--body-colour);
 

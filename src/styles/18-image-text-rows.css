@@ -22,11 +22,6 @@
   padding-bottom: clamp(var(--space-7), 8vw, var(--space-9));
 }
 
-.left {
-  grid-column: 1 / 2;
-  grid-row: 1;
-}
-
 .right {
   grid-column: 2 / 3;
   grid-row: 1;
