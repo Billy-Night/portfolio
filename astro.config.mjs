@@ -67,6 +67,11 @@ export default defineConfig({
   },
   // Keep HTML output readable/diffable during the 1:1 port
   compressHTML: false,
+  // How a component's scoped styles are tied to its own elements. 'where' adds
+  // no weight to a rule, so scoping a component cannot change which rule wins
+  // against the shared styles in src/styles/. (Astro's default, 'attribute',
+  // makes every scoped rule outrank an unscoped one of the same shape.)
+  scopedStyleStrategy: 'where',
   integrations: [stylesheet(), legacyImageUrls()],
   vite: {
     build: {
