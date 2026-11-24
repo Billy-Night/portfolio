@@ -997,7 +997,7 @@ a:hover .social__icons {
 
 /* Home intro section  */
 
-.name {
+.home-intro__name {
   font-size: var(--title-3);
   color: var(--light-gold);
 }
@@ -1102,13 +1102,13 @@ a:hover .social__icons {
   padding: 1rem;
 }
 
-.reverse img {
+.project-info-container--reverse img {
   border-left: 0px;
   border-right: 1px solid var(--gold);
 }
 
 @media (min-width: 800px) {
-  article {
+  .project-info-container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 1rem;
@@ -1119,7 +1119,7 @@ a:hover .social__icons {
     grid-row: 1/2;
   }
 
-  .text {
+  .project-info__text {
     grid-column: 5/11;
     grid-row: 1/2;
     order: 2;
@@ -1129,18 +1129,18 @@ a:hover .social__icons {
     justify-content: flex-end;
   }
 
-  .projects .reverse .text {
+  .projects .project-info-container--reverse .project-info__text {
     grid-column: 1/7;
     order: 2;
     text-align: left;
   }
 
-  .projects .reverse img {
+  .projects .project-info-container--reverse img {
     grid-column: 6/11;
     grid-row: 1/2;
   }
 
-  .projects .reverse ul {
+  .projects .project-info-container--reverse ul {
     justify-content: flex-start;
   }
 }
@@ -2883,6 +2883,15 @@ a:hover .social__icons {
     transform 220ms ease,
     border-color 220ms ease,
     background-color 220ms ease;
+}
+
+/* Above 800px the parts of a card sit 1rem apart. This spacing used to arrive
+   by accident, from a rule written for the homepage project cards that applied
+   to every <article>. That rule is now scoped, so the spacing is stated here. */
+@media (min-width: 800px) {
+  .package-card {
+    gap: 1rem;
+  }
 }
 .package-card:hover {
   transform: translateY(-4px);
