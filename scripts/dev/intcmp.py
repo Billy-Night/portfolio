@@ -12,7 +12,7 @@ def canon(t):
         if '=>' in l2:
             a,b=l2.split(':',1)[1].split('  =>  ')
             if a.strip()==b.strip(): continue
-        if 'ts-heading' in l and ('hide-ts-h' in l or 'reveal-text' in l) and '=>' in l: continue
+        if 'timeline__step-heading' in l and ('timeline__step-heading--hidden' in l or 'timeline__step-heading--reveal' in l) and '=>' in l: continue
         out.append(l2)
     return '\n'.join(out)
 ref,new=sys.argv[1],sys.argv[2]
