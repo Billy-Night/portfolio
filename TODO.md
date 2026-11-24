@@ -2,14 +2,6 @@
 
 Improvements that are agreed in principle and not started. Each is its own branch.
 
-## Scoped styles
-
-Each component now holds its own styles, but unscoped (`<style is:global>`), so a class name must be unique across the whole site. Removing `is:global` lets Astro confine a component's styles to that component.
-
-- Do it one component at a time. Scoping changes which rule outranks another, and a scoped rule no longer reaches into a child component (for example the bullet list inside a package card) or into markup passed through a slot (the hero, the timeline, the project card).
-- Check each one with the style comparison in `scripts/dev/README.md`.
-- See `src/styles/README.md` for how styles are organised today.
-
 ## Images
 
 `src/components/Photo.astro` serves the original file untouched and only generates smaller versions for small screens. Open questions, parked on purpose:
