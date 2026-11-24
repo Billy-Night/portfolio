@@ -73,11 +73,11 @@
 }
 
 .btn__second--light:hover {
-  background-color: var(--darkTrans);
+  background-color: var(--dark-translucent);
 }
 
 .btn__second--dark:hover {
-  background-color: var(--darkTrans);
+  background-color: var(--dark-translucent);
 }
 
 .btn__third {

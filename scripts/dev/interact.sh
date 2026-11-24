@@ -27,7 +27,7 @@ function dump(d) {
     let s = e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + '.' + [...e.classList].filter((c) => !c.startsWith('astro-')).sort().join('.')
     const st = e.getAttribute('style'); if (st && e.tagName.toLowerCase() !== 'svg') s += ' [style=' + st.replace(/\s+/g, ' ') + ']'
     if (e.tagName === 'IMG') s += ' [src=' + e.getAttribute('src') + ']'
-    if (e.tagName === 'BUTTON' || e.classList.contains('type-measure__label')) s += ' [text=' + e.textContent.trim().replace(/\s+/g, ' ').slice(0, 40) + ']'
+    if (e.tagName === 'BUTTON' || e.classList.contains('hero__measure-label')) s += ' [text=' + e.textContent.trim().replace(/\s+/g, ' ').slice(0, 40) + ']'
     return s
   }).filter(Boolean)
 }
@@ -80,15 +80,15 @@ f.addEventListener('load', async () => {
   if (deny) { deny.click(); await sleep(100); await step('cookie deny', d, 'stored=' + w.localStorage.getItem('cookiesAccepted')) }
   if (accept) { accept.click(); await sleep(100); await step('cookie accept', d, 'stored=' + w.localStorage.getItem('cookiesAccepted')) }
   // landes challenges
-  for (const [i, b] of all('.ver-switcher-btn').entries()) { ev(b, 'mouseenter'); await sleep(100); await step('challenge hover ' + i, d) }
+  for (const [i, b] of all('.challenges__button').entries()) { ev(b, 'mouseenter'); await sleep(100); await step('challenge hover ' + i, d) }
   // faq
-  for (const [i, c] of all('.vertical-switcher-content').entries()) { if (i > 3) break; ev(c, 'mouseenter'); await sleep(100); await step('faq hover ' + i, d) }
-  for (const [i, b] of all('.vertical-switcher-btn').entries()) { if (i > 3) break; b.click(); await sleep(100); await step('faq click ' + i, d) }
+  for (const [i, c] of all('.faq__item').entries()) { if (i > 3) break; ev(c, 'mouseenter'); await sleep(100); await step('faq hover ' + i, d) }
+  for (const [i, b] of all('.faq__button').entries()) { if (i > 3) break; b.click(); await sleep(100); await step('faq click ' + i, d) }
   // about process phases
-  for (const [i, b] of all('.btn-expand-process').entries()) { b.click(); await sleep(300); await step('phase click ' + i, d) }
-  const firstPhase = d.querySelector('.btn-expand-process'); if (firstPhase) { firstPhase.click(); await sleep(300); await step('phase click 0 again', d) }
+  for (const [i, b] of all('.process__toggle').entries()) { b.click(); await sleep(300); await step('phase click ' + i, d) }
+  const firstPhase = d.querySelector('.process__toggle'); if (firstPhase) { firstPhase.click(); await sleep(300); await step('phase click 0 again', d) }
   // reviews
-  const rev = d.querySelector('.review-hover-wrap')
+  const rev = d.querySelector('.reviews__stage')
   if (rev) {
     ev(rev, 'mouseenter'); await sleep(200); await step('reviews hover', d)
     rev.click(); await sleep(200); await step('reviews click (pause)', d)

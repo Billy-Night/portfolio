@@ -14,7 +14,7 @@
 .xl-heading {
   font-family: var(--display);
   font-size: clamp(2.75rem, 2.379rem + 1.854vw, 4.5rem);
-  color: var(--brightGold);
+  color: var(--bright-gold);
   line-height: 1;
   letter-spacing: 3%;
   margin-left: 0.3%;
@@ -192,7 +192,7 @@
 /* --- Divider, glass panels and shadow --- */
 
 .gradient {
-  background: var(--dividerBackground);
+  background: var(--divider-gradient);
   height: 2px;
 }
 

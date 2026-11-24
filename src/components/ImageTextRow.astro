@@ -10,12 +10,12 @@ const { imageSide } = Astro.props
 const right = imageSide === 'right'
 ---
 
-<div class="row">
-  <div class={right ? 'wid__img-cont-right right' : 'wid__img-cont'}>
+<div class="image-row">
+  <div class={right ? 'image-row__image--right' : 'image-row__image'}>
     <slot name="image" />
   </div>
-  <div class:list={['wid__text-cont', right ? 'txt-l' : 'txt-r']}>
-    <div class="wid__text box__shadow">
+  <div class:list={['image-row__text', right ? 'image-row__text--pad-left' : 'image-row__text--pad-right']}>
+    <div class="image-row__panel box__shadow">
       <div class="max-txt-width">
         <slot />
       </div>

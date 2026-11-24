@@ -24,7 +24,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
 ---
 
 <section class="sections" id={id}>
-  <div class="section-contact-container">
+  <div class="contact-cta">
     <h2>{heading}</h2>
     <p class={introClass}>{intro}</p>
     {
@@ -37,7 +37,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
               aria-label="LinkedIn"
             >
               <svg
-                class="social__icons__contact"
+                class="contact-cta__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 width="30"
@@ -56,7 +56,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
               aria-label="instagram"
             >
               <svg
-                class="social__icons__contact"
+                class="contact-cta__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -86,7 +86,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
               aria-label="GitHub"
             >
               <svg
-                class="social__icons__contact"
+                class="contact-cta__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -99,7 +99,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
           <li>
             <a href="mailto:contact@billynightingale.com" aria-label="Mail">
               <svg
-                class="social__icons__contact"
+                class="contact-cta__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -120,7 +120,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .section-contact-container {
+  .contact-cta {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +128,7 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
     gap: var(--gap-md);
   }
 
-  .section-contact-container ul {
+  .contact-cta ul {
     list-style-type: none;
     padding: 0;
     margin: var(--space-6) auto;
@@ -138,28 +138,28 @@ const { heading, intro, introClass, socialLinks = false, id } = Astro.props
     gap: 3rem;
   }
 
-  .social__icons__contact {
+  .contact-cta__icon {
     width: 50px;
     height: 50px;
     fill: var(--gold);
   }
 
   @media screen and (max-width: 700px) {
-    .social__icons__contact {
+    .contact-cta__icon {
       width: 32px;
       height: 32px;
     }
 
-    .section-contact-container ul {
+    .contact-cta ul {
       gap: 2rem;
     }
 
-    .section-contact-container a {
+    .contact-cta a {
       margin: 0px;
     }
   }
 
-  .social__icons__contact:hover {
+  .contact-cta__icon:hover {
     fill: var(--white);
   }
 </style>

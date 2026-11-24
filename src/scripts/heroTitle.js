@@ -2,8 +2,8 @@
 // Used by src/components/home/HomeHero.astro and src/components/about/AboutHero.astro.
 
 const titleText = document.querySelector('.hero__title-text')
-const measure = document.querySelector('.type-measure')
-const label = document.querySelector('.type-measure__label')
+const measure = document.querySelector('.hero__measure')
+const label = document.querySelector('.hero__measure-label')
 
 if (titleText) {
   function updateMeasure() {

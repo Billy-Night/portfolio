@@ -14,8 +14,8 @@ interface Props {
 
 const { app, lang, reverse } = Astro.props
 
-// The 'Technologies' heading carries 'heading-reverse' on the cards that are not reversed
-const headingReverse = !reverse && 'heading-reverse'
+// The 'Technologies' heading carries 'project-card__heading--align-right' on the cards that are not reversed
+const headingReverse = !reverse && 'project-card__heading--align-right'
 
 const summary = app.summary[lang]
 const summaryPieces = typeof summary === 'string' ? [summary] : summary
@@ -30,7 +30,7 @@ const summaryPieces = typeof summary === 'string' ? [summary] : summary
     }
   </p>
   <Fragment slot="below">
-    <h4 class:list={['heading__project-tech', headingReverse]}>Technologies</h4>
+    <h4 class:list={['project-card__tech-heading', headingReverse]}>Technologies</h4>
     <ul class="project-tech-list">
       {app.technologies.map((technology) => <li>{technology}</li>)}
     </ul>
@@ -39,7 +39,7 @@ const summaryPieces = typeof summary === 'string' ? [summary] : summary
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .heading__project-tech {
+  .project-card__tech-heading {
     font-size: var(--title-6);
     margin-bottom: var(--space-2);
     margin-top: var(--space-4);

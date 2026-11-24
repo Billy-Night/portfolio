@@ -28,20 +28,20 @@ const t = {
     <h2>{t.heading}</h2>
     <p>{t.intro}</p>
   </div>
-  <div class="vertical-switcher">
+  <div class="faq">
     {
       faq.map((entry, index) => (
-        <div class="vertical-switcher-content">
-          <h3 class="vertical-switcher-question">
+        <div class="faq__item">
+          <h3 class="faq__question">
             <button
               type="button"
-              class:list={['vertical-switcher-btn', index === 0 && 'is-active']}
+              class:list={['faq__button', index === 0 && 'is-active']}
               data-index={index}
               aria-expanded={index === 0 ? 'true' : 'false'}
               aria-controls={`faq-answer-${index}`}
             >{entry.question[lang]}</button>
           </h3>
-          <div class:list={['vertical-switcher-txt', index === 0 && 'is-active']} id={`faq-answer-${index}`}>
+          <div class:list={['faq__answer', index === 0 && 'is-active']} id={`faq-answer-${index}`}>
             <p class="h3-style">{t.answerLabel}</p>
             <p class="max-txt-width">
               {entry.answer[lang]}
@@ -59,11 +59,11 @@ const t = {
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .vertical-switcher-question {
+  .faq__question {
     font-size: var(--title-2);
   }
 
-  .vertical-switcher-btn {
+  .faq__button {
     border: none;
     padding-top: var(--gap-sm);
     padding-bottom: var(--gap-sm);
@@ -81,11 +81,11 @@ const t = {
     text-transform: inherit;
   }
 
-  .vertical-switcher-btn.is-active {
+  .faq__button.is-active {
     opacity: 100%;
   }
 
-  .vertical-switcher-txt {
+  .faq__answer {
     display: none;
     padding: var(--space-6);
     border: 2px dashed rgba(220, 168, 104, 0.3);
@@ -97,7 +97,7 @@ const t = {
     pointer-events: none;
   }
 
-  .vertical-switcher-txt.is-active {
+  .faq__answer.is-active {
     display: block;
     opacity: 1;
     visibility: visible;

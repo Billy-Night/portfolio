@@ -40,9 +40,9 @@ h2,
 .h2-style {
   font-size: var(--title-2);
   line-height: var(--leading-title);
-  font-family: var(--subHeading);
+  font-family: var(--sub-heading);
   letter-spacing: 4%;
-  color: var(--subHeading-colour);
+  color: var(--sub-heading-colour);
   text-transform: uppercase;
 }
 
@@ -50,9 +50,9 @@ h3,
 .h3-style {
   font-size: var(--title-4);
   line-height: var(--leading-title);
-  font-family: var(--subHeading);
+  font-family: var(--sub-heading);
   letter-spacing: 4%;
-  color: var(--subHeading-colour);
+  color: var(--sub-heading-colour);
   text-transform: uppercase;
 }
 
@@ -60,16 +60,16 @@ h4,
 .h4-style {
   font-size: var(--title-5);
   line-height: var(--leading-title);
-  font-family: var(--subHeading);
+  font-family: var(--sub-heading);
   letter-spacing: 3%;
-  color: var(--subHeading-colour);
+  color: var(--sub-heading-colour);
   text-transform: uppercase;
 }
 
 h5 {
   font-size: var(--title-6);
   line-height: var(--leading-title);
-  color: var(--subHeading-colour);
+  color: var(--sub-heading-colour);
 }
 
 h6 {

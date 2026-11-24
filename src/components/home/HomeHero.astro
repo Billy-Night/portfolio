@@ -36,8 +36,8 @@ const t = {
 }[lang]
 ---
 
-<Hero title={t.titleText} titleClass={lang === 'fr' && 'hero__title-fr'}>
-  <span slot="title-word" class:list={["xl-heading home-hero-title-mob", lang === 'fr' && "hero__title-word-fr"]}
+<Hero title={t.titleText} titleClass={lang === 'fr' && 'hero__title--fr'}>
+  <span slot="title-word" class:list={["xl-heading hero__title-word--hide-on-phone", lang === 'fr' && "hero__title-word--fr"]}
     >WEB DESIGNER CAPBRETON HOSSEGOR</span
   >
   <Photo
@@ -45,13 +45,13 @@ const t = {
     src={imgBillyNightingalePortraitStandingLaptopV4}
     maxWidth={750}
     alt="Portrait of Billy Nightingale looking at web design on laptop"
-    class="home-intro__img"
+    class="hero__photo--home"
     loading="eager"
     fetchpriority="high"
   />
   <h2>{t.subheading}</h2>
   <p class="max-hero-txt-width">
-    {t.introStart} <span class="home-intro__name">Billy Nightingale,</span> {t.introRest}
+    {t.introStart} <span class="hero__name">Billy Nightingale,</span> {t.introRest}
   </p>
   <p class="max-hero-txt-width">
     {t.tagline}

@@ -6,17 +6,17 @@
   --white: #f7f8fa;
   --news-paper-gray: #e5e7df;
   --dark: #182625;
-  --darkTrans: rgb(24, 38, 37, 0.9);
+  --dark-translucent: rgb(24, 38, 37, 0.9);
   --navy: #11293f;
   --secondary-sand: #e0cca1;
   --light-gold: #e6c79a;
   --gold: #d9b282;
-  --brightGold: #dca868;
+  --bright-gold: #dca868;
   --cream: var(--news-paper-gray);
   --body-colour: #e6edf2;
 
   /* Gradients */
-  --dividerBackground: linear-gradient(
+  --divider-gradient: linear-gradient(
     90deg,
     rgba(191, 137, 117, 1) 0%,
     rgba(64, 47, 41, 1) 100%
@@ -30,8 +30,8 @@
   /* Button colours */
 
   /* Font colours */
-  --title-colour: var(--brightGold);
-  --subHeading-colour: var(--gold);
+  --title-colour: var(--bright-gold);
+  --sub-heading-colour: var(--gold);
   --txt-body: var(--body-colour);
 
   --font-colour-dark: var(--dark);
@@ -45,7 +45,7 @@
   --sans: 'Switzer', sans-serif;
   --display:
     'MgDisplay-Regular', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
-  --subHeading: 'MgDisplay-Regular', sans-serif;
+  --sub-heading: 'MgDisplay-Regular', sans-serif;
 
   --corner-rad: 5px;
   --corner-rad-lg: 20px; /* the rounded frame around screenshots */

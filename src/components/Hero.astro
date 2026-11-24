@@ -22,9 +22,9 @@ const { title, titleClass } = Astro.props
 ---
 
 
-<section class="hero__section" id="intro">
+<section class="hero" id="intro">
   <svg
-    class="hero__horLine-top"
+    class="hero__line--top"
     width="3000"
     height="1"
     viewBox="0 0 3000 1"
@@ -34,7 +34,7 @@ const { title, titleClass } = Astro.props
     <line x1="3000" y1="0.5" y2="0.5" />
   </svg>
   <svg
-    class="hero__verLine-left"
+    class="hero__line--left"
     width="1"
     height="3000"
     viewBox="0 0 1 3000"
@@ -44,7 +44,7 @@ const { title, titleClass } = Astro.props
     <line x1="0.5" y1="3000" x2="0.5" />
   </svg>
   <svg
-    class="hero__verLine-right"
+    class="hero__line--right"
     width="1"
     height="3000"
     viewBox="0 0 1 3000"
@@ -54,7 +54,7 @@ const { title, titleClass } = Astro.props
     <line x1="0.5" y1="3000" x2="0.5" />
   </svg>
   <svg
-    class="hero__horLine-bottom"
+    class="hero__line--bottom"
     width="3000"
     height="1"
     viewBox="0 0 3000 1"
@@ -63,15 +63,15 @@ const { title, titleClass } = Astro.props
   >
     <line x1="3000" y1="0.5" y2="0.5" />
   </svg>
-  <div class="hero__full-container">
-    <div class="hero__title-container">
+  <div class="hero__grid">
+    <div class="hero__title-area">
       <div>
         {/* The space after the title word is part of the layout: the word and the title sit on one line */}
         <slot name="title-word" />{' '}<h1 class:list={['hero__title', titleClass]}>
           <span class="hero__title-text">{title}</span>
-          <span class="type-measure">
+          <span class="hero__measure">
             <svg
-              class="measure"
+              class="hero__measure-svg"
               width="14"
               viewBox="0 0 14 302"
               fill="none"
@@ -118,14 +118,14 @@ const { title, titleClass } = Astro.props
                 stroke-width="1"
               />
             </svg>
-            <span class="type-measure__label"></span>
+            <span class="hero__measure-label"></span>
           </span>
         </h1>
       </div>
     </div>
-    <div class="intro__img-container">
+    <div class="hero__photo-area">
       <svg
-        class="hero-small-circle"
+        class="hero__orbit--small"
         width="900"
         height="900"
         viewBox="-20 -20 940 940"
@@ -160,13 +160,13 @@ const { title, titleClass } = Astro.props
         />
         <circle id="orbitDot1" r="10"></circle>
       </svg>
-      <div class="intro__image--frame">
+      <div class="hero__photo-frame">
         <slot name="photo" />
       </div>
     </div>
-    <div class="hero__text-container">
+    <div class="hero__text-area">
       <svg
-        class="hero-big-circle"
+        class="hero__orbit--large"
         width="900"
         height="900"
         viewBox="-20 -20 940 940"
@@ -201,8 +201,8 @@ const { title, titleClass } = Astro.props
         />
         <circle id="orbitDot2" r="10"></circle>
       </svg>
-      <div class="intro__text-cont">
-        <div class="about__intro__txt-cont">
+      <div class="hero__text">
+        <div class="hero__text-inner">
           <slot /></div>
       </div>
     </div>
@@ -217,12 +217,12 @@ const { title, titleClass } = Astro.props
      They cover both uses of the hero, including the classes the homepage and the About page
      put on their own title word and photo. -->
 <style is:global>
-  .home-intro__name {
+  .hero__name {
     font-size: var(--title-3);
     color: var(--light-gold);
   }
 
-  .home-intro__img {
+  .hero__photo--home {
     width: clamp(315px, 30vw, 375px);
     height: auto;
     position: absolute;
@@ -233,17 +233,17 @@ const { title, titleClass } = Astro.props
   }
 
   @media screen and (max-width: 800px) {
-    .home-intro__img {
+    .hero__photo--home {
       width: clamp(260px, 42vw, 310px);
       margin-left: var(--space-4);
     }
 
-    .home-hero-title-mob {
+    .hero__title-word--hide-on-phone {
       display: none;
     }
   }
 
-  .hero__section {
+  .hero {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
@@ -252,51 +252,51 @@ const { title, titleClass } = Astro.props
     padding: var(--hero-gutter);
   }
 
-  .hero__horLine-top {
+  .hero__line--top {
     position: absolute;
     top: var(--hero-gutter);
     left: 0;
     z-index: 2;
   }
 
-  .hero__horLine-top line {
+  .hero__line--top line {
     stroke: var(--news-paper-gray);
   }
 
-  .hero__horLine-bottom {
+  .hero__line--bottom {
     position: absolute;
     bottom: var(--hero-gutter);
     left: 0;
     z-index: 2;
   }
 
-  .hero__horLine-bottom line {
+  .hero__line--bottom line {
     stroke: var(--news-paper-gray);
   }
 
-  .hero__verLine-left {
+  .hero__line--left {
     position: absolute;
     top: 0;
     left: var(--hero-gutter);
     z-index: 2;
   }
 
-  .hero__verLine-left line {
+  .hero__line--left line {
     stroke: var(--news-paper-gray);
   }
 
-  .hero__verLine-right {
+  .hero__line--right {
     position: absolute;
     top: 0;
     right: var(--hero-gutter);
     z-index: 2;
   }
 
-  .hero__verLine-right line {
+  .hero__line--right line {
     stroke: var(--news-paper-gray);
   }
 
-  .hero__full-container {
+  .hero__grid {
     z-index: 3;
     width: 100%;
     display: grid;
@@ -310,7 +310,7 @@ const { title, titleClass } = Astro.props
     overflow: clip;
   }
 
-  .hero__title-container {
+  .hero__title-area {
     position: relative;
     z-index: 2;
     grid-area: title;
@@ -323,7 +323,7 @@ const { title, titleClass } = Astro.props
   .hero__title-word {
     font-family: var(--display);
     font-size: clamp(2.75rem, 2.379rem + 1.854vw, 4.5rem);
-    color: var(--brightGold);
+    color: var(--bright-gold);
     line-height: 1;
     letter-spacing: 3%;
     margin-left: 0.3%;
@@ -334,12 +334,12 @@ const { title, titleClass } = Astro.props
     display: inline-block;
     font-family: var(--display);
     font-size: clamp(5rem, 15vw, 19rem);
-    color: var(--brightGold);
+    color: var(--bright-gold);
     line-height: 0.9;
     letter-spacing: 3%;
   }
 
-  .hero__title-fr {
+  .hero__title--fr {
     font-size: clamp(5rem, 10vw, 12rem);
     line-height: 1.1;
   }
@@ -351,7 +351,7 @@ const { title, titleClass } = Astro.props
     letter-spacing: 3%;
   }
 
-  .type-measure {
+  .hero__measure {
     position: absolute;
     top: 50%;
     left: calc(100% + 1.5rem);
@@ -363,19 +363,19 @@ const { title, titleClass } = Astro.props
     color: white;
   }
 
-  .type-measure svg {
+  .hero__measure svg {
     width: 14px;
     /* --measure-height is set by src/scripts/heroTitle.js to the title's height */
     height: var(--measure-height);
     overflow: visible;
   }
 
-  .type-measure line {
+  .hero__measure line {
     stroke-width: 1;
     vector-effect: non-scaling-stroke;
   }
 
-  .type-measure__label {
+  .hero__measure-label {
     font-size: 0.65rem;
     line-height: 1;
     color: var(--news-paper-gray);
@@ -383,7 +383,7 @@ const { title, titleClass } = Astro.props
   }
 
   @media screen and (max-width: 745px) {
-    .type-measure {
+    .hero__measure {
       display: none;
     }
   }
@@ -398,12 +398,12 @@ const { title, titleClass } = Astro.props
       display: inline;
     }
 
-    .hero__title-fr {
+    .hero__title--fr {
       margin-top: var(--space-3);
     }
   }
 
-  .hero-big-circle {
+  .hero__orbit--large {
     position: absolute;
     opacity: 1;
     width: clamp(710px, 43vw, 900px);
@@ -415,7 +415,7 @@ const { title, titleClass } = Astro.props
     user-select: none;
   }
 
-  .hero-small-circle {
+  .hero__orbit--small {
     position: absolute;
     opacity: 1;
     width: clamp(480px, 40vw, 900px);
@@ -459,12 +459,12 @@ const { title, titleClass } = Astro.props
 
   /* From 822px: up to 821px the phone layout further down sets this position */
   @media (min-width: 822px) and (max-width: 1119px) {
-    .hero-small-circle {
+    .hero__orbit--small {
       left: 45%;
     }
   }
 
-  .intro__img-container {
+  .hero__photo-area {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -474,26 +474,26 @@ const { title, titleClass } = Astro.props
     padding-right: var(--gap-lg);
   }
 
-  .intro__image--frame {
+  .hero__photo-frame {
     z-index: 2;
     min-height: 350px;
     width: clamp(320px, 30vw, 550px);
-    background-color: var(--brightGold);
+    background-color: var(--bright-gold);
     border-radius: 4px;
     position: relative;
   }
 
-  .hero__text-container {
+  .hero__text-area {
     position: relative;
     grid-area: text;
     padding-right: clamp(8px, 7vw, 16px);
   }
 
-  .intro__text-cont {
+  .hero__text {
     max-width: 60ch;
   }
 
-  .about-intro__image {
+  .hero__photo--about {
     width: clamp(200px, 40vw, 315px);
     height: auto;
     position: absolute;
@@ -504,7 +504,7 @@ const { title, titleClass } = Astro.props
   }
 
   @media screen and (max-width: 821px) {
-    .hero__full-container {
+    .hero__grid {
       grid-template-columns: 1fr;
       grid-template-areas:
         'title'
@@ -513,7 +513,7 @@ const { title, titleClass } = Astro.props
       row-gap: var(--gap-lg);
     }
 
-    .intro__img-container {
+    .hero__photo-area {
       width: 100%;
       padding-left: 0%;
       padding-left: var(--gap-md);
@@ -524,29 +524,29 @@ const { title, titleClass } = Astro.props
       align-items: center;
     }
 
-    .intro__image--frame {
+    .hero__photo-frame {
       width: 100%;
       max-width: 400px;
       min-height: 240px;
     }
 
-    .about-intro__image {
+    .hero__photo--about {
       width: clamp(210px, 35vw, 325px);
     }
 
-    .hero__text-container {
+    .hero__text-area {
       padding-top: 0%;
       padding-left: var(--gap-md);
       padding-right: var(--gap-md);
     }
 
-    .hero-small-circle {
+    .hero__orbit--small {
       left: 50%;
       top: 50%;
       width: clamp(300px, 70vw, 400px);
     }
 
-    .hero-big-circle {
+    .hero__orbit--large {
       left: 42%;
       width: 800px;
     }

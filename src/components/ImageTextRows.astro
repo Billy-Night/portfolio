@@ -17,12 +17,12 @@ interface Props {
 const { heading, intro } = Astro.props
 ---
 
-<section class="wid__sec">
-  <div class="wid__heading-container">
+<section class="image-rows">
+  <div class="image-rows__heading">
     <h2>{heading}</h2>
     <p>{intro}</p>
   </div>
-  <div class="wid__content-container">
+  <div class="image-rows__list">
     <slot />
   </div>
 </section>
@@ -30,19 +30,27 @@ const { heading, intro } = Astro.props
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
      They also style the rows inside it (ImageTextRow.astro). -->
 <style is:global>
-  .wid__sec {
+  .image-rows {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .wid__heading-container {
+  .image-rows__heading {
     text-align: center;
     padding: var(--space-6) var(--page-gutter);
   }
 
-  .row {
+  /* Full width, up to the rows' own limit. Without a width of its own this box
+     took its width from the photos, so on tablets the rows were narrow until
+     each photo loaded and then jumped wider. */
+  .image-rows__list {
+    width: 100%;
+    max-width: 2000px;
+  }
+
+  .image-row {
     display: grid;
     max-width: 2000px;
     grid-template-columns: 1fr 1fr;
@@ -52,16 +60,16 @@ const { heading, intro } = Astro.props
     padding-bottom: clamp(var(--space-7), 8vw, var(--space-9));
   }
 
-  .right {
+  .image-row__image--right {
     grid-column: 2 / 3;
     grid-row: 1;
   }
 
-  .wid__img-cont {
+  .image-row__image {
     position: relative;
   }
 
-  .wid__img-cont img {
+  .image-row__image img {
     width: 100%;
     max-width: 900px;
     display: block;
@@ -79,7 +87,7 @@ const { heading, intro } = Astro.props
     );
   }
 
-  .wid__img-cont-right {
+  .image-row__image--right {
     width: 100%;
     display: block;
     -webkit-mask-image: linear-gradient(
@@ -96,14 +104,14 @@ const { heading, intro } = Astro.props
     );
   }
 
-  .wid__text-cont {
+  .image-row__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .wid__text {
+  .image-row__panel {
     background-color: var(--cream);
     border: var(--glass-border-faint);
     border-radius: var(--corner-rad);
@@ -111,23 +119,23 @@ const { heading, intro } = Astro.props
     padding: clamp(var(--space-4), 4vw, var(--space-10));
   }
 
-  .wid__text h3 {
+  .image-row__panel h3 {
     color: var(--dark);
   }
 
-  .wid__text p {
+  .image-row__panel p {
     color: var(--dark);
   }
 
-  .txt-l {
+  .image-row__text--pad-left {
     padding-left: var(--page-gutter);
   }
 
-  .txt-r {
+  .image-row__text--pad-right {
     padding-right: var(--page-gutter);
   }
 
-  .wid__content_cta {
+  .image-row__buttons {
     margin-top: clamp(var(--space-3), 4vw, var(--space-6));
     display: flex;
     flex-direction: row;
@@ -136,15 +144,15 @@ const { heading, intro } = Astro.props
   }
 
   @media screen and (max-width: 900px) {
-    .row {
+    .image-row {
       grid-template-columns: 1fr;
     }
 
-    .right {
+    .image-row__image--right {
       grid-column: 1;
     }
 
-    .wid__text-cont {
+    .image-row__text {
       padding-left: var(--page-gutter);
       padding-right: var(--page-gutter);
     }

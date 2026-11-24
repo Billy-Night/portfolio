@@ -37,7 +37,7 @@ const t = {
 
 <footer class="sections" id="footer">
   <div class="footer__container">
-    <div class="footer__info_container">
+    <div class="footer__info-container">
       <h2 class="h3-style">{t.heading}</h2>
       <p class="footer__business">{t.subheading}</p>
       <p class="footer__contact-title">{t.contact}</p>
@@ -46,12 +46,12 @@ const t = {
         <a href="tel:+33766095864">+33 7 66 09 58 64</a><br />
         <a href="mailto:contact@billynightingale.com">contact@billynightingale.com</a>
       </address>
-      <div class="contact-icons-footer-cont">
+      <div class="footer__icons">
         <ul>
           <li>
             <a href="https://www.linkedin.com/in/billynightingale/" target="_blank" rel="noopener" aria-label="LinkedIn">
               <svg
-                class="social__icons__footer"
+                class="footer__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 width="30"
@@ -64,7 +64,7 @@ const t = {
           <li>
             <a href="https://www.instagram.com/billy.nightingale.studio/" target="_blank" rel="noopener" aria-label="instagram">
               <svg
-                class="social__icons__footer"
+                class="footer__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -85,14 +85,14 @@ const t = {
           </li>
           <li>
             <a href="https://www.github.com/Billy-Night" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg class="social__icons__footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d={GITHUB}></path>
               </svg>
             </a>
           </li>
           <li>
             <a href="mailto:contact@billynightingale.com" aria-label="Mail">
-              <svg class="social__icons__footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d={MAIL}></path>
               </svg>
             </a>
@@ -100,15 +100,15 @@ const t = {
         </ul>
       </div>
     </div>
-    <div class="footer__nav_container">
+    <div class="footer__nav-container">
       <ul class="footer__nav">
-        <li><a class="footer__nav__link" href={r('home')}>{t.home}</a></li>
-        <li><a class="footer__nav__link" href={`${r('home')}#projects`}>{t.projects}</a></li>
-        <li><a class="footer__nav__link" href={r('about')}>{t.about}</a></li>
-        <li><a class="footer__nav__link" href={r('contact')}>Contact</a></li>
-        <li><a class="footer__nav__link" href={r('services')}>Services</a></li>
+        <li><a class="footer__nav-link" href={r('home')}>{t.home}</a></li>
+        <li><a class="footer__nav-link" href={`${r('home')}#projects`}>{t.projects}</a></li>
+        <li><a class="footer__nav-link" href={r('about')}>{t.about}</a></li>
+        <li><a class="footer__nav-link" href={r('contact')}>Contact</a></li>
+        <li><a class="footer__nav-link" href={r('services')}>Services</a></li>
         <li>
-          <a class="footer__nav__link" href={r('landes')}>Landes</a>
+          <a class="footer__nav-link" href={r('landes')}>Landes</a>
         </li>
       </ul>
     </div>
@@ -126,11 +126,11 @@ const t = {
     flex-direction: row;
   }
 
-  .footer__info_container {
+  .footer__info-container {
     width: 100%;
   }
 
-  .footer__info_container h2 {
+  .footer__info-container h2 {
     font-size: var(--title-4);
     margin-bottom: var(--space-3);
   }
@@ -143,9 +143,9 @@ const t = {
     font-weight: 400;
     font-size: var(--title-6);
     line-height: var(--leading-title);
-    font-family: var(--subHeading);
+    font-family: var(--sub-heading);
     letter-spacing: 3%;
-    color: var(--subHeading-colour);
+    color: var(--sub-heading-colour);
     text-transform: uppercase;
   }
 
@@ -155,7 +155,7 @@ const t = {
     font-weight: 400;
     font-size: var(--text-m);
     line-height: var(--leading-title);
-    color: var(--subHeading-colour);
+    color: var(--sub-heading-colour);
   }
 
   .footer__address {
@@ -170,7 +170,7 @@ const t = {
     color: var(--gold);
   }
 
-  .contact-icons-footer-cont ul {
+  .footer__icons ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -179,13 +179,13 @@ const t = {
     margin-top: var(--space-5);
   }
 
-  .social__icons__footer {
+  .footer__icon {
     width: 25px;
     height: 25px;
     fill: var(--gold);
   }
 
-  .footer__nav_container {
+  .footer__nav-container {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -202,7 +202,7 @@ const t = {
     text-transform: uppercase;
   }
 
-  .footer__nav__link {
+  .footer__nav-link {
     font-family: var(--mono);
   }
 
@@ -224,7 +224,7 @@ const t = {
   }
 
   @media screen and (max-width: 767px) {
-    .footer__nav_container {
+    .footer__nav-container {
       display: none;
     }
 

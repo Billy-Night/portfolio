@@ -11,22 +11,22 @@ const probe = `(async () => {
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms)); const q = (s) => document.querySelector(s); const r = {}
   await sleep(1500)
   const snap = () => ({ o1: q('#orbitDot1')?.getAttribute('cx'), d1: q('#orbit-path-draw-1')?.style.strokeDashoffset, o2: q('#orbitDot2')?.getAttribute('cx'),
-    ring: q('.review-icon-loading-circle-drawPath')?.style.strokeDashoffset, line: q('.tl_line')?.style.strokeDashoffset, dot: q('.tl_dot')?.getAttribute('cx'),
-    review: [...document.querySelectorAll('.cont__review-content')].findIndex((e) => e.classList.contains('review-is-active')) })
+    ring: q('.reviews__play-ring')?.style.strokeDashoffset, line: q('.timeline__line')?.style.strokeDashoffset, dot: q('.timeline__dot')?.getAttribute('cx'),
+    review: [...document.querySelectorAll('.reviews__item')].findIndex((e) => e.classList.contains('reviews__item--active')) })
   const a = snap(); await sleep(1200); const b = snap()
   r.orbit1_dot_moves = a.o1 != null && a.o1 !== b.o1
   r.orbit1_line_draws = !!a.d1 && a.d1 !== b.d1
   r.orbit2_dot_moves = a.o2 != null && a.o2 !== b.o2
   r.review_ring_draws = a.ring === undefined ? 'n/a' : (!!a.ring && a.ring !== b.ring)
-  const tl = q('.tl__container'); const top = tl.getBoundingClientRect().top + scrollY
+  const tl = q('.timeline__body'); const top = tl.getBoundingClientRect().top + scrollY
   scrollTo({ top: Math.max(0, top - 300), behavior: 'instant' }); await sleep(700); const c = snap()
   scrollTo({ top: top + 600, behavior: 'instant' }); await sleep(700); const e = snap()
   r.timeline_line_draws_on_scroll = c.line !== e.line
   r.timeline_dot_moves_on_scroll = c.dot !== e.dot
-  r.timeline_steps_revealed = document.querySelectorAll('.ts-heading.reveal-text').length
+  r.timeline_steps_revealed = document.querySelectorAll('.timeline__step-heading.timeline__step-heading--reveal').length
   r.header_small_after_scroll = q('.header').classList.contains('small-nav')
   if (a.review >= 0) { scrollTo({ top: 0, behavior: 'instant' }); await sleep(4200); r.review_auto_advances = snap().review !== a.review } else r.review_auto_advances = 'n/a'
-  r.title_measure_label = q('.type-measure__label')?.textContent
+  r.title_measure_label = q('.hero__measure-label')?.textContent
   return JSON.stringify(r)
 })()`
 try {

@@ -1,11 +1,11 @@
 // Scroll-drawn timeline: draw the line as the section scrolls and reveal each step as the dot passes it.
 // Used by src/components/home/HomeProcess.astro and src/components/about/AboutJourney.astro.
 
-const circle = document.querySelector('.tl_dot')
+const circle = document.querySelector('.timeline__dot')
 
-const timelineSection = document.querySelector('.tl__container')
-const path = document.querySelector('.tl_line')
-const timeSteps = document.querySelectorAll('.time-step')
+const timelineSection = document.querySelector('.timeline__body')
+const path = document.querySelector('.timeline__line')
+const timeSteps = document.querySelectorAll('.timeline__step')
 
 let pathLength = 0
 
@@ -18,9 +18,9 @@ if (path) {
 let stepData = []
 
 if (timeSteps) {
-  stepData = [...document.querySelectorAll('.time-step')].map((step) => ({
+  stepData = [...document.querySelectorAll('.timeline__step')].map((step) => ({
     step,
-    heading: step.querySelector('.ts-heading'),
+    heading: step.querySelector('.timeline__step-heading'),
     triggerY: 0,
     isActive: false,
   }))
@@ -88,19 +88,19 @@ function updateTimelinePath() {
     if (shouldBeActive && !item.isActive) {
       item.isActive = true
 
-      item.heading.classList.remove('hide-ts-h')
-      item.heading.classList.remove('reveal-text')
+      item.heading.classList.remove('timeline__step-heading--hidden')
+      item.heading.classList.remove('timeline__step-heading--reveal')
 
       void item.heading.offsetWidth
 
-      item.heading.classList.add('reveal-text')
+      item.heading.classList.add('timeline__step-heading--reveal')
     }
 
     if (!shouldBeActive && item.isActive) {
       item.isActive = false
 
-      item.heading.classList.add('hide-ts-h')
-      item.heading.classList.remove('reveal-text')
+      item.heading.classList.add('timeline__step-heading--hidden')
+      item.heading.classList.remove('timeline__step-heading--reveal')
     }
   })
 }

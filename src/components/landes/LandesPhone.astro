@@ -48,11 +48,11 @@ const t = {
 ---
 
 <section class="section-pad">
-  <div class="static-phone-channel">
-    <div class="phone-interactive-content-container">
-      <div class="static-phone-container">
+  <div class="landes-phone">
+    <div class="landes-phone__content">
+      <div class="landes-phone__frame">
         <img
-          class="static-phone-img"
+          class="landes-phone__image"
           src={screens[0].src}
           width={screens[0].width}
           height={screens[0].height}
@@ -60,9 +60,9 @@ const t = {
           data-screens={JSON.stringify(screens.map((screen) => screen.src))}
         />
       </div>
-      <div class="phone-text-container">
-        <div class="phone-text-content-cont max-txt-width">
-          <h2 class="static-phone-title">
+      <div class="landes-phone__texts">
+        <div class="landes-phone__text max-txt-width">
+          <h2 class="landes-phone__title">
             {t.performanceHeading}
           </h2>
           <p class="max-txt-width">
@@ -72,8 +72,8 @@ const t = {
             {t.performanceText2}
           </p>
         </div>
-        <div class="phone-text-content-cont max-txt-width">
-          <h2 class="static-phone-title">
+        <div class="landes-phone__text max-txt-width">
+          <h2 class="landes-phone__title">
             {t.seoHeading}
           </h2>
           <p class="max-txt-width">
@@ -83,8 +83,8 @@ const t = {
             {t.seoText2}
           </p>
         </div>
-        <div class="phone-text-content-cont max-txt-width">
-          <h2 class="static-phone-title">
+        <div class="landes-phone__text max-txt-width">
+          <h2 class="landes-phone__title">
             {t.challengesHeading}
           </h2>
           <p class="max-txt-width">
@@ -105,37 +105,37 @@ const t = {
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .static-phone-channel {
+  .landes-phone {
     height: 1200px;
   }
 
-  .phone-interactive-content-container {
+  .landes-phone__content {
     display: flex;
     flex-direction: row;
     position: sticky;
     top: 120px;
   }
 
-  .static-phone-container {
+  .landes-phone__frame {
     width: 80%;
     align-items: center;
     display: flex;
     justify-content: center;
   }
 
-  .static-phone-img {
+  .landes-phone__image {
     width: clamp(180px, 40vw, 500px);
     height: auto;
     align-self: center;
   }
 
-  .phone-text-container {
+  .landes-phone__texts {
     position: relative;
     display: grid;
     width: 100%;
   }
 
-  .phone-text-content-cont {
+  .landes-phone__text {
     grid-area: 1/1;
     opacity: 0;
     visibility: hidden;
@@ -146,26 +146,26 @@ const t = {
     gap: 0px;
   }
 
-  .phone-text-content-cont.is-active {
+  .landes-phone__text.is-active {
     opacity: 1;
     visibility: visible;
   }
 
   @media screen and (max-width: 600px) {
-    .static-phone-title {
+    .landes-phone__title {
       font-size: var(--title-3);
     }
 
-    .phone-interactive-content-container {
+    .landes-phone__content {
       flex-direction: column;
       gap: var(--gap-sm);
     }
 
-    .phone-interactive-content-container {
+    .landes-phone__content {
       top: 90px;
     }
 
-    .phone-text-content-cont {
+    .landes-phone__text {
       display: block;
     }
   }

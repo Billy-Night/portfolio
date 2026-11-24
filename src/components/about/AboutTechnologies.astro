@@ -27,34 +27,34 @@ const t = {
 ---
 
 <section class="sections">
-  <div class="tech__title-cont">
+  <div class="technologies__heading">
     <h2>{t.heading}</h2>
     <p class="max-txt-width">
       {t.intro}
     </p>
   </div>
-  <div class="tech__list-cont">
-    <div class="tech__containers">
+  <div class="technologies__list">
+    <div class="technologies__group">
       <h3 class="h4-style">{t.projectManagementHeading}</h3>
-      <div class="tech__items-cont">
+      <div class="technologies__items">
         <span>Google Drive</span>
         <span>Notion</span>
         <span>Trello</span>
         <span>ClickUp</span>
       </div>
     </div>
-    <div class="tech__containers">
+    <div class="technologies__group">
       <h3 class="h4-style">Design</h3>
-      <div class="tech__items-cont">
+      <div class="technologies__items">
         <span>Relume</span>
         <span>Figma</span>
         <span>Affinity</span>
         <span>Unicorn studio</span>
       </div>
     </div>
-    <div class="tech__containers">
+    <div class="technologies__group">
       <h3 class="h4-style">{t.developmentHeading}</h3>
-      <div class="tech__items-cont">
+      <div class="technologies__items">
         <span>Wordpress</span>
         <span>Elementor Pro</span>
         <span>HTML</span>
@@ -65,9 +65,9 @@ const t = {
         <span>MySQL</span>
       </div>
     </div>
-    <div class="tech__containers">
+    <div class="technologies__group">
       <h3 class="h4-style">{t.deploymentHeading}</h3>
-      <div class="tech__items-cont">
+      <div class="technologies__items">
         <span>Hostinger</span>
         <span>Netlify Pro</span>
         <span>Railway</span>
@@ -78,7 +78,7 @@ const t = {
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .tech__title-cont {
+  .technologies__heading {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,7 +87,7 @@ const t = {
     padding-bottom: var(--space-6);
   }
 
-  .tech__list-cont {
+  .technologies__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border: 2px solid white;
@@ -95,7 +95,7 @@ const t = {
     box-shadow: var(--glass-shadow);
   }
 
-  .tech__containers {
+  .technologies__group {
     padding: clamp(var(--space-3), 4vw, var(--space-7));
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@ const t = {
     gap: clamp(var(--space-3), 4vw, var(--space-5));
   }
 
-  .tech__items-cont {
+  .technologies__items {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -111,7 +111,7 @@ const t = {
     flex-wrap: wrap;
   }
 
-  .tech__items-cont > span {
+  .technologies__items > span {
     background-color: var(--gold);
     padding: var(--space-3);
     border-radius: var(--corner-rad);
@@ -120,7 +120,7 @@ const t = {
   }
 
   @media screen and (max-width: 848px) {
-    .tech__list-cont {
+    .technologies__list {
       grid-template-columns: 1fr;
     }
   }

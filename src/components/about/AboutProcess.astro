@@ -38,26 +38,26 @@ const t = {
 }[lang]
 ---
 
-<section class="sections about__process-sec">
-  <div class="process__title-cont">
+<section class="sections process">
+  <div class="process__heading">
     <h2>{t.heading}</h2>
     <p class="max-txt-width">
       {t.intro}
     </p>
   </div>
-  <div class="about__process-cont" data-label-expand={t.expand} data-label-collapse={t.collapse}>
-    <div class="phase-cont phase__cont--align glass__back">
+  <div class="process__phases" data-label-expand={t.expand} data-label-collapse={t.collapse}>
+    <div class="process__phase process__phase--closed glass__back">
       <h3 id="phase-1-title">PHASE 1</h3>
-      <div class="phase__content phase__content--hidden" id="phase-1-content">
-        <div class="phase__cont__text">
+      <div class="process__phase-content process__phase-content--hidden" id="phase-1-content">
+        <div class="process__phase-text">
           <h4>{t.discoveryHeading}</h4>
           <p>
             {t.discoveryText}
           </p>
         </div>
-        <div class="phase__cont__svg">
+        <div class="process__phase-art">
           <svg
-            class="phase__svg-size svg--pulse"
+            class="process__phase-svg process__phase-svg--pulse"
             viewBox="0 0 193 200"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ const t = {
       </div>
       <button
         type="button"
-        class="btn-expand-process btn__second btn__second--light"
+        class="process__toggle btn__second btn__second--light"
         aria-expanded="false"
         aria-controls="phase-1-content"
         aria-describedby="phase-1-title"
@@ -119,18 +119,18 @@ const t = {
         {t.expand}
       </button>
     </div>
-    <div class="phase-cont phase__cont--align glass__back">
+    <div class="process__phase process__phase--closed glass__back">
       <h3 id="phase-2-title">PHASE 2</h3>
-      <div class="phase__content phase__content--hidden" id="phase-2-content">
-        <div class="phase__cont__text">
+      <div class="process__phase-content process__phase-content--hidden" id="phase-2-content">
+        <div class="process__phase-text">
           <h4>Design</h4>
           <p>
             {t.designText}
           </p>
         </div>
-        <div class="phase__cont__svg">
+        <div class="process__phase-art">
           <svg
-            class="phase__svg-size"
+            class="process__phase-svg"
             viewBox="0 0 200 200"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -140,24 +140,24 @@ const t = {
               fill="url(#gradA)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               d="M102.825 6.95898L184.231 192.45L182.719 193.115L101.312 7.62148L102.825 6.95898ZM76.9969 6.94336L158.403 192.437L156.891 193.1L75.4844 7.60898L76.9969 6.94336Z"
               fill="#182625"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               d="M115.384 6.58398L116.897 7.23086L37.3154 193.531L35.7998 192.884L115.384 6.58398ZM126.381 6.58711L127.897 7.23398L48.3123 193.531L46.7967 192.884L126.381 6.58711Z"
               fill="#182625"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               d="M26.4781 177.709C11.8781 177.709 0 165.828 0 151.234C0 136.634 11.8781 124.753 26.4781 124.753C41.0781 124.753 52.9562 136.634 52.9562 151.234C52.9562 165.828 41.0812 177.709 26.4781 177.709ZM26.4781 126.403C12.7875 126.403 1.65 137.537 1.65 151.231C1.65 164.922 12.7875 176.056 26.4781 176.056C40.1687 176.056 51.3062 164.922 51.3062 151.231C51.3062 137.54 40.1687 126.403 26.4781 126.403ZM185.066 174.959C181.107 174.954 177.312 173.38 174.513 170.58C171.714 167.781 170.139 163.986 170.134 160.028C170.139 156.069 171.713 152.273 174.512 149.473C177.311 146.674 181.107 145.099 185.066 145.094C193.303 145.094 200 151.794 200 160.028C200 168.262 193.3 174.959 185.066 174.959ZM185.066 146.74C177.741 146.74 171.781 152.703 171.781 160.028C171.781 167.353 177.741 173.312 185.066 173.312C192.394 173.312 198.353 167.353 198.353 160.028C198.353 152.703 192.391 146.74 185.066 146.74ZM139.716 174.275C138.309 174.216 136.979 173.617 136.004 172.601C135.03 171.585 134.485 170.231 134.485 168.823C134.485 167.415 135.03 166.062 136.004 165.046C136.979 164.03 138.309 163.43 139.716 163.372C142.722 163.372 145.169 165.815 145.169 168.825C145.169 171.828 142.722 174.275 139.716 174.275ZM139.716 165.019C138.739 165.067 137.819 165.489 137.145 166.197C136.471 166.905 136.095 167.846 136.095 168.823C136.095 169.801 136.471 170.741 137.145 171.449C137.819 172.157 138.739 172.579 139.716 172.628C140.706 172.6 141.646 172.186 142.336 171.476C143.027 170.765 143.413 169.814 143.413 168.823C143.413 167.833 143.027 166.881 142.336 166.171C141.646 165.46 140.706 165.047 139.716 165.019ZM71.6906 175.372C69.1879 175.369 66.7884 174.374 65.0189 172.604C63.2495 170.834 62.2548 168.434 62.2531 165.931C62.2531 160.728 66.4844 156.494 71.6906 156.494C76.8969 156.494 81.1281 160.725 81.1281 165.931C81.1265 168.434 80.1317 170.834 78.3623 172.604C76.5929 174.374 74.1934 175.369 71.6906 175.372ZM71.6906 158.147C69.6263 158.148 67.647 158.969 66.187 160.428C64.727 161.888 63.9056 163.867 63.9031 165.931C63.9048 167.996 64.7257 169.976 66.1857 171.437C67.6457 172.897 69.6255 173.719 71.6906 173.722C73.7558 173.719 75.7356 172.897 77.1956 171.437C78.6556 169.976 79.4765 167.996 79.4781 165.931C79.4748 163.867 78.6532 161.888 77.1934 160.429C75.7336 158.97 73.7547 158.149 71.6906 158.147ZM6.32188 180.456H196.244V182.106H6.32188V180.456Z"
               fill="#182625"
             />
             <path
               d="M6.32227 131.534H196.244V133.184H6.32227V131.534ZM6.32227 121.915H196.244V123.562H6.32227V121.915Z"
               fill="#182625"
-              class="phase__fade-line"
+              class="process__fade-line"
             />
             <defs>
               <linearGradient
@@ -200,7 +200,7 @@ const t = {
       </div>
       <button
         type="button"
-        class="btn-expand-process btn__second btn__second--light"
+        class="process__toggle btn__second btn__second--light"
         aria-expanded="false"
         aria-controls="phase-2-content"
         aria-describedby="phase-2-title"
@@ -208,18 +208,18 @@ const t = {
         {t.expand}
       </button>
     </div>
-    <div class="phase-cont phase__cont--align glass__back">
+    <div class="process__phase process__phase--closed glass__back">
       <h3 id="phase-3-title">PHASE 3</h3>
-      <div class="phase__content phase__content--hidden" id="phase-3-content">
-        <div class="phase__cont__text">
+      <div class="process__phase-content process__phase-content--hidden" id="phase-3-content">
+        <div class="process__phase-text">
           <h4>{t.developmentHeading}</h4>
           <p>
             {t.developmentText}
           </p>
         </div>
-        <div class="phase__cont__svg">
+        <div class="process__phase-art">
           <svg
-            class="phase__svg-size svg--pulse"
+            class="process__phase-svg process__phase-svg--pulse"
             viewBox="0 0 200 200"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -269,7 +269,7 @@ const t = {
       </div>
       <button
         type="button"
-        class="btn-expand-process btn__second btn__second--light"
+        class="process__toggle btn__second btn__second--light"
         aria-expanded="false"
         aria-controls="phase-3-content"
         aria-describedby="phase-3-title"
@@ -277,18 +277,18 @@ const t = {
         {t.expand}
       </button>
     </div>
-    <div class="phase-cont phase__cont--align glass__back">
+    <div class="process__phase process__phase--closed glass__back">
       <h3 id="phase-4-title">PHASE 4</h3>
-      <div class="phase__content phase__content--hidden" id="phase-4-content">
-        <div class="phase__cont__text">
+      <div class="process__phase-content process__phase-content--hidden" id="phase-4-content">
+        <div class="process__phase-text">
           <h4>{t.deploymentHeading}</h4>
           <p>
             {t.deploymentText}
           </p>
         </div>
-        <div class="phase__cont__svg">
+        <div class="process__phase-art">
           <svg
-            class="phase__svg-size"
+            class="process__phase-svg"
             viewBox="0 0 200 200"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -300,70 +300,70 @@ const t = {
               fill="url(#paint0_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M70.5885 134.117H41.4766C39.585 134.117 38.0625 132.595 38.0625 130.703C38.0625 128.858 39.585 127.335 41.4766 127.335H67.1744V103.529C67.1744 101.684 68.6969 100.161 70.5885 100.161C72.48 100.161 74.0025 101.684 74.0025 103.529V130.703C74.0025 132.595 72.48 134.117 70.5885 134.117Z"
               fill="url(#paint1_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M32.3876 143.207C25.5134 143.207 19.8848 137.624 19.8848 130.704C19.8848 123.83 25.5134 118.247 32.3876 118.247C39.2619 118.247 44.8905 123.83 44.8905 130.704C44.8905 137.624 39.2619 143.207 32.3876 143.207Z"
               fill="url(#paint2_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M158.523 134.117H129.411C127.52 134.117 125.997 132.595 125.997 130.703V103.529C125.997 101.684 127.52 100.161 129.411 100.161C131.303 100.161 132.825 101.684 132.825 103.529V127.335H158.523C160.368 127.335 161.891 128.858 161.891 130.703C161.891 132.595 160.368 134.117 158.523 134.117Z"
               fill="url(#paint3_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M167.612 143.207C160.738 143.207 155.109 137.624 155.109 130.704C155.109 123.83 160.738 118.247 167.612 118.247C174.487 118.247 180.069 123.83 180.069 130.704C180.069 137.624 174.487 143.207 167.612 143.207Z"
               fill="url(#paint4_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M85.3052 166.782H56.1934C54.3018 166.782 52.7793 165.259 52.7793 163.414C52.7793 161.522 54.3018 160 56.1934 160H81.8912V103.529C81.8912 101.684 83.4137 100.161 85.3052 100.161C87.1507 100.161 88.6732 101.684 88.6732 103.529V163.414C88.6732 165.259 87.1507 166.782 85.3052 166.782Z"
               fill="url(#paint5_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M47.1044 175.871C40.2302 175.871 34.6016 170.288 34.6016 163.414C34.6016 156.54 40.2302 150.911 47.1044 150.911C53.9787 150.911 59.5612 156.54 59.5612 163.414C59.5612 170.288 53.9787 175.871 47.1044 175.871Z"
               fill="url(#paint6_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M143.806 166.782H114.694C112.849 166.782 111.326 165.259 111.326 163.414V103.529C111.326 101.684 112.849 100.161 114.694 100.161C116.586 100.161 118.108 101.684 118.108 103.529V160H143.806C145.698 160 147.22 161.522 147.22 163.414C147.22 165.259 145.698 166.782 143.806 166.782Z"
               fill="url(#paint7_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M152.894 175.871C146.02 175.871 140.392 170.288 140.392 163.414C140.392 156.54 146.02 150.911 152.894 150.911C159.769 150.911 165.397 156.54 165.397 163.414C165.397 170.288 159.769 175.871 152.894 175.871Z"
               fill="url(#paint8_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M99.9763 181.822C98.1309 181.822 96.6084 180.3 96.6084 178.408V103.529C96.6084 101.684 98.1309 100.161 99.9763 100.161C101.868 100.161 103.39 101.684 103.39 103.529V178.408C103.39 180.3 101.868 181.822 99.9763 181.822Z"
               fill="url(#paint9_linear_215_269)"
             />
             <path
-              class="phase__fade-line"
+              class="process__fade-line"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M99.9763 200C93.102 200 87.5195 194.371 87.5195 187.497C87.5195 180.623 93.102 174.994 99.9763 174.994C106.897 174.994 112.479 180.623 112.479 187.497C112.479 194.371 106.897 200 99.9763 200Z"
@@ -508,7 +508,7 @@ const t = {
       </div>
       <button
         type="button"
-        class="btn-expand-process btn__second btn__second--light"
+        class="process__toggle btn__second btn__second--light"
         aria-expanded="false"
         aria-controls="phase-4-content"
         aria-describedby="phase-4-title"
@@ -525,7 +525,7 @@ const t = {
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .process__title-cont {
+  .process__heading {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -534,7 +534,7 @@ const t = {
     padding-bottom: var(--space-6);
   }
 
-  .about__process-cont {
+  .process__phases {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -543,11 +543,11 @@ const t = {
     align-items: center;
   }
 
-  .phase-cont {
+  .process__phase {
     flex: 1 1 calc(50% - 24px);
   }
 
-  .phase__cont--align {
+  .process__phase--closed {
     padding: clamp(var(--space-5), 9vw, var(--space-8));
     display: flex;
     flex-direction: column;
@@ -556,11 +556,11 @@ const t = {
     gap: var(--space-4);
   }
 
-  .phase--inactive {
+  .process__phase--hidden {
     display: none;
   }
 
-  .phase--active {
+  .process__phase--open {
     width: 100%;
     padding: clamp(var(--space-4), 2vw + 1rem, var(--space-8));
     display: flex;
@@ -570,31 +570,31 @@ const t = {
     gap: var(--space-4);
   }
 
-  .phase__content--hidden {
+  .process__phase-content--hidden {
     display: none;
   }
 
-  .phase__content--expanded {
+  .process__phase-content--open {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .phase__cont__text {
+  .process__phase-text {
     width: 50%;
   }
 
-  .phase__cont__svg {
+  .process__phase-art {
     width: 20%;
     height: auto;
   }
 
-  .phase__svg-size {
+  .process__phase-svg {
     width: 100%;
     height: auto;
   }
 
-  .svg--pulse {
+  .process__phase-svg--pulse {
     animation: pulse 10s;
   }
 
@@ -610,7 +610,7 @@ const t = {
     }
   }
 
-  .phase__fade-line {
+  .process__fade-line {
     animation: fade 10s ease-in-out infinite;
   }
 
@@ -627,14 +627,14 @@ const t = {
   }
 
   @media screen and (max-width: 600px) {
-    .phase__content--expanded {
+    .process__phase-content--open {
       flex-direction: column;
       justify-content: center;
     }
-    .phase__cont__text {
+    .process__phase-text {
       width: 100%;
     }
-    .phase__cont__svg {
+    .process__phase-art {
       width: 30%;
     }
   }
@@ -643,8 +643,8 @@ const t = {
      rules that start the animations, which is why it is here and not with the
      other reduced-motion rules in src/styles/09-reduced-motion.css. */
   @media (prefers-reduced-motion: reduce) {
-    .svg--pulse,
-    .phase__fade-line {
+    .process__phase-svg--pulse,
+    .process__fade-line {
       animation: none;
     }
   }

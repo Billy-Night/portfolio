@@ -2,8 +2,8 @@
 // button shows its text.
 // Used by src/components/landes/LandesChallenges.astro.
 
-const challengeBtns = document.querySelectorAll('.ver-switcher-btn')
-const challengeContents = document.querySelectorAll('.ver-switcher-content-txt')
+const challengeBtns = document.querySelectorAll('.challenges__button')
+const challengeContents = document.querySelectorAll('.challenges__answer')
 
 if (challengeBtns.length && challengeContents.length) {
   let currentIndex = 0

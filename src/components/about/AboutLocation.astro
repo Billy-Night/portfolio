@@ -36,7 +36,7 @@ const t = {
 ---
 
 <section class="section-pad">
-  <div class="abt-loc__heading-cont">
+  <div class="location__heading">
     <h2>{t.locationHeading}</h2>
   </div>
   <div class="layout-two-column content-cont-marg-right">
@@ -49,7 +49,7 @@ const t = {
       />
     </div>
     <div
-      class="layout-two-column-txt txt-normal-flow glass__back loc-mob-margin-left"
+      class="layout-two-column-txt location__text glass__back loc-mob-margin-left"
     >
       <h3>CAPBRETON & HOSSEGOR</h3>
       <p class="max-txt-width">
@@ -60,31 +60,31 @@ const t = {
       </p>
     </div>
   </div>
-  <div class="abt-per__heading-cont per__title-marg">
+  <div class="location__personal-heading location__personal-heading--gap">
     <h2>{t.personalHeading}</h2>
   </div>
   <div
-    class="layout-two-column perso__content-reversed content-cont-marg-left"
+    class="layout-two-column location__row--reversed content-cont-marg-left"
   >
     <div class="layout-two-column-img img-overlay-blur-right">
       <Photo
         src={imgBillyNightingaleSnowboardLaMongie}
         alt="Billy Nightingale web designer and developer snowboarding in the La Mongie"
-        class="img-rad img-reversed"
+        class="img-rad location__image--reversed"
         loading="lazy"
       />
     </div>
     <div
-      class="layout-two-column-txt glass__back loc-mob-margin-right txt-reversed per-mob-margin-right"
+      class="layout-two-column-txt glass__back loc-mob-margin-right location__text--reversed per-mob-margin-right"
     >
       <h3>{t.interestsHeading}</h3>
-      <p class="max-txt-width per__txt-mar">
+      <p class="max-txt-width location__personal-text">
         {t.interestsText1}
       </p>
-      <p class="max-txt-width per__txt-mar">
+      <p class="max-txt-width location__personal-text">
         {t.interestsText2}
       </p>
-      <p class="max-txt-width per__txt-mar">
+      <p class="max-txt-width location__personal-text">
         {t.interestsText3}
       </p>
     </div>
@@ -93,52 +93,52 @@ const t = {
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .abt-loc__heading-cont {
+  .location__heading {
     padding-bottom: var(--space-6);
   }
 
-  .txt-normal-flow {
+  .location__text {
     transform: translateX(-20%) translateY(10%);
   }
 
-  .abt-per__heading-cont {
+  .location__personal-heading {
     padding-bottom: var(--space-6);
     text-align: right;
   }
 
-  .per__title-marg {
+  .location__personal-heading--gap {
     margin-top: var(--gap-xxl);
   }
 
-  .perso__content-reversed {
+  .location__row--reversed {
     grid-template-areas: 'text image';
   }
 
-  .img-reversed {
+  .location__image--reversed {
     grid-area: image;
   }
 
-  .txt-reversed {
+  .location__text--reversed {
     grid-area: text;
     transform: translateX(20%) translateY(10%);
   }
 
   @media (min-width: 768px) and (max-width: 1860px) {
-    .per__txt-mar {
+    .location__personal-text {
       margin-right: 10%;
       text-align: left;
     }
   }
 
   @media screen and (max-width: 767px) {
-    .perso__content-reversed {
+    .location__row--reversed {
       grid-template-areas: 'image' 'text';
     }
-    .txt-normal-flow {
+    .location__text {
       transform: translateX(0%) translateY(-10%);
     }
 
-    .txt-reversed {
+    .location__text--reversed {
       transform: translateX(0%) translateY(-10%);
     }
   }

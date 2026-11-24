@@ -6,7 +6,7 @@ const navHeight = header.getBoundingClientRect().height
 const nav = document.querySelector('.nav__list-full')
 const navHamBtn = document.querySelector('.menu-btn--hamburger')
 const navHamImg = navHamBtn.querySelector('img')
-const navLinksMini = document.querySelectorAll('.mini')
+const navLinksMini = document.querySelectorAll('.nav__link--mini')
 const navList = document.querySelector('.nav__list')
 
 const handlerHover = function (e) {
@@ -77,9 +77,9 @@ window.matchMedia('(max-width: 800px)').addEventListener('change', closeMenu)
 window.addEventListener('scroll', () => {
   if (window.scrollY > navHeight) {
     header.classList.add('small-nav')
-    nav.classList.add('nav_radius')
+    nav.classList.add('nav--rounded')
   } else {
     header.classList.remove('small-nav')
-    nav.classList.remove('nav_radius')
+    nav.classList.remove('nav--rounded')
   }
 })
