@@ -92,10 +92,11 @@ const linkedIn =
   import '../scripts/header.js'
 </script>
 
-<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+<!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
+     reaches elements written elsewhere. How styles are organised: src/styles/README.md
      Keep the order of these rules: the open-menu rules (.nav__links-mob, .nav__dropdown) must come
      after the phone rules that hide the links, or the menu opens empty. -->
-<style is:global>
+<style>
   .nav__glass-back {
     background: var(--glass-bg-dark);
     transition: var(--transition-lift);
@@ -157,7 +158,7 @@ const linkedIn =
     vertical-align: -0.125em;
   }
 
-  a:hover .social__icons {
+  :global(a:hover) .social__icons {
     fill: var(--white);
   }
 
