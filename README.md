@@ -11,6 +11,7 @@ The website for [billynightingale.com](https://www.billynightingale.com/), in En
 | `npm run build` | Build the site into `dist/` |
 | `npm run preview` | Serve the built site locally |
 | `npm run seo:compare` | Compare the build against the SEO baseline (run `npm run build` first) |
+| `npm run check` | Type-check the Astro files: wrong props, missing imports, undefined variables. Expect 0 errors. It lists one hint, for a function the cookie banner script shares with the analytics script on purpose |
 
 ## Structure
 
