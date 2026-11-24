@@ -1215,7 +1215,7 @@ a:hover .social__icons {
 
 .project-page__meta {
   font-family: var(--mono);
-  color: white;
+  color: var(--subHeading-colour);
   text-align: center;
   margin: 0 0 var(--space-3);
 }
@@ -1297,9 +1297,14 @@ a:hover .social__icons {
   margin: 0;
 }
 
+/* The same small-heading look as "The problem" and "The result" on the homepage cards */
 .project-page__facts dt {
-  font-family: var(--mono);
-  color: white;
+  font-family: var(--subHeading);
+  font-size: var(--title-6);
+  line-height: var(--leading-title);
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  color: var(--subHeading-colour);
   margin-bottom: var(--space-1);
 }
 
@@ -1405,7 +1410,7 @@ a:hover .social__icons {
 
 .project-more__sector {
   font-family: var(--mono);
-  color: white;
+  color: var(--subHeading-colour);
 }
 
 /*~ About Page */
