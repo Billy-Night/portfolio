@@ -1,0 +1,554 @@
+---
+// The hero at the top of the homepage and the About page: the frame of thin
+// lines, the large title with its height measure, the photo inside the small
+// orbit, and the text beside the large orbit. Used by home/HomeHero.astro and
+// about/AboutHero.astro, which supply the parts that differ:
+//
+//   <Hero title="..." titleClass="...">
+//     <span slot="title-word">...</span>     the small line above the title
+//     <Photo slot="photo" ... />             the portrait
+//     ...                                    the heading, text and buttons
+//   </Hero>
+//
+// The orbit and the title measure are animated by src/scripts/heroTitle.js.
+interface Props {
+  /** The large title */
+  title: string
+  /** An extra class for the title, for a language that needs a smaller size */
+  titleClass?: string | false
+}
+
+const { title, titleClass } = Astro.props
+---
+
+
+<section class="hero__section" id="intro">
+  <svg
+    class="hero__horLine-top"
+    width="3000"
+    height="1"
+    viewBox="0 0 3000 1"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3000" y1="0.5" y2="0.5" />
+  </svg>
+  <svg
+    class="hero__verLine-left"
+    width="1"
+    height="3000"
+    viewBox="0 0 1 3000"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="0.5" y1="3000" x2="0.5" />
+  </svg>
+  <svg
+    class="hero__verLine-right"
+    width="1"
+    height="3000"
+    viewBox="0 0 1 3000"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="0.5" y1="3000" x2="0.5" />
+  </svg>
+  <svg
+    class="hero__horLine-bottom"
+    width="3000"
+    height="1"
+    viewBox="0 0 3000 1"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3000" y1="0.5" y2="0.5" />
+  </svg>
+  <div class="hero__full-container">
+    <div class="hero__title-container">
+      <div>
+        {/* The space after the title word is part of the layout: the word and the title sit on one line */}
+        <slot name="title-word" />{' '}<h1 class:list={['hero__title', titleClass]}>
+          <span class="hero__title-text">{title}</span>
+          <span class="type-measure">
+            <svg
+              class="measure"
+              width="14"
+              viewBox="0 0 14 302"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="rustic-metal-measure"
+                  x1="7"
+                  y1="0"
+                  x2="7"
+                  y2="302"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0%" stop-color="#75685b" />
+                  <stop offset="45%" stop-color="#353e43" />
+                  <stop offset="100%" stop-color="#1b2024" />
+                </linearGradient>
+              </defs>
+              <line
+                x1="7"
+                y1="1"
+                x2="7"
+                y2="301"
+                stroke="url(#rustic-metal-measure)"
+                stroke-width="1"
+              />
+
+              <line
+                x1="1"
+                y1="0.5"
+                x2="14"
+                y2="0.5"
+                stroke="#75685b"
+                stroke-width="1"
+              />
+
+              <line
+                x1="0"
+                y1="300.5"
+                x2="13"
+                y2="300.5"
+                stroke="#1b2024"
+                stroke-width="1"
+              />
+            </svg>
+            <span class="type-measure__label"></span>
+          </span>
+        </h1>
+      </div>
+    </div>
+    <div class="intro__img-container">
+      <svg
+        class="hero-small-circle"
+        width="900"
+        height="900"
+        viewBox="-20 -20 940 940"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="rustic-metal-hero-small"
+            x1="0"
+            y1="0"
+            x2="900"
+            y2="900"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="45%" stop-color="#75685b" />
+            <stop offset="75%" stop-color="#353e43" />
+            <stop offset="100%" stop-color="#1b2024" />
+          </linearGradient>
+        </defs>
+        <path
+          id="orbit-path-draw-1"
+          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+          fill="none"
+          stroke="url(#rustic-metal-hero-small)"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+        />
+        <path
+          id="orbitPath1"
+          d="M 450 1 A 449 449 0 1 0 450 899 A 449 449 0 1 0 450 1"
+        />
+        <circle id="orbitDot1" r="10"></circle>
+      </svg>
+      <div class="intro__image--frame">
+        <slot name="photo" />
+      </div>
+    </div>
+    <div class="hero__text-container">
+      <svg
+        class="hero-big-circle"
+        width="900"
+        height="900"
+        viewBox="-20 -20 940 940"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="rustic-metal-hero-bg-circle"
+            x1="0"
+            y1="0"
+            x2="900"
+            y2="900"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="45%" stop-color="#75685b" />
+            <stop offset="75%" stop-color="#353e43" />
+            <stop offset="100%" stop-color="#1b2024" />
+          </linearGradient>
+        </defs>
+        <path
+          id="orbit-path-draw-2"
+          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+          fill="none"
+          stroke="url(#rustic-metal-hero-bg-circle)"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+        />
+        <path
+          id="orbitPath2"
+          d="M 450 1 A 449 449 0 1 1 450 899 A 449 449 0 1 1 450 1"
+        />
+        <circle id="orbitDot2" r="10"></circle>
+      </svg>
+      <div class="intro__text-cont">
+        <div class="about__intro__txt-cont">
+          <slot /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/heroTitle.js'
+</script>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+     They cover both uses of the hero, including the classes the homepage and the About page
+     put on their own title word and photo. -->
+<style is:global>
+  .home-intro__name {
+    font-size: var(--title-3);
+    color: var(--light-gold);
+  }
+
+  .home-intro__img {
+    width: clamp(315px, 30vw, 375px);
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateX(-40px);
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 800px) {
+    .home-intro__img {
+      width: clamp(260px, 42vw, 310px);
+      margin-left: var(--space-4);
+    }
+
+    .home-hero-title-mob {
+      display: none;
+    }
+  }
+
+  .hero__section {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: clip;
+    overflow-y: clip;
+    padding: var(--hero-gutter);
+  }
+
+  .hero__horLine-top {
+    position: absolute;
+    top: var(--hero-gutter);
+    left: 0;
+    z-index: 2;
+  }
+
+  .hero__horLine-top line {
+    stroke: var(--news-paper-gray);
+  }
+
+  .hero__horLine-bottom {
+    position: absolute;
+    bottom: var(--hero-gutter);
+    left: 0;
+    z-index: 2;
+  }
+
+  .hero__horLine-bottom line {
+    stroke: var(--news-paper-gray);
+  }
+
+  .hero__verLine-left {
+    position: absolute;
+    top: 0;
+    left: var(--hero-gutter);
+    z-index: 2;
+  }
+
+  .hero__verLine-left line {
+    stroke: var(--news-paper-gray);
+  }
+
+  .hero__verLine-right {
+    position: absolute;
+    top: 0;
+    right: var(--hero-gutter);
+    z-index: 2;
+  }
+
+  .hero__verLine-right line {
+    stroke: var(--news-paper-gray);
+  }
+
+  .hero__full-container {
+    z-index: 3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'title title'
+      'image text';
+    row-gap: var(--gap-2xl);
+    column-gap: var(--gap-md);
+    padding-bottom: var(--gap-xxl);
+    overflow: clip;
+  }
+
+  .hero__title-container {
+    position: relative;
+    z-index: 2;
+    grid-area: title;
+    display: inline-flex;
+    align-items: flex-end;
+    padding-top: var(--space-3);
+    padding-left: var(--space-2);
+  }
+
+  .hero__title-word {
+    font-family: var(--display);
+    font-size: clamp(2.75rem, 2.379rem + 1.854vw, 4.5rem);
+    color: var(--brightGold);
+    line-height: 1;
+    letter-spacing: 3%;
+    margin-left: 0.3%;
+  }
+
+  .hero__title {
+    position: relative;
+    display: inline-block;
+    font-family: var(--display);
+    font-size: clamp(5rem, 15vw, 19rem);
+    color: var(--brightGold);
+    line-height: 0.9;
+    letter-spacing: 3%;
+  }
+
+  .hero__title-fr {
+    font-size: clamp(5rem, 10vw, 12rem);
+    line-height: 1.1;
+  }
+
+  .hero__title-text {
+    min-height: 5rem;
+    display: inline-block;
+    line-height: 0.7;
+    letter-spacing: 3%;
+  }
+
+  .type-measure {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 1.5rem);
+    transform: translateY(-60%);
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+  }
+
+  .type-measure svg {
+    width: 14px;
+    /* --measure-height is set by src/scripts/heroTitle.js to the title's height */
+    height: var(--measure-height);
+    overflow: visible;
+  }
+
+  .type-measure line {
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .type-measure__label {
+    font-size: 0.65rem;
+    line-height: 1;
+    color: var(--news-paper-gray);
+    font-family: var(--mono);
+  }
+
+  @media screen and (max-width: 745px) {
+    .type-measure {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .hero__title {
+      display: block;
+      line-height: 0.8;
+    }
+
+    .hero__title-text {
+      display: inline;
+    }
+
+    .hero__title-fr {
+      margin-top: var(--space-3);
+    }
+  }
+
+  .hero-big-circle {
+    position: absolute;
+    opacity: 1;
+    width: clamp(710px, 43vw, 900px);
+    top: 49%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-small-circle {
+    position: absolute;
+    opacity: 1;
+    width: clamp(480px, 40vw, 900px);
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  #orbit-path-draw-1 {
+    fill: transparent;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  #orbitPath1 {
+    fill: transparent;
+    stroke: none;
+  }
+
+  #orbit-path-draw-2 {
+    fill: transparent;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  #orbitPath2 {
+    fill: transparent;
+    stroke: none;
+  }
+
+  #orbitDot1 {
+    fill: var(--metal-light);
+  }
+
+  #orbitDot2 {
+    fill: var(--metal-light);
+  }
+
+  /* From 822px: up to 821px the phone layout further down sets this position */
+  @media (min-width: 822px) and (max-width: 1119px) {
+    .hero-small-circle {
+      left: 45%;
+    }
+  }
+
+  .intro__img-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-left: var(--gap-lx);
+    padding-right: var(--gap-lg);
+  }
+
+  .intro__image--frame {
+    z-index: 2;
+    min-height: 350px;
+    width: clamp(320px, 30vw, 550px);
+    background-color: var(--brightGold);
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .hero__text-container {
+    position: relative;
+    grid-area: text;
+    padding-right: clamp(8px, 7vw, 16px);
+  }
+
+  .intro__text-cont {
+    max-width: 60ch;
+  }
+
+  .about-intro__image {
+    width: clamp(200px, 40vw, 315px);
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 821px) {
+    .hero__full-container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'title'
+        'image'
+        'text';
+      row-gap: var(--gap-lg);
+    }
+
+    .intro__img-container {
+      width: 100%;
+      padding-left: 0%;
+      padding-left: var(--gap-md);
+      padding-right: var(--gap-md);
+      padding-top: 18%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .intro__image--frame {
+      width: 100%;
+      max-width: 400px;
+      min-height: 240px;
+    }
+
+    .about-intro__image {
+      width: clamp(210px, 35vw, 325px);
+    }
+
+    .hero__text-container {
+      padding-top: 0%;
+      padding-left: var(--gap-md);
+      padding-right: var(--gap-md);
+    }
+
+    .hero-small-circle {
+      left: 50%;
+      top: 50%;
+      width: clamp(300px, 70vw, 400px);
+    }
+
+    .hero-big-circle {
+      left: 42%;
+      width: 800px;
+    }
+  }
+</style>
