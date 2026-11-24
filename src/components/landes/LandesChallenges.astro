@@ -51,38 +51,38 @@ const t = {
     <h2>{t.heading}</h2>
     <p>{t.intro}</p>
   </div>
-  <div class="layout-two-column lan-chall-cont">
-    <div class="ver-switcher-btn-cont">
+  <div class="layout-two-column challenges">
+    <div class="challenges__buttons">
       <button
         type="button"
-        class="ver-switcher-btn is-active"
+        class="challenges__button is-active"
         data-index="0"
         aria-expanded="true"
         aria-controls="challenge-panel-0"
       >
-        <span class="ver-switcher-btn__label">{t.bookingTab}</span>
+        <span class="challenges__button-label">{t.bookingTab}</span>
       </button>
       <button
         type="button"
-        class="ver-switcher-btn"
+        class="challenges__button"
         data-index="1"
         aria-expanded="false"
         aria-controls="challenge-panel-1"
       >
-        <span class="ver-switcher-btn__label">{t.revenueTab}</span>
+        <span class="challenges__button-label">{t.revenueTab}</span>
       </button>
       <button
         type="button"
-        class="ver-switcher-btn"
+        class="challenges__button"
         data-index="2"
         aria-expanded="false"
         aria-controls="challenge-panel-2"
       >
-        <span class="ver-switcher-btn__label">{t.launchTab}</span>
+        <span class="challenges__button-label">{t.launchTab}</span>
       </button>
     </div>
-    <div class="ver-switcher-content">
-      <div class="ver-switcher-content-txt is-active" id="challenge-panel-0">
+    <div class="challenges__answers">
+      <div class="challenges__answer is-active" id="challenge-panel-0">
         <h3>{t.bookingHeading}</h3>
         <p>Client: Monkey Mood</p>
         <h3>{t.challengeLabel}</h3>
@@ -94,7 +94,7 @@ const t = {
           {t.bookingSolution}
         </p>
       </div>
-      <div class="ver-switcher-content-txt" id="challenge-panel-1">
+      <div class="challenges__answer" id="challenge-panel-1">
         <h3>{t.revenueHeading}</h3>
         <p>Client: Pacific Coast Cafe</p>
         <h3>{t.challengeLabel}</h3>
@@ -106,7 +106,7 @@ const t = {
           {t.revenueSolution}
         </p>
       </div>
-      <div class="ver-switcher-content-txt" id="challenge-panel-2">
+      <div class="challenges__answer" id="challenge-panel-2">
         <h3>{t.launchHeading}</h3>
         <p>Client: Turbulente Kombucha</p>
         <h3>{t.challengeLabel}</h3>
@@ -128,18 +128,18 @@ const t = {
 
 <!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .lan-chall-cont {
+  .challenges {
     padding-top: var(--space-7);
   }
 
-  .ver-switcher-btn-cont {
+  .challenges__buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 2;
   }
 
-  .ver-switcher-btn {
+  .challenges__button {
     border: none;
     padding: var(--space-5);
     background: none;
@@ -151,13 +151,13 @@ const t = {
     opacity: 60%;
   }
 
-  .ver-switcher-btn.is-active {
+  .challenges__button.is-active {
     opacity: 100%;
   }
 
   /* The label is a <span>, not a heading: a <button> may only contain text-level
      elements. It is styled to look like the headings beside it. */
-  .ver-switcher-btn__label {
+  .challenges__button-label {
     display: block;
     font-weight: 400;
     font-size: var(--title-2);
@@ -168,13 +168,13 @@ const t = {
     text-transform: uppercase;
   }
 
-  .ver-switcher-content {
+  .challenges__answers {
     position: relative;
     display: grid;
     height: 100%;
   }
 
-  .ver-switcher-content-txt {
+  .challenges__answer {
     padding: var(--space-6);
     border: 2px dashed rgba(220, 168, 104, 0.3);
     border-radius: var(--corner-rad);
@@ -185,14 +185,14 @@ const t = {
     pointer-events: none;
   }
 
-  .ver-switcher-content-txt.is-active {
+  .challenges__answer.is-active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
 
   @media screen and (max-width: 767px) {
-    .ver-switcher-btn {
+    .challenges__button {
       padding-left: 0px;
       padding-top: 0px;
       padding-bottom: var(--space-3);
@@ -200,14 +200,14 @@ const t = {
   }
 
   @media screen and (max-width: 752px) {
-    .ver-switcher-content {
+    .challenges__answers {
       position: sticky;
       height: auto;
       top: 50%;
       z-index: 2;
     }
 
-    .ver-switcher-content-txt.is-active {
+    .challenges__answer.is-active {
       background: var(--page-background);
     }
   }
