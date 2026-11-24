@@ -14,8 +14,7 @@ const { items, large = false } = Astro.props
 
 <BulletList items={items} class={large ? 'package-card__features package-card__features--large' : 'package-card__features'} />
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .package-card__features {
     position: relative;
@@ -27,13 +26,13 @@ const { items, large = false } = Astro.props
     list-style: none;
   }
 
+  .package-card__features li {
+    position: relative;
+  }
+
   .package-card__features--large {
     gap: var(--gap-sm);
     margin-top: var(--gap-sm);
-  }
-
-  .package-card__features li {
-    position: relative;
   }
 
   .package-card__features--large li {

@@ -105,39 +105,13 @@ const t = {
   </section>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .pricing-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border: 2px solid white;
-    border-radius: var(--corner-rad);
-    box-shadow: var(--glass-shadow);
-  }
-
-  .pricing-card {
-    padding: var(--gap-md) 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .pricing-card h3 {
-    font-size: var(--title-5);
-    text-align: center;
-  }
-
-  @media screen and (max-width: 560px) {
-    .pricing-container {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
-
-  .pricing-hook {
-    text-align: center;
-    margin-top: var(--space-6);
+  /* The section itself */
+  .packages {
+    position: relative;
+    overflow: hidden;
+    padding: var(--padding-hor-section) var(--page-gutter);
   }
 
   .packages__container {
@@ -189,6 +163,14 @@ const t = {
     gap: var(--gap-md);
   }
 
+  .packages__benefits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 0;
+    padding-top: 1.5rem;
+  }
+
   .benefit svg {
     display: block;
     width: 100%;
@@ -197,14 +179,6 @@ const t = {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-  }
-
-  .packages__benefits {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem 0;
-    padding-top: 1.5rem;
   }
 
   .benefit {
@@ -226,6 +200,38 @@ const t = {
   .benefit svg {
     width: 1.8rem;
     color: var(--gold);
+  }
+
+  .pricing-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 2px solid white;
+    border-radius: var(--corner-rad);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .pricing-card {
+    padding: var(--gap-md) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pricing-card h3 {
+    font-size: var(--title-5);
+    text-align: center;
+  }
+
+  .pricing-hook {
+    text-align: center;
+    margin-top: var(--space-6);
+  }
+
+  @media screen and (max-width: 560px) {
+    .pricing-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   @media (max-width: 1181px) {
@@ -254,12 +260,5 @@ const t = {
     .benefit + .benefit {
         border-left: 0;
       }
-  }
-
-  /* The section itself */
-  .packages {
-    position: relative;
-    overflow: hidden;
-    padding: var(--padding-hor-section) var(--page-gutter);
   }
 </style>

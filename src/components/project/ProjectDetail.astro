@@ -130,8 +130,7 @@ const home = routes.home[lang]
   </div>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   /* Same width and padding as .sections, without the fade-in: this is the first
      thing on the page and holds its main image. */
@@ -139,6 +138,13 @@ const home = routes.home[lang]
     max-width: var(--sec-width);
     margin: 0 auto;
     padding: var(--padding-hor-section) var(--page-gutter);
+  }
+
+  .project-page h1 {
+    font-size: var(--title-2);
+    text-align: center;
+    max-width: 26ch;
+    margin-inline: auto;
   }
 
   .project-page__breadcrumb {
@@ -168,13 +174,6 @@ const home = routes.home[lang]
     margin: 0 0 var(--space-3);
   }
 
-  .project-page h1 {
-    font-size: var(--title-2);
-    text-align: center;
-    max-width: 26ch;
-    margin-inline: auto;
-  }
-
   .project-page__photo {
     display: block;
     max-width: 1000px;
@@ -191,6 +190,43 @@ const home = routes.home[lang]
        figures sets a minimum width and the page scrolls sideways on a phone */
     grid-template-columns: minmax(0, 1fr);
     gap: var(--gap-lx);
+  }
+
+  .project-page__facts h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .project-page__facts dl {
+    margin: 0;
+  }
+
+  .project-page__facts dd {
+    margin: 0 0 var(--space-4);
+  }
+
+  .project-page__facts dd ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .project-page__facts .project-tech-list {
+    justify-content: flex-start;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+  }
+
+  .project-page__facts .project-tech-list li {
+    line-height: 1;
+  }
+
+  .project-page__live {
+    font-family: var(--mono);
+    text-transform: uppercase;
+  }
+
+  .project-page__live:hover {
+    color: var(--white);
   }
 
   .project-page__text h2,
@@ -235,43 +271,6 @@ const home = routes.home[lang]
     line-height: 1;
     color: var(--title-colour);
     margin-bottom: var(--space-2);
-  }
-
-  .project-page__facts h2 {
-    margin-bottom: var(--space-4);
-  }
-
-  .project-page__facts dl {
-    margin: 0;
-  }
-
-  .project-page__facts dd {
-    margin: 0 0 var(--space-4);
-  }
-
-  .project-page__facts dd ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .project-page__facts .project-tech-list {
-    justify-content: flex-start;
-    gap: var(--space-2);
-    margin-top: var(--space-2);
-  }
-
-  .project-page__facts .project-tech-list li {
-    line-height: 1;
-  }
-
-  .project-page__live {
-    font-family: var(--mono);
-    text-transform: uppercase;
-  }
-
-  .project-page__live:hover {
-    color: var(--white);
   }
 
   @media (min-width: 900px) {

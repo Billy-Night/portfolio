@@ -76,8 +76,7 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .tech__title-cont {
     display: flex;
@@ -94,12 +93,6 @@ const t = {
     border: 2px solid white;
     border-radius: var(--corner-rad);
     box-shadow: var(--glass-shadow);
-  }
-
-  @media screen and (max-width: 848px) {
-    .tech__list-cont {
-      grid-template-columns: 1fr;
-    }
   }
 
   .tech__containers {
@@ -124,5 +117,11 @@ const t = {
     border-radius: var(--corner-rad);
     color: var(--dark);
     font-family: var(--mono);
+  }
+
+  @media screen and (max-width: 848px) {
+    .tech__list-cont {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

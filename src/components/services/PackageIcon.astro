@@ -80,17 +80,12 @@ const { id, label, large = false } = Astro.props
   )}
 </div>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .package-card__icon {
     flex: 0 0 auto;
     width: 3.5rem;
     color: var(--gold);
-  }
-
-  .package-card__icon--large {
-    width: clamp(5rem, 9vw, 8rem);
   }
 
   .package-card__icon svg {
@@ -101,16 +96,6 @@ const { id, label, large = false } = Astro.props
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-  }
-
-  @media (max-width: 680px) {
-    .package-card__icon {
-        width: 2.75rem;
-      }
-
-    .package-card__icon--large {
-        width: 4rem;
-      }
   }
 
   .package-card__icon svg {
@@ -137,26 +122,6 @@ const { id, label, large = false } = Astro.props
     animation: rotate-clockwise 28s linear infinite;
   }
 
-  @keyframes rotate-clockwise {
-    from {
-      transform: rotate(45deg);
-    }
-
-    to {
-      transform: rotate(405deg);
-    }
-  }
-
-  @keyframes rotate-anticlockwise {
-    from {
-      transform: rotate(45deg);
-    }
-
-    to {
-      transform: rotate(-315deg);
-    }
-  }
-
   .package-card__icon circle {
     transform-box: fill-box;
     transform-origin: center;
@@ -176,6 +141,26 @@ const { id, label, large = false } = Astro.props
   /* Outer lens */
   .package-card__icon circle:nth-child(3) {
     animation: telescope-outer 6s ease-in-out infinite;
+  }
+
+  @keyframes rotate-clockwise {
+    from {
+      transform: rotate(45deg);
+    }
+
+    to {
+      transform: rotate(405deg);
+    }
+  }
+
+  @keyframes rotate-anticlockwise {
+    from {
+      transform: rotate(45deg);
+    }
+
+    to {
+      transform: rotate(-315deg);
+    }
   }
 
   @keyframes telescope-inner {
@@ -209,6 +194,20 @@ const { id, label, large = false } = Astro.props
     50% {
       transform: translateX(7px) scale(1.06);
     }
+  }
+
+  .package-card__icon--large {
+    width: clamp(5rem, 9vw, 8rem);
+  }
+
+  @media (max-width: 680px) {
+    .package-card__icon {
+        width: 2.75rem;
+      }
+
+    .package-card__icon--large {
+        width: 4rem;
+      }
   }
 
   /* :nth-child(n) matches every circle. It is there to give this rule the same

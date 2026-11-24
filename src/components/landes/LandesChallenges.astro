@@ -126,14 +126,33 @@ const t = {
   import '../../scripts/landesChallenges.js'
 </script>
 
-<!-- The challenges switcher's own styles. is:global keeps the rules unscoped, so they behave exactly as they
-     did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
+  .lan-chall-cont {
+    padding-top: var(--space-7);
+  }
+
   .ver-switcher-btn-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 2;
+  }
+
+  .ver-switcher-btn {
+    border: none;
+    padding: var(--space-5);
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: left;
+    /* 60% is the faintest this gold can go on the navy background and still
+       be readable enough for large text (contrast 3.6 to 1; 3 to 1 is the minimum) */
+    opacity: 60%;
+  }
+
+  .ver-switcher-btn.is-active {
+    opacity: 100%;
   }
 
   /* The label is a <span>, not a heading: a <button> may only contain text-level
@@ -149,51 +168,10 @@ const t = {
     text-transform: uppercase;
   }
 
-  .ver-switcher-btn {
-    border: none;
-    padding: var(--space-5);
-    background: none;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: left;
-    /* 60% is the faintest this gold can go on the navy background and still
-       be readable enough for large text (contrast 3.6 to 1; 3 to 1 is the minimum) */
-    opacity: 60%;
-  }
-
-  @media screen and (max-width: 767px) {
-    .ver-switcher-btn {
-      padding-left: 0px;
-      padding-top: 0px;
-      padding-bottom: var(--space-3);
-    }
-  }
-
-  .ver-switcher-btn.is-active {
-    opacity: 100%;
-  }
-
-  .lan-chall-cont {
-    padding-top: var(--space-7);
-  }
-
   .ver-switcher-content {
     position: relative;
     display: grid;
     height: 100%;
-  }
-
-  @media screen and (max-width: 752px) {
-    .ver-switcher-content {
-      position: sticky;
-      height: auto;
-      top: 50%;
-      z-index: 2;
-    }
-
-    .ver-switcher-content-txt.is-active {
-      background: var(--page-background);
-    }
   }
 
   .ver-switcher-content-txt {
@@ -211,5 +189,26 @@ const t = {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+  }
+
+  @media screen and (max-width: 767px) {
+    .ver-switcher-btn {
+      padding-left: 0px;
+      padding-top: 0px;
+      padding-bottom: var(--space-3);
+    }
+  }
+
+  @media screen and (max-width: 752px) {
+    .ver-switcher-content {
+      position: sticky;
+      height: auto;
+      top: 50%;
+      z-index: 2;
+    }
+
+    .ver-switcher-content-txt.is-active {
+      background: var(--page-background);
+    }
   }
 </style>

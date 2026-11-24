@@ -75,8 +75,7 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .landes-hero-container {
     display: flex;
@@ -112,6 +111,20 @@ const t = {
     width: clamp(260px, 45vw, 650px);
   }
 
+  .landes-hero-svg1,
+  .landes-hero-svg2 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .landes-hero-svg1 {
+    z-index: 1;
+  }
+
+  .landes-hero-svg2 {
+    z-index: 3;
+  }
+
   .landes-hero-img,
   .landes-hero-svg1,
   .landes-hero-svg2 {
@@ -123,22 +136,16 @@ const t = {
     width: 100%;
   }
 
-  .landes-hero-svg1,
-  .landes-hero-svg2 {
-    width: 100%;
-    height: 100%;
-  }
-
   .landes-hero-img {
     z-index: 2;
   }
 
-  .landes-hero-svg1 {
-    z-index: 1;
-  }
-
-  .landes-hero-svg2 {
-    z-index: 3;
+  .landes-cta-container {
+    padding: var(--space-3);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   @media screen and (max-width: 600px) {
@@ -154,13 +161,5 @@ const t = {
     .landes-hero-text-container {
         padding-top: var(--space-3);
       }
-  }
-
-  .landes-cta-container {
-    padding: var(--space-3);
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
   }
 </style>

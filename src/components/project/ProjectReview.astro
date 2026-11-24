@@ -32,8 +32,7 @@ const t = {
   </figure>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .project-review {
     margin: 0;
@@ -44,14 +43,6 @@ const t = {
     gap: var(--gap-md);
   }
 
-  .project-review__photo {
-    width: 150px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-  }
-
   .project-review blockquote {
     margin: 0;
     max-width: 65ch;
@@ -60,5 +51,13 @@ const t = {
   .project-review figcaption {
     font-family: var(--mono);
     color: var(--gold);
+  }
+
+  .project-review__photo {
+    width: 150px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
   }
 </style>

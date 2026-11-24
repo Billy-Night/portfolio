@@ -57,9 +57,12 @@ const t = {
   import '../../scripts/faq.js'
 </script>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
+  .vertical-switcher-question {
+    font-size: var(--title-2);
+  }
+
   .vertical-switcher-btn {
     border: none;
     padding-top: var(--gap-sm);
@@ -76,10 +79,6 @@ const t = {
     letter-spacing: inherit;
     color: inherit;
     text-transform: inherit;
-  }
-
-  .vertical-switcher-question {
-    font-size: var(--title-2);
   }
 
   .vertical-switcher-btn.is-active {

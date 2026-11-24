@@ -92,8 +92,9 @@ const linkedIn =
   import '../scripts/header.js'
 </script>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md
+     Keep the order of these rules: the open-menu rules (.nav__links-mob, .nav__dropdown) must come
+     after the phone rules that hide the links, or the menu opens empty. -->
 <style is:global>
   .nav__glass-back {
     background: var(--glass-bg-dark);

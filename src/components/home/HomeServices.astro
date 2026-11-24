@@ -108,8 +108,7 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .layout-6x6-grid {
     display: grid;
@@ -130,26 +129,9 @@ const t = {
       '. . automation automation . .';
   }
 
-  .home-services-development {
-    grid-area: development;
-  }
-
-  .home-services-seo {
-    grid-area: seo;
-    min-width: 72px;
-  }
-
   .home-services-design {
     grid-area: design;
     min-width: 72px;
-  }
-
-  .home-services-automation {
-    grid-area: automation;
-  }
-
-  .home-services-img {
-    grid-area: img;
   }
 
   /* The four words around the circle are labels, not section headings, so they
@@ -163,6 +145,23 @@ const t = {
     letter-spacing: 4%;
     color: var(--subHeading-colour);
     text-transform: uppercase;
+  }
+
+  .home-services-development {
+    grid-area: development;
+  }
+
+  .home-services-seo {
+    grid-area: seo;
+    min-width: 72px;
+  }
+
+  .home-services-automation {
+    grid-area: automation;
+  }
+
+  .home-services-img {
+    grid-area: img;
   }
 
   .home-services__circle {

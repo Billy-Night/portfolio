@@ -78,8 +78,7 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .services-hero-section {
     max-width: var(--sec-width-lg);
@@ -100,6 +99,16 @@ const t = {
     margin-top: clamp(3rem, 9.6vw, 16rem);
     -webkit-backdrop-filter: var(--glass-blur-rich);
     backdrop-filter: var(--glass-blur-rich);
+  }
+
+  .services-intro-img-frame img {
+    width: clamp(300px, 40vw, 450px);
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    transform: translate(-50%, 9.6%);
+    z-index: 1;
   }
 
   .services-intro-word {
@@ -173,16 +182,6 @@ const t = {
     .flip-text span {
       transition: none;
     }
-  }
-
-  .services-intro-img-frame img {
-    width: clamp(300px, 40vw, 450px);
-    height: auto;
-    position: absolute;
-    bottom: 0;
-    left: 70%;
-    transform: translate(-50%, 9.6%);
-    z-index: 1;
   }
 
   @media screen and (max-width: 670px) {

@@ -79,14 +79,8 @@ const t = {
   {large && <div class="package-card__pattern" aria-hidden="true" />}
 </article>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
-  .package-card__title {
-    margin: 0;
-    line-height: 0.95;
-  }
-
   .package-card {
     position: relative;
     display: flex;
@@ -102,15 +96,6 @@ const t = {
       transform 220ms ease,
       border-color 220ms ease,
       background-color 220ms ease;
-  }
-
-  /* Above 800px the parts of a card sit 1rem apart. This spacing used to arrive
-     by accident, from a rule written for the homepage project cards that applied
-     to every <article>. That rule is now scoped, so the spacing is stated here. */
-  @media (min-width: 800px) {
-    .package-card {
-        gap: 1rem;
-      }
   }
 
   .package-card:hover {
@@ -145,6 +130,11 @@ const t = {
     width: 2.5rem;
     height: 1px;
     background: var(--gold);
+  }
+
+  .package-card__title {
+    margin: 0;
+    line-height: 0.95;
   }
 
   .package-card__title {
@@ -222,6 +212,15 @@ const t = {
 
   .package-card__pattern::after {
     inset: 4rem;
+  }
+
+  /* Above 800px the parts of a card sit 1rem apart. This spacing used to arrive
+     by accident, from a rule written for the homepage project cards that applied
+     to every <article>. That rule is now scoped, so the spacing is stated here. */
+  @media (min-width: 800px) {
+    .package-card {
+        gap: 1rem;
+      }
   }
 
   @media (max-width: 1181px) {

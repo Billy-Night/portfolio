@@ -523,8 +523,7 @@ const t = {
   import '../../scripts/processPhases.js'
 </script>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .process__title-cont {
     display: flex;
@@ -571,6 +570,25 @@ const t = {
     gap: var(--space-4);
   }
 
+  .phase__content--hidden {
+    display: none;
+  }
+
+  .phase__content--expanded {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .phase__cont__text {
+    width: 50%;
+  }
+
+  .phase__cont__svg {
+    width: 20%;
+    height: auto;
+  }
+
   .phase__svg-size {
     width: 100%;
     height: auto;
@@ -606,25 +624,6 @@ const t = {
     100% {
       opacity: 0;
     }
-  }
-
-  .phase__content--hidden {
-    display: none;
-  }
-
-  .phase__content--expanded {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .phase__cont__text {
-    width: 50%;
-  }
-
-  .phase__cont__svg {
-    width: 20%;
-    height: auto;
   }
 
   @media screen and (max-width: 600px) {

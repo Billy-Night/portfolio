@@ -91,11 +91,14 @@ const t = {
   </div>
 </section>
 
-<!-- This section's own styles. is:global keeps the rules unscoped, so they behave exactly as they
-     did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .abt-loc__heading-cont {
     padding-bottom: var(--space-6);
+  }
+
+  .txt-normal-flow {
+    transform: translateX(-20%) translateY(10%);
   }
 
   .abt-per__heading-cont {
@@ -107,19 +110,12 @@ const t = {
     margin-top: var(--gap-xxl);
   }
 
-  @media (min-width: 768px) and (max-width: 1860px) {
-    .per__txt-mar {
-      margin-right: 10%;
-      text-align: left;
-    }
-  }
-
-  .txt-normal-flow {
-    transform: translateX(-20%) translateY(10%);
-  }
-
   .perso__content-reversed {
     grid-template-areas: 'text image';
+  }
+
+  .img-reversed {
+    grid-area: image;
   }
 
   .txt-reversed {
@@ -127,8 +123,11 @@ const t = {
     transform: translateX(20%) translateY(10%);
   }
 
-  .img-reversed {
-    grid-area: image;
+  @media (min-width: 768px) and (max-width: 1860px) {
+    .per__txt-mar {
+      margin-right: 10%;
+      text-align: left;
+    }
   }
 
   @media screen and (max-width: 767px) {

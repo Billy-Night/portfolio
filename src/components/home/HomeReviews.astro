@@ -112,8 +112,7 @@ const t = {
   import '../../scripts/reviews.js'
 </script>
 
-<!-- The homepage reviews' own styles. is:global keeps the rules unscoped, so they behave exactly as they
-     did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .cont__review {
     position: relative;
@@ -127,18 +126,6 @@ const t = {
     width: 100%;
     max-width: 900px;
     min-height: 700px;
-  }
-
-  @media screen and (max-width: 600px) {
-    .review-hover-wrap {
-      min-height: 800px;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    .review-hover-wrap {
-      min-height: 1000px;
-    }
   }
 
   .review-hover-wrap:hover {
@@ -165,6 +152,21 @@ const t = {
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .review-avatar {
+    z-index: 1;
+    width: 180px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+
   .cont__review-text {
     position: relative;
     z-index: 2;
@@ -181,56 +183,6 @@ const t = {
     align-items: center;
     text-align: center;
     padding: var(--space-6);
-  }
-
-  .review-avatar {
-    z-index: 1;
-    width: 180px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: var(--glass-shadow);
-    -webkit-backdrop-filter: var(--glass-blur);
-    backdrop-filter: var(--glass-blur);
-  }
-
-  @media screen and (max-width: 700px) {
-    .review-avatar {
-      width: 150px;
-      left: 50%;
-      transform: translate(-50%);
-    }
-
-    .cont__review-content {
-      padding-top: var(--space-11);
-      padding-left: 0;
-    }
-
-    .cont__review-text {
-      padding: var(--space-5);
-    }
-
-    .cont__review h2 {
-      text-align: center;
-    }
-  }
-
-  .review__svg--pause {
-    width: var(--icon-size-md);
-    height: var(--icon-size-md);
-    position: absolute;
-    opacity: 0;
-    top: var(--space-3);
-    right: var(--space-3);
-    fill: var(--body-colour);
-  }
-
-  .review__svg--pause.pause-icon-is-active {
-    opacity: 1;
   }
 
   .review__svg--play {
@@ -256,7 +208,54 @@ const t = {
     transform-origin: 242.5px 242.5px;
   }
 
+  .review__svg--pause {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+    position: absolute;
+    opacity: 0;
+    top: var(--space-3);
+    right: var(--space-3);
+    fill: var(--body-colour);
+  }
+
+  .review__svg--pause.pause-icon-is-active {
+    opacity: 1;
+  }
+
   .cont__review-stars {
     padding: 0px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .review-hover-wrap {
+      min-height: 800px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .review-hover-wrap {
+      min-height: 1000px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .review-avatar {
+      width: 150px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .cont__review-content {
+      padding-top: var(--space-11);
+      padding-left: 0;
+    }
+
+    .cont__review-text {
+      padding: var(--space-5);
+    }
+
+    .cont__review h2 {
+      text-align: center;
+    }
   }
 </style>

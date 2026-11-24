@@ -142,8 +142,7 @@ const t = {
   </div>
 </section>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .landes-approach-section {
     max-width: var(--sec-width);
@@ -165,24 +164,6 @@ const t = {
     overflow: visible;
   }
 
-  .lan-approach-row2 {
-    padding-top: var(--padding-hor-section);
-    display: flex;
-    justify-content: center;
-  }
-
-  @media screen and (max-width: 800px) {
-    .lan-approach-row1 {
-        flex-direction: column;
-        gap: var(--space-10);
-        padding-bottom: 0px;
-      }
-
-    .lan-approach-row2 {
-        padding-top: var(--space-10);
-      }
-  }
-
   .approach-cont {
     position: relative;
     display: flex;
@@ -198,12 +179,10 @@ const t = {
     width: 100%;
   }
 
-  .approach-cta-cont {
-    padding-top: var(--padding-hor-section);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .approach-cont:hover {
+    .approach-design-heading {
+      transform: translateY(-80%);
+    }
   }
 
   .lan-approach-svg {
@@ -229,6 +208,36 @@ const t = {
     align-items: center;
   }
 
+  .approach-design-heading:hover {
+    transform: translateY(-80%);
+  }
+
+  .lan-approach-row2 {
+    padding-top: var(--padding-hor-section);
+    display: flex;
+    justify-content: center;
+  }
+
+  .approach-cta-cont {
+    padding-top: var(--padding-hor-section);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    .lan-approach-row1 {
+        flex-direction: column;
+        gap: var(--space-10);
+        padding-bottom: 0px;
+      }
+
+    .lan-approach-row2 {
+        padding-top: var(--space-10);
+      }
+  }
+
   @media screen and (max-width: 400px) {
     .lan-approach-svg {
         width: 240px;
@@ -238,15 +247,5 @@ const t = {
         width: 240px;
         background-size: contain;
       }
-  }
-
-  .approach-cont:hover {
-    .approach-design-heading {
-      transform: translateY(-80%);
-    }
-  }
-
-  .approach-design-heading:hover {
-    transform: translateY(-80%);
   }
 </style>

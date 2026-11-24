@@ -119,9 +119,7 @@ const t = {
   </div>
 </footer>
 
-<!-- The footer's own styles. is:global keeps them unscoped, so every rule behaves
-     exactly as it did in the shared stylesheet. Shared classes used here (sections,
-     gradient...) are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .footer__container {
     display: flex;
@@ -195,10 +193,6 @@ const t = {
     align-items: end;
   }
 
-  .footer__nav__link {
-    font-family: var(--mono);
-  }
-
   .footer__nav {
     list-style: none;
   }
@@ -206,6 +200,10 @@ const t = {
   .footer__nav li {
     margin-bottom: var(--space-2);
     text-transform: uppercase;
+  }
+
+  .footer__nav__link {
+    font-family: var(--mono);
   }
 
   .footer__legal {

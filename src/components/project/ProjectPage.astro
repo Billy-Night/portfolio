@@ -76,8 +76,7 @@ const t = {
   <Footer lang={lang} />
 </BaseLayout>
 
-<!-- This component's own styles. is:global keeps the rules unscoped, so they behave
-     exactly as they did in the shared stylesheet. Shared classes used here are in src/styles/. -->
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
 <style is:global>
   .project-more a:hover .project-more__name {
     color: var(--white);
