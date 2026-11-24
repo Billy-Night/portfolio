@@ -46,11 +46,11 @@
    and the labels in the facts box on a project page */
 .project-card__points dt,
 .project-page__facts dt {
-  font-family: var(--subHeading);
+  font-family: var(--sub-heading);
   font-size: var(--title-6);
   line-height: var(--leading-title);
   letter-spacing: 3%;
   text-transform: uppercase;
-  color: var(--subHeading-colour);
+  color: var(--sub-heading-colour);
   margin-bottom: var(--space-1);
 }
