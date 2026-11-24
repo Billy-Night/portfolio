@@ -3,7 +3,7 @@
 // is, the problem, the result) with one link, to the project's own page or,
 // for a project without one, to the client's website. The text comes from
 // `clientProjects` in src/data/projects.ts.
-import Photo from '../Photo.astro'
+import ProjectCard from './ProjectCard.astro'
 import { projectPaths, type Lang } from '../../i18n/routes'
 import type { ClientProject } from '../../data/projects'
 
@@ -16,8 +16,6 @@ interface Props {
 
 const { project, lang, reverse } = Astro.props
 
-// The headings carry 'heading-reverse' on the projects that are not reversed
-const headingReverse = !reverse && 'heading-reverse'
 
 const t = {
   en: {
@@ -35,32 +33,55 @@ const t = {
 }[lang]
 ---
 
-<article class:list={[reverse && 'project-info-container--reverse', 'project-info-container']}>
-  <div class="project-info__text">
-    <h3 class:list={['projects-heading', headingReverse]}>{project.category[lang]}</h3>
-    <h4 class:list={['projects-heading-name', headingReverse]}>{project.name[lang]}</h4>
-    <div class="project__glass-back">
-      <p class="max-txt-width">{project.card.client[lang]}</p>
-      <dl class="project-card__points">
-        <dt>{t.problem}</dt>
-        <dd>{project.card.problem[lang]}</dd>
-        <dt>{t.result}</dt>
-        <dd>{project.card.result[lang]}</dd>
-      </dl>
-      {
-        project.page ? (
-          <a class="btn__second btn__second--light project-card__link" href={projectPaths(project.page.slug)[lang]}>
-            {t.pageLink} <span aria-hidden="true">→</span>
-          </a>
-        ) : (
-          project.liveUrl && (
-            <a class="btn__second btn__second--light project-card__link" href={project.liveUrl} target="_blank" rel="noopener">
-              {t.liveLink} <span aria-hidden="true">→</span>
-            </a>
-          )
-        )
-      }
-    </div>
-  </div>
-  <Photo src={project.photo} maxWidth={project.photoMaxWidth} alt={project.photoAlt[lang]} loading="lazy" />
-</article>
+<ProjectCard
+  category={project.category[lang]}
+  name={project.name[lang]}
+  reverse={reverse}
+  photo={project.photo}
+  photoAlt={project.photoAlt[lang]}
+  photoMaxWidth={project.photoMaxWidth}
+>
+  <p class="max-txt-width">{project.card.client[lang]}</p>
+  <dl class="project-card__points">
+    <dt>{t.problem}</dt>
+    <dd>{project.card.problem[lang]}</dd>
+    <dt>{t.result}</dt>
+    <dd>{project.card.result[lang]}</dd>
+  </dl>
+  {
+    project.page ? (
+      <a class="btn__second btn__second--light project-card__link" href={projectPaths(project.page.slug)[lang]}>
+        {t.pageLink} <span aria-hidden="true">→</span>
+      </a>
+    ) : (
+      project.liveUrl && (
+        <a class="btn__second btn__second--light project-card__link" href={project.liveUrl} target="_blank" rel="noopener">
+          {t.liveLink} <span aria-hidden="true">→</span>
+        </a>
+      )
+    )
+  }
+</ProjectCard>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  /* Client project cards (src/components/home/ClientProjectCard.astro) */
+  .project-card__points {
+    margin: var(--space-4) 0 var(--space-5);
+  }
+
+  .project-card__points dd {
+    margin: 0 0 var(--space-4);
+    max-width: 65ch;
+    line-height: var(--leading-body);
+  }
+
+  .project-card__points dd:last-child {
+    margin-bottom: 0;
+  }
+
+  .project-card__link {
+    display: inline-block;
+    max-width: none;
+  }
+</style>

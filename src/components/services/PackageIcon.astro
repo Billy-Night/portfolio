@@ -202,26 +202,26 @@ const { id, label, large = false } = Astro.props
 
   @media (max-width: 680px) {
     .package-card__icon {
-        width: 2.75rem;
-      }
+      width: 2.75rem;
+    }
 
     .package-card__icon--large {
-        width: 4rem;
-      }
+      width: 4rem;
+    }
   }
 
   /* :nth-child(n) matches every circle. It is there to give this rule the same
      weight as the :nth-child(1) rules above, which a plain "circle" lost to. */
   @media (prefers-reduced-motion: reduce) {
     .package-card__icon circle:nth-child(n) {
-        animation: none;
-      }
+      animation: none;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .package-card__icon rect:nth-child(n) {
-        animation: none;
-        transform: rotate(45deg);
-      }
+      animation: none;
+      transform: rotate(45deg);
+    }
   }
 </style>

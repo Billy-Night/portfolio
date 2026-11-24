@@ -1,7 +1,7 @@
 ---
 // One web application on the homepage. The text comes from `webApps` in
 // src/data/projects.ts.
-import Photo from '../Photo.astro'
+import ProjectCard from './ProjectCard.astro'
 import type { Lang } from '../../i18n/routes'
 import type { WebApp } from '../../data/projects'
 
@@ -14,30 +14,34 @@ interface Props {
 
 const { app, lang, reverse } = Astro.props
 
-// The headings carry 'heading-reverse' on the cards that are not reversed
+// The 'Technologies' heading carries 'heading-reverse' on the cards that are not reversed
 const headingReverse = !reverse && 'heading-reverse'
 
 const summary = app.summary[lang]
 const summaryPieces = typeof summary === 'string' ? [summary] : summary
 ---
 
-<article class:list={[reverse && 'project-info-container--reverse', 'project-info-container']}>
-  <div class="project-info__text">
-    <h3 class:list={['projects-heading', headingReverse]}>{app.category[lang]}</h3>
-    <h4 class:list={['projects-heading-name', headingReverse]}>{app.name[lang]}</h4>
-    <div class="project__glass-back">
-      <p class="max-txt-width">
-        {
-          summaryPieces.map((piece) =>
-            typeof piece === 'string' ? piece : <a href={piece.href} target="_blank" rel="noopener">{piece.text}</a>
-          )
-        }
-      </p>
-    </div>
+<ProjectCard category={app.category[lang]} name={app.name[lang]} reverse={reverse} photo={app.photo} photoAlt={app.photoAlt[lang]}>
+  <p class="max-txt-width">
+    {
+      summaryPieces.map((piece) =>
+        typeof piece === 'string' ? piece : <a href={piece.href} target="_blank" rel="noopener">{piece.text}</a>
+      )
+    }
+  </p>
+  <Fragment slot="below">
     <h4 class:list={['heading__project-tech', headingReverse]}>Technologies</h4>
     <ul class="project-tech-list">
       {app.technologies.map((technology) => <li>{technology}</li>)}
     </ul>
-  </div>
-  <Photo src={app.photo} alt={app.photoAlt[lang]} loading="lazy" />
-</article>
+  </Fragment>
+</ProjectCard>
+
+<!-- This component's own styles, unscoped. How styles are organised: src/styles/README.md -->
+<style is:global>
+  .heading__project-tech {
+    font-size: var(--title-6);
+    margin-bottom: var(--space-2);
+    margin-top: var(--space-4);
+  }
+</style>
