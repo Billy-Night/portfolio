@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
 import CookieBanner from '../components/CookieBanner.astro'
+import Footer from '../components/Footer.astro'
 
 // What this page says must match what the site does. If the contact form's
 // route (netlify/functions/contact.js), the analytics (components/Analytics.astro)
@@ -164,5 +165,7 @@ import CookieBanner from '../components/CookieBanner.astro'
         date at the top shows the latest version.
       </p>
     </section>
+    <div class="gradient"></div>
   </main>
+  <Footer lang="en" />
 </BaseLayout>
