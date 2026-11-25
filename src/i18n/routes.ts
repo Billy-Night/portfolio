@@ -14,6 +14,7 @@ export const routes = {
   services: { en: '/services', fr: '/fr/services' },
   landes: { en: '/website-development-landes', fr: '/fr/creation-site-web-landes' },
   terms: { en: '/terms-and-conditions', fr: '/fr/cgv' },
+  privacy: { en: '/privacy-policy', fr: '/fr/politique-de-confidentialite' },
 } as const
 
 export type Lang = 'en' | 'fr'
@@ -23,7 +24,7 @@ export type RouteKey = keyof typeof routes
  * Pages that ask search engines not to index them (`robots="noindex, follow"`
  * in the page file). They are left out of the sitemap.
  */
-export const noindexRoutes: RouteKey[] = ['terms']
+export const noindexRoutes: RouteKey[] = ['terms', 'privacy']
 
 export const otherLang = (lang: Lang): Lang => (lang === 'en' ? 'fr' : 'en')
 

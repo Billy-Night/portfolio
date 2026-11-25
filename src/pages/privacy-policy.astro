@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import CookieBanner from '../components/CookieBanner.astro'
+
+// What this page says must match what the site does. If the contact form's
+// route (netlify/functions/contact.js), the analytics (components/Analytics.astro)
+// or the hosting change, update this page and the French one
+// (fr/politique-de-confidentialite.astro) together.
+//
+// No structured data: this page is marked noindex, like the terms pages.
+---
+
+<BaseLayout
+  lang="en"
+  route="privacy"
+  title="Privacy Policy | Billy Nightingale"
+  description="How billynightingale.com handles personal data: the contact form, audience measurement after consent, and your rights."
+  robots="noindex, follow"
+>
+  <Header lang="en" route="privacy" />
+  <main id="legal_main">
+    <CookieBanner lang="en" />
+    <h1>Privacy Policy</h1>
+    <p>
+      <strong>Billy Nightingale – Website Creation &amp; Web Development</strong>
+    </p>
+    <p>Last updated: 25 November 2026</p>
+
+    <section id="controller">
+      <h2>1. Who is responsible for your data</h2>
+      <p>
+        This website is run by Billy Nightingale, a sole trader
+        (micro-entrepreneur) based in Capbreton, France. I am the data
+        controller for the personal data collected through it.
+      </p>
+      <p>
+        For any question about your data, write to
+        <a href="mailto:contact@billynightingale.com">contact@billynightingale.com</a>.
+      </p>
+    </section>
+
+    <section id="contact-form">
+      <h2>2. The contact form</h2>
+      <p>
+        When you send the contact form, I receive what you entered: your name,
+        your email address, the reason for your message and the message
+        itself, and, if you filled them in, your business name, your current
+        website, and your budget and timeline.
+      </p>
+      <p>
+        I use this only to reply to you and, if you ask for one, to prepare a
+        quotation. The legal basis is the steps taken at your request before a
+        contract, and my legitimate interest in answering the people who
+        contact me.
+      </p>
+      <p>I do not sell your data, and I do not use it to send newsletters.</p>
+    </section>
+
+    <section id="audience">
+      <h2>3. Audience measurement</h2>
+      <p>
+        If you choose “Accept” in the cookie banner, this site loads two
+        audience measurement tools: Google Analytics and Microsoft Clarity.
+        They record how the site is used (pages viewed, clicks, scrolling,
+        approximate location, type of device) and place cookies in your
+        browser. The legal basis is your consent.
+      </p>
+      <p>
+        If you choose “Deny”, or make no choice, neither tool is loaded and
+        no audience measurement cookie is placed.
+      </p>
+      <p>
+        Your choice is kept in your browser’s local storage, on your device.
+        To change it, clear this site’s data in your browser settings: the
+        banner will be shown again on your next visit.
+      </p>
+    </section>
+
+    <section id="recipients">
+      <h2>4. Who receives your data</h2>
+      <p>
+        Your data is handled by me and by the service providers this site
+        relies on, each only for the task described:
+      </p>
+      <ul>
+        <li>
+          <strong>Netlify</strong> (United States) hosts the website and
+          receives the contact form.
+        </li>
+        <li>
+          <strong>Cloudflare</strong> (United States) delivers the website and
+          protects it against abuse. Like any web server, it processes the IP
+          address of each visitor.
+        </li>
+        <li>
+          <strong>Make</strong> (Czech Republic) passes the contact form’s
+          message on to me.
+        </li>
+        <li>
+          <strong>Brevo</strong> (France) sends me the message by email if the
+          usual route fails, so that your enquiry is not lost.
+        </li>
+        <li>
+          <strong>Zoho</strong> (data centre in the European Union) hosts my
+          mailbox.
+        </li>
+        <li>
+          <strong>Google</strong> and <strong>Microsoft</strong> (United
+          States) provide the audience measurement tools, only if you have
+          accepted them.
+        </li>
+      </ul>
+      <p>
+        Some of these providers are established outside the European Union.
+        Transfers to the United States are covered by the EU–US Data Privacy
+        Framework or by the European Commission’s standard contractual
+        clauses.
+      </p>
+    </section>
+
+    <section id="retention">
+      <h2>5. How long your data is kept</h2>
+      <p>
+        Messages sent through the contact form are kept for as long as the
+        exchange lasts, and for no more than three years after our last
+        contact if you do not become a client. If you become a client, the
+        documents required by law (quotations, invoices) are kept for the
+        legal period.
+      </p>
+      <p>
+        Audience measurement data is kept for the period set by each tool, up
+        to 14 months.
+      </p>
+    </section>
+
+    <section id="rights">
+      <h2>6. Your rights</h2>
+      <p>
+        Under the General Data Protection Regulation (GDPR), you can ask to
+        see the data I hold about you, have it corrected or deleted, limit or
+        object to its use, and receive it in a reusable format. You can
+        withdraw your consent to audience measurement at any time.
+      </p>
+      <p>
+        To use these rights, write to
+        <a href="mailto:contact@billynightingale.com">contact@billynightingale.com</a>.
+        I will reply within one month.
+      </p>
+      <p>
+        If you believe your rights are not respected, you can lodge a
+        complaint with the French data protection authority, the CNIL
+        (<a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>7. Changes to this policy</h2>
+      <p>
+        This page is updated when the website changes how it handles data. The
+        date at the top shows the latest version.
+      </p>
+    </section>
+  </main>
+</BaseLayout>
