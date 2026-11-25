@@ -10,10 +10,3 @@ Improvements that are agreed in principle and not started. Each is its own branc
 - Whether Astro's own `<Image>` or `<Picture>` could replace `Photo.astro` without losing the "originals untouched" rule.
 
 Any change here must be checked with the image comparison in `scripts/dev/README.md` (position, size and sharpness at seven widths).
-
-## Prefetching links
-
-Astro can start loading a page when the visitor hovers over its link, so navigation feels instant. One setting in `astro.config.mjs`.
-
-- Check that analytics still count one page view per visit, and that the cookie banner behaves, since both only exist fully on the live domain.
-- Check the Content Security Policy report for anything new.
