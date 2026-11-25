@@ -212,7 +212,7 @@ All 20 pages were measured in WebKit, the engine inside Safari (version 27.2), b
 
 WebKit was run through `playwright-core`, installed outside the project, because Safari's own remote automation is switched off on this Mac. It is not part of [scripts/dev/](scripts/dev/). A real iPhone has still not been checked.
 
-The CSS list under G above is closed, and the next pieces of work (images, prefetching) are in [TODO.md](TODO.md).
+The CSS list under G above is closed, and the one piece of work left, the parked image questions, is in [TODO.md](TODO.md).
 
 ### Generated sitemap (2026-11-25)
 `/sitemap.xml` is now written at build time by [src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts), and `public/sitemap.xml` is gone. Before, every new page needed an entry added by hand.
@@ -223,6 +223,16 @@ The CSS list under G above is closed, and the next pieces of work (images, prefe
 - **Dates are still kept by hand,** in a table at the top of that file. Update a date when a page's content is rewritten. A page with no date is listed without one, which search engines accept.
 - **Why not Astro's sitemap integration:** it writes `sitemap-index.xml` plus a numbered file, which would have meant changing `robots.txt` and resubmitting in Search Console, and it adds a dependency.
 - **Safety net:** `python3 scripts/seo_snapshot.py check seo-baseline/local.json` reports any indexable page missing from the sitemap, and any sitemap entry with no page.
+
+### Prefetching links (2026-11-25)
+When a visitor rests the pointer on a link to another page of the site, or reaches it with the keyboard, the browser starts loading that page, so it opens at once on the click. It is one setting, `prefetch`, in [astro.config.mjs](astro.config.mjs).
+
+- **What each page gained:** one script tag loading a 2.5 KB file from `/_astro/`, cached for a year like the other scripts.
+- **What is fetched:** only the page's HTML. None of its scripts run, so analytics do not count a visit and the cookie banner is not involved.
+- **What is not fetched:** links to a section of the same page, links to other sites, email links, and a link the pointer only passes over (under 80 ms). A page is fetched once, however often its link is hovered. Visitors in data-saver mode or on a slow connection load the page only when they press the link.
+- **Why it pays off here:** pages are kept by the browser for 10 minutes (`max-age=600` in [public/_headers](public/_headers)), so the fetched copy is the one used on the click.
+- **Checked** in Chrome and in WebKit on the built site: each case above, and that pages still open normally. The SEO compare shows no difference.
+- **To check on the live site,** since analytics exist only there: one visit with a few hovered links counts as one page view per page actually opened, and the Content Security Policy report shows nothing new. The policy already allows the site to load its own pages.
 
 ---
 
