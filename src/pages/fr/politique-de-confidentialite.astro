@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Header from '../../components/Header.astro'
+import CookieBanner from '../../components/CookieBanner.astro'
+
+// What this page says must match what the site does. If the contact form's
+// route (netlify/functions/contact.js), the analytics (components/Analytics.astro)
+// or the hosting change, update this page and the English one
+// (privacy-policy.astro) together.
+//
+// No structured data: this page is marked noindex, like the terms pages.
+---
+
+<BaseLayout
+  lang="fr"
+  route="privacy"
+  title="Politique de Confidentialité | Billy Nightingale"
+  description="Comment billynightingale.com traite les données personnelles : formulaire de contact, mesure d’audience après consentement et vos droits."
+  robots="noindex, follow"
+>
+  <Header lang="fr" route="privacy" />
+  <main id="legal_main">
+    <CookieBanner lang="fr" />
+    <h1>Politique de Confidentialité</h1>
+    <p>
+      <strong>Billy Nightingale – Création de sites web &amp; Développement Web</strong>
+    </p>
+    <p>Dernière mise à jour : 25 novembre 2026</p>
+
+    <section id="controller">
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        Ce site est édité par Billy Nightingale, micro-entrepreneur basé à
+        Capbreton, France. Je suis le responsable du traitement des données
+        personnelles collectées par son intermédiaire.
+      </p>
+      <p>
+        Pour toute question concernant vos données, écrivez à
+        <a href="mailto:contact@billynightingale.com">contact@billynightingale.com</a>.
+      </p>
+    </section>
+
+    <section id="contact-form">
+      <h2>2. Le formulaire de contact</h2>
+      <p>
+        Lorsque vous envoyez le formulaire de contact, je reçois ce que vous
+        avez saisi : votre nom, votre adresse e-mail, le motif de votre
+        message et le message lui-même, ainsi que, si vous les avez
+        renseignés, le nom de votre entreprise, votre site actuel, votre
+        budget et vos délais.
+      </p>
+      <p>
+        Ces données servent uniquement à vous répondre et, si vous le
+        demandez, à préparer un devis. La base légale est l’exécution de
+        mesures précontractuelles prises à votre demande et mon intérêt
+        légitime à répondre aux personnes qui me contactent.
+      </p>
+      <p>
+        Je ne vends pas vos données et je ne les utilise pas pour envoyer des
+        newsletters.
+      </p>
+    </section>
+
+    <section id="audience">
+      <h2>3. Mesure d’audience</h2>
+      <p>
+        Si vous choisissez « Accepter » dans le bandeau cookies, ce site
+        charge deux outils de mesure d’audience : Google Analytics et
+        Microsoft Clarity. Ils enregistrent la manière dont le site est
+        utilisé (pages consultées, clics, défilement, localisation
+        approximative, type d’appareil) et déposent des cookies dans votre
+        navigateur. La base légale est votre consentement.
+      </p>
+      <p>
+        Si vous choisissez « Refuser », ou si vous ne faites aucun choix,
+        aucun de ces outils n’est chargé et aucun cookie de mesure d’audience
+        n’est déposé.
+      </p>
+      <p>
+        Votre choix est conservé dans le stockage local de votre navigateur,
+        sur votre appareil. Pour le modifier, effacez les données de ce site
+        dans les réglages de votre navigateur : le bandeau s’affichera de
+        nouveau lors de votre prochaine visite.
+      </p>
+    </section>
+
+    <section id="recipients">
+      <h2>4. Destinataires des données</h2>
+      <p>
+        Vos données sont traitées par moi-même et par les prestataires sur
+        lesquels ce site s’appuie, chacun uniquement pour la tâche indiquée :
+      </p>
+      <ul>
+        <li>
+          <strong>Netlify</strong> (États-Unis) héberge le site et reçoit le
+          formulaire de contact.
+        </li>
+        <li>
+          <strong>Cloudflare</strong> (États-Unis) diffuse le site et le
+          protège contre les abus. Comme tout serveur web, il traite l’adresse
+          IP de chaque visiteur.
+        </li>
+        <li>
+          <strong>Make</strong> (République tchèque) me transmet le message du
+          formulaire de contact.
+        </li>
+        <li>
+          <strong>Brevo</strong> (France) m’envoie le message par e-mail si la
+          voie habituelle échoue, afin que votre demande ne soit pas perdue.
+        </li>
+        <li>
+          <strong>Zoho</strong> (centre de données situé dans l’Union
+          européenne) héberge ma messagerie.
+        </li>
+        <li>
+          <strong>Google</strong> et <strong>Microsoft</strong> (États-Unis)
+          fournissent les outils de mesure d’audience, uniquement si vous les
+          avez acceptés.
+        </li>
+      </ul>
+      <p>
+        Certains de ces prestataires sont établis hors de l’Union européenne.
+        Les transferts vers les États-Unis sont encadrés par le Data Privacy
+        Framework UE–États-Unis ou par les clauses contractuelles types de la
+        Commission européenne.
+      </p>
+    </section>
+
+    <section id="retention">
+      <h2>5. Durée de conservation</h2>
+      <p>
+        Les messages envoyés par le formulaire de contact sont conservés le
+        temps de nos échanges, et au maximum trois ans après notre dernier
+        contact si vous ne devenez pas client. Si vous devenez client, les
+        documents exigés par la loi (devis, factures) sont conservés pendant
+        la durée légale.
+      </p>
+      <p>
+        Les données de mesure d’audience sont conservées pendant la durée
+        fixée par chaque outil, au maximum 14 mois.
+      </p>
+    </section>
+
+    <section id="rights">
+      <h2>6. Vos droits</h2>
+      <p>
+        Conformément au Règlement Général sur la Protection des Données
+        (RGPD), vous pouvez demander à accéder aux données que je détiens à
+        votre sujet, à les faire rectifier ou effacer, à en limiter
+        l’utilisation ou à vous y opposer, et à les recevoir dans un format
+        réutilisable. Vous pouvez retirer à tout moment votre consentement à
+        la mesure d’audience.
+      </p>
+      <p>
+        Pour exercer ces droits, écrivez à
+        <a href="mailto:contact@billynightingale.com">contact@billynightingale.com</a>.
+        Je vous répondrai dans un délai d’un mois.
+      </p>
+      <p>
+        Si vous estimez que vos droits ne sont pas respectés, vous pouvez
+        déposer une réclamation auprès de la CNIL
+        (<a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>7. Modifications</h2>
+      <p>
+        Cette page est mise à jour lorsque le site modifie sa manière de
+        traiter les données. La date indiquée en haut correspond à la dernière
+        version.
+      </p>
+    </section>
+  </main>
+</BaseLayout>
