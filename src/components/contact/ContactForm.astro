@@ -291,14 +291,32 @@ const t = {
     padding: 10px;
     border: 2px solid black;
     border-radius: var(--corner-rad);
+    font-family: var(--sans);
+    font-size: var(--text-base);
   }
 
+  /* The browser's own dropdown look is switched off, because Safari ignores
+     padding on it and draws the field shorter than the others. The arrow is
+     drawn here instead: two gradients that meet to form a small triangle. */
   .form-group :global(select) {
     padding: 10px;
+    padding-right: 36px;
     border: 2px solid black;
     border-radius: var(--corner-rad);
     font-family: var(--sans);
     font-size: var(--text-base);
+    /* The same line height as the text fields, so all fields are equally tall */
+    line-height: 1.3;
+    color: black;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, black 50%), linear-gradient(135deg, black 50%, transparent 50%);
+    background-position:
+      right 19px center,
+      right 13px center;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
   }
 
   .form-group :global(select:active) {

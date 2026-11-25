@@ -80,6 +80,10 @@ const { heading, intro } = Astro.props
     );
   }
 
+  :global(.image-row__image--right) :global(img) {
+    width: 100%;
+  }
+
   :global(.image-row__image) {
     position: relative;
   }
