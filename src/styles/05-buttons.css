@@ -1,4 +1,7 @@
-/* Buttons and button rows */
+/* Buttons and button rows.
+   Each button class sets its text size: a <button> does not take the page's
+   size as a link does, and browsers disagree on its default (Safari 11px,
+   Chrome 13px). */
 
 .btn {
   cursor: pointer;
@@ -7,6 +10,7 @@
   padding: 0.5rem;
   border-radius: var(--corner-rad);
   font-family: var(--mono);
+  font-size: var(--text-base);
   text-decoration: none;
 }
 
@@ -20,6 +24,7 @@
   padding: var(--space-2);
   border-radius: var(--corner-rad);
   font-family: var(--mono);
+  font-size: var(--text-base);
   text-decoration: none;
   text-transform: uppercase;
   min-width: 120px;
@@ -53,6 +58,7 @@
   padding: var(--space-2);
   border-radius: var(--corner-rad);
   font-family: var(--mono);
+  font-size: var(--text-base);
   text-transform: uppercase;
   text-decoration: none;
   min-width: 120px;
