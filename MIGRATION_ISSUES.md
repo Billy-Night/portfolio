@@ -249,3 +249,15 @@ When a visitor rests the pointer on a link to another page of the site, or reach
 - [ ] Accept the cookie banner on the live site after merging and confirm in the browser's Network tab that Clarity and Google Analytics load, and that they don't load after "Deny".
 - [x] The branch-deploy address is removed from `allowedOrigins` in [contact.js](netlify/functions/contact.js) (after the merge).
 - [ ] After merging: share the homepage and `/fr/` in a social preview tool to confirm the preview image shows, and check Search Console over the following days.
+
+### Contact form failure alert (2026-11-25)
+When a visitor's message cannot be delivered to Make, [netlify/functions/contact.js](netlify/functions/contact.js) now emails it to you through Brevo, an email service that does not depend on Make. Before, the visitor saw the error message and you never knew.
+
+- **When it is sent:** Make answers with an error, Make cannot be reached, or the `MAKE_FORM_API` setting is missing. Not for refused requests (bots, incomplete forms, other websites).
+- **What it contains:** what went wrong, when, and everything the visitor filled in. Replying to the email writes to the visitor.
+- **What the visitor sees:** exactly what they saw before. If the alert fails too, that is written to the function log in Netlify and nothing else changes.
+- **Why Brevo:** it needs no library (one web request), and its key can only send email. Resend was considered and stores its records in the United States. Sending from the Zoho mailbox was considered too: it would have added a dependency and a mailbox password in Netlify, and Zoho's free plan may not allow it.
+- **Privacy:** a failed enquiry (name, email, message) passes through Brevo, so Brevo belongs in the privacy policy as a processor, as Make does.
+- **Settings in Netlify:** `BREVO_API_KEY` and `ALERT_EMAIL_TO`, and optionally `ALERT_EMAIL_FROM`. The sender must be one verified in Brevo; by default it is the same address as the recipient. Until the first two are set, no alert is sent and the form behaves as before.
+- **Checked** with `node scripts/dev/contact_alert_test.mjs`, which replaces Make and Brevo with fakes: 29 checks in twelve situations. **Not checked:** a real email through Brevo, which needs the key. To try it, set the settings and a wrong `MAKE_FORM_API`, send the form, and look for the email.
+- **Not covered:** a failure before the function runs (Netlify itself down), and a scenario that fails inside Make after accepting the message. Make reports the second kind itself.
