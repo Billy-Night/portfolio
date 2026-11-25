@@ -54,7 +54,8 @@ const t = {
     messagePlaceholder: "Tell me more about your project or question...",
     submit: "Send Message",
     success: "The form has been submitted, thanks",
-    error: "There was an issue submitting the form, please try again.",
+    // Followed by the email address as a link, then a full stop
+    error: "There was an issue submitting the form. Please try again, or email me at",
   },
   fr: {
     formTitle: "Détails du projet",
@@ -97,7 +98,7 @@ const t = {
     messagePlaceholder: "Parlez-moi de votre projet ou de votre question…",
     submit: "Envoyer le message",
     success: "Le formulaire a bien été envoyé, merci !",
-    error: "Un problème est survenu lors de l’envoi du formulaire, veuillez réessayer.",
+    error: "Un problème est survenu lors de l’envoi du formulaire. Veuillez réessayer, ou écrivez-moi à",
   },
 }[lang]
 ---
@@ -222,7 +223,10 @@ const t = {
       <button type="submit" class="btn btn-form-submit">{t.submit}</button>
       <div>
         <p class="form-status-pass hide-element">{t.success}</p>
-        <p class="form-status-error hide-element">{t.error}</p>
+        {/* The address is here so that an enquiry is not lost when the form cannot send it */}
+        <p class="form-status-error hide-element">
+          {t.error}{' '}<a href="mailto:contact@billynightingale.com">contact@billynightingale.com</a>.
+        </p>
       </div>
     </form>
   </div>
@@ -331,6 +335,12 @@ const t = {
     border-radius: var(--corner-rad);
     font-family: var(--sans);
     font-size: var(--text-base);
+  }
+
+  /* Links are gold elsewhere, which is hard to read on this light panel */
+  .form-status-error a {
+    color: inherit;
+    text-decoration: underline;
   }
 
   @media screen and (max-width: 600px) {
