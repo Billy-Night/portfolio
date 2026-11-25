@@ -97,12 +97,13 @@ h5,
   font-weight: 400;
 }
 
-/* Images */
+/* Images. There is no width here on purpose: each component sizes its own
+   images. One that sets none shows at the size of its file. */
 img {
-  width: 100%;
   /* Images carry width and height attributes (added by Astro so the browser
      can reserve their space before they load). Without height: auto they
-     would keep the attribute's height at this width and look stretched. */
+     would keep the attribute's height at their displayed width and look
+     stretched. */
   height: auto;
   transition: filter 0.2s;
 }
