@@ -22,6 +22,7 @@ const t = {
     rights: 'All rights reserved.',
     terms: 'Terms and Conditions',
     privacy: 'Privacy Policy',
+    cookies: 'Cookie settings',
   },
   fr: {
     heading: 'Création de site web et système digital',
@@ -33,6 +34,7 @@ const t = {
     rights: 'Tous droits réservés.',
     terms: 'CGV',
     privacy: 'Confidentialité',
+    cookies: 'Cookies',
   },
 }[lang]
 ---
@@ -119,6 +121,8 @@ const t = {
     <p>&copy; {year} Billy Nightingale. {t.rights}</p>
     <a href={r('terms')}>{t.terms}</a>
     <a href={r('privacy')}>{t.privacy}</a>
+    {/* Shows the cookie banner again: src/scripts/cookieBanner.js */}
+    <button type="button" class="btn__link" data-cookie-settings>{t.cookies}</button>
   </div>
 </footer>
 
@@ -220,7 +224,8 @@ const t = {
     align-items: center;
   }
 
-  .footer__legal a {
+  .footer__legal a,
+  .footer__legal button {
     margin: 0;
     margin-left: var(--space-3);
   }
@@ -234,7 +239,8 @@ const t = {
       display: none;
     }
 
-    .footer__legal a {
+    .footer__legal a,
+    .footer__legal button {
       text-align: right;
     }
   }
