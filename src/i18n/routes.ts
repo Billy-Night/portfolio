@@ -19,6 +19,12 @@ export const routes = {
 export type Lang = 'en' | 'fr'
 export type RouteKey = keyof typeof routes
 
+/**
+ * Pages that ask search engines not to index them (`robots="noindex, follow"`
+ * in the page file). They are left out of the sitemap.
+ */
+export const noindexRoutes: RouteKey[] = ['terms']
+
 export const otherLang = (lang: Lang): Lang => (lang === 'en' ? 'fr' : 'en')
 
 export const url = (route: RouteKey, lang: Lang) => SITE + routes[route][lang]

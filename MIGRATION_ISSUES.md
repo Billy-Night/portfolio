@@ -212,7 +212,17 @@ All 20 pages were measured in WebKit, the engine inside Safari (version 27.2), b
 
 WebKit was run through `playwright-core`, installed outside the project, because Safari's own remote automation is switched off on this Mac. It is not part of [scripts/dev/](scripts/dev/). A real iPhone has still not been checked.
 
-The CSS list under G above is closed, and the next pieces of work (images, a generated sitemap, prefetching) are in [TODO.md](TODO.md).
+The CSS list under G above is closed, and the next pieces of work (images, prefetching) are in [TODO.md](TODO.md).
+
+### Generated sitemap (2026-11-25)
+`/sitemap.xml` is now written at build time by [src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts), and `public/sitemap.xml` is gone. Before, every new page needed an entry added by hand.
+
+- **Where the list comes from:** `routes` in [src/i18n/routes.ts](src/i18n/routes.ts) and the client projects that have a page. A new page is listed as soon as it exists.
+- **What is left out:** the pages named in `noindexRoutes` in the same file (the two legal pages), and the 404 pages.
+- **Same address, same content.** The file is still `/sitemap.xml`, so `robots.txt` and Search Console need no change. It holds the same 16 addresses and dates in the same order as the hand-written file. Only the comments are gone.
+- **Dates are still kept by hand,** in a table at the top of that file. Update a date when a page's content is rewritten. A page with no date is listed without one, which search engines accept.
+- **Why not Astro's sitemap integration:** it writes `sitemap-index.xml` plus a numbered file, which would have meant changing `robots.txt` and resubmitting in Search Console, and it adds a dependency.
+- **Safety net:** `python3 scripts/seo_snapshot.py check seo-baseline/local.json` reports any indexable page missing from the sitemap, and any sitemap entry with no page.
 
 ---
 
