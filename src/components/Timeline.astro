@@ -100,6 +100,10 @@ const { heading, intro, stepClass, id } = Astro.props
     width: 100%;
     inset: 0;
     z-index: 0;
+    /* Safari must not hold the page steady against the moving dot: it scrolls
+       the page to follow the dot, which moves the dot again, and the page
+       stalls and then jumps by a screen. */
+    overflow-anchor: none;
   }
 
   .timeline__dot {
