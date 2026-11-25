@@ -4,6 +4,7 @@ Every issue found while porting the site to Astro has been dealt with. This file
 
 ## How changes are checked
 1. `npm run build && npm run seo:compare` lists every difference from the SEO baseline. It should show **only** the change you intended.
+   Since 2026-11-25 this is run only for changes to markup, content or configuration. It does not read styles or scripts, so it has nothing to say about a change to those.
 2. When you're happy with it, take a new baseline: `python3 scripts/seo_snapshot.py snapshot dist seo-baseline/local.json`.
 
 Each fix below was made this way, one commit per fix.
@@ -79,15 +80,16 @@ From a review of the code as it stood before the migration. Most of the list was
 
 **1. CSS** (now in [src/styles/](src/styles/) and in each component: see "Styles restructured" below)
 
-Done on 2026-11-24: one naming convention, the repeated selectors merged, and the styles moved out of the single file into the components. What is left:
+Done on 2026-11-24: one naming convention, the repeated selectors merged, and the styles moved out of the single file into the components. **The list was closed on 2026-11-25.** These points were considered and are staying as they are:
 
-- **One broad global rule.** `img { width: 100% }` in [03-base.css](src/styles/03-base.css) applies to every image on the site, so each image that shouldn't fill its container needs an override. A class on the images that should stretch would be safer. Left as it is by choice.
-- **About 25 different screen widths.** The older rules change layout at 700, 767 and 800px, among others. Merging them means deciding what each layout does in the gaps, which is design work, so do it one component at a time when a section is next redesigned. New rules use 600, 800 or 1100px (see [src/styles/README.md](src/styles/README.md)).
+- **About 25 different screen widths.** The older rules change layout at 700, 767 and 800px, among others. Merging them means deciding what each layout does in the gaps, which is design work, so it happens one component at a time when a section is next redesigned. New rules use 600, 800 or 1100px (see [src/styles/README.md](src/styles/README.md)).
 - **The shared wrapper components are only partly scoped.** `Hero`, `Timeline`, `ImageTextRows` and `home/ProjectCard` style content that the pages pass into them, so about a quarter of all rules use `:global(...)` to reach it. This works and is deliberate. A class name used inside `:global(...)` must still be unique across the site.
-- **Two design choices that were never applied.** Three declarations on the services page used variables that don't exist, so the browser ignored them. They were removed, which keeps the page exactly as it is. If you want the effect they were written for, each is one line:
-  - `.package-card__description--large`: a larger description on the featured package, for example `font-size: var(--text-l)`. This makes the services page about 70px taller on desktop.
-  - `.benefit`: a muted colour for the three benefit labels. There is no muted colour variable yet.
-  - Done on 2026-11-24: `.packages__intro` has `max-width: 65ch`. It changes nothing visible, because the grid column already keeps the paragraph to about 36 characters a line on wide screens.
+- **Two design choices on the services page, not applied.** A larger description on the featured package (`.package-card__description--large`) and a muted colour for the three benefit labels (`.benefit`). Both were written with variables that never existed, so they never showed, and the page stays as it is.
+- **The `.flow` class** in [04-utilities.css](src/styles/04-utilities.css) is not used by any page. Kept as a helper.
+
+Done on 2026-11-25:
+
+- **The global `img { width: 100% }` rule is gone.** Only two kinds of image depended on it: the right-hand photos of the About page rows and the project page photo on phones. Each now has its own `width: 100%`, and [03-base.css](src/styles/03-base.css) keeps only `height: auto`. An image with no width of its own now shows at the size of its file, where it used to stretch to fill its box. Checked on all 20 pages: no image changed size in Chrome at ten widths or in WebKit at five.
 
 **Left as they are, deliberately:** the animation code (timeline, orbit, review slider) and the absence of any JavaScript dependency. Both are strengths.
 
@@ -199,9 +201,18 @@ The single stylesheet of about 3,900 lines became nine shared files plus a style
   - At exactly 800px wide the homepage project cards stack, where two conflicting layouts used to apply together.
   - The hero title takes its phone size at 700px and the Landes challenge buttons at 767px, two pixels earlier than before, to line up with the neighbouring rules.
 
-Every step was checked with the tools in [scripts/dev/](scripts/dev/): the position and full computed style of every element on all 20 pages at nine widths, the click-through recordings at desktop and phone width, the real-time animations, and reduced motion. Safari was checked by eye for the glass blur on the reviews section. Everything after that, including scoped styles, was only checked in Chrome: **look at a project page and the services page in Safari.**
+Every step was checked with the tools in [scripts/dev/](scripts/dev/): the position and full computed style of every element on all 20 pages at nine widths, the click-through recordings at desktop and phone width, the real-time animations, and reduced motion. Safari was checked by eye for the glass blur on the reviews section. Everything after that, including scoped styles, was only checked in Chrome until the Safari check below.
 
-What is still open is in the CSS list under G above, and the next pieces of work (images, a generated sitemap, prefetching) are in [TODO.md](TODO.md).
+### Safari check (2026-11-25)
+All 20 pages were measured in WebKit, the engine inside Safari (version 27.2), beside Chrome at three widths, and scrolled from top to bottom. The layouts match. Three faults were found, all older than the styles restructure, and fixed:
+
+- **The page scrolled by itself through the timeline** (homepage process, About journey). Safari kept the page steady against the moving gold dot, so the page ran ahead, stalled and jumped. The layer holding the line now has `overflow-anchor: none` (pull request #37).
+- **Buttons and form fields had no text size of their own,** so each browser used its default: 11px in Safari, 13px in Chrome, while buttons that are links were 16px. The cookie, Expand and Send buttons and the contact form's fields are now 16px in every browser. This is visible in Chrome too: those buttons are 4px taller.
+- **The contact form's dropdowns were 28px tall in Safari** against 46px in Chrome, because Safari ignores padding on its own dropdown. The dropdowns now draw their own arrow, and every field in the form is 45px tall in both browsers.
+
+WebKit was run through `playwright-core`, installed outside the project, because Safari's own remote automation is switched off on this Mac. It is not part of [scripts/dev/](scripts/dev/). A real iPhone has still not been checked.
+
+The CSS list under G above is closed, and the next pieces of work (images, a generated sitemap, prefetching) are in [TODO.md](TODO.md).
 
 ---
 
