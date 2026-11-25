@@ -71,7 +71,7 @@ Every page's sections are now components shared by the English and French pages,
 - **Checked after:** every file referenced by the built pages, the stylesheet, the scripts, the structured data and the manifest exists, and the browser reports no failed loads.
 
 ### E. Small things noticed along the way
-- The legal pages have no footer. Every other page does.
+- The legal pages had no footer. Added on 2026-11-25, with the privacy policy.
 - Safari older than version 18 only reads the `-webkit-backdrop-filter` line, so it gets the blur without the `saturate()` part. The difference is barely visible.
 
 
@@ -108,7 +108,7 @@ Done on 2026-11-25:
 - **#22 Structured data URLs:** no trailing slashes, on the about, services and Landes pages.
 
 ## ✅ Standardised after the port (one commit each, new baseline after each)
-- **#7 Footer:** one markup on every page, `<footer class="sections" id="footer">` after `</main>`, and one heading per language ("Create your digital system" / "Création de site web et système digital"). The CSS shows all `h3` headings in uppercase, so nothing changes visually. The legal pages have never had a footer and still don't.
+- **#7 Footer:** one markup on every page, `<footer class="sections" id="footer">` after `</main>`, and one heading per language ("Create your digital system" / "Création de site web et système digital"). The CSS shows all `h3` headings in uppercase, so nothing changes visually. The legal pages had no footer until 2026-11-25.
 - **#8 Header alt text:** logo is "Billy Nightingale logo" / "Logo Billy Nightingale"; menu icon is "Menu icon" / "Icône du menu".
 - **#9 Terms page header:** now has the "Landes" link, like every other page.
 - **#10 Social meta tags:** `twitter:domain`, `og:date` and `twitter:date` are removed. `og:site_name` and `og:image:alt` are on every page.
@@ -271,8 +271,14 @@ Both follow from the failure alert: a failed enquiry now passes through Brevo, a
 - **Keep it true:** if the form's route, the analytics or the hosting change, both pages must change with them. A comment at the top of each says so.
 - **The form's error message** now ends with the email address as a link: "Please try again, or email me at contact@billynightingale.com." It covers the cases where no alert reaches you, such as Netlify itself being down. The link is dark and underlined, since the site's gold links are hard to read on the form's light panel.
 - **Checked** in Chrome and WebKit: a failed send shows the message and keeps what the visitor typed; the new pages open from the footer in both languages and the language switch works; the footer row at five widths. The SEO compare shows the two new pages, the footer link on every page and the two contact pages' new text, and the consistency check reports no issues.
-- **Still open, noticed while writing the policy:**
-  - The cookie banner says "By continuing to use our site, you agree to our use of cookies", but the site only loads analytics after "Accept". The text could say that, and link to the policy.
-  - A visitor can only change their cookie choice by clearing the site's data in the browser. A "cookie settings" link would be simpler.
-  - At 320px wide the homepage is slightly wider than the screen, because of an SVG line. It was like this before these changes.
+- **Still open:** at 320px wide the homepage is slightly wider than the screen, because of an SVG line. It was like this before these changes.
 
+### Cookie banner wording and cookie settings (2026-11-25)
+The banner said "By continuing to use our site, you agree to our use of cookies", while the site only loads analytics after "Accept" and the new privacy policy says so.
+
+- **New banner text:** "This site uses cookies to measure its audience, only if you accept.", followed by a link to the privacy policy. In French: « Ce site utilise des cookies pour mesurer son audience, uniquement si vous les acceptez. »
+- **Cookie settings:** a "Cookie settings" button in the footer of every page ("Cookies" in French) and one in section 3 of the privacy policy show the banner again, so a visitor can change their choice. Before, the only way was to clear the site's data in the browser.
+- **Withdrawing consent:** choosing "Deny" after having accepted deletes the Google Analytics and Clarity cookies set on this site (names starting `_ga`, `_gid`, `_gat`, `_gcl`, `_clck`, `_clsk`) and reloads the page, so the analytics scripts already running stop. The privacy policy now says this.
+- **Footer on the legal pages:** the terms and privacy pages, in both languages, now end with the same divider line and footer as every other page. They had none, so the "Cookie settings" button and the link between the two legal pages were missing there.
+- **`.btn__link`** in [05-buttons.css](src/styles/05-buttons.css) is a button that looks like a text link, for controls that act on the page.
+- **Checked** in Chrome and WebKit, in both languages: first visit, Deny, reopening from the footer and from the policy, Accept, and withdrawing with test cookies in place (the analytics ones are deleted, others kept). 44 checks. The footer row was measured at four widths. **Not checked:** withdrawal with the real Google and Clarity cookies, which exist only on the live domain.

@@ -103,6 +103,21 @@
   transform: translateX(5px);
 }
 
+.btn__link {
+  /* A button that reads as a text link: it does something on the page, where a
+     link goes to another page */
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.btn__link:hover {
+  color: var(--white);
+}
+
 .cta-container {
   display: flex;
   flex-direction: row;
