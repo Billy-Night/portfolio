@@ -72,6 +72,16 @@ export default defineConfig({
   // against the shared styles in src/styles/. (Astro's default, 'attribute',
   // makes every scoped rule outrank an unscoped one of the same shape.)
   scopedStyleStrategy: 'where',
+  // When a visitor rests the pointer on a link to another page of the site, or
+  // tabs to it, the browser starts loading that page, so it opens at once when
+  // they click. Only the page's HTML is fetched: none of its scripts run, so
+  // analytics do not count a visit. Visitors in data-saver mode, or on a slow
+  // connection, load it only when they press the link. To leave one link out:
+  // <a href="..." data-astro-prefetch="false">
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
   integrations: [stylesheet(), legacyImageUrls()],
   vite: {
     build: {
