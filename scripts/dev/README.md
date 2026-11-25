@@ -29,6 +29,14 @@ python3 scripts/dev/intcmp.py /tmp/int-ref /tmp/int-new      # must end with ALL
 
 Add `500 900` to each `interact.sh` call for mobile width. Several runs are needed because three scroll-triggered effects (the section fade-in, the bullet fade-in and the timeline headings) land on slightly different steps from run to run. `intcmp.py` ignores which step they land on.
 
+## The contact form backend
+
+`contact_alert_test.mjs` runs the Netlify function with Make and Brevo replaced by fakes, and checks what the visitor is answered and whether the failure alert is sent: Make working, Make failing, Brevo failing too, settings missing, and refused requests (bots, bad input, wrong origin). It needs no network and no keys.
+
+```bash
+node scripts/dev/contact_alert_test.mjs      # must end with "0 failed"
+```
+
 ## Animations, in real time
 
 Headless Chrome's virtual clock does not advance frame-driven animations, so these run in real time through Chrome's debugging interface.

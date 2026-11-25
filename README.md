@@ -30,7 +30,7 @@ src/
   utils/            assetUrl(): adds a content hash to /css/style.css
 public/             Served as-is: the social preview image, logos, icons, fonts, robots.txt, llms.txt,
                     the Markdown copies of each page, and Netlify's _redirects and _headers
-netlify/functions/  contact.js: the contact form backend (forwards to a Make.com webhook)
+netlify/functions/  contact.js: the contact form backend (forwards to a Make.com webhook, and emails an alert if that fails)
 scripts/            seo_snapshot.py: the SEO snapshot and compare tool. dev/: regression tests for behaviour, layout and images
 seo-baseline/       The SEO baseline the build is compared against
 ```
@@ -74,6 +74,6 @@ python3 scripts/seo_snapshot.py snapshot dist seo-baseline/local.json
 
 ## Deployment
 
-Netlify builds from `netlify.toml` (`npm run build`, publishing `dist/`). The contact function needs the `MAKE_FORM_API` environment variable. The production site sits behind Cloudflare, which rewrites email links and adds its own block to `robots.txt`.
+Netlify builds from `netlify.toml` (`npm run build`, publishing `dist/`). The contact function needs the `MAKE_FORM_API` environment variable. To email you when a message cannot be delivered to Make, it also needs `BREVO_API_KEY` and `ALERT_EMAIL_TO` (and optionally `ALERT_EMAIL_FROM`): see the top of `netlify/functions/contact.js`. The production site sits behind Cloudflare, which rewrites email links and adds its own block to `robots.txt`.
 
 Known open items are listed in [MIGRATION_ISSUES.md](MIGRATION_ISSUES.md).
