@@ -18,6 +18,7 @@ The website for [billynightingale.com](https://www.billynightingale.com/), in En
 ```
 src/
   pages/            One file per URL. French pages are in pages/fr/.
+                    sitemap.xml.ts writes /sitemap.xml from the list of pages at build time.
   layouts/          BaseLayout.astro: the whole <head> (meta tags, canonical, hreflang, social tags, structured data)
   components/       Header, Footer, CookieBanner, Analytics, NotFound
   assets/images/    Photos, served from /_astro/ through components/Photo.astro (originals untouched, smaller versions for small screens).
@@ -27,7 +28,7 @@ src/
                     Each component imports the one it needs, so a page only loads the scripts it uses.
   styles/           The stylesheet, one file per part of the site. Joined into public/css/style.css (see styles/README.md).
   utils/            assetUrl(): adds a content hash to /css/style.css
-public/             Served as-is: the social preview image, logos, icons, fonts, robots.txt, sitemap.xml, llms.txt,
+public/             Served as-is: the social preview image, logos, icons, fonts, robots.txt, llms.txt,
                     the Markdown copies of each page, and Netlify's _redirects and _headers
 netlify/functions/  contact.js: the contact form backend (forwards to a Make.com webhook)
 scripts/            seo_snapshot.py: the SEO snapshot and compare tool. dev/: regression tests for behaviour, layout and images
