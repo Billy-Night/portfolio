@@ -261,3 +261,18 @@ When a visitor's message cannot be delivered to Make, [netlify/functions/contact
 - **Settings in Netlify:** `BREVO_API_KEY` and `ALERT_EMAIL_TO`, and optionally `ALERT_EMAIL_FROM`. The sender must be one verified in Brevo; by default it is the same address as the recipient. Until the first two are set, no alert is sent and the form behaves as before.
 - **Checked** with `node scripts/dev/contact_alert_test.mjs`, which replaces Make and Brevo with fakes: 29 checks in twelve situations. **Checked on the live site on 2026-11-25:** with `MAKE_FORM_API` deliberately broken, the form showed its error and the alert email arrived through Brevo. `MAKE_FORM_API` was then restored. The domain is authenticated in Brevo (one TXT and two CNAME records in Cloudflare), and the alert is sent from the same address it is sent to.
 - **Not covered:** a failure before the function runs (Netlify itself down), and a scenario that fails inside Make after accepting the message. Make reports the second kind itself.
+
+### Privacy policy and the form's error message (2026-11-25)
+Both follow from the failure alert: a failed enquiry now passes through Brevo, and some failures no alert can catch.
+
+- **Privacy policy: new pages** [/privacy-policy](src/pages/privacy-policy.astro) and [/fr/politique-de-confidentialite](src/pages/fr/politique-de-confidentialite.astro). The site had none: the only text on personal data was one sentence in section 10 of the terms. The pages describe what the code does: the contact form's route (Netlify, Make, Brevo when Make fails, the Zoho mailbox), audience measurement only after "Accept" (Google Analytics, Microsoft Clarity), hosting (Netlify, Cloudflare), how long data is kept, and the visitor's rights.
+- **Where it is linked:** the footer, beside the terms, and section 10 of both terms pages. The footer's two links move to a line of their own on a narrow screen.
+- **Not indexed:** marked `noindex` like the terms pages, and left out of the sitemap through `noindexRoutes`.
+- **Keep it true:** if the form's route, the analytics or the hosting change, both pages must change with them. A comment at the top of each says so.
+- **The form's error message** now ends with the email address as a link: "Please try again, or email me at contact@billynightingale.com." It covers the cases where no alert reaches you, such as Netlify itself being down. The link is dark and underlined, since the site's gold links are hard to read on the form's light panel.
+- **Checked** in Chrome and WebKit: a failed send shows the message and keeps what the visitor typed; the new pages open from the footer in both languages and the language switch works; the footer row at five widths. The SEO compare shows the two new pages, the footer link on every page and the two contact pages' new text, and the consistency check reports no issues.
+- **Still open, noticed while writing the policy:**
+  - The cookie banner says "By continuing to use our site, you agree to our use of cookies", but the site only loads analytics after "Accept". The text could say that, and link to the policy.
+  - A visitor can only change their cookie choice by clearing the site's data in the browser. A "cookie settings" link would be simpler.
+  - At 320px wide the homepage is slightly wider than the screen, because of an SVG line. It was like this before these changes.
+
