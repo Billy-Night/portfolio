@@ -32,6 +32,7 @@ const { heading, intro, stepClass, id } = Astro.props
       <svg
         class="timeline__svg"
         viewBox="0 0 603 2137"
+        preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <circle class="timeline__dot" r="12"></circle>
@@ -117,6 +118,11 @@ const { heading, intro, stepClass, id } = Astro.props
     left: 50%;
     transform: translateX(-50%);
     width: auto;
+    /* On a narrow phone the boxes stack and the line grows tall, and its width
+       grows with it, past the edges of the screen. Past this limit the line is
+       squeezed sideways instead (preserveAspectRatio="none" on the svg), which
+       keeps it half a gutter inside each edge. */
+    max-width: calc(100% + var(--page-gutter));
     height: 100%;
     display: block;
     overflow: visible;
