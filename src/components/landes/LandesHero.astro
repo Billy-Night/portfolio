@@ -31,6 +31,13 @@ const t = {
       <h1 class="landes-hero__title">
         {t.heading}
       </h1>
+      <div class="landes-cta-container">
+        <div class="cta-container">
+          <a class="btn__primary btn__prim--light" href={r('contact')}
+            >{t.ctaButton}</a
+          >
+        </div>
+      </div>
     </div>
     <div class="landes-hero-img-container">
       <svg
@@ -66,13 +73,6 @@ const t = {
       />
     </div>
   </div>
-  <div class="landes-cta-container">
-    <div class="cta-container">
-      <a class="btn__primary btn__prim--light" href={r('contact')}
-        >{t.ctaButton}</a
-      >
-    </div>
-  </div>
 </section>
 
 <!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
@@ -85,20 +85,45 @@ const t = {
     max-width: 2000px;
   }
 
+  /* The title at the top of the column and the button at its bottom left,
+     level with the foot of the photo */
   .landes-hero-text-container {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-5);
     padding-top: var(--space-7);
     padding-left: var(--space-3);
+    padding-bottom: var(--space-6);
   }
 
   .landes-hero__title {
     position: relative;
     display: inline-block;
     font-family: var(--display);
+    /* Phones, where the title has the full width. Wider screens: see below. */
     font-size: clamp(3.9rem, 1.558rem + 11.71vw, 14rem);
     color: var(--bright-gold);
     line-height: 0.9;
     letter-spacing: 0.03em;
+  }
+
+  /* Beside the photo, the title is as large as it can be on three lines, in
+     width and in height:
+     - Width: its longest line is about four times the font size wide, and the
+       column is what the photo (45vw) and the paddings (36px) leave.
+     - Height: three lines of 0.9 times the font size, on a screen that also
+       holds the header and padding above the title (127px) and the gap, the
+       button and the padding below it (121px). This keeps the title and the
+       button on the first screen of a wide, short window such as a laptop's.
+     The vh line is for browsers without svh. */
+  @media screen and (min-width: 601px) {
+    .landes-hero__title {
+      font-size: clamp(3.9rem, min((55vw - 36px) / 4, (100vh - 248px) / 2.7), 14rem);
+      font-size: clamp(3.9rem, min((55vw - 36px) / 4, (100svh - 248px) / 2.7), 14rem);
+    }
   }
 
   .landes-hero-img-container {
@@ -139,11 +164,8 @@ const t = {
   }
 
   .landes-cta-container {
-    padding: var(--space-3);
-    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
   }
 
   @media screen and (max-width: 600px) {
@@ -156,8 +178,27 @@ const t = {
       gap: var(--gap-sm);
     }
 
+    /* On a phone the order is title, photo, button, each on its own row. The
+       text column steps aside (display: contents) so that the title and the
+       button take their places in that single column. */
     .landes-hero-text-container {
-      padding-top: var(--space-3);
+      display: contents;
+    }
+
+    .landes-hero__title {
+      order: 1;
+      align-self: flex-start;
+      margin-top: var(--space-3);
+      margin-left: var(--space-3);
+    }
+
+    .landes-hero-img-container {
+      order: 2;
+    }
+
+    .landes-cta-container {
+      order: 3;
+      padding: 0 var(--space-3) var(--space-3);
     }
   }
 </style>
