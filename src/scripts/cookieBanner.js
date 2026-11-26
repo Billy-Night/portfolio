@@ -29,6 +29,14 @@ const clearAnalyticsCookies = () => {
   })
 }
 
+// Without consent, no analytics cookie may stay. Deleting them when "Deny" is
+// pressed is not enough on its own: Google Analytics, still running on that
+// page, writes its session cookie (_ga_<id>) again as the page reloads. On the
+// reloaded page no analytics script runs, so this deletion is final.
+if (localStorage.getItem('cookiesAccepted') !== 'true') {
+  clearAnalyticsCookies()
+}
+
 if (cookieBannerAcceptBtn && cookieBannerDenyBtn && cookieBanner) {
   const hideCookieBanner = () => {
     cookieBanner.style.display = 'none'
