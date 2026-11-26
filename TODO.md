@@ -10,7 +10,7 @@ The policy in [public/_headers](public/_headers) is in report-only mode: the bro
 2. Check the browser's console for messages starting with `[Report Only]`. Each one names an address the policy would have blocked: add it to the policy if it is legitimate.
 3. When there are none, rename the header from `Content-Security-Policy-Report-Only` to `Content-Security-Policy`.
 
-Do not enforce it before that check: a missing address would silently break ad conversion tracking. With cookies accepted and no campaign running, the live site showed no reports on 2026-11-23 and again on 2026-11-26.
+Do not enforce it before that check: a missing address would silently break ad conversion tracking. With cookies accepted and no campaign running, the live site showed no reports on 2026-11-23, and none appeared while links were hovered on 2026-11-26.
 
 ## Images
 
