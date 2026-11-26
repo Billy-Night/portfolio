@@ -213,7 +213,7 @@ All 20 pages were measured in WebKit, the engine inside Safari (version 27.2), b
 
 WebKit was run through `playwright-core`, installed outside the project, because Safari's own remote automation is switched off on this Mac. It is not part of [scripts/dev/](scripts/dev/). A real iPhone has still not been checked.
 
-The CSS list under G above is closed, and the one piece of work left, the parked image questions, is in [TODO.md](TODO.md).
+The CSS list under G above is closed. The work that outlives the migration, enforcing the Content Security Policy and the parked image questions, is in [TODO.md](TODO.md).
 
 ### Generated sitemap (2026-11-25)
 `/sitemap.xml` is now written at build time by [src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts), and `public/sitemap.xml` is gone. Before, every new page needed an entry added by hand.
@@ -233,23 +233,25 @@ When a visitor rests the pointer on a link to another page of the site, or reach
 - **What is not fetched:** links to a section of the same page, links to other sites, email links, and a link the pointer only passes over (under 80 ms). A page is fetched once, however often its link is hovered. Visitors in data-saver mode or on a slow connection load the page only when they press the link.
 - **Why it pays off here:** pages are kept by the browser for 10 minutes (`max-age=600` in [public/_headers](public/_headers)), so the fetched copy is the one used on the click.
 - **Checked** in Chrome and in WebKit on the built site: each case above, and that pages still open normally. The SEO compare shows no difference.
-- **To check on the live site,** since analytics exist only there: one visit with a few hovered links counts as one page view per page actually opened, and the Content Security Policy report shows nothing new. The policy already allows the site to load its own pages.
+- **Checked on the live site on 2026-11-26,** by Billy, with cookies accepted: resting the pointer on a link fetches that page, and sends nothing to Google Analytics or Clarity. A page view is sent only when the link is clicked and the page opens. The browser's console shows no message from the Content Security Policy while links are hovered.
 
 ---
 
 
-## Before merging `AstroTrans` → `main`
+## Checks before and after merging `AstroTrans` → `main`
+The merge happened on 2026-11-23. The last boxes were ticked on 2026-11-26, when Billy checked the live site: the contact form in both languages, the FAQ, the Landes challenge buttons, the about page phases, the mobile menu, a visual pass, Safari, and the social preview. The prefetching check was done the same day (see "Prefetching links"). Still to do: a real iPhone.
+
 - [x] **Make.com: the old webhook.** The French contact form's HTML contained `action="https://hook.eu1.make.com/1sbn8f4m…"`. Billy deleted that webhook in Make long ago, when he realised it was exposed, so the address is dead. It is removed from the page on this branch; the live site's French contact page still shows it until the merge. The Netlify function uses a different webhook.
 - [x] Netlify builds the branch from [netlify.toml](netlify.toml) (Node 24, publish `dist`).
 - [x] Contact form tested on the branch deploy, in both languages.
 - [x] `/about.html` → 301 → `/about`, and an unknown URL returns the 404 page.
 - [x] SEO compare of the branch deploy against `seo-baseline/live.json`: only the Cloudflare differences (email obfuscation and the managed `robots.txt`). This was run before the fixes above.
 - [x] On the branch deploy: an unknown address such as `/nope` shows the new English 404, and `/fr/nope` shows the French one. Both return status 404.
-- [ ] After pushing the 2026-11-23 clean-up commits: send the contact form once on the branch deploy, in each language (the function now refuses requests without an `Origin` header), and look at the FAQ, the Landes challenge buttons, the about page phases and the mobile menu.
-- [ ] Visual check on desktop and mobile: fonts, images, animations, sliders, mobile menu, cookie banner, language switch, the contact page footer.
+- [x] After pushing the 2026-11-23 clean-up commits: send the contact form once on the branch deploy, in each language (the function now refuses requests without an `Origin` header), and look at the FAQ, the Landes challenge buttons, the about page phases and the mobile menu.
+- [x] Visual check on desktop and mobile: fonts, images, animations, sliders, mobile menu, cookie banner, language switch, the contact page footer.
 - [x] Accept the cookie banner on the live site after merging and confirm in the browser's Network tab that Clarity and Google Analytics load, and that they don't load after "Deny".
 - [x] The branch-deploy address is removed from `allowedOrigins` in [contact.js](netlify/functions/contact.js) (after the merge).
-- [ ] After merging: share the homepage and `/fr/` in a social preview tool to confirm the preview image shows, and check Search Console over the following days.
+- [x] After merging: share the homepage and `/fr/` in a social preview tool to confirm the preview image shows, and check Search Console over the following days.
 
 ### Contact form failure alert (2026-11-25)
 When a visitor's message cannot be delivered to Make, [netlify/functions/contact.js](netlify/functions/contact.js) now emails it to you through Brevo, an email service that does not depend on Make. Before, the visitor saw the error message and you never knew.
@@ -300,4 +302,4 @@ The banner and the analytics loader were two files that called each other throug
   - In Chrome, on ten pages at two widths, against the build before: the banner's position, size and look, and each page's main and footer heights, are the same.
   - The withdrawal test with stand-in cookies.
   - The SEO compare shows the banner's text moving to the end of each page, and nothing else.
-- **To confirm on the live site:** the three cookie states in the README's table, as on 2026-11-26.
+- **Confirmed on the live site on 2026-11-26,** by Billy, after the merge: the three cookie states in the README's table hold with the new component.
