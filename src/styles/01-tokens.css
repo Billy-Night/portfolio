@@ -43,9 +43,11 @@
   /* fonts */
   --mono: 'GeistMono', monospace;
   --sans: 'Switzer', sans-serif;
+  /* The stand-ins hold the title font's place while it loads: see 02-fonts.css */
   --display:
-    'MgDisplay-Regular', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
-  --sub-heading: 'MgDisplay-Regular', sans-serif;
+    'MgDisplay-Regular', 'MgDisplay-Standin-Impact', 'MgDisplay-Standin-Arial',
+    'MgDisplay-Standin-Roboto', sans-serif;
+  --sub-heading: var(--display);
 
   --corner-rad: 5px;
   --corner-rad-lg: 20px; /* the rounded frame around screenshots */
