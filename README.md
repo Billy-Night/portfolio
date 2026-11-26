@@ -65,6 +65,8 @@ npm run build
 npm run seo:compare        # lists every difference from seo-baseline/local.json
 ```
 
+The compare does not read styles or scripts, so it is only worth running for a change to markup, content or configuration.
+
 When a difference is intended, accept it by taking a new baseline:
 
 ```bash
@@ -77,4 +79,4 @@ python3 scripts/seo_snapshot.py snapshot dist seo-baseline/local.json
 
 Netlify builds from `netlify.toml` (`npm run build`, publishing `dist/`). The contact function needs the `MAKE_FORM_API` environment variable. To email you when a message cannot be delivered to Make, it also needs `BREVO_API_KEY` and `ALERT_EMAIL_TO` (and optionally `ALERT_EMAIL_FROM`): see the top of `netlify/functions/contact.js`. The production site sits behind Cloudflare, which rewrites email links and adds its own block to `robots.txt`.
 
-Known open items are listed in [MIGRATION_ISSUES.md](MIGRATION_ISSUES.md).
+Open work is listed in [TODO.md](TODO.md). How the site came to be built this way, and what was checked along the way, is in [docs/migration-record.md](docs/migration-record.md).
