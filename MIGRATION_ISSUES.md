@@ -66,7 +66,8 @@ Every page's sections are now components shared by the English and French pages,
 - **Deleted 26 files (2.6 MB)** that nothing referenced: 23 images and SVGs in `public/assets/` (old screenshots, `lazy*` placeholders, spare portraits and logos, two backgrounds) and three font files that only appeared in commented-out CSS. The three commented-out `@font-face` blocks were removed from [style.css](public/css/style.css) too. Everything is still in git history.
 - **Kept on purpose:**
   - `portraits/billy_nightingale_portrait_standing_laptop_v4-400.webp` and `-800.webp`. No page uses them now, but the live site's homepage still offers them to small screens, so their addresses stay valid.
-  - `favicon-n-v1-180.png` and `favicon-n-v1-512.png`. Nothing links to them. The 180 one is the standard iPhone home-screen icon size: adding `<link rel="apple-touch-icon" href="/favicon-n-v1-180.png">` to `BaseLayout` would put it to use.
+  - `favicon-n-v1-512.png`. Nothing links to it.
+  - `favicon-n-v1-180.png`. Since 2026-11-26 every page names it as its `apple-touch-icon` in [BaseLayout.astro](src/layouts/BaseLayout.astro), so an iPhone or iPad shows the white "N" on black when the site is added to the home screen, and Safari uses it in its favourites. Before, iOS made its own icon, from a screenshot of the page or a letter.
 - **Checked before deleting:** none of the 26 is referenced by the live production pages, stylesheet or script.
 - **Checked after:** every file referenced by the built pages, the stylesheet, the scripts, the structured data and the manifest exists, and the browser reports no failed loads.
 
