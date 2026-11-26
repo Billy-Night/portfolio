@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { business, person, service, website } from '../data/schema'
 import Header from '../components/Header.astro'
-import CookieBanner from '../components/CookieBanner.astro'
 import HomeHero from '../components/home/HomeHero.astro'
 import HomeServices from '../components/home/HomeServices.astro'
 import HomeProjects from '../components/home/HomeProjects.astro'
@@ -37,7 +36,6 @@ const jsonLd = [
 >
   <Header lang="en" route="home" />
   <main>
-    <CookieBanner lang="en" />
     <HomeHero lang="en" />
     <HomeServices lang="en" />
     <div class="gradient"></div>

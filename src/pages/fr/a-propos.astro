@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { person } from '../../data/schema'
 import Header from '../../components/Header.astro'
-import CookieBanner from '../../components/CookieBanner.astro'
 import AboutHero from '../../components/about/AboutHero.astro'
 import AboutJourney from '../../components/about/AboutJourney.astro'
 import AboutWhatIDo from '../../components/about/AboutWhatIDo.astro'
@@ -41,7 +40,6 @@ const jsonLd = [
 >
   <Header lang="fr" route="about" />
   <main>
-    <CookieBanner lang="fr" />
     <AboutHero lang="fr" />
     <AboutJourney lang="fr" />
     <AboutWhatIDo lang="fr" />

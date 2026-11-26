@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import Header from '../../components/Header.astro'
-import CookieBanner from '../../components/CookieBanner.astro'
 import Footer from '../../components/Footer.astro'
 
 // What this page says must match what the site does. If the contact form's
-// route (netlify/functions/contact.js), the analytics (components/Analytics.astro)
+// route (netlify/functions/contact.js), the analytics (components/consent/)
 // or the hosting change, update this page and the English one
 // (privacy-policy.astro) together.
 //
@@ -21,7 +20,6 @@ import Footer from '../../components/Footer.astro'
 >
   <Header lang="fr" route="privacy" />
   <main id="legal_main">
-    <CookieBanner lang="fr" />
     <h1>Politique de Confidentialité</h1>
     <p>
       <strong>Billy Nightingale – Création de sites web &amp; Développement Web</strong>

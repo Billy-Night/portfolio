@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { businessRef, person } from '../data/schema'
 import Header from '../components/Header.astro'
-import CookieBanner from '../components/CookieBanner.astro'
 import ServicesHero from '../components/services/ServicesHero.astro'
 import ServicesIntro from '../components/services/ServicesIntro.astro'
 import ServicesMain from '../components/services/ServicesMain.astro'
@@ -71,7 +70,6 @@ const jsonLd = [
 >
   <Header lang="en" route="services" />
   <main>
-    <CookieBanner lang="en" />
     <ServicesHero lang="en" />
     <ServicesIntro lang="en" />
     <div class="gradient"></div>

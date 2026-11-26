@@ -11,7 +11,7 @@ The website for [billynightingale.com](https://www.billynightingale.com/), in En
 | `npm run build` | Build the site into `dist/` |
 | `npm run preview` | Serve the built site locally |
 | `npm run seo:compare` | Compare the build against the SEO baseline (run `npm run build` first) |
-| `npm run check` | Type-check the Astro files: wrong props, missing imports, undefined variables. Expect 0 errors. It lists one hint, for a function the cookie banner script shares with the analytics script on purpose |
+| `npm run check` | Type-check the Astro files: wrong props, missing imports, undefined variables. Expect 0 errors and no hints |
 
 ## Structure
 
@@ -20,11 +20,12 @@ src/
   pages/            One file per URL. French pages are in pages/fr/.
                     sitemap.xml.ts writes /sitemap.xml from the list of pages at build time.
   layouts/          BaseLayout.astro: the whole <head> (meta tags, canonical, hreflang, social tags, structured data)
-  components/       Header, Footer, CookieBanner, Analytics, NotFound
+  components/       Header, Footer, NotFound
+  components/consent/  The cookie banner and the analytics it gives consent to, with its own README.
   assets/images/    Photos, served from /_astro/ through components/Photo.astro (originals untouched, smaller versions for small screens).
   i18n/routes.ts    Every page URL in both languages. Canonicals, hreflang and the language switch come from here.
   data/schema.ts    Shared structured data (the "Person" used on every page)
-  scripts/          One script per feature (header menu, cookie banner, reviews, timeline, contact form...).
+  scripts/          One script per feature (header menu, reviews, timeline, contact form...).
                     Each component imports the one it needs, so a page only loads the scripts it uses.
   styles/           The stylesheet, one file per part of the site. Joined into public/css/style.css (see styles/README.md).
   utils/            assetUrl(): adds a content hash to /css/style.css

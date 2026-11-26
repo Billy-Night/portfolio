@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { business, person, service } from '../../data/schema'
 import Header from '../../components/Header.astro'
-import CookieBanner from '../../components/CookieBanner.astro'
 import Footer from '../../components/Footer.astro'
 import ContactIntro from '../../components/contact/ContactIntro.astro'
 import ContactForm from '../../components/contact/ContactForm.astro'
@@ -31,7 +30,6 @@ const jsonLd = [
 >
   <Header lang="fr" route="contact" />
   <main>
-    <CookieBanner lang="fr" />
     <ContactIntro lang="fr" />
     <ContactForm lang="fr" />
     <div class="gradient"></div>

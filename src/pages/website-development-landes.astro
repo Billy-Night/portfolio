@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { businessRef } from '../data/schema'
 import Header from '../components/Header.astro'
-import CookieBanner from '../components/CookieBanner.astro'
 import LandesHero from '../components/landes/LandesHero.astro'
 import LandesPhone from '../components/landes/LandesPhone.astro'
 import LandesMission from '../components/landes/LandesMission.astro'
@@ -47,7 +46,6 @@ const jsonLd = [
 >
   <Header lang="en" route="landes" />
   <main>
-    <CookieBanner lang="en" />
     <LandesHero lang="en" />
     <LandesPhone lang="en" />
     <div class="gradient"></div>
