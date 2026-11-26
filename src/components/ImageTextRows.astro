@@ -141,6 +141,9 @@ const { heading, intro } = Astro.props
     margin-top: clamp(var(--space-3), 4vw, var(--space-6));
     display: flex;
     flex-direction: row;
+    /* The two buttons go one above the other when the panel is too narrow for
+       both, as on a 320px screen. */
+    flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-4);
   }
