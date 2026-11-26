@@ -2,7 +2,7 @@
 // Shared <html> + <head> for every standard page.
 // Canonical, hreflang, og:url and twitter:url are all derived from `route`
 // via src/i18n/routes.ts. The page body goes in the default slot.
-import Analytics from '../components/Analytics.astro'
+import CookieConsent from '../components/consent/CookieConsent.astro'
 import { assetUrl } from '../utils/assetVersion'
 import { SITE, pathsOf, type Lang, type PageRoute } from '../i18n/routes'
 
@@ -112,11 +112,11 @@ const altLocale = lang === 'en' ? locale.fr : locale.en
         />
       ))
     }
-
-    <Analytics />
   </head>
   <body>
     <slot />
+    {/* The cookie banner and the analytics it gives consent to: src/components/consent/README.md */}
+    <CookieConsent lang={lang} />
     {/* Site-wide script. Each component loads its own script; this one applies to every page. */}
     <script>
       import '../scripts/revealSections.js'

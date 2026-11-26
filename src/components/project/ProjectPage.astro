@@ -4,7 +4,6 @@
 // project in src/data/projects.ts that has a `page` part.
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import Header from '../Header.astro'
-import CookieBanner from '../CookieBanner.astro'
 import Footer from '../Footer.astro'
 import ServicesContactCta from '../services/ServicesContactCta.astro'
 import ProjectDetail from './ProjectDetail.astro'
@@ -41,7 +40,6 @@ const t = {
 >
   <Header lang={lang} route={paths} />
   <main>
-    <CookieBanner lang={lang} />
     <ProjectDetail project={project} page={page} lang={lang} />
     {
       review && (

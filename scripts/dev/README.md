@@ -124,4 +124,4 @@ node scripts/dev/cdp_shot.mjs dist about.html '.image-rows' /tmp/about.png      
 ## Other
 
 - `htmldiff.py old.html new.html`: tag, attribute and text differences between two built pages, ignoring whitespace.
-- `analytics_test.mjs`: checks the analytics loader in `dist/index.html` against nine combinations of domain and cookie consent.
+- `consent_test.mjs`: runs the cookie consent script from `dist/index.html` in a fake browser and checks what loads for each address and saved choice, what Clarity is told, which cookies are deleted and when the banner shows (34 checks, must end with "0 failed"). The component is described in [src/components/consent/README.md](../../src/components/consent/README.md).

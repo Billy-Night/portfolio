@@ -1,5 +1,14 @@
 ---
-import { routes, type Lang } from '../i18n/routes'
+// The cookie banner, and with it the whole consent mechanism: Google Analytics
+// and Microsoft Clarity load only after "Accept". It is used once, by
+// src/layouts/BaseLayout.astro, so it is on every page.
+//
+//   <CookieConsent lang="en" />
+//
+// Settings (analytics IDs, live addresses): ./config.ts
+// Behaviour: ./consent.js
+// How it all works, and how to use it on another site: ./README.md
+import { routes, type Lang } from '../../i18n/routes'
 
 interface Props {
   lang: Lang
@@ -9,8 +18,8 @@ const { lang } = Astro.props
 
 const t = {
   en: {
-    // What the banner says must match what src/components/Analytics.astro does:
-    // nothing is loaded unless the visitor accepts.
+    // What the banner says must match what ./consent.js does: nothing is
+    // loaded unless the visitor accepts.
     text: 'This site uses cookies to measure its audience, only if you accept.',
     policy: 'Privacy policy',
     accept: 'Accept',
@@ -34,7 +43,7 @@ const t = {
 </div>
 
 <script>
-  import '../scripts/cookieBanner.js'
+  import './consent.js'
 </script>
 
 <!-- This component's own styles. They apply only to this component's elements; a selector in :global(...) also
