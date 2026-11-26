@@ -60,7 +60,7 @@ Every page's sections are now components shared by the English and French pages,
 - **CSS:** bundling the whole stylesheet through Astro was tried for #19 during the migration and reverted, because it changed how pages render. On 2026-11-24 the styles went through Astro after all, component by component (see "Styles restructured" below). The two problems from the first attempt, and what settled them:
   - **The blur disappeared,** because the minifier dropped one of the two `backdrop-filter` lines. It still drops the `-webkit-` line by default, which Safari before version 18 needs. `cssTarget` in [astro.config.mjs](astro.config.mjs) makes it keep both.
   - **Sections stayed hidden,** because the stylesheet loaded after the old `script.js`. The scripts now load per component, and the fade-in sections reveal as before with component styles in place.
-- **Caching:** `style.css` and everything in `/_astro/` (scripts and now photos) are cached for a year, because their URLs change when their content does. Files still in `public/assets/` are cached for 10 minutes. Since 2026-11-24 `style.css` holds only the shared styles; each component's styles are written into the page itself.
+- **Caching:** `style.css` and everything in `/_astro/` (scripts and now photos) are cached for a year, because their URLs change when their content does. Files still in `public/assets/` are cached for 10 minutes, except the fonts, cached for a year since 2026-11-26. Since 2026-11-24 `style.css` holds only the shared styles; each component's styles are written into the page itself.
 
 ### D. Unused files: cleaned up
 - **Deleted 26 files (2.6 MB)** that nothing referenced: 23 images and SVGs in `public/assets/` (old screenshots, `lazy*` placeholders, spare portraits and logos, two backgrounds) and three font files that only appeared in commented-out CSS. The three commented-out `@font-face` blocks were removed from [style.css](public/css/style.css) too. Everything is still in git history.
@@ -303,3 +303,21 @@ The banner and the analytics loader were two files that called each other throug
   - The withdrawal test with stand-in cookies.
   - The SEO compare shows the banner's text moving to the end of each page, and nothing else.
 - **Confirmed on the live site on 2026-11-26,** by Billy, after the merge: the three cookie states in the README's table hold with the new component.
+
+### Title font: no jump while it loads (2026-11-26)
+On a first visit, or when the browser no longer had the title font, the homepage title was drawn in a stand-in font twice as wide. It wrapped onto two lines, and the page jumped up by 130px (72px in French) when the real font arrived.
+
+- **Stand-in fonts of the same size.** [02-fonts.css](src/styles/02-fonts.css) defines three stand-ins, each a font the device already has, reshaped to the title font's width and line height: Impact (Mac, Windows), Arial (iPhone, iPad) and Roboto (Android). The text now takes the same space before and after the font arrives.
+- **Titles stay invisible while the font loads** (`font-display: block`), so the shrunk stand-in is never seen. On its own this setting did not stop the jump: the invisible text was still laid out at the stand-in's size.
+- **Fonts are cached for a year** (`/assets/fonts/*` in [public/_headers](public/_headers)); they were re-checked every 10 minutes, or 4 hours through Cloudflare. To replace a font, give the new file a new name.
+- **Checked** in Chrome with the title font delayed by 1.5 seconds: the homepage's layout shift score went from 0.15 to 0.0006 in English and from 0.19 to 0.0007 in French, and the hero keeps one height throughout. With each stand-in forced, the hero's height matches the real font's on the home, About, Services and Contact pages in both languages at twelve widths, apart from 1px on the French homepage at 820px with Roboto.
+- **What still moves:** a long heading can wrap one line differently in a stand-in, since the widths match on average and not letter for letter. Known cases: the project pages' title with Arial or Roboto (about 50px), and the Landes page at 1440px with Arial or Roboto. A device with none of the three fonts, or a browser from before 2023, gets the old jump.
+- **Not checked:** WebKit, and the one-year cache header on the live site.
+
+### Landes hero: title and button on the first screen (2026-11-26)
+On a wide, short window such as a laptop's, the Landes title took four lines and ran off the bottom of the screen (by 11px at 1440 × 813, by 43px at 1280 × 713), and the "Launch a project" button was below the first screen.
+
+- **Title size:** beside the photo, the title is as large as three lines allow, in width and in height. At 1440 × 813 it is 189px on three lines, where it was 194px on four. From about 1700px wide it is 224px, as before.
+- **Button:** moved from a centred row under the hero into the title's column, at the bottom left, 32px above the foot of the hero.
+- **Phones (600px and narrower)** are unchanged: title, photo, then the button centred, which sits 4px further left.
+- **Checked** in Chrome, in both languages, at eleven window sizes from 700 to 2560px wide: three lines (two in French at 2560px), and the button on the first screen at every desktop size. Not checked in WebKit.

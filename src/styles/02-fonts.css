@@ -1,10 +1,60 @@
 /* Fonts */
 
+/* The title font. It is far narrower than any font a device already has, so
+   while it was loading the homepage title was laid out twice as wide, wrapped
+   onto two lines, and the page jumped up by 130px when the font arrived. Two
+   things prevent that:
+
+   1. The three stand-in fonts below. Each is a font the device already has,
+      reshaped to take the same space as the title font, so the text occupies
+      the same place before and after the font arrives:
+      - size-adjust shrinks it to the title font's width. The percentages were
+        measured on this site's headings: the title font's width as a share
+        of Impact (Mac, Windows), Arial (iPhone, iPad) and Roboto (Android).
+      - ascent-override and descent-override give its lines the title font's
+        height (75% above the baseline and 21% below, each divided by the
+        size-adjust, which shrinks them too).
+      They are used through --display in 01-tokens.css. A device with none of
+      the three, or a browser older than 2023, still gets the jump.
+   2. "block": the titles stay invisible while the font loads, so the shrunk
+      stand-in is never seen. The file is small and preloaded by
+      BaseLayout.astro, so the wait is normally not noticeable. After three
+      seconds without the font, the browser shows the stand-in.
+
+   To check a change here: load the page with the font delayed and compare the
+   hero's height before and after it arrives. */
 @font-face {
   font-family: 'MgDisplay-Regular';
   src: url('/assets/fonts/MangoGrotesque-Regular.woff2') format('woff2');
   font-style: normal;
-  font-display: swap;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'MgDisplay-Standin-Impact';
+  src: local('Impact');
+  size-adjust: 55%;
+  ascent-override: 136.4%;
+  descent-override: 38.2%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'MgDisplay-Standin-Arial';
+  src: local('Arial');
+  size-adjust: 40.2%;
+  ascent-override: 186.6%;
+  descent-override: 52.2%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'MgDisplay-Standin-Roboto';
+  src: local('Roboto');
+  size-adjust: 44.5%;
+  ascent-override: 168.5%;
+  descent-override: 47.2%;
+  line-gap-override: 0%;
 }
 
 @font-face {

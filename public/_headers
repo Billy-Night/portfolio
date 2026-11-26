@@ -32,6 +32,13 @@
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
+# The font files never change, so browsers keep them for a year and do not
+# ask for them again. To replace a font, give the new file a new name:
+# browsers that have the old one would never fetch a changed file of the same
+# name.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Scripts bundled by Astro have a content hash in their file name
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
