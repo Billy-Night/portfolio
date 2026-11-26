@@ -65,8 +65,9 @@ if (cookieBannerAcceptBtn && cookieBannerDenyBtn && cookieBanner) {
     localStorage.setItem('cookiesAccepted', 'false')
     hideCookieBanner()
     if (hadAccepted) {
-      // Consent withdrawn: remove the cookies, then reload so the analytics
-      // scripts already running on this page stop.
+      // Consent withdrawn: tell Clarity, remove the cookies, then reload so
+      // the analytics scripts already running on this page stop.
+      withdrawClarityConsent()
       clearAnalyticsCookies()
       window.location.reload()
     }
